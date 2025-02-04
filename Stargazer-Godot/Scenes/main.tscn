@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=13 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Main.cs" id="1_t068r"]
 [ext_resource type="Texture2D" uid="uid://btfum2cg0tcf1" path="res://Textures/chercker.png" id="2_7lioy"]
+[ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq72g"]
 emission_enabled = true
@@ -94,10 +95,16 @@ skeleton = NodePath("")
 
 [node name="Dome" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Dome"]
+[node name="Skybox" type="MeshInstance3D" parent="Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010977, 0, -0.0142529)
 mesh = SubResource("SphereMesh_kgvtr")
 skeleton = NodePath("")
+
+[node name="Azimuth Gridlines" type="MeshInstance3D" parent="Dome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010977, 0, -0.0142529)
+mesh = SubResource("SphereMesh_kgvtr")
+skeleton = NodePath("")
+script = ExtResource("2_mbeb3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
