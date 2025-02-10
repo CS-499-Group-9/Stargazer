@@ -31,7 +31,7 @@ public partial class Main : Camera3D
             Rotation = new Vector3(pitch, yaw, 0);
         }
     }
-
+    
     public override void _Process(double delta)
     {
         // Check if the 'screenshot_key' action is pressed
@@ -52,4 +52,3 @@ public partial class Main : Camera3D
         GD.Print($"Screenshot saved to {screenshotPath}");
     }
 }
-

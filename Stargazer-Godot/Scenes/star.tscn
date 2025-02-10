@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq4oe468ff0nb"]
+
+[ext_resource type="Script" path="res://Code/Star.cs" id="1_jyeas"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq72g"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.05
+
+[sub_resource type="SphereMesh" id="SphereMesh_donor"]
+material = SubResource("StandardMaterial3D_aq72g")
+radial_segments = 9
+
+[node name="CelestialBody" type="Node3D"]
+script = ExtResource("1_jyeas")
+azimuth = 45.0
+altitude = 45.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_donor")
+skeleton = NodePath("")

@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Textures/icon.svg"
 
+[autoload]
+
+Globals="*res://Code/Globals.cs"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
