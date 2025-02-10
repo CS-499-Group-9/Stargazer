@@ -12,6 +12,5 @@ public partial class AzimuthButton : Control
     private void ToggleAzimuth(bool state)
     {
         globalVars.isAzimuth = state;
-        GD.Print(globalVars.isAzimuth);
     }
 }
