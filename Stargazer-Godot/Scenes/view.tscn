@@ -37,7 +37,7 @@ glow_enabled = true
 glow_intensity = 3.07
 glow_strength = 1.46
 
-[node name="Main" type="Node3D"]
+[node name="View" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00757194, -0.00452363, -0.00741911)
 
 [node name="Camera3D" type="Camera3D" parent="."]

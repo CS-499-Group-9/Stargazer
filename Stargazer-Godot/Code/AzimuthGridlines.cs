@@ -4,10 +4,10 @@ using System;
 public partial class AzimuthGridlines : MeshInstance3D
 {
 	[Export] public float radius = 49.5f;
-	[Export] public int longitudeSegments = 36;  // Number of vertical (longitude) lines
+	[Export] public int longitudeSegments = 24;  // Number of vertical (longitude) lines
 	[Export] public int latitudeSegments = 24;   // Smoothness of each curve
-	[Export] public float latitudeInterval = 10.0f;  // Latitude interval in degrees
-	[Export] public float cutoffLatitude = 80.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
+	[Export] public float latitudeInterval = 15.0f;  // Latitude interval in degrees
+	[Export] public float cutoffLatitude = 75.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
 
 	private Globals globalVars;
 	private ImmediateMesh mesh;
