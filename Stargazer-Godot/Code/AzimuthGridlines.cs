@@ -21,7 +21,6 @@ public partial class AzimuthGridlines : MeshInstance3D
 
     public override void _Process(double delta)
     {
-		
     	if(globalVars.isAzimuth){
 			DrawLongitudeLines(mesh);
 			DrawLatitudeLines(mesh);
@@ -32,6 +31,7 @@ public partial class AzimuthGridlines : MeshInstance3D
 			this.Mesh = mesh;
         }
     }
+    
     // Function to draw longitude lines
     private void DrawLongitudeLines(ImmediateMesh imMesh)
 	{
@@ -85,8 +85,6 @@ public partial class AzimuthGridlines : MeshInstance3D
 	private void DrawLatitudeLines(ImmediateMesh imMesh)
 	{
 		imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-
-		float latIntervalRadians = Mathf.DegToRad(latitudeInterval);  // Convert to radians
 
 		for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 		{

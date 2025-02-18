@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=9 format=3 uid="uid://dmonwxoowo044"]
 
+[ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
+[ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -27,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7h08j")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
@@ -74,14 +77,15 @@ text = "Toggle Azimuth"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Control" parent="."]
+[node name="ConstellationButton" type="Control" parent="."]
 layout_mode = 1
 anchor_top = 0.240741
 anchor_right = 0.133681
 anchor_bottom = 0.348765
+script = ExtResource("4_e4wm7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Button2"]
+[node name="Panel" type="Panel" parent="ConstellationButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,13 +95,14 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="Button2"]
+[node name="CheckBox" type="CheckBox" parent="ConstellationButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+button_pressed = true
 text = "Toggle
 Constellations
 "
@@ -182,3 +187,4 @@ label_settings = SubResource("LabelSettings_pw72o")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
+[connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]

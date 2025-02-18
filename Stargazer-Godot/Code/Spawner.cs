@@ -10,32 +10,48 @@ public partial class Spawner : Node3D
 	private readonly string[,] cnst_lines = { { "s1", "s2" }, { "s2", "s3" }, { "s3", "s4" }, { "s4", "s5" } };
 	
 	private Globals globalVars;
+	private List<Star> stars = new List<Star>();
+	private Boolean constDrawn = true;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var stars = new List<Star>();
-		globalVars = GetNode<Globals>("/root/Globals");
 		
+		globalVars = GetNode<Globals>("/root/Globals");
 		for (int i = 0; i < starPos.GetLength(0); i++)
 		{
 			stars.Add(SpawnStar(starPos[i, 0], starPos[i, 1], starPos[i,2], $"s{i+1}"));
 		}
-		/*for (int i = 0; i < 2500; i++){
+		/* uncomment for random stars
+		 for (int i = 0; i < 2500; i++){
 			stars.Add(SpawnStar((float)rnd.NextDouble() * 360, (float)rnd.NextDouble() * 90, rnd.Next(1, 7)));
 		}
 		for (int i = 0; i < 2500; i++){
 			stars.Add(SpawnStar((float)rnd.NextDouble() * 360, (float)rnd.NextDouble() * -90, rnd.Next(1, 7)));
 		}*/
-		
 		DrawConstellation(stars, cnst_lines);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		// Triggers only once to save on performace.
+		if (globalVars.isConstellation && !constDrawn)
+		{
+			DrawConstellation(stars, cnst_lines);
+			constDrawn = true;
+		}
+		else if (!globalVars.isConstellation && constDrawn)
+		{
+			foreach (var child in GetChildren())
+			{
+				if (child is MeshInstance3D)
+					child.QueueFree(); // Remove the constellation line meshes
+			}
+			constDrawn = false;
+		}
 	}
-
+	
 	private void DrawConstellation(List<Star> stars, string[,] lines)
 	{
 		MeshInstance3D constMesh = new MeshInstance3D();
@@ -53,8 +69,6 @@ public partial class Spawner : Node3D
 		{
 			Star s1 = stars.Find(x => x.starName == lines[i, 0]);
 			Star s2 = stars.Find(x => x.starName == lines[i, 1]);
-			GD.Print("Star 1 Name: " + s1.starName);
-			GD.Print("Star 2 Name: " + s2.starName);
 			mesh.SurfaceAddVertex(s1.Position);
 			mesh.SurfaceAddVertex(s2.Position);
 		}
