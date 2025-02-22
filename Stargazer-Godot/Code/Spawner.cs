@@ -1,4 +1,6 @@
 using Godot;
+using Microsoft.Extensions.DependencyInjection;
+using Shared;
 using System;
 using System.Collections.Generic;
 
@@ -9,14 +11,9 @@ public partial class Spawner : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var stars = new List<Star>();
-		Random rnd = new Random();
-		for (int i = 0; i < 2500; i++){
-			stars.Add(SpawnStar((float)rnd.NextDouble() * 360, (float)rnd.NextDouble() * 90, rnd.Next(1, 7)));
-		}
-		for (int i = 0; i < 2500; i++){
-			stars.Add(SpawnStar((float)rnd.NextDouble() * 360, (float)rnd.NextDouble() * -90, rnd.Next(1, 7)));
-		}
+		var service = InjectionService.GetServiceProvider();
+		var repo = service.GetRequiredService<StargazerRepositoryService>();
+		var bodies = repo.celestialBodies;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

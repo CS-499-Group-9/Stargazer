@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Shared
-build_property.ProjectDir = C:\USERS\JOSHJ\SOURCE\REPOS\CS-499-GROUP-9\STARGAZER\Shared\
+build_property.ProjectDir = C:\Users\joshj\source\repos\CS-499-Group-9\Stargazer\Shared\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
