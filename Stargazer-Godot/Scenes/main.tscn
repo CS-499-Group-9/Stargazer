@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=10 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
+[ext_resource type="Script" path="res://Code/LabelButton.cs" id="5_b3dcx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -110,14 +111,15 @@ Constellations
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Control" parent="."]
+[node name="LabelButton" type="Control" parent="."]
 layout_mode = 1
 anchor_top = 0.348765
 anchor_right = 0.133681
 anchor_bottom = 0.45679
+script = ExtResource("5_b3dcx")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Button3"]
+[node name="Panel" type="Panel" parent="LabelButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,25 +128,26 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="Button3"]
+[node name="CheckBox" type="CheckBox" parent="LabelButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Toggle 3"
+button_pressed = true
+text = "Toggle Labels"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Button4" type="Control" parent="."]
+[node name="MessierButton" type="Control" parent="."]
 layout_mode = 1
 anchor_top = 0.45679
 anchor_right = 0.133681
 anchor_bottom = 0.564815
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Button4"]
+[node name="Panel" type="Panel" parent="MessierButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,15 +157,14 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="Button4"]
+[node name="CheckBox" type="CheckBox" parent="MessierButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Toggle 4
-"
+text = "Toggle Messier"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
@@ -189,3 +191,4 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
+[connection signal="toggled" from="LabelButton/CheckBox" to="LabelButton" method="ToggleLabel"]
