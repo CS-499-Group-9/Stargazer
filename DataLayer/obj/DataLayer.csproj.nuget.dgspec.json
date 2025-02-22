@@ -62,10 +62,6 @@
               "target": "Package",
               "version": "[33.0.1, )"
             },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -136,6 +132,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
