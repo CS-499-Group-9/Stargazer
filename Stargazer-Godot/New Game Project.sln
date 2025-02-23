@@ -5,9 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "New Game Project", "New Game Project.csproj", "{AE75F549-8401-4621-B4C0-A22E5E0B5445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "..\Shared\Shared.csproj", "{E093B81D-3CEE-40A7-BF90-FE4A68A36282}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "..\DataLayer\DataLayer.csproj", "{A5BFF08D-683A-482B-8CD6-A6887C40E608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "..\DataLayer\DataLayer.csproj", "{A5BFF08D-683A-482B-8CD6-A6887C40E608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +23,6 @@ Global
 		{AE75F549-8401-4621-B4C0-A22E5E0B5445}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 		{AE75F549-8401-4621-B4C0-A22E5E0B5445}.Release|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{AE75F549-8401-4621-B4C0-A22E5E0B5445}.Release|Any CPU.Build.0 = ExportRelease|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.ExportRelease|Any CPU.ActiveCfg = Release|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.ExportRelease|Any CPU.Build.0 = Release|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E093B81D-3CEE-40A7-BF90-FE4A68A36282}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5BFF08D-683A-482B-8CD6-A6887C40E608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A5BFF08D-683A-482B-8CD6-A6887C40E608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BFF08D-683A-482B-8CD6-A6887C40E608}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU

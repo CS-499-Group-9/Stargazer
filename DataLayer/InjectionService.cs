@@ -4,7 +4,11 @@ using DataLayer.Interfaces;
 using DataLayer.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-namespace Shared
+using DataLayer.EquitorialObjects;
+using CosineKitty;
+using DataLayer.HorizonalObjects;
+using System.Diagnostics;
+namespace DataLayer
 {
     /*
      * Used to register all classes to be injected into constructors
@@ -19,7 +23,7 @@ namespace Shared
         // Set the max (min) star magnitude. The magnitude is stored with smaller numbers being brighter, so the filter ends up being magnitude <= maxStarMagnitude
         const int maxStarMagnitude = 6;
 
-        public static ServiceProvider GetServiceProvider(Assembly callingAssembly)
+        public static ServiceProvider GetServiceProvider(string baseDirectoryPath)
         {
             /*
              * Register all interface implementations here. 
@@ -31,7 +35,11 @@ namespace Shared
 
             return new ServiceCollection()
                 .AddSingleton<StargazerRepositoryService>()
-                .AddSingleton<IStarRepository, HygCsvStarRepository>()
+                .AddSingleton<IEquitorialConverter, CosineKittyEquitorialConverter>()
+                .AddSingleton<IStarRepository, HygCsvStarRepository>(provider => new HygCsvStarRepository(baseDirectoryPath))
+                .AddSingleton<IMessierRepository, StarLustMessierCsvRepository>(provider => new StarLustMessierCsvRepository(baseDirectoryPath))
+                .AddSingleton<IConstellationRepository, StellariumJsonConstellationRepository>()
+                .AddSingleton<IEquitorialConverter, CosineKittyEquitorialConverter>()
                 .BuildServiceProvider();
         }
 
