@@ -12,6 +12,22 @@ public partial class Spawner : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
+		var provider = InjectionService.GetServiceProvider(ProjectSettings.GlobalizePath("res://"));
+		var repoService = provider.GetRequiredService<StargazerRepositoryService>();
+		repoService.CalculateStars(10, 10, DateTime.UtcNow);
+		var starProducer = repoService.GetStars();
+		while (!starProducer.IsCompleted)
+		{
+            foreach (var item in starProducer.GetConsumingEnumerable())
+            {
+				Star star = StarScene.Instantiate<Star>();
+				star.azimuth = (float)item.Azimuth;
+				star.altitude = (float)item.Altitude;
+				star.mag = (float)item.Magnitude;
+				AddChild(star);
+            }
+        }
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

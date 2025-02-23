@@ -26,30 +26,41 @@ namespace DataLayer
         public StargazerRepositoryService(IStarRepository starRepository, IConstellationRepository constellationRepository, IMessierRepository messierRepository)
         {
             var getStars = starRepository.GetAllStarsAsync(maxStarMagnitude);
-            var getConstellations = constellationRepository.GetAllConstellationsAsync();
-            var getMessierObjects = messierRepository.GetRawMessierObjectsAsync();
+            //var getConstellations = constellationRepository.GetAllConstellationsAsync();
+            //var getMessierObjects = messierRepository.GetRawMessierObjectsAsync();
 
             getStars.Start();
-            getConstellations.Start();
-            getMessierObjects.Start();
+            //getConstellations.Start();
+            //getMessierObjects.Start();
 
             convertedStars = new BlockingCollection<HorizonalStar>(new ConcurrentBag<HorizonalStar>());
             convertedConstellations = new BlockingCollection<HorizonalConstellation>(new ConcurrentBag<HorizonalConstellation>());
             convertedMessierObjects = new BlockingCollection<EquitorialMessierObject>(new ConcurrentBag<EquitorialMessierObject>());
 
-            Task.WaitAll(getStars, getConstellations, getMessierObjects);
+            //Task.WaitAll(getStars, getConstellations, getMessierObjects);
+            Task.WaitAll(getStars);
+            equitorialStars = getStars.Result;
+            equitorialConstellations = new List<EquitorialConstellation>();
+            equitorialMessierObjects = new List<EquitorialMessierObject>();
         }
 
         public void CalculateStars(double longitude, double latitude, DateTime localUserTime)
         {
-            CosineKittyEquitorialConverter converter = new CosineKittyEquitorialConverter(latitude, longitude, localUserTime);
             Task.Factory.StartNew(() => 
             {
+                CosineKittyEquitorialConverter<HorizonalStar> converter = new CosineKittyEquitorialConverter<HorizonalStar>(latitude, longitude, localUserTime);
                 foreach (var item in equitorialStars)
                 {
-                    HorizonalStar horizonalStar = (HorizonalStar)converter.Converter(item);
+                    var star = converter.Converter(item);
+                    star.StarId = item.StarId;
+                    star.StarName = item.ProperName;
+                    star.AbsoluteMagnitude = item.AbsoluteMagnitude;
+                    star.ColorIndex = item.ColorIndex;
+                    star.Spectrum = item.Spectrum;
+
+                    convertedStars.TryAdd(star);
                 }
-                
+                convertedStars.CompleteAdding();
             });
 
             Task.Factory.StartNew(() => 
@@ -69,6 +80,8 @@ namespace DataLayer
                 }
             });
         }
+
+        public BlockingCollection<HorizonalStar> GetStars() { return convertedStars; }
     }
 
     

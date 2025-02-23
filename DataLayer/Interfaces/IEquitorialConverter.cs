@@ -5,9 +5,9 @@ using DataLayer.EquitorialObjects;
 
 namespace DataLayer.Interfaces
 {
-    public interface IEquitorialConverter
+    public interface IEquitorialConverter<T> where T : HorizonalBody, new()
     {
 
-        Func<EquitorialCelestialBody, HorizonalBody> Converter { get; }
+        Func<EquitorialCelestialBody, T> Converter { get; }
     }
 }

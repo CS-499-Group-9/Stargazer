@@ -9,8 +9,6 @@ namespace DataLayer.HorizonalObjects
 {
     public class HorizonalConstellation : HorizonalBody
     {
-        public HorizonalConstellation(double altitude, double azimuth, EquitorialCelestialBody equitorialBody) : base(altitude, azimuth, equitorialBody)
-        {
-        }
+        
     }
 }

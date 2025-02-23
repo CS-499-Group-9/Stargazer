@@ -10,18 +10,12 @@ namespace DataLayer.HorizonalObjects
     public class HorizonalBody
     {
 
-        public double Altitude { get; }
-        public double Azimuth { get; }
-        public double Magnitude { get; }
-        public double Distance { get; protected set; } 
+        public double Altitude { get; internal set; }
+        public double Azimuth { get; internal set; }
+        public double Magnitude { get; internal set; }
+        public double Distance { get; internal set; } 
 
-        public HorizonalBody(double altitude, double azimuth, EquitorialCelestialBody body)
-        {
-            Altitude = altitude;
-            Azimuth = azimuth;
-            Magnitude = body.Magnitude;
-            Distance = body.Distance;
-        }
+       
 
     }
 }

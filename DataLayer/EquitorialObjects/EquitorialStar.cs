@@ -15,7 +15,6 @@ namespace DataLayer.EquitorialObjects
         public string? GlieseId { get; set; }
         public string? BayerFlamsteedDesignation { get; set; }
         public string? ProperName { get; set; }
-        public double Distance { get; set; }
         public double AbsoluteMagnitude { get; set; }
         public string? Spectrum { get; set; }
         public double? ColorIndex { get; set; }

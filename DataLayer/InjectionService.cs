@@ -35,11 +35,9 @@ namespace DataLayer
 
             return new ServiceCollection()
                 .AddSingleton<StargazerRepositoryService>()
-                .AddSingleton<IEquitorialConverter, CosineKittyEquitorialConverter>()
                 .AddSingleton<IStarRepository, HygCsvStarRepository>(provider => new HygCsvStarRepository(baseDirectoryPath))
                 .AddSingleton<IMessierRepository, StarLustMessierCsvRepository>(provider => new StarLustMessierCsvRepository(baseDirectoryPath))
                 .AddSingleton<IConstellationRepository, StellariumJsonConstellationRepository>()
-                .AddSingleton<IEquitorialConverter, CosineKittyEquitorialConverter>()
                 .BuildServiceProvider();
         }
 

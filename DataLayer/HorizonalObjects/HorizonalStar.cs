@@ -11,22 +11,14 @@ namespace DataLayer.HorizonalObjects
 {
     public class HorizonalStar : HorizonalBody
     {
-        public int StarId { get; }
-        public string? StarName { get; }
-        public double? AbsoluteMagnitude { get; }
-        public string? Spectrum { get; }
-        public double? ColorIndex { get; }
+        public int StarId { get; internal set; }
+        public string? StarName { get; internal set; }
+        public double? AbsoluteMagnitude { get; internal set; }
+        public string? Spectrum { get; internal set; }
+        public double? ColorIndex { get; internal set; }
         
 
-        public HorizonalStar(double altitude, double azimuth, EquitorialStar equitorialStar) : 
-            base(altitude, azimuth, equitorialStar)
-        {
-            StarId = equitorialStar.StarId;
-            StarName = equitorialStar.ProperName;
-            AbsoluteMagnitude = equitorialStar.AbsoluteMagnitude;
-            Spectrum = equitorialStar.Spectrum;
-            ColorIndex = equitorialStar.ColorIndex;
-        }
+
 
     }
 }
