@@ -17,3 +17,5 @@ data_*/
 mono_crash.*.json
 /Stargazer-Godot/.vs
 /Stargazer-Godot/addons/godot-git-plugin
+/Stargazer-Godot/Scenes/main.tscn
+/Stargazer-Godot/Scenes/view.tscn
