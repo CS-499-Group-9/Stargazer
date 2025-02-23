@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\DataLayer.csproj": {}
+    "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\DataLayer.csproj",
+        "projectPath": "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\joshj\\.nuget\\packages\\",
         "outputPath": "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",

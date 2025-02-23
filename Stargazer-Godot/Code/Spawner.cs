@@ -12,10 +12,10 @@ public partial class Spawner : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		HuntsvilleCoordinates huntsvilleCoordinates = new HuntsvilleCoordinates();
 		var provider = InjectionService.GetServiceProvider(ProjectSettings.GlobalizePath("res://"));
 		var repoService = provider.GetRequiredService<StargazerRepositoryService>();
-		repoService.CalculateStars(10, 10, DateTime.UtcNow);
+		repoService.CalculateStars(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, DateTime.UtcNow);
 		var starProducer = repoService.GetStars();
 		while (!starProducer.IsCompleted)
 		{
@@ -43,4 +43,13 @@ public partial class Spawner : Node3D
 		AddChild(star);
 		return star;
 	}
+
+	private struct HuntsvilleCoordinates
+	{
+		public double lattitude = 34.7304;
+		public double longitude = -86.5861;
+        public HuntsvilleCoordinates()
+        {
+        }
+    }
 }
