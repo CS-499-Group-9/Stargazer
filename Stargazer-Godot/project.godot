@@ -19,6 +19,10 @@ config/icon="res://Textures/icon.svg"
 
 Globals="*res://Code/Globals.cs"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="New Game Project"

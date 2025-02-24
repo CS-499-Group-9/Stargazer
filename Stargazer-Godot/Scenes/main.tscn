@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=8 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
+[ext_resource type="Texture2D" uid="uid://bmfqmhkk8ewae" path="res://Textures/screenshot.png" id="3_hext6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -31,10 +32,10 @@ grow_vertical = 2
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133681
-anchor_top = 0.132716
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.124132
+anchor_top = 0.128086
+anchor_right = 0.990451
+anchor_bottom = 0.99537
 grow_horizontal = 0
 stretch = true
 metadata/_edit_use_anchors_ = true
@@ -156,6 +157,35 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Toggle 4
 "
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.564815
+anchor_right = 0.133681
+anchor_bottom = 0.67284
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Button5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.0142857
+offset_right = 154.0
+offset_bottom = 69.0
+tooltip_text = "Take a screenshot"
+icon = ExtResource("3_hext6")
+icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
