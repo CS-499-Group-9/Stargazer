@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=9 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
 [ext_resource type="Texture2D" uid="uid://bmfqmhkk8ewae" path="res://Textures/screenshot.png" id="3_hext6"]
+[ext_resource type="Script" path="res://Code/ScreenshotButton.cs" id="4_6kftj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -187,6 +188,7 @@ tooltip_text = "Take a screenshot"
 icon = ExtResource("3_hext6")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_6kftj")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -211,3 +213,4 @@ label_settings = SubResource("LabelSettings_pw72o")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
+[connection signal="pressed" from="Button5/Button" to="Button5/Button" method="OnButtonPressed"]

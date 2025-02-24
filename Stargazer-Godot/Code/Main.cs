@@ -40,28 +40,24 @@ public partial class Main : Camera3D
         }
     }
 
-    private async Task TakeScreenshot()
+    public async Task TakeScreenshot()
     {
         if (ScreenshotCam == null || ScreenshotViewport == null)
         {
-            GD.Print("No alternative camera or viewport assigned!");
+            GD.PrintErr("No alternative camera or viewport assigned!");
             return;
         }
 
-        // **Step 1: Assign the Screenshot Camera to the Separate Viewport**
         ScreenshotViewport.World3D = GetViewport().World3D;
         ScreenshotCam.Current = true;
 
-        // **Step 2: Wait for the Next Frame to Ensure the Scene Updates**
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 
-        // **Step 3: Capture the Screenshot Without Affecting the Main Viewport**
         Image screenshotImage = ScreenshotViewport.GetTexture().GetImage();
-        screenshotImage.SaveJpg(screenshotPath);
+        screenshotImage.SaveJpg("user://screenshot.jpeg");
 
-        // **Step 4: Restore the Main Camera**
         ScreenshotCam.Current = false;
 
-        GD.Print($"Screenshot saved to {screenshotPath}");
+        GD.Print($"Screenshot saved to: user://screenshot.jpeg");
     }
 }
