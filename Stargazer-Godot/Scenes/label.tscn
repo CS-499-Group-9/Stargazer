@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1hi5ilmif6ac"]
+
+[node name="Label" type="Node3D"]
+
+[node name="Label3D" type="Label3D" parent="."]
+transparency = 0.82
+billboard = 1
+modulate = Color(0.61339, 0.61339, 0.61339, 1)
+text = "Constellation"
+font_size = 290
+outline_size = 96

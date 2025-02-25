@@ -4,10 +4,10 @@ using System;
 public partial class AzimuthGridlines : MeshInstance3D
 {
 	[Export] public float radius = 49.5f;
-	[Export] public int longitudeSegments = 36;  // Number of vertical (longitude) lines
+	[Export] public int longitudeSegments = 24;  // Number of vertical (longitude) lines
 	[Export] public int latitudeSegments = 24;   // Smoothness of each curve
-	[Export] public float latitudeInterval = 10.0f;  // Latitude interval in degrees
-	[Export] public float cutoffLatitude = 80.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
+	[Export] public float latitudeInterval = 15.0f;  // Latitude interval in degrees
+	[Export] public float cutoffLatitude = 75.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
 
 	private Globals globalVars;
 	private ImmediateMesh mesh;
@@ -21,7 +21,6 @@ public partial class AzimuthGridlines : MeshInstance3D
 
     public override void _Process(double delta)
     {
-		
     	if(globalVars.isAzimuth){
 			DrawLongitudeLines(mesh);
 			DrawLatitudeLines(mesh);
@@ -32,6 +31,7 @@ public partial class AzimuthGridlines : MeshInstance3D
 			this.Mesh = mesh;
         }
     }
+    
     // Function to draw longitude lines
     private void DrawLongitudeLines(ImmediateMesh imMesh)
 	{
@@ -85,8 +85,6 @@ public partial class AzimuthGridlines : MeshInstance3D
 	private void DrawLatitudeLines(ImmediateMesh imMesh)
 	{
 		imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-
-		float latIntervalRadians = Mathf.DegToRad(latitudeInterval);  // Convert to radians
 
 		for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 		{
