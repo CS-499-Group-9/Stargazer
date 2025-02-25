@@ -121,7 +121,7 @@ namespace DataLayer
             return constellationStars;
         }
 
-        public CelestialDataPackage<T> CalculateHorizontalObjects(double latitude, double longitude, DateTime localUserTime)
+        public CelestialDataPackage<T> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
             CosineKittyEquitorialConverter<HorizontalStar> starConverter = new CosineKittyEquitorialConverter<HorizontalStar>(latitude, longitude, localUserTime);
             Task.Factory.StartNew(() =>
