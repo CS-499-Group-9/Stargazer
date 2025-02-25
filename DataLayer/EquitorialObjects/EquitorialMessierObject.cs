@@ -22,7 +22,6 @@ namespace DataLayer.EquitorialObjects
         public string? Type { get => type; set => type = value; }
         public string? Constellation { get => constellation; set => constellation = value; }
         public string? Size { get => size; set => size = value; }
-        public double? Distance { get => distance; set => distance = value; }
         public string? ViewingSeason { get => viewingSeason; set => viewingSeason = value; }
         public string? ViewingDifficulty { get => viewingDifficulty; set => viewingDifficulty = value; }
     }

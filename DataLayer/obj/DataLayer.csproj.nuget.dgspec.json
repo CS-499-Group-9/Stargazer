@@ -11,7 +11,7 @@
         "projectName": "DataLayer",
         "projectPath": "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\joshj\\.nuget\\packages\\",
-        "outputPath": "C:\\USERS\\JOSHJ\\SOURCE\\REPOS\\CS-499-GROUP-9\\STARGAZER\\DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\joshj\\source\\repos\\CS-499-Group-9\\Stargazer\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

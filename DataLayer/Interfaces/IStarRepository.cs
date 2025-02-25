@@ -4,6 +4,7 @@ namespace DataLayer.Interfaces
 {
     public interface IStarRepository
     {
-        Task<IList<EquitorialStar>> GetAllStarsAsync(double maximumMagnitude);
+        public Task<IList<EquitorialStar>> GetAllStarsAsync(double maximumMagnitude);
+        public Task<EquitorialStar?> GetStaryByHipAsync(int hipparcosId);
     }
 }

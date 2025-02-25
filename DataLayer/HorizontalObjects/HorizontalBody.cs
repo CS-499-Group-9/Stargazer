@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.HorizonalObjects
+namespace DataLayer.HorizontalObjects
 {
-    public class HorizonalBody
+    public abstract class HorizontalBody
     {
 
         public double Altitude { get; internal set; }

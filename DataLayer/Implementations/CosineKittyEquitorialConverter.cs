@@ -1,5 +1,5 @@
 ﻿using CosineKitty;
-using DataLayer.HorizonalObjects;
+using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using DataLayer.EquitorialObjects;
 using System;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
-    internal class CosineKittyEquitorialConverter<T> : IEquitorialConverter<T> where T : HorizonalBody , new()
+    internal class CosineKittyEquitorialConverter<T> : IEquitorialConverter<T> where T : HorizontalBody , new()
     {
         private AstroTime astroTime;
         private Observer observer;
@@ -28,7 +28,7 @@ namespace DataLayer.Implementations
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
 
-            T newBody = new T();
+            T newBody = new();
             newBody.Altitude = hor.altitude;
             newBody.Azimuth = hor.azimuth;
             newBody.Magnitude = eqStar.Magnitude;

@@ -1,7 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using DataLayer.HorizonalObjects;
+using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using DataLayer.EquitorialObjects;
 using System;
@@ -17,23 +17,43 @@ namespace DataLayer.Implementations
 {
     internal class HygCsvStarRepository : IStarRepository
     {
-        private readonly string baseDirectoryPath;
-        public HygCsvStarRepository(string baseDirectoryPath) 
+        private readonly string filePath;
+        public HygCsvStarRepository(string repositoryPath) 
         {
-            this.baseDirectoryPath = baseDirectoryPath;
+            this.filePath = Path.Combine(repositoryPath, "hyg.csv");
         }
+
+        public async Task<EquitorialStar?> GetStaryByHipAsync(int hipparcosId)
+        {
+            if (File.Exists(filePath))
+            {
+                return await Task.Run(() =>
+                {
+                    var targetList = new List<EquitorialStar>();
+                    using (var reader = new StreamReader(filePath))
+                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                    {
+                        csv.Context.RegisterClassMap<StarMap>();
+
+                        // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
+                        var records = csv.GetRecords<EquitorialStar>();
+
+                        // Provide a filter to select only the stars needed from the IEnumberable
+                        // Create a new thread for each row that will read that row into the list
+                        return records.FirstOrDefault(s => s.HipparcosId == hipparcosId);
+
+                    }
+                });
+            }
+            throw new FileNotFoundException();
+        }
+
         Task<IList<EquitorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
         {
-            DirectoryInfo dir = new DirectoryInfo(baseDirectoryPath);
-            
-            string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer");
-            string repositories = Path.Combine(dataLayer, "Repositories");
-            string filePath = Path.Combine(repositories, "hyg.csv");
-
             if (File.Exists(filePath))
             {
                 // Return the Task that will return the list
-                return new Task<IList<EquitorialStar>>(() =>
+                return Task<IList<EquitorialStar>>.Factory.StartNew(() =>
                 {
                     // Build the list instance and a stream reader to read the rows
                     var targetList = new List<EquitorialStar>();

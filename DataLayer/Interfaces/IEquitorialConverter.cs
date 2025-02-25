@@ -1,11 +1,11 @@
 ﻿
 using CosineKitty;
-using DataLayer.HorizonalObjects;
+using DataLayer.HorizontalObjects;
 using DataLayer.EquitorialObjects;
 
 namespace DataLayer.Interfaces
 {
-    public interface IEquitorialConverter<T> where T : HorizonalBody, new()
+    public interface IEquitorialConverter<T> where T : HorizontalBody, new()
     {
 
         Func<EquitorialCelestialBody, T> Converter { get; }

@@ -14,29 +14,24 @@ namespace DataLayer.Implementations
 {
     internal class StarLustMessierCsvRepository : IMessierRepository
     {
-        private readonly string baseDirectoryPath;
-        public StarLustMessierCsvRepository(string baseDirectoryPath)
+        private readonly string filePath;
+        public StarLustMessierCsvRepository(string repositoryPath)
         {
-            this.baseDirectoryPath = baseDirectoryPath;
+            filePath = Path.Combine(repositoryPath, "messier-catalog.csv"); 
         }
 
         public Task<IEnumerable<EquitorialMessierObject>> GetRawMessierObjectsAsync()
         {
-            DirectoryInfo dir = new DirectoryInfo(baseDirectoryPath);
-            string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer");
-            string repositories = Path.Combine(dataLayer, "Repositories");
-            string filePath = Path.Combine(repositories, "messier-catalog.csv");
-
             if (File.Exists(filePath))
             {
                 // Build a task to retrieve the raw messier objects from the repository and return the task to the calling code
-                return new Task<IEnumerable<EquitorialMessierObject>>(() =>
+                return Task<IEnumerable<EquitorialMessierObject>>.Factory.StartNew(() =>
                 {
                     
                     using (var reader = new StreamReader(filePath))
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
-                        Console.WriteLine($"CsvMessierRepository ({Task.CurrentId}): Parallel Retrieve Request");
+                        csv.Context.RegisterClassMap<StarMap>();
 
                         // the CsvHelper.GetRecords retrieve a yeildable list. Objects are not read until they are requested
                         var records = csv.GetRecords<EquitorialMessierObject>();
@@ -66,10 +61,11 @@ namespace DataLayer.Implementations
                 Map(m => m.ViewingDifficulty).Name("VIEWING DIFFICULTY");
             }
 
-            private class DdmToDecimalDegreesConverter : DefaultTypeConverter
+            private class HmsToDecimalDegreesConverter : DefaultTypeConverter
             {
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
+                    if (text == null) return null;
                     var degDecMin = text.Split(' ');
                     if (
                         !(
@@ -80,17 +76,17 @@ namespace DataLayer.Implementations
                     {
                         throw new InvalidDataException($"{text} could not be converted to decmial degrees.");
                     }
-                    hours = (hours / 24) * 360;
                     minutes /= 60;
                     return hours + minutes;
                 }
             }
-
-            private class HmsToDecimalDegreesConverter : DefaultTypeConverter
+            
+            private class DdmToDecimalDegreesConverter : DefaultTypeConverter
             {
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
-                    var degreesMinutes = text.Split("°");
+                    if(text == null) return null;
+                    var degreesMinutes = text.Split('°');
                     if (
                         !(
                             double.TryParse(degreesMinutes[0], out double degrees) &&

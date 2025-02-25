@@ -9,6 +9,6 @@ namespace DataLayer.Interfaces
 {
     public interface IConstellationRepository
     {
-        internal Task<IList<EquitorialConstellation>> GetAllConstellationsAsync();
+        internal Task<IList<Constellation>> GetAllConstellationsAsync();
     }
 }
