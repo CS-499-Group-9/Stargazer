@@ -7,7 +7,7 @@ public partial class Star : Node3D
 	[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
 	[Export] public float dist = 45f; // Distance from (0, 0, 0)
 	[Export] public float mag = 1f;
-	[Export] public double ColorIndex { get; set; }
+	[Export] public string starName;
 
 	private float radians = (float)Math.PI / 180f;
 	
@@ -21,6 +21,7 @@ public partial class Star : Node3D
         };
         return pos;
 	}
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

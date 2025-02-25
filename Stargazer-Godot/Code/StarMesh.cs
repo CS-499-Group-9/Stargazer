@@ -6,15 +6,7 @@ public partial class StarMesh : MeshInstance3D
 
     public override void _Ready()
     {
-        // Get the parent (assuming it's a Star Node3D)
-        if (GetParent() is Star parent && parent.ColorIndex != null)
-        {
-            UpdateColorFromParent(parent.ColorIndex);
-        }
-        else
-        {
-            GD.PrintErr("Parent does not have a ColorIndex property!");
-        }
+        
     }
 
     private void UpdateColorFromParent(double bvIndex)
