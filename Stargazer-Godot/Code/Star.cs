@@ -5,7 +5,7 @@ public partial class Star : Node3D
 {
 	[Export] public float azimuth = 0f; // Rotation from North (X+), in degrees.
 	[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
-	[Export] public float dist = 45f; // Distance from (0, 0, 0)
+	[Export] public float dist = 70f; // Distance from (0, 0, 0)
 	[Export] public float mag = 1f;
 	[Export] public string starName;
 
@@ -13,15 +13,16 @@ public partial class Star : Node3D
 	
 	// Gets the Cartesian position of the Celestial Body
 	private Vector3 getLocation(){
-        Vector3 pos = new()
-        {
-            X = dist * Mathf.Cos(altitude * radians) * Mathf.Cos(azimuth * radians),
-    		Y = dist * Mathf.Sin(altitude * radians),
-    		Z = dist * Mathf.Cos(altitude * radians) * Mathf.Sin(azimuth * radians),
-        };
+		var altRad = altitude * radians;
+		var azRad = azimuth * radians;
+		Vector3 pos = new()
+		{
+			X = dist * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
+			Y = dist * Mathf.Sin(altRad),
+			Z = dist * Mathf.Cos(altRad) * Mathf.Sin(azRad)
+		};
         return pos;
 	}
-	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

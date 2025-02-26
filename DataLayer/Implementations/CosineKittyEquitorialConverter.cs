@@ -27,7 +27,7 @@ namespace DataLayer.Implementations
             Astronomy.DefineStar(Body.Star1, eqStar.RightAscention, eqStar.Declination, eqStar.Distance);
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
-
+            
             T newBody = new();
             newBody.Altitude = hor.altitude;
             newBody.Azimuth = hor.azimuth;

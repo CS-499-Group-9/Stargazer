@@ -22,8 +22,8 @@ albedo_texture = SubResource("GradientTexture2D_16tw0")
 [sub_resource type="SphereMesh" id="SphereMesh_kgvtr"]
 material = SubResource("StandardMaterial3D_ku0cl")
 flip_faces = true
-radius = 50.0
-height = 100.0
+radius = 75.0
+height = 150.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_pe3po"]
 

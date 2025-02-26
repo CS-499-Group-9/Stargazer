@@ -106,12 +106,10 @@ namespace DataLayer
                                     constellationStars.TryAdd(endPoint, star);
                                     stars.Remove(star);
                                 }
-
                             }
                             catch (InvalidOperationException e)
                             {
                                 throw new InvalidOperationException($"Test");
-
                             }
                         }
                     }
@@ -121,10 +119,10 @@ namespace DataLayer
             return constellationStars;
         }
 
-        public CelestialDataPackage<T> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
+        public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
             CosineKittyEquitorialConverter<HorizontalStar> starConverter = new CosineKittyEquitorialConverter<HorizontalStar>(latitude, longitude, localUserTime);
-            Task.Factory.StartNew(() =>
+            await Task.Factory.StartNew(() =>
             {
                 foreach (var item in equitorialStars)
                 {
@@ -140,7 +138,7 @@ namespace DataLayer
                 horizontalStars.CompleteAdding();
             });
 
-            Task.Factory.StartNew(() =>
+            await Task.Factory.StartNew(() =>
             {
                 CosineKittyEquitorialConverter<HorizontalMessierObject> converter = new CosineKittyEquitorialConverter<HorizontalMessierObject>(latitude, longitude, localUserTime);
                 foreach (var item in equitorialMessierObjects)
@@ -158,7 +156,7 @@ namespace DataLayer
 
             });
 
-            Task.Factory.StartNew(() =>
+            await Task.Factory.StartNew(() =>
             {
                 foreach (var item in equitorialConstellationStars)
                 {
@@ -173,6 +171,7 @@ namespace DataLayer
                 }
             });
             return new CelestialDataPackage<T>(horizontalStars, horizontalMessierObjects,constellations, constellationStars, new ConcurrentDictionary<int, T>());
+            
         }
     }
 }
