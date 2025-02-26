@@ -36,26 +36,28 @@ script = ExtResource("1_7h08j")
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.133681
-anchor_top = 0.132716
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 85.0
+offset_bottom = 2.0
 grow_horizontal = 0
 stretch = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(997, 562)
+size = Vector2i(952, 565)
 render_target_update_mode = 4
 
 [node name="View" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_vwov6")]
 
 [node name="AzimuthButton" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 0.132716
-anchor_right = 0.133681
-anchor_bottom = 0.240741
+anchors_preset = 0
+offset_top = 85.0
+offset_right = 200.0
+offset_bottom = 125.0
 script = ExtResource("2_coh25")
 metadata/_edit_use_anchors_ = true
 
@@ -81,9 +83,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ConstellationButton" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 0.240741
-anchor_right = 0.133681
-anchor_bottom = 0.348765
+anchors_preset = 0
+offset_top = 125.0
+offset_right = 200.0
+offset_bottom = 165.0
 script = ExtResource("4_e4wm7")
 metadata/_edit_use_anchors_ = true
 
@@ -105,17 +108,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 button_pressed = true
-text = "Toggle
-Constellations
+text = "Toggle Constellations
 "
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="LabelButton" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 0.348765
-anchor_right = 0.133681
-anchor_bottom = 0.45679
+anchors_preset = 0
+offset_top = 165.0
+offset_right = 200.0
+offset_bottom = 205.0
 script = ExtResource("5_b3dcx")
 metadata/_edit_use_anchors_ = true
 
@@ -142,9 +145,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MessierButton" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 0.45679
-anchor_right = 0.133681
-anchor_bottom = 0.564815
+anchors_preset = 0
+offset_top = 205.0
+offset_right = 200.0
+offset_bottom = 245.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MessierButton"]
@@ -172,9 +176,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.137346
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = 85.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6lmxy")
 metadata/_edit_use_anchors_ = true
 
@@ -183,6 +185,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Stargazer"

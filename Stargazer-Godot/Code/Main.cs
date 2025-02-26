@@ -7,7 +7,6 @@ public partial class Main : Camera3D
     private float pitch = 0f; // Up/Down Rotation
     private bool rightClickHeld = false;
     private string screenshotPath = "user://screenshot.jpeg";
-
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventMouseButton mouseButton)
@@ -17,12 +16,24 @@ public partial class Main : Camera3D
                 rightClickHeld = mouseButton.Pressed;
                 Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
             }
-        }
 
+            if (mouseButton.ButtonIndex == MouseButton.WheelUp || mouseButton.ButtonIndex == MouseButton.WheelDown)
+            {
+                // Check the direction of the scroll wheel
+                if (mouseButton.ButtonIndex == MouseButton.WheelUp)
+                {
+                    ZoomIn();
+                }
+                else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
+                {
+                    ZoomOut();
+                }
+            }
+        }
         if (rightClickHeld && @event is InputEventMouseMotion mouseMotion)
         {
-            yaw -= mouseMotion.Relative.X * MouseSensitivity;
-            pitch -= mouseMotion.Relative.Y * MouseSensitivity;
+            yaw -= (Fov/75)*mouseMotion.Relative.X * MouseSensitivity;
+            pitch -= (Fov/75)*mouseMotion.Relative.Y * MouseSensitivity;
 
             // Clamp pitch to prevent flipping
             //pitch = Mathf.Clamp(pitch, 0, Mathf.Pi / 2);
@@ -32,6 +43,18 @@ public partial class Main : Camera3D
         }
     }
     
+private void ZoomIn()
+{
+    GD.Print($"{Fov}");
+    // Decrease field of view for zooming in (if using a perspective camera)
+    Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
+}
+private void ZoomOut()
+{
+
+    // Decrease field of view for zooming in (if using a perspective camera)
+    Fov = Mathf.Clamp(Fov + 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
+}
     public override void _Process(double delta)
     {
         // Check if the 'screenshot_key' action is pressed
