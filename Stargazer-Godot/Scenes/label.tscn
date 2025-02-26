@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://b1hi5ilmif6ac"]
+[gd_scene load_steps=3 format=3 uid="uid://b1hi5ilmif6ac"]
+
+[ext_resource type="Script" path="res://Code/ConstellationLabel.cs" id="1_5pjmp"]
+[ext_resource type="Script" path="res://Code/LabelNode.cs" id="1_parpe"]
 
 [node name="Label" type="Node3D"]
+script = ExtResource("1_parpe")
 
 [node name="Label3D" type="Label3D" parent="."]
 transparency = 0.82
@@ -9,3 +13,4 @@ modulate = Color(0.61339, 0.61339, 0.61339, 1)
 text = "Constellation"
 font_size = 290
 outline_size = 96
+script = ExtResource("1_5pjmp")

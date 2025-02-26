@@ -33,6 +33,7 @@ namespace DataLayer
              * AddSingleton<Class>() is used to register a concrete class that needs dependancies injected in the constructor, or creates instances in it's constructor that requires dependancies injected
              * AddSingleton<Interface, Implementation>(provider => new Implementation(someValue)) is used to pass a specific value or thing to the constructor of an interface implementation
             */
+
             DirectoryInfo dir = new(baseDirectoryPath);
             if (dir == null) { throw new DirectoryNotFoundException($"{baseDirectoryPath} is not a valid directory"); }
             string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer");
