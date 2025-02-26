@@ -12,20 +12,34 @@ public partial class Star : Node3D
 	private float radians = (float)Math.PI / 180f;
 	
 	// Gets the Cartesian position of the Celestial Body
-	private Vector3 getLocation(){
-        Vector3 pos = new()
-        {
-            X = dist * Mathf.Cos(altitude * radians) * Mathf.Cos(azimuth * radians),
-    		Y = dist * Mathf.Sin(altitude * radians),
-    		Z = dist * Mathf.Cos(altitude * radians) * Mathf.Sin(azimuth * radians),
-        };
+	private Vector3 getLocation(bool altview){
+		Vector3 pos;
+		if (!altview){
+			pos = new()
+			{
+				X = dist * Mathf.Cos(altitude * radians) * Mathf.Cos(azimuth * radians),
+				Y = dist * Mathf.Sin(altitude * radians),
+				Z = dist * Mathf.Cos(altitude * radians) * Mathf.Sin(azimuth * radians),
+			};
+		}else{
+			pos = new()
+			{
+				X = (90-altitude)*Mathf.Cos(azimuth*radians),
+				Y = (90-altitude)*Mathf.Sin(azimuth*radians),
+				Z = -50,
+			};
+
+			if(altitude<0){
+				pos.Z = -50;
+			}
+		}
         return pos;
 	}
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Position = getLocation();
+		Position = getLocation(true);
 		if(mag > 1) Scale = new Vector3(1/mag, 1/mag, 1/mag);
 		else Scale = new Vector3(0.6F, 0.6F, 0.6F);
 	}

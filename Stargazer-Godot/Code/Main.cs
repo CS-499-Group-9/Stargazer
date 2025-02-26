@@ -48,7 +48,7 @@ public partial class Main : Camera3D
         Image screenshotImage = viewport.GetTexture().GetImage();
 
         // Save the screenshot as a JPEG
-        screenshotImage.SaveJpg(screenshotPath);
+        screenshotImage.SavePng(screenshotPath);
         GD.Print($"Screenshot saved to {screenshotPath}");
     }
 }

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://mve3trntpbfo"]
+
+[ext_resource type="Script" path="res://Code/Spawner.cs" id="1_15t8d"]
+[ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="2_r5l8p"]
+[ext_resource type="PackedScene" path="res://Scenes/label.tscn" id="3_jtetu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47f2d"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7s5rv"]
+material = SubResource("StandardMaterial3D_47f2d")
+
+[sub_resource type="Environment" id="Environment_4151v"]
+glow_enabled = true
+glow_intensity = 3.07
+glow_strength = 1.46
+
+[node name="Altview" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+projection = 1
+size = 400.0
+
+[node name="Stars" type="Node3D" parent="."]
+script = ExtResource("1_15t8d")
+StarScene = ExtResource("2_r5l8p")
+LabelScene = ExtResource("3_jtetu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_energy = 0.297
+
+[node name="BackPlane" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackPlane"]
+transform = Transform3D(500, 0, 0, 0, -2.18557e-05, -500, 0, 500, -2.18557e-05, 0, 0, -60)
+mesh = SubResource("PlaneMesh_7s5rv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4151v")

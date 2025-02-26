@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
-[ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
+[ext_resource type="PackedScene" path="res://Scenes/label.tscn" id="4_hboln"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.190476, 0.722222, 0.849206)
