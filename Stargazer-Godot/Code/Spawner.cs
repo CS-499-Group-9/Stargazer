@@ -6,7 +6,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 public partial class Spawner : Node3D
@@ -20,7 +19,7 @@ public partial class Spawner : Node3D
 	
 	private Globals globalVars ;
 	private List<Star> stars;
-	private List<Node3D> labels;
+	private List<LabelNode> labels;
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;
 
@@ -37,8 +36,8 @@ public partial class Spawner : Node3D
         Stopwatch sw = Stopwatch.StartNew();
         HuntsvilleCoordinates huntsvilleCoordinates = new HuntsvilleCoordinates();
         var repoService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-		await Task.Delay(1000);
-        var dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, DateTime.UtcNow);
+        
+		var dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, DateTime.UtcNow);
         starProducer = dataPackage.Stars;
         constellationStars = dataPackage.ConstellationStars;
         constellations = dataPackage.Constellations;
@@ -63,8 +62,6 @@ public partial class Spawner : Node3D
                 GD.Print($"Messier: {item.MessierId} {item.Type}");
             }
         }
-
-
 
         sw.Stop();
         GD.Print($"That took {sw.Elapsed.TotalSeconds} seconds.");
@@ -120,17 +117,17 @@ public partial class Spawner : Node3D
 		MeshInstance3D constMesh = new MeshInstance3D();
 		Vector3 labelPos = new Vector3();
 		ImmediateMesh mesh = new ImmediateMesh();
-		Vector3 totalPos = new Vector3(0, 0, 0);
 		// Create a white material
 		StandardMaterial3D whiteMaterial = new StandardMaterial3D();
 		whiteMaterial.AlbedoColor = new Color(1, 1, 1); // White color
 		// Assign the material to the mesh
 		constMesh.MaterialOverride = whiteMaterial;
 		mesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-		labels = new List<Node3D>();
-		int counter = 0;
+		labels = new List<LabelNode>();
+
         foreach (var constellation in constellations)
         { 
+			Vector3 totalPos = new Vector3(0, 0, 0);
 			int c = 0;
 			GD.Print($"Drawing constellation {constellation.ConstellationName}");
 
@@ -152,7 +149,8 @@ public partial class Spawner : Node3D
 			// Creating labels
 			labelPos = totalPos / c;
 		
-			Node3D labelNode = LabelScene.Instantiate<Node3D>();
+			LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
+			labelNode.LabelText = constellation.ConstellationName;
 			labelNode.Position = labelPos;
 			labelNode.Visible = labelDrawn;
 			labels.Add(labelNode);

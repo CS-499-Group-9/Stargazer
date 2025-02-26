@@ -5,7 +5,7 @@ public partial class Star : Node3D
 {
 	[Export] public float azimuth = 0f; // Rotation from North (X+), in degrees.
 	[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
-	[Export] public float dist = 70f; // Distance from (0, 0, 0)
+	[Export] public float dist = 74f; // Distance from (0, 0, 0)
 	[Export] public float mag = 1f;
 	[Export] public string starName;
 

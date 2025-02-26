@@ -122,7 +122,7 @@ namespace DataLayer
         public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
             CosineKittyEquitorialConverter<HorizontalStar> starConverter = new CosineKittyEquitorialConverter<HorizontalStar>(latitude, longitude, localUserTime);
-            await Task.Factory.StartNew(() =>
+            await  Task.Factory.StartNew(() =>
             {
                 foreach (var item in equitorialStars)
                 {
@@ -138,7 +138,7 @@ namespace DataLayer
                 horizontalStars.CompleteAdding();
             });
 
-            await Task.Factory.StartNew(() =>
+            await  Task.Factory.StartNew(() =>
             {
                 CosineKittyEquitorialConverter<HorizontalMessierObject> converter = new CosineKittyEquitorialConverter<HorizontalMessierObject>(latitude, longitude, localUserTime);
                 foreach (var item in equitorialMessierObjects)
@@ -170,6 +170,7 @@ namespace DataLayer
                     constellationStars.TryAdd(star.HipparcosId ?? -1, star);
                 }
             });
+
             return new CelestialDataPackage<T>(horizontalStars, horizontalMessierObjects,constellations, constellationStars, new ConcurrentDictionary<int, T>());
             
         }
