@@ -213,4 +213,3 @@ label_settings = SubResource("LabelSettings_pw72o")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
-[connection signal="pressed" from="Button5/Button" to="Button5/Button" method="OnButtonPressed"]
