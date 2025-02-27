@@ -6,4 +6,10 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>NewGameProject</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scenes\" />
+  </ItemGroup>
 </Project>
