@@ -24,7 +24,6 @@ namespace DataLayer
         private readonly IEnumerable<EquitorialMessierObject> equitorialMessierObjects;
 
         private readonly BlockingCollection<HorizontalStar> horizontalStars;
-        private readonly BlockingCollection<HorizontalConstellation> horizontalConstellations;
         private readonly BlockingCollection<HorizontalMessierObject> horizontalMessierObjects;
         private ConcurrentDictionary<int, HorizontalStar> constellationStars { get;  }
 
