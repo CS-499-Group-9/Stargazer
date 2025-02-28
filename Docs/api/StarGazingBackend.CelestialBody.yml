@@ -1,0 +1,786 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.CelestialBody
+  commentId: T:StarGazingBackend.CelestialBody
+  id: CelestialBody
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.CelestialBody.#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})
+  - StarGazingBackend.CelestialBody.AbsoluteMagnitude
+  - StarGazingBackend.CelestialBody.Altitude
+  - StarGazingBackend.CelestialBody.Azimuth
+  - StarGazingBackend.CelestialBody.BodyId
+  - StarGazingBackend.CelestialBody.ColorIndex
+  - StarGazingBackend.CelestialBody.Distance
+  - StarGazingBackend.CelestialBody.Magnitude
+  - StarGazingBackend.CelestialBody.Name
+  - StarGazingBackend.CelestialBody.Spectrum
+  - StarGazingBackend.CelestialBody.ToString
+  langs:
+  - csharp
+  - vb
+  name: CelestialBody
+  nameWithType: CelestialBody
+  fullName: StarGazingBackend.CelestialBody
+  type: Class
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: CelestialBody
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 7
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public class CelestialBody
+    content.vb: Public Class CelestialBody
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: StarGazingBackend.CelestialBody.BodyId
+  commentId: P:StarGazingBackend.CelestialBody.BodyId
+  id: BodyId
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: BodyId
+  nameWithType: CelestialBody.BodyId
+  fullName: StarGazingBackend.CelestialBody.BodyId
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: BodyId
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 9
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public int BodyId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property BodyId As Integer
+  overload: StarGazingBackend.CelestialBody.BodyId*
+- uid: StarGazingBackend.CelestialBody.Altitude
+  commentId: P:StarGazingBackend.CelestialBody.Altitude
+  id: Altitude
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Altitude
+  nameWithType: CelestialBody.Altitude
+  fullName: StarGazingBackend.CelestialBody.Altitude
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Altitude
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 10
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Altitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Altitude As Double
+  overload: StarGazingBackend.CelestialBody.Altitude*
+- uid: StarGazingBackend.CelestialBody.Azimuth
+  commentId: P:StarGazingBackend.CelestialBody.Azimuth
+  id: Azimuth
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Azimuth
+  nameWithType: CelestialBody.Azimuth
+  fullName: StarGazingBackend.CelestialBody.Azimuth
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Azimuth
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 11
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Azimuth { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Azimuth As Double
+  overload: StarGazingBackend.CelestialBody.Azimuth*
+- uid: StarGazingBackend.CelestialBody.Name
+  commentId: P:StarGazingBackend.CelestialBody.Name
+  id: Name
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CelestialBody.Name
+  fullName: StarGazingBackend.CelestialBody.Name
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Name
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 12
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string? Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: StarGazingBackend.CelestialBody.Name*
+- uid: StarGazingBackend.CelestialBody.Distance
+  commentId: P:StarGazingBackend.CelestialBody.Distance
+  id: Distance
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Distance
+  nameWithType: CelestialBody.Distance
+  fullName: StarGazingBackend.CelestialBody.Distance
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Distance
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 13
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Distance { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Distance As Double
+  overload: StarGazingBackend.CelestialBody.Distance*
+- uid: StarGazingBackend.CelestialBody.Magnitude
+  commentId: P:StarGazingBackend.CelestialBody.Magnitude
+  id: Magnitude
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Magnitude
+  nameWithType: CelestialBody.Magnitude
+  fullName: StarGazingBackend.CelestialBody.Magnitude
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Magnitude
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 14
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double? Magnitude { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public ReadOnly Property Magnitude As Double?
+  overload: StarGazingBackend.CelestialBody.Magnitude*
+- uid: StarGazingBackend.CelestialBody.AbsoluteMagnitude
+  commentId: P:StarGazingBackend.CelestialBody.AbsoluteMagnitude
+  id: AbsoluteMagnitude
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: AbsoluteMagnitude
+  nameWithType: CelestialBody.AbsoluteMagnitude
+  fullName: StarGazingBackend.CelestialBody.AbsoluteMagnitude
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: AbsoluteMagnitude
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 15
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double? AbsoluteMagnitude { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public ReadOnly Property AbsoluteMagnitude As Double?
+  overload: StarGazingBackend.CelestialBody.AbsoluteMagnitude*
+- uid: StarGazingBackend.CelestialBody.Spectrum
+  commentId: P:StarGazingBackend.CelestialBody.Spectrum
+  id: Spectrum
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: Spectrum
+  nameWithType: CelestialBody.Spectrum
+  fullName: StarGazingBackend.CelestialBody.Spectrum
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Spectrum
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 16
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string? Spectrum { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Spectrum As String
+  overload: StarGazingBackend.CelestialBody.Spectrum*
+- uid: StarGazingBackend.CelestialBody.ColorIndex
+  commentId: P:StarGazingBackend.CelestialBody.ColorIndex
+  id: ColorIndex
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: ColorIndex
+  nameWithType: CelestialBody.ColorIndex
+  fullName: StarGazingBackend.CelestialBody.ColorIndex
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: ColorIndex
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 17
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double? ColorIndex { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public ReadOnly Property ColorIndex As Double?
+  overload: StarGazingBackend.CelestialBody.ColorIndex*
+- uid: StarGazingBackend.CelestialBody.#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})
+  commentId: M:StarGazingBackend.CelestialBody.#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})
+  id: '#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})'
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
+  nameWithType: CelestialBody.CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
+  fullName: StarGazingBackend.CelestialBody.CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
+  type: Constructor
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: .ctor
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 19
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public CelestialBody(int bodyId, double altitude, double azimuth, string? name, double distance, double? magnitude, double? absoluteMagnitude, string? spectrum, double? colorIndex)
+    parameters:
+    - id: bodyId
+      type: System.Int32
+    - id: altitude
+      type: System.Double
+    - id: azimuth
+      type: System.Double
+    - id: name
+      type: System.String
+    - id: distance
+      type: System.Double
+    - id: magnitude
+      type: System.Nullable{System.Double}
+    - id: absoluteMagnitude
+      type: System.Nullable{System.Double}
+    - id: spectrum
+      type: System.String
+    - id: colorIndex
+      type: System.Nullable{System.Double}
+    content.vb: Public Sub New(bodyId As Integer, altitude As Double, azimuth As Double, name As String, distance As Double, magnitude As Double?, absoluteMagnitude As Double?, spectrum As String, colorIndex As Double?)
+  overload: StarGazingBackend.CelestialBody.#ctor*
+  nameWithType.vb: CelestialBody.New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
+  fullName.vb: StarGazingBackend.CelestialBody.New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
+  name.vb: New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
+- uid: StarGazingBackend.CelestialBody.ToString
+  commentId: M:StarGazingBackend.CelestialBody.ToString
+  id: ToString
+  parent: StarGazingBackend.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: CelestialBody.ToString()
+  fullName: StarGazingBackend.CelestialBody.ToString()
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/CelestialBody.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: ToString
+    path: ../../Sandbox/StarGazingBackend/CelestialBody.cs
+    startLine: 32
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  summary: Returns a string that represents the current object.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current object.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: StarGazingBackend.CelestialBody.ToString*
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StarGazingBackend.CelestialBody.BodyId*
+  commentId: Overload:StarGazingBackend.CelestialBody.BodyId
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_BodyId
+  name: BodyId
+  nameWithType: CelestialBody.BodyId
+  fullName: StarGazingBackend.CelestialBody.BodyId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: StarGazingBackend.CelestialBody.Altitude*
+  commentId: Overload:StarGazingBackend.CelestialBody.Altitude
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Altitude
+  name: Altitude
+  nameWithType: CelestialBody.Altitude
+  fullName: StarGazingBackend.CelestialBody.Altitude
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: StarGazingBackend.CelestialBody.Azimuth*
+  commentId: Overload:StarGazingBackend.CelestialBody.Azimuth
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Azimuth
+  name: Azimuth
+  nameWithType: CelestialBody.Azimuth
+  fullName: StarGazingBackend.CelestialBody.Azimuth
+- uid: StarGazingBackend.CelestialBody.Name*
+  commentId: Overload:StarGazingBackend.CelestialBody.Name
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Name
+  name: Name
+  nameWithType: CelestialBody.Name
+  fullName: StarGazingBackend.CelestialBody.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: StarGazingBackend.CelestialBody.Distance*
+  commentId: Overload:StarGazingBackend.CelestialBody.Distance
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Distance
+  name: Distance
+  nameWithType: CelestialBody.Distance
+  fullName: StarGazingBackend.CelestialBody.Distance
+- uid: StarGazingBackend.CelestialBody.Magnitude*
+  commentId: Overload:StarGazingBackend.CelestialBody.Magnitude
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Magnitude
+  name: Magnitude
+  nameWithType: CelestialBody.Magnitude
+  fullName: StarGazingBackend.CelestialBody.Magnitude
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: StarGazingBackend.CelestialBody.AbsoluteMagnitude*
+  commentId: Overload:StarGazingBackend.CelestialBody.AbsoluteMagnitude
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_AbsoluteMagnitude
+  name: AbsoluteMagnitude
+  nameWithType: CelestialBody.AbsoluteMagnitude
+  fullName: StarGazingBackend.CelestialBody.AbsoluteMagnitude
+- uid: StarGazingBackend.CelestialBody.Spectrum*
+  commentId: Overload:StarGazingBackend.CelestialBody.Spectrum
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Spectrum
+  name: Spectrum
+  nameWithType: CelestialBody.Spectrum
+  fullName: StarGazingBackend.CelestialBody.Spectrum
+- uid: StarGazingBackend.CelestialBody.ColorIndex*
+  commentId: Overload:StarGazingBackend.CelestialBody.ColorIndex
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ColorIndex
+  name: ColorIndex
+  nameWithType: CelestialBody.ColorIndex
+  fullName: StarGazingBackend.CelestialBody.ColorIndex
+- uid: StarGazingBackend.CelestialBody.#ctor*
+  commentId: Overload:StarGazingBackend.CelestialBody.#ctor
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody__ctor_System_Int32_System_Double_System_Double_System_String_System_Double_System_Nullable_System_Double__System_Nullable_System_Double__System_String_System_Nullable_System_Double__
+  name: CelestialBody
+  nameWithType: CelestialBody.CelestialBody
+  fullName: StarGazingBackend.CelestialBody.CelestialBody
+  nameWithType.vb: CelestialBody.New
+  fullName.vb: StarGazingBackend.CelestialBody.New
+  name.vb: New
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: StarGazingBackend.CelestialBody.ToString*
+  commentId: Overload:StarGazingBackend.CelestialBody.ToString
+  href: StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ToString
+  name: ToString
+  nameWithType: CelestialBody.ToString
+  fullName: StarGazingBackend.CelestialBody.ToString

@@ -1,0 +1,472 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.CsvMessierRepository
+  commentId: T:StarGazingBackend.CsvMessierRepository
+  id: CsvMessierRepository
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.CsvMessierRepository.GetAll
+  langs:
+  - csharp
+  - vb
+  name: CsvMessierRepository
+  nameWithType: CsvMessierRepository
+  fullName: StarGazingBackend.CsvMessierRepository
+  type: Class
+  source:
+    remote:
+      path: StarGazingBackend/CsvMessierRepository.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: CsvMessierRepository
+    path: ../../Sandbox/StarGazingBackend/CsvMessierRepository.cs
+    startLine: 11
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: 'public class CsvMessierRepository : IMessierRepository'
+    content.vb: Public Class CsvMessierRepository Implements IMessierRepository
+  inheritance:
+  - System.Object
+  implements:
+  - StarGazingBackend.IMessierRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StarGazingBackend.CsvMessierRepository.GetAll
+  commentId: M:StarGazingBackend.CsvMessierRepository.GetAll
+  id: GetAll
+  parent: StarGazingBackend.CsvMessierRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAll()
+  nameWithType: CsvMessierRepository.GetAll()
+  fullName: StarGazingBackend.CsvMessierRepository.GetAll()
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/CsvMessierRepository.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: GetAll
+    path: ../../Sandbox/StarGazingBackend/CsvMessierRepository.cs
+    startLine: 13
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  example: []
+  syntax:
+    content: public Task<IEnumerable<IConvertableObject<MessierObject>>> GetAll()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{StarGazingBackend.IConvertableObject{StarGazingBackend.MessierObject}}}
+    content.vb: Public Function GetAll() As Task(Of IEnumerable(Of IConvertableObject(Of MessierObject)))
+  overload: StarGazingBackend.CsvMessierRepository.GetAll*
+  implements:
+  - StarGazingBackend.IMessierRepository.GetAll
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: StarGazingBackend.IMessierRepository
+  commentId: T:StarGazingBackend.IMessierRepository
+  parent: StarGazingBackend
+  href: StarGazingBackend.IMessierRepository.html
+  name: IMessierRepository
+  nameWithType: IMessierRepository
+  fullName: StarGazingBackend.IMessierRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StarGazingBackend.CsvMessierRepository.GetAll*
+  commentId: Overload:StarGazingBackend.CsvMessierRepository.GetAll
+  href: StarGazingBackend.CsvMessierRepository.html#StarGazingBackend_CsvMessierRepository_GetAll
+  name: GetAll
+  nameWithType: CsvMessierRepository.GetAll
+  fullName: StarGazingBackend.CsvMessierRepository.GetAll
+- uid: StarGazingBackend.IMessierRepository.GetAll
+  commentId: M:StarGazingBackend.IMessierRepository.GetAll
+  parent: StarGazingBackend.IMessierRepository
+  href: StarGazingBackend.IMessierRepository.html#StarGazingBackend_IMessierRepository_GetAll
+  name: GetAll()
+  nameWithType: IMessierRepository.GetAll()
+  fullName: StarGazingBackend.IMessierRepository.GetAll()
+  spec.csharp:
+  - uid: StarGazingBackend.IMessierRepository.GetAll
+    name: GetAll
+    href: StarGazingBackend.IMessierRepository.html#StarGazingBackend_IMessierRepository_GetAll
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: StarGazingBackend.IMessierRepository.GetAll
+    name: GetAll
+    href: StarGazingBackend.IMessierRepository.html#StarGazingBackend_IMessierRepository_GetAll
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{StarGazingBackend.IConvertableObject{StarGazingBackend.MessierObject}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{StarGazingBackend.IConvertableObject{StarGazingBackend.MessierObject}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<IConvertableObject<MessierObject>>>
+  nameWithType: Task<IEnumerable<IConvertableObject<MessierObject>>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<StarGazingBackend.IConvertableObject<StarGazingBackend.MessierObject>>>
+  nameWithType.vb: Task(Of IEnumerable(Of IConvertableObject(Of MessierObject)))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of StarGazingBackend.IConvertableObject(Of StarGazingBackend.MessierObject)))
+  name.vb: Task(Of IEnumerable(Of IConvertableObject(Of MessierObject)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: <
+  - uid: StarGazingBackend.MessierObject
+    name: MessierObject
+    href: StarGazingBackend.MessierObject.html
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.MessierObject
+    name: MessierObject
+    href: StarGazingBackend.MessierObject.html
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

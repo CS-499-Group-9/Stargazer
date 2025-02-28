@@ -6,6 +6,11 @@ using DataLayer.Implementations;
 
 namespace DataLayer
 {
+    /// <summary>
+    /// Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
+    /// </summary>
+    /// <typeparam name="T">The class type of the star to be drawn by the front end. 
+    /// This is needed for the internal logic of the <see cref="CelestialDataPackage{T}"/></typeparam>
     public class StargazerRepositoryService<T>
     {
         const double maxStarMagnitude = 6;
@@ -37,6 +42,13 @@ namespace DataLayer
             constellationStars = new ConcurrentDictionary<int, HorizontalStar>();
         }
 
+        /// <summary>
+        /// Asynchronously creates a new instance of <c>StargazerRepositoryService</c>
+        /// </summary>
+        /// <param name="starRepository">Used to access a repository of Yale Stars</param>
+        /// <param name="constellationRepository">Used to access a repository of constellations identified by the HIP ID</param>
+        /// <param name="messierRepository">Used to access a repository of Messier Deep Space Objects</param>
+        /// <returns>A new <c>StargazerRepositoryService</c> object.</returns>
         public static async Task<StargazerRepositoryService<T>> CreateAsync(
             IStarRepository starRepository,
             IConstellationRepository constellationRepository,
@@ -110,6 +122,13 @@ namespace DataLayer
             return constellationStars;
         }
 
+        /// <summary>
+        /// Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data.
+        /// </summary>
+        /// <param name="latitude">The latitude of the observer (-90 &lt;= value &lt;= 90)</param>
+        /// <param name="longitude">The longitude of the observer (-90 &lt;= value &lt;= 90)</param>
+        /// <param name="localUserTime">The observer time in Universal TimeCode <code cref="DateTime.ToUniversalTime()">new DateTime(year, month, day, hour, min, sec).ToUniversalTime()</code></param>
+        /// <returns>A package containing all data required for display. (This call should be made in an <c>async</c> method using the <c>await</c> keyword)</returns>
         public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
             CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);

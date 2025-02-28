@@ -1,0 +1,212 @@
+{
+  "api/DataLayer.CelestialDataPackage-1.html": {
+    "href": "api/DataLayer.CelestialDataPackage-1.html",
+    "title": "Class CelestialDataPackage<T> | Stargazer Data API",
+    "summary": "Class CelestialDataPackage<T> Namespace DataLayer Assembly DataLayer.dll Encapsulates all data returned in the Horizontal Coordinate system from the DataLayer needed by the front end to display astronomical objects. public class CelestialDataPackage<T> Type Parameters T The class type of star that is used in the database Inheritance object CelestialDataPackage<T> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Constellations A collection of Constellations to be displayed. public IEnumerable<Constellation> Constellations { get; } Property Value IEnumerable<Constellation> MessierObjects A collection of Messier Deep Space Objects in the Horizontal Coordinate form to be displayed. while(!MessierObjects.IsCompleted) { foreach(var star in MessierObjects.GetConsumingEnumerable() { //Convert and display } } public BlockingCollection<HorizontalMessierObject> MessierObjects { get; } Property Value BlockingCollection<HorizontalMessierObject> Stars A collection of stars in the Horizontal Coordinate form to be displayed. while(!Stars.IsCompleted) { foreach(var star in Stars.GetConsumingEnumerable() { //Convert and display } } public BlockingCollection<HorizontalStar> Stars { get; } Property Value BlockingCollection<HorizontalStar> Methods GetConstellationStar(int, Func<HorizontalStar, T>) Searches the dictionary for a HorizontalStar using the Hip ID provided. If found, converts it to a T star, stores it and returns it. If not found, retrieves it from the dictionary of stars already converted and returns it. public T GetConstellationStar(int hipId, Func<HorizontalStar, T> SpawnStar) Parameters hipId int The Hipparcos Id of the star SpawnStar Func<HorizontalStar, T> The function provided to spawn a new star in the graphic scene. Must take a HorizontalStar as and argument and return a T star Returns T Exceptions KeyNotFoundException"
+  },
+  "api/DataLayer.EquatorialObjects.Constellation.html": {
+    "href": "api/DataLayer.EquatorialObjects.Constellation.html",
+    "title": "Class Constellation | Stargazer Data API",
+    "summary": "Class Constellation Namespace DataLayer.EquatorialObjects Assembly DataLayer.dll public class Constellation Inheritance object Constellation Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors Constellation(string, string, string?) public Constellation(string Id, string name, string? nativeName) Parameters Id string name string nativeName string Properties ConstellationId public string? ConstellationId { get; } Property Value string ConstellationLines public IEnumerable<Tuple<int, int>> ConstellationLines { get; } Property Value IEnumerable<Tuple<int, int>> ConstellationName public string? ConstellationName { get; } Property Value string"
+  },
+  "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html": {
+    "href": "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html",
+    "title": "Class EquatorialCelestialBody | Stargazer Data API",
+    "summary": "Class EquatorialCelestialBody Namespace DataLayer.EquatorialObjects Assembly DataLayer.dll public abstract class EquatorialCelestialBody Inheritance object EquatorialCelestialBody Derived EquatorialMessierObject EquatorialStar Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Declination public double Declination { get; set; } Property Value double Distance public double Distance { get; set; } Property Value double Magnitude public double Magnitude { get; set; } Property Value double RightAscension public double RightAscension { get; set; } Property Value double"
+  },
+  "api/DataLayer.EquatorialObjects.EquatorialMessierObject.html": {
+    "href": "api/DataLayer.EquatorialObjects.EquatorialMessierObject.html",
+    "title": "Class EquatorialMessierObject | Stargazer Data API",
+    "summary": "Class EquatorialMessierObject Namespace DataLayer.EquatorialObjects Assembly DataLayer.dll public class EquatorialMessierObject : EquatorialCelestialBody Inheritance object EquatorialCelestialBody EquatorialMessierObject Inherited Members EquatorialCelestialBody.RightAscension EquatorialCelestialBody.Declination EquatorialCelestialBody.Magnitude EquatorialCelestialBody.Distance object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Constellation public string? Constellation { get; set; } Property Value string MessierId public string? MessierId { get; set; } Property Value string NewGeneralCatalog public string? NewGeneralCatalog { get; set; } Property Value string Size public string? Size { get; set; } Property Value string Type public string? Type { get; set; } Property Value string ViewingDifficulty public string? ViewingDifficulty { get; set; } Property Value string ViewingSeason public string? ViewingSeason { get; set; } Property Value string"
+  },
+  "api/DataLayer.EquatorialObjects.EquatorialStar.html": {
+    "href": "api/DataLayer.EquatorialObjects.EquatorialStar.html",
+    "title": "Class EquatorialStar | Stargazer Data API",
+    "summary": "Class EquatorialStar Namespace DataLayer.EquatorialObjects Assembly DataLayer.dll public class EquatorialStar : EquatorialCelestialBody Inheritance object EquatorialCelestialBody EquatorialStar Inherited Members EquatorialCelestialBody.RightAscension EquatorialCelestialBody.Declination EquatorialCelestialBody.Magnitude EquatorialCelestialBody.Distance object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties AbsoluteMagnitude public double AbsoluteMagnitude { get; set; } Property Value double BayerFlamsteedDesignation public string? BayerFlamsteedDesignation { get; set; } Property Value string ColorIndex public double? ColorIndex { get; set; } Property Value double? GlieseId public string? GlieseId { get; set; } Property Value string HarvardRevisedId public int? HarvardRevisedId { get; set; } Property Value int? HenryDraperId public int? HenryDraperId { get; set; } Property Value int? HipparcosId public int? HipparcosId { get; set; } Property Value int? InConstellation public bool InConstellation { get; set; } Property Value bool ProperName public string? ProperName { get; set; } Property Value string Spectrum public string? Spectrum { get; set; } Property Value string StarId public int StarId { get; set; } Property Value int"
+  },
+  "api/DataLayer.EquatorialObjects.html": {
+    "href": "api/DataLayer.EquatorialObjects.html",
+    "title": "Namespace DataLayer.EquatorialObjects | Stargazer Data API",
+    "summary": "Namespace DataLayer.EquatorialObjects Classes Constellation EquatorialCelestialBody EquatorialMessierObject EquatorialStar"
+  },
+  "api/DataLayer.HorizontalObjects.HorizontalBody.html": {
+    "href": "api/DataLayer.HorizontalObjects.HorizontalBody.html",
+    "title": "Class HorizontalBody | Stargazer Data API",
+    "summary": "Class HorizontalBody Namespace DataLayer.HorizontalObjects Assembly DataLayer.dll public abstract class HorizontalBody Inheritance object HorizontalBody Derived HorizontalMessierObject HorizontalStar Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Altitude public double Altitude { get; } Property Value double Azimuth public double Azimuth { get; } Property Value double Distance public double Distance { get; } Property Value double Magnitude public double Magnitude { get; } Property Value double"
+  },
+  "api/DataLayer.HorizontalObjects.HorizontalMessierObject.html": {
+    "href": "api/DataLayer.HorizontalObjects.HorizontalMessierObject.html",
+    "title": "Class HorizontalMessierObject | Stargazer Data API",
+    "summary": "Class HorizontalMessierObject Namespace DataLayer.HorizontalObjects Assembly DataLayer.dll public class HorizontalMessierObject : HorizontalBody Inheritance object HorizontalBody HorizontalMessierObject Inherited Members HorizontalBody.Altitude HorizontalBody.Azimuth HorizontalBody.Magnitude HorizontalBody.Distance object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Constellation public string? Constellation { get; } Property Value string MessierId public string? MessierId { get; } Property Value string NewGeneralCatalog public string? NewGeneralCatalog { get; } Property Value string Size public string? Size { get; } Property Value string Type public string? Type { get; } Property Value string ViewingDifficulty public string? ViewingDifficulty { get; } Property Value string ViewingSeason public string? ViewingSeason { get; } Property Value string"
+  },
+  "api/DataLayer.HorizontalObjects.HorizontalStar.html": {
+    "href": "api/DataLayer.HorizontalObjects.HorizontalStar.html",
+    "title": "Class HorizontalStar | Stargazer Data API",
+    "summary": "Class HorizontalStar Namespace DataLayer.HorizontalObjects Assembly DataLayer.dll public class HorizontalStar : HorizontalBody Inheritance object HorizontalBody HorizontalStar Inherited Members HorizontalBody.Altitude HorizontalBody.Azimuth HorizontalBody.Magnitude HorizontalBody.Distance object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties AbsoluteMagnitude public double? AbsoluteMagnitude { get; } Property Value double? ColorIndex public double? ColorIndex { get; } Property Value double? HipparcosId public int? HipparcosId { get; } Property Value int? Spectrum public string? Spectrum { get; } Property Value string StarId public int StarId { get; } Property Value int StarName public string? StarName { get; } Property Value string"
+  },
+  "api/DataLayer.HorizontalObjects.html": {
+    "href": "api/DataLayer.HorizontalObjects.html",
+    "title": "Namespace DataLayer.HorizontalObjects | Stargazer Data API",
+    "summary": "Namespace DataLayer.HorizontalObjects Classes HorizontalBody HorizontalMessierObject HorizontalStar"
+  },
+  "api/DataLayer.InjectionService-1.html": {
+    "href": "api/DataLayer.InjectionService-1.html",
+    "title": "Class InjectionService<T> | Stargazer Data API",
+    "summary": "Class InjectionService<T> Namespace DataLayer Assembly DataLayer.dll Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors. Registers all classes to be injected into constructors to avoid hard coding into descendant classes. public static class InjectionService<T> Type Parameters T The class that instantiates the star in the front end. Inheritance object InjectionService<T> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods GetRepositoryServiceAsync(string) Used to asynchronously instantiate the repository service. This should be called in an async method using the await keyword. public static Task<StargazerRepositoryService<T>> GetRepositoryServiceAsync(string baseDirectoryPath) Parameters baseDirectoryPath string The base path of the executing application. (Used to find the location of the repositories in DataLayer/Repositories) Returns Task<StargazerRepositoryService<T>> A new StargazerRepositoryService instance. Exceptions DirectoryNotFoundException If the base directory of the executing program cannot be found."
+  },
+  "api/DataLayer.Interfaces.IConstellationRepository.html": {
+    "href": "api/DataLayer.Interfaces.IConstellationRepository.html",
+    "title": "Interface IConstellationRepository | Stargazer Data API",
+    "summary": "Interface IConstellationRepository Namespace DataLayer.Interfaces Assembly DataLayer.dll public interface IConstellationRepository"
+  },
+  "api/DataLayer.Interfaces.IEquatorialConverter-1.html": {
+    "href": "api/DataLayer.Interfaces.IEquatorialConverter-1.html",
+    "title": "Interface IEquatorialConverter<T> | Stargazer Data API",
+    "summary": "Interface IEquatorialConverter<T> Namespace DataLayer.Interfaces Assembly DataLayer.dll public interface IEquatorialConverter<T> where T : HorizontalBody, new() Type Parameters T Properties Converter Func<EquatorialCelestialBody, T> Converter { get; } Property Value Func<EquatorialCelestialBody, T>"
+  },
+  "api/DataLayer.Interfaces.IMessierRepository.html": {
+    "href": "api/DataLayer.Interfaces.IMessierRepository.html",
+    "title": "Interface IMessierRepository | Stargazer Data API",
+    "summary": "Interface IMessierRepository Namespace DataLayer.Interfaces Assembly DataLayer.dll public interface IMessierRepository Methods GetRawMessierObjectsAsync() Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync() Returns Task<IEnumerable<EquatorialMessierObject>>"
+  },
+  "api/DataLayer.Interfaces.IStarRepository.html": {
+    "href": "api/DataLayer.Interfaces.IStarRepository.html",
+    "title": "Interface IStarRepository | Stargazer Data API",
+    "summary": "Interface IStarRepository Namespace DataLayer.Interfaces Assembly DataLayer.dll public interface IStarRepository Methods GetAllStarsAsync(double) Task<IList<EquatorialStar>> GetAllStarsAsync(double maximumMagnitude) Parameters maximumMagnitude double Returns Task<IList<EquatorialStar>> GetStarByHipAsync(int) Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId) Parameters hipparcosId int Returns Task<EquatorialStar>"
+  },
+  "api/DataLayer.Interfaces.html": {
+    "href": "api/DataLayer.Interfaces.html",
+    "title": "Namespace DataLayer.Interfaces | Stargazer Data API",
+    "summary": "Namespace DataLayer.Interfaces Interfaces IConstellationRepository IEquatorialConverter<T> IMessierRepository IStarRepository"
+  },
+  "api/DataLayer.StargazerRepositoryService-1.html": {
+    "href": "api/DataLayer.StargazerRepositoryService-1.html",
+    "title": "Class StargazerRepositoryService<T> | Stargazer Data API",
+    "summary": "Class StargazerRepositoryService<T> Namespace DataLayer Assembly DataLayer.dll Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values. public class StargazerRepositoryService<T> Type Parameters T The class type of the star to be drawn by the front end. This is needed for the internal logic of the CelestialDataPackage<T> Inheritance object StargazerRepositoryService<T> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository) Asynchronously creates a new instance of StargazerRepositoryService public static Task<StargazerRepositoryService<T>> CreateAsync(IStarRepository starRepository, IConstellationRepository constellationRepository, IMessierRepository messierRepository) Parameters starRepository IStarRepository Used to access a repository of Yale Stars constellationRepository IConstellationRepository Used to access a repository of constellations identified by the HIP ID messierRepository IMessierRepository Used to access a repository of Messier Deep Space Objects Returns Task<StargazerRepositoryService<T>> A new StargazerRepositoryService object. UpdateUserPosition(double, double, DateTime) Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data. public Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime) Parameters latitude double The latitude of the observer (-90 <= value <= 90) longitude double The longitude of the observer (-90 <= value <= 90) localUserTime DateTime The observer time in Universal TimeCode new DateTime(year, month, day, hour, min, sec).ToUniversalTime() Returns Task<CelestialDataPackage<T>> A package containing all data required for display. (This call should be made in an async method using the await keyword)"
+  },
+  "api/DataLayer.html": {
+    "href": "api/DataLayer.html",
+    "title": "Namespace DataLayer | Stargazer Data API",
+    "summary": "Namespace DataLayer Classes CelestialDataPackage<T> Encapsulates all data returned in the Horizontal Coordinate system from the DataLayer needed by the front end to display astronomical objects. InjectionService<T> Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors. Registers all classes to be injected into constructors to avoid hard coding into descendant classes. StargazerRepositoryService<T> Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values."
+  },
+  "api/StarGazingBackend.CelestialBody.html": {
+    "href": "api/StarGazingBackend.CelestialBody.html",
+    "title": "Class CelestialBody | Stargazer Data API",
+    "summary": "Class CelestialBody Namespace StarGazingBackend Assembly StarGazingBackend.dll public class CelestialBody Inheritance object CelestialBody Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Constructors CelestialBody(int, double, double, string?, double, double?, double?, string?, double?) public CelestialBody(int bodyId, double altitude, double azimuth, string? name, double distance, double? magnitude, double? absoluteMagnitude, string? spectrum, double? colorIndex) Parameters bodyId int altitude double azimuth double name string distance double magnitude double? absoluteMagnitude double? spectrum string colorIndex double? Properties AbsoluteMagnitude public double? AbsoluteMagnitude { get; } Property Value double? Altitude public double Altitude { get; } Property Value double Azimuth public double Azimuth { get; } Property Value double BodyId public int BodyId { get; } Property Value int ColorIndex public double? ColorIndex { get; } Property Value double? Distance public double Distance { get; } Property Value double Magnitude public double? Magnitude { get; } Property Value double? Name public string? Name { get; } Property Value string Spectrum public string? Spectrum { get; } Property Value string Methods ToString() Returns a string that represents the current object. public override string ToString() Returns string A string that represents the current object."
+  },
+  "api/StarGazingBackend.CelestialConverter.html": {
+    "href": "api/StarGazingBackend.CelestialConverter.html",
+    "title": "Class CelestialConverter | Stargazer Data API",
+    "summary": "Class CelestialConverter Namespace StarGazingBackend Assembly StarGazingBackend.dll public static class CelestialConverter Inheritance object CelestialConverter Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ToLocalSiderealTime(DateTime, double) public static double ToLocalSiderealTime(DateTime localDateTime, double longitude) Parameters localDateTime DateTime longitude double Returns double"
+  },
+  "api/StarGazingBackend.Constellation.html": {
+    "href": "api/StarGazingBackend.Constellation.html",
+    "title": "Class Constellation | Stargazer Data API",
+    "summary": "Class Constellation Namespace StarGazingBackend Assembly StarGazingBackend.dll public class Constellation Inheritance object Constellation Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties ConstellationId public string? ConstellationId { get; set; } Property Value string"
+  },
+  "api/StarGazingBackend.ConstellationStarNode.html": {
+    "href": "api/StarGazingBackend.ConstellationStarNode.html",
+    "title": "Class ConstellationStarNode | Stargazer Data API",
+    "summary": "Class ConstellationStarNode Namespace StarGazingBackend Assembly StarGazingBackend.dll public class ConstellationStarNode Inheritance object ConstellationStarNode Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors ConstellationStarNode(IConvertableStar<CelestialBody>) public ConstellationStarNode(IConvertableStar<CelestialBody> star) Parameters star IConvertableStar<CelestialBody> Fields branchNodes public IList<ConstellationStarNode> branchNodes Field Value IList<ConstellationStarNode> Properties Star public CelestialBody? Star { get; set; } Property Value CelestialBody rawStar public IConvertableStar<CelestialBody> rawStar { get; set; } Property Value IConvertableStar<CelestialBody>"
+  },
+  "api/StarGazingBackend.ConstellationStarTree.html": {
+    "href": "api/StarGazingBackend.ConstellationStarTree.html",
+    "title": "Class ConstellationStarTree | Stargazer Data API",
+    "summary": "Class ConstellationStarTree Namespace StarGazingBackend Assembly StarGazingBackend.dll public class ConstellationStarTree Inheritance object ConstellationStarTree Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors ConstellationStarTree(IEnumerable<object>, IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>) public ConstellationStarTree(IEnumerable<object> starList, IList<IConvertableStar<CelestialBody>> rawStars, Dictionary<int, IConvertableStar<CelestialBody>> starsToDelete) Parameters starList IEnumerable<object> rawStars IList<IConvertableStar<CelestialBody>> starsToDelete Dictionary<int, IConvertableStar<CelestialBody>> Properties RootStar public ConstellationStarNode? RootStar { get; set; } Property Value ConstellationStarNode"
+  },
+  "api/StarGazingBackend.CsvMessierRepository.html": {
+    "href": "api/StarGazingBackend.CsvMessierRepository.html",
+    "title": "Class CsvMessierRepository | Stargazer Data API",
+    "summary": "Class CsvMessierRepository Namespace StarGazingBackend Assembly StarGazingBackend.dll public class CsvMessierRepository : IMessierRepository Inheritance object CsvMessierRepository Implements IMessierRepository Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods GetAll() public Task<IEnumerable<IConvertableObject<MessierObject>>> GetAll() Returns Task<IEnumerable<IConvertableObject<MessierObject>>>"
+  },
+  "api/StarGazingBackend.IConstellationRepository.html": {
+    "href": "api/StarGazingBackend.IConstellationRepository.html",
+    "title": "Interface IConstellationRepository | Stargazer Data API",
+    "summary": "Interface IConstellationRepository Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IConstellationRepository Methods GetAll() Task<IList<IConvertableConstellation<Constellation>>> GetAll() Returns Task<IList<IConvertableConstellation<Constellation>>>"
+  },
+  "api/StarGazingBackend.IConvertableConstellation-1.html": {
+    "href": "api/StarGazingBackend.IConvertableConstellation-1.html",
+    "title": "Interface IConvertableConstellation<T> | Stargazer Data API",
+    "summary": "Interface IConvertableConstellation<T> Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IConvertableConstellation<T> : IConvertableObject<T> Type Parameters T Inherited Members IConvertableObject<T>.Convert(Observer, AstroTime) Methods BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>) void BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>> rawStars, Dictionary<int, IConvertableStar<CelestialBody>> starsToDelete) Parameters rawStars IList<IConvertableStar<CelestialBody>> starsToDelete Dictionary<int, IConvertableStar<CelestialBody>>"
+  },
+  "api/StarGazingBackend.IConvertableObject-1.html": {
+    "href": "api/StarGazingBackend.IConvertableObject-1.html",
+    "title": "Interface IConvertableObject<T> | Stargazer Data API",
+    "summary": "Interface IConvertableObject<T> Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IConvertableObject<T> Type Parameters T Methods Convert(Observer, AstroTime) T Convert(Observer observer, AstroTime astroTime) Parameters observer Observer astroTime AstroTime Returns T"
+  },
+  "api/StarGazingBackend.IConvertableStar-1.html": {
+    "href": "api/StarGazingBackend.IConvertableStar-1.html",
+    "title": "Interface IConvertableStar<T> | Stargazer Data API",
+    "summary": "Interface IConvertableStar<T> Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IConvertableStar<T> : IConvertableObject<T> Type Parameters T Inherited Members IConvertableObject<T>.Convert(Observer, AstroTime) Methods HipEquals(int) bool HipEquals(int Id) Parameters Id int Returns bool StarIdEquals(int) bool StarIdEquals(int Id) Parameters Id int Returns bool"
+  },
+  "api/StarGazingBackend.IMessierRepository.html": {
+    "href": "api/StarGazingBackend.IMessierRepository.html",
+    "title": "Interface IMessierRepository | Stargazer Data API",
+    "summary": "Interface IMessierRepository Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IMessierRepository Methods GetAll() Task<IEnumerable<IConvertableObject<MessierObject>>> GetAll() Returns Task<IEnumerable<IConvertableObject<MessierObject>>>"
+  },
+  "api/StarGazingBackend.IStarRepository.html": {
+    "href": "api/StarGazingBackend.IStarRepository.html",
+    "title": "Interface IStarRepository | Stargazer Data API",
+    "summary": "Interface IStarRepository Namespace StarGazingBackend Assembly StarGazingBackend.dll public interface IStarRepository Methods GetAll() Task<IList<IConvertableStar<CelestialBody>>> GetAll() Returns Task<IList<IConvertableStar<CelestialBody>>>"
+  },
+  "api/StarGazingBackend.InjectionService.html": {
+    "href": "api/StarGazingBackend.InjectionService.html",
+    "title": "Class InjectionService | Stargazer Data API",
+    "summary": "Class InjectionService Namespace StarGazingBackend Assembly StarGazingBackend.dll public static class InjectionService Inheritance object InjectionService Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods GetServiceProvider() public static ServiceProvider GetServiceProvider() Returns ServiceProvider"
+  },
+  "api/StarGazingBackend.JsonConstellationRepository.html": {
+    "href": "api/StarGazingBackend.JsonConstellationRepository.html",
+    "title": "Class JsonConstellationRepository | Stargazer Data API",
+    "summary": "Class JsonConstellationRepository Namespace StarGazingBackend Assembly StarGazingBackend.dll public class JsonConstellationRepository : IConstellationRepository Inheritance object JsonConstellationRepository Implements IConstellationRepository Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods GetAll() public Task<IList<IConvertableConstellation<Constellation>>> GetAll() Returns Task<IList<IConvertableConstellation<Constellation>>>"
+  },
+  "api/StarGazingBackend.MessierObject.html": {
+    "href": "api/StarGazingBackend.MessierObject.html",
+    "title": "Class MessierObject | Stargazer Data API",
+    "summary": "Class MessierObject Namespace StarGazingBackend Assembly StarGazingBackend.dll public class MessierObject Inheritance object MessierObject Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors MessierObject(string, double, double, string, string?, double, string?, int, string, string) public MessierObject(string messierId, double altitude, double azimuth, string type, string? constellation, double magnitude, string? size, int distance, string viewingSeason, string viewingDifficulty) Parameters messierId string altitude double azimuth double type string constellation string magnitude double size string distance int viewingSeason string viewingDifficulty string Properties Altitude public double Altitude { get; set; } Property Value double Azimuth public double Azimuth { get; set; } Property Value double Constellation public string? Constellation { get; set; } Property Value string Distance public int Distance { get; set; } Property Value int Magnitude public double Magnitude { get; set; } Property Value double MessierId public string MessierId { get; set; } Property Value string Size public string? Size { get; set; } Property Value string Type public string Type { get; set; } Property Value string ViewingDifficulty public string ViewingDifficulty { get; set; } Property Value string ViewingSeason public string ViewingSeason { get; set; } Property Value string"
+  },
+  "api/StarGazingBackend.NullableIntConverter.html": {
+    "href": "api/StarGazingBackend.NullableIntConverter.html",
+    "title": "Class NullableIntConverter | Stargazer Data API",
+    "summary": "Class NullableIntConverter Namespace StarGazingBackend Assembly StarGazingBackend.dll public class NullableIntConverter : DefaultTypeConverter, ITypeConverter Inheritance object DefaultTypeConverter NullableIntConverter Implements ITypeConverter Inherited Members DefaultTypeConverter.ConvertToString(object, IWriterRow, MemberMapData) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods ConvertFromString(string?, IReaderRow, MemberMapData) Converts the string to an object. public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData) Parameters text string The string to convert to an object. row IReaderRow The CsvHelper.IReaderRow for the current record. memberMapData MemberMapData The CsvHelper.Configuration.MemberMapData for the member being created. Returns object The object created from the string."
+  },
+  "api/StarGazingBackend.RawConstellation.ConstellationName.html": {
+    "href": "api/StarGazingBackend.RawConstellation.ConstellationName.html",
+    "title": "Class RawConstellation.ConstellationName | Stargazer Data API",
+    "summary": "Class RawConstellation.ConstellationName Namespace StarGazingBackend Assembly StarGazingBackend.dll public class RawConstellation.ConstellationName Inheritance object RawConstellation.ConstellationName Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties English [JsonProperty(\"english\")] public string? English { get; set; } Property Value string Native [JsonProperty(\"native\")] public string? Native { get; set; } Property Value string"
+  },
+  "api/StarGazingBackend.RawConstellation.html": {
+    "href": "api/StarGazingBackend.RawConstellation.html",
+    "title": "Class RawConstellation | Stargazer Data API",
+    "summary": "Class RawConstellation Namespace StarGazingBackend Assembly StarGazingBackend.dll public class RawConstellation : IConvertableConstellation<Constellation>, IConvertableObject<Constellation> Inheritance object RawConstellation Implements IConvertableConstellation<Constellation> IConvertableObject<Constellation> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Properties CommonName [JsonProperty(\"common_name\")] public RawConstellation.ConstellationName? CommonName { get; set; } Property Value RawConstellation.ConstellationName Id [JsonProperty(\"id\")] public string Id { get; set; } Property Value string Lines [JsonProperty(\"lines\")] public JArray Lines { get; set; } Property Value JArray StarTree public ConstellationStarTree StarTree { get; } Property Value ConstellationStarTree Methods BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>) public void BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>> rawStars, Dictionary<int, IConvertableStar<CelestialBody>> starsToDelete) Parameters rawStars IList<IConvertableStar<CelestialBody>> starsToDelete Dictionary<int, IConvertableStar<CelestialBody>> Convert(Observer, AstroTime) public Constellation Convert(Observer observer, AstroTime astroTime) Parameters observer Observer astroTime AstroTime Returns Constellation ToString() Returns a string that represents the current object. public override string? ToString() Returns string A string that represents the current object."
+  },
+  "api/StarGazingBackend.RawConstellationList.html": {
+    "href": "api/StarGazingBackend.RawConstellationList.html",
+    "title": "Class RawConstellationList | Stargazer Data API",
+    "summary": "Class RawConstellationList Namespace StarGazingBackend Assembly StarGazingBackend.dll public class RawConstellationList Inheritance object RawConstellationList Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Constellations public List<RawConstellation>? Constellations { get; set; } Property Value List<RawConstellation> Methods GetConvertableConstellations() public List<IConvertableConstellation<Constellation>> GetConvertableConstellations() Returns List<IConvertableConstellation<Constellation>>"
+  },
+  "api/StarGazingBackend.RawMessierObject.html": {
+    "href": "api/StarGazingBackend.RawMessierObject.html",
+    "title": "Class RawMessierObject | Stargazer Data API",
+    "summary": "Class RawMessierObject Namespace StarGazingBackend Assembly StarGazingBackend.dll public class RawMessierObject : IConvertableObject<MessierObject> Inheritance object RawMessierObject Implements IConvertableObject<MessierObject> Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Properties Constellation [Name(\"CONS\")] public string? Constellation { get; set; } Property Value string Declination public double? Declination { get; } Property Value double? DeclinationDMS [Name(\"DEC\")] public string? DeclinationDMS { get; set; } Property Value string Distance [Name(\"DIST (ly)\")] public double? Distance { get; set; } Property Value double? Magnitude [Name(\"MAG\")] public double? Magnitude { get; set; } Property Value double? NewGeneralCatalog [Name(\"NGC\")] public string? NewGeneralCatalog { get; set; } Property Value string ObjectId [Name(\"M\")] public string? ObjectId { get; set; } Property Value string RightAscention public double? RightAscention { get; } Property Value double? RightAscentionDMS [Name(\"RA\")] public string? RightAscentionDMS { get; set; } Property Value string Size [Name(\"SIZE\")] public string? Size { get; set; } Property Value string Type [Name(\"TYPE\")] public string? Type { get; set; } Property Value string ViewingDifficulty [Name(\"VIEWING DIFFICULTY\")] public string? ViewingDifficulty { get; set; } Property Value string ViewingSeason [Name(\"VIEWING SEASON\")] public string? ViewingSeason { get; set; } Property Value string Methods Convert(Observer, AstroTime) public MessierObject Convert(Observer observer, AstroTime astroTime) Parameters observer Observer astroTime AstroTime Returns MessierObject"
+  },
+  "api/StarGazingBackend.html": {
+    "href": "api/StarGazingBackend.html",
+    "title": "Namespace StarGazingBackend | Stargazer Data API",
+    "summary": "Namespace StarGazingBackend Classes CelestialBody CelestialConverter Constellation ConstellationStarNode ConstellationStarTree CsvMessierRepository InjectionService JsonConstellationRepository MessierObject NullableIntConverter RawConstellation RawConstellation.ConstellationName RawConstellationList RawMessierObject Interfaces IConstellationRepository IConvertableConstellation<T> IConvertableObject<T> IConvertableStar<T> IMessierRepository IStarRepository"
+  },
+  "getting-started.html": {
+    "href": "getting-started.html",
+    "title": "Getting Started | Stargazer Data API",
+    "summary": "Getting Started"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE. | Stargazer Data API",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  },
+  "introduction.html": {
+    "href": "introduction.html",
+    "title": "Introduction | Stargazer Data API",
+    "summary": "Introduction This API describes how to use the DataLayer of the Stargazer application. Initially, all methods required to use the service will be provided. Eventually, all internal logic will be documented as well."
+  }
+}

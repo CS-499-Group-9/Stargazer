@@ -1,0 +1,735 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.MessierObject
+  commentId: T:StarGazingBackend.MessierObject
+  id: MessierObject
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.MessierObject.#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)
+  - StarGazingBackend.MessierObject.Altitude
+  - StarGazingBackend.MessierObject.Azimuth
+  - StarGazingBackend.MessierObject.Constellation
+  - StarGazingBackend.MessierObject.Distance
+  - StarGazingBackend.MessierObject.Magnitude
+  - StarGazingBackend.MessierObject.MessierId
+  - StarGazingBackend.MessierObject.Size
+  - StarGazingBackend.MessierObject.Type
+  - StarGazingBackend.MessierObject.ViewingDifficulty
+  - StarGazingBackend.MessierObject.ViewingSeason
+  langs:
+  - csharp
+  - vb
+  name: MessierObject
+  nameWithType: MessierObject
+  fullName: StarGazingBackend.MessierObject
+  type: Class
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: MessierObject
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 6
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public class MessierObject
+    content.vb: Public Class MessierObject
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: StarGazingBackend.MessierObject.MessierId
+  commentId: P:StarGazingBackend.MessierObject.MessierId
+  id: MessierId
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: MessierId
+  nameWithType: MessierObject.MessierId
+  fullName: StarGazingBackend.MessierObject.MessierId
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: MessierId
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 8
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string MessierId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MessierId As String
+  overload: StarGazingBackend.MessierObject.MessierId*
+- uid: StarGazingBackend.MessierObject.Altitude
+  commentId: P:StarGazingBackend.MessierObject.Altitude
+  id: Altitude
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Altitude
+  nameWithType: MessierObject.Altitude
+  fullName: StarGazingBackend.MessierObject.Altitude
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Altitude
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 9
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Altitude { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Altitude As Double
+  overload: StarGazingBackend.MessierObject.Altitude*
+- uid: StarGazingBackend.MessierObject.Azimuth
+  commentId: P:StarGazingBackend.MessierObject.Azimuth
+  id: Azimuth
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Azimuth
+  nameWithType: MessierObject.Azimuth
+  fullName: StarGazingBackend.MessierObject.Azimuth
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Azimuth
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 10
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Azimuth { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Azimuth As Double
+  overload: StarGazingBackend.MessierObject.Azimuth*
+- uid: StarGazingBackend.MessierObject.Type
+  commentId: P:StarGazingBackend.MessierObject.Type
+  id: Type
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: MessierObject.Type
+  fullName: StarGazingBackend.MessierObject.Type
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Type
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 11
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: StarGazingBackend.MessierObject.Type*
+- uid: StarGazingBackend.MessierObject.Constellation
+  commentId: P:StarGazingBackend.MessierObject.Constellation
+  id: Constellation
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Constellation
+  nameWithType: MessierObject.Constellation
+  fullName: StarGazingBackend.MessierObject.Constellation
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Constellation
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 12
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string? Constellation { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Constellation As String
+  overload: StarGazingBackend.MessierObject.Constellation*
+- uid: StarGazingBackend.MessierObject.Magnitude
+  commentId: P:StarGazingBackend.MessierObject.Magnitude
+  id: Magnitude
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Magnitude
+  nameWithType: MessierObject.Magnitude
+  fullName: StarGazingBackend.MessierObject.Magnitude
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Magnitude
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 13
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public double Magnitude { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Magnitude As Double
+  overload: StarGazingBackend.MessierObject.Magnitude*
+- uid: StarGazingBackend.MessierObject.Size
+  commentId: P:StarGazingBackend.MessierObject.Size
+  id: Size
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: MessierObject.Size
+  fullName: StarGazingBackend.MessierObject.Size
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Size
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 14
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string? Size { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Size As String
+  overload: StarGazingBackend.MessierObject.Size*
+- uid: StarGazingBackend.MessierObject.Distance
+  commentId: P:StarGazingBackend.MessierObject.Distance
+  id: Distance
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: Distance
+  nameWithType: MessierObject.Distance
+  fullName: StarGazingBackend.MessierObject.Distance
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Distance
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 15
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public int Distance { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Distance As Integer
+  overload: StarGazingBackend.MessierObject.Distance*
+- uid: StarGazingBackend.MessierObject.ViewingSeason
+  commentId: P:StarGazingBackend.MessierObject.ViewingSeason
+  id: ViewingSeason
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: ViewingSeason
+  nameWithType: MessierObject.ViewingSeason
+  fullName: StarGazingBackend.MessierObject.ViewingSeason
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: ViewingSeason
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 16
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string ViewingSeason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ViewingSeason As String
+  overload: StarGazingBackend.MessierObject.ViewingSeason*
+- uid: StarGazingBackend.MessierObject.ViewingDifficulty
+  commentId: P:StarGazingBackend.MessierObject.ViewingDifficulty
+  id: ViewingDifficulty
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: ViewingDifficulty
+  nameWithType: MessierObject.ViewingDifficulty
+  fullName: StarGazingBackend.MessierObject.ViewingDifficulty
+  type: Property
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: ViewingDifficulty
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 17
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public string ViewingDifficulty { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ViewingDifficulty As String
+  overload: StarGazingBackend.MessierObject.ViewingDifficulty*
+- uid: StarGazingBackend.MessierObject.#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)
+  commentId: M:StarGazingBackend.MessierObject.#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)
+  id: '#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)'
+  parent: StarGazingBackend.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: MessierObject(string, double, double, string, string?, double, string?, int, string, string)
+  nameWithType: MessierObject.MessierObject(string, double, double, string, string?, double, string?, int, string, string)
+  fullName: StarGazingBackend.MessierObject.MessierObject(string, double, double, string, string?, double, string?, int, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: StarGazingBackend/MessierObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: .ctor
+    path: ../../Sandbox/StarGazingBackend/MessierObject.cs
+    startLine: 19
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public MessierObject(string messierId, double altitude, double azimuth, string type, string? constellation, double magnitude, string? size, int distance, string viewingSeason, string viewingDifficulty)
+    parameters:
+    - id: messierId
+      type: System.String
+    - id: altitude
+      type: System.Double
+    - id: azimuth
+      type: System.Double
+    - id: type
+      type: System.String
+    - id: constellation
+      type: System.String
+    - id: magnitude
+      type: System.Double
+    - id: size
+      type: System.String
+    - id: distance
+      type: System.Int32
+    - id: viewingSeason
+      type: System.String
+    - id: viewingDifficulty
+      type: System.String
+    content.vb: Public Sub New(messierId As String, altitude As Double, azimuth As Double, type As String, constellation As String, magnitude As Double, size As String, distance As Integer, viewingSeason As String, viewingDifficulty As String)
+  overload: StarGazingBackend.MessierObject.#ctor*
+  nameWithType.vb: MessierObject.New(String, Double, Double, String, String, Double, String, Integer, String, String)
+  fullName.vb: StarGazingBackend.MessierObject.New(String, Double, Double, String, String, Double, String, Integer, String, String)
+  name.vb: New(String, Double, Double, String, String, Double, String, Integer, String, String)
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StarGazingBackend.MessierObject.MessierId*
+  commentId: Overload:StarGazingBackend.MessierObject.MessierId
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_MessierId
+  name: MessierId
+  nameWithType: MessierObject.MessierId
+  fullName: StarGazingBackend.MessierObject.MessierId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: StarGazingBackend.MessierObject.Altitude*
+  commentId: Overload:StarGazingBackend.MessierObject.Altitude
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Altitude
+  name: Altitude
+  nameWithType: MessierObject.Altitude
+  fullName: StarGazingBackend.MessierObject.Altitude
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: StarGazingBackend.MessierObject.Azimuth*
+  commentId: Overload:StarGazingBackend.MessierObject.Azimuth
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Azimuth
+  name: Azimuth
+  nameWithType: MessierObject.Azimuth
+  fullName: StarGazingBackend.MessierObject.Azimuth
+- uid: StarGazingBackend.MessierObject.Type*
+  commentId: Overload:StarGazingBackend.MessierObject.Type
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Type
+  name: Type
+  nameWithType: MessierObject.Type
+  fullName: StarGazingBackend.MessierObject.Type
+- uid: StarGazingBackend.MessierObject.Constellation*
+  commentId: Overload:StarGazingBackend.MessierObject.Constellation
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Constellation
+  name: Constellation
+  nameWithType: MessierObject.Constellation
+  fullName: StarGazingBackend.MessierObject.Constellation
+- uid: StarGazingBackend.MessierObject.Magnitude*
+  commentId: Overload:StarGazingBackend.MessierObject.Magnitude
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Magnitude
+  name: Magnitude
+  nameWithType: MessierObject.Magnitude
+  fullName: StarGazingBackend.MessierObject.Magnitude
+- uid: StarGazingBackend.MessierObject.Size*
+  commentId: Overload:StarGazingBackend.MessierObject.Size
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Size
+  name: Size
+  nameWithType: MessierObject.Size
+  fullName: StarGazingBackend.MessierObject.Size
+- uid: StarGazingBackend.MessierObject.Distance*
+  commentId: Overload:StarGazingBackend.MessierObject.Distance
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Distance
+  name: Distance
+  nameWithType: MessierObject.Distance
+  fullName: StarGazingBackend.MessierObject.Distance
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: StarGazingBackend.MessierObject.ViewingSeason*
+  commentId: Overload:StarGazingBackend.MessierObject.ViewingSeason
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingSeason
+  name: ViewingSeason
+  nameWithType: MessierObject.ViewingSeason
+  fullName: StarGazingBackend.MessierObject.ViewingSeason
+- uid: StarGazingBackend.MessierObject.ViewingDifficulty*
+  commentId: Overload:StarGazingBackend.MessierObject.ViewingDifficulty
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingDifficulty
+  name: ViewingDifficulty
+  nameWithType: MessierObject.ViewingDifficulty
+  fullName: StarGazingBackend.MessierObject.ViewingDifficulty
+- uid: StarGazingBackend.MessierObject.#ctor*
+  commentId: Overload:StarGazingBackend.MessierObject.#ctor
+  href: StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject__ctor_System_String_System_Double_System_Double_System_String_System_String_System_Double_System_String_System_Int32_System_String_System_String_
+  name: MessierObject
+  nameWithType: MessierObject.MessierObject
+  fullName: StarGazingBackend.MessierObject.MessierObject
+  nameWithType.vb: MessierObject.New
+  fullName.vb: StarGazingBackend.MessierObject.New
+  name.vb: New

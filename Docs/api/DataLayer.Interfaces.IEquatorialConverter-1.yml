@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IEquatorialConverter`1
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
+  id: IEquatorialConverter`1
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IEquatorialConverter`1.Converter
+  langs:
+  - csharp
+  - vb
+  name: IEquatorialConverter<T>
+  nameWithType: IEquatorialConverter<T>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: IEquatorialConverter
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 6
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: 'public interface IEquatorialConverter<T> where T : HorizontalBody, new()'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IEquatorialConverter(Of T As {HorizontalBody, New})
+  nameWithType.vb: IEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  name.vb: IEquatorialConverter(Of T)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Converter
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Converter
+  id: Converter
+  parent: DataLayer.Interfaces.IEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: Converter
+  nameWithType: IEquatorialConverter<T>.Converter
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Converter
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: Converter
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 9
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: Func<EquatorialCelestialBody, T> Converter { get; }
+    parameters: []
+    return:
+      type: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+    content.vb: ReadOnly Property Converter As Func(Of EquatorialCelestialBody, T)
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.Converter*
+  nameWithType.vb: IEquatorialConverter(Of T).Converter
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Converter
+references:
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Converter*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Converter
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Converter
+  name: Converter
+  nameWithType: IEquatorialConverter<T>.Converter
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Converter
+  nameWithType.vb: IEquatorialConverter(Of T).Converter
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Converter
+- uid: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+  commentId: T:System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<EquatorialCelestialBody, T>
+  nameWithType: Func<EquatorialCelestialBody, T>
+  fullName: System.Func<DataLayer.EquatorialObjects.EquatorialCelestialBody, T>
+  nameWithType.vb: Func(Of EquatorialCelestialBody, T)
+  fullName.vb: System.Func(Of DataLayer.EquatorialObjects.EquatorialCelestialBody, T)
+  name.vb: Func(Of EquatorialCelestialBody, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,284 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.IConvertableStar`1
+  commentId: T:StarGazingBackend.IConvertableStar`1
+  id: IConvertableStar`1
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.IConvertableStar`1.HipEquals(System.Int32)
+  - StarGazingBackend.IConvertableStar`1.StarIdEquals(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: IConvertableStar<T>
+  nameWithType: IConvertableStar<T>
+  fullName: StarGazingBackend.IConvertableStar<T>
+  type: Interface
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableStar.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: IConvertableStar
+    path: ../../Sandbox/StarGazingBackend/IConvertableStar.cs
+    startLine: 7
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: 'public interface IConvertableStar<T> : IConvertableObject<T>'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IConvertableStar(Of T) Inherits IConvertableObject(Of T)
+  inheritedMembers:
+  - StarGazingBackend.IConvertableObject{{T}}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableStar(Of T)
+  fullName.vb: StarGazingBackend.IConvertableStar(Of T)
+  name.vb: IConvertableStar(Of T)
+- uid: StarGazingBackend.IConvertableStar`1.HipEquals(System.Int32)
+  commentId: M:StarGazingBackend.IConvertableStar`1.HipEquals(System.Int32)
+  id: HipEquals(System.Int32)
+  parent: StarGazingBackend.IConvertableStar`1
+  langs:
+  - csharp
+  - vb
+  name: HipEquals(int)
+  nameWithType: IConvertableStar<T>.HipEquals(int)
+  fullName: StarGazingBackend.IConvertableStar<T>.HipEquals(int)
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableStar.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: HipEquals
+    path: ../../Sandbox/StarGazingBackend/IConvertableStar.cs
+    startLine: 10
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: bool HipEquals(int Id)
+    parameters:
+    - id: Id
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Function HipEquals(Id As Integer) As Boolean
+  overload: StarGazingBackend.IConvertableStar`1.HipEquals*
+  nameWithType.vb: IConvertableStar(Of T).HipEquals(Integer)
+  fullName.vb: StarGazingBackend.IConvertableStar(Of T).HipEquals(Integer)
+  name.vb: HipEquals(Integer)
+- uid: StarGazingBackend.IConvertableStar`1.StarIdEquals(System.Int32)
+  commentId: M:StarGazingBackend.IConvertableStar`1.StarIdEquals(System.Int32)
+  id: StarIdEquals(System.Int32)
+  parent: StarGazingBackend.IConvertableStar`1
+  langs:
+  - csharp
+  - vb
+  name: StarIdEquals(int)
+  nameWithType: IConvertableStar<T>.StarIdEquals(int)
+  fullName: StarGazingBackend.IConvertableStar<T>.StarIdEquals(int)
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableStar.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: StarIdEquals
+    path: ../../Sandbox/StarGazingBackend/IConvertableStar.cs
+    startLine: 13
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: bool StarIdEquals(int Id)
+    parameters:
+    - id: Id
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Function StarIdEquals(Id As Integer) As Boolean
+  overload: StarGazingBackend.IConvertableStar`1.StarIdEquals*
+  nameWithType.vb: IConvertableStar(Of T).StarIdEquals(Integer)
+  fullName.vb: StarGazingBackend.IConvertableStar(Of T).StarIdEquals(Integer)
+  name.vb: StarIdEquals(Integer)
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: StarGazingBackend.IConvertableObject{{T}}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  commentId: M:StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  parent: StarGazingBackend.IConvertableObject{{T}}
+  definition: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  name: Convert(Observer, AstroTime)
+  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+- uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  commentId: M:StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  isExternal: true
+  href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  name: Convert(Observer, AstroTime)
+  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+- uid: StarGazingBackend.IConvertableObject{{T}}
+  commentId: T:StarGazingBackend.IConvertableObject{`0}
+  parent: StarGazingBackend
+  definition: StarGazingBackend.IConvertableObject`1
+  href: StarGazingBackend.IConvertableObject-1.html
+  name: IConvertableObject<T>
+  nameWithType: IConvertableObject<T>
+  fullName: StarGazingBackend.IConvertableObject<T>
+  nameWithType.vb: IConvertableObject(Of T)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
+  name.vb: IConvertableObject(Of T)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: StarGazingBackend.IConvertableObject`1
+  commentId: T:StarGazingBackend.IConvertableObject`1
+  href: StarGazingBackend.IConvertableObject-1.html
+  name: IConvertableObject<T>
+  nameWithType: IConvertableObject<T>
+  fullName: StarGazingBackend.IConvertableObject<T>
+  nameWithType.vb: IConvertableObject(Of T)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
+  name.vb: IConvertableObject(Of T)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: StarGazingBackend.IConvertableStar`1.HipEquals*
+  commentId: Overload:StarGazingBackend.IConvertableStar`1.HipEquals
+  href: StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_HipEquals_System_Int32_
+  name: HipEquals
+  nameWithType: IConvertableStar<T>.HipEquals
+  fullName: StarGazingBackend.IConvertableStar<T>.HipEquals
+  nameWithType.vb: IConvertableStar(Of T).HipEquals
+  fullName.vb: StarGazingBackend.IConvertableStar(Of T).HipEquals
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StarGazingBackend.IConvertableStar`1.StarIdEquals*
+  commentId: Overload:StarGazingBackend.IConvertableStar`1.StarIdEquals
+  href: StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_StarIdEquals_System_Int32_
+  name: StarIdEquals
+  nameWithType: IConvertableStar<T>.StarIdEquals
+  fullName: StarGazingBackend.IConvertableStar<T>.StarIdEquals
+  nameWithType.vb: IConvertableStar(Of T).StarIdEquals
+  fullName.vb: StarGazingBackend.IConvertableStar(Of T).StarIdEquals

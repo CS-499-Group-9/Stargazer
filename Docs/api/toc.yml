@@ -1,0 +1,61 @@
+### YamlMime:TableOfContent
+items:
+- uid: DataLayer
+  name: DataLayer
+  type: Namespace
+  items:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage<T>
+    type: Class
+  - uid: DataLayer.InjectionService`1
+    name: InjectionService<T>
+    type: Class
+  - uid: DataLayer.StargazerRepositoryService`1
+    name: StargazerRepositoryService<T>
+    type: Class
+- uid: DataLayer.EquatorialObjects
+  name: DataLayer.EquatorialObjects
+  type: Namespace
+  items:
+  - uid: DataLayer.EquatorialObjects.Constellation
+    name: Constellation
+    type: Class
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    type: Class
+  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+    name: EquatorialMessierObject
+    type: Class
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    type: Class
+- uid: DataLayer.HorizontalObjects
+  name: DataLayer.HorizontalObjects
+  type: Namespace
+  items:
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    type: Class
+  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
+    name: HorizontalMessierObject
+    type: Class
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    type: Class
+- uid: DataLayer.Interfaces
+  name: DataLayer.Interfaces
+  type: Namespace
+  items:
+  - uid: DataLayer.Interfaces.IConstellationRepository
+    name: IConstellationRepository
+    type: Interface
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter<T>
+    type: Interface
+  - uid: DataLayer.Interfaces.IMessierRepository
+    name: IMessierRepository
+    type: Interface
+  - uid: DataLayer.Interfaces.IStarRepository
+    name: IStarRepository
+    type: Interface
+memberLayout: SamePage

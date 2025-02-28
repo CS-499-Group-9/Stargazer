@@ -1,0 +1,115 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.IConvertableObject`1
+  commentId: T:StarGazingBackend.IConvertableObject`1
+  id: IConvertableObject`1
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  langs:
+  - csharp
+  - vb
+  name: IConvertableObject<T>
+  nameWithType: IConvertableObject<T>
+  fullName: StarGazingBackend.IConvertableObject<T>
+  type: Interface
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: IConvertableObject
+    path: ../../Sandbox/StarGazingBackend/IConvertableObject.cs
+    startLine: 9
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public interface IConvertableObject<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IConvertableObject(Of T)
+  nameWithType.vb: IConvertableObject(Of T)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
+  name.vb: IConvertableObject(Of T)
+- uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  commentId: M:StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  id: Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  parent: StarGazingBackend.IConvertableObject`1
+  langs:
+  - csharp
+  - vb
+  name: Convert(Observer, AstroTime)
+  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableObject.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: Convert
+    path: ../../Sandbox/StarGazingBackend/IConvertableObject.cs
+    startLine: 12
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: T Convert(Observer observer, AstroTime astroTime)
+    parameters:
+    - id: observer
+      type: CosineKitty.Observer
+    - id: astroTime
+      type: CosineKitty.AstroTime
+    return:
+      type: '{T}'
+    content.vb: Function Convert(observer As Observer, astroTime As AstroTime) As T
+  overload: StarGazingBackend.IConvertableObject`1.Convert*
+  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: StarGazingBackend.IConvertableObject`1.Convert*
+  commentId: Overload:StarGazingBackend.IConvertableObject`1.Convert
+  href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  name: Convert
+  nameWithType: IConvertableObject<T>.Convert
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert
+  nameWithType.vb: IConvertableObject(Of T).Convert
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert
+- uid: CosineKitty.Observer
+  commentId: T:CosineKitty.Observer
+  parent: CosineKitty
+  isExternal: true
+  name: Observer
+  nameWithType: Observer
+  fullName: CosineKitty.Observer
+- uid: CosineKitty.AstroTime
+  commentId: T:CosineKitty.AstroTime
+  parent: CosineKitty
+  isExternal: true
+  name: AstroTime
+  nameWithType: AstroTime
+  fullName: CosineKitty.AstroTime
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CosineKitty
+  commentId: N:CosineKitty
+  isExternal: true
+  name: CosineKitty
+  nameWithType: CosineKitty
+  fullName: CosineKitty
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T

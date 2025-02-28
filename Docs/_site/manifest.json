@@ -1,0 +1,621 @@
+{
+  "source_base_path": "C:/Users/joshj/source/repos/CS-499-Group-9/Stargazer/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.CelestialDataPackage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.CelestialDataPackage-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.CelestialDataPackage<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.CelestialDataPackage-1.yml\" sourcestartlinenumber=\"1\">Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.Constellation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.Constellation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.Constellation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialCelestialBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialMessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialMessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialMessierObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialStar",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalMessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalMessierObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalStar",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.InjectionService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.InjectionService-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.InjectionService<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.InjectionService-1.yml\" sourcestartlinenumber=\"1\">Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.\nRegisters all classes to be injected into constructors to avoid hard coding into descendant classes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IConstellationRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IConstellationRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IConstellationRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IEquatorialConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IEquatorialConverter-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IEquatorialConverter<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IMessierRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IMessierRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IMessierRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IStarRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IStarRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IStarRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.StargazerRepositoryService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.StargazerRepositoryService-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.StargazerRepositoryService<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.StargazerRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.CelestialBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.CelestialBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.CelestialBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.CelestialConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.CelestialConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.CelestialConverter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.Constellation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.Constellation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.Constellation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.ConstellationStarNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.ConstellationStarNode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.ConstellationStarNode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.ConstellationStarTree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.ConstellationStarTree.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.ConstellationStarTree",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.CsvMessierRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.CsvMessierRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.CsvMessierRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IConstellationRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IConstellationRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IConstellationRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IConvertableConstellation-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IConvertableConstellation-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IConvertableConstellation<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IConvertableObject-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IConvertableObject-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IConvertableObject<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IConvertableStar-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IConvertableStar-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IConvertableStar<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IMessierRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IMessierRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IMessierRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.IStarRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.IStarRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.IStarRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.InjectionService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.InjectionService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.InjectionService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.JsonConstellationRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.JsonConstellationRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.JsonConstellationRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.MessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.MessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.MessierObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.NullableIntConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.NullableIntConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.NullableIntConverter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.RawConstellation.ConstellationName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.RawConstellation.ConstellationName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.RawConstellation.ConstellationName",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.RawConstellation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.RawConstellation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.RawConstellation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.RawConstellationList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.RawConstellationList.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.RawConstellationList",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.RawMessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.RawMessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend.RawMessierObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/StarGazingBackend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/StarGazingBackend.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "StarGazingBackend",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

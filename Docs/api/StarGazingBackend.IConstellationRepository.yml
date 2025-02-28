@@ -1,0 +1,194 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.IConstellationRepository
+  commentId: T:StarGazingBackend.IConstellationRepository
+  id: IConstellationRepository
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.IConstellationRepository.GetAll
+  langs:
+  - csharp
+  - vb
+  name: IConstellationRepository
+  nameWithType: IConstellationRepository
+  fullName: StarGazingBackend.IConstellationRepository
+  type: Interface
+  source:
+    remote:
+      path: StarGazingBackend/IConstellationRepository.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: IConstellationRepository
+    path: ../../Sandbox/StarGazingBackend/IConstellationRepository.cs
+    startLine: 6
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: public interface IConstellationRepository
+    content.vb: Public Interface IConstellationRepository
+- uid: StarGazingBackend.IConstellationRepository.GetAll
+  commentId: M:StarGazingBackend.IConstellationRepository.GetAll
+  id: GetAll
+  parent: StarGazingBackend.IConstellationRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAll()
+  nameWithType: IConstellationRepository.GetAll()
+  fullName: StarGazingBackend.IConstellationRepository.GetAll()
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/IConstellationRepository.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: GetAll
+    path: ../../Sandbox/StarGazingBackend/IConstellationRepository.cs
+    startLine: 10
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: Task<IList<IConvertableConstellation<Constellation>>> GetAll()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
+    content.vb: Function GetAll() As Task(Of IList(Of IConvertableConstellation(Of Constellation)))
+  overload: StarGazingBackend.IConstellationRepository.GetAll*
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: StarGazingBackend.IConstellationRepository.GetAll*
+  commentId: Overload:StarGazingBackend.IConstellationRepository.GetAll
+  href: StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll
+  name: GetAll
+  nameWithType: IConstellationRepository.GetAll
+  fullName: StarGazingBackend.IConstellationRepository.GetAll
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IList<IConvertableConstellation<Constellation>>>
+  nameWithType: Task<IList<IConvertableConstellation<Constellation>>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<StarGazingBackend.IConvertableConstellation<StarGazingBackend.Constellation>>>
+  nameWithType.vb: Task(Of IList(Of IConvertableConstellation(Of Constellation)))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of StarGazingBackend.IConvertableConstellation(Of StarGazingBackend.Constellation)))
+  name.vb: Task(Of IList(Of IConvertableConstellation(Of Constellation)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: StarGazingBackend.IConvertableConstellation`1
+    name: IConvertableConstellation
+    href: StarGazingBackend.IConvertableConstellation-1.html
+  - name: <
+  - uid: StarGazingBackend.Constellation
+    name: Constellation
+    href: StarGazingBackend.Constellation.html
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.IConvertableConstellation`1
+    name: IConvertableConstellation
+    href: StarGazingBackend.IConvertableConstellation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.Constellation
+    name: Constellation
+    href: StarGazingBackend.Constellation.html
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

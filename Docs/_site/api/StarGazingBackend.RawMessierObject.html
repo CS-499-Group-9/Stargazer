@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class RawMessierObject | Stargazer Data API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RawMessierObject | Stargazer Data API ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Sandbox/new/producer-consumer-pattern/apiSpec/new?filename=StarGazingBackend_RawMessierObject.md&amp;value=---%0Auid%3A%20StarGazingBackend.RawMessierObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Stargazer Data API">
+            Stargazer Data API
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="StarGazingBackend.RawMessierObject">
+
+
+
+  <h1 id="StarGazingBackend_RawMessierObject" data-uid="StarGazingBackend.RawMessierObject" class="text-break">
+Class RawMessierObject  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="StarGazingBackend.html">StarGazingBackend</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>StarGazingBackend.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RawMessierObject : IConvertableObject&lt;MessierObject&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">RawMessierObject</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="StarGazingBackend.IConvertableObject-1.html">IConvertableObject</a>&lt;<a class="xref" href="StarGazingBackend.MessierObject.html">MessierObject</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="StarGazingBackend_RawMessierObject_Constellation_" data-uid="StarGazingBackend.RawMessierObject.Constellation*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Constellation" data-uid="StarGazingBackend.RawMessierObject.Constellation">
+  Constellation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;CONS&quot;)]
+public string? Constellation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_Declination_" data-uid="StarGazingBackend.RawMessierObject.Declination*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Declination" data-uid="StarGazingBackend.RawMessierObject.Declination">
+  Declination
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? Declination { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_DeclinationDMS_" data-uid="StarGazingBackend.RawMessierObject.DeclinationDMS*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_DeclinationDMS" data-uid="StarGazingBackend.RawMessierObject.DeclinationDMS">
+  DeclinationDMS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;DEC&quot;)]
+public string? DeclinationDMS { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_Distance_" data-uid="StarGazingBackend.RawMessierObject.Distance*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Distance" data-uid="StarGazingBackend.RawMessierObject.Distance">
+  Distance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;DIST (ly)&quot;)]
+public double? Distance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_Magnitude_" data-uid="StarGazingBackend.RawMessierObject.Magnitude*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Magnitude" data-uid="StarGazingBackend.RawMessierObject.Magnitude">
+  Magnitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;MAG&quot;)]
+public double? Magnitude { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_NewGeneralCatalog_" data-uid="StarGazingBackend.RawMessierObject.NewGeneralCatalog*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_NewGeneralCatalog" data-uid="StarGazingBackend.RawMessierObject.NewGeneralCatalog">
+  NewGeneralCatalog
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;NGC&quot;)]
+public string? NewGeneralCatalog { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_ObjectId_" data-uid="StarGazingBackend.RawMessierObject.ObjectId*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_ObjectId" data-uid="StarGazingBackend.RawMessierObject.ObjectId">
+  ObjectId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;M&quot;)]
+public string? ObjectId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_RightAscention_" data-uid="StarGazingBackend.RawMessierObject.RightAscention*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_RightAscention" data-uid="StarGazingBackend.RawMessierObject.RightAscention">
+  RightAscention
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? RightAscention { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_RightAscentionDMS_" data-uid="StarGazingBackend.RawMessierObject.RightAscentionDMS*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_RightAscentionDMS" data-uid="StarGazingBackend.RawMessierObject.RightAscentionDMS">
+  RightAscentionDMS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;RA&quot;)]
+public string? RightAscentionDMS { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_Size_" data-uid="StarGazingBackend.RawMessierObject.Size*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Size" data-uid="StarGazingBackend.RawMessierObject.Size">
+  Size
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;SIZE&quot;)]
+public string? Size { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_Type_" data-uid="StarGazingBackend.RawMessierObject.Type*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Type" data-uid="StarGazingBackend.RawMessierObject.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;TYPE&quot;)]
+public string? Type { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_ViewingDifficulty_" data-uid="StarGazingBackend.RawMessierObject.ViewingDifficulty*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_ViewingDifficulty" data-uid="StarGazingBackend.RawMessierObject.ViewingDifficulty">
+  ViewingDifficulty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;VIEWING DIFFICULTY&quot;)]
+public string? ViewingDifficulty { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="StarGazingBackend_RawMessierObject_ViewingSeason_" data-uid="StarGazingBackend.RawMessierObject.ViewingSeason*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_ViewingSeason" data-uid="StarGazingBackend.RawMessierObject.ViewingSeason">
+  ViewingSeason
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Name(&quot;VIEWING SEASON&quot;)]
+public string? ViewingSeason { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="StarGazingBackend_RawMessierObject_Convert_" data-uid="StarGazingBackend.RawMessierObject.Convert*"></a>
+
+  <h3 id="StarGazingBackend_RawMessierObject_Convert_CosineKitty_Observer_CosineKitty_AstroTime_" data-uid="StarGazingBackend.RawMessierObject.Convert(CosineKitty.Observer,CosineKitty.AstroTime)">
+  Convert(Observer, AstroTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessierObject Convert(Observer observer, AstroTime astroTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>observer</code> <span class="xref">Observer</span></dt>
+    <dd></dd>
+    <dt><code>astroTime</code> <span class="xref">AstroTime</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="StarGazingBackend.MessierObject.html">MessierObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/RawMessierObject.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

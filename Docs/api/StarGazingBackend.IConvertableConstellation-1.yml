@@ -1,0 +1,413 @@
+### YamlMime:ManagedReference
+items:
+- uid: StarGazingBackend.IConvertableConstellation`1
+  commentId: T:StarGazingBackend.IConvertableConstellation`1
+  id: IConvertableConstellation`1
+  parent: StarGazingBackend
+  children:
+  - StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
+  langs:
+  - csharp
+  - vb
+  name: IConvertableConstellation<T>
+  nameWithType: IConvertableConstellation<T>
+  fullName: StarGazingBackend.IConvertableConstellation<T>
+  type: Interface
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableConstellation.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: IConvertableConstellation
+    path: ../../Sandbox/StarGazingBackend/IConvertableConstellation.cs
+    startLine: 9
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: 'public interface IConvertableConstellation<T> : IConvertableObject<T>'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IConvertableConstellation(Of T) Inherits IConvertableObject(Of T)
+  inheritedMembers:
+  - StarGazingBackend.IConvertableObject{{T}}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableConstellation(Of T)
+  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T)
+  name.vb: IConvertableConstellation(Of T)
+- uid: StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
+  commentId: M:StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
+  id: BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
+  parent: StarGazingBackend.IConvertableConstellation`1
+  langs:
+  - csharp
+  - vb
+  name: BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
+  nameWithType: IConvertableConstellation<T>.BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
+  fullName: StarGazingBackend.IConvertableConstellation<T>.BuildConstellationStarTree(System.Collections.Generic.IList<StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>, System.Collections.Generic.Dictionary<int, StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>)
+  type: Method
+  source:
+    remote:
+      path: StarGazingBackend/IConvertableConstellation.cs
+      branch: producer-consumer-pattern
+      repo: https://github.com/CS-499-Group-9/Sandbox
+    id: BuildConstellationStarTree
+    path: ../../Sandbox/StarGazingBackend/IConvertableConstellation.cs
+    startLine: 13
+  assemblies:
+  - StarGazingBackend
+  namespace: StarGazingBackend
+  syntax:
+    content: void BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>> rawStars, Dictionary<int, IConvertableStar<CelestialBody>> starsToDelete)
+    parameters:
+    - id: rawStars
+      type: System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+    - id: starsToDelete
+      type: System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+    content.vb: Sub BuildConstellationStarTree(rawStars As IList(Of IConvertableStar(Of CelestialBody)), starsToDelete As Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
+  overload: StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree*
+  nameWithType.vb: IConvertableConstellation(Of T).BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
+  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T).BuildConstellationStarTree(System.Collections.Generic.IList(Of StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)), System.Collections.Generic.Dictionary(Of Integer, StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)))
+  name.vb: BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
+references:
+- uid: StarGazingBackend
+  commentId: N:StarGazingBackend
+  href: StarGazingBackend.html
+  name: StarGazingBackend
+  nameWithType: StarGazingBackend
+  fullName: StarGazingBackend
+- uid: StarGazingBackend.IConvertableObject{{T}}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  commentId: M:StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  parent: StarGazingBackend.IConvertableObject{{T}}
+  definition: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  name: Convert(Observer, AstroTime)
+  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject{`0}.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+- uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  commentId: M:StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+  isExternal: true
+  href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  name: Convert(Observer, AstroTime)
+  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
+  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
+    name: Convert
+    href: StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
+  - name: (
+  - uid: CosineKitty.Observer
+    name: Observer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.AstroTime
+    name: AstroTime
+    isExternal: true
+  - name: )
+- uid: StarGazingBackend.IConvertableObject{{T}}
+  commentId: T:StarGazingBackend.IConvertableObject{`0}
+  parent: StarGazingBackend
+  definition: StarGazingBackend.IConvertableObject`1
+  href: StarGazingBackend.IConvertableObject-1.html
+  name: IConvertableObject<T>
+  nameWithType: IConvertableObject<T>
+  fullName: StarGazingBackend.IConvertableObject<T>
+  nameWithType.vb: IConvertableObject(Of T)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
+  name.vb: IConvertableObject(Of T)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: StarGazingBackend.IConvertableObject`1
+  commentId: T:StarGazingBackend.IConvertableObject`1
+  href: StarGazingBackend.IConvertableObject-1.html
+  name: IConvertableObject<T>
+  nameWithType: IConvertableObject<T>
+  fullName: StarGazingBackend.IConvertableObject<T>
+  nameWithType.vb: IConvertableObject(Of T)
+  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
+  name.vb: IConvertableObject(Of T)
+  spec.csharp:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: StarGazingBackend.IConvertableObject`1
+    name: IConvertableObject
+    href: StarGazingBackend.IConvertableObject-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree*
+  commentId: Overload:StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree
+  href: StarGazingBackend.IConvertableConstellation-1.html#StarGazingBackend_IConvertableConstellation_1_BuildConstellationStarTree_System_Collections_Generic_IList_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___System_Collections_Generic_Dictionary_System_Int32_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___
+  name: BuildConstellationStarTree
+  nameWithType: IConvertableConstellation<T>.BuildConstellationStarTree
+  fullName: StarGazingBackend.IConvertableConstellation<T>.BuildConstellationStarTree
+  nameWithType.vb: IConvertableConstellation(Of T).BuildConstellationStarTree
+  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T).BuildConstellationStarTree
+- uid: System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+  commentId: T:System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<IConvertableStar<CelestialBody>>
+  nameWithType: IList<IConvertableStar<CelestialBody>>
+  fullName: System.Collections.Generic.IList<StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>
+  nameWithType.vb: IList(Of IConvertableStar(Of CelestialBody))
+  fullName.vb: System.Collections.Generic.IList(Of StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody))
+  name.vb: IList(Of IConvertableStar(Of CelestialBody))
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: StarGazingBackend.IConvertableStar`1
+    name: IConvertableStar
+    href: StarGazingBackend.IConvertableStar-1.html
+  - name: <
+  - uid: StarGazingBackend.CelestialBody
+    name: CelestialBody
+    href: StarGazingBackend.CelestialBody.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.IConvertableStar`1
+    name: IConvertableStar
+    href: StarGazingBackend.IConvertableStar-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.CelestialBody
+    name: CelestialBody
+    href: StarGazingBackend.CelestialBody.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, IConvertableStar<CelestialBody>>
+  nameWithType: Dictionary<int, IConvertableStar<CelestialBody>>
+  fullName: System.Collections.Generic.Dictionary<int, StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>
+  nameWithType.vb: Dictionary(Of Integer, IConvertableStar(Of CelestialBody))
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody))
+  name.vb: Dictionary(Of Integer, IConvertableStar(Of CelestialBody))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: StarGazingBackend.IConvertableStar`1
+    name: IConvertableStar
+    href: StarGazingBackend.IConvertableStar-1.html
+  - name: <
+  - uid: StarGazingBackend.CelestialBody
+    name: CelestialBody
+    href: StarGazingBackend.CelestialBody.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: StarGazingBackend.IConvertableStar`1
+    name: IConvertableStar
+    href: StarGazingBackend.IConvertableStar-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: StarGazingBackend.CelestialBody
+    name: CelestialBody
+    href: StarGazingBackend.CelestialBody.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )

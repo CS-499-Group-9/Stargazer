@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IConstellationRepository
+  commentId: T:DataLayer.Interfaces.IConstellationRepository
+  id: IConstellationRepository
+  parent: DataLayer.Interfaces
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IConstellationRepository
+  nameWithType: IConstellationRepository
+  fullName: DataLayer.Interfaces.IConstellationRepository
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IConstellationRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: IConstellationRepository
+    path: ../DataLayer/Interfaces/IConstellationRepository.cs
+    startLine: 4
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: public interface IConstellationRepository
+    content.vb: Public Interface IConstellationRepository
+references:
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html

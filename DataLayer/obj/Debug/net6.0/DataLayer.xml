@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataLayer</name>
+    </assembly>
+    <members>
+        <member name="T:DataLayer.CelestialDataPackage`1">
+            <summary>
+            Encapsulates all data returned in the Horizontal Coordinate system from the <c>DataLayer</c> needed by the front end to display astronomical objects.
+            </summary>
+            <typeparam name="T">The class type of star that is used in the database</typeparam>
+        </member>
+        <member name="P:DataLayer.CelestialDataPackage`1.Stars">
+            <summary>
+            A collection of stars in the Horizontal Coordinate form to be displayed.
+            <code>while(!Stars.IsCompleted)
+            {
+                foreach(var star in Stars.GetConsumingEnumerable()
+                {
+                    //Convert and display
+                }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="P:DataLayer.CelestialDataPackage`1.MessierObjects">
+            <summary>
+            A collection of Messier Deep Space Objects in the Horizontal Coordinate form to be displayed.
+            <code>while(!MessierObjects.IsCompleted)
+            {
+                foreach(var star in MessierObjects.GetConsumingEnumerable()
+                {
+                    //Convert and display
+                }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="P:DataLayer.CelestialDataPackage`1.Constellations">
+            <summary>
+            A collection of Constellations to be displayed.
+            </summary>
+        </member>
+        <member name="M:DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})">
+            <summary>
+            Searches the dictionary for a <c>HorizontalStar</c> using the Hip ID provided. If found, converts it to a T star, stores it and returns it.
+            If not found, retrieves it from the dictionary of stars already converted and returns it.
+            </summary>
+            <param name="hipId">The Hipparcos Id of the star</param>
+            <param name="SpawnStar">The function provided to spawn a new star in the graphic scene. Must take a <c>HorizontalStar</c> as and argument and return a <c>T</c> star</param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="T:DataLayer.InjectionService`1">
+            <summary>
+            Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.
+            Registers all classes to be injected into constructors to avoid hard coding into descendant classes.
+            </summary>
+            <typeparam name="T">The class that instantiates the star in the front end.</typeparam>
+        </member>
+        <member name="M:DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)">
+            <summary>
+            Used to asynchronously instantiate the repository service. This should be called in an <c>async</c> method using the <c>await</c> keyword.
+            </summary>
+            <param name="baseDirectoryPath">The base path of the executing application. (Used to find the location of the repositories in DataLayer/Repositories)</param>
+            <returns>A new <c>StargazerRepositoryService</c> instance.</returns>
+            <exception cref="T:System.IO.DirectoryNotFoundException">If the base directory of the executing program cannot be found.</exception>
+        </member>
+        <member name="T:DataLayer.StargazerRepositoryService`1">
+            <summary>
+            Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
+            </summary>
+            <typeparam name="T">The class type of the star to be drawn by the front end. 
+            This is needed for the internal logic of the <see cref="T:DataLayer.CelestialDataPackage`1"/></typeparam>
+        </member>
+        <member name="M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)">
+            <summary>
+            Asynchronously creates a new instance of <c>StargazerRepositoryService</c>
+            </summary>
+            <param name="starRepository">Used to access a repository of Yale Stars</param>
+            <param name="constellationRepository">Used to access a repository of constellations identified by the HIP ID</param>
+            <param name="messierRepository">Used to access a repository of Messier Deep Space Objects</param>
+            <returns>A new <c>StargazerRepositoryService</c> object.</returns>
+        </member>
+        <member name="M:DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)">
+            <summary>
+            Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data.
+            </summary>
+            <param name="latitude">The latitude of the observer (-90 &lt;= value &lt;= 90)</param>
+            <param name="longitude">The longitude of the observer (-90 &lt;= value &lt;= 90)</param>
+            <param name="localUserTime">The observer time in Universal TimeCode <code cref="M:System.DateTime.ToUniversalTime">new DateTime(year, month, day, hour, min, sec).ToUniversalTime()</code></param>
+            <returns>A package containing all data required for display. (This call should be made in an <c>async</c> method using the <c>await</c> keyword)</returns>
+        </member>
+    </members>
+</doc>

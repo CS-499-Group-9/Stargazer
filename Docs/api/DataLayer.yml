@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer
+  commentId: N:DataLayer
+  id: DataLayer
+  children:
+  - DataLayer.CelestialDataPackage`1
+  - DataLayer.InjectionService`1
+  - DataLayer.StargazerRepositoryService`1
+  langs:
+  - csharp
+  - vb
+  name: DataLayer
+  nameWithType: DataLayer
+  fullName: DataLayer
+  type: Namespace
+  assemblies:
+  - DataLayer
+references:
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.InjectionService`1
+  commentId: T:DataLayer.InjectionService`1
+  href: DataLayer.InjectionService-1.html
+  name: InjectionService<T>
+  nameWithType: InjectionService<T>
+  fullName: DataLayer.InjectionService<T>
+  nameWithType.vb: InjectionService(Of T)
+  fullName.vb: DataLayer.InjectionService(Of T)
+  name.vb: InjectionService(Of T)
+  spec.csharp:
+  - uid: DataLayer.InjectionService`1
+    name: InjectionService
+    href: DataLayer.InjectionService-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.InjectionService`1
+    name: InjectionService
+    href: DataLayer.InjectionService-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.StargazerRepositoryService`1
+  commentId: T:DataLayer.StargazerRepositoryService`1
+  href: DataLayer.StargazerRepositoryService-1.html
+  name: StargazerRepositoryService<T>
+  nameWithType: StargazerRepositoryService<T>
+  fullName: DataLayer.StargazerRepositoryService<T>
+  nameWithType.vb: StargazerRepositoryService(Of T)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T)
+  name.vb: StargazerRepositoryService(Of T)
+  spec.csharp:
+  - uid: DataLayer.StargazerRepositoryService`1
+    name: StargazerRepositoryService
+    href: DataLayer.StargazerRepositoryService-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.StargazerRepositoryService`1
+    name: StargazerRepositoryService
+    href: DataLayer.StargazerRepositoryService-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

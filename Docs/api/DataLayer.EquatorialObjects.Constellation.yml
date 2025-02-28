@@ -1,0 +1,589 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  id: Constellation
+  parent: DataLayer.EquatorialObjects
+  children:
+  - DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)
+  - DataLayer.EquatorialObjects.Constellation.ConstellationId
+  - DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  - DataLayer.EquatorialObjects.Constellation.ConstellationName
+  langs:
+  - csharp
+  - vb
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+  type: Class
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/Constellation.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: Constellation
+    path: ../DataLayer/EquatorialObjects/Constellation.cs
+    startLine: 6
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  syntax:
+    content: public class Constellation
+    content.vb: Public Class Constellation
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationId
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationId
+  id: ConstellationId
+  parent: DataLayer.EquatorialObjects.Constellation
+  langs:
+  - csharp
+  - vb
+  name: ConstellationId
+  nameWithType: Constellation.ConstellationId
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationId
+  type: Property
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/Constellation.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: ConstellationId
+    path: ../DataLayer/EquatorialObjects/Constellation.cs
+    startLine: 8
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  syntax:
+    content: public string? ConstellationId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ConstellationId As String
+  overload: DataLayer.EquatorialObjects.Constellation.ConstellationId*
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  id: ConstellationLines
+  parent: DataLayer.EquatorialObjects.Constellation
+  langs:
+  - csharp
+  - vb
+  name: ConstellationLines
+  nameWithType: Constellation.ConstellationLines
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  type: Property
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/Constellation.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: ConstellationLines
+    path: ../DataLayer/EquatorialObjects/Constellation.cs
+    startLine: 9
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  syntax:
+    content: public IEnumerable<Tuple<int, int>> ConstellationLines { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Tuple{System.Int32,System.Int32}}
+    content.vb: Public Property ConstellationLines As IEnumerable(Of Tuple(Of Integer, Integer))
+  overload: DataLayer.EquatorialObjects.Constellation.ConstellationLines*
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationName
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationName
+  id: ConstellationName
+  parent: DataLayer.EquatorialObjects.Constellation
+  langs:
+  - csharp
+  - vb
+  name: ConstellationName
+  nameWithType: Constellation.ConstellationName
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationName
+  type: Property
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/Constellation.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: ConstellationName
+    path: ../DataLayer/EquatorialObjects/Constellation.cs
+    startLine: 11
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  syntax:
+    content: public string? ConstellationName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ConstellationName As String
+  overload: DataLayer.EquatorialObjects.Constellation.ConstellationName*
+- uid: DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)
+  commentId: M:DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: DataLayer.EquatorialObjects.Constellation
+  langs:
+  - csharp
+  - vb
+  name: Constellation(string, string, string?)
+  nameWithType: Constellation.Constellation(string, string, string?)
+  fullName: DataLayer.EquatorialObjects.Constellation.Constellation(string, string, string?)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/Constellation.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: .ctor
+    path: ../DataLayer/EquatorialObjects/Constellation.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  syntax:
+    content: public Constellation(string Id, string name, string? nativeName)
+    parameters:
+    - id: Id
+      type: System.String
+    - id: name
+      type: System.String
+    - id: nativeName
+      type: System.String
+    content.vb: Public Sub New(Id As String, name As String, nativeName As String)
+  overload: DataLayer.EquatorialObjects.Constellation.#ctor*
+  nameWithType.vb: Constellation.New(String, String, String)
+  fullName.vb: DataLayer.EquatorialObjects.Constellation.New(String, String, String)
+  name.vb: New(String, String, String)
+references:
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationId*
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationId
+  href: DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationId
+  name: ConstellationId
+  nameWithType: Constellation.ConstellationId
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationLines*
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  href: DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationLines
+  name: ConstellationLines
+  nameWithType: Constellation.ConstellationLines
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+- uid: System.Collections.Generic.IEnumerable{System.Tuple{System.Int32,System.Int32}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Tuple{System.Int32,System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Tuple<int, int>>
+  nameWithType: IEnumerable<Tuple<int, int>>
+  fullName: System.Collections.Generic.IEnumerable<System.Tuple<int, int>>
+  nameWithType.vb: IEnumerable(Of Tuple(Of Integer, Integer))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Tuple(Of Integer, Integer))
+  name.vb: IEnumerable(Of Tuple(Of Integer, Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Tuple`2
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Tuple`2
+    name: Tuple
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.tuple-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationName*
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationName
+  href: DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationName
+  name: ConstellationName
+  nameWithType: Constellation.ConstellationName
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationName
+- uid: DataLayer.EquatorialObjects.Constellation.#ctor*
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.#ctor
+  href: DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation__ctor_System_String_System_String_System_String_
+  name: Constellation
+  nameWithType: Constellation.Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation.Constellation
+  nameWithType.vb: Constellation.New
+  fullName.vb: DataLayer.EquatorialObjects.Constellation.New
+  name.vb: New

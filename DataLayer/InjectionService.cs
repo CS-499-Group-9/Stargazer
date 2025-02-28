@@ -4,19 +4,23 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DataLayer
 {
-    /*
-     * Used to register all classes to be injected into constructors
-     * This means that no implementations have to be hardcoded into descendant classes 
-     * This file contains the implementation configuration for all interface implementations injected into class constructors
-     * During startup, when creating the objects, use a reference to the ServiceProvider and call ServiceProvider.GetRequiredServices<T>() where T is the object you wish to create
-     * Any parameters needed in the constructor will be injected, as well as any parameters needed by any object created by that constructor or any constructors of composite objects
-     * If an interface is swapped out anywhere in the program, just change the interface in the registration below and no other code will need to be changed. 
-     */
+    /// <summary>
+    /// Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.
+    /// Registers all classes to be injected into constructors to avoid hard coding into descendant classes.
+    /// </summary>
+    /// <typeparam name="T">The class that instantiates the star in the front end.</typeparam>
+
     public static class InjectionService<T>
     {
         // Set the max (min) star magnitude. The magnitude is stored with smaller numbers being brighter, so the filter ends up being magnitude <= maxStarMagnitude
         const int maxStarMagnitude = 6;
 
+        /// <summary>
+        /// Used to asynchronously instantiate the repository service. This should be called in an <c>async</c> method using the <c>await</c> keyword.
+        /// </summary>
+        /// <param name="baseDirectoryPath">The base path of the executing application. (Used to find the location of the repositories in DataLayer/Repositories)</param>
+        /// <returns>A new <c>StargazerRepositoryService</c> instance.</returns>
+        /// <exception cref="DirectoryNotFoundException">If the base directory of the executing program cannot be found.</exception>
         public static async Task<StargazerRepositoryService<T>> GetRepositoryServiceAsync(string baseDirectoryPath)
         {
             /*
@@ -27,9 +31,8 @@ namespace DataLayer
              * AddSingleton<Interface, Implementation>(provider => new Implementation(someValue)) is used to pass a specific value or thing to the constructor of an interface implementation
             */
 
-            DirectoryInfo dir = new(baseDirectoryPath);
-            if (dir == null) { throw new DirectoryNotFoundException($"{baseDirectoryPath} is not a valid directory"); }
-            string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer");
+            DirectoryInfo dir = new DirectoryInfo(baseDirectoryPath) ?? throw new DirectoryNotFoundException($"{baseDirectoryPath} is not a valid directory");
+            string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer") ?? throw new DirectoryNotFoundException();
             string repositoryPath = Path.Combine(dataLayer, "Repositories");
 
             var serviceProvider =  new ServiceCollection()
@@ -42,7 +45,6 @@ namespace DataLayer
                     var constellationRepository = provider.GetRequiredService<IConstellationRepository>();
                     var messierRepository = provider.GetRequiredService<IMessierRepository>();
 
-                    // Use CreateAsync to initialize the StargazerRepositoryService asynchronously
                     return await StargazerRepositoryService<T>.CreateAsync(starRepository, constellationRepository, messierRepository);
                 })
                 .BuildServiceProvider();
