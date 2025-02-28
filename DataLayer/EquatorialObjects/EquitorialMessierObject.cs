@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataLayer.EquitorialObjects
+﻿
+namespace DataLayer.EquatorialObjects
 {
-    public class EquitorialMessierObject : EquitorialCelestialBody
+    public class EquatorialMessierObject : EquatorialCelestialBody
     {
         private string? id;
         private string? newGeneralCatalog;
         private string? type;
         private string? constellation;
         private string? size;
-        private double? distance;
         private string? viewingSeason;
         private string? viewingDifficulty;
 

@@ -1,12 +1,11 @@
 using DataLayer;
-using DataLayer.EquitorialObjects;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading.Tasks;
 
 public partial class Spawner : Node3D
 {
@@ -18,7 +17,6 @@ public partial class Spawner : Node3D
 	private readonly string[,] constLines = { { "s1", "s2" }, { "s2", "s3" }, { "s3", "s4" }, { "s4", "s5" } };
 	
 	private Globals globalVars ;
-	private List<Star> stars;
 	private List<LabelNode> labels;
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;

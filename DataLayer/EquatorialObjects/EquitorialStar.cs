@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataLayer.EquitorialObjects
+﻿
+namespace DataLayer.EquatorialObjects
 {
-    public class EquitorialStar : EquitorialCelestialBody
+    public class EquatorialStar : EquatorialCelestialBody
     {
         public int StarId { get; set; }
         public int? HipparcosId { get; set; }

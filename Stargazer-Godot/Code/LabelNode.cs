@@ -3,7 +3,7 @@ using System;
 
 public partial class LabelNode : Node3D
 {
-	[Export] public string? LabelText { get; set; }
+	[Export] public string LabelText { get; set; }
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

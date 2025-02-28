@@ -1,14 +1,9 @@
-﻿using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Interfaces
 {
     public interface IMessierRepository
     {
-        Task<IEnumerable<EquitorialMessierObject>> GetRawMessierObjectsAsync();
+        Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync();
     }
 }

@@ -1,12 +1,7 @@
-﻿using DataLayer.EquitorialObjects;
+﻿using DataLayer.EquatorialObjects;
 using DataLayer.Interfaces;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
@@ -46,7 +41,6 @@ namespace DataLayer.Implementations
             {
                 JObject obj = JObject.Load(reader);
                 var jsonConstellations = (JArray)obj["constellations"];
-                List<Tuple<int, int>> constellationlines = new List<Tuple<int, int>>();
                 List<Constellation> constellations = new ();
                 foreach (var constellation in jsonConstellations)
                 {
@@ -54,14 +48,16 @@ namespace DataLayer.Implementations
 
 
                     var lines = BuildLines((JArray)constellation["lines"], new List<Tuple<int,int>>());
-                    Constellation eqConst = new(constellation["id"].Value<string>(), name.English, name.Native);
-                    eqConst.ConstellationLines = lines;
+                    Constellation eqConst = new(constellation["id"].Value<string>(), name.English, name.Native)
+                    {
+                        ConstellationLines = lines
+                    };
                     constellations.Add(eqConst);
                 }
                 return constellations;
             }
 
-        private IEnumerable<Tuple<int,int>> BuildLines(JArray jArray, IList<Tuple<int, int>> lines)
+        private static IEnumerable<Tuple<int,int>> BuildLines(JArray jArray, IList<Tuple<int, int>> lines)
         {
             int previousStar = 0;
             foreach (var item in jArray)

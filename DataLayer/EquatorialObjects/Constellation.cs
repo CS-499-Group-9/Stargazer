@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataLayer.EquitorialObjects
+﻿
+namespace DataLayer.EquatorialObjects
 {
     // Represents a constellation in the sky. 
     // Use the Constellation Name to print the name

@@ -1,38 +1,35 @@
 ﻿using CosineKitty;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Implementations
 {
-    internal class CosineKittyEquitorialConverter<T> : IEquitorialConverter<T> where T : HorizontalBody , new()
+    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody , new()
     {
-        private AstroTime astroTime;
-        private Observer observer;
+        private readonly AstroTime astroTime;
+        private readonly Observer observer;
 
-        public CosineKittyEquitorialConverter(double latitude, double longitude, DateTime localUserTime)
+        public CosineKittyEquatorialConverter(double latitude, double longitude, DateTime localUserTime)
         {
             observer = new Observer(latitude, longitude, 150);
             astroTime = new AstroTime(localUserTime);
         }
 
-        public Func<EquitorialCelestialBody, T> Converter => (eqStar) => 
+        public Func<EquatorialCelestialBody, T> Converter => (eqStar) => 
         {
             
-            Astronomy.DefineStar(Body.Star1, eqStar.RightAscention, eqStar.Declination, eqStar.Distance);
+            Astronomy.DefineStar(Body.Star1, eqStar.RightAscension, eqStar.Declination, eqStar.Distance);
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
-            
-            T newBody = new();
-            newBody.Altitude = hor.altitude;
-            newBody.Azimuth = hor.azimuth;
-            newBody.Magnitude = eqStar.Magnitude;
-            newBody.Distance = eqStar.Distance;
+
+            T newBody = new()
+            {
+                Altitude = hor.altitude,
+                Azimuth = hor.azimuth,
+                Magnitude = eqStar.Magnitude,
+                Distance = eqStar.Distance
+            };
             return newBody;
         };
 

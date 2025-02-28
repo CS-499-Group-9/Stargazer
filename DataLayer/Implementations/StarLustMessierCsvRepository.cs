@@ -2,13 +2,8 @@
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 using DataLayer.Interfaces;
-using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
+using DataLayer.EquatorialObjects;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
@@ -20,31 +15,28 @@ namespace DataLayer.Implementations
             filePath = Path.Combine(repositoryPath, "messier-catalog.csv"); 
         }
 
-        public Task<IEnumerable<EquitorialMessierObject>> GetRawMessierObjectsAsync()
+        public Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync()
         {
             if (File.Exists(filePath))
             {
                 // Build a task to retrieve the raw messier objects from the repository and return the task to the calling code
-                return Task<IEnumerable<EquitorialMessierObject>>.Factory.StartNew(() =>
+                return Task<IEnumerable<EquatorialMessierObject>>.Factory.StartNew(() =>
                 {
-                    
-                    using (var reader = new StreamReader(filePath))
-                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                    {
-                        csv.Context.RegisterClassMap<StarMap>();
+                    using var reader = new StreamReader(filePath);
+                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                    csv.Context.RegisterClassMap<StarMap>();
 
-                        // the CsvHelper.GetRecords retrieve a yeildable list. Objects are not read until they are requested
-                        var records = csv.GetRecords<EquitorialMessierObject>();
+                    // the CsvHelper.GetRecords retrieve a yieldable list. Objects are not read until they are requested
+                    var records = csv.GetRecords<EquatorialMessierObject>();
 
-                        // Create a new thread for each row in the csv and map that row to a new object
-                        return records.ToList();
-                    }
+                    // Create a new thread for each row in the csv and map that row to a new object
+                    return records.ToList();
                 });
             }
             throw new FileNotFoundException();
         }
 
-        private class StarMap : ClassMap<EquitorialMessierObject>
+        private class StarMap : ClassMap<EquatorialMessierObject>
         {
             public StarMap()
             {
@@ -52,7 +44,7 @@ namespace DataLayer.Implementations
                 Map(m => m.NewGeneralCatalog).Name("NGC");
                 Map(m=> m.Type).Name("TYPE");
                 Map(m => m.Constellation).Name("CONS");
-                Map(m => m.RightAscention).TypeConverter<HmsToDecimalDegreesConverter>().Name("RA");
+                Map(m => m.RightAscension).TypeConverter<HmsToDecimalDegreesConverter>().Name("RA");
                 Map(m => m.Declination).TypeConverter<DdmToDecimalDegreesConverter>().Name("DEC");
                 Map(m => m.Magnitude).Name("MAG");
                 Map(m => m.Size).Name("SIZE");
@@ -74,7 +66,7 @@ namespace DataLayer.Implementations
                           )
                         )
                     {
-                        throw new InvalidDataException($"{text} could not be converted to decmial degrees.");
+                        throw new InvalidDataException($"{text} could not be converted to decimal degrees.");
                     }
                     minutes /= 60;
                     return hours + minutes;

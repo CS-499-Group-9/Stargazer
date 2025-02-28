@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Concurrent;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using DataLayer.EquitorialObjects;
+using DataLayer.EquatorialObjects;
 using DataLayer.Implementations;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DataLayer
 {
@@ -16,30 +10,29 @@ namespace DataLayer
     {
         const double maxStarMagnitude = 6;
 
-        private readonly IEnumerable<EquitorialStar> equitorialStars;
+        private readonly IEnumerable<EquatorialStar> equatorialStars;
         private readonly IEnumerable<Constellation> constellations;
 
 
-        private readonly IReadOnlyDictionary<int, EquitorialStar> equitorialConstellationStars;
-        private readonly IEnumerable<EquitorialMessierObject> equitorialMessierObjects;
+        private readonly IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars;
+        private readonly IEnumerable<EquatorialMessierObject> equatorialMessierObjects;
 
         private readonly BlockingCollection<HorizontalStar> horizontalStars;
         private readonly BlockingCollection<HorizontalMessierObject> horizontalMessierObjects;
         private ConcurrentDictionary<int, HorizontalStar> constellationStars { get;  }
 
         private StargazerRepositoryService(
-            IEnumerable<EquitorialStar> equitorialStars,
-            IEnumerable<Constellation> equitorialConstellations,
-            IReadOnlyDictionary<int, EquitorialStar> equitorialConstellationStars,
-            IEnumerable<EquitorialMessierObject> equitorialMessierObjects)
+            IEnumerable<EquatorialStar> equatorialStars,
+            IEnumerable<Constellation> equatorialConstellations,
+            IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars,
+            IEnumerable<EquatorialMessierObject> equatorialMessierObjects)
         {
-            this.equitorialStars = equitorialStars;
-            this.constellations = equitorialConstellations;
-            this.equitorialConstellationStars = equitorialConstellationStars;
-            this.equitorialMessierObjects = equitorialMessierObjects;
+            this.equatorialStars = equatorialStars;
+            this.constellations = equatorialConstellations;
+            this.equatorialConstellationStars = equatorialConstellationStars;
+            this.equatorialMessierObjects = equatorialMessierObjects;
 
             horizontalStars = new BlockingCollection<HorizontalStar>(new ConcurrentBag<HorizontalStar>());
-            horizontalConstellations = new BlockingCollection<HorizontalConstellation>(new ConcurrentBag<HorizontalConstellation>());
             horizontalMessierObjects = new BlockingCollection<HorizontalMessierObject>(new ConcurrentBag<HorizontalMessierObject>());
             constellationStars = new ConcurrentDictionary<int, HorizontalStar>();
         }
@@ -56,30 +49,30 @@ namespace DataLayer
             // Wait for all data to be fetched asynchronously
             await Task.WhenAll(getStars, getConstellations, getMessierObjects);
 
-            var equitorialStars = getStars.Result;
-            var equitorialConstellations = getConstellations.Result;
-            var equitorialMessierObjects = getMessierObjects.Result;
+            var equatorialStars = getStars.Result;
+            var equatorialConstellations = getConstellations.Result;
+            var equatorialMessierObjects = getMessierObjects.Result;
 
-            var equitorialConstellationStars = await GatherConstellationStars(getStars, getConstellations, starRepository);
+            var equatorialConstellationStars = await GatherConstellationStars(getStars, getConstellations, starRepository);
 
             // Return the fully constructed object
             return new StargazerRepositoryService<T>(
-                equitorialStars,
-                equitorialConstellations,
-                new Dictionary<int, EquitorialStar>(equitorialConstellationStars),
-                equitorialMessierObjects
+                equatorialStars,
+                equatorialConstellations,
+                new Dictionary<int, EquatorialStar>(equatorialConstellationStars),
+                equatorialMessierObjects
             );
         }
 
-        private static async Task<IDictionary<int, EquitorialStar>> GatherConstellationStars(
-            Task<IList<EquitorialStar>> starTask,
+        private static async Task<IDictionary<int, EquatorialStar>> GatherConstellationStars(
+            Task<IList<EquatorialStar>> starTask,
             Task<IList<Constellation>> constellationTask,
             IStarRepository starRepository)
         {
-            IDictionary<int, EquitorialStar> constellationStars = new Dictionary<int, EquitorialStar>();
+            IDictionary<int, EquatorialStar> constellationStars = new Dictionary<int, EquatorialStar>();
             await Task.WhenAll(starTask, constellationTask);
 
-            IList<EquitorialStar> stars = starTask.Result;
+            IList<EquatorialStar> stars = starTask.Result;
             IList<Constellation> constellations = constellationTask.Result;
 
             await Task.Run(async () =>
@@ -93,20 +86,19 @@ namespace DataLayer
                         {
                             try
                             {
-                                EquitorialStar? star;
-                                if (!constellationStars.TryGetValue(endPoint, out star))
+                                if (!constellationStars.TryGetValue(endPoint, out EquatorialStar? star))
                                 {
                                     star = stars.FirstOrDefault(s => s.HipparcosId == endPoint);
                                     if (star == null)
-                                    { 
-                                        star = await starRepository.GetStaryByHipAsync(endPoint);
+                                    {
+                                        star = await starRepository.GetStarByHipAsync(endPoint);
                                         if (star == null) throw new InvalidOperationException($"{endPoint} was not found.");
                                     }
                                     constellationStars.TryAdd(endPoint, star);
                                     stars.Remove(star);
                                 }
                             }
-                            catch (InvalidOperationException e)
+                            catch (InvalidOperationException)
                             {
                                 throw new InvalidOperationException($"Test");
                             }
@@ -120,10 +112,10 @@ namespace DataLayer
 
         public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
-            CosineKittyEquitorialConverter<HorizontalStar> starConverter = new CosineKittyEquitorialConverter<HorizontalStar>(latitude, longitude, localUserTime);
+            CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);
             await  Task.Factory.StartNew(() =>
             {
-                foreach (var item in equitorialStars)
+                foreach (var item in equatorialStars)
                 {
                     var star = starConverter.Converter(item);
                     star.StarId = item.StarId;
@@ -139,8 +131,8 @@ namespace DataLayer
 
             await  Task.Factory.StartNew(() =>
             {
-                CosineKittyEquitorialConverter<HorizontalMessierObject> converter = new CosineKittyEquitorialConverter<HorizontalMessierObject>(latitude, longitude, localUserTime);
-                foreach (var item in equitorialMessierObjects)
+                CosineKittyEquatorialConverter<HorizontalMessierObject> converter = new(latitude, longitude, localUserTime);
+                foreach (var item in equatorialMessierObjects)
                 {
                     var messier = converter.Converter(item);
                     messier.MessierId = item.MessierId;
@@ -157,7 +149,7 @@ namespace DataLayer
 
             await Task.Factory.StartNew(() =>
             {
-                foreach (var item in equitorialConstellationStars)
+                foreach (var item in equatorialConstellationStars)
                 {
                     var star = starConverter.Converter(item.Value);
                     star.StarId = item.Value.StarId;

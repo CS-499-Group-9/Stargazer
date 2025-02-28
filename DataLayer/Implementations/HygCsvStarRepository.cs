@@ -1,17 +1,9 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
+using DataLayer.EquatorialObjects;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
@@ -23,60 +15,54 @@ namespace DataLayer.Implementations
             this.filePath = Path.Combine(repositoryPath, "hyg.csv");
         }
 
-        public async Task<EquitorialStar?> GetStaryByHipAsync(int hipparcosId)
+        public async Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
         {
             if (File.Exists(filePath))
             {
                 return await Task.Run(() =>
                 {
-                    var targetList = new List<EquitorialStar>();
-                    using (var reader = new StreamReader(filePath))
-                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                    {
-                        csv.Context.RegisterClassMap<StarMap>();
+                    var targetList = new List<EquatorialStar>();
+                    using var reader = new StreamReader(filePath);
+                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                    csv.Context.RegisterClassMap<StarMap>();
 
-                        // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
-                        var records = csv.GetRecords<EquitorialStar>();
+                    // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
+                    var records = csv.GetRecords<EquatorialStar>();
 
-                        // Provide a filter to select only the stars needed from the IEnumberable
-                        // Create a new thread for each row that will read that row into the list
-                        return records.FirstOrDefault(s => s.HipparcosId == hipparcosId);
-
-                    }
+                    // Provide a filter to select only the stars needed from the IEnumerable
+                    // Create a new thread for each row that will read that row into the list
+                    return records.FirstOrDefault(s => s.HipparcosId == hipparcosId);
                 });
             }
             throw new FileNotFoundException();
         }
 
-        Task<IList<EquitorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
+        Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
         {
             if (File.Exists(filePath))
             {
                 // Return the Task that will return the list
-                return Task<IList<EquitorialStar>>.Factory.StartNew(() =>
+                return Task<IList<EquatorialStar>>.Factory.StartNew(() =>
                 {
                     // Build the list instance and a stream reader to read the rows
-                    var targetList = new List<EquitorialStar>();
-                    using (var reader = new StreamReader(filePath))
-                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                    {
-                        csv.Context.RegisterClassMap<StarMap>();
+                    var targetList = new List<EquatorialStar>();
+                    using var reader = new StreamReader(filePath);
+                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                    csv.Context.RegisterClassMap<StarMap>();
 
-                        // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
-                        var records = csv.GetRecords<EquitorialStar>();
+                    // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
+                    var records = csv.GetRecords<EquatorialStar>();
 
-                        // Provide a filter to select only the stars needed from the IEnumberable
-                        // Create a new thread for each row that will read that row into the list
-                        return records.Where(s => s.Magnitude <=  maximumMagnitude).ToList();
-
-                    }
+                    // Provide a filter to select only the stars needed from the IEnumerable
+                    // Create a new thread for each row that will read that row into the list
+                    return records.Where(s => s.Magnitude <= maximumMagnitude).ToList();
 
                 });
             }
             throw new FileNotFoundException();
         }
 
-        private class StarMap : ClassMap<EquitorialStar>
+        private class StarMap : ClassMap<EquatorialStar>
         {
             public StarMap()
             {
@@ -87,7 +73,7 @@ namespace DataLayer.Implementations
                 Map(m => m.GlieseId).Name("Gliese");
                 Map(m => m.BayerFlamsteedDesignation).Name("BayerFlamsteed");
                 Map(m => m.ProperName);
-                Map(m => m.RightAscention).Name("RA");
+                Map(m => m.RightAscension).Name("RA");
                 Map(m => m.Declination).TypeConverter<NullableDoubleConverter>().Name("Dec");
                 Map(m => m.Distance).TypeConverter(new ParsecToLightyearConverter());
                 Map(m => m.Magnitude).Name("Mag");
