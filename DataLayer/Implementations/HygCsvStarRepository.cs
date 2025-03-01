@@ -7,63 +7,80 @@ using System.Globalization;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// Retrieves raw star data from the HYG.csv repository
+    /// </summary>
     internal class HygCsvStarRepository : IStarRepository
     {
+        /// <summary>
+        /// The file path to the repository
+        /// </summary>
         private readonly string filePath;
+
+        /// <summary>
+        /// Creates a new instance and sets the file path
+        /// </summary>
+        /// <param name="repositoryPath"></param>
         public HygCsvStarRepository(string repositoryPath) 
         {
             this.filePath = Path.Combine(repositoryPath, "hyg.csv");
+            if (!File.Exists(filePath)) throw new FileNotFoundException($"{filePath} does not exist");
         }
+
 
         public async Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
         {
-            if (File.Exists(filePath))
+            // Start a new task to retrieve the data and return the running task. 
+            return await Task.Run(() =>
             {
-                return await Task.Run(() =>
-                {
-                    var targetList = new List<EquatorialStar>();
-                    using var reader = new StreamReader(filePath);
-                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                    csv.Context.RegisterClassMap<StarMap>();
+                // Create a new list
+                var targetList = new List<EquatorialStar>();
+                // Using statements handle disposal of the items
+                using var reader = new StreamReader(filePath);
+                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
 
-                    // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
-                    var records = csv.GetRecords<EquatorialStar>();
+                // Register the class mapper
+                csv.Context.RegisterClassMap<StarMap>();
 
-                    // Provide a filter to select only the stars needed from the IEnumerable
-                    // Create a new thread for each row that will read that row into the list
-                    return records.FirstOrDefault(s => s.HipparcosId == hipparcosId);
-                });
-            }
-            throw new FileNotFoundException();
+                // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
+                var records = csv.GetRecords<EquatorialStar>();
+
+                // Provide a filter to select only the stars needed from the IEnumerable
+                // Create a new thread for each row that will read that row into the list
+                return records.FirstOrDefault(s => s.HipparcosId == hipparcosId);
+            });
         }
+
 
         Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
         {
-            if (File.Exists(filePath))
+            // Start a new task to retrieve the data and return the running task
+            return Task<IList<EquatorialStar>>.Factory.StartNew(() =>
             {
-                // Return the Task that will return the list
-                return Task<IList<EquatorialStar>>.Factory.StartNew(() =>
-                {
-                    // Build the list instance and a stream reader to read the rows
-                    var targetList = new List<EquatorialStar>();
-                    using var reader = new StreamReader(filePath);
-                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                    csv.Context.RegisterClassMap<StarMap>();
+                // Build the list instance and a stream reader to read the rows
+                var targetList = new List<EquatorialStar>();
+                using var reader = new StreamReader(filePath);
+                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                csv.Context.RegisterClassMap<StarMap>();
 
-                    // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
-                    var records = csv.GetRecords<EquatorialStar>();
+                // CsvHelper.GetRecords returns a yieldable IEnumerable that will not be used until it is iterated.
+                var records = csv.GetRecords<EquatorialStar>();
 
-                    // Provide a filter to select only the stars needed from the IEnumerable
-                    // Create a new thread for each row that will read that row into the list
-                    return records.Where(s => s.Magnitude <= maximumMagnitude).ToList();
+                // Provide a filter to select only the stars needed from the IEnumerable
+                // Create a new thread for each row that will read that row into the list
+                return records.Where(s => s.Magnitude <= maximumMagnitude).ToList();
 
-                });
-            }
-            throw new FileNotFoundException();
+            });
         }
 
+        /// <summary>
+        /// A custom class to map the columns in the repository to the POCO
+        /// </summary>
         private class StarMap : ClassMap<EquatorialStar>
         {
+            /// <summary>
+            /// Creates an instance of the mapper
+            /// </summary>
             public StarMap()
             {
                 Map(m => m.StarId).Name("StarID");
@@ -82,6 +99,9 @@ namespace DataLayer.Implementations
                 Map(m => m.ColorIndex).TypeConverter(new NullableDoubleConverter());
             }
 
+            /// <summary>
+            /// A custom type converter to convert parsecs to light years (the distance data in the repository is in Parsecs... yes... that's actually a real thing).
+            /// </summary>
             private class ParsecToLightyearConverter : DefaultTypeConverter
             {
                 private const double conversionFactor = 3.262;

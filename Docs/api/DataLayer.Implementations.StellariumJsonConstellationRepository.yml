@@ -1,0 +1,596 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository
+  commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository
+  id: StellariumJsonConstellationRepository
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
+  - DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  - DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  langs:
+  - csharp
+  - vb
+  name: StellariumJsonConstellationRepository
+  nameWithType: StellariumJsonConstellationRepository
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository
+  type: Class
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: 'internal class StellariumJsonConstellationRepository : IConstellationRepository'
+    content.vb: Friend Class StellariumJsonConstellationRepository Implements IConstellationRepository
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IConstellationRepository
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  commentId: F:DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  id: filePath
+  parent: DataLayer.Implementations.StellariumJsonConstellationRepository
+  langs:
+  - csharp
+  - vb
+  name: filePath
+  nameWithType: StellariumJsonConstellationRepository.filePath
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  type: Field
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly string filePath
+    return:
+      type: System.String
+    content.vb: Private ReadOnly filePath As String
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DataLayer.Implementations.StellariumJsonConstellationRepository
+  langs:
+  - csharp
+  - vb
+  name: StellariumJsonConstellationRepository(string)
+  nameWithType: StellariumJsonConstellationRepository.StellariumJsonConstellationRepository(string)
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.StellariumJsonConstellationRepository(string)
+  type: Constructor
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: public StellariumJsonConstellationRepository(string repositoryPath)
+    parameters:
+    - id: repositoryPath
+      type: System.String
+    content.vb: Public Sub New(repositoryPath As String)
+  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor*
+  nameWithType.vb: StellariumJsonConstellationRepository.New(String)
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New(String)
+  name.vb: New(String)
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  id: DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  isEii: true
+  parent: DataLayer.Implementations.StellariumJsonConstellationRepository
+  langs:
+  - csharp
+  - vb
+  name: IConstellationRepository.GetAllConstellationsAsync()
+  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync()
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  type: Method
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Gets all <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref>s from the repository
+  example: []
+  syntax:
+    content: Task<IList<Constellation>> IConstellationRepository.GetAllConstellationsAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
+      description: A running task that can be awaited
+    content.vb: ''
+  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
+  implements:
+  - DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IConstellationRepository
+  commentId: T:DataLayer.Interfaces.IConstellationRepository
+  parent: DataLayer.Interfaces
+  isExternal: true
+  href: DataLayer.Interfaces.IConstellationRepository.html
+  name: IConstellationRepository
+  nameWithType: IConstellationRepository
+  fullName: DataLayer.Interfaces.IConstellationRepository
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor*
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor
+  isExternal: true
+  href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository__ctor_System_String_
+  name: StellariumJsonConstellationRepository
+  nameWithType: StellariumJsonConstellationRepository.StellariumJsonConstellationRepository
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.StellariumJsonConstellationRepository
+  nameWithType.vb: StellariumJsonConstellationRepository.New
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  isExternal: true
+  href: DataLayer.EquatorialObjects.Constellation.html
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  isExternal: true
+  href: DataLayer.Interfaces.IConstellationRepository.html
+  name: IConstellationRepository.GetAllConstellationsAsync
+  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IConstellationRepository*
+    name: IConstellationRepository
+    isExternal: true
+    href: DataLayer.Interfaces.IConstellationRepository.html
+  - name: .
+  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
+    name: GetAllConstellationsAsync
+    isExternal: true
+    href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+- uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  commentId: M:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  parent: DataLayer.Interfaces.IConstellationRepository
+  isExternal: true
+  href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  name: GetAllConstellationsAsync()
+  nameWithType: IConstellationRepository.GetAllConstellationsAsync()
+  fullName: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+    name: GetAllConstellationsAsync
+    isExternal: true
+    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+    name: GetAllConstellationsAsync
+    isExternal: true
+    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IList<Constellation>>
+  nameWithType: Task<IList<Constellation>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>>
+  nameWithType.vb: Task(Of IList(Of Constellation))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation))
+  name.vb: Task(Of IList(Of Constellation))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.Constellation
+    name: Constellation
+    isExternal: true
+    href: DataLayer.EquatorialObjects.Constellation.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.Constellation
+    name: Constellation
+    isExternal: true
+    href: DataLayer.EquatorialObjects.Constellation.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

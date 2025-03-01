@@ -2,15 +2,28 @@
   "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
   "metadata": [
     {
-      "src": [
+      "src": 
+      [
         {
           "src": "../",
           "files": [
-            "**/*.csproj"
+            "**/DataLayer/bin/debug/**.dll"
           ]
         }
       ],
-      "dest": "api"
+      "includePrivateMembers":true,
+      "output": "api",
+      "properties": 
+      {
+        "TargetFramework":"net6.0"
+      },
+      "apiRules": [
+        {
+          "include": [
+            "DataLayer.Implementations.*"
+          ]
+        }
+      ]
     }
   ],
   "build": {

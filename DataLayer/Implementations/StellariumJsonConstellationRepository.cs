@@ -33,50 +33,76 @@ namespace DataLayer.Implementations
         }
 
 
-
+        /// <summary>
+        /// Custom <see cref="JsonConverter{Constellation}"/> used to build out the <c>Constellation</c> graph during retrieval from the repository
+        /// </summary>
         private class JsonConstellationListConverter : JsonConverter<IList<Constellation>>
         {
 
             public override IList<Constellation>? ReadJson(JsonReader reader, Type objectType, IList<Constellation>? existingValue, bool hasExistingValue, JsonSerializer serializer)
             {
+                // Get all constellations
                 JObject obj = JObject.Load(reader);
+                // Extract the nested list of int
                 var jsonConstellations = (JArray)obj["constellations"];
+                // Temporary constellation collection
                 List<Constellation> constellations = new ();
+
+                // Loop through the retrieved constellations
                 foreach (var constellation in jsonConstellations)
                 {
+                    // Get the constellation name (and native name) 
                     ConstellationName name = constellation["common_name"].ToObject<ConstellationName>();
 
-
+                    // Build out the graph of lines
                     var lines = BuildLines((JArray)constellation["lines"], new List<Tuple<int,int>>());
+
+                    // Instantiate the new constellation
                     Constellation eqConst = new(constellation["id"].Value<string>(), name.English, name.Native)
                     {
                         ConstellationLines = lines
                     };
+                    // Add the constellation graph to the constellation
                     constellations.Add(eqConst);
                 }
                 return constellations;
             }
 
-        private static IEnumerable<Tuple<int,int>> BuildLines(JArray jArray, IList<Tuple<int, int>> lines)
-        {
-            int previousStar = 0;
-            foreach (var item in jArray)
+            /// <summary>
+            /// Inserts the edges from the constellation graph into memory 
+            /// </summary>
+            /// <param name="jArray">The array of objects retrieved from the repository (nested)</param>
+            /// <param name="lines">The table to insert the graph edges</param>
+            /// <returns>A list of all graph edges</returns>
+            private static IEnumerable<Tuple<int,int>> BuildLines(JArray jArray, IList<Tuple<int, int>> lines)
             {
+                // Star a new branch
+                int previousStar = 0;
+                // Iterate through the array of retrieved stars
+                foreach (var item in jArray)
+                {
 
-                if (item is JArray list) { BuildLines(list, lines); }
-                    else 
-                    { 
-                        var star = item.Value<int>();
-                        if (previousStar == 0) {previousStar = star;}
+                    // If the nested item is an array call recursevely to skip to another iteration
+                    if (item is JArray list) { BuildLines(list, lines); }
                         else 
-                        {
-                            lines.Add(Tuple.Create(previousStar, star)); 
-                            previousStar = star;
+                        { 
+                            // The current item is a single item
+                            // Get the value from the wrapper
+                            var star = item.Value<int>();
+                            // Check if this is a new branch and skip if true
+                            if (previousStar == 0) {previousStar = star;}
+                            else 
+                            {
+                                // This branch is continuing
+                                // Add the Tuple &lt; int, int &lt; to the constellation lines
+                                lines.Add(Tuple.Create(previousStar, star)); 
+                                // reference the previous star
+                                previousStar = star;
+                            }
                         }
-                    }
+                }
+                return lines;
             }
-            return lines;
-        }
 
 
             public override void WriteJson(JsonWriter writer, IList<Constellation>? value, JsonSerializer serializer)

@@ -67,7 +67,14 @@ namespace DataLayer
             return star;
         }
             
-        
+        /// <summary>
+        /// Used by the <see cref="StargazerRepositoryService{T}"/> to pack up the data and return it
+        /// </summary>
+        /// <param name="stars"></param>
+        /// <param name="messierObjects"></param>
+        /// <param name="constellations"></param>
+        /// <param name="constellationStars"></param>
+        /// <param name="drawnStars"></param>
         internal CelestialDataPackage(BlockingCollection<HorizontalStar> stars, BlockingCollection<HorizontalMessierObject> messierObjects, IEnumerable<Constellation> constellations, ConcurrentDictionary<int, HorizontalStar> constellationStars, ConcurrentDictionary<int, T> drawnStars)
         {
             Stars = stars;

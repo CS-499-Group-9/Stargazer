@@ -19,6 +19,7 @@ items:
 references:
 - uid: DataLayer.CelestialDataPackage`1
   commentId: T:DataLayer.CelestialDataPackage`1
+  isExternal: true
   href: DataLayer.CelestialDataPackage-1.html
   name: CelestialDataPackage<T>
   nameWithType: CelestialDataPackage<T>
@@ -29,6 +30,7 @@ references:
   spec.csharp:
   - uid: DataLayer.CelestialDataPackage`1
     name: CelestialDataPackage
+    isExternal: true
     href: DataLayer.CelestialDataPackage-1.html
   - name: <
   - name: T
@@ -36,6 +38,7 @@ references:
   spec.vb:
   - uid: DataLayer.CelestialDataPackage`1
     name: CelestialDataPackage
+    isExternal: true
     href: DataLayer.CelestialDataPackage-1.html
   - name: (
   - name: Of
@@ -44,6 +47,7 @@ references:
   - name: )
 - uid: DataLayer.InjectionService`1
   commentId: T:DataLayer.InjectionService`1
+  isExternal: true
   href: DataLayer.InjectionService-1.html
   name: InjectionService<T>
   nameWithType: InjectionService<T>
@@ -54,6 +58,7 @@ references:
   spec.csharp:
   - uid: DataLayer.InjectionService`1
     name: InjectionService
+    isExternal: true
     href: DataLayer.InjectionService-1.html
   - name: <
   - name: T
@@ -61,6 +66,7 @@ references:
   spec.vb:
   - uid: DataLayer.InjectionService`1
     name: InjectionService
+    isExternal: true
     href: DataLayer.InjectionService-1.html
   - name: (
   - name: Of
@@ -69,6 +75,7 @@ references:
   - name: )
 - uid: DataLayer.StargazerRepositoryService`1
   commentId: T:DataLayer.StargazerRepositoryService`1
+  isExternal: true
   href: DataLayer.StargazerRepositoryService-1.html
   name: StargazerRepositoryService<T>
   nameWithType: StargazerRepositoryService<T>
@@ -79,6 +86,7 @@ references:
   spec.csharp:
   - uid: DataLayer.StargazerRepositoryService`1
     name: StargazerRepositoryService
+    isExternal: true
     href: DataLayer.StargazerRepositoryService-1.html
   - name: <
   - name: T
@@ -86,6 +94,7 @@ references:
   spec.vb:
   - uid: DataLayer.StargazerRepositoryService`1
     name: StargazerRepositoryService
+    isExternal: true
     href: DataLayer.StargazerRepositoryService-1.html
   - name: (
   - name: Of

@@ -15,16 +15,12 @@ items:
   fullName: DataLayer.Interfaces.IStarRepository
   type: Interface
   source:
-    remote:
-      path: DataLayer/Interfaces/IStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: IStarRepository
-    path: ../DataLayer/Interfaces/IStarRepository.cs
-    startLine: 4
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IStarRepository.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Communicates with a repository of Yale Stars (in the equatorial coordinate form).
+  example: []
   syntax:
     content: public interface IStarRepository
     content.vb: Public Interface IStarRepository
@@ -40,23 +36,21 @@ items:
   fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
   type: Method
   source:
-    remote:
-      path: DataLayer/Interfaces/IStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: GetAllStarsAsync
-    path: ../DataLayer/Interfaces/IStarRepository.cs
-    startLine: 6
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IStarRepository.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Gets all stars that are brighter than a certain magnitude.
+  example: []
   syntax:
     content: Task<IList<EquatorialStar>> GetAllStarsAsync(double maximumMagnitude)
     parameters:
     - id: maximumMagnitude
       type: System.Double
+      description: The minimum brightness to include (negative numbers are brighter)
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
+      description: A running task that can be awaited to obtain a list of stars
     content.vb: Function GetAllStarsAsync(maximumMagnitude As Double) As Task(Of IList(Of EquatorialStar))
   overload: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
   nameWithType.vb: IStarRepository.GetAllStarsAsync(Double)
@@ -74,23 +68,21 @@ items:
   fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(int)
   type: Method
   source:
-    remote:
-      path: DataLayer/Interfaces/IStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: GetStarByHipAsync
-    path: ../DataLayer/Interfaces/IStarRepository.cs
-    startLine: 7
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IStarRepository.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Gets a single star from the repository
+  example: []
   syntax:
     content: Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
     parameters:
     - id: hipparcosId
       type: System.Int32
+      description: The Hipparcos ID of the star to find
     return:
       type: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
+      description: Null if no star is found
     content.vb: Function GetStarByHipAsync(hipparcosId As Integer) As Task(Of EquatorialStar)
   overload: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*
   nameWithType.vb: IStarRepository.GetStarByHipAsync(Integer)
@@ -99,6 +91,7 @@ items:
 references:
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
+  isExternal: true
   href: DataLayer.html
   name: DataLayer.Interfaces
   nameWithType: DataLayer.Interfaces
@@ -106,21 +99,26 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
+    isExternal: true
     href: DataLayer.Interfaces.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
+    isExternal: true
     href: DataLayer.Interfaces.html
 - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
   commentId: Overload:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  isExternal: true
   href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
   name: GetAllStarsAsync
   nameWithType: IStarRepository.GetAllStarsAsync
@@ -160,6 +158,7 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialStar
     name: EquatorialStar
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: '>'
   - name: '>'
@@ -180,6 +179,7 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.EquatorialStar
     name: EquatorialStar
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: )
   - name: )
@@ -257,6 +257,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*
   commentId: Overload:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
+  isExternal: true
   href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
   name: GetStarByHipAsync
   nameWithType: IStarRepository.GetStarByHipAsync
@@ -291,6 +292,7 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialStar
     name: EquatorialStar
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: '>'
   spec.vb:
@@ -303,5 +305,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.EquatorialStar
     name: EquatorialStar
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: )

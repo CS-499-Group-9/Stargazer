@@ -7,6 +7,9 @@ using System.Globalization;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
+    /// </summary>
     internal class StarLustMessierCsvRepository : IMessierRepository
     {
         private readonly string filePath;

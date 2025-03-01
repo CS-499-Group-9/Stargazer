@@ -20,24 +20,28 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   parent: DataLayer.HorizontalObjects
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
   commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
   name: HorizontalMessierObject
   nameWithType: HorizontalMessierObject
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
 - uid: DataLayer.HorizontalObjects.HorizontalStar
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalStar.html
   name: HorizontalStar
   nameWithType: HorizontalStar
   fullName: DataLayer.HorizontalObjects.HorizontalStar
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
+  isExternal: true
   href: DataLayer.html
   name: DataLayer.HorizontalObjects
   nameWithType: DataLayer.HorizontalObjects
@@ -45,16 +49,20 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
+    isExternal: true
     href: DataLayer.HorizontalObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
+    isExternal: true
     href: DataLayer.HorizontalObjects.html

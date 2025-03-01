@@ -5,6 +5,7 @@ items:
   id: HorizontalMessierObject
   parent: DataLayer.HorizontalObjects
   children:
+  - DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
   - DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   - DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   - DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
@@ -20,16 +21,12 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
   type: Class
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: HorizontalMessierObject
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 3
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: A Messier Deep Space Object located in Horizontal coordinates
+  example: []
   syntax:
     content: 'public class HorizontalMessierObject : HorizontalBody'
     content.vb: Public Class HorizontalMessierObject Inherits HorizontalBody
@@ -37,17 +34,44 @@ items:
   - System.Object
   - DataLayer.HorizontalObjects.HorizontalBody
   inheritedMembers:
+  - DataLayer.HorizontalObjects.HorizontalBody.<Altitude>k__BackingField
+  - DataLayer.HorizontalObjects.HorizontalBody.<Azimuth>k__BackingField
+  - DataLayer.HorizontalObjects.HorizontalBody.<Magnitude>k__BackingField
+  - DataLayer.HorizontalObjects.HorizontalBody.<Distance>k__BackingField
   - DataLayer.HorizontalObjects.HorizontalBody.Altitude
   - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   - DataLayer.HorizontalObjects.HorizontalBody.Distance
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
+  commentId: M:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
+  id: '#ctor'
+  parent: DataLayer.HorizontalObjects.HorizontalMessierObject
+  langs:
+  - csharp
+  - vb
+  name: HorizontalMessierObject()
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject()
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject()
+  type: Constructor
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  syntax:
+    content: public HorizontalMessierObject()
+    content.vb: Public Sub New()
+  overload: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
+  nameWithType.vb: HorizontalMessierObject.New()
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New()
+  name.vb: New()
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   id: MessierId
@@ -60,18 +84,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: MessierId
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 5
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? MessierId { get; }
+    content: public string? MessierId { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -89,18 +109,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: NewGeneralCatalog
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 6
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? NewGeneralCatalog { get; }
+    content: public string? NewGeneralCatalog { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -118,18 +134,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: Type
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 7
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.Type" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? Type { get; }
+    content: public string? Type { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -147,18 +159,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: Constellation
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 8
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? Constellation { get; }
+    content: public string? Constellation { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -176,18 +184,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: Size
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 9
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.Size" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? Size { get; }
+    content: public string? Size { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -205,18 +209,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: ViewingSeason
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 10
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? ViewingSeason { get; }
+    content: public string? ViewingSeason { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -234,18 +234,14 @@ items:
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
   type: Property
   source:
-    remote:
-      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: ViewingDifficulty
-    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 11
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/HorizontalObjects/HorizontalMessierObject.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
+  summary: <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
-    content: public string? ViewingDifficulty { get; }
+    content: public string? ViewingDifficulty { get; internal set; }
     parameters: []
     return:
       type: System.String
@@ -254,6 +250,7 @@ items:
 references:
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
+  isExternal: true
   href: DataLayer.html
   name: DataLayer.HorizontalObjects
   nameWithType: DataLayer.HorizontalObjects
@@ -261,18 +258,22 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
+    isExternal: true
     href: DataLayer.HorizontalObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
+    isExternal: true
     href: DataLayer.HorizontalObjects.html
 - uid: System.Object
   commentId: T:System.Object
@@ -288,13 +289,47 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   parent: DataLayer.HorizontalObjects
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.<Altitude>k__BackingField
+  commentId: F:DataLayer.HorizontalObjects.HorizontalBody.<Altitude>k__BackingField
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__Altitude_k__BackingField
+  name: <Altitude>k__BackingField
+  nameWithType: HorizontalBody.<Altitude>k__BackingField
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.<Altitude>k__BackingField
+- uid: DataLayer.HorizontalObjects.HorizontalBody.<Azimuth>k__BackingField
+  commentId: F:DataLayer.HorizontalObjects.HorizontalBody.<Azimuth>k__BackingField
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__Azimuth_k__BackingField
+  name: <Azimuth>k__BackingField
+  nameWithType: HorizontalBody.<Azimuth>k__BackingField
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.<Azimuth>k__BackingField
+- uid: DataLayer.HorizontalObjects.HorizontalBody.<Magnitude>k__BackingField
+  commentId: F:DataLayer.HorizontalObjects.HorizontalBody.<Magnitude>k__BackingField
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__Magnitude_k__BackingField
+  name: <Magnitude>k__BackingField
+  nameWithType: HorizontalBody.<Magnitude>k__BackingField
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.<Magnitude>k__BackingField
+- uid: DataLayer.HorizontalObjects.HorizontalBody.<Distance>k__BackingField
+  commentId: F:DataLayer.HorizontalObjects.HorizontalBody.<Distance>k__BackingField
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__Distance_k__BackingField
+  name: <Distance>k__BackingField
+  nameWithType: HorizontalBody.<Distance>k__BackingField
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.<Distance>k__BackingField
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude
   name: Altitude
   nameWithType: HorizontalBody.Altitude
@@ -302,6 +337,7 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Azimuth
   name: Azimuth
   nameWithType: HorizontalBody.Azimuth
@@ -309,6 +345,7 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude
   name: Magnitude
   nameWithType: HorizontalBody.Magnitude
@@ -316,10 +353,83 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Distance
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Distance
   parent: DataLayer.HorizontalObjects.HorizontalBody
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Distance
   name: Distance
   nameWithType: HorizontalBody.Distance
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -398,78 +508,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -515,28 +553,28 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
   parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
   spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
   spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
 - uid: System
@@ -546,8 +584,26 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor
+  name: HorizontalMessierObject
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject
+  nameWithType.vb: HorizontalMessierObject.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId
+  name: MessierId
+  nameWithType: EquatorialMessierObject.MessierId
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_MessierId
   name: MessierId
   nameWithType: HorizontalMessierObject.MessierId
@@ -563,38 +619,86 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog
+  name: NewGeneralCatalog
+  nameWithType: EquatorialMessierObject.NewGeneralCatalog
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_NewGeneralCatalog
   name: NewGeneralCatalog
   nameWithType: HorizontalMessierObject.NewGeneralCatalog
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Type
+  name: Type
+  nameWithType: EquatorialMessierObject.Type
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Type*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Type
   name: Type
   nameWithType: HorizontalMessierObject.Type
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation
+  name: Constellation
+  nameWithType: EquatorialMessierObject.Constellation
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation
   name: Constellation
   nameWithType: HorizontalMessierObject.Constellation
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Size
+  name: Size
+  nameWithType: EquatorialMessierObject.Size
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Size*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Size
   name: Size
   nameWithType: HorizontalMessierObject.Size
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason
+  name: ViewingSeason
+  nameWithType: EquatorialMessierObject.ViewingSeason
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingSeason
   name: ViewingSeason
   nameWithType: HorizontalMessierObject.ViewingSeason
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty
+  name: ViewingDifficulty
+  nameWithType: EquatorialMessierObject.ViewingDifficulty
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingDifficulty
   name: ViewingDifficulty
   nameWithType: HorizontalMessierObject.ViewingDifficulty

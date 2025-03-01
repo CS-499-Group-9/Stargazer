@@ -42,6 +42,49 @@ items:
   - uid: DataLayer.HorizontalObjects.HorizontalStar
     name: HorizontalStar
     type: Class
+- uid: DataLayer.Implementations
+  name: DataLayer.Implementations
+  type: Namespace
+  items:
+  - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+    name: CosineKittyEquatorialConverter<T>
+    type: Class
+  - uid: DataLayer.Implementations.HygCsvStarRepository
+    name: HygCsvStarRepository
+    type: Class
+  - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
+    name: HygCsvStarRepository.StarMap
+    type: Class
+  - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+    name: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+    type: Class
+  - uid: DataLayer.Implementations.NullableDoubleConverter
+    name: NullableDoubleConverter
+    type: Class
+  - uid: DataLayer.Implementations.NullableIntConverter
+    name: NullableIntConverter
+    type: Class
+  - uid: DataLayer.Implementations.StarLustMessierCsvRepository
+    name: StarLustMessierCsvRepository
+    type: Class
+  - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
+    name: StarLustMessierCsvRepository.StarMap
+    type: Class
+  - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+    name: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+    type: Class
+  - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+    name: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+    type: Class
+  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
+    name: StellariumJsonConstellationRepository
+    type: Class
+  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
+    name: StellariumJsonConstellationRepository.ConstellationName
+    type: Class
+  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
+    name: StellariumJsonConstellationRepository.JsonConstellationListConverter
+    type: Class
 - uid: DataLayer.Interfaces
   name: DataLayer.Interfaces
   type: Namespace
@@ -58,4 +101,21 @@ items:
   - uid: DataLayer.Interfaces.IStarRepository
     name: IStarRepository
     type: Interface
+- uid: Microsoft.CodeAnalysis
+  name: Microsoft.CodeAnalysis
+  type: Namespace
+  items:
+  - uid: Microsoft.CodeAnalysis.EmbeddedAttribute
+    name: EmbeddedAttribute
+    type: Class
+- uid: System.Runtime.CompilerServices
+  name: System.Runtime.CompilerServices
+  type: Namespace
+  items:
+  - uid: System.Runtime.CompilerServices.NullableAttribute
+    name: NullableAttribute
+    type: Class
+  - uid: System.Runtime.CompilerServices.NullableContextAttribute
+    name: NullableContextAttribute
+    type: Class
 memberLayout: SamePage

@@ -1,0 +1,577 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository
+  commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository
+  id: StarLustMessierCsvRepository
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)
+  - DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  - DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  langs:
+  - csharp
+  - vb
+  name: StarLustMessierCsvRepository
+  nameWithType: StarLustMessierCsvRepository
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository
+  type: Class
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StarLustMessierCsvRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
+  example: []
+  syntax:
+    content: 'internal class StarLustMessierCsvRepository : IMessierRepository'
+    content.vb: Friend Class StarLustMessierCsvRepository Implements IMessierRepository
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IMessierRepository
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  commentId: F:DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  id: filePath
+  parent: DataLayer.Implementations.StarLustMessierCsvRepository
+  langs:
+  - csharp
+  - vb
+  name: filePath
+  nameWithType: StarLustMessierCsvRepository.filePath
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  type: Field
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StarLustMessierCsvRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly string filePath
+    return:
+      type: System.String
+    content.vb: Private ReadOnly filePath As String
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DataLayer.Implementations.StarLustMessierCsvRepository
+  langs:
+  - csharp
+  - vb
+  name: StarLustMessierCsvRepository(string)
+  nameWithType: StarLustMessierCsvRepository.StarLustMessierCsvRepository(string)
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarLustMessierCsvRepository(string)
+  type: Constructor
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StarLustMessierCsvRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: public StarLustMessierCsvRepository(string repositoryPath)
+    parameters:
+    - id: repositoryPath
+      type: System.String
+    content.vb: Public Sub New(repositoryPath As String)
+  overload: DataLayer.Implementations.StarLustMessierCsvRepository.#ctor*
+  nameWithType.vb: StarLustMessierCsvRepository.New(String)
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.New(String)
+  name.vb: New(String)
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  id: GetRawMessierObjectsAsync
+  parent: DataLayer.Implementations.StarLustMessierCsvRepository
+  langs:
+  - csharp
+  - vb
+  name: GetRawMessierObjectsAsync()
+  nameWithType: StarLustMessierCsvRepository.GetRawMessierObjectsAsync()
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync()
+  type: Method
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StarLustMessierCsvRepository.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Gets all Messier Objects from the repository
+  example: []
+  syntax:
+    content: public Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
+      description: A running task that can be awaited.
+    content.vb: Public Function GetRawMessierObjectsAsync() As Task(Of IEnumerable(Of EquatorialMessierObject))
+  overload: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync*
+  implements:
+  - DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+references:
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IMessierRepository
+  commentId: T:DataLayer.Interfaces.IMessierRepository
+  parent: DataLayer.Interfaces
+  isExternal: true
+  href: DataLayer.Interfaces.IMessierRepository.html
+  name: IMessierRepository
+  nameWithType: IMessierRepository
+  fullName: DataLayer.Interfaces.IMessierRepository
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.#ctor*
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor
+  isExternal: true
+  href: DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository__ctor_System_String_
+  name: StarLustMessierCsvRepository
+  nameWithType: StarLustMessierCsvRepository.StarLustMessierCsvRepository
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarLustMessierCsvRepository
+  nameWithType.vb: StarLustMessierCsvRepository.New
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.New
+  name.vb: New
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync*
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  isExternal: true
+  href: DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync
+  name: GetRawMessierObjectsAsync
+  nameWithType: StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+- uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  commentId: M:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  parent: DataLayer.Interfaces.IMessierRepository
+  isExternal: true
+  href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
+  name: GetRawMessierObjectsAsync()
+  nameWithType: IMessierRepository.GetRawMessierObjectsAsync()
+  fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+    name: GetRawMessierObjectsAsync
+    isExternal: true
+    href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+    name: GetRawMessierObjectsAsync
+    isExternal: true
+    href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<EquatorialMessierObject>>
+  nameWithType: Task<IEnumerable<EquatorialMessierObject>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>>
+  nameWithType.vb: Task(Of IEnumerable(Of EquatorialMessierObject))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
+  name.vb: Task(Of IEnumerable(Of EquatorialMessierObject))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+    name: EquatorialMessierObject
+    isExternal: true
+    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+    name: EquatorialMessierObject
+    isExternal: true
+    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

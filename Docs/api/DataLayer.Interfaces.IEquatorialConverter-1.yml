@@ -5,7 +5,7 @@ items:
   id: IEquatorialConverter`1
   parent: DataLayer.Interfaces
   children:
-  - DataLayer.Interfaces.IEquatorialConverter`1.Converter
+  - DataLayer.Interfaces.IEquatorialConverter`1.Convert
   langs:
   - csharp
   - vb
@@ -14,58 +14,60 @@ items:
   fullName: DataLayer.Interfaces.IEquatorialConverter<T>
   type: Interface
   source:
-    remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: IEquatorialConverter
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
-    startLine: 6
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IEquitorialConverter.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Converts a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to a {T} object
+  example: []
   syntax:
     content: 'public interface IEquatorialConverter<T> where T : HorizontalBody, new()'
     typeParameters:
     - id: T
+      description: The converted value of type {T} (defined by the front end)
     content.vb: Public Interface IEquatorialConverter(Of T As {HorizontalBody, New})
   nameWithType.vb: IEquatorialConverter(Of T)
   fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
   name.vb: IEquatorialConverter(Of T)
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Converter
-  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Converter
-  id: Converter
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  id: Convert
   parent: DataLayer.Interfaces.IEquatorialConverter`1
   langs:
   - csharp
   - vb
-  name: Converter
-  nameWithType: IEquatorialConverter<T>.Converter
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Converter
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
   type: Property
   source:
-    remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: Converter
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
-    startLine: 9
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IEquitorialConverter.cs
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: A function accepting an object of type <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref> to type {T}
+  example: []
   syntax:
-    content: Func<EquatorialCelestialBody, T> Converter { get; }
+    content: Func<EquatorialCelestialBody, T> Convert { get; }
     parameters: []
     return:
       type: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
-    content.vb: ReadOnly Property Converter As Func(Of EquatorialCelestialBody, T)
-  overload: DataLayer.Interfaces.IEquatorialConverter`1.Converter*
-  nameWithType.vb: IEquatorialConverter(Of T).Converter
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Converter
+    content.vb: ReadOnly Property Convert As Func(Of EquatorialCelestialBody, T)
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
 references:
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
+  isExternal: true
   href: DataLayer.html
   name: DataLayer.Interfaces
   nameWithType: DataLayer.Interfaces
@@ -73,27 +75,67 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
+    isExternal: true
     href: DataLayer.Interfaces.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
+    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
+    isExternal: true
     href: DataLayer.Interfaces.html
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Converter*
-  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Converter
-  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Converter
-  name: Converter
-  nameWithType: IEquatorialConverter<T>.Converter
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Converter
-  nameWithType.vb: IEquatorialConverter(Of T).Converter
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Converter
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    isExternal: true
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    isExternal: true
+    href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
 - uid: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
   commentId: T:System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,`0}
   parent: System
@@ -113,6 +155,7 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
     name: EquatorialCelestialBody
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   - name: ','
   - name: " "
@@ -128,11 +171,39 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
     name: EquatorialCelestialBody
+    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   - name: ','
   - name: " "
   - name: T
   - name: )
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    isExternal: true
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    isExternal: true
+    href: DataLayer.EquatorialObjects.html
 - uid: System.Func`2
   commentId: T:System.Func`2
   isExternal: true

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Constellation | Stargazer Data API ">
       
-      
+      <meta name="description" content="Represents a constellation in the sky">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/comment-back-end/apiSpec/new?filename=DataLayer_EquatorialObjects_Constellation.md&amp;value=---%0Auid%3A%20DataLayer.EquatorialObjects.Constellation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_EquatorialObjects_Constellation" data-uid="DataLayer.EquatorialObjects.Constellation" class="text-break">
-Class Constellation  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class Constellation  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>DataLayer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents a constellation in the sky</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -121,25 +122,25 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
   </dd></dl>
 
@@ -156,7 +157,7 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
 
   <h3 id="DataLayer_EquatorialObjects_Constellation__ctor_System_String_System_String_System_String_" data-uid="DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)">
   Constellation(string, string, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -173,7 +174,8 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
     <dt><code>nativeName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The native name of the constellation (if known)</p>
+</dd>
   </dl>
 
 
@@ -195,14 +197,15 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
 
   <h3 id="DataLayer_EquatorialObjects_Constellation_ConstellationId" data-uid="DataLayer.EquatorialObjects.Constellation.ConstellationId">
   ConstellationId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The id of the constellation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? ConstellationId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? ConstellationId { get; internal set; }</code></pre>
   </div>
 
 
@@ -226,14 +229,15 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
 
   <h3 id="DataLayer_EquatorialObjects_Constellation_ConstellationLines" data-uid="DataLayer.EquatorialObjects.Constellation.ConstellationLines">
   ConstellationLines
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>A list of vertices representing edges in the graph (each vertex is the HipparcosId of a star)</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Tuple&lt;int, int&gt;&gt; ConstellationLines { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Tuple&lt;int, int&gt;&gt; ConstellationLines { get; internal set; }</code></pre>
   </div>
 
 
@@ -257,14 +261,15 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
 
   <h3 id="DataLayer_EquatorialObjects_Constellation_ConstellationName" data-uid="DataLayer.EquatorialObjects.Constellation.ConstellationName">
   ConstellationName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The English(native) name of the constellation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? ConstellationName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? ConstellationName { get; internal set; }</code></pre>
   </div>
 
 
@@ -284,11 +289,43 @@ Class Constellation  <a class="header-action link-secondary" title="View source"
 
 
 
+  <a id="DataLayer_EquatorialObjects_Constellation_HipparcosId_" data-uid="DataLayer.EquatorialObjects.Constellation.HipparcosId*"></a>
+
+  <h3 id="DataLayer_EquatorialObjects_Constellation_HipparcosId" data-uid="DataLayer.EquatorialObjects.Constellation.HipparcosId">
+  HipparcosId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a new constellation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? HipparcosId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/EquatorialObjects/Constellation.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/Constellation.cs" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -51,6 +51,344 @@
             <returns></returns>
             <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
         </member>
+        <member name="M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0})">
+            <summary>
+            Used by the <see cref="T:DataLayer.StargazerRepositoryService`1"/> to pack up the data and return it
+            </summary>
+            <param name="stars"></param>
+            <param name="messierObjects"></param>
+            <param name="constellations"></param>
+            <param name="constellationStars"></param>
+            <param name="drawnStars"></param>
+        </member>
+        <member name="T:DataLayer.EquatorialObjects.Constellation">
+            <summary>
+            Represents a constellation in the sky
+            </summary>   
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.Constellation.ConstellationId">
+            <summary>
+            The id of the constellation
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.Constellation.ConstellationLines">
+            <summary>
+            A list of vertices representing edges in the graph (each vertex is the HipparcosId of a star)
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.Constellation.ConstellationName">
+            <summary>
+            The English(native) name of the constellation
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.Constellation.HipparcosId">
+            <summary>
+            Returns a new constellation
+            </summary>
+            <param name="Id">The identifying name of the constellation</param>
+            <param name="name">English name of the constellation</param>
+        </member>
+        <member name="M:DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)">
+            <param name="nativeName">The native name of the constellation (if known)</param>
+        </member>
+        <member name="T:DataLayer.EquatorialObjects.EquatorialCelestialBody">
+            <summary>
+            Represents an object that can be located in the sky according to equatorial coordinates.
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension">
+            <summary>
+            Measured in decimal hours from the point in the sky where the sun crosses the celestial equator during the spring equinox of 2000
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination">
+            <summary>
+            A measure in degrees how far an object is north or south of the celestial equator during the spring equinox of 2000
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude">
+            <summary>
+            A logarithmic representation of a star's brightness (negative values being brighter)
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance">
+            <summary>
+            Distance in light years from the earth.
+            </summary>
+        </member>
+        <member name="T:DataLayer.EquatorialObjects.EquatorialMessierObject">
+            <summary>
+            Represents a Messier Deep Space Object located in equatorial coordinates
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId">
+            <summary>
+            The 'M' prefixed identification number of the object
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog">
+            <summary>
+            The Messier Object identification in the New General Catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Type">
+            <summary>
+            The Messier Object category
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation">
+            <summary>
+            The constellation containing the object
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Size">
+            <summary>
+            The size (in light years) of the object (a 2 dimensional value as viewed)
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason">
+            <summary>
+            The celestial season in which the object can be viewed
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty">
+            <summary>
+            The difficulty level of viewing the object
+            </summary>
+        </member>
+        <member name="T:DataLayer.EquatorialObjects.EquatorialStar">
+            <summary>
+            Represents a visible star in equatorial coordinates
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.StarId">
+            <summary>
+            The unique ID in the Yale Star catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.HipparcosId">
+            <summary>
+            The unique ID in the Hipparcos catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId">
+            <summary>
+            The unique ID in the Henry Draper catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId">
+            <summary>
+            The unique ID in the Harvard Revised catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.GlieseId">
+            <summary>
+            Unique ID in the Gleise catalog
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation">
+            <summary>
+            A combination of two star-naming systems - Bayer (Greek letter) and Flamsteed (number)
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.ProperName">
+            <summary>
+            The international Astronomical Union (IAU) or traditional historical name of the star
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude">
+            <summary>
+            The actual brightness of the star
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.Spectrum">
+            <summary>
+            A value defined by the Harvard classification to categorize stars according to color, tempurature and spectral lines
+            </summary>
+        </member>
+        <member name="P:DataLayer.EquatorialObjects.EquatorialStar.ColorIndex">
+            <summary>
+            Describes the color of a star based on its brightness according to Blue and Visual Green filters.
+            </summary>
+        </member>
+        <member name="T:DataLayer.HorizontalObjects.HorizontalBody">
+            <summary>
+            Represents an object that can be located in the sky according to horizontal coordinates.
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalBody.Altitude">
+            <summary>
+            The angle in decimal degrees formed between the horizon and the star
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalBody.Azimuth">
+            <summary>
+            The angle in decimal degrees formed between due north and the star
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalBody.Magnitude">
+            <summary>
+            The apparent brightness of the star
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalBody.Distance">
+            <summary>
+            The distance (in lightyears) from the star to earth
+            </summary>
+        </member>
+        <member name="T:DataLayer.HorizontalObjects.HorizontalMessierObject">
+            <summary>
+            A Messier Deep Space Object located in Horizontal coordinates
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.Type">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Type"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.Size">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.Size"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty"/>
+            </summary>
+        </member>
+        <member name="T:DataLayer.HorizontalObjects.HorizontalStar">
+            <summary>
+            A star located by the Horizontal Coordinate method
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.StarId">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.StarId"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.HipparcosId">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.HipparcosId"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.StarName">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.ProperName"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.Spectrum">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.Spectrum"/>
+            </summary>
+        </member>
+        <member name="P:DataLayer.HorizontalObjects.HorizontalStar.ColorIndex">
+            <summary>
+            <see cref="P:DataLayer.EquatorialObjects.EquatorialStar.ColorIndex"/>
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.CosineKittyEquatorialConverter`1">
+            <summary>
+            Converts an object of type <see cref="T:DataLayer.EquatorialObjects.EquatorialCelestialBody"/> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library
+            </summary>
+            <typeparam name="T">The type of <see cref="T:DataLayer.HorizontalObjects.HorizontalBody"/> to convert to</typeparam>
+        </member>
+        <member name="M:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)">
+            <summary>
+            Generates a new converter specific to the observers location and time
+            </summary>
+            <param name="latitude">The latitude of the observer</param>
+            <param name="longitude">The longitude of the observer</param>
+            <param name="universalTime">The Universal Coordinated Time</param>
+        </member>
+        <member name="P:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert">
+            <summary>
+            Performs the conversion and returns the <c>T</c> object of type <see cref="T:DataLayer.HorizontalObjects.HorizontalBody"/>
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.HygCsvStarRepository">
+            <summary>
+            Retrieves raw star data from the HYG.csv repository
+            </summary>
+        </member>
+        <member name="F:DataLayer.Implementations.HygCsvStarRepository.filePath">
+            <summary>
+            The file path to the repository
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)">
+            <summary>
+            Creates a new instance and sets the file path
+            </summary>
+            <param name="repositoryPath"></param>
+        </member>
+        <member name="T:DataLayer.Implementations.HygCsvStarRepository.StarMap">
+            <summary>
+            A custom class to map the columns in the repository to the POCO
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor">
+            <summary>
+            Creates an instance of the mapper
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter">
+            <summary>
+            A custom type converter to convert parsecs to light years (the distance data in the repository is in Parsecs... yes... that's actually a real thing).
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.NullableDoubleConverter">
+            <summary>
+            A custom type converter to handle blank space in the csv file
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.NullableIntConverter">
+            <summary>
+            A custom type converter to handle blank space in the repository
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.StarLustMessierCsvRepository">
+            <summary>
+            Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter">
+            <summary>
+            Custom <see cref="T:Newtonsoft.Json.JsonConverter`1"/> used to build out the <c>Constellation</c> graph during retrieval from the repository
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})">
+            <summary>
+            Inserts the edges from the constellation graph into memory 
+            </summary>
+            <param name="jArray">The array of objects retrieved from the repository (nested)</param>
+            <param name="lines">The table to insert the graph edges</param>
+            <returns>A list of all graph edges</returns>
+        </member>
         <member name="T:DataLayer.InjectionService`1">
             <summary>
             Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.
@@ -66,12 +404,113 @@
             <returns>A new <c>StargazerRepositoryService</c> instance.</returns>
             <exception cref="T:System.IO.DirectoryNotFoundException">If the base directory of the executing program cannot be found.</exception>
         </member>
+        <member name="T:DataLayer.Interfaces.IConstellationRepository">
+            <summary>
+            Used to retrive a collection of <see cref="T:DataLayer.EquatorialObjects.Constellation"/> from a repository.
+            </summary>
+        </member>
+        <member name="M:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync">
+            <summary>
+            Gets all <see cref="T:DataLayer.EquatorialObjects.Constellation"/>s from the repository
+            </summary>
+            <returns>A running task that can be awaited</returns>
+        </member>
+        <member name="T:DataLayer.Interfaces.IEquatorialConverter`1">
+            <summary>
+            Converts a <see cref="T:DataLayer.HorizontalObjects.HorizontalBody"/> to a {T} object
+            </summary>
+            <typeparam name="T">The converted value of type {T} (defined by the front end)</typeparam>
+        </member>
+        <member name="P:DataLayer.Interfaces.IEquatorialConverter`1.Convert">
+            <summary>
+            A function accepting an object of type <see cref="T:DataLayer.EquatorialObjects.EquatorialCelestialBody"/> to type {T}
+            </summary>
+        </member>
+        <member name="T:DataLayer.Interfaces.IMessierRepository">
+            <summary>
+            Retrieves a list of Messier Deep Space Objects from a repository
+            </summary>
+        </member>
+        <member name="M:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync">
+            <summary>
+            Gets all Messier Objects from the repository
+            </summary>
+            <returns>A running task that can be awaited.</returns>
+        </member>
+        <member name="T:DataLayer.Interfaces.IStarRepository">
+            <summary>
+            Communicates with a repository of Yale Stars (in the equatorial coordinate form).
+            </summary>
+        </member>
+        <member name="M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)">
+            <summary>
+            Gets all stars that are brighter than a certain magnitude.
+            </summary>
+            <param name="maximumMagnitude">The minimum brightness to include (negative numbers are brighter)</param>
+            <returns>A running task that can be awaited to obtain a list of stars</returns>
+        </member>
+        <member name="M:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)">
+            <summary>
+            Gets a single star from the repository
+            </summary>
+            <param name="hipparcosId">The Hipparcos ID of the star to find</param>
+            <returns>Null if no star is found</returns>
+        </member>
         <member name="T:DataLayer.StargazerRepositoryService`1">
             <summary>
             Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
             </summary>
             <typeparam name="T">The class type of the star to be drawn by the front end. 
             This is needed for the internal logic of the <see cref="T:DataLayer.CelestialDataPackage`1"/></typeparam>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.maxStarMagnitude">
+            <summary>
+            Used to filter the maximum magnitude of stars retrieved from the Yale Star repository
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.equatorialStars">
+            <summary>
+            Immutable in-memory collection of all stars that were retrieved during initialization (excluding stars in constellations)
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.constellations">
+            <summary>
+            Immutable collection of all constellations retrieved during initialization.
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.equatorialMessierObjects">
+            <summary>
+            Immutable collection of all Messier Deep Space Objects retrieved during initialization.
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.equatorialConstellationStars">
+            <summary>
+            Immutable dictionary of all stars that are part of known constellations (no repeats, the HipparcosId is used as the key)
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.horizontalStars">
+            <summary>
+            Producer-consumer collection of <see cref="T:DataLayer.HorizontalObjects.HorizontalStar"/>s passed to the graphical layer
+            </summary>
+        </member>
+        <member name="F:DataLayer.StargazerRepositoryService`1.horizontalMessierObjects">
+            <summary>
+            Producer-consumer collection of converted <see cref="T:DataLayer.HorizontalObjects.HorizontalMessierObject"/>s passed to the graphical layer
+            </summary>
+        </member>
+        <member name="P:DataLayer.StargazerRepositoryService`1.constellationStars">
+            <summary>
+            Dictionary of <see cref="T:DataLayer.HorizontalObjects.HorizontalStar"/>s contained in constellations 
+            </summary>
+        </member>
+        <member name="M:DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IReadOnlyDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})">
+            <summary>
+            Used by the <see cref="M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)"/> method to initialize a new service
+            </summary>
+            <param name="equatorialStars">The stars retrieved from the repository</param>
+            <param name="equatorialConstellations">The constellations retrieved from the repository</param>
+            <param name="equatorialConstellationStars">The stars retrieved from the repository that are part of constellations</param>
+            <param name="equatorialMessierObjects">The Messier Deep Space Objects retrieved from the repository</param>
         </member>
         <member name="M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)">
             <summary>
@@ -81,6 +520,18 @@
             <param name="constellationRepository">Used to access a repository of constellations identified by the HIP ID</param>
             <param name="messierRepository">Used to access a repository of Messier Deep Space Objects</param>
             <returns>A new <c>StargazerRepositoryService</c> object.</returns>
+        </member>
+        <member name="M:DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)">
+            <summary>
+            Gathers all stars that are a part of constellations into a separate dictionary using the HipparcosId as the key.
+            This is because the Hip ID is used by the constellations to list the nodes of the constellation graph.
+            Removes the stars from the master listing.
+            </summary>
+            <param name="starTask">The star repository retrieval task</param>
+            <param name="constellationTask">The constellation repository retrieval task</param>
+            <param name="starRepository">The star repository so that constellation stars that were filtered out can be retrieved by HipparcosId</param>
+            <returns>The dictionary of constellation stars</returns>
+            <exception cref="T:System.InvalidOperationException">If a constellation star cannot be found.</exception>
         </member>
         <member name="M:DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)">
             <summary>

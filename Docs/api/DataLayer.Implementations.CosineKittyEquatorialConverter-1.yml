@@ -1,0 +1,730 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  commentId: T:DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  id: CosineKittyEquatorialConverter`1
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)
+  - DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  - DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
+  - DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyEquatorialConverter<T>
+  nameWithType: CosineKittyEquatorialConverter<T>
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>
+  type: Class
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Converts an object of type <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library
+  example: []
+  syntax:
+    content: 'internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody, new()'
+    typeParameters:
+    - id: T
+      description: The type of <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to convert to
+    content.vb: Friend Class CosineKittyEquatorialConverter(Of T As {HorizontalBody, New}) Implements IEquatorialConverter(Of T)
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IEquatorialConverter{{T}}
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T)
+  name.vb: CosineKittyEquatorialConverter(Of T)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
+  id: astroTime
+  parent: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: astroTime
+  nameWithType: CosineKittyEquatorialConverter<T>.astroTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.astroTime
+  type: Field
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly AstroTime astroTime
+    return:
+      type: CosineKitty.AstroTime
+    content.vb: Private ReadOnly astroTime As AstroTime
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).astroTime
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).astroTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
+  id: observer
+  parent: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: observer
+  nameWithType: CosineKittyEquatorialConverter<T>.observer
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.observer
+  type: Field
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly Observer observer
+    return:
+      type: CosineKitty.Observer
+    content.vb: Private ReadOnly observer As Observer
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).observer
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).observer
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)
+  id: '#ctor(System.Double,System.Double,System.DateTime)'
+  parent: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyEquatorialConverter(double, double, DateTime)
+  nameWithType: CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter(double, double, DateTime)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter(double, double, System.DateTime)
+  type: Constructor
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Generates a new converter specific to the observers location and time
+  example: []
+  syntax:
+    content: internal CosineKittyEquatorialConverter(double latitude, double longitude, DateTime universalTime)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The latitude of the observer
+    - id: longitude
+      type: System.Double
+      description: The longitude of the observer
+    - id: universalTime
+      type: System.DateTime
+      description: The Universal Coordinated Time
+    content.vb: Friend Sub New(latitude As Double, longitude As Double, universalTime As Date)
+  overload: DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor*
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).New(Double, Double, Date)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New(Double, Double, Date)
+  name.vb: New(Double, Double, Date)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  id: Convert
+  parent: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: Convert
+  nameWithType: CosineKittyEquatorialConverter<T>.Convert
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
+  type: Property
+  source:
+    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Performs the conversion and returns the <code>T</code> object of type <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public Func<EquatorialCelestialBody, T> Convert { get; }
+    parameters: []
+    return:
+      type: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+    content.vb: Public ReadOnly Property Convert As Func(Of EquatorialCelestialBody, T)
+  overload: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert*
+  implements:
+  - DataLayer.Interfaces.IEquatorialConverter{{T}}.Convert
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
+references:
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  isExternal: true
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  isExternal: true
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    isExternal: true
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IEquatorialConverter{{T}}
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter{`0}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IEquatorialConverter`1
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  name: IEquatorialConverter<T>
+  nameWithType: IEquatorialConverter<T>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  nameWithType.vb: IEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  name.vb: IEquatorialConverter(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    isExternal: true
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    isExternal: true
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    isExternal: true
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    isExternal: true
+    href: DataLayer.EquatorialObjects.html
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    isExternal: true
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    isExternal: true
+    href: DataLayer.HorizontalObjects.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces.IEquatorialConverter`1
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  name: IEquatorialConverter<T>
+  nameWithType: IEquatorialConverter<T>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  nameWithType.vb: IEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  name.vb: IEquatorialConverter(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    isExternal: true
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    isExternal: true
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  isExternal: true
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    isExternal: true
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    isExternal: true
+    href: DataLayer.Interfaces.html
+- uid: CosineKitty.AstroTime
+  commentId: T:CosineKitty.AstroTime
+  parent: CosineKitty
+  isExternal: true
+  name: AstroTime
+  nameWithType: AstroTime
+  fullName: CosineKitty.AstroTime
+- uid: CosineKitty
+  commentId: N:CosineKitty
+  isExternal: true
+  name: CosineKitty
+  nameWithType: CosineKitty
+  fullName: CosineKitty
+- uid: CosineKitty.Observer
+  commentId: T:CosineKitty.Observer
+  parent: CosineKitty
+  isExternal: true
+  name: Observer
+  nameWithType: Observer
+  fullName: CosineKitty.Observer
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor
+  isExternal: true
+  href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1__ctor_System_Double_System_Double_System_DateTime_
+  name: CosineKittyEquatorialConverter
+  nameWithType: CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).New
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  isExternal: true
+  href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert
+  name: Convert
+  nameWithType: CosineKittyEquatorialConverter<T>.Convert
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
+- uid: DataLayer.Interfaces.IEquatorialConverter{{T}}.Convert
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter{`0}.Convert
+  parent: DataLayer.Interfaces.IEquatorialConverter{{T}}
+  definition: DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+- uid: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+  commentId: T:System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<EquatorialCelestialBody, T>
+  nameWithType: Func<EquatorialCelestialBody, T>
+  fullName: System.Func<DataLayer.EquatorialObjects.EquatorialCelestialBody, T>
+  nameWithType.vb: Func(Of EquatorialCelestialBody, T)
+  fullName.vb: System.Func(Of DataLayer.EquatorialObjects.EquatorialCelestialBody, T)
+  name.vb: Func(Of EquatorialCelestialBody, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    isExternal: true
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    isExternal: true
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
