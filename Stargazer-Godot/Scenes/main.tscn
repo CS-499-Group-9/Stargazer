@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=14 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
 [ext_resource type="Script" path="res://Code/LabelButton.cs" id="5_b3dcx"]
+[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
+[ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -22,6 +24,15 @@ font = SubResource("SystemFont_smpph")
 font_size = 66
 outline_size = 15
 outline_color = Color(1, 0.215686, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_vpwdv"]
+offsets = PackedFloat32Array(0.609347, 0.609357, 0.645897, 0.661094, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.992157, 0, 0.956863, 0.956863, 0.956863, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nmdm5"]
+gradient = SubResource("Gradient_vpwdv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -192,6 +203,31 @@ grow_vertical = 2
 text = "Stargazer"
 label_settings = SubResource("LabelSettings_pw72o")
 metadata/_edit_use_anchors_ = true
+
+[node name="Compass" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -130.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="Sprite2D" parent="Compass"]
+position = Vector2(65, 65)
+scale = Vector2(1.76563, 1.76563)
+texture = SubResource("GradientTexture2D_nmdm5")
+
+[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
+position = Vector2(65, 65)
+scale = Vector2(0.069375, 0.069375)
+texture = ExtResource("6_oit80")
+script = ExtResource("7_81dkj")
+needle = NodePath(".")
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
