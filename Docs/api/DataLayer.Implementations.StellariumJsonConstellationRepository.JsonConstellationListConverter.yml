@@ -5,7 +5,6 @@ items:
   id: StellariumJsonConstellationRepository.JsonConstellationListConverter
   parent: DataLayer.Implementations
   children:
-  - DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
   - DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})
   - DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
   - DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},Newtonsoft.Json.JsonSerializer)
@@ -17,11 +16,17 @@ items:
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   type: Class
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    remote:
+      path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: JsonConstellationListConverter
+    path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    startLine: 53
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Custom <xref href="Newtonsoft.Json.JsonConverter%601" data-throw-if-not-resolved="false"></xref> used to build out the <code>Constellation</code> graph during retrieval from the repository
+  summary: Custom <xref href="Newtonsoft.Json.JsonConverter%601" data-throw-if-not-resolved="false"></xref> used to build out the <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref> graph during retrieval from the repository
   example: []
   syntax:
     content: 'private class StellariumJsonConstellationRepository.JsonConstellationListConverter : JsonConverter<IList<Constellation>>'
@@ -36,13 +41,13 @@ items:
   - Newtonsoft.Json.JsonConverter{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}.CanConvert(System.Type)
   - Newtonsoft.Json.JsonConverter.CanRead
   - Newtonsoft.Json.JsonConverter.CanWrite
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
   commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
   id: ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
@@ -55,7 +60,13 @@ items:
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>?, bool, Newtonsoft.Json.JsonSerializer)
   type: Method
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    remote:
+      path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ReadJson
+    path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    startLine: 55
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -100,11 +111,17 @@ items:
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray, System.Collections.Generic.IList<System.Tuple<int, int>>)
   type: Method
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    remote:
+      path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: BuildLines
+    path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    startLine: 90
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Inserts the edges from the constellation graph into memory
+  summary: Inserts the edges from the <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref> graph into memory
   example: []
   syntax:
     content: private static IEnumerable<Tuple<int, int>> BuildLines(JArray jArray, IList<Tuple<int, int>> lines)
@@ -135,7 +152,13 @@ items:
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>?, Newtonsoft.Json.JsonSerializer)
   type: Method
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    remote:
+      path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: WriteJson
+    path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
+    startLine: 120
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -159,29 +182,6 @@ items:
   nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(JsonWriter, IList(Of Constellation), JsonSerializer)
   fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation), Newtonsoft.Json.JsonSerializer)
   name.vb: WriteJson(JsonWriter, IList(Of Constellation), JsonSerializer)
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  id: '#ctor'
-  parent: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
-  langs:
-  - csharp
-  - vb
-  name: JsonConstellationListConverter()
-  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter()
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter()
-  type: Constructor
-  source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-  assemblies:
-  - DataLayer
-  namespace: DataLayer.Implementations
-  syntax:
-    content: public JsonConstellationListConverter()
-    content.vb: Public Sub New()
-  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor*
-  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.New()
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.New()
-  name.vb: New()
 references:
 - uid: Newtonsoft.Json.JsonConverter`1
   commentId: T:Newtonsoft.Json.JsonConverter`1
@@ -208,9 +208,14 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  href: DataLayer.EquatorialObjects.Constellation.html
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
 - uid: DataLayer.Implementations
   commentId: N:DataLayer.Implementations
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.Implementations
   nameWithType: DataLayer.Implementations
@@ -218,22 +223,18 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Implementations
     name: Implementations
-    isExternal: true
     href: DataLayer.Implementations.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Implementations
     name: Implementations
-    isExternal: true
     href: DataLayer.Implementations.html
 - uid: System.Object
   commentId: T:System.Object
@@ -276,7 +277,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: '>'
   - name: '>'
@@ -296,7 +296,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
   - name: )
@@ -458,78 +457,6 @@ references:
   name: CanWrite
   nameWithType: JsonConverter.CanWrite
   fullName: Newtonsoft.Json.JsonConverter.CanWrite
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -608,6 +535,78 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -653,28 +652,28 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
   spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
 - uid: System
@@ -888,7 +887,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: '>'
   - name: ','
@@ -928,7 +926,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
   - name: ','
@@ -945,7 +942,6 @@ references:
   - name: )
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson*
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation__System_Boolean_Newtonsoft_Json_JsonSerializer_
   name: ReadJson
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
@@ -977,7 +973,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: '>'
   spec.vb:
@@ -990,7 +985,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
 - uid: System.Boolean
@@ -1146,7 +1140,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines*
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_BuildLines_Newtonsoft_Json_Linq_JArray_System_Collections_Generic_IList_System_Tuple_System_Int32_System_Int32___
   name: BuildLines
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
@@ -1373,7 +1366,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: '>'
   - name: ','
@@ -1401,7 +1393,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
-    isExternal: true
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
   - name: ','
@@ -1412,7 +1403,6 @@ references:
   - name: )
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson*
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation__Newtonsoft_Json_JsonSerializer_
   name: WriteJson
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
@@ -1459,13 +1449,3 @@ references:
     name: JsonSerializer
     isExternal: true
   - name: )
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor*
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  isExternal: true
-  href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter__ctor
-  name: JsonConstellationListConverter
-  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter
-  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.New
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.New
-  name.vb: New

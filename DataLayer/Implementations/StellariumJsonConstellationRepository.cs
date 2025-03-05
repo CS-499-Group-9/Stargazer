@@ -5,15 +5,30 @@ using Newtonsoft.Json.Linq;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// Used to retrieve constellation data from the Stellarium Json file.
+    /// </summary>
     internal class StellariumJsonConstellationRepository : IConstellationRepository
     {
+        /// <summary>
+        /// The path to the Stellarium Json file to read from
+        /// </summary>
         private readonly string filePath;
 
+        /// <summary>
+        /// Creates a new instance of the repository
+        /// </summary>
+        /// <param name="repositoryPath">The path to the directory containing the Json file.</param>
         public StellariumJsonConstellationRepository(string repositoryPath)
         {
             this.filePath = Path.Combine(repositoryPath, "constellations.json"); ;
         }
 
+        /// <summary>
+        /// Asynchronously retrieves a <see cref="IList{Constellation}"/> from the Json file.
+        /// </summary>
+        /// <returns>An <see cref="IList{Constellation}"/></returns>
+        /// <exception cref="FileNotFoundException"></exception>
         Task<IList<Constellation>> IConstellationRepository.GetAllConstellationsAsync()
         {
 
@@ -34,11 +49,10 @@ namespace DataLayer.Implementations
 
 
         /// <summary>
-        /// Custom <see cref="JsonConverter{Constellation}"/> used to build out the <c>Constellation</c> graph during retrieval from the repository
+        /// Custom <see cref="JsonConverter{Constellation}"/> used to build out the <see cref="Constellation"/> graph during retrieval from the repository
         /// </summary>
         private class JsonConstellationListConverter : JsonConverter<IList<Constellation>>
         {
-
             public override IList<Constellation>? ReadJson(JsonReader reader, Type objectType, IList<Constellation>? existingValue, bool hasExistingValue, JsonSerializer serializer)
             {
                 // Get all constellations
@@ -69,7 +83,7 @@ namespace DataLayer.Implementations
             }
 
             /// <summary>
-            /// Inserts the edges from the constellation graph into memory 
+            /// Inserts the edges from the <see cref="Constellation"/> graph into memory 
             /// </summary>
             /// <param name="jArray">The array of objects retrieved from the repository (nested)</param>
             /// <param name="lines">The table to insert the graph edges</param>
@@ -104,12 +118,15 @@ namespace DataLayer.Implementations
                 return lines;
             }
 
-
             public override void WriteJson(JsonWriter writer, IList<Constellation>? value, JsonSerializer serializer)
             {
                 throw new NotImplementedException();
             }
         }
+
+        /// <summary>
+        /// <see cref="StellariumJsonConstellationRepository"/> internal class to instantiate the constellation name from the Json repository
+        /// </summary>
         private class ConstellationName
         {
             [JsonProperty("english")]

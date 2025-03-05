@@ -20,13 +20,13 @@ namespace DataLayer.EquatorialObjects
         /// The English(native) name of the constellation
         /// </summary>
         public string? ConstellationName { get; internal set; }
+
         /// <summary>
-        /// Returns a new constellation
+        /// Returns a new object
         /// </summary>
-        /// <param name="Id">The identifying name of the constellation</param>
-        /// <param name="name">English name of the constellation</param>
-        public int? HipparcosId { get; set; }
-        /// <param name="nativeName">The native name of the constellation (if known)</param>
+        /// <param name="Id">The unique name of the constellation</param>
+        /// <param name="name">The English name of the constellation</param>
+        /// <param name="nativeName">The native name of the constellation</param>
         public Constellation(string Id, string name, string? nativeName)
         {
             ConstellationId = Id;

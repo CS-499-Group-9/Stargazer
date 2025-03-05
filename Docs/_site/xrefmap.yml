@@ -29,6 +29,7 @@ references:
   name: CelestialDataPackage
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_
   commentId: Overload:DataLayer.CelestialDataPackage`1.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage
   fullName.vb: DataLayer.CelestialDataPackage(Of T).New
@@ -46,6 +47,7 @@ references:
   name: ConstellationStars
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_ConstellationStars_
   commentId: Overload:DataLayer.CelestialDataPackage`1.ConstellationStars
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.ConstellationStars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).ConstellationStars
   nameWithType: CelestialDataPackage<T>.ConstellationStars
@@ -62,6 +64,7 @@ references:
   name: Constellations
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Constellations_
   commentId: Overload:DataLayer.CelestialDataPackage`1.Constellations
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.Constellations
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Constellations
   nameWithType: CelestialDataPackage<T>.Constellations
@@ -78,6 +81,7 @@ references:
   name: DrawnStars
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnStars_
   commentId: Overload:DataLayer.CelestialDataPackage`1.DrawnStars
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.DrawnStars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnStars
   nameWithType: CelestialDataPackage<T>.DrawnStars
@@ -95,6 +99,7 @@ references:
   name: GetConstellationStar
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetConstellationStar_
   commentId: Overload:DataLayer.CelestialDataPackage`1.GetConstellationStar
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.GetConstellationStar
   fullName.vb: DataLayer.CelestialDataPackage(Of T).GetConstellationStar
   nameWithType: CelestialDataPackage<T>.GetConstellationStar
@@ -111,6 +116,7 @@ references:
   name: MessierObjects
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierObjects_
   commentId: Overload:DataLayer.CelestialDataPackage`1.MessierObjects
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.MessierObjects
   fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierObjects
   nameWithType: CelestialDataPackage<T>.MessierObjects
@@ -127,6 +133,7 @@ references:
   name: Stars
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Stars_
   commentId: Overload:DataLayer.CelestialDataPackage`1.Stars
+  isSpec: "True"
   fullName: DataLayer.CelestialDataPackage<T>.Stars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Stars
   nameWithType: CelestialDataPackage<T>.Stars
@@ -156,6 +163,7 @@ references:
   name: Constellation
   href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation__ctor_
   commentId: Overload:DataLayer.EquatorialObjects.Constellation.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.EquatorialObjects.Constellation.Constellation
   fullName.vb: DataLayer.EquatorialObjects.Constellation.New
@@ -171,6 +179,7 @@ references:
   name: ConstellationId
   href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationId_
   commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.Constellation.ConstellationId
   nameWithType: Constellation.ConstellationId
 - uid: DataLayer.EquatorialObjects.Constellation.ConstellationLines
@@ -183,6 +192,7 @@ references:
   name: ConstellationLines
   href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationLines_
   commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.Constellation.ConstellationLines
   nameWithType: Constellation.ConstellationLines
 - uid: DataLayer.EquatorialObjects.Constellation.ConstellationName
@@ -195,44 +205,15 @@ references:
   name: ConstellationName
   href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationName_
   commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationName
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.Constellation.ConstellationName
   nameWithType: Constellation.ConstellationName
-- uid: DataLayer.EquatorialObjects.Constellation.HipparcosId
-  name: HipparcosId
-  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_HipparcosId
-  commentId: P:DataLayer.EquatorialObjects.Constellation.HipparcosId
-  fullName: DataLayer.EquatorialObjects.Constellation.HipparcosId
-  nameWithType: Constellation.HipparcosId
-- uid: DataLayer.EquatorialObjects.Constellation.HipparcosId*
-  name: HipparcosId
-  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_HipparcosId_
-  commentId: Overload:DataLayer.EquatorialObjects.Constellation.HipparcosId
-  fullName: DataLayer.EquatorialObjects.Constellation.HipparcosId
-  nameWithType: Constellation.HipparcosId
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
   name: EquatorialCelestialBody
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.#ctor
-  name: EquatorialCelestialBody()
-  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__ctor
-  commentId: M:DataLayer.EquatorialObjects.EquatorialCelestialBody.#ctor
-  name.vb: New()
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.EquatorialCelestialBody()
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialCelestialBody.New()
-  nameWithType: EquatorialCelestialBody.EquatorialCelestialBody()
-  nameWithType.vb: EquatorialCelestialBody.New()
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.#ctor*
-  name: EquatorialCelestialBody
-  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__ctor_
-  commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.#ctor
-  name.vb: New
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.EquatorialCelestialBody
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialCelestialBody.New
-  nameWithType: EquatorialCelestialBody.EquatorialCelestialBody
-  nameWithType.vb: EquatorialCelestialBody.New
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   name: Declination
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Declination
@@ -243,6 +224,7 @@ references:
   name: Declination
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Declination_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   nameWithType: EquatorialCelestialBody.Declination
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
@@ -255,6 +237,7 @@ references:
   name: Distance
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Distance_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
   nameWithType: EquatorialCelestialBody.Distance
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
@@ -267,6 +250,7 @@ references:
   name: Magnitude
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Magnitude_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
   nameWithType: EquatorialCelestialBody.Magnitude
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
@@ -279,6 +263,7 @@ references:
   name: RightAscension
   href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_RightAscension_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   nameWithType: EquatorialCelestialBody.RightAscension
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
@@ -287,24 +272,6 @@ references:
   commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
   nameWithType: EquatorialMessierObject
-- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  name: EquatorialMessierObject()
-  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject__ctor
-  commentId: M:DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  name.vb: New()
-  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.EquatorialMessierObject()
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialMessierObject.New()
-  nameWithType: EquatorialMessierObject.EquatorialMessierObject()
-  nameWithType.vb: EquatorialMessierObject.New()
-- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor*
-  name: EquatorialMessierObject
-  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject__ctor_
-  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  name.vb: New
-  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.EquatorialMessierObject
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialMessierObject.New
-  nameWithType: EquatorialMessierObject.EquatorialMessierObject
-  nameWithType.vb: EquatorialMessierObject.New
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   name: Constellation
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation
@@ -315,6 +282,7 @@ references:
   name: Constellation
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   nameWithType: EquatorialMessierObject.Constellation
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
@@ -327,6 +295,7 @@ references:
   name: MessierId
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   nameWithType: EquatorialMessierObject.MessierId
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
@@ -339,6 +308,7 @@ references:
   name: NewGeneralCatalog
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
   nameWithType: EquatorialMessierObject.NewGeneralCatalog
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
@@ -351,6 +321,7 @@ references:
   name: Size
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Size_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
   nameWithType: EquatorialMessierObject.Size
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
@@ -363,6 +334,7 @@ references:
   name: Type
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Type_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
   nameWithType: EquatorialMessierObject.Type
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
@@ -375,6 +347,7 @@ references:
   name: ViewingDifficulty
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
   nameWithType: EquatorialMessierObject.ViewingDifficulty
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
@@ -387,6 +360,7 @@ references:
   name: ViewingSeason
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
   nameWithType: EquatorialMessierObject.ViewingSeason
 - uid: DataLayer.EquatorialObjects.EquatorialStar
@@ -395,24 +369,6 @@ references:
   commentId: T:DataLayer.EquatorialObjects.EquatorialStar
   fullName: DataLayer.EquatorialObjects.EquatorialStar
   nameWithType: EquatorialStar
-- uid: DataLayer.EquatorialObjects.EquatorialStar.#ctor
-  name: EquatorialStar()
-  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar__ctor
-  commentId: M:DataLayer.EquatorialObjects.EquatorialStar.#ctor
-  name.vb: New()
-  fullName: DataLayer.EquatorialObjects.EquatorialStar.EquatorialStar()
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialStar.New()
-  nameWithType: EquatorialStar.EquatorialStar()
-  nameWithType.vb: EquatorialStar.New()
-- uid: DataLayer.EquatorialObjects.EquatorialStar.#ctor*
-  name: EquatorialStar
-  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar__ctor_
-  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.#ctor
-  name.vb: New
-  fullName: DataLayer.EquatorialObjects.EquatorialStar.EquatorialStar
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialStar.New
-  nameWithType: EquatorialStar.EquatorialStar
-  nameWithType.vb: EquatorialStar.New
 - uid: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
   name: AbsoluteMagnitude
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_AbsoluteMagnitude
@@ -423,6 +379,7 @@ references:
   name: AbsoluteMagnitude
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_AbsoluteMagnitude_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
   nameWithType: EquatorialStar.AbsoluteMagnitude
 - uid: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
@@ -435,6 +392,7 @@ references:
   name: BayerFlamsteedDesignation
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_BayerFlamsteedDesignation_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
   nameWithType: EquatorialStar.BayerFlamsteedDesignation
 - uid: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
@@ -447,6 +405,7 @@ references:
   name: ColorIndex
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ColorIndex_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
   nameWithType: EquatorialStar.ColorIndex
 - uid: DataLayer.EquatorialObjects.EquatorialStar.GlieseId
@@ -459,6 +418,7 @@ references:
   name: GlieseId
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_GlieseId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.GlieseId
   nameWithType: EquatorialStar.GlieseId
 - uid: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
@@ -471,6 +431,7 @@ references:
   name: HarvardRevisedId
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HarvardRevisedId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
   nameWithType: EquatorialStar.HarvardRevisedId
 - uid: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
@@ -483,6 +444,7 @@ references:
   name: HenryDraperId
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HenryDraperId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
   nameWithType: EquatorialStar.HenryDraperId
 - uid: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
@@ -495,6 +457,7 @@ references:
   name: HipparcosId
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HipparcosId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
   nameWithType: EquatorialStar.HipparcosId
 - uid: DataLayer.EquatorialObjects.EquatorialStar.ProperName
@@ -507,6 +470,7 @@ references:
   name: ProperName
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ProperName_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.ProperName
   nameWithType: EquatorialStar.ProperName
 - uid: DataLayer.EquatorialObjects.EquatorialStar.Spectrum
@@ -519,6 +483,7 @@ references:
   name: Spectrum
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_Spectrum_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.Spectrum
   nameWithType: EquatorialStar.Spectrum
 - uid: DataLayer.EquatorialObjects.EquatorialStar.StarId
@@ -531,6 +496,7 @@ references:
   name: StarId
   href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_StarId_
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.StarId
+  isSpec: "True"
   fullName: DataLayer.EquatorialObjects.EquatorialStar.StarId
   nameWithType: EquatorialStar.StarId
 - uid: DataLayer.HorizontalObjects
@@ -545,24 +511,6 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
   nameWithType: HorizontalBody
-- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor
-  name: HorizontalBody()
-  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__ctor
-  commentId: M:DataLayer.HorizontalObjects.HorizontalBody.#ctor
-  name.vb: New()
-  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody()
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New()
-  nameWithType: HorizontalBody.HorizontalBody()
-  nameWithType.vb: HorizontalBody.New()
-- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor*
-  name: HorizontalBody
-  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__ctor_
-  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.#ctor
-  name.vb: New
-  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New
-  nameWithType: HorizontalBody.HorizontalBody
-  nameWithType.vb: HorizontalBody.New
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   name: Altitude
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude
@@ -573,6 +521,7 @@ references:
   name: Altitude
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   nameWithType: HorizontalBody.Altitude
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
@@ -585,6 +534,7 @@ references:
   name: Azimuth
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Azimuth_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   nameWithType: HorizontalBody.Azimuth
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Distance
@@ -597,6 +547,7 @@ references:
   name: Distance
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Distance_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Distance
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
   nameWithType: HorizontalBody.Distance
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
@@ -609,6 +560,7 @@ references:
   name: Magnitude
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   nameWithType: HorizontalBody.Magnitude
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
@@ -617,24 +569,6 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
   nameWithType: HorizontalMessierObject
-- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
-  name: HorizontalMessierObject()
-  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor
-  commentId: M:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
-  name.vb: New()
-  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject()
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New()
-  nameWithType: HorizontalMessierObject.HorizontalMessierObject()
-  nameWithType.vb: HorizontalMessierObject.New()
-- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
-  name: HorizontalMessierObject
-  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor_
-  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
-  name.vb: New
-  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New
-  nameWithType: HorizontalMessierObject.HorizontalMessierObject
-  nameWithType.vb: HorizontalMessierObject.New
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   name: Constellation
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation
@@ -645,6 +579,7 @@ references:
   name: Constellation
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   nameWithType: HorizontalMessierObject.Constellation
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
@@ -657,6 +592,7 @@ references:
   name: MessierId
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_MessierId_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   nameWithType: HorizontalMessierObject.MessierId
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
@@ -669,6 +605,7 @@ references:
   name: NewGeneralCatalog
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_NewGeneralCatalog_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
   nameWithType: HorizontalMessierObject.NewGeneralCatalog
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
@@ -681,6 +618,7 @@ references:
   name: Size
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Size_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
   nameWithType: HorizontalMessierObject.Size
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
@@ -693,6 +631,7 @@ references:
   name: Type
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Type_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
   nameWithType: HorizontalMessierObject.Type
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
@@ -705,6 +644,7 @@ references:
   name: ViewingDifficulty
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingDifficulty_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
   nameWithType: HorizontalMessierObject.ViewingDifficulty
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
@@ -717,6 +657,7 @@ references:
   name: ViewingSeason
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingSeason_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
   nameWithType: HorizontalMessierObject.ViewingSeason
 - uid: DataLayer.HorizontalObjects.HorizontalStar
@@ -725,24 +666,6 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
   fullName: DataLayer.HorizontalObjects.HorizontalStar
   nameWithType: HorizontalStar
-- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor
-  name: HorizontalStar()
-  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar__ctor
-  commentId: M:DataLayer.HorizontalObjects.HorizontalStar.#ctor
-  name.vb: New()
-  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar()
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New()
-  nameWithType: HorizontalStar.HorizontalStar()
-  nameWithType.vb: HorizontalStar.New()
-- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor*
-  name: HorizontalStar
-  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar__ctor_
-  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.#ctor
-  name.vb: New
-  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar
-  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New
-  nameWithType: HorizontalStar.HorizontalStar
-  nameWithType.vb: HorizontalStar.New
 - uid: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
   name: AbsoluteMagnitude
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_AbsoluteMagnitude
@@ -753,6 +676,7 @@ references:
   name: AbsoluteMagnitude
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_AbsoluteMagnitude_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
   nameWithType: HorizontalStar.AbsoluteMagnitude
 - uid: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
@@ -765,6 +689,7 @@ references:
   name: ColorIndex
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_ColorIndex_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
   nameWithType: HorizontalStar.ColorIndex
 - uid: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
@@ -777,6 +702,7 @@ references:
   name: HipparcosId
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_HipparcosId_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
   nameWithType: HorizontalStar.HipparcosId
 - uid: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
@@ -789,6 +715,7 @@ references:
   name: Spectrum
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_Spectrum_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
   nameWithType: HorizontalStar.Spectrum
 - uid: DataLayer.HorizontalObjects.HorizontalStar.StarId
@@ -801,6 +728,7 @@ references:
   name: StarId
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarId_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.StarId
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.StarId
   nameWithType: HorizontalStar.StarId
 - uid: DataLayer.HorizontalObjects.HorizontalStar.StarName
@@ -813,6 +741,7 @@ references:
   name: StarName
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarName_
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.StarName
+  isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.StarName
   nameWithType: HorizontalStar.StarName
 - uid: DataLayer.Implementations
@@ -843,6 +772,7 @@ references:
   name: CosineKittyEquatorialConverter
   href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1__ctor_
   commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
   fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New
@@ -860,6 +790,7 @@ references:
   name: Convert
   href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert_
   commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  isSpec: "True"
   fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
   fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
   nameWithType: CosineKittyEquatorialConverter<T>.Convert
@@ -899,6 +830,7 @@ references:
   name: HygCsvStarRepository
   href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository__ctor_
   commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.HygCsvStarRepository.HygCsvStarRepository
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New
@@ -917,6 +849,7 @@ references:
   name: IStarRepository.GetAllStarsAsync
   href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_
   commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  isSpec: "True"
   fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
   nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync
 - uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
@@ -932,6 +865,7 @@ references:
   name: GetStarByHipAsync
   href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetStarByHipAsync_
   commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
+  isSpec: "True"
   fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
   nameWithType: HygCsvStarRepository.GetStarByHipAsync
 - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
@@ -953,6 +887,7 @@ references:
   name: StarMap
   href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.html#DataLayer_Implementations_HygCsvStarRepository_StarMap__ctor_
   commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.StarMap
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.New
@@ -964,24 +899,6 @@ references:
   commentId: T:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
   fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
   nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
-- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.#ctor
-  name: ParsecToLightyearConverter()
-  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter__ctor
-  commentId: M:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ParsecToLightyearConverter()
-  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.New()
-  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ParsecToLightyearConverter()
-  nameWithType.vb: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.New()
-- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.#ctor*
-  name: ParsecToLightyearConverter
-  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ParsecToLightyearConverter
-  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.New
-  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ParsecToLightyearConverter
-  nameWithType.vb: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.New
 - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   name: ConvertFromString(string?, IReaderRow, MemberMapData)
   href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
@@ -995,6 +912,7 @@ references:
   name: ConvertFromString
   href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter_ConvertFromString_
   commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
+  isSpec: "True"
   fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
   nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
 - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.conversionFactor
@@ -1015,24 +933,6 @@ references:
   commentId: T:DataLayer.Implementations.NullableDoubleConverter
   fullName: DataLayer.Implementations.NullableDoubleConverter
   nameWithType: NullableDoubleConverter
-- uid: DataLayer.Implementations.NullableDoubleConverter.#ctor
-  name: NullableDoubleConverter()
-  href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter__ctor
-  commentId: M:DataLayer.Implementations.NullableDoubleConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.NullableDoubleConverter.NullableDoubleConverter()
-  fullName.vb: DataLayer.Implementations.NullableDoubleConverter.New()
-  nameWithType: NullableDoubleConverter.NullableDoubleConverter()
-  nameWithType.vb: NullableDoubleConverter.New()
-- uid: DataLayer.Implementations.NullableDoubleConverter.#ctor*
-  name: NullableDoubleConverter
-  href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.NullableDoubleConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.NullableDoubleConverter.NullableDoubleConverter
-  fullName.vb: DataLayer.Implementations.NullableDoubleConverter.New
-  nameWithType: NullableDoubleConverter.NullableDoubleConverter
-  nameWithType.vb: NullableDoubleConverter.New
 - uid: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   name: ConvertFromString(string?, IReaderRow, MemberMapData)
   href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
@@ -1046,6 +946,7 @@ references:
   name: ConvertFromString
   href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter_ConvertFromString_
   commentId: Overload:DataLayer.Implementations.NullableDoubleConverter.ConvertFromString
+  isSpec: "True"
   fullName: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString
   nameWithType: NullableDoubleConverter.ConvertFromString
 - uid: DataLayer.Implementations.NullableIntConverter
@@ -1054,24 +955,6 @@ references:
   commentId: T:DataLayer.Implementations.NullableIntConverter
   fullName: DataLayer.Implementations.NullableIntConverter
   nameWithType: NullableIntConverter
-- uid: DataLayer.Implementations.NullableIntConverter.#ctor
-  name: NullableIntConverter()
-  href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter__ctor
-  commentId: M:DataLayer.Implementations.NullableIntConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.NullableIntConverter.NullableIntConverter()
-  fullName.vb: DataLayer.Implementations.NullableIntConverter.New()
-  nameWithType: NullableIntConverter.NullableIntConverter()
-  nameWithType.vb: NullableIntConverter.New()
-- uid: DataLayer.Implementations.NullableIntConverter.#ctor*
-  name: NullableIntConverter
-  href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.NullableIntConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.NullableIntConverter.NullableIntConverter
-  fullName.vb: DataLayer.Implementations.NullableIntConverter.New
-  nameWithType: NullableIntConverter.NullableIntConverter
-  nameWithType.vb: NullableIntConverter.New
 - uid: DataLayer.Implementations.NullableIntConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   name: ConvertFromString(string?, IReaderRow, MemberMapData)
   href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
@@ -1085,6 +968,7 @@ references:
   name: ConvertFromString
   href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter_ConvertFromString_
   commentId: Overload:DataLayer.Implementations.NullableIntConverter.ConvertFromString
+  isSpec: "True"
   fullName: DataLayer.Implementations.NullableIntConverter.ConvertFromString
   nameWithType: NullableIntConverter.ConvertFromString
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository
@@ -1106,6 +990,7 @@ references:
   name: StarLustMessierCsvRepository
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository__ctor_
   commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarLustMessierCsvRepository
   fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.New
@@ -1121,6 +1006,7 @@ references:
   name: GetRawMessierObjectsAsync
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync_
   commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  isSpec: "True"
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
   nameWithType: StarLustMessierCsvRepository.GetRawMessierObjectsAsync
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
@@ -1142,6 +1028,7 @@ references:
   name: StarMap
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap__ctor_
   commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.StarMap
   fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.New
@@ -1153,24 +1040,6 @@ references:
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
   nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
-- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.#ctor
-  name: DdmToDecimalDegreesConverter()
-  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter__ctor
-  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.DdmToDecimalDegreesConverter()
-  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.New()
-  nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.DdmToDecimalDegreesConverter()
-  nameWithType.vb: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.New()
-- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.#ctor*
-  name: DdmToDecimalDegreesConverter
-  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.DdmToDecimalDegreesConverter
-  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.New
-  nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.DdmToDecimalDegreesConverter
-  nameWithType.vb: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.New
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   name: ConvertFromString(string?, IReaderRow, MemberMapData)
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
@@ -1184,6 +1053,7 @@ references:
   name: ConvertFromString
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter_ConvertFromString_
   commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
+  isSpec: "True"
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
   nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
@@ -1192,24 +1062,6 @@ references:
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
   nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
-- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.#ctor
-  name: HmsToDecimalDegreesConverter()
-  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter__ctor
-  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.HmsToDecimalDegreesConverter()
-  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.New()
-  nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.HmsToDecimalDegreesConverter()
-  nameWithType.vb: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.New()
-- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.#ctor*
-  name: HmsToDecimalDegreesConverter
-  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.HmsToDecimalDegreesConverter
-  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.New
-  nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.HmsToDecimalDegreesConverter
-  nameWithType.vb: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.New
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   name: ConvertFromString(string?, IReaderRow, MemberMapData)
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
@@ -1223,6 +1075,7 @@ references:
   name: ConvertFromString
   href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter_ConvertFromString_
   commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
+  isSpec: "True"
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
   nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.filePath
@@ -1250,6 +1103,7 @@ references:
   name: StellariumJsonConstellationRepository
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository__ctor_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.StellariumJsonConstellationRepository
   fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New
@@ -1261,24 +1115,6 @@ references:
   commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
   nameWithType: StellariumJsonConstellationRepository.ConstellationName
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.#ctor
-  name: ConstellationName()
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName__ctor
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.ConstellationName()
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.New()
-  nameWithType: StellariumJsonConstellationRepository.ConstellationName.ConstellationName()
-  nameWithType.vb: StellariumJsonConstellationRepository.ConstellationName.New()
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.#ctor*
-  name: ConstellationName
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName__ctor_
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.ConstellationName
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.New
-  nameWithType: StellariumJsonConstellationRepository.ConstellationName.ConstellationName
-  nameWithType.vb: StellariumJsonConstellationRepository.ConstellationName.New
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
   name: English
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_English
@@ -1289,6 +1125,7 @@ references:
   name: English
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_English_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
   nameWithType: StellariumJsonConstellationRepository.ConstellationName.English
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
@@ -1301,6 +1138,7 @@ references:
   name: Native
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_Native_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
   nameWithType: StellariumJsonConstellationRepository.ConstellationName.Native
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
@@ -1316,6 +1154,7 @@ references:
   name: IConstellationRepository.GetAllConstellationsAsync
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
   nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
@@ -1324,24 +1163,6 @@ references:
   commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  name: JsonConstellationListConverter()
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter__ctor
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  name.vb: New()
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter()
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.New()
-  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter()
-  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.New()
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor*
-  name: JsonConstellationListConverter
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter__ctor_
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.#ctor
-  name.vb: New
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter
-  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.New
-  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.JsonConstellationListConverter
-  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.New
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})
   name: BuildLines(JArray, IList<Tuple<int, int>>)
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_BuildLines_Newtonsoft_Json_Linq_JArray_System_Collections_Generic_IList_System_Tuple_System_Int32_System_Int32___
@@ -1355,6 +1176,7 @@ references:
   name: BuildLines
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_BuildLines_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
@@ -1370,6 +1192,7 @@ references:
   name: ReadJson
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_ReadJson_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},Newtonsoft.Json.JsonSerializer)
@@ -1385,6 +1208,7 @@ references:
   name: WriteJson
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_WriteJson_
   commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
+  isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
@@ -1415,6 +1239,7 @@ references:
   name: GetRepositoryServiceAsync
   href: api/DataLayer.InjectionService-1.html#DataLayer_InjectionService_1_GetRepositoryServiceAsync_
   commentId: Overload:DataLayer.InjectionService`1.GetRepositoryServiceAsync
+  isSpec: "True"
   fullName: DataLayer.InjectionService<T>.GetRepositoryServiceAsync
   fullName.vb: DataLayer.InjectionService(Of T).GetRepositoryServiceAsync
   nameWithType: InjectionService<T>.GetRepositoryServiceAsync
@@ -1449,6 +1274,7 @@ references:
   name: GetAllConstellationsAsync
   href: api/DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync_
   commentId: Overload:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  isSpec: "True"
   fullName: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
   nameWithType: IConstellationRepository.GetAllConstellationsAsync
 - uid: DataLayer.Interfaces.IEquatorialConverter`1
@@ -1472,6 +1298,7 @@ references:
   name: Convert
   href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert_
   commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  isSpec: "True"
   fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
   fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
   nameWithType: IEquatorialConverter<T>.Convert
@@ -1492,6 +1319,7 @@ references:
   name: GetRawMessierObjectsAsync
   href: api/DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync_
   commentId: Overload:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  isSpec: "True"
   fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
   nameWithType: IMessierRepository.GetRawMessierObjectsAsync
 - uid: DataLayer.Interfaces.IStarRepository
@@ -1513,6 +1341,7 @@ references:
   name: GetAllStarsAsync
   href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_
   commentId: Overload:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  isSpec: "True"
   fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
   nameWithType: IStarRepository.GetAllStarsAsync
 - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
@@ -1528,6 +1357,7 @@ references:
   name: GetStarByHipAsync
   href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_
   commentId: Overload:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
+  isSpec: "True"
   fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
   nameWithType: IStarRepository.GetStarByHipAsync
 - uid: DataLayer.StargazerRepositoryService`1
@@ -1552,6 +1382,7 @@ references:
   name: StargazerRepositoryService
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_
   commentId: Overload:DataLayer.StargazerRepositoryService`1.#ctor
+  isSpec: "True"
   name.vb: New
   fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).New
@@ -1569,6 +1400,7 @@ references:
   name: CreateAsync
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_
   commentId: Overload:DataLayer.StargazerRepositoryService`1.CreateAsync
+  isSpec: "True"
   fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync
   nameWithType: StargazerRepositoryService<T>.CreateAsync
@@ -1586,6 +1418,7 @@ references:
   name: GatherConstellationStars
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_GatherConstellationStars_
   commentId: Overload:DataLayer.StargazerRepositoryService`1.GatherConstellationStars
+  isSpec: "True"
   fullName: DataLayer.StargazerRepositoryService<T>.GatherConstellationStars
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).GatherConstellationStars
   nameWithType: StargazerRepositoryService<T>.GatherConstellationStars
@@ -1603,6 +1436,7 @@ references:
   name: UpdateUserPosition
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_UpdateUserPosition_
   commentId: Overload:DataLayer.StargazerRepositoryService`1.UpdateUserPosition
+  isSpec: "True"
   fullName: DataLayer.StargazerRepositoryService<T>.UpdateUserPosition
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition
   nameWithType: StargazerRepositoryService<T>.UpdateUserPosition
@@ -1619,6 +1453,7 @@ references:
   name: constellationStars
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_constellationStars_
   commentId: Overload:DataLayer.StargazerRepositoryService`1.constellationStars
+  isSpec: "True"
   fullName: DataLayer.StargazerRepositoryService<T>.constellationStars
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellationStars
   nameWithType: StargazerRepositoryService<T>.constellationStars
@@ -1679,6 +1514,34 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).maxStarMagnitude
   nameWithType: StargazerRepositoryService<T>.maxStarMagnitude
   nameWithType.vb: StargazerRepositoryService(Of T).maxStarMagnitude
+- uid: GodotPlugins.Game
+  name: GodotPlugins.Game
+  href: api/GodotPlugins.Game.html
+  commentId: N:GodotPlugins.Game
+  fullName: GodotPlugins.Game
+  nameWithType: GodotPlugins.Game
+- uid: GodotPlugins.Game.Main
+  name: Main
+  href: api/GodotPlugins.Game.Main.html
+  commentId: T:GodotPlugins.Game.Main
+  fullName: GodotPlugins.Game.Main
+  nameWithType: Main
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  name: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  href: api/GodotPlugins.Game.Main.html#GodotPlugins_Game_Main_InitializeFromGameProject_System_IntPtr_System_IntPtr_System_IntPtr_System_Int32_
+  commentId: M:GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  name.vb: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, int)
+  fullName.vb: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, Integer)
+  nameWithType: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  nameWithType.vb: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject*
+  name: InitializeFromGameProject
+  href: api/GodotPlugins.Game.Main.html#GodotPlugins_Game_Main_InitializeFromGameProject_
+  commentId: Overload:GodotPlugins.Game.Main.InitializeFromGameProject
+  isSpec: "True"
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject
+  nameWithType: Main.InitializeFromGameProject
 - uid: Microsoft.CodeAnalysis
   name: Microsoft.CodeAnalysis
   href: api/Microsoft.CodeAnalysis.html
@@ -1709,1044 +1572,6 @@ references:
   fullName.vb: Microsoft.CodeAnalysis.EmbeddedAttribute.New
   nameWithType: EmbeddedAttribute.EmbeddedAttribute
   nameWithType.vb: EmbeddedAttribute.New
-- uid: StarGazingBackend
-  name: StarGazingBackend
-  href: api/StarGazingBackend.html
-  commentId: N:StarGazingBackend
-  fullName: StarGazingBackend
-  nameWithType: StarGazingBackend
-- uid: StarGazingBackend.CelestialBody
-  name: CelestialBody
-  href: api/StarGazingBackend.CelestialBody.html
-  commentId: T:StarGazingBackend.CelestialBody
-  fullName: StarGazingBackend.CelestialBody
-  nameWithType: CelestialBody
-- uid: StarGazingBackend.CelestialBody.#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})
-  name: CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody__ctor_System_Int32_System_Double_System_Double_System_String_System_Double_System_Nullable_System_Double__System_Nullable_System_Double__System_String_System_Nullable_System_Double__
-  commentId: M:StarGazingBackend.CelestialBody.#ctor(System.Int32,System.Double,System.Double,System.String,System.Double,System.Nullable{System.Double},System.Nullable{System.Double},System.String,System.Nullable{System.Double})
-  name.vb: New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
-  fullName: StarGazingBackend.CelestialBody.CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
-  fullName.vb: StarGazingBackend.CelestialBody.New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
-  nameWithType: CelestialBody.CelestialBody(int, double, double, string?, double, double?, double?, string?, double?)
-  nameWithType.vb: CelestialBody.New(Integer, Double, Double, String, Double, Double?, Double?, String, Double?)
-- uid: StarGazingBackend.CelestialBody.#ctor*
-  name: CelestialBody
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody__ctor_
-  commentId: Overload:StarGazingBackend.CelestialBody.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: StarGazingBackend.CelestialBody.CelestialBody
-  fullName.vb: StarGazingBackend.CelestialBody.New
-  nameWithType: CelestialBody.CelestialBody
-  nameWithType.vb: CelestialBody.New
-- uid: StarGazingBackend.CelestialBody.AbsoluteMagnitude
-  name: AbsoluteMagnitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_AbsoluteMagnitude
-  commentId: P:StarGazingBackend.CelestialBody.AbsoluteMagnitude
-  fullName: StarGazingBackend.CelestialBody.AbsoluteMagnitude
-  nameWithType: CelestialBody.AbsoluteMagnitude
-- uid: StarGazingBackend.CelestialBody.AbsoluteMagnitude*
-  name: AbsoluteMagnitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_AbsoluteMagnitude_
-  commentId: Overload:StarGazingBackend.CelestialBody.AbsoluteMagnitude
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.AbsoluteMagnitude
-  nameWithType: CelestialBody.AbsoluteMagnitude
-- uid: StarGazingBackend.CelestialBody.Altitude
-  name: Altitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Altitude
-  commentId: P:StarGazingBackend.CelestialBody.Altitude
-  fullName: StarGazingBackend.CelestialBody.Altitude
-  nameWithType: CelestialBody.Altitude
-- uid: StarGazingBackend.CelestialBody.Altitude*
-  name: Altitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Altitude_
-  commentId: Overload:StarGazingBackend.CelestialBody.Altitude
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Altitude
-  nameWithType: CelestialBody.Altitude
-- uid: StarGazingBackend.CelestialBody.Azimuth
-  name: Azimuth
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Azimuth
-  commentId: P:StarGazingBackend.CelestialBody.Azimuth
-  fullName: StarGazingBackend.CelestialBody.Azimuth
-  nameWithType: CelestialBody.Azimuth
-- uid: StarGazingBackend.CelestialBody.Azimuth*
-  name: Azimuth
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Azimuth_
-  commentId: Overload:StarGazingBackend.CelestialBody.Azimuth
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Azimuth
-  nameWithType: CelestialBody.Azimuth
-- uid: StarGazingBackend.CelestialBody.BodyId
-  name: BodyId
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_BodyId
-  commentId: P:StarGazingBackend.CelestialBody.BodyId
-  fullName: StarGazingBackend.CelestialBody.BodyId
-  nameWithType: CelestialBody.BodyId
-- uid: StarGazingBackend.CelestialBody.BodyId*
-  name: BodyId
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_BodyId_
-  commentId: Overload:StarGazingBackend.CelestialBody.BodyId
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.BodyId
-  nameWithType: CelestialBody.BodyId
-- uid: StarGazingBackend.CelestialBody.ColorIndex
-  name: ColorIndex
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ColorIndex
-  commentId: P:StarGazingBackend.CelestialBody.ColorIndex
-  fullName: StarGazingBackend.CelestialBody.ColorIndex
-  nameWithType: CelestialBody.ColorIndex
-- uid: StarGazingBackend.CelestialBody.ColorIndex*
-  name: ColorIndex
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ColorIndex_
-  commentId: Overload:StarGazingBackend.CelestialBody.ColorIndex
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.ColorIndex
-  nameWithType: CelestialBody.ColorIndex
-- uid: StarGazingBackend.CelestialBody.Distance
-  name: Distance
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Distance
-  commentId: P:StarGazingBackend.CelestialBody.Distance
-  fullName: StarGazingBackend.CelestialBody.Distance
-  nameWithType: CelestialBody.Distance
-- uid: StarGazingBackend.CelestialBody.Distance*
-  name: Distance
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Distance_
-  commentId: Overload:StarGazingBackend.CelestialBody.Distance
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Distance
-  nameWithType: CelestialBody.Distance
-- uid: StarGazingBackend.CelestialBody.Magnitude
-  name: Magnitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Magnitude
-  commentId: P:StarGazingBackend.CelestialBody.Magnitude
-  fullName: StarGazingBackend.CelestialBody.Magnitude
-  nameWithType: CelestialBody.Magnitude
-- uid: StarGazingBackend.CelestialBody.Magnitude*
-  name: Magnitude
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Magnitude_
-  commentId: Overload:StarGazingBackend.CelestialBody.Magnitude
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Magnitude
-  nameWithType: CelestialBody.Magnitude
-- uid: StarGazingBackend.CelestialBody.Name
-  name: Name
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Name
-  commentId: P:StarGazingBackend.CelestialBody.Name
-  fullName: StarGazingBackend.CelestialBody.Name
-  nameWithType: CelestialBody.Name
-- uid: StarGazingBackend.CelestialBody.Name*
-  name: Name
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Name_
-  commentId: Overload:StarGazingBackend.CelestialBody.Name
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Name
-  nameWithType: CelestialBody.Name
-- uid: StarGazingBackend.CelestialBody.Spectrum
-  name: Spectrum
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Spectrum
-  commentId: P:StarGazingBackend.CelestialBody.Spectrum
-  fullName: StarGazingBackend.CelestialBody.Spectrum
-  nameWithType: CelestialBody.Spectrum
-- uid: StarGazingBackend.CelestialBody.Spectrum*
-  name: Spectrum
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_Spectrum_
-  commentId: Overload:StarGazingBackend.CelestialBody.Spectrum
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.Spectrum
-  nameWithType: CelestialBody.Spectrum
-- uid: StarGazingBackend.CelestialBody.ToString
-  name: ToString()
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ToString
-  commentId: M:StarGazingBackend.CelestialBody.ToString
-  fullName: StarGazingBackend.CelestialBody.ToString()
-  nameWithType: CelestialBody.ToString()
-- uid: StarGazingBackend.CelestialBody.ToString*
-  name: ToString
-  href: api/StarGazingBackend.CelestialBody.html#StarGazingBackend_CelestialBody_ToString_
-  commentId: Overload:StarGazingBackend.CelestialBody.ToString
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialBody.ToString
-  nameWithType: CelestialBody.ToString
-- uid: StarGazingBackend.CelestialConverter
-  name: CelestialConverter
-  href: api/StarGazingBackend.CelestialConverter.html
-  commentId: T:StarGazingBackend.CelestialConverter
-  fullName: StarGazingBackend.CelestialConverter
-  nameWithType: CelestialConverter
-- uid: StarGazingBackend.CelestialConverter.ToLocalSiderealTime(System.DateTime,System.Double)
-  name: ToLocalSiderealTime(DateTime, double)
-  href: api/StarGazingBackend.CelestialConverter.html#StarGazingBackend_CelestialConverter_ToLocalSiderealTime_System_DateTime_System_Double_
-  commentId: M:StarGazingBackend.CelestialConverter.ToLocalSiderealTime(System.DateTime,System.Double)
-  name.vb: ToLocalSiderealTime(Date, Double)
-  fullName: StarGazingBackend.CelestialConverter.ToLocalSiderealTime(System.DateTime, double)
-  fullName.vb: StarGazingBackend.CelestialConverter.ToLocalSiderealTime(Date, Double)
-  nameWithType: CelestialConverter.ToLocalSiderealTime(DateTime, double)
-  nameWithType.vb: CelestialConverter.ToLocalSiderealTime(Date, Double)
-- uid: StarGazingBackend.CelestialConverter.ToLocalSiderealTime*
-  name: ToLocalSiderealTime
-  href: api/StarGazingBackend.CelestialConverter.html#StarGazingBackend_CelestialConverter_ToLocalSiderealTime_
-  commentId: Overload:StarGazingBackend.CelestialConverter.ToLocalSiderealTime
-  isSpec: "True"
-  fullName: StarGazingBackend.CelestialConverter.ToLocalSiderealTime
-  nameWithType: CelestialConverter.ToLocalSiderealTime
-- uid: StarGazingBackend.Constellation
-  name: Constellation
-  href: api/StarGazingBackend.Constellation.html
-  commentId: T:StarGazingBackend.Constellation
-  fullName: StarGazingBackend.Constellation
-  nameWithType: Constellation
-- uid: StarGazingBackend.Constellation.ConstellationId
-  name: ConstellationId
-  href: api/StarGazingBackend.Constellation.html#StarGazingBackend_Constellation_ConstellationId
-  commentId: P:StarGazingBackend.Constellation.ConstellationId
-  fullName: StarGazingBackend.Constellation.ConstellationId
-  nameWithType: Constellation.ConstellationId
-- uid: StarGazingBackend.Constellation.ConstellationId*
-  name: ConstellationId
-  href: api/StarGazingBackend.Constellation.html#StarGazingBackend_Constellation_ConstellationId_
-  commentId: Overload:StarGazingBackend.Constellation.ConstellationId
-  isSpec: "True"
-  fullName: StarGazingBackend.Constellation.ConstellationId
-  nameWithType: Constellation.ConstellationId
-- uid: StarGazingBackend.ConstellationStarNode
-  name: ConstellationStarNode
-  href: api/StarGazingBackend.ConstellationStarNode.html
-  commentId: T:StarGazingBackend.ConstellationStarNode
-  fullName: StarGazingBackend.ConstellationStarNode
-  nameWithType: ConstellationStarNode
-- uid: StarGazingBackend.ConstellationStarNode.#ctor(StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody})
-  name: ConstellationStarNode(IConvertableStar<CelestialBody>)
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode__ctor_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody__
-  commentId: M:StarGazingBackend.ConstellationStarNode.#ctor(StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody})
-  name.vb: New(IConvertableStar(Of CelestialBody))
-  fullName: StarGazingBackend.ConstellationStarNode.ConstellationStarNode(StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>)
-  fullName.vb: StarGazingBackend.ConstellationStarNode.New(StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody))
-  nameWithType: ConstellationStarNode.ConstellationStarNode(IConvertableStar<CelestialBody>)
-  nameWithType.vb: ConstellationStarNode.New(IConvertableStar(Of CelestialBody))
-- uid: StarGazingBackend.ConstellationStarNode.#ctor*
-  name: ConstellationStarNode
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode__ctor_
-  commentId: Overload:StarGazingBackend.ConstellationStarNode.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: StarGazingBackend.ConstellationStarNode.ConstellationStarNode
-  fullName.vb: StarGazingBackend.ConstellationStarNode.New
-  nameWithType: ConstellationStarNode.ConstellationStarNode
-  nameWithType.vb: ConstellationStarNode.New
-- uid: StarGazingBackend.ConstellationStarNode.Star
-  name: Star
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode_Star
-  commentId: P:StarGazingBackend.ConstellationStarNode.Star
-  fullName: StarGazingBackend.ConstellationStarNode.Star
-  nameWithType: ConstellationStarNode.Star
-- uid: StarGazingBackend.ConstellationStarNode.Star*
-  name: Star
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode_Star_
-  commentId: Overload:StarGazingBackend.ConstellationStarNode.Star
-  isSpec: "True"
-  fullName: StarGazingBackend.ConstellationStarNode.Star
-  nameWithType: ConstellationStarNode.Star
-- uid: StarGazingBackend.ConstellationStarNode.branchNodes
-  name: branchNodes
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode_branchNodes
-  commentId: F:StarGazingBackend.ConstellationStarNode.branchNodes
-  fullName: StarGazingBackend.ConstellationStarNode.branchNodes
-  nameWithType: ConstellationStarNode.branchNodes
-- uid: StarGazingBackend.ConstellationStarNode.rawStar
-  name: rawStar
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode_rawStar
-  commentId: P:StarGazingBackend.ConstellationStarNode.rawStar
-  fullName: StarGazingBackend.ConstellationStarNode.rawStar
-  nameWithType: ConstellationStarNode.rawStar
-- uid: StarGazingBackend.ConstellationStarNode.rawStar*
-  name: rawStar
-  href: api/StarGazingBackend.ConstellationStarNode.html#StarGazingBackend_ConstellationStarNode_rawStar_
-  commentId: Overload:StarGazingBackend.ConstellationStarNode.rawStar
-  isSpec: "True"
-  fullName: StarGazingBackend.ConstellationStarNode.rawStar
-  nameWithType: ConstellationStarNode.rawStar
-- uid: StarGazingBackend.ConstellationStarTree
-  name: ConstellationStarTree
-  href: api/StarGazingBackend.ConstellationStarTree.html
-  commentId: T:StarGazingBackend.ConstellationStarTree
-  fullName: StarGazingBackend.ConstellationStarTree
-  nameWithType: ConstellationStarTree
-- uid: StarGazingBackend.ConstellationStarTree.#ctor(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name: ConstellationStarTree(IEnumerable<object>, IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  href: api/StarGazingBackend.ConstellationStarTree.html#StarGazingBackend_ConstellationStarTree__ctor_System_Collections_Generic_IEnumerable_System_Object__System_Collections_Generic_IList_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___System_Collections_Generic_Dictionary_System_Int32_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___
-  commentId: M:StarGazingBackend.ConstellationStarTree.#ctor(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name.vb: New(IEnumerable(Of Object), IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-  fullName: StarGazingBackend.ConstellationStarTree.ConstellationStarTree(System.Collections.Generic.IEnumerable<object>, System.Collections.Generic.IList<StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>, System.Collections.Generic.Dictionary<int, StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>)
-  fullName.vb: StarGazingBackend.ConstellationStarTree.New(System.Collections.Generic.IEnumerable(Of Object), System.Collections.Generic.IList(Of StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)), System.Collections.Generic.Dictionary(Of Integer, StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)))
-  nameWithType: ConstellationStarTree.ConstellationStarTree(IEnumerable<object>, IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  nameWithType.vb: ConstellationStarTree.New(IEnumerable(Of Object), IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-- uid: StarGazingBackend.ConstellationStarTree.#ctor*
-  name: ConstellationStarTree
-  href: api/StarGazingBackend.ConstellationStarTree.html#StarGazingBackend_ConstellationStarTree__ctor_
-  commentId: Overload:StarGazingBackend.ConstellationStarTree.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: StarGazingBackend.ConstellationStarTree.ConstellationStarTree
-  fullName.vb: StarGazingBackend.ConstellationStarTree.New
-  nameWithType: ConstellationStarTree.ConstellationStarTree
-  nameWithType.vb: ConstellationStarTree.New
-- uid: StarGazingBackend.ConstellationStarTree.RootStar
-  name: RootStar
-  href: api/StarGazingBackend.ConstellationStarTree.html#StarGazingBackend_ConstellationStarTree_RootStar
-  commentId: P:StarGazingBackend.ConstellationStarTree.RootStar
-  fullName: StarGazingBackend.ConstellationStarTree.RootStar
-  nameWithType: ConstellationStarTree.RootStar
-- uid: StarGazingBackend.ConstellationStarTree.RootStar*
-  name: RootStar
-  href: api/StarGazingBackend.ConstellationStarTree.html#StarGazingBackend_ConstellationStarTree_RootStar_
-  commentId: Overload:StarGazingBackend.ConstellationStarTree.RootStar
-  isSpec: "True"
-  fullName: StarGazingBackend.ConstellationStarTree.RootStar
-  nameWithType: ConstellationStarTree.RootStar
-- uid: StarGazingBackend.CsvMessierRepository
-  name: CsvMessierRepository
-  href: api/StarGazingBackend.CsvMessierRepository.html
-  commentId: T:StarGazingBackend.CsvMessierRepository
-  fullName: StarGazingBackend.CsvMessierRepository
-  nameWithType: CsvMessierRepository
-- uid: StarGazingBackend.CsvMessierRepository.GetAll
-  name: GetAll()
-  href: api/StarGazingBackend.CsvMessierRepository.html#StarGazingBackend_CsvMessierRepository_GetAll
-  commentId: M:StarGazingBackend.CsvMessierRepository.GetAll
-  fullName: StarGazingBackend.CsvMessierRepository.GetAll()
-  nameWithType: CsvMessierRepository.GetAll()
-- uid: StarGazingBackend.CsvMessierRepository.GetAll*
-  name: GetAll
-  href: api/StarGazingBackend.CsvMessierRepository.html#StarGazingBackend_CsvMessierRepository_GetAll_
-  commentId: Overload:StarGazingBackend.CsvMessierRepository.GetAll
-  isSpec: "True"
-  fullName: StarGazingBackend.CsvMessierRepository.GetAll
-  nameWithType: CsvMessierRepository.GetAll
-- uid: StarGazingBackend.IConstellationRepository
-  name: IConstellationRepository
-  href: api/StarGazingBackend.IConstellationRepository.html
-  commentId: T:StarGazingBackend.IConstellationRepository
-  fullName: StarGazingBackend.IConstellationRepository
-  nameWithType: IConstellationRepository
-- uid: StarGazingBackend.IConstellationRepository.GetAll
-  name: GetAll()
-  href: api/StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll
-  commentId: M:StarGazingBackend.IConstellationRepository.GetAll
-  fullName: StarGazingBackend.IConstellationRepository.GetAll()
-  nameWithType: IConstellationRepository.GetAll()
-- uid: StarGazingBackend.IConstellationRepository.GetAll*
-  name: GetAll
-  href: api/StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll_
-  commentId: Overload:StarGazingBackend.IConstellationRepository.GetAll
-  isSpec: "True"
-  fullName: StarGazingBackend.IConstellationRepository.GetAll
-  nameWithType: IConstellationRepository.GetAll
-- uid: StarGazingBackend.IConvertableConstellation`1
-  name: IConvertableConstellation<T>
-  href: api/StarGazingBackend.IConvertableConstellation-1.html
-  commentId: T:StarGazingBackend.IConvertableConstellation`1
-  name.vb: IConvertableConstellation(Of T)
-  fullName: StarGazingBackend.IConvertableConstellation<T>
-  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T)
-  nameWithType: IConvertableConstellation<T>
-  nameWithType.vb: IConvertableConstellation(Of T)
-- uid: StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name: BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  href: api/StarGazingBackend.IConvertableConstellation-1.html#StarGazingBackend_IConvertableConstellation_1_BuildConstellationStarTree_System_Collections_Generic_IList_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___System_Collections_Generic_Dictionary_System_Int32_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___
-  commentId: M:StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name.vb: BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-  fullName: StarGazingBackend.IConvertableConstellation<T>.BuildConstellationStarTree(System.Collections.Generic.IList<StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>, System.Collections.Generic.Dictionary<int, StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>)
-  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T).BuildConstellationStarTree(System.Collections.Generic.IList(Of StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)), System.Collections.Generic.Dictionary(Of Integer, StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)))
-  nameWithType: IConvertableConstellation<T>.BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  nameWithType.vb: IConvertableConstellation(Of T).BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-- uid: StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree*
-  name: BuildConstellationStarTree
-  href: api/StarGazingBackend.IConvertableConstellation-1.html#StarGazingBackend_IConvertableConstellation_1_BuildConstellationStarTree_
-  commentId: Overload:StarGazingBackend.IConvertableConstellation`1.BuildConstellationStarTree
-  isSpec: "True"
-  fullName: StarGazingBackend.IConvertableConstellation<T>.BuildConstellationStarTree
-  fullName.vb: StarGazingBackend.IConvertableConstellation(Of T).BuildConstellationStarTree
-  nameWithType: IConvertableConstellation<T>.BuildConstellationStarTree
-  nameWithType.vb: IConvertableConstellation(Of T).BuildConstellationStarTree
-- uid: StarGazingBackend.IConvertableObject`1
-  name: IConvertableObject<T>
-  href: api/StarGazingBackend.IConvertableObject-1.html
-  commentId: T:StarGazingBackend.IConvertableObject`1
-  name.vb: IConvertableObject(Of T)
-  fullName: StarGazingBackend.IConvertableObject<T>
-  fullName.vb: StarGazingBackend.IConvertableObject(Of T)
-  nameWithType: IConvertableObject<T>
-  nameWithType.vb: IConvertableObject(Of T)
-- uid: StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  name: Convert(Observer, AstroTime)
-  href: api/StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
-  commentId: M:StarGazingBackend.IConvertableObject`1.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  fullName: StarGazingBackend.IConvertableObject<T>.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
-  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert(CosineKitty.Observer, CosineKitty.AstroTime)
-  nameWithType: IConvertableObject<T>.Convert(Observer, AstroTime)
-  nameWithType.vb: IConvertableObject(Of T).Convert(Observer, AstroTime)
-- uid: StarGazingBackend.IConvertableObject`1.Convert*
-  name: Convert
-  href: api/StarGazingBackend.IConvertableObject-1.html#StarGazingBackend_IConvertableObject_1_Convert_
-  commentId: Overload:StarGazingBackend.IConvertableObject`1.Convert
-  isSpec: "True"
-  fullName: StarGazingBackend.IConvertableObject<T>.Convert
-  fullName.vb: StarGazingBackend.IConvertableObject(Of T).Convert
-  nameWithType: IConvertableObject<T>.Convert
-  nameWithType.vb: IConvertableObject(Of T).Convert
-- uid: StarGazingBackend.IConvertableStar`1
-  name: IConvertableStar<T>
-  href: api/StarGazingBackend.IConvertableStar-1.html
-  commentId: T:StarGazingBackend.IConvertableStar`1
-  name.vb: IConvertableStar(Of T)
-  fullName: StarGazingBackend.IConvertableStar<T>
-  fullName.vb: StarGazingBackend.IConvertableStar(Of T)
-  nameWithType: IConvertableStar<T>
-  nameWithType.vb: IConvertableStar(Of T)
-- uid: StarGazingBackend.IConvertableStar`1.HipEquals(System.Int32)
-  name: HipEquals(int)
-  href: api/StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_HipEquals_System_Int32_
-  commentId: M:StarGazingBackend.IConvertableStar`1.HipEquals(System.Int32)
-  name.vb: HipEquals(Integer)
-  fullName: StarGazingBackend.IConvertableStar<T>.HipEquals(int)
-  fullName.vb: StarGazingBackend.IConvertableStar(Of T).HipEquals(Integer)
-  nameWithType: IConvertableStar<T>.HipEquals(int)
-  nameWithType.vb: IConvertableStar(Of T).HipEquals(Integer)
-- uid: StarGazingBackend.IConvertableStar`1.HipEquals*
-  name: HipEquals
-  href: api/StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_HipEquals_
-  commentId: Overload:StarGazingBackend.IConvertableStar`1.HipEquals
-  isSpec: "True"
-  fullName: StarGazingBackend.IConvertableStar<T>.HipEquals
-  fullName.vb: StarGazingBackend.IConvertableStar(Of T).HipEquals
-  nameWithType: IConvertableStar<T>.HipEquals
-  nameWithType.vb: IConvertableStar(Of T).HipEquals
-- uid: StarGazingBackend.IConvertableStar`1.StarIdEquals(System.Int32)
-  name: StarIdEquals(int)
-  href: api/StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_StarIdEquals_System_Int32_
-  commentId: M:StarGazingBackend.IConvertableStar`1.StarIdEquals(System.Int32)
-  name.vb: StarIdEquals(Integer)
-  fullName: StarGazingBackend.IConvertableStar<T>.StarIdEquals(int)
-  fullName.vb: StarGazingBackend.IConvertableStar(Of T).StarIdEquals(Integer)
-  nameWithType: IConvertableStar<T>.StarIdEquals(int)
-  nameWithType.vb: IConvertableStar(Of T).StarIdEquals(Integer)
-- uid: StarGazingBackend.IConvertableStar`1.StarIdEquals*
-  name: StarIdEquals
-  href: api/StarGazingBackend.IConvertableStar-1.html#StarGazingBackend_IConvertableStar_1_StarIdEquals_
-  commentId: Overload:StarGazingBackend.IConvertableStar`1.StarIdEquals
-  isSpec: "True"
-  fullName: StarGazingBackend.IConvertableStar<T>.StarIdEquals
-  fullName.vb: StarGazingBackend.IConvertableStar(Of T).StarIdEquals
-  nameWithType: IConvertableStar<T>.StarIdEquals
-  nameWithType.vb: IConvertableStar(Of T).StarIdEquals
-- uid: StarGazingBackend.IMessierRepository
-  name: IMessierRepository
-  href: api/StarGazingBackend.IMessierRepository.html
-  commentId: T:StarGazingBackend.IMessierRepository
-  fullName: StarGazingBackend.IMessierRepository
-  nameWithType: IMessierRepository
-- uid: StarGazingBackend.IMessierRepository.GetAll
-  name: GetAll()
-  href: api/StarGazingBackend.IMessierRepository.html#StarGazingBackend_IMessierRepository_GetAll
-  commentId: M:StarGazingBackend.IMessierRepository.GetAll
-  fullName: StarGazingBackend.IMessierRepository.GetAll()
-  nameWithType: IMessierRepository.GetAll()
-- uid: StarGazingBackend.IMessierRepository.GetAll*
-  name: GetAll
-  href: api/StarGazingBackend.IMessierRepository.html#StarGazingBackend_IMessierRepository_GetAll_
-  commentId: Overload:StarGazingBackend.IMessierRepository.GetAll
-  isSpec: "True"
-  fullName: StarGazingBackend.IMessierRepository.GetAll
-  nameWithType: IMessierRepository.GetAll
-- uid: StarGazingBackend.IStarRepository
-  name: IStarRepository
-  href: api/StarGazingBackend.IStarRepository.html
-  commentId: T:StarGazingBackend.IStarRepository
-  fullName: StarGazingBackend.IStarRepository
-  nameWithType: IStarRepository
-- uid: StarGazingBackend.IStarRepository.GetAll
-  name: GetAll()
-  href: api/StarGazingBackend.IStarRepository.html#StarGazingBackend_IStarRepository_GetAll
-  commentId: M:StarGazingBackend.IStarRepository.GetAll
-  fullName: StarGazingBackend.IStarRepository.GetAll()
-  nameWithType: IStarRepository.GetAll()
-- uid: StarGazingBackend.IStarRepository.GetAll*
-  name: GetAll
-  href: api/StarGazingBackend.IStarRepository.html#StarGazingBackend_IStarRepository_GetAll_
-  commentId: Overload:StarGazingBackend.IStarRepository.GetAll
-  isSpec: "True"
-  fullName: StarGazingBackend.IStarRepository.GetAll
-  nameWithType: IStarRepository.GetAll
-- uid: StarGazingBackend.InjectionService
-  name: InjectionService
-  href: api/StarGazingBackend.InjectionService.html
-  commentId: T:StarGazingBackend.InjectionService
-  fullName: StarGazingBackend.InjectionService
-  nameWithType: InjectionService
-- uid: StarGazingBackend.InjectionService.GetServiceProvider
-  name: GetServiceProvider()
-  href: api/StarGazingBackend.InjectionService.html#StarGazingBackend_InjectionService_GetServiceProvider
-  commentId: M:StarGazingBackend.InjectionService.GetServiceProvider
-  fullName: StarGazingBackend.InjectionService.GetServiceProvider()
-  nameWithType: InjectionService.GetServiceProvider()
-- uid: StarGazingBackend.InjectionService.GetServiceProvider*
-  name: GetServiceProvider
-  href: api/StarGazingBackend.InjectionService.html#StarGazingBackend_InjectionService_GetServiceProvider_
-  commentId: Overload:StarGazingBackend.InjectionService.GetServiceProvider
-  isSpec: "True"
-  fullName: StarGazingBackend.InjectionService.GetServiceProvider
-  nameWithType: InjectionService.GetServiceProvider
-- uid: StarGazingBackend.JsonConstellationRepository
-  name: JsonConstellationRepository
-  href: api/StarGazingBackend.JsonConstellationRepository.html
-  commentId: T:StarGazingBackend.JsonConstellationRepository
-  fullName: StarGazingBackend.JsonConstellationRepository
-  nameWithType: JsonConstellationRepository
-- uid: StarGazingBackend.JsonConstellationRepository.GetAll
-  name: GetAll()
-  href: api/StarGazingBackend.JsonConstellationRepository.html#StarGazingBackend_JsonConstellationRepository_GetAll
-  commentId: M:StarGazingBackend.JsonConstellationRepository.GetAll
-  fullName: StarGazingBackend.JsonConstellationRepository.GetAll()
-  nameWithType: JsonConstellationRepository.GetAll()
-- uid: StarGazingBackend.JsonConstellationRepository.GetAll*
-  name: GetAll
-  href: api/StarGazingBackend.JsonConstellationRepository.html#StarGazingBackend_JsonConstellationRepository_GetAll_
-  commentId: Overload:StarGazingBackend.JsonConstellationRepository.GetAll
-  isSpec: "True"
-  fullName: StarGazingBackend.JsonConstellationRepository.GetAll
-  nameWithType: JsonConstellationRepository.GetAll
-- uid: StarGazingBackend.MessierObject
-  name: MessierObject
-  href: api/StarGazingBackend.MessierObject.html
-  commentId: T:StarGazingBackend.MessierObject
-  fullName: StarGazingBackend.MessierObject
-  nameWithType: MessierObject
-- uid: StarGazingBackend.MessierObject.#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)
-  name: MessierObject(string, double, double, string, string?, double, string?, int, string, string)
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject__ctor_System_String_System_Double_System_Double_System_String_System_String_System_Double_System_String_System_Int32_System_String_System_String_
-  commentId: M:StarGazingBackend.MessierObject.#ctor(System.String,System.Double,System.Double,System.String,System.String,System.Double,System.String,System.Int32,System.String,System.String)
-  name.vb: New(String, Double, Double, String, String, Double, String, Integer, String, String)
-  fullName: StarGazingBackend.MessierObject.MessierObject(string, double, double, string, string?, double, string?, int, string, string)
-  fullName.vb: StarGazingBackend.MessierObject.New(String, Double, Double, String, String, Double, String, Integer, String, String)
-  nameWithType: MessierObject.MessierObject(string, double, double, string, string?, double, string?, int, string, string)
-  nameWithType.vb: MessierObject.New(String, Double, Double, String, String, Double, String, Integer, String, String)
-- uid: StarGazingBackend.MessierObject.#ctor*
-  name: MessierObject
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject__ctor_
-  commentId: Overload:StarGazingBackend.MessierObject.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: StarGazingBackend.MessierObject.MessierObject
-  fullName.vb: StarGazingBackend.MessierObject.New
-  nameWithType: MessierObject.MessierObject
-  nameWithType.vb: MessierObject.New
-- uid: StarGazingBackend.MessierObject.Altitude
-  name: Altitude
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Altitude
-  commentId: P:StarGazingBackend.MessierObject.Altitude
-  fullName: StarGazingBackend.MessierObject.Altitude
-  nameWithType: MessierObject.Altitude
-- uid: StarGazingBackend.MessierObject.Altitude*
-  name: Altitude
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Altitude_
-  commentId: Overload:StarGazingBackend.MessierObject.Altitude
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Altitude
-  nameWithType: MessierObject.Altitude
-- uid: StarGazingBackend.MessierObject.Azimuth
-  name: Azimuth
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Azimuth
-  commentId: P:StarGazingBackend.MessierObject.Azimuth
-  fullName: StarGazingBackend.MessierObject.Azimuth
-  nameWithType: MessierObject.Azimuth
-- uid: StarGazingBackend.MessierObject.Azimuth*
-  name: Azimuth
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Azimuth_
-  commentId: Overload:StarGazingBackend.MessierObject.Azimuth
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Azimuth
-  nameWithType: MessierObject.Azimuth
-- uid: StarGazingBackend.MessierObject.Constellation
-  name: Constellation
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Constellation
-  commentId: P:StarGazingBackend.MessierObject.Constellation
-  fullName: StarGazingBackend.MessierObject.Constellation
-  nameWithType: MessierObject.Constellation
-- uid: StarGazingBackend.MessierObject.Constellation*
-  name: Constellation
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Constellation_
-  commentId: Overload:StarGazingBackend.MessierObject.Constellation
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Constellation
-  nameWithType: MessierObject.Constellation
-- uid: StarGazingBackend.MessierObject.Distance
-  name: Distance
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Distance
-  commentId: P:StarGazingBackend.MessierObject.Distance
-  fullName: StarGazingBackend.MessierObject.Distance
-  nameWithType: MessierObject.Distance
-- uid: StarGazingBackend.MessierObject.Distance*
-  name: Distance
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Distance_
-  commentId: Overload:StarGazingBackend.MessierObject.Distance
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Distance
-  nameWithType: MessierObject.Distance
-- uid: StarGazingBackend.MessierObject.Magnitude
-  name: Magnitude
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Magnitude
-  commentId: P:StarGazingBackend.MessierObject.Magnitude
-  fullName: StarGazingBackend.MessierObject.Magnitude
-  nameWithType: MessierObject.Magnitude
-- uid: StarGazingBackend.MessierObject.Magnitude*
-  name: Magnitude
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Magnitude_
-  commentId: Overload:StarGazingBackend.MessierObject.Magnitude
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Magnitude
-  nameWithType: MessierObject.Magnitude
-- uid: StarGazingBackend.MessierObject.MessierId
-  name: MessierId
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_MessierId
-  commentId: P:StarGazingBackend.MessierObject.MessierId
-  fullName: StarGazingBackend.MessierObject.MessierId
-  nameWithType: MessierObject.MessierId
-- uid: StarGazingBackend.MessierObject.MessierId*
-  name: MessierId
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_MessierId_
-  commentId: Overload:StarGazingBackend.MessierObject.MessierId
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.MessierId
-  nameWithType: MessierObject.MessierId
-- uid: StarGazingBackend.MessierObject.Size
-  name: Size
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Size
-  commentId: P:StarGazingBackend.MessierObject.Size
-  fullName: StarGazingBackend.MessierObject.Size
-  nameWithType: MessierObject.Size
-- uid: StarGazingBackend.MessierObject.Size*
-  name: Size
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Size_
-  commentId: Overload:StarGazingBackend.MessierObject.Size
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Size
-  nameWithType: MessierObject.Size
-- uid: StarGazingBackend.MessierObject.Type
-  name: Type
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Type
-  commentId: P:StarGazingBackend.MessierObject.Type
-  fullName: StarGazingBackend.MessierObject.Type
-  nameWithType: MessierObject.Type
-- uid: StarGazingBackend.MessierObject.Type*
-  name: Type
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_Type_
-  commentId: Overload:StarGazingBackend.MessierObject.Type
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.Type
-  nameWithType: MessierObject.Type
-- uid: StarGazingBackend.MessierObject.ViewingDifficulty
-  name: ViewingDifficulty
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingDifficulty
-  commentId: P:StarGazingBackend.MessierObject.ViewingDifficulty
-  fullName: StarGazingBackend.MessierObject.ViewingDifficulty
-  nameWithType: MessierObject.ViewingDifficulty
-- uid: StarGazingBackend.MessierObject.ViewingDifficulty*
-  name: ViewingDifficulty
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingDifficulty_
-  commentId: Overload:StarGazingBackend.MessierObject.ViewingDifficulty
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.ViewingDifficulty
-  nameWithType: MessierObject.ViewingDifficulty
-- uid: StarGazingBackend.MessierObject.ViewingSeason
-  name: ViewingSeason
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingSeason
-  commentId: P:StarGazingBackend.MessierObject.ViewingSeason
-  fullName: StarGazingBackend.MessierObject.ViewingSeason
-  nameWithType: MessierObject.ViewingSeason
-- uid: StarGazingBackend.MessierObject.ViewingSeason*
-  name: ViewingSeason
-  href: api/StarGazingBackend.MessierObject.html#StarGazingBackend_MessierObject_ViewingSeason_
-  commentId: Overload:StarGazingBackend.MessierObject.ViewingSeason
-  isSpec: "True"
-  fullName: StarGazingBackend.MessierObject.ViewingSeason
-  nameWithType: MessierObject.ViewingSeason
-- uid: StarGazingBackend.NullableIntConverter
-  name: NullableIntConverter
-  href: api/StarGazingBackend.NullableIntConverter.html
-  commentId: T:StarGazingBackend.NullableIntConverter
-  fullName: StarGazingBackend.NullableIntConverter
-  nameWithType: NullableIntConverter
-- uid: StarGazingBackend.NullableIntConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
-  name: ConvertFromString(string?, IReaderRow, MemberMapData)
-  href: api/StarGazingBackend.NullableIntConverter.html#StarGazingBackend_NullableIntConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
-  commentId: M:StarGazingBackend.NullableIntConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
-  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
-  fullName: StarGazingBackend.NullableIntConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
-  fullName.vb: StarGazingBackend.NullableIntConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
-  nameWithType: NullableIntConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
-  nameWithType.vb: NullableIntConverter.ConvertFromString(String, IReaderRow, MemberMapData)
-- uid: StarGazingBackend.NullableIntConverter.ConvertFromString*
-  name: ConvertFromString
-  href: api/StarGazingBackend.NullableIntConverter.html#StarGazingBackend_NullableIntConverter_ConvertFromString_
-  commentId: Overload:StarGazingBackend.NullableIntConverter.ConvertFromString
-  isSpec: "True"
-  fullName: StarGazingBackend.NullableIntConverter.ConvertFromString
-  nameWithType: NullableIntConverter.ConvertFromString
-- uid: StarGazingBackend.RawConstellation
-  name: RawConstellation
-  href: api/StarGazingBackend.RawConstellation.html
-  commentId: T:StarGazingBackend.RawConstellation
-  fullName: StarGazingBackend.RawConstellation
-  nameWithType: RawConstellation
-- uid: StarGazingBackend.RawConstellation.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name: BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_BuildConstellationStarTree_System_Collections_Generic_IList_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___System_Collections_Generic_Dictionary_System_Int32_StarGazingBackend_IConvertableStar_StarGazingBackend_CelestialBody___
-  commentId: M:StarGazingBackend.RawConstellation.BuildConstellationStarTree(System.Collections.Generic.IList{StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}},System.Collections.Generic.Dictionary{System.Int32,StarGazingBackend.IConvertableStar{StarGazingBackend.CelestialBody}})
-  name.vb: BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-  fullName: StarGazingBackend.RawConstellation.BuildConstellationStarTree(System.Collections.Generic.IList<StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>, System.Collections.Generic.Dictionary<int, StarGazingBackend.IConvertableStar<StarGazingBackend.CelestialBody>>)
-  fullName.vb: StarGazingBackend.RawConstellation.BuildConstellationStarTree(System.Collections.Generic.IList(Of StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)), System.Collections.Generic.Dictionary(Of Integer, StarGazingBackend.IConvertableStar(Of StarGazingBackend.CelestialBody)))
-  nameWithType: RawConstellation.BuildConstellationStarTree(IList<IConvertableStar<CelestialBody>>, Dictionary<int, IConvertableStar<CelestialBody>>)
-  nameWithType.vb: RawConstellation.BuildConstellationStarTree(IList(Of IConvertableStar(Of CelestialBody)), Dictionary(Of Integer, IConvertableStar(Of CelestialBody)))
-- uid: StarGazingBackend.RawConstellation.BuildConstellationStarTree*
-  name: BuildConstellationStarTree
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_BuildConstellationStarTree_
-  commentId: Overload:StarGazingBackend.RawConstellation.BuildConstellationStarTree
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.BuildConstellationStarTree
-  nameWithType: RawConstellation.BuildConstellationStarTree
-- uid: StarGazingBackend.RawConstellation.CommonName
-  name: CommonName
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_CommonName
-  commentId: P:StarGazingBackend.RawConstellation.CommonName
-  fullName: StarGazingBackend.RawConstellation.CommonName
-  nameWithType: RawConstellation.CommonName
-- uid: StarGazingBackend.RawConstellation.CommonName*
-  name: CommonName
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_CommonName_
-  commentId: Overload:StarGazingBackend.RawConstellation.CommonName
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.CommonName
-  nameWithType: RawConstellation.CommonName
-- uid: StarGazingBackend.RawConstellation.ConstellationName
-  name: RawConstellation.ConstellationName
-  href: api/StarGazingBackend.RawConstellation.ConstellationName.html
-  commentId: T:StarGazingBackend.RawConstellation.ConstellationName
-  fullName: StarGazingBackend.RawConstellation.ConstellationName
-  nameWithType: RawConstellation.ConstellationName
-- uid: StarGazingBackend.RawConstellation.ConstellationName.English
-  name: English
-  href: api/StarGazingBackend.RawConstellation.ConstellationName.html#StarGazingBackend_RawConstellation_ConstellationName_English
-  commentId: P:StarGazingBackend.RawConstellation.ConstellationName.English
-  fullName: StarGazingBackend.RawConstellation.ConstellationName.English
-  nameWithType: RawConstellation.ConstellationName.English
-- uid: StarGazingBackend.RawConstellation.ConstellationName.English*
-  name: English
-  href: api/StarGazingBackend.RawConstellation.ConstellationName.html#StarGazingBackend_RawConstellation_ConstellationName_English_
-  commentId: Overload:StarGazingBackend.RawConstellation.ConstellationName.English
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.ConstellationName.English
-  nameWithType: RawConstellation.ConstellationName.English
-- uid: StarGazingBackend.RawConstellation.ConstellationName.Native
-  name: Native
-  href: api/StarGazingBackend.RawConstellation.ConstellationName.html#StarGazingBackend_RawConstellation_ConstellationName_Native
-  commentId: P:StarGazingBackend.RawConstellation.ConstellationName.Native
-  fullName: StarGazingBackend.RawConstellation.ConstellationName.Native
-  nameWithType: RawConstellation.ConstellationName.Native
-- uid: StarGazingBackend.RawConstellation.ConstellationName.Native*
-  name: Native
-  href: api/StarGazingBackend.RawConstellation.ConstellationName.html#StarGazingBackend_RawConstellation_ConstellationName_Native_
-  commentId: Overload:StarGazingBackend.RawConstellation.ConstellationName.Native
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.ConstellationName.Native
-  nameWithType: RawConstellation.ConstellationName.Native
-- uid: StarGazingBackend.RawConstellation.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  name: Convert(Observer, AstroTime)
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
-  commentId: M:StarGazingBackend.RawConstellation.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  fullName: StarGazingBackend.RawConstellation.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
-  nameWithType: RawConstellation.Convert(Observer, AstroTime)
-- uid: StarGazingBackend.RawConstellation.Convert*
-  name: Convert
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Convert_
-  commentId: Overload:StarGazingBackend.RawConstellation.Convert
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.Convert
-  nameWithType: RawConstellation.Convert
-- uid: StarGazingBackend.RawConstellation.Id
-  name: Id
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Id
-  commentId: P:StarGazingBackend.RawConstellation.Id
-  fullName: StarGazingBackend.RawConstellation.Id
-  nameWithType: RawConstellation.Id
-- uid: StarGazingBackend.RawConstellation.Id*
-  name: Id
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Id_
-  commentId: Overload:StarGazingBackend.RawConstellation.Id
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.Id
-  nameWithType: RawConstellation.Id
-- uid: StarGazingBackend.RawConstellation.Lines
-  name: Lines
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Lines
-  commentId: P:StarGazingBackend.RawConstellation.Lines
-  fullName: StarGazingBackend.RawConstellation.Lines
-  nameWithType: RawConstellation.Lines
-- uid: StarGazingBackend.RawConstellation.Lines*
-  name: Lines
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_Lines_
-  commentId: Overload:StarGazingBackend.RawConstellation.Lines
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.Lines
-  nameWithType: RawConstellation.Lines
-- uid: StarGazingBackend.RawConstellation.StarTree
-  name: StarTree
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_StarTree
-  commentId: P:StarGazingBackend.RawConstellation.StarTree
-  fullName: StarGazingBackend.RawConstellation.StarTree
-  nameWithType: RawConstellation.StarTree
-- uid: StarGazingBackend.RawConstellation.StarTree*
-  name: StarTree
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_StarTree_
-  commentId: Overload:StarGazingBackend.RawConstellation.StarTree
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.StarTree
-  nameWithType: RawConstellation.StarTree
-- uid: StarGazingBackend.RawConstellation.ToString
-  name: ToString()
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_ToString
-  commentId: M:StarGazingBackend.RawConstellation.ToString
-  fullName: StarGazingBackend.RawConstellation.ToString()
-  nameWithType: RawConstellation.ToString()
-- uid: StarGazingBackend.RawConstellation.ToString*
-  name: ToString
-  href: api/StarGazingBackend.RawConstellation.html#StarGazingBackend_RawConstellation_ToString_
-  commentId: Overload:StarGazingBackend.RawConstellation.ToString
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellation.ToString
-  nameWithType: RawConstellation.ToString
-- uid: StarGazingBackend.RawConstellationList
-  name: RawConstellationList
-  href: api/StarGazingBackend.RawConstellationList.html
-  commentId: T:StarGazingBackend.RawConstellationList
-  fullName: StarGazingBackend.RawConstellationList
-  nameWithType: RawConstellationList
-- uid: StarGazingBackend.RawConstellationList.Constellations
-  name: Constellations
-  href: api/StarGazingBackend.RawConstellationList.html#StarGazingBackend_RawConstellationList_Constellations
-  commentId: P:StarGazingBackend.RawConstellationList.Constellations
-  fullName: StarGazingBackend.RawConstellationList.Constellations
-  nameWithType: RawConstellationList.Constellations
-- uid: StarGazingBackend.RawConstellationList.Constellations*
-  name: Constellations
-  href: api/StarGazingBackend.RawConstellationList.html#StarGazingBackend_RawConstellationList_Constellations_
-  commentId: Overload:StarGazingBackend.RawConstellationList.Constellations
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellationList.Constellations
-  nameWithType: RawConstellationList.Constellations
-- uid: StarGazingBackend.RawConstellationList.GetConvertableConstellations
-  name: GetConvertableConstellations()
-  href: api/StarGazingBackend.RawConstellationList.html#StarGazingBackend_RawConstellationList_GetConvertableConstellations
-  commentId: M:StarGazingBackend.RawConstellationList.GetConvertableConstellations
-  fullName: StarGazingBackend.RawConstellationList.GetConvertableConstellations()
-  nameWithType: RawConstellationList.GetConvertableConstellations()
-- uid: StarGazingBackend.RawConstellationList.GetConvertableConstellations*
-  name: GetConvertableConstellations
-  href: api/StarGazingBackend.RawConstellationList.html#StarGazingBackend_RawConstellationList_GetConvertableConstellations_
-  commentId: Overload:StarGazingBackend.RawConstellationList.GetConvertableConstellations
-  isSpec: "True"
-  fullName: StarGazingBackend.RawConstellationList.GetConvertableConstellations
-  nameWithType: RawConstellationList.GetConvertableConstellations
-- uid: StarGazingBackend.RawMessierObject
-  name: RawMessierObject
-  href: api/StarGazingBackend.RawMessierObject.html
-  commentId: T:StarGazingBackend.RawMessierObject
-  fullName: StarGazingBackend.RawMessierObject
-  nameWithType: RawMessierObject
-- uid: StarGazingBackend.RawMessierObject.Constellation
-  name: Constellation
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Constellation
-  commentId: P:StarGazingBackend.RawMessierObject.Constellation
-  fullName: StarGazingBackend.RawMessierObject.Constellation
-  nameWithType: RawMessierObject.Constellation
-- uid: StarGazingBackend.RawMessierObject.Constellation*
-  name: Constellation
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Constellation_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Constellation
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Constellation
-  nameWithType: RawMessierObject.Constellation
-- uid: StarGazingBackend.RawMessierObject.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  name: Convert(Observer, AstroTime)
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Convert_CosineKitty_Observer_CosineKitty_AstroTime_
-  commentId: M:StarGazingBackend.RawMessierObject.Convert(CosineKitty.Observer,CosineKitty.AstroTime)
-  fullName: StarGazingBackend.RawMessierObject.Convert(CosineKitty.Observer, CosineKitty.AstroTime)
-  nameWithType: RawMessierObject.Convert(Observer, AstroTime)
-- uid: StarGazingBackend.RawMessierObject.Convert*
-  name: Convert
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Convert_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Convert
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Convert
-  nameWithType: RawMessierObject.Convert
-- uid: StarGazingBackend.RawMessierObject.Declination
-  name: Declination
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Declination
-  commentId: P:StarGazingBackend.RawMessierObject.Declination
-  fullName: StarGazingBackend.RawMessierObject.Declination
-  nameWithType: RawMessierObject.Declination
-- uid: StarGazingBackend.RawMessierObject.Declination*
-  name: Declination
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Declination_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Declination
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Declination
-  nameWithType: RawMessierObject.Declination
-- uid: StarGazingBackend.RawMessierObject.DeclinationDMS
-  name: DeclinationDMS
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_DeclinationDMS
-  commentId: P:StarGazingBackend.RawMessierObject.DeclinationDMS
-  fullName: StarGazingBackend.RawMessierObject.DeclinationDMS
-  nameWithType: RawMessierObject.DeclinationDMS
-- uid: StarGazingBackend.RawMessierObject.DeclinationDMS*
-  name: DeclinationDMS
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_DeclinationDMS_
-  commentId: Overload:StarGazingBackend.RawMessierObject.DeclinationDMS
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.DeclinationDMS
-  nameWithType: RawMessierObject.DeclinationDMS
-- uid: StarGazingBackend.RawMessierObject.Distance
-  name: Distance
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Distance
-  commentId: P:StarGazingBackend.RawMessierObject.Distance
-  fullName: StarGazingBackend.RawMessierObject.Distance
-  nameWithType: RawMessierObject.Distance
-- uid: StarGazingBackend.RawMessierObject.Distance*
-  name: Distance
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Distance_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Distance
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Distance
-  nameWithType: RawMessierObject.Distance
-- uid: StarGazingBackend.RawMessierObject.Magnitude
-  name: Magnitude
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Magnitude
-  commentId: P:StarGazingBackend.RawMessierObject.Magnitude
-  fullName: StarGazingBackend.RawMessierObject.Magnitude
-  nameWithType: RawMessierObject.Magnitude
-- uid: StarGazingBackend.RawMessierObject.Magnitude*
-  name: Magnitude
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Magnitude_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Magnitude
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Magnitude
-  nameWithType: RawMessierObject.Magnitude
-- uid: StarGazingBackend.RawMessierObject.NewGeneralCatalog
-  name: NewGeneralCatalog
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_NewGeneralCatalog
-  commentId: P:StarGazingBackend.RawMessierObject.NewGeneralCatalog
-  fullName: StarGazingBackend.RawMessierObject.NewGeneralCatalog
-  nameWithType: RawMessierObject.NewGeneralCatalog
-- uid: StarGazingBackend.RawMessierObject.NewGeneralCatalog*
-  name: NewGeneralCatalog
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_NewGeneralCatalog_
-  commentId: Overload:StarGazingBackend.RawMessierObject.NewGeneralCatalog
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.NewGeneralCatalog
-  nameWithType: RawMessierObject.NewGeneralCatalog
-- uid: StarGazingBackend.RawMessierObject.ObjectId
-  name: ObjectId
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ObjectId
-  commentId: P:StarGazingBackend.RawMessierObject.ObjectId
-  fullName: StarGazingBackend.RawMessierObject.ObjectId
-  nameWithType: RawMessierObject.ObjectId
-- uid: StarGazingBackend.RawMessierObject.ObjectId*
-  name: ObjectId
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ObjectId_
-  commentId: Overload:StarGazingBackend.RawMessierObject.ObjectId
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.ObjectId
-  nameWithType: RawMessierObject.ObjectId
-- uid: StarGazingBackend.RawMessierObject.RightAscention
-  name: RightAscention
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_RightAscention
-  commentId: P:StarGazingBackend.RawMessierObject.RightAscention
-  fullName: StarGazingBackend.RawMessierObject.RightAscention
-  nameWithType: RawMessierObject.RightAscention
-- uid: StarGazingBackend.RawMessierObject.RightAscention*
-  name: RightAscention
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_RightAscention_
-  commentId: Overload:StarGazingBackend.RawMessierObject.RightAscention
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.RightAscention
-  nameWithType: RawMessierObject.RightAscention
-- uid: StarGazingBackend.RawMessierObject.RightAscentionDMS
-  name: RightAscentionDMS
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_RightAscentionDMS
-  commentId: P:StarGazingBackend.RawMessierObject.RightAscentionDMS
-  fullName: StarGazingBackend.RawMessierObject.RightAscentionDMS
-  nameWithType: RawMessierObject.RightAscentionDMS
-- uid: StarGazingBackend.RawMessierObject.RightAscentionDMS*
-  name: RightAscentionDMS
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_RightAscentionDMS_
-  commentId: Overload:StarGazingBackend.RawMessierObject.RightAscentionDMS
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.RightAscentionDMS
-  nameWithType: RawMessierObject.RightAscentionDMS
-- uid: StarGazingBackend.RawMessierObject.Size
-  name: Size
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Size
-  commentId: P:StarGazingBackend.RawMessierObject.Size
-  fullName: StarGazingBackend.RawMessierObject.Size
-  nameWithType: RawMessierObject.Size
-- uid: StarGazingBackend.RawMessierObject.Size*
-  name: Size
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Size_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Size
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Size
-  nameWithType: RawMessierObject.Size
-- uid: StarGazingBackend.RawMessierObject.Type
-  name: Type
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Type
-  commentId: P:StarGazingBackend.RawMessierObject.Type
-  fullName: StarGazingBackend.RawMessierObject.Type
-  nameWithType: RawMessierObject.Type
-- uid: StarGazingBackend.RawMessierObject.Type*
-  name: Type
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_Type_
-  commentId: Overload:StarGazingBackend.RawMessierObject.Type
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.Type
-  nameWithType: RawMessierObject.Type
-- uid: StarGazingBackend.RawMessierObject.ViewingDifficulty
-  name: ViewingDifficulty
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ViewingDifficulty
-  commentId: P:StarGazingBackend.RawMessierObject.ViewingDifficulty
-  fullName: StarGazingBackend.RawMessierObject.ViewingDifficulty
-  nameWithType: RawMessierObject.ViewingDifficulty
-- uid: StarGazingBackend.RawMessierObject.ViewingDifficulty*
-  name: ViewingDifficulty
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ViewingDifficulty_
-  commentId: Overload:StarGazingBackend.RawMessierObject.ViewingDifficulty
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.ViewingDifficulty
-  nameWithType: RawMessierObject.ViewingDifficulty
-- uid: StarGazingBackend.RawMessierObject.ViewingSeason
-  name: ViewingSeason
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ViewingSeason
-  commentId: P:StarGazingBackend.RawMessierObject.ViewingSeason
-  fullName: StarGazingBackend.RawMessierObject.ViewingSeason
-  nameWithType: RawMessierObject.ViewingSeason
-- uid: StarGazingBackend.RawMessierObject.ViewingSeason*
-  name: ViewingSeason
-  href: api/StarGazingBackend.RawMessierObject.html#StarGazingBackend_RawMessierObject_ViewingSeason_
-  commentId: Overload:StarGazingBackend.RawMessierObject.ViewingSeason
-  isSpec: "True"
-  fullName: StarGazingBackend.RawMessierObject.ViewingSeason
-  nameWithType: RawMessierObject.ViewingSeason
 - uid: System.Runtime.CompilerServices
   name: System.Runtime.CompilerServices
   href: api/System.Runtime.CompilerServices.html

@@ -106,7 +106,7 @@ Classes
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.HygCsvStarRepository.StarMap.html">HygCsvStarRepository.StarMap</a></dt>
-      <dd><p>A custom class to map the columns in the repository to the POCO</p>
+      <dd><p>A custom class (internal to the HygStarRepository) to map the columns in the repository to the POCO</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -131,27 +131,32 @@ Classes
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html">StarLustMessierCsvRepository.StarMap</a></dt>
-      <dd></dd>
+      <dd><p>A class internal to the <a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.html">StarLustMessierCsvRepository</a> to map the csv columns to <a class="xref" href="DataLayer.EquatorialObjects.EquatorialMessierObject.html">EquatorialMessierObject</a> objects.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html">StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter</a></dt>
-      <dd></dd>
+      <dd><p>A type converter internal to the <a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.html">StarLustMessierCsvRepository</a> class used to convert the <code>Declination</code> from degrees and minutes to decimal degrees.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html">StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter</a></dt>
-      <dd></dd>
+      <dd><p>A type converter internal to the <a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.html">StarLustMessierCsvRepository</a> class used to convert the <code>Right Ascension</code> from hours and decimal minutes to decimal hours.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StellariumJsonConstellationRepository.html">StellariumJsonConstellationRepository</a></dt>
-      <dd></dd>
+      <dd><p>Used to retrieve constellation data from the Stellarium Json file.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html">StellariumJsonConstellationRepository.ConstellationName</a></dt>
-      <dd></dd>
+      <dd><p><a class="xref" href="DataLayer.Implementations.StellariumJsonConstellationRepository.html">StellariumJsonConstellationRepository</a> internal class to instantiate the constellation name from the Json repository</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html">StellariumJsonConstellationRepository.JsonConstellationListConverter</a></dt>
-      <dd><p>Custom <span class="xref">Newtonsoft.Json.JsonConverter&lt;T&gt;</span> used to build out the <code>Constellation</code> graph during retrieval from the repository</p>
+      <dd><p>Custom <span class="xref">Newtonsoft.Json.JsonConverter&lt;T&gt;</span> used to build out the <a class="xref" href="DataLayer.EquatorialObjects.Constellation.html">Constellation</a> graph during retrieval from the repository</p>
 </dd>
     </dl>
 

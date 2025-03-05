@@ -13,21 +13,25 @@ namespace DataLayer.Implementations
     internal class HygCsvStarRepository : IStarRepository
     {
         /// <summary>
-        /// The file path to the repository
+        /// The file path to the repository csv file
         /// </summary>
         private readonly string filePath;
 
         /// <summary>
         /// Creates a new instance and sets the file path
         /// </summary>
-        /// <param name="repositoryPath"></param>
+        /// <param name="repositoryPath">The path to the directory containing the file</param>
         public HygCsvStarRepository(string repositoryPath) 
         {
             this.filePath = Path.Combine(repositoryPath, "hyg.csv");
             if (!File.Exists(filePath)) throw new FileNotFoundException($"{filePath} does not exist");
         }
 
-
+        /// <summary>
+        /// Retrieves a single star from the repository
+        /// </summary>
+        /// <param name="hipparcosId">The Hipparcos ID of the star to find</param>
+        /// <returns>Null if the star is not found, otherwise returns the star in the equatorial coordinate form.</returns>
         public async Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
         {
             // Start a new task to retrieve the data and return the running task. 
@@ -51,7 +55,11 @@ namespace DataLayer.Implementations
             });
         }
 
-
+        /// <summary>
+        /// Gets all stars that are brighter than a defined brightness.
+        /// </summary>
+        /// <param name="maximumMagnitude">The minimum brightness of the stars to include.</param>
+        /// <returns>A list of stars in the equatorial coordinate form.</returns>
         Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
         {
             // Start a new task to retrieve the data and return the running task
@@ -74,7 +82,7 @@ namespace DataLayer.Implementations
         }
 
         /// <summary>
-        /// A custom class to map the columns in the repository to the POCO
+        /// A custom class (internal to the HygStarRepository) to map the columns in the repository to the POCO
         /// </summary>
         private class StarMap : ClassMap<EquatorialStar>
         {

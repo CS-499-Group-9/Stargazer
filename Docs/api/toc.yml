@@ -101,21 +101,4 @@ items:
   - uid: DataLayer.Interfaces.IStarRepository
     name: IStarRepository
     type: Interface
-- uid: Microsoft.CodeAnalysis
-  name: Microsoft.CodeAnalysis
-  type: Namespace
-  items:
-  - uid: Microsoft.CodeAnalysis.EmbeddedAttribute
-    name: EmbeddedAttribute
-    type: Class
-- uid: System.Runtime.CompilerServices
-  name: System.Runtime.CompilerServices
-  type: Namespace
-  items:
-  - uid: System.Runtime.CompilerServices.NullableAttribute
-    name: NullableAttribute
-    type: Class
-  - uid: System.Runtime.CompilerServices.NullableContextAttribute
-    name: NullableContextAttribute
-    type: Class
 memberLayout: SamePage

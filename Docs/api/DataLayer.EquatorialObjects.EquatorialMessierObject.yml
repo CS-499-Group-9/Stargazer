@@ -5,7 +5,6 @@ items:
   id: EquatorialMessierObject
   parent: DataLayer.EquatorialObjects
   children:
-  - DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
   - DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   - DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   - DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
@@ -21,7 +20,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
   type: Class
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: EquatorialMessierObject
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 6
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -34,44 +39,17 @@ items:
   - System.Object
   - DataLayer.EquatorialObjects.EquatorialCelestialBody
   inheritedMembers:
-  - DataLayer.EquatorialObjects.EquatorialCelestialBody.<RightAscension>k__BackingField
-  - DataLayer.EquatorialObjects.EquatorialCelestialBody.<Declination>k__BackingField
-  - DataLayer.EquatorialObjects.EquatorialCelestialBody.<Magnitude>k__BackingField
-  - DataLayer.EquatorialObjects.EquatorialCelestialBody.<Distance>k__BackingField
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  commentId: M:DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  id: '#ctor'
-  parent: DataLayer.EquatorialObjects.EquatorialMessierObject
-  langs:
-  - csharp
-  - vb
-  name: EquatorialMessierObject()
-  nameWithType: EquatorialMessierObject.EquatorialMessierObject()
-  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.EquatorialMessierObject()
-  type: Constructor
-  source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-  assemblies:
-  - DataLayer
-  namespace: DataLayer.EquatorialObjects
-  syntax:
-    content: public EquatorialMessierObject()
-    content.vb: Public Sub New()
-  overload: DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor*
-  nameWithType.vb: EquatorialMessierObject.New()
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialMessierObject.New()
-  name.vb: New()
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   id: MessierId
@@ -84,7 +62,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: MessierId
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 12
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -109,7 +93,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: NewGeneralCatalog
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 16
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -134,7 +124,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Type
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -159,7 +155,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Constellation
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 24
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -184,7 +186,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Size
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 28
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -209,7 +217,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ViewingSeason
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 32
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -234,7 +248,13 @@ items:
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    remote:
+      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ViewingDifficulty
+    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    startLine: 36
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -250,7 +270,6 @@ items:
 references:
 - uid: DataLayer.EquatorialObjects
   commentId: N:DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.EquatorialObjects
   nameWithType: DataLayer.EquatorialObjects
@@ -258,22 +277,18 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html
 - uid: System.Object
   commentId: T:System.Object
@@ -289,47 +304,13 @@ references:
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
   commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
   parent: DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   name: EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.<RightAscension>k__BackingField
-  commentId: F:DataLayer.EquatorialObjects.EquatorialCelestialBody.<RightAscension>k__BackingField
-  parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
-  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__RightAscension_k__BackingField
-  name: <RightAscension>k__BackingField
-  nameWithType: EquatorialCelestialBody.<RightAscension>k__BackingField
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.<RightAscension>k__BackingField
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Declination>k__BackingField
-  commentId: F:DataLayer.EquatorialObjects.EquatorialCelestialBody.<Declination>k__BackingField
-  parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
-  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__Declination_k__BackingField
-  name: <Declination>k__BackingField
-  nameWithType: EquatorialCelestialBody.<Declination>k__BackingField
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Declination>k__BackingField
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Magnitude>k__BackingField
-  commentId: F:DataLayer.EquatorialObjects.EquatorialCelestialBody.<Magnitude>k__BackingField
-  parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
-  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__Magnitude_k__BackingField
-  name: <Magnitude>k__BackingField
-  nameWithType: EquatorialCelestialBody.<Magnitude>k__BackingField
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Magnitude>k__BackingField
-- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Distance>k__BackingField
-  commentId: F:DataLayer.EquatorialObjects.EquatorialCelestialBody.<Distance>k__BackingField
-  parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
-  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody__Distance_k__BackingField
-  name: <Distance>k__BackingField
-  nameWithType: EquatorialCelestialBody.<Distance>k__BackingField
-  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.<Distance>k__BackingField
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_RightAscension
   name: RightAscension
   nameWithType: EquatorialCelestialBody.RightAscension
@@ -337,7 +318,6 @@ references:
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Declination
   name: Declination
   nameWithType: EquatorialCelestialBody.Declination
@@ -345,7 +325,6 @@ references:
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
   commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
   parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Magnitude
   name: Magnitude
   nameWithType: EquatorialCelestialBody.Magnitude
@@ -353,83 +332,10 @@ references:
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
   commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
   parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Distance
   name: Distance
   nameWithType: EquatorialCelestialBody.Distance
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -508,6 +414,78 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -553,28 +531,28 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
   spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
 - uid: System
@@ -584,19 +562,8 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor*
-  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.#ctor
-  isExternal: true
-  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject__ctor
-  name: EquatorialMessierObject
-  nameWithType: EquatorialMessierObject.EquatorialMessierObject
-  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.EquatorialMessierObject
-  nameWithType.vb: EquatorialMessierObject.New
-  fullName.vb: DataLayer.EquatorialObjects.EquatorialMessierObject.New
-  name.vb: New
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId
   name: MessierId
   nameWithType: EquatorialMessierObject.MessierId
@@ -614,42 +581,36 @@ references:
   name.vb: String
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog
   name: NewGeneralCatalog
   nameWithType: EquatorialMessierObject.NewGeneralCatalog
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Type*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Type
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Type
   name: Type
   nameWithType: EquatorialMessierObject.Type
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation
   name: Constellation
   nameWithType: EquatorialMessierObject.Constellation
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Size*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Size
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Size
   name: Size
   nameWithType: EquatorialMessierObject.Size
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason
   name: ViewingSeason
   nameWithType: EquatorialMessierObject.ViewingSeason
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty*
   commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty
   name: ViewingDifficulty
   nameWithType: EquatorialMessierObject.ViewingDifficulty

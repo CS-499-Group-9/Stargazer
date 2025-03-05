@@ -81,15 +81,13 @@
             The English(native) name of the constellation
             </summary>
         </member>
-        <member name="P:DataLayer.EquatorialObjects.Constellation.HipparcosId">
-            <summary>
-            Returns a new constellation
-            </summary>
-            <param name="Id">The identifying name of the constellation</param>
-            <param name="name">English name of the constellation</param>
-        </member>
         <member name="M:DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)">
-            <param name="nativeName">The native name of the constellation (if known)</param>
+            <summary>
+            Returns a new object
+            </summary>
+            <param name="Id">The unique name of the constellation</param>
+            <param name="name">The English name of the constellation</param>
+            <param name="nativeName">The native name of the constellation</param>
         </member>
         <member name="T:DataLayer.EquatorialObjects.EquatorialCelestialBody">
             <summary>
@@ -240,6 +238,7 @@
             <summary>
             A Messier Deep Space Object located in Horizontal coordinates
             </summary>
+            <inheritdoc/>
         </member>
         <member name="P:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId">
             <summary>
@@ -337,18 +336,32 @@
         </member>
         <member name="F:DataLayer.Implementations.HygCsvStarRepository.filePath">
             <summary>
-            The file path to the repository
+            The file path to the repository csv file
             </summary>
         </member>
         <member name="M:DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)">
             <summary>
             Creates a new instance and sets the file path
             </summary>
-            <param name="repositoryPath"></param>
+            <param name="repositoryPath">The path to the directory containing the file</param>
+        </member>
+        <member name="M:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)">
+            <summary>
+            Retrieves a single star from the repository
+            </summary>
+            <param name="hipparcosId">The Hipparcos ID of the star to find</param>
+            <returns>Null if the star is not found, otherwise returns the star in the equatorial coordinate form.</returns>
+        </member>
+        <member name="M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)">
+            <summary>
+            Gets all stars that are brighter than a defined brightness.
+            </summary>
+            <param name="maximumMagnitude">The minimum brightness of the stars to include.</param>
+            <returns>A list of stars in the equatorial coordinate form.</returns>
         </member>
         <member name="T:DataLayer.Implementations.HygCsvStarRepository.StarMap">
             <summary>
-            A custom class to map the columns in the repository to the POCO
+            A custom class (internal to the HygStarRepository) to map the columns in the repository to the POCO
             </summary>
         </member>
         <member name="M:DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor">
@@ -376,18 +389,84 @@
             Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
             </summary>
         </member>
+        <member name="F:DataLayer.Implementations.StarLustMessierCsvRepository.filePath">
+            <summary>
+            The path to the repository file.
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)">
+            <summary>
+            Creates a new object.
+            </summary>
+            <param name="repositoryPath">The path to the directory containing the file.</param>
+        </member>
+        <member name="M:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync">
+            <summary>
+            Asynchronously retrieves an <see cref="T:System.Collections.Generic.IList`1"/> from the repository.
+            </summary>
+            <returns>A running task that results in</returns>
+            <exception cref="T:System.IO.FileNotFoundException">If the csv file is not present in the directory</exception>
+        </member>
+        <member name="T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap">
+            <summary>
+            A class internal to the <see cref="T:DataLayer.Implementations.StarLustMessierCsvRepository"/> to map the csv columns to <see cref="T:DataLayer.EquatorialObjects.EquatorialMessierObject"/> objects.
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor">
+            <summary>
+            Creates the object and maps all the columns
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter">
+            <summary>
+            A type converter internal to the <see cref="T:DataLayer.Implementations.StarLustMessierCsvRepository"/> class used to convert the <c>Right Ascension</c> from hours and decimal minutes to decimal hours. 
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter">
+            <summary>
+            A type converter internal to the <see cref="T:DataLayer.Implementations.StarLustMessierCsvRepository"/> class used to convert the <c>Declination</c> from degrees and minutes to decimal degrees.
+            </summary>
+        </member>
+        <member name="T:DataLayer.Implementations.StellariumJsonConstellationRepository">
+            <summary>
+            Used to retrieve constellation data from the Stellarium Json file.
+            </summary>
+        </member>
+        <member name="F:DataLayer.Implementations.StellariumJsonConstellationRepository.filePath">
+            <summary>
+            The path to the Stellarium Json file to read from
+            </summary>
+        </member>
+        <member name="M:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the repository
+            </summary>
+            <param name="repositoryPath">The path to the directory containing the Json file.</param>
+        </member>
+        <member name="M:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync">
+            <summary>
+            Asynchronously retrieves a <see cref="T:System.Collections.Generic.IList`1"/> from the Json file.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IList`1"/></returns>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
         <member name="T:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter">
             <summary>
-            Custom <see cref="T:Newtonsoft.Json.JsonConverter`1"/> used to build out the <c>Constellation</c> graph during retrieval from the repository
+            Custom <see cref="T:Newtonsoft.Json.JsonConverter`1"/> used to build out the <see cref="T:DataLayer.EquatorialObjects.Constellation"/> graph during retrieval from the repository
             </summary>
         </member>
         <member name="M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})">
             <summary>
-            Inserts the edges from the constellation graph into memory 
+            Inserts the edges from the <see cref="T:DataLayer.EquatorialObjects.Constellation"/> graph into memory 
             </summary>
             <param name="jArray">The array of objects retrieved from the repository (nested)</param>
             <param name="lines">The table to insert the graph edges</param>
             <returns>A list of all graph edges</returns>
+        </member>
+        <member name="T:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName">
+            <summary>
+            <see cref="T:DataLayer.Implementations.StellariumJsonConstellationRepository"/> internal class to instantiate the constellation name from the Json repository
+            </summary>
         </member>
         <member name="T:DataLayer.InjectionService`1">
             <summary>

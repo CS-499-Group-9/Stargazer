@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class InjectionService | Stargazer Data API </title>
+      <title>Class Main | Stargazer Data API </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class InjectionService | Stargazer Data API ">
+      <meta name="title" content="Class Main | Stargazer Data API ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Sandbox/new/producer-consumer-pattern/apiSpec/new?filename=StarGazingBackend_InjectionService.md&amp;value=---%0Auid%3A%20StarGazingBackend.InjectionService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,24 +84,24 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="StarGazingBackend.InjectionService">
+        <article data-uid="GodotPlugins.Game.Main">
 
 
 
-  <h1 id="StarGazingBackend_InjectionService" data-uid="StarGazingBackend.InjectionService" class="text-break">
-Class InjectionService  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/InjectionService.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h1 id="GodotPlugins_Game_Main" data-uid="GodotPlugins.Game.Main" class="text-break">
+Class Main  
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="StarGazingBackend.html">StarGazingBackend</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>StarGazingBackend.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="GodotPlugins.html">GodotPlugins</a>.<a class="xref" href="GodotPlugins.Game.html">Game</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class InjectionService</code></pre>
+    <pre><code class="lang-csharp hljs">internal static class Main</code></pre>
   </div>
 
 
@@ -111,7 +111,7 @@ Class InjectionService  <a class="header-action link-secondary" title="View sour
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">InjectionService</span></div>
+      <div><span class="xref">Main</span></div>
     </dd>
   </dl>
 
@@ -152,24 +152,35 @@ Class InjectionService  <a class="header-action link-secondary" title="View sour
 </h2>
 
 
-  <a id="StarGazingBackend_InjectionService_GetServiceProvider_" data-uid="StarGazingBackend.InjectionService.GetServiceProvider*"></a>
+  <a id="GodotPlugins_Game_Main_InitializeFromGameProject_" data-uid="GodotPlugins.Game.Main.InitializeFromGameProject*"></a>
 
-  <h3 id="StarGazingBackend_InjectionService_GetServiceProvider" data-uid="StarGazingBackend.InjectionService.GetServiceProvider">
-  GetServiceProvider()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/InjectionService.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="GodotPlugins_Game_Main_InitializeFromGameProject_System_IntPtr_System_IntPtr_System_IntPtr_System_Int32_" data-uid="GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)">
+  InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ServiceProvider GetServiceProvider()</code></pre>
+    <pre><code class="lang-csharp hljs">private static godot_bool InitializeFromGameProject(IntPtr godotDllHandle, IntPtr outManagedCallbacks, IntPtr unmanagedCallbacks, int unmanagedCallbacksSize)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>godotDllHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd></dd>
+    <dt><code>outManagedCallbacks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd></dd>
+    <dt><code>unmanagedCallbacks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd></dd>
+    <dt><code>unmanagedCallbacksSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovider">ServiceProvider</a></dt>
+    <dt><span class="xref">godot_bool</span></dt>
     <dd></dd>
   </dl>
 
@@ -187,7 +198,6 @@ Class InjectionService  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Sandbox/blob/producer-consumer-pattern/StarGazingBackend/InjectionService.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

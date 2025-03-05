@@ -14,7 +14,13 @@ items:
   fullName: DataLayer.Interfaces.IMessierRepository
   type: Interface
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IMessierRepository.cs
+    remote:
+      path: DataLayer/Interfaces/IMessierRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IMessierRepository
+    path: ../DataLayer/Interfaces/IMessierRepository.cs
+    startLine: 7
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -35,7 +41,13 @@ items:
   fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync()
   type: Method
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IMessierRepository.cs
+    remote:
+      path: DataLayer/Interfaces/IMessierRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetRawMessierObjectsAsync
+    path: ../DataLayer/Interfaces/IMessierRepository.cs
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -51,7 +63,6 @@ items:
 references:
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.Interfaces
   nameWithType: DataLayer.Interfaces
@@ -59,26 +70,21 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
 - uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync*
   commentId: Overload:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
-  isExternal: true
   href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
   name: GetRawMessierObjectsAsync
   nameWithType: IMessierRepository.GetRawMessierObjectsAsync
@@ -107,7 +113,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
     name: EquatorialMessierObject
-    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
   - name: '>'
   - name: '>'
@@ -128,7 +133,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
     name: EquatorialMessierObject
-    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
   - name: )
   - name: )

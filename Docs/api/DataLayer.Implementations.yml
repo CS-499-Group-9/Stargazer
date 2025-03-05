@@ -29,7 +29,6 @@ items:
 references:
 - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
   commentId: T:DataLayer.Implementations.CosineKittyEquatorialConverter`1
-  isExternal: true
   href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
   name: CosineKittyEquatorialConverter<T>
   nameWithType: CosineKittyEquatorialConverter<T>
@@ -40,7 +39,6 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
     name: CosineKittyEquatorialConverter
-    isExternal: true
     href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
   - name: <
   - name: T
@@ -48,7 +46,6 @@ references:
   spec.vb:
   - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
     name: CosineKittyEquatorialConverter
-    isExternal: true
     href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
   - name: (
   - name: Of
@@ -57,14 +54,12 @@ references:
   - name: )
 - uid: DataLayer.Implementations.HygCsvStarRepository
   commentId: T:DataLayer.Implementations.HygCsvStarRepository
-  isExternal: true
   href: DataLayer.Implementations.HygCsvStarRepository.html
   name: HygCsvStarRepository
   nameWithType: HygCsvStarRepository
   fullName: DataLayer.Implementations.HygCsvStarRepository
 - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
   commentId: T:DataLayer.Implementations.HygCsvStarRepository.StarMap
-  isExternal: true
   href: DataLayer.Implementations.HygCsvStarRepository.html
   name: HygCsvStarRepository.StarMap
   nameWithType: HygCsvStarRepository.StarMap
@@ -72,26 +67,21 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.html
   spec.vb:
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.html
 - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
   commentId: T:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
-  isExternal: true
   href: DataLayer.Implementations.HygCsvStarRepository.html
   name: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
   nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
@@ -99,57 +89,47 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
     name: ParsecToLightyearConverter
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html
   spec.vb:
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
     name: ParsecToLightyearConverter
-    isExternal: true
     href: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html
 - uid: DataLayer.Implementations.NullableDoubleConverter
   commentId: T:DataLayer.Implementations.NullableDoubleConverter
-  isExternal: true
   href: DataLayer.Implementations.NullableDoubleConverter.html
   name: NullableDoubleConverter
   nameWithType: NullableDoubleConverter
   fullName: DataLayer.Implementations.NullableDoubleConverter
 - uid: DataLayer.Implementations.NullableIntConverter
   commentId: T:DataLayer.Implementations.NullableIntConverter
-  isExternal: true
   href: DataLayer.Implementations.NullableIntConverter.html
   name: NullableIntConverter
   nameWithType: NullableIntConverter
   fullName: DataLayer.Implementations.NullableIntConverter
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository
-  isExternal: true
   href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   name: StarLustMessierCsvRepository
   nameWithType: StarLustMessierCsvRepository
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
-  isExternal: true
   href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   name: StarLustMessierCsvRepository.StarMap
   nameWithType: StarLustMessierCsvRepository.StarMap
@@ -157,26 +137,21 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
   spec.vb:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
-  isExternal: true
   href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   name: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
   nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
@@ -184,36 +159,29 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
     name: HmsToDecimalDegreesConverter
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html
   spec.vb:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
     name: HmsToDecimalDegreesConverter
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html
 - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
   commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
-  isExternal: true
   href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   name: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
   nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
@@ -221,43 +189,35 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
     name: DdmToDecimalDegreesConverter
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html
   spec.vb:
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository
     name: StarLustMessierCsvRepository
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
     name: StarMap
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
   - name: .
   - uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
     name: DdmToDecimalDegreesConverter
-    isExternal: true
     href: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
   commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   name: StellariumJsonConstellationRepository
   nameWithType: StellariumJsonConstellationRepository
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   name: StellariumJsonConstellationRepository.JsonConstellationListConverter
   nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter
@@ -265,26 +225,21 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
     name: StellariumJsonConstellationRepository
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   - name: .
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
     name: JsonConstellationListConverter
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html
   spec.vb:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
     name: StellariumJsonConstellationRepository
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   - name: .
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
     name: JsonConstellationListConverter
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
   commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-  isExternal: true
   href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   name: StellariumJsonConstellationRepository.ConstellationName
   nameWithType: StellariumJsonConstellationRepository.ConstellationName
@@ -292,20 +247,16 @@ references:
   spec.csharp:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
     name: StellariumJsonConstellationRepository
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   - name: .
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
     name: ConstellationName
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html
   spec.vb:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
     name: StellariumJsonConstellationRepository
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
   - name: .
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
     name: ConstellationName
-    isExternal: true
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html

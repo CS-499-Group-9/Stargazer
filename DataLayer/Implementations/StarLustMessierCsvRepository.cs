@@ -12,12 +12,25 @@ namespace DataLayer.Implementations
     /// </summary>
     internal class StarLustMessierCsvRepository : IMessierRepository
     {
+        /// <summary>
+        /// The path to the repository file.
+        /// </summary>
         private readonly string filePath;
+
+        /// <summary>
+        /// Creates a new object.
+        /// </summary>
+        /// <param name="repositoryPath">The path to the directory containing the file.</param>
         public StarLustMessierCsvRepository(string repositoryPath)
         {
             filePath = Path.Combine(repositoryPath, "messier-catalog.csv"); 
         }
 
+        /// <summary>
+        /// Asynchronously retrieves an <see cref="IList{EquatorialMessierObject}"/> from the repository.
+        /// </summary>
+        /// <returns>A running task that results in</returns>
+        /// <exception cref="FileNotFoundException">If the csv file is not present in the directory</exception>
         public Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync()
         {
             if (File.Exists(filePath))
@@ -39,8 +52,14 @@ namespace DataLayer.Implementations
             throw new FileNotFoundException();
         }
 
+        /// <summary>
+        /// A class internal to the <see cref="StarLustMessierCsvRepository"/> to map the csv columns to <see cref="EquatorialMessierObject"/> objects.
+        /// </summary>
         private class StarMap : ClassMap<EquatorialMessierObject>
         {
+            /// <summary>
+            /// Creates the object and maps all the columns
+            /// </summary>
             public StarMap()
             {
                 Map(m => m.MessierId).Name("M");
@@ -56,6 +75,9 @@ namespace DataLayer.Implementations
                 Map(m => m.ViewingDifficulty).Name("VIEWING DIFFICULTY");
             }
 
+            /// <summary>
+            /// A type converter internal to the <see cref="StarLustMessierCsvRepository"/> class used to convert the <c>Right Ascension</c> from hours and decimal minutes to decimal hours. 
+            /// </summary>
             private class HmsToDecimalDegreesConverter : DefaultTypeConverter
             {
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
@@ -75,7 +97,10 @@ namespace DataLayer.Implementations
                     return hours + minutes;
                 }
             }
-            
+
+            /// <summary>
+            /// A type converter internal to the <see cref="StarLustMessierCsvRepository"/> class used to convert the <c>Declination</c> from degrees and minutes to decimal degrees.
+            /// </summary>
             private class DdmToDecimalDegreesConverter : DefaultTypeConverter
             {
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)

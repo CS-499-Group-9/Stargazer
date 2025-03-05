@@ -14,7 +14,13 @@ items:
   fullName: DataLayer.Interfaces.IEquatorialConverter<T>
   type: Interface
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IEquitorialConverter.cs
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IEquatorialConverter
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 11
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -41,7 +47,13 @@ items:
   fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
   type: Property
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Interfaces/IEquitorialConverter.cs
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Convert
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 16
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -60,14 +72,12 @@ references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   parent: DataLayer.HorizontalObjects
-  isExternal: true
   href: DataLayer.HorizontalObjects.HorizontalBody.html
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.Interfaces
   nameWithType: DataLayer.Interfaces
@@ -75,26 +85,21 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.HorizontalObjects
   nameWithType: DataLayer.HorizontalObjects
@@ -102,34 +107,28 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
-    isExternal: true
     href: DataLayer.HorizontalObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
-    isExternal: true
     href: DataLayer.HorizontalObjects.html
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
   commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
   parent: DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   name: EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
 - uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
   commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  isExternal: true
   href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
   name: Convert
   nameWithType: IEquatorialConverter<T>.Convert
@@ -155,7 +154,6 @@ references:
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
     name: EquatorialCelestialBody
-    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   - name: ','
   - name: " "
@@ -171,7 +169,6 @@ references:
   - name: " "
   - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
     name: EquatorialCelestialBody
-    isExternal: true
     href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   - name: ','
   - name: " "
@@ -179,7 +176,6 @@ references:
   - name: )
 - uid: DataLayer.EquatorialObjects
   commentId: N:DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.EquatorialObjects
   nameWithType: DataLayer.EquatorialObjects
@@ -187,22 +183,18 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html
 - uid: System.Func`2
   commentId: T:System.Func`2

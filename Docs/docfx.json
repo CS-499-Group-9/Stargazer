@@ -7,7 +7,7 @@
         {
           "src": "../",
           "files": [
-            "**/DataLayer/bin/debug/**.dll"
+            "DataLayer/*.csproj"
           ]
         }
       ],
@@ -16,14 +16,7 @@
       "properties": 
       {
         "TargetFramework":"net6.0"
-      },
-      "apiRules": [
-        {
-          "include": [
-            "DataLayer.Implementations.*"
-          ]
-        }
-      ]
+      }
     }
   ],
   "build": {

@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/joshj/source/repos/CS-499-Group-9/Stargazer/docs",
+  "source_base_path": "C:/Users/joshj/SOURCE/REPOS/CS-499-GROUP-9/STARGAZER/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -190,7 +190,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.HygCsvStarRepository.StarMap",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.StarMap.yml\" sourcestartlinenumber=\"1\">A custom class to map the columns in the repository to the POCO</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.StarMap.yml\" sourcestartlinenumber=\"1\">A custom class (internal to the HygStarRepository) to map the columns in the repository to the POCO</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -246,7 +246,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.yml\" sourcestartlinenumber=\"1\">A type converter internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> class used to convert the <code>Declination</code> from degrees and minutes to decimal degrees.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -260,7 +260,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.yml\" sourcestartlinenumber=\"1\">A type converter internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> class used to convert the <code>Right Ascension</code> from hours and decimal minutes to decimal hours.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -274,7 +274,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.yml\" sourcestartlinenumber=\"1\">A class internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> to map the csv columns to <xref href=\"DataLayer.EquatorialObjects.EquatorialMessierObject\" data-throw-if-not-resolved=\"false\"></xref> objects.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -302,7 +302,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.yml\" sourcestartlinenumber=\"1\"><xref href=\"DataLayer.Implementations.StellariumJsonConstellationRepository\" data-throw-if-not-resolved=\"false\"></xref> internal class to instantiate the constellation name from the Json repository</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -316,7 +316,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.yml\" sourcestartlinenumber=\"1\">Custom <xref href=\"Newtonsoft.Json.JsonConverter%601\" data-throw-if-not-resolved=\"false\"></xref> used to build out the <code>Constellation</code> graph during retrieval from the repository</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.yml\" sourcestartlinenumber=\"1\">Custom <xref href=\"Newtonsoft.Json.JsonConverter%601\" data-throw-if-not-resolved=\"false\"></xref> used to build out the <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> graph during retrieval from the repository</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -330,7 +330,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve constellation data from the Stellarium Json file.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -460,6 +460,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/GodotPlugins.Game.Main.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GodotPlugins.Game.Main.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GodotPlugins.Game.Main",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GodotPlugins.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GodotPlugins.Game.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GodotPlugins.Game",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Microsoft.CodeAnalysis.EmbeddedAttribute.yml",
       "output": {
         ".html": {
@@ -484,300 +512,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Microsoft.CodeAnalysis",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.CelestialBody.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.CelestialBody.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.CelestialBody",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.CelestialConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.CelestialConverter.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.CelestialConverter",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.Constellation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.Constellation.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.Constellation",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.ConstellationStarNode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.ConstellationStarNode.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.ConstellationStarNode",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.ConstellationStarTree.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.ConstellationStarTree.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.ConstellationStarTree",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.CsvMessierRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.CsvMessierRepository.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.CsvMessierRepository",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IConstellationRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IConstellationRepository.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IConstellationRepository",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IConvertableConstellation-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IConvertableConstellation-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IConvertableConstellation<T>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IConvertableObject-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IConvertableObject-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IConvertableObject<T>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IConvertableStar-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IConvertableStar-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IConvertableStar<T>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IMessierRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IMessierRepository.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IMessierRepository",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.IStarRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.IStarRepository.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.IStarRepository",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.InjectionService.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.InjectionService.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.InjectionService",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.JsonConstellationRepository.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.JsonConstellationRepository.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.JsonConstellationRepository",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.MessierObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.MessierObject.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.MessierObject",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.NullableIntConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.NullableIntConverter.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.NullableIntConverter",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.RawConstellation.ConstellationName.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.RawConstellation.ConstellationName.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.RawConstellation.ConstellationName",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.RawConstellation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.RawConstellation.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.RawConstellation",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.RawConstellationList.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.RawConstellationList.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.RawConstellationList",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.RawMessierObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.RawMessierObject.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend.RawMessierObject",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/StarGazingBackend.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/StarGazingBackend.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "StarGazingBackend",
       "Summary": null
     },
     {

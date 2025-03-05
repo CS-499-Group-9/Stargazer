@@ -1,36 +1,30 @@
 ### YamlMime:ManagedReference
 items:
-- uid: StarGazingBackend.JsonConstellationRepository
-  commentId: T:StarGazingBackend.JsonConstellationRepository
-  id: JsonConstellationRepository
-  parent: StarGazingBackend
+- uid: GodotPlugins.Game.Main
+  commentId: T:GodotPlugins.Game.Main
+  id: Main
+  parent: GodotPlugins.Game
   children:
-  - StarGazingBackend.JsonConstellationRepository.GetAll
+  - GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
   langs:
   - csharp
   - vb
-  name: JsonConstellationRepository
-  nameWithType: JsonConstellationRepository
-  fullName: StarGazingBackend.JsonConstellationRepository
+  name: Main
+  nameWithType: Main
+  fullName: GodotPlugins.Game.Main
   type: Class
   source:
-    remote:
-      path: StarGazingBackend/JsonConstellationRepository.cs
-      branch: producer-consumer-pattern
-      repo: https://github.com/CS-499-Group-9/Sandbox
-    id: JsonConstellationRepository
-    path: ../../Sandbox/StarGazingBackend/JsonConstellationRepository.cs
-    startLine: 8
+    id: Main
+    path: Godot.SourceGenerators\Godot.SourceGenerators.GodotPluginsInitializerGenerator\GodotPlugins.Game.generated.cs
+    startLine: 7
   assemblies:
-  - StarGazingBackend
-  namespace: StarGazingBackend
+  - New Game Project
+  namespace: GodotPlugins.Game
   syntax:
-    content: 'public class JsonConstellationRepository : IConstellationRepository'
-    content.vb: Public Class JsonConstellationRepository Implements IConstellationRepository
+    content: internal static class Main
+    content.vb: Friend Module Main
   inheritance:
   - System.Object
-  implements:
-  - StarGazingBackend.IConstellationRepository
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -39,44 +33,65 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: StarGazingBackend.JsonConstellationRepository.GetAll
-  commentId: M:StarGazingBackend.JsonConstellationRepository.GetAll
-  id: GetAll
-  parent: StarGazingBackend.JsonConstellationRepository
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  commentId: M:GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  id: InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  parent: GodotPlugins.Game.Main
   langs:
   - csharp
   - vb
-  name: GetAll()
-  nameWithType: JsonConstellationRepository.GetAll()
-  fullName: StarGazingBackend.JsonConstellationRepository.GetAll()
+  name: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  nameWithType: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, int)
   type: Method
   source:
-    remote:
-      path: StarGazingBackend/JsonConstellationRepository.cs
-      branch: producer-consumer-pattern
-      repo: https://github.com/CS-499-Group-9/Sandbox
-    id: GetAll
-    path: ../../Sandbox/StarGazingBackend/JsonConstellationRepository.cs
-    startLine: 10
+    id: InitializeFromGameProject
+    path: Godot.SourceGenerators\Godot.SourceGenerators.GodotPluginsInitializerGenerator\GodotPlugins.Game.generated.cs
+    startLine: 9
   assemblies:
-  - StarGazingBackend
-  namespace: StarGazingBackend
-  example: []
+  - New Game Project
+  namespace: GodotPlugins.Game
   syntax:
-    content: public Task<IList<IConvertableConstellation<Constellation>>> GetAll()
+    content: private static godot_bool InitializeFromGameProject(IntPtr godotDllHandle, IntPtr outManagedCallbacks, IntPtr unmanagedCallbacks, int unmanagedCallbacksSize)
+    parameters:
+    - id: godotDllHandle
+      type: System.IntPtr
+    - id: outManagedCallbacks
+      type: System.IntPtr
+    - id: unmanagedCallbacks
+      type: System.IntPtr
+    - id: unmanagedCallbacksSize
+      type: System.Int32
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
-    content.vb: Public Function GetAll() As Task(Of IList(Of IConvertableConstellation(Of Constellation)))
-  overload: StarGazingBackend.JsonConstellationRepository.GetAll*
-  implements:
-  - StarGazingBackend.IConstellationRepository.GetAll
+      type: Godot.NativeInterop.godot_bool
+    content.vb: Private Shared Function InitializeFromGameProject(godotDllHandle As IntPtr, outManagedCallbacks As IntPtr, unmanagedCallbacks As IntPtr, unmanagedCallbacksSize As Integer) As godot_bool
+  overload: GodotPlugins.Game.Main.InitializeFromGameProject*
+  nameWithType.vb: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
+  fullName.vb: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, Integer)
+  name.vb: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
 references:
-- uid: StarGazingBackend
-  commentId: N:StarGazingBackend
-  href: StarGazingBackend.html
-  name: StarGazingBackend
-  nameWithType: StarGazingBackend
-  fullName: StarGazingBackend
+- uid: GodotPlugins.Game
+  commentId: N:GodotPlugins.Game
+  href: GodotPlugins.html
+  name: GodotPlugins.Game
+  nameWithType: GodotPlugins.Game
+  fullName: GodotPlugins.Game
+  spec.csharp:
+  - uid: GodotPlugins
+    name: GodotPlugins
+    href: GodotPlugins.html
+  - name: .
+  - uid: GodotPlugins.Game
+    name: Game
+    href: GodotPlugins.Game.html
+  spec.vb:
+  - uid: GodotPlugins
+    name: GodotPlugins
+    href: GodotPlugins.html
+  - name: .
+  - uid: GodotPlugins.Game
+    name: Game
+    href: GodotPlugins.Game.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -88,13 +103,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: StarGazingBackend.IConstellationRepository
-  commentId: T:StarGazingBackend.IConstellationRepository
-  parent: StarGazingBackend
-  href: StarGazingBackend.IConstellationRepository.html
-  name: IConstellationRepository
-  nameWithType: IConstellationRepository
-  fullName: StarGazingBackend.IConstellationRepository
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -321,152 +329,57 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: StarGazingBackend.JsonConstellationRepository.GetAll*
-  commentId: Overload:StarGazingBackend.JsonConstellationRepository.GetAll
-  href: StarGazingBackend.JsonConstellationRepository.html#StarGazingBackend_JsonConstellationRepository_GetAll
-  name: GetAll
-  nameWithType: JsonConstellationRepository.GetAll
-  fullName: StarGazingBackend.JsonConstellationRepository.GetAll
-- uid: StarGazingBackend.IConstellationRepository.GetAll
-  commentId: M:StarGazingBackend.IConstellationRepository.GetAll
-  parent: StarGazingBackend.IConstellationRepository
-  href: StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll
-  name: GetAll()
-  nameWithType: IConstellationRepository.GetAll()
-  fullName: StarGazingBackend.IConstellationRepository.GetAll()
-  spec.csharp:
-  - uid: StarGazingBackend.IConstellationRepository.GetAll
-    name: GetAll
-    href: StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: StarGazingBackend.IConstellationRepository.GetAll
-    name: GetAll
-    href: StarGazingBackend.IConstellationRepository.html#StarGazingBackend_IConstellationRepository_GetAll
-  - name: (
-  - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{StarGazingBackend.IConvertableConstellation{StarGazingBackend.Constellation}}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<IConvertableConstellation<Constellation>>>
-  nameWithType: Task<IList<IConvertableConstellation<Constellation>>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<StarGazingBackend.IConvertableConstellation<StarGazingBackend.Constellation>>>
-  nameWithType.vb: Task(Of IList(Of IConvertableConstellation(Of Constellation)))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of StarGazingBackend.IConvertableConstellation(Of StarGazingBackend.Constellation)))
-  name.vb: Task(Of IList(Of IConvertableConstellation(Of Constellation)))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: <
-  - uid: StarGazingBackend.IConvertableConstellation`1
-    name: IConvertableConstellation
-    href: StarGazingBackend.IConvertableConstellation-1.html
-  - name: <
-  - uid: StarGazingBackend.Constellation
-    name: Constellation
-    href: StarGazingBackend.Constellation.html
-  - name: '>'
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: StarGazingBackend.IConvertableConstellation`1
-    name: IConvertableConstellation
-    href: StarGazingBackend.IConvertableConstellation-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: StarGazingBackend.Constellation
-    name: Constellation
-    href: StarGazingBackend.Constellation.html
-  - name: )
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject*
+  commentId: Overload:GodotPlugins.Game.Main.InitializeFromGameProject
+  href: GodotPlugins.Game.Main.html#GodotPlugins_Game_Main_InitializeFromGameProject_System_IntPtr_System_IntPtr_System_IntPtr_System_Int32_
+  name: InitializeFromGameProject
+  nameWithType: Main.InitializeFromGameProject
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Godot.NativeInterop.godot_bool
+  commentId: T:Godot.NativeInterop.godot_bool
+  parent: Godot.NativeInterop
+  isExternal: true
+  name: godot_bool
+  nameWithType: godot_bool
+  fullName: Godot.NativeInterop.godot_bool
+- uid: Godot.NativeInterop
+  commentId: N:Godot.NativeInterop
+  isExternal: true
+  name: Godot.NativeInterop
+  nameWithType: Godot.NativeInterop
+  fullName: Godot.NativeInterop
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: Godot
+    name: Godot
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: Godot.NativeInterop
+    name: NativeInterop
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
   spec.vb:
-  - uid: System
-    name: System
+  - uid: Godot
+    name: Godot
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: Godot.NativeInterop
+    name: NativeInterop
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

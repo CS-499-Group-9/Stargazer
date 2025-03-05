@@ -20,7 +20,6 @@ items:
 references:
 - uid: DataLayer.EquatorialObjects.Constellation
   commentId: T:DataLayer.EquatorialObjects.Constellation
-  isExternal: true
   href: DataLayer.EquatorialObjects.Constellation.html
   name: Constellation
   nameWithType: Constellation
@@ -28,28 +27,24 @@ references:
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
   commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
   parent: DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
   name: EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
   commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
   name: EquatorialMessierObject
   nameWithType: EquatorialMessierObject
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
 - uid: DataLayer.EquatorialObjects.EquatorialStar
   commentId: T:DataLayer.EquatorialObjects.EquatorialStar
-  isExternal: true
   href: DataLayer.EquatorialObjects.EquatorialStar.html
   name: EquatorialStar
   nameWithType: EquatorialStar
   fullName: DataLayer.EquatorialObjects.EquatorialStar
 - uid: DataLayer.EquatorialObjects
   commentId: N:DataLayer.EquatorialObjects
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.EquatorialObjects
   nameWithType: DataLayer.EquatorialObjects
@@ -57,20 +52,16 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
-    isExternal: true
     href: DataLayer.EquatorialObjects.html

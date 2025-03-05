@@ -5,7 +5,6 @@ items:
   id: NullableDoubleConverter
   parent: DataLayer.Implementations
   children:
-  - DataLayer.Implementations.NullableDoubleConverter.#ctor
   - DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   langs:
   - csharp
@@ -15,7 +14,13 @@ items:
   fullName: DataLayer.Implementations.NullableDoubleConverter
   type: Class
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/NullableDoubleConverter.cs
+    remote:
+      path: DataLayer/Implementations/NullableDoubleConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: NullableDoubleConverter
+    path: ../DataLayer/Implementations/NullableDoubleConverter.cs
+    startLine: 9
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -31,13 +36,13 @@ items:
   - CsvHelper.TypeConversion.ITypeConverter
   inheritedMembers:
   - CsvHelper.TypeConversion.DefaultTypeConverter.ConvertToString(System.Object,CsvHelper.IWriterRow,CsvHelper.Configuration.MemberMapData)
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
 - uid: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   commentId: M:DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
   id: ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
@@ -50,7 +55,13 @@ items:
   fullName: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
   type: Method
   source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/NullableDoubleConverter.cs
+    remote:
+      path: DataLayer/Implementations/NullableDoubleConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ConvertFromString
+    path: ../DataLayer/Implementations/NullableDoubleConverter.cs
+    startLine: 11
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -77,33 +88,9 @@ items:
   nameWithType.vb: NullableDoubleConverter.ConvertFromString(String, IReaderRow, MemberMapData)
   fullName.vb: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
   name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
-- uid: DataLayer.Implementations.NullableDoubleConverter.#ctor
-  commentId: M:DataLayer.Implementations.NullableDoubleConverter.#ctor
-  id: '#ctor'
-  parent: DataLayer.Implementations.NullableDoubleConverter
-  langs:
-  - csharp
-  - vb
-  name: NullableDoubleConverter()
-  nameWithType: NullableDoubleConverter.NullableDoubleConverter()
-  fullName: DataLayer.Implementations.NullableDoubleConverter.NullableDoubleConverter()
-  type: Constructor
-  source:
-    href: https://github.com/CS-499-Group-9/Stargazer/blob/61973d0007d6f6c7295dac99e5424bb88108be5c/DataLayer/Implementations/NullableDoubleConverter.cs
-  assemblies:
-  - DataLayer
-  namespace: DataLayer.Implementations
-  syntax:
-    content: public NullableDoubleConverter()
-    content.vb: Public Sub New()
-  overload: DataLayer.Implementations.NullableDoubleConverter.#ctor*
-  nameWithType.vb: NullableDoubleConverter.New()
-  fullName.vb: DataLayer.Implementations.NullableDoubleConverter.New()
-  name.vb: New()
 references:
 - uid: DataLayer.Implementations
   commentId: N:DataLayer.Implementations
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.Implementations
   nameWithType: DataLayer.Implementations
@@ -111,22 +98,18 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Implementations
     name: Implementations
-    isExternal: true
     href: DataLayer.Implementations.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Implementations
     name: Implementations
-    isExternal: true
     href: DataLayer.Implementations.html
 - uid: System.Object
   commentId: T:System.Object
@@ -203,78 +186,6 @@ references:
   - uid: CsvHelper.Configuration.MemberMapData
     name: MemberMapData
     isExternal: true
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -354,6 +265,78 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -399,28 +382,28 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
   spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
+  - uid: System.Object.ToString
+    name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
 - uid: System
@@ -519,7 +502,6 @@ references:
   - name: )
 - uid: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString*
   commentId: Overload:DataLayer.Implementations.NullableDoubleConverter.ConvertFromString
-  isExternal: true
   href: DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
   name: ConvertFromString
   nameWithType: NullableDoubleConverter.ConvertFromString
@@ -563,13 +545,3 @@ references:
   - uid: CsvHelper.Configuration
     name: Configuration
     isExternal: true
-- uid: DataLayer.Implementations.NullableDoubleConverter.#ctor*
-  commentId: Overload:DataLayer.Implementations.NullableDoubleConverter.#ctor
-  isExternal: true
-  href: DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter__ctor
-  name: NullableDoubleConverter
-  nameWithType: NullableDoubleConverter.NullableDoubleConverter
-  fullName: DataLayer.Implementations.NullableDoubleConverter.NullableDoubleConverter
-  nameWithType.vb: NullableDoubleConverter.New
-  fullName.vb: DataLayer.Implementations.NullableDoubleConverter.New
-  name.vb: New

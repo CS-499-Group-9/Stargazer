@@ -21,14 +21,12 @@ references:
 - uid: DataLayer.Interfaces.IConstellationRepository
   commentId: T:DataLayer.Interfaces.IConstellationRepository
   parent: DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.Interfaces.IConstellationRepository.html
   name: IConstellationRepository
   nameWithType: IConstellationRepository
   fullName: DataLayer.Interfaces.IConstellationRepository
 - uid: DataLayer.Interfaces.IEquatorialConverter`1
   commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
-  isExternal: true
   href: DataLayer.Interfaces.IEquatorialConverter-1.html
   name: IEquatorialConverter<T>
   nameWithType: IEquatorialConverter<T>
@@ -39,7 +37,6 @@ references:
   spec.csharp:
   - uid: DataLayer.Interfaces.IEquatorialConverter`1
     name: IEquatorialConverter
-    isExternal: true
     href: DataLayer.Interfaces.IEquatorialConverter-1.html
   - name: <
   - name: T
@@ -47,7 +44,6 @@ references:
   spec.vb:
   - uid: DataLayer.Interfaces.IEquatorialConverter`1
     name: IEquatorialConverter
-    isExternal: true
     href: DataLayer.Interfaces.IEquatorialConverter-1.html
   - name: (
   - name: Of
@@ -57,7 +53,6 @@ references:
 - uid: DataLayer.Interfaces.IMessierRepository
   commentId: T:DataLayer.Interfaces.IMessierRepository
   parent: DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.Interfaces.IMessierRepository.html
   name: IMessierRepository
   nameWithType: IMessierRepository
@@ -65,14 +60,12 @@ references:
 - uid: DataLayer.Interfaces.IStarRepository
   commentId: T:DataLayer.Interfaces.IStarRepository
   parent: DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.Interfaces.IStarRepository.html
   name: IStarRepository
   nameWithType: IStarRepository
   fullName: DataLayer.Interfaces.IStarRepository
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
-  isExternal: true
   href: DataLayer.html
   name: DataLayer.Interfaces
   nameWithType: DataLayer.Interfaces
@@ -80,20 +73,16 @@ references:
   spec.csharp:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
   spec.vb:
   - uid: DataLayer
     name: DataLayer
-    isExternal: true
     href: DataLayer.html
   - name: .
   - uid: DataLayer.Interfaces
     name: Interfaces
-    isExternal: true
     href: DataLayer.Interfaces.html
