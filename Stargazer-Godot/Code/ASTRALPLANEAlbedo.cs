@@ -41,10 +41,7 @@ public partial class ASTRALPLANEAlbedo : Node3D
             return;
 
         float xRotation = camera.Rotation.X; // Get rotation in radians
-        GD.Print("Camera X Rotation: " + xRotation);
-
         float alpha = Mathf.Clamp(0.5f + xRotation, 0.1f, 1f);
-        GD.Print("Calculated Alpha: " + alpha);
 
         Color albedoColor = material.AlbedoColor;
         albedoColor.A = alpha; // Apply transparency
