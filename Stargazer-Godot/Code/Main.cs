@@ -36,7 +36,7 @@ public partial class Main : Camera3D
             pitch -= (Fov/75)*mouseMotion.Relative.Y * MouseSensitivity;
 
             // Clamp pitch to prevent flipping
-            //pitch = Mathf.Clamp(pitch, 0, Mathf.Pi / 2);
+            pitch = Mathf.Clamp(pitch, -Mathf.Pi / 2, Mathf.Pi / 2);
 
             // Apply rotation
             Rotation = new Vector3(pitch, yaw, 0);

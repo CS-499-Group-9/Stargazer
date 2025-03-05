@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=15 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Main.cs" id="1_t068r"]
 [ext_resource type="Texture2D" uid="uid://btfum2cg0tcf1" path="res://Textures/chercker.png" id="2_7lioy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
+[ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.190476, 0.722222, 0.849206)
@@ -29,7 +30,7 @@ height = 200.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6hq7"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.780392)
+albedo_color = Color(1, 1, 1, 0.490196)
 albedo_texture = ExtResource("2_7lioy")
 uv1_scale = Vector3(15, 15, 15)
 
@@ -68,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 light_energy = 0.297
 
 [node name="THE ASTRAL PLANE" type="Node3D" parent="."]
+script = ExtResource("6_pddxn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="THE ASTRAL PLANE"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
