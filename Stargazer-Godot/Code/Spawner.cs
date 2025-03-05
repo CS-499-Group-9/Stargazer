@@ -6,6 +6,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 public partial class Spawner : Node3D
 {
@@ -113,7 +114,8 @@ public partial class Spawner : Node3D
 		ImmediateMesh mesh = new ImmediateMesh();
 		// Create a white material
 		StandardMaterial3D whiteMaterial = new StandardMaterial3D();
-		whiteMaterial.AlbedoColor = new Color(1, 1, 1); // White color
+		whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
+		whiteMaterial.ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded;
 		// Assign the material to the mesh
 		constMesh.MaterialOverride = whiteMaterial;
 		mesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
@@ -155,8 +157,6 @@ public partial class Spawner : Node3D
 		labels.ForEach((label) => { AddChild(label); });
 	
 	}
-
-	
 	
 	private Star SpawnStar(HorizontalStar horizontalStar){
 		Star star = StarScene.Instantiate<Star>();
