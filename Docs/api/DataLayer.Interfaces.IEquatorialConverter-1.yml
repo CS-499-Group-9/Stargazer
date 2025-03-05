@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IEquatorialConverter`1
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
+  id: IEquatorialConverter`1
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  langs:
+  - csharp
+  - vb
+  name: IEquatorialConverter<T>
+  nameWithType: IEquatorialConverter<T>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IEquatorialConverter
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 11
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Converts a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to a {T} object
+  example: []
+  syntax:
+    content: 'public interface IEquatorialConverter<T> where T : HorizontalBody, new()'
+    typeParameters:
+    - id: T
+      description: The converted value of type {T} (defined by the front end)
+    content.vb: Public Interface IEquatorialConverter(Of T As {HorizontalBody, New})
+  nameWithType.vb: IEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  name.vb: IEquatorialConverter(Of T)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  id: Convert
+  parent: DataLayer.Interfaces.IEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Convert
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: A function accepting an object of type <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref> to type {T}
+  example: []
+  syntax:
+    content: Func<EquatorialCelestialBody, T> Convert { get; }
+    parameters: []
+    return:
+      type: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+    content.vb: ReadOnly Property Convert As Func(Of EquatorialCelestialBody, T)
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+references:
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
+  name: Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+- uid: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
+  commentId: T:System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,`0}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<EquatorialCelestialBody, T>
+  nameWithType: Func<EquatorialCelestialBody, T>
+  fullName: System.Func<DataLayer.EquatorialObjects.EquatorialCelestialBody, T>
+  nameWithType.vb: Func(Of EquatorialCelestialBody, T)
+  fullName.vb: System.Func(Of DataLayer.EquatorialObjects.EquatorialCelestialBody, T)
+  name.vb: Func(Of EquatorialCelestialBody, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    name: EquatorialCelestialBody
+    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: GodotPlugins.Game
+  commentId: N:GodotPlugins.Game
+  id: GodotPlugins.Game
+  children:
+  - GodotPlugins.Game.Main
+  langs:
+  - csharp
+  - vb
+  name: GodotPlugins.Game
+  nameWithType: GodotPlugins.Game
+  fullName: GodotPlugins.Game
+  type: Namespace
+  assemblies:
+  - New Game Project
+references:
+- uid: GodotPlugins.Game.Main
+  commentId: T:GodotPlugins.Game.Main
+  href: GodotPlugins.Game.Main.html
+  name: Main
+  nameWithType: Main
+  fullName: GodotPlugins.Game.Main

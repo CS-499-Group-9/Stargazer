@@ -1,14 +1,16 @@
-﻿using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Interfaces
 {
+    /// <summary>
+    /// Retrieves a list of Messier Deep Space Objects from a repository
+    /// </summary>
     public interface IMessierRepository
     {
-        Task<IEnumerable<EquitorialMessierObject>> GetRawMessierObjectsAsync();
+        /// <summary>
+        /// Gets all Messier Objects from the repository
+        /// </summary>
+        /// <returns>A running task that can be awaited.</returns>
+        Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync();
     }
 }

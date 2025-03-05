@@ -1,12 +1,11 @@
 using DataLayer;
-using DataLayer.EquitorialObjects;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading.Tasks;
 
 public partial class Spawner : Node3D
 {
@@ -18,15 +17,13 @@ public partial class Spawner : Node3D
 	private readonly string[,] constLines = { { "s1", "s2" }, { "s2", "s3" }, { "s3", "s4" }, { "s4", "s5" } };
 	
 	private Globals globalVars ;
-	private List<Star> stars;
 	private List<LabelNode> labels;
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;
 
+	CelestialDataPackage<Star> dataPackage;
 	private BlockingCollection<HorizontalStar> starProducer;
 	private BlockingCollection<HorizontalMessierObject> messierProducer;
-	private ConcurrentDictionary<int, HorizontalStar> constellationStars;
-	private ConcurrentDictionary<int, Star> drawnStars;
 	private IEnumerable<Constellation> constellations;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -37,18 +34,15 @@ public partial class Spawner : Node3D
         HuntsvilleCoordinates huntsvilleCoordinates = new HuntsvilleCoordinates();
         var repoService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
         
-		var dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, DateTime.UtcNow);
+		dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, new DateTime(2025, 02, 28,12,00,00 ).ToUniversalTime());
         starProducer = dataPackage.Stars;
-        constellationStars = dataPackage.ConstellationStars;
         constellations = dataPackage.Constellations;
-        drawnStars = dataPackage.DrawnStars;
         messierProducer = dataPackage.MessierObjects;
 		
         while (!starProducer.IsCompleted)
         {
             foreach (var star in starProducer.GetConsumingEnumerable())
             {
-				
 				SpawnStar(star);
             }
         }
@@ -111,7 +105,7 @@ public partial class Spawner : Node3D
 
 
 	
-	private void DrawConstellations()
+	private async void DrawConstellations()
 	{
 
 		MeshInstance3D constMesh = new MeshInstance3D();
@@ -133,8 +127,8 @@ public partial class Spawner : Node3D
 
 			foreach(var lines in constellation.ConstellationLines) {
 
-				Star s1 = GetConstellationStar(lines.Item1);
-				Star s2 = GetConstellationStar(lines.Item2);
+				Star s1 = dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
+				Star s2 = dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
 				mesh.SurfaceAddVertex(s1.Position);
 				mesh.SurfaceAddVertex(s2.Position);
 				if (totalPos == Vector3.Zero) // solely checked for the first star
@@ -162,17 +156,7 @@ public partial class Spawner : Node3D
 	
 	}
 
-	private Star GetConstellationStar(int HipId)
-	{
-		HorizontalStar horizontalStar;
-		if (constellationStars.TryRemove(HipId, out horizontalStar))
-		{
-			var star =  SpawnStar(horizontalStar);
-			drawnStars.TryAdd(HipId, star);
-			return star;
-		}
-		return drawnStars.GetValueOrDefault(HipId);
-	}
+	
 	
 	private Star SpawnStar(HorizontalStar horizontalStar){
 		Star star = StarScene.Instantiate<Star>();

@@ -1,14 +1,16 @@
-﻿using DataLayer.EquitorialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Interfaces
 {
+    /// <summary>
+    /// Used to retrive a collection of <see cref="Constellation"/> from a repository.
+    /// </summary>
     public interface IConstellationRepository
     {
-        internal Task<IList<Constellation>> GetAllConstellationsAsync();
+        /// <summary>
+        /// Gets all <see cref="Constellation"/>s from the repository
+        /// </summary>
+        /// <returns>A running task that can be awaited</returns>
+        internal Task<IList<Constellation>?> GetAllConstellationsAsync();
     }
 }

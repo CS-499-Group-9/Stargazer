@@ -1,0 +1,621 @@
+{
+  "source_base_path": "C:/Users/joshj/SOURCE/REPOS/CS-499-GROUP-9/STARGAZER/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.CelestialDataPackage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.CelestialDataPackage-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.CelestialDataPackage<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.CelestialDataPackage-1.yml\" sourcestartlinenumber=\"1\">Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.Constellation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.Constellation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.Constellation",
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.Constellation.yml\" sourcestartlinenumber=\"1\">Represents a constellation in the sky</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialCelestialBody",
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialCelestialBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to equatorial coordinates.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialMessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialMessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialMessierObject",
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialMessierObject.yml\" sourcestartlinenumber=\"1\">Represents a Messier Deep Space Object located in equatorial coordinates</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.EquatorialStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.EquatorialStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects.EquatorialStar",
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialStar.yml\" sourcestartlinenumber=\"1\">Represents a visible star in equatorial coordinates</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.EquatorialObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.EquatorialObjects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.EquatorialObjects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalBody",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to horizontal coordinates.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalMessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalMessierObject",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object located in Horizontal coordinates</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalStar",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalStar.yml\" sourcestartlinenumber=\"1\">A star located by the Horizontal Coordinate method</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.CosineKittyEquatorialConverter<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.yml\" sourcestartlinenumber=\"1\">Converts an object of type <xref href=\"DataLayer.EquatorialObjects.EquatorialCelestialBody\" data-throw-if-not-resolved=\"false\"></xref> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to convert parsecs to light years (the distance data in the repository is in Parsecs... yes... that's actually a real thing).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.StarMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.StarMap.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.HygCsvStarRepository.StarMap",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.StarMap.yml\" sourcestartlinenumber=\"1\">A custom class (internal to the HygStarRepository) to map the columns in the repository to the POCO</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.HygCsvStarRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.HygCsvStarRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.yml\" sourcestartlinenumber=\"1\">Retrieves raw star data from the HYG.csv repository</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.NullableDoubleConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.NullableDoubleConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.NullableDoubleConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableDoubleConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the csv file</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.NullableIntConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.NullableIntConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.NullableIntConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableIntConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the repository</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.yml\" sourcestartlinenumber=\"1\">A type converter internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> class used to convert the <code>Declination</code> from degrees and minutes to decimal degrees.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.yml\" sourcestartlinenumber=\"1\">A type converter internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> class used to convert the <code>Right Ascension</code> from hours and decimal minutes to decimal hours.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StarLustMessierCsvRepository.StarMap",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.yml\" sourcestartlinenumber=\"1\">A class internal to the <xref href=\"DataLayer.Implementations.StarLustMessierCsvRepository\" data-throw-if-not-resolved=\"false\"></xref> to map the csv columns to <xref href=\"DataLayer.EquatorialObjects.EquatorialMessierObject\" data-throw-if-not-resolved=\"false\"></xref> objects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StarLustMessierCsvRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StarLustMessierCsvRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href=\"https://starlust.org/messier-catalog/\" sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Starlust.org</a></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.yml\" sourcestartlinenumber=\"1\"><xref href=\"DataLayer.Implementations.StellariumJsonConstellationRepository\" data-throw-if-not-resolved=\"false\"></xref> internal class to instantiate the constellation name from the Json repository</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.yml\" sourcestartlinenumber=\"1\">Custom <xref href=\"Newtonsoft.Json.JsonConverter%601\" data-throw-if-not-resolved=\"false\"></xref> used to build out the <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> graph during retrieval from the repository</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.StellariumJsonConstellationRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve constellation data from the Stellarium Json file.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.InjectionService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.InjectionService-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.InjectionService<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.InjectionService-1.yml\" sourcestartlinenumber=\"1\">Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.\nRegisters all classes to be injected into constructors to avoid hard coding into descendant classes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IConstellationRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IConstellationRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IConstellationRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrive a collection of <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> from a repository.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IEquatorialConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IEquatorialConverter-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IEquatorialConverter<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IEquatorialConverter-1.yml\" sourcestartlinenumber=\"1\">Converts a <xref href=\"DataLayer.HorizontalObjects.HorizontalBody\" data-throw-if-not-resolved=\"false\"></xref> to a {T} object</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IMessierRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IMessierRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IMessierRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IMessierRepository.yml\" sourcestartlinenumber=\"1\">Retrieves a list of Messier Deep Space Objects from a repository</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IStarRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IStarRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IStarRepository",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IStarRepository.yml\" sourcestartlinenumber=\"1\">Communicates with a repository of Yale Stars (in the equatorial coordinate form).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.StargazerRepositoryService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.StargazerRepositoryService-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.StargazerRepositoryService<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.StargazerRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GodotPlugins.Game.Main.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GodotPlugins.Game.Main.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GodotPlugins.Game.Main",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GodotPlugins.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GodotPlugins.Game.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GodotPlugins.Game",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.CodeAnalysis.EmbeddedAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.CodeAnalysis.EmbeddedAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.CodeAnalysis.EmbeddedAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.CodeAnalysis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.CodeAnalysis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.CodeAnalysis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.Runtime.CompilerServices.NullableAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Runtime.CompilerServices.NullableAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "System.Runtime.CompilerServices.NullableAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.Runtime.CompilerServices.NullableContextAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Runtime.CompilerServices.NullableContextAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "System.Runtime.CompilerServices.NullableContextAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.Runtime.CompilerServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Runtime.CompilerServices.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "System.Runtime.CompilerServices",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

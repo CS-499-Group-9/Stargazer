@@ -1,10 +1,24 @@
-﻿using DataLayer.EquitorialObjects;
+﻿using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Interfaces
 {
+    /// <summary>
+    /// Communicates with a repository of Yale Stars (in the equatorial coordinate form).
+    /// </summary>
     public interface IStarRepository
     {
-        public Task<IList<EquitorialStar>> GetAllStarsAsync(double maximumMagnitude);
-        public Task<EquitorialStar?> GetStaryByHipAsync(int hipparcosId);
+        /// <summary>
+        /// Gets all stars that are brighter than a certain magnitude.
+        /// </summary>
+        /// <param name="maximumMagnitude">The minimum brightness to include (negative numbers are brighter)</param>
+        /// <returns>A running task that can be awaited to obtain a list of stars</returns>
+        public Task<IList<EquatorialStar>> GetAllStarsAsync(double maximumMagnitude);
+
+        /// <summary>
+        /// Gets a single star from the repository
+        /// </summary>
+        /// <param name="hipparcosId">The Hipparcos ID of the star to find</param>
+        /// <returns>Null if no star is found</returns>
+        public Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId);
     }
 }

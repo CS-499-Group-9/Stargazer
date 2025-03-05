@@ -1,14 +1,12 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// A custom type converter to handle blank space in the repository
+    /// </summary>
     internal class NullableIntConverter : DefaultTypeConverter
     {
         public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)

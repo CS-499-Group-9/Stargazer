@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  id: DataLayer.EquatorialObjects
+  children:
+  - DataLayer.EquatorialObjects.Constellation
+  - DataLayer.EquatorialObjects.EquatorialCelestialBody
+  - DataLayer.EquatorialObjects.EquatorialMessierObject
+  - DataLayer.EquatorialObjects.EquatorialStar
+  langs:
+  - csharp
+  - vb
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  type: Namespace
+  assemblies:
+  - DataLayer
+references:
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  href: DataLayer.EquatorialObjects.Constellation.html
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+  commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  name: EquatorialMessierObject
+  nameWithType: EquatorialMessierObject
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
+- uid: DataLayer.EquatorialObjects.EquatorialStar
+  commentId: T:DataLayer.EquatorialObjects.EquatorialStar
+  href: DataLayer.EquatorialObjects.EquatorialStar.html
+  name: EquatorialStar
+  nameWithType: EquatorialStar
+  fullName: DataLayer.EquatorialObjects.EquatorialStar
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html

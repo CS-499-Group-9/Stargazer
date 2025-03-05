@@ -1,15 +1,12 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// A custom type converter to handle blank space in the csv file
+    /// </summary>
     internal class NullableDoubleConverter : DefaultTypeConverter
     {
         public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)

@@ -1,0 +1,749 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.HygCsvStarRepository
+  commentId: T:DataLayer.Implementations.HygCsvStarRepository
+  id: HygCsvStarRepository
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
+  - DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  - DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  - DataLayer.Implementations.HygCsvStarRepository.filePath
+  langs:
+  - csharp
+  - vb
+  name: HygCsvStarRepository
+  nameWithType: HygCsvStarRepository
+  fullName: DataLayer.Implementations.HygCsvStarRepository
+  type: Class
+  source:
+    remote:
+      path: DataLayer/Implementations/HygCsvStarRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: HygCsvStarRepository
+    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Retrieves raw star data from the HYG.csv repository
+  example: []
+  syntax:
+    content: 'internal class HygCsvStarRepository : IStarRepository'
+    content.vb: Friend Class HygCsvStarRepository Implements IStarRepository
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IStarRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.Implementations.HygCsvStarRepository.filePath
+  commentId: F:DataLayer.Implementations.HygCsvStarRepository.filePath
+  id: filePath
+  parent: DataLayer.Implementations.HygCsvStarRepository
+  langs:
+  - csharp
+  - vb
+  name: filePath
+  nameWithType: HygCsvStarRepository.filePath
+  fullName: DataLayer.Implementations.HygCsvStarRepository.filePath
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/HygCsvStarRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: filePath
+    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: The file path to the repository csv file
+  example: []
+  syntax:
+    content: private readonly string filePath
+    return:
+      type: System.String
+    content.vb: Private ReadOnly filePath As String
+- uid: DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: DataLayer.Implementations.HygCsvStarRepository
+  langs:
+  - csharp
+  - vb
+  name: HygCsvStarRepository(string)
+  nameWithType: HygCsvStarRepository.HygCsvStarRepository(string)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.HygCsvStarRepository(string)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/Implementations/HygCsvStarRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
+    startLine: 23
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Creates a new instance and sets the file path
+  example: []
+  syntax:
+    content: public HygCsvStarRepository(string repositoryPath)
+    parameters:
+    - id: repositoryPath
+      type: System.String
+      description: The path to the directory containing the file
+    content.vb: Public Sub New(repositoryPath As String)
+  overload: DataLayer.Implementations.HygCsvStarRepository.#ctor*
+  nameWithType.vb: HygCsvStarRepository.New(String)
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New(String)
+  name.vb: New(String)
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  id: GetStarByHipAsync(System.Int32)
+  parent: DataLayer.Implementations.HygCsvStarRepository
+  langs:
+  - csharp
+  - vb
+  name: GetStarByHipAsync(int)
+  nameWithType: HygCsvStarRepository.GetStarByHipAsync(int)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(int)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/HygCsvStarRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetStarByHipAsync
+    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
+    startLine: 34
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Retrieves a single star from the repository
+  example: []
+  syntax:
+    content: public Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
+    parameters:
+    - id: hipparcosId
+      type: System.Int32
+      description: The Hipparcos ID of the star to find
+    return:
+      type: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
+      description: Null if the star is not found, otherwise returns the star in the equatorial coordinate form.
+    content.vb: Public Function GetStarByHipAsync(hipparcosId As Integer) As Task(Of EquatorialStar)
+  overload: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync*
+  implements:
+  - DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  nameWithType.vb: HygCsvStarRepository.GetStarByHipAsync(Integer)
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(Integer)
+  name.vb: GetStarByHipAsync(Integer)
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  id: DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  isEii: true
+  parent: DataLayer.Implementations.HygCsvStarRepository
+  langs:
+  - csharp
+  - vb
+  name: IStarRepository.GetAllStarsAsync(double)
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync(double)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/HygCsvStarRepository.cs
+      branch: comment-back-end
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
+    startLine: 62
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Gets all stars that are brighter than a defined brightness.
+  example: []
+  syntax:
+    content: Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
+    parameters:
+    - id: maximumMagnitude
+      type: System.Double
+      description: The minimum brightness of the stars to include.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
+      description: A list of stars in the equatorial coordinate form.
+    content.vb: ''
+  overload: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
+  implements:
+  - DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IStarRepository
+  commentId: T:DataLayer.Interfaces.IStarRepository
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IStarRepository.html
+  name: IStarRepository
+  nameWithType: IStarRepository
+  fullName: DataLayer.Interfaces.IStarRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DataLayer.Implementations.HygCsvStarRepository.#ctor*
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.#ctor
+  href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository__ctor_System_String_
+  name: HygCsvStarRepository
+  nameWithType: HygCsvStarRepository.HygCsvStarRepository
+  fullName: DataLayer.Implementations.HygCsvStarRepository.HygCsvStarRepository
+  nameWithType.vb: HygCsvStarRepository.New
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New
+  name.vb: New
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync*
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
+  href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetStarByHipAsync_System_Int32_
+  name: GetStarByHipAsync
+  nameWithType: HygCsvStarRepository.GetStarByHipAsync
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
+- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  parent: DataLayer.Interfaces.IStarRepository
+  isExternal: true
+  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  name: GetStarByHipAsync(int)
+  nameWithType: IStarRepository.GetStarByHipAsync(int)
+  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(int)
+  nameWithType.vb: IStarRepository.GetStarByHipAsync(Integer)
+  fullName.vb: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(Integer)
+  name.vb: GetStarByHipAsync(Integer)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+    name: GetStarByHipAsync
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+    name: GetStarByHipAsync
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
+  commentId: T:System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<EquatorialStar>
+  nameWithType: Task<EquatorialStar>
+  fullName: System.Threading.Tasks.Task<DataLayer.EquatorialObjects.EquatorialStar>
+  nameWithType.vb: Task(Of EquatorialStar)
+  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.EquatorialObjects.EquatorialStar)
+  name.vb: Task(Of EquatorialStar)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  href: DataLayer.Interfaces.IStarRepository.html
+  name: IStarRepository.GetAllStarsAsync
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IStarRepository*
+    name: IStarRepository
+    href: DataLayer.Interfaces.IStarRepository.html
+  - name: .
+  - uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
+    name: GetAllStarsAsync
+    href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  parent: DataLayer.Interfaces.IStarRepository
+  isExternal: true
+  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+  name: GetAllStarsAsync(double)
+  nameWithType: IStarRepository.GetAllStarsAsync(double)
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  nameWithType.vb: IStarRepository.GetAllStarsAsync(Double)
+  fullName.vb: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(Double)
+  name.vb: GetAllStarsAsync(Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+    name: GetAllStarsAsync
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+    name: GetAllStarsAsync
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IList<EquatorialStar>>
+  nameWithType: Task<IList<EquatorialStar>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>
+  nameWithType.vb: Task(Of IList(Of EquatorialStar))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar))
+  name.vb: Task(Of IList(Of EquatorialStar))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: )
+  - name: )

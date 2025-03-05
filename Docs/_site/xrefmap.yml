@@ -1,0 +1,1649 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: DataLayer
+  name: DataLayer
+  href: api/DataLayer.html
+  commentId: N:DataLayer
+  fullName: DataLayer
+  nameWithType: DataLayer
+- uid: DataLayer.CelestialDataPackage`1
+  name: CelestialDataPackage<T>
+  href: api/DataLayer.CelestialDataPackage-1.html
+  commentId: T:DataLayer.CelestialDataPackage`1
+  name.vb: CelestialDataPackage(Of T)
+  fullName: DataLayer.CelestialDataPackage<T>
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  nameWithType: CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+- uid: DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0})
+  name: CelestialDataPackage(BlockingCollection<HorizontalStar>, BlockingCollection<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, HorizontalStar>, ConcurrentDictionary<int, T>)
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_System_Collections_Concurrent_BlockingCollection_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_BlockingCollection_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__
+  commentId: M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0})
+  name.vb: New(BlockingCollection(Of HorizontalStar), BlockingCollection(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, HorizontalStar), ConcurrentDictionary(Of Integer, T))
+  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage(System.Collections.Concurrent.BlockingCollection<DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Concurrent.BlockingCollection<DataLayer.HorizontalObjects.HorizontalMessierObject>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Concurrent.ConcurrentDictionary<int, DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Concurrent.ConcurrentDictionary<int, T>)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).New(System.Collections.Concurrent.BlockingCollection(Of DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Concurrent.BlockingCollection(Of DataLayer.HorizontalObjects.HorizontalMessierObject), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, T))
+  nameWithType: CelestialDataPackage<T>.CelestialDataPackage(BlockingCollection<HorizontalStar>, BlockingCollection<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, HorizontalStar>, ConcurrentDictionary<int, T>)
+  nameWithType.vb: CelestialDataPackage(Of T).New(BlockingCollection(Of HorizontalStar), BlockingCollection(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, HorizontalStar), ConcurrentDictionary(Of Integer, T))
+- uid: DataLayer.CelestialDataPackage`1.#ctor*
+  name: CelestialDataPackage
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).New
+  nameWithType: CelestialDataPackage<T>.CelestialDataPackage
+  nameWithType.vb: CelestialDataPackage(Of T).New
+- uid: DataLayer.CelestialDataPackage`1.ConstellationStars
+  name: ConstellationStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_ConstellationStars
+  commentId: P:DataLayer.CelestialDataPackage`1.ConstellationStars
+  fullName: DataLayer.CelestialDataPackage<T>.ConstellationStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).ConstellationStars
+  nameWithType: CelestialDataPackage<T>.ConstellationStars
+  nameWithType.vb: CelestialDataPackage(Of T).ConstellationStars
+- uid: DataLayer.CelestialDataPackage`1.ConstellationStars*
+  name: ConstellationStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_ConstellationStars_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.ConstellationStars
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.ConstellationStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).ConstellationStars
+  nameWithType: CelestialDataPackage<T>.ConstellationStars
+  nameWithType.vb: CelestialDataPackage(Of T).ConstellationStars
+- uid: DataLayer.CelestialDataPackage`1.Constellations
+  name: Constellations
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Constellations
+  commentId: P:DataLayer.CelestialDataPackage`1.Constellations
+  fullName: DataLayer.CelestialDataPackage<T>.Constellations
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Constellations
+  nameWithType: CelestialDataPackage<T>.Constellations
+  nameWithType.vb: CelestialDataPackage(Of T).Constellations
+- uid: DataLayer.CelestialDataPackage`1.Constellations*
+  name: Constellations
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Constellations_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.Constellations
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.Constellations
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Constellations
+  nameWithType: CelestialDataPackage<T>.Constellations
+  nameWithType.vb: CelestialDataPackage(Of T).Constellations
+- uid: DataLayer.CelestialDataPackage`1.DrawnStars
+  name: DrawnStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnStars
+  commentId: P:DataLayer.CelestialDataPackage`1.DrawnStars
+  fullName: DataLayer.CelestialDataPackage<T>.DrawnStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnStars
+  nameWithType: CelestialDataPackage<T>.DrawnStars
+  nameWithType.vb: CelestialDataPackage(Of T).DrawnStars
+- uid: DataLayer.CelestialDataPackage`1.DrawnStars*
+  name: DrawnStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnStars_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.DrawnStars
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.DrawnStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnStars
+  nameWithType: CelestialDataPackage<T>.DrawnStars
+  nameWithType.vb: CelestialDataPackage(Of T).DrawnStars
+- uid: DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
+  name: GetConstellationStar(int, Func<HorizontalStar, T>)
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetConstellationStar_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar__0__
+  commentId: M:DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
+  name.vb: GetConstellationStar(Integer, Func(Of HorizontalStar, T))
+  fullName: DataLayer.CelestialDataPackage<T>.GetConstellationStar(int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, T>)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetConstellationStar(Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, T))
+  nameWithType: CelestialDataPackage<T>.GetConstellationStar(int, Func<HorizontalStar, T>)
+  nameWithType.vb: CelestialDataPackage(Of T).GetConstellationStar(Integer, Func(Of HorizontalStar, T))
+- uid: DataLayer.CelestialDataPackage`1.GetConstellationStar*
+  name: GetConstellationStar
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetConstellationStar_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.GetConstellationStar
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.GetConstellationStar
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetConstellationStar
+  nameWithType: CelestialDataPackage<T>.GetConstellationStar
+  nameWithType.vb: CelestialDataPackage(Of T).GetConstellationStar
+- uid: DataLayer.CelestialDataPackage`1.MessierObjects
+  name: MessierObjects
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierObjects
+  commentId: P:DataLayer.CelestialDataPackage`1.MessierObjects
+  fullName: DataLayer.CelestialDataPackage<T>.MessierObjects
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierObjects
+  nameWithType: CelestialDataPackage<T>.MessierObjects
+  nameWithType.vb: CelestialDataPackage(Of T).MessierObjects
+- uid: DataLayer.CelestialDataPackage`1.MessierObjects*
+  name: MessierObjects
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierObjects_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.MessierObjects
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.MessierObjects
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierObjects
+  nameWithType: CelestialDataPackage<T>.MessierObjects
+  nameWithType.vb: CelestialDataPackage(Of T).MessierObjects
+- uid: DataLayer.CelestialDataPackage`1.Stars
+  name: Stars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Stars
+  commentId: P:DataLayer.CelestialDataPackage`1.Stars
+  fullName: DataLayer.CelestialDataPackage<T>.Stars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Stars
+  nameWithType: CelestialDataPackage<T>.Stars
+  nameWithType.vb: CelestialDataPackage(Of T).Stars
+- uid: DataLayer.CelestialDataPackage`1.Stars*
+  name: Stars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Stars_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.Stars
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.Stars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Stars
+  nameWithType: CelestialDataPackage<T>.Stars
+  nameWithType.vb: CelestialDataPackage(Of T).Stars
+- uid: DataLayer.EquatorialObjects
+  name: DataLayer.EquatorialObjects
+  href: api/DataLayer.EquatorialObjects.html
+  commentId: N:DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+- uid: DataLayer.EquatorialObjects.Constellation
+  name: Constellation
+  href: api/DataLayer.EquatorialObjects.Constellation.html
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+  nameWithType: Constellation
+- uid: DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)
+  name: Constellation(string, string, string?)
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation__ctor_System_String_System_String_System_String_
+  commentId: M:DataLayer.EquatorialObjects.Constellation.#ctor(System.String,System.String,System.String)
+  name.vb: New(String, String, String)
+  fullName: DataLayer.EquatorialObjects.Constellation.Constellation(string, string, string?)
+  fullName.vb: DataLayer.EquatorialObjects.Constellation.New(String, String, String)
+  nameWithType: Constellation.Constellation(string, string, string?)
+  nameWithType.vb: Constellation.New(String, String, String)
+- uid: DataLayer.EquatorialObjects.Constellation.#ctor*
+  name: Constellation
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation__ctor_
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.EquatorialObjects.Constellation.Constellation
+  fullName.vb: DataLayer.EquatorialObjects.Constellation.New
+  nameWithType: Constellation.Constellation
+  nameWithType.vb: Constellation.New
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationId
+  name: ConstellationId
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationId
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationId
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationId
+  nameWithType: Constellation.ConstellationId
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationId*
+  name: ConstellationId
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationId_
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationId
+  nameWithType: Constellation.ConstellationId
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  name: ConstellationLines
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationLines
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  nameWithType: Constellation.ConstellationLines
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationLines*
+  name: ConstellationLines
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationLines_
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationLines
+  nameWithType: Constellation.ConstellationLines
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationName
+  name: ConstellationName
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationName
+  commentId: P:DataLayer.EquatorialObjects.Constellation.ConstellationName
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationName
+  nameWithType: Constellation.ConstellationName
+- uid: DataLayer.EquatorialObjects.Constellation.ConstellationName*
+  name: ConstellationName
+  href: api/DataLayer.EquatorialObjects.Constellation.html#DataLayer_EquatorialObjects_Constellation_ConstellationName_
+  commentId: Overload:DataLayer.EquatorialObjects.Constellation.ConstellationName
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.Constellation.ConstellationName
+  nameWithType: Constellation.ConstellationName
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  name: EquatorialCelestialBody
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  name: Declination
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Declination
+  commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  nameWithType: EquatorialCelestialBody.Declination
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination*
+  name: Declination
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Declination_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
+  nameWithType: EquatorialCelestialBody.Declination
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  name: Distance
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Distance
+  commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  nameWithType: EquatorialCelestialBody.Distance
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance*
+  name: Distance
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Distance_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Distance
+  nameWithType: EquatorialCelestialBody.Distance
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  name: Magnitude
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Magnitude
+  commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  nameWithType: EquatorialCelestialBody.Magnitude
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude*
+  name: Magnitude
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_Magnitude_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
+  nameWithType: EquatorialCelestialBody.Magnitude
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  name: RightAscension
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_RightAscension
+  commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  nameWithType: EquatorialCelestialBody.RightAscension
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension*
+  name: RightAscension
+  href: api/DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_RightAscension_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
+  nameWithType: EquatorialCelestialBody.RightAscension
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+  name: EquatorialMessierObject
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
+  nameWithType: EquatorialMessierObject
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  name: Constellation
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  nameWithType: EquatorialMessierObject.Constellation
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation*
+  name: Constellation
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
+  nameWithType: EquatorialMessierObject.Constellation
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  name: MessierId
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  nameWithType: EquatorialMessierObject.MessierId
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId*
+  name: MessierId
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
+  nameWithType: EquatorialMessierObject.MessierId
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  name: NewGeneralCatalog
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  nameWithType: EquatorialMessierObject.NewGeneralCatalog
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog*
+  name: NewGeneralCatalog
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
+  nameWithType: EquatorialMessierObject.NewGeneralCatalog
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  name: Size
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Size
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  nameWithType: EquatorialMessierObject.Size
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Size*
+  name: Size
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Size_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Size
+  nameWithType: EquatorialMessierObject.Size
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  name: Type
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Type
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  nameWithType: EquatorialMessierObject.Type
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Type*
+  name: Type
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Type_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.Type
+  nameWithType: EquatorialMessierObject.Type
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  name: ViewingDifficulty
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  nameWithType: EquatorialMessierObject.ViewingDifficulty
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty*
+  name: ViewingDifficulty
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+  nameWithType: EquatorialMessierObject.ViewingDifficulty
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  name: ViewingSeason
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  nameWithType: EquatorialMessierObject.ViewingSeason
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason*
+  name: ViewingSeason
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason
+  nameWithType: EquatorialMessierObject.ViewingSeason
+- uid: DataLayer.EquatorialObjects.EquatorialStar
+  name: EquatorialStar
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html
+  commentId: T:DataLayer.EquatorialObjects.EquatorialStar
+  fullName: DataLayer.EquatorialObjects.EquatorialStar
+  nameWithType: EquatorialStar
+- uid: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  name: AbsoluteMagnitude
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_AbsoluteMagnitude
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  nameWithType: EquatorialStar.AbsoluteMagnitude
+- uid: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude*
+  name: AbsoluteMagnitude
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_AbsoluteMagnitude_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude
+  nameWithType: EquatorialStar.AbsoluteMagnitude
+- uid: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  name: BayerFlamsteedDesignation
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_BayerFlamsteedDesignation
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  nameWithType: EquatorialStar.BayerFlamsteedDesignation
+- uid: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation*
+  name: BayerFlamsteedDesignation
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_BayerFlamsteedDesignation_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.BayerFlamsteedDesignation
+  nameWithType: EquatorialStar.BayerFlamsteedDesignation
+- uid: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  name: ColorIndex
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ColorIndex
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  nameWithType: EquatorialStar.ColorIndex
+- uid: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex*
+  name: ColorIndex
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ColorIndex_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.ColorIndex
+  nameWithType: EquatorialStar.ColorIndex
+- uid: DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  name: GlieseId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_GlieseId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  nameWithType: EquatorialStar.GlieseId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.GlieseId*
+  name: GlieseId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_GlieseId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.GlieseId
+  nameWithType: EquatorialStar.GlieseId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  name: HarvardRevisedId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HarvardRevisedId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  nameWithType: EquatorialStar.HarvardRevisedId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId*
+  name: HarvardRevisedId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HarvardRevisedId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HarvardRevisedId
+  nameWithType: EquatorialStar.HarvardRevisedId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  name: HenryDraperId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HenryDraperId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  nameWithType: EquatorialStar.HenryDraperId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId*
+  name: HenryDraperId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HenryDraperId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HenryDraperId
+  nameWithType: EquatorialStar.HenryDraperId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  name: HipparcosId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HipparcosId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  nameWithType: EquatorialStar.HipparcosId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId*
+  name: HipparcosId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_HipparcosId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.HipparcosId
+  nameWithType: EquatorialStar.HipparcosId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  name: ProperName
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ProperName
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  nameWithType: EquatorialStar.ProperName
+- uid: DataLayer.EquatorialObjects.EquatorialStar.ProperName*
+  name: ProperName
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_ProperName_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.ProperName
+  nameWithType: EquatorialStar.ProperName
+- uid: DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  name: Spectrum
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_Spectrum
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  nameWithType: EquatorialStar.Spectrum
+- uid: DataLayer.EquatorialObjects.EquatorialStar.Spectrum*
+  name: Spectrum
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_Spectrum_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.Spectrum
+  nameWithType: EquatorialStar.Spectrum
+- uid: DataLayer.EquatorialObjects.EquatorialStar.StarId
+  name: StarId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_StarId
+  commentId: P:DataLayer.EquatorialObjects.EquatorialStar.StarId
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.StarId
+  nameWithType: EquatorialStar.StarId
+- uid: DataLayer.EquatorialObjects.EquatorialStar.StarId*
+  name: StarId
+  href: api/DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_StarId_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialStar.StarId
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialStar.StarId
+  nameWithType: EquatorialStar.StarId
+- uid: DataLayer.HorizontalObjects
+  name: DataLayer.HorizontalObjects
+  href: api/DataLayer.HorizontalObjects.html
+  commentId: N:DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  name: HorizontalBody
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+  nameWithType: HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  name: Altitude
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  nameWithType: HorizontalBody.Altitude
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude*
+  name: Altitude
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  nameWithType: HorizontalBody.Altitude
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  name: Azimuth
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Azimuth
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  nameWithType: HorizontalBody.Azimuth
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Azimuth*
+  name: Azimuth
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Azimuth_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  nameWithType: HorizontalBody.Azimuth
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Distance
+  name: Distance
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Distance
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Distance
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
+  nameWithType: HorizontalBody.Distance
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Distance*
+  name: Distance
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Distance_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Distance
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
+  nameWithType: HorizontalBody.Distance
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  name: Magnitude
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  nameWithType: HorizontalBody.Magnitude
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude*
+  name: Magnitude
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  nameWithType: HorizontalBody.Magnitude
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject
+  name: HorizontalMessierObject
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html
+  commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
+  nameWithType: HorizontalMessierObject
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  name: Constellation
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  nameWithType: HorizontalMessierObject.Constellation
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation*
+  name: Constellation
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
+  nameWithType: HorizontalMessierObject.Constellation
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  name: MessierId
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_MessierId
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  nameWithType: HorizontalMessierObject.MessierId
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId*
+  name: MessierId
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_MessierId_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
+  nameWithType: HorizontalMessierObject.MessierId
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  name: NewGeneralCatalog
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_NewGeneralCatalog
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  nameWithType: HorizontalMessierObject.NewGeneralCatalog
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog*
+  name: NewGeneralCatalog
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_NewGeneralCatalog_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
+  nameWithType: HorizontalMessierObject.NewGeneralCatalog
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  name: Size
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Size
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  nameWithType: HorizontalMessierObject.Size
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Size*
+  name: Size
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Size_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Size
+  nameWithType: HorizontalMessierObject.Size
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  name: Type
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Type
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  nameWithType: HorizontalMessierObject.Type
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Type*
+  name: Type
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Type_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.Type
+  nameWithType: HorizontalMessierObject.Type
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  name: ViewingDifficulty
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingDifficulty
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  nameWithType: HorizontalMessierObject.ViewingDifficulty
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty*
+  name: ViewingDifficulty
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingDifficulty_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingDifficulty
+  nameWithType: HorizontalMessierObject.ViewingDifficulty
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  name: ViewingSeason
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingSeason
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  nameWithType: HorizontalMessierObject.ViewingSeason
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason*
+  name: ViewingSeason
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_ViewingSeason_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.ViewingSeason
+  nameWithType: HorizontalMessierObject.ViewingSeason
+- uid: DataLayer.HorizontalObjects.HorizontalStar
+  name: HorizontalStar
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html
+  commentId: T:DataLayer.HorizontalObjects.HorizontalStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar
+  nameWithType: HorizontalStar
+- uid: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  name: AbsoluteMagnitude
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_AbsoluteMagnitude
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  nameWithType: HorizontalStar.AbsoluteMagnitude
+- uid: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude*
+  name: AbsoluteMagnitude
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_AbsoluteMagnitude_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
+  nameWithType: HorizontalStar.AbsoluteMagnitude
+- uid: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  name: ColorIndex
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_ColorIndex
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  nameWithType: HorizontalStar.ColorIndex
+- uid: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex*
+  name: ColorIndex
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_ColorIndex_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  nameWithType: HorizontalStar.ColorIndex
+- uid: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  name: HipparcosId
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_HipparcosId
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  nameWithType: HorizontalStar.HipparcosId
+- uid: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId*
+  name: HipparcosId
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_HipparcosId_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
+  nameWithType: HorizontalStar.HipparcosId
+- uid: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  name: Spectrum
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_Spectrum
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  nameWithType: HorizontalStar.Spectrum
+- uid: DataLayer.HorizontalObjects.HorizontalStar.Spectrum*
+  name: Spectrum
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_Spectrum_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
+  nameWithType: HorizontalStar.Spectrum
+- uid: DataLayer.HorizontalObjects.HorizontalStar.StarId
+  name: StarId
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarId
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.StarId
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.StarId
+  nameWithType: HorizontalStar.StarId
+- uid: DataLayer.HorizontalObjects.HorizontalStar.StarId*
+  name: StarId
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarId_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.StarId
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.StarId
+  nameWithType: HorizontalStar.StarId
+- uid: DataLayer.HorizontalObjects.HorizontalStar.StarName
+  name: StarName
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarName
+  commentId: P:DataLayer.HorizontalObjects.HorizontalStar.StarName
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.StarName
+  nameWithType: HorizontalStar.StarName
+- uid: DataLayer.HorizontalObjects.HorizontalStar.StarName*
+  name: StarName
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_StarName_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.StarName
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.StarName
+  nameWithType: HorizontalStar.StarName
+- uid: DataLayer.Implementations
+  name: DataLayer.Implementations
+  href: api/DataLayer.Implementations.html
+  commentId: N:DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  name: CosineKittyEquatorialConverter<T>
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
+  commentId: T:DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  name.vb: CosineKittyEquatorialConverter(Of T)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T)
+  nameWithType: CosineKittyEquatorialConverter<T>
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)
+  name: CosineKittyEquatorialConverter(double, double, DateTime)
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1__ctor_System_Double_System_Double_System_DateTime_
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)
+  name.vb: New(Double, Double, Date)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter(double, double, System.DateTime)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New(Double, Double, Date)
+  nameWithType: CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter(double, double, DateTime)
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).New(Double, Double, Date)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor*
+  name: CosineKittyEquatorialConverter
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1__ctor_
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New
+  nameWithType: CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).New
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  name: Convert
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
+  nameWithType: CosineKittyEquatorialConverter<T>.Convert
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert*
+  name: Convert
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert_
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
+  nameWithType: CosineKittyEquatorialConverter<T>.Convert
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
+  name: astroTime
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_astroTime
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.astroTime
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).astroTime
+  nameWithType: CosineKittyEquatorialConverter<T>.astroTime
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).astroTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
+  name: observer
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_observer
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.observer
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).observer
+  nameWithType: CosineKittyEquatorialConverter<T>.observer
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).observer
+- uid: DataLayer.Implementations.HygCsvStarRepository
+  name: HygCsvStarRepository
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html
+  commentId: T:DataLayer.Implementations.HygCsvStarRepository
+  fullName: DataLayer.Implementations.HygCsvStarRepository
+  nameWithType: HygCsvStarRepository
+- uid: DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
+  name: HygCsvStarRepository(string)
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository__ctor_System_String_
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
+  name.vb: New(String)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.HygCsvStarRepository(string)
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New(String)
+  nameWithType: HygCsvStarRepository.HygCsvStarRepository(string)
+  nameWithType.vb: HygCsvStarRepository.New(String)
+- uid: DataLayer.Implementations.HygCsvStarRepository.#ctor*
+  name: HygCsvStarRepository
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository__ctor_
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.HygCsvStarRepository.HygCsvStarRepository
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New
+  nameWithType: HygCsvStarRepository.HygCsvStarRepository
+  nameWithType.vb: HygCsvStarRepository.New
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  name: IStarRepository.GetAllStarsAsync(double)
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  name.vb: ''
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  fullName.vb: ''
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync(double)
+  nameWithType.vb: ''
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
+  name: IStarRepository.GetAllStarsAsync
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  isSpec: "True"
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  name: GetStarByHipAsync(int)
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetStarByHipAsync_System_Int32_
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  name.vb: GetStarByHipAsync(Integer)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(int)
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(Integer)
+  nameWithType: HygCsvStarRepository.GetStarByHipAsync(int)
+  nameWithType.vb: HygCsvStarRepository.GetStarByHipAsync(Integer)
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync*
+  name: GetStarByHipAsync
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetStarByHipAsync_
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
+  isSpec: "True"
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
+  nameWithType: HygCsvStarRepository.GetStarByHipAsync
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap
+  name: HygCsvStarRepository.StarMap
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.html
+  commentId: T:DataLayer.Implementations.HygCsvStarRepository.StarMap
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap
+  nameWithType: HygCsvStarRepository.StarMap
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor
+  name: StarMap()
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.html#DataLayer_Implementations_HygCsvStarRepository_StarMap__ctor
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor
+  name.vb: New()
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.StarMap()
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.New()
+  nameWithType: HygCsvStarRepository.StarMap.StarMap()
+  nameWithType.vb: HygCsvStarRepository.StarMap.New()
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor*
+  name: StarMap
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.html#DataLayer_Implementations_HygCsvStarRepository_StarMap__ctor_
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.StarMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.StarMap
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.New
+  nameWithType: HygCsvStarRepository.StarMap.StarMap
+  nameWithType.vb: HygCsvStarRepository.StarMap.New
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+  name: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html
+  commentId: T:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name: ConvertFromString(string?, IReaderRow, MemberMapData)
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
+  nameWithType.vb: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString(String, IReaderRow, MemberMapData)
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString*
+  name: ConvertFromString
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter_ConvertFromString_
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
+  isSpec: "True"
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
+  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.ConvertFromString
+- uid: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.conversionFactor
+  name: conversionFactor
+  href: api/DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.html#DataLayer_Implementations_HygCsvStarRepository_StarMap_ParsecToLightyearConverter_conversionFactor
+  commentId: F:DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.conversionFactor
+  fullName: DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter.conversionFactor
+  nameWithType: HygCsvStarRepository.StarMap.ParsecToLightyearConverter.conversionFactor
+- uid: DataLayer.Implementations.HygCsvStarRepository.filePath
+  name: filePath
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_filePath
+  commentId: F:DataLayer.Implementations.HygCsvStarRepository.filePath
+  fullName: DataLayer.Implementations.HygCsvStarRepository.filePath
+  nameWithType: HygCsvStarRepository.filePath
+- uid: DataLayer.Implementations.NullableDoubleConverter
+  name: NullableDoubleConverter
+  href: api/DataLayer.Implementations.NullableDoubleConverter.html
+  commentId: T:DataLayer.Implementations.NullableDoubleConverter
+  fullName: DataLayer.Implementations.NullableDoubleConverter
+  nameWithType: NullableDoubleConverter
+- uid: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name: ConvertFromString(string?, IReaderRow, MemberMapData)
+  href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
+  commentId: M:DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
+  fullName: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  fullName.vb: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  nameWithType: NullableDoubleConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
+  nameWithType.vb: NullableDoubleConverter.ConvertFromString(String, IReaderRow, MemberMapData)
+- uid: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString*
+  name: ConvertFromString
+  href: api/DataLayer.Implementations.NullableDoubleConverter.html#DataLayer_Implementations_NullableDoubleConverter_ConvertFromString_
+  commentId: Overload:DataLayer.Implementations.NullableDoubleConverter.ConvertFromString
+  isSpec: "True"
+  fullName: DataLayer.Implementations.NullableDoubleConverter.ConvertFromString
+  nameWithType: NullableDoubleConverter.ConvertFromString
+- uid: DataLayer.Implementations.NullableIntConverter
+  name: NullableIntConverter
+  href: api/DataLayer.Implementations.NullableIntConverter.html
+  commentId: T:DataLayer.Implementations.NullableIntConverter
+  fullName: DataLayer.Implementations.NullableIntConverter
+  nameWithType: NullableIntConverter
+- uid: DataLayer.Implementations.NullableIntConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name: ConvertFromString(string?, IReaderRow, MemberMapData)
+  href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
+  commentId: M:DataLayer.Implementations.NullableIntConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
+  fullName: DataLayer.Implementations.NullableIntConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  fullName.vb: DataLayer.Implementations.NullableIntConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  nameWithType: NullableIntConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
+  nameWithType.vb: NullableIntConverter.ConvertFromString(String, IReaderRow, MemberMapData)
+- uid: DataLayer.Implementations.NullableIntConverter.ConvertFromString*
+  name: ConvertFromString
+  href: api/DataLayer.Implementations.NullableIntConverter.html#DataLayer_Implementations_NullableIntConverter_ConvertFromString_
+  commentId: Overload:DataLayer.Implementations.NullableIntConverter.ConvertFromString
+  isSpec: "True"
+  fullName: DataLayer.Implementations.NullableIntConverter.ConvertFromString
+  nameWithType: NullableIntConverter.ConvertFromString
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository
+  name: StarLustMessierCsvRepository
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html
+  commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository
+  nameWithType: StarLustMessierCsvRepository
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)
+  name: StarLustMessierCsvRepository(string)
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository__ctor_System_String_
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)
+  name.vb: New(String)
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarLustMessierCsvRepository(string)
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.New(String)
+  nameWithType: StarLustMessierCsvRepository.StarLustMessierCsvRepository(string)
+  nameWithType.vb: StarLustMessierCsvRepository.New(String)
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.#ctor*
+  name: StarLustMessierCsvRepository
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository__ctor_
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarLustMessierCsvRepository
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.New
+  nameWithType: StarLustMessierCsvRepository.StarLustMessierCsvRepository
+  nameWithType.vb: StarLustMessierCsvRepository.New
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  name: GetRawMessierObjectsAsync()
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync()
+  nameWithType: StarLustMessierCsvRepository.GetRawMessierObjectsAsync()
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync*
+  name: GetRawMessierObjectsAsync
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync_
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+  nameWithType: StarLustMessierCsvRepository.GetRawMessierObjectsAsync
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
+  name: StarLustMessierCsvRepository.StarMap
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html
+  commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap
+  nameWithType: StarLustMessierCsvRepository.StarMap
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor
+  name: StarMap()
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap__ctor
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor
+  name.vb: New()
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.StarMap()
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.New()
+  nameWithType: StarLustMessierCsvRepository.StarMap.StarMap()
+  nameWithType.vb: StarLustMessierCsvRepository.StarMap.New()
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor*
+  name: StarMap
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap__ctor_
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.StarMap
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.New
+  nameWithType: StarLustMessierCsvRepository.StarMap.StarMap
+  nameWithType.vb: StarLustMessierCsvRepository.StarMap.New
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+  name: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html
+  commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+  nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name: ConvertFromString(string?, IReaderRow, MemberMapData)
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
+  nameWithType.vb: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString(String, IReaderRow, MemberMapData)
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString*
+  name: ConvertFromString
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_DdmToDecimalDegreesConverter_ConvertFromString_
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
+  nameWithType: StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter.ConvertFromString
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+  name: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html
+  commentId: T:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+  nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name: ConvertFromString(string?, IReaderRow, MemberMapData)
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter_ConvertFromString_System_String_CsvHelper_IReaderRow_CsvHelper_Configuration_MemberMapData_
+  commentId: M:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(System.String,CsvHelper.IReaderRow,CsvHelper.Configuration.MemberMapData)
+  name.vb: ConvertFromString(String, IReaderRow, MemberMapData)
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(string?, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  fullName.vb: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(String, CsvHelper.IReaderRow, CsvHelper.Configuration.MemberMapData)
+  nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(string?, IReaderRow, MemberMapData)
+  nameWithType.vb: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString(String, IReaderRow, MemberMapData)
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString*
+  name: ConvertFromString
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.html#DataLayer_Implementations_StarLustMessierCsvRepository_StarMap_HmsToDecimalDegreesConverter_ConvertFromString_
+  commentId: Overload:DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
+  nameWithType: StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter.ConvertFromString
+- uid: DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  name: filePath
+  href: api/DataLayer.Implementations.StarLustMessierCsvRepository.html#DataLayer_Implementations_StarLustMessierCsvRepository_filePath
+  commentId: F:DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  fullName: DataLayer.Implementations.StarLustMessierCsvRepository.filePath
+  nameWithType: StarLustMessierCsvRepository.filePath
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository
+  name: StellariumJsonConstellationRepository
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html
+  commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository
+  nameWithType: StellariumJsonConstellationRepository
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
+  name: StellariumJsonConstellationRepository(string)
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository__ctor_System_String_
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
+  name.vb: New(String)
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.StellariumJsonConstellationRepository(string)
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New(String)
+  nameWithType: StellariumJsonConstellationRepository.StellariumJsonConstellationRepository(string)
+  nameWithType.vb: StellariumJsonConstellationRepository.New(String)
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor*
+  name: StellariumJsonConstellationRepository
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository__ctor_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.StellariumJsonConstellationRepository
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New
+  nameWithType: StellariumJsonConstellationRepository.StellariumJsonConstellationRepository
+  nameWithType.vb: StellariumJsonConstellationRepository.New
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
+  name: StellariumJsonConstellationRepository.ConstellationName
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html
+  commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
+  nameWithType: StellariumJsonConstellationRepository.ConstellationName
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  name: English
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_English
+  commentId: P:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  nameWithType: StellariumJsonConstellationRepository.ConstellationName.English
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English*
+  name: English
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_English_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.English
+  nameWithType: StellariumJsonConstellationRepository.ConstellationName.English
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  name: Native
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_Native
+  commentId: P:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  nameWithType: StellariumJsonConstellationRepository.ConstellationName.Native
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native*
+  name: Native
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html#DataLayer_Implementations_StellariumJsonConstellationRepository_ConstellationName_Native_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
+  nameWithType: StellariumJsonConstellationRepository.ConstellationName.Native
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  name: IConstellationRepository.GetAllConstellationsAsync()
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  name.vb: ''
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  fullName.vb: ''
+  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync()
+  nameWithType.vb: ''
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
+  name: IConstellationRepository.GetAllConstellationsAsync
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
+  name: StellariumJsonConstellationRepository.JsonConstellationListConverter
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html
+  commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})
+  name: BuildLines(JArray, IList<Tuple<int, int>>)
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_BuildLines_Newtonsoft_Json_Linq_JArray_System_Collections_Generic_IList_System_Tuple_System_Int32_System_Int32___
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray,System.Collections.Generic.IList{System.Tuple{System.Int32,System.Int32}})
+  name.vb: BuildLines(JArray, IList(Of Tuple(Of Integer, Integer)))
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray, System.Collections.Generic.IList<System.Tuple<int, int>>)
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(Newtonsoft.Json.Linq.JArray, System.Collections.Generic.IList(Of System.Tuple(Of Integer, Integer)))
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(JArray, IList<Tuple<int, int>>)
+  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines(JArray, IList(Of Tuple(Of Integer, Integer)))
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines*
+  name: BuildLines
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_BuildLines_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.BuildLines
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
+  name: ReadJson(JsonReader, Type, IList<Constellation>?, bool, JsonSerializer)
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation__System_Boolean_Newtonsoft_Json_JsonSerializer_
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},System.Boolean,Newtonsoft.Json.JsonSerializer)
+  name.vb: ReadJson(JsonReader, Type, IList(Of Constellation), Boolean, JsonSerializer)
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>?, bool, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation), Boolean, Newtonsoft.Json.JsonSerializer)
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(JsonReader, Type, IList<Constellation>?, bool, JsonSerializer)
+  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson(JsonReader, Type, IList(Of Constellation), Boolean, JsonSerializer)
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson*
+  name: ReadJson
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_ReadJson_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.ReadJson
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},Newtonsoft.Json.JsonSerializer)
+  name: WriteJson(JsonWriter, IList<Constellation>?, JsonSerializer)
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation__Newtonsoft_Json_JsonSerializer_
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation},Newtonsoft.Json.JsonSerializer)
+  name.vb: WriteJson(JsonWriter, IList(Of Constellation), JsonSerializer)
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>?, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation), Newtonsoft.Json.JsonSerializer)
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(JsonWriter, IList<Constellation>?, JsonSerializer)
+  nameWithType.vb: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson(JsonWriter, IList(Of Constellation), JsonSerializer)
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson*
+  name: WriteJson
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html#DataLayer_Implementations_StellariumJsonConstellationRepository_JsonConstellationListConverter_WriteJson_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
+  isSpec: "True"
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
+  nameWithType: StellariumJsonConstellationRepository.JsonConstellationListConverter.WriteJson
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  name: filePath
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_filePath
+  commentId: F:DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
+  nameWithType: StellariumJsonConstellationRepository.filePath
+- uid: DataLayer.InjectionService`1
+  name: InjectionService<T>
+  href: api/DataLayer.InjectionService-1.html
+  commentId: T:DataLayer.InjectionService`1
+  name.vb: InjectionService(Of T)
+  fullName: DataLayer.InjectionService<T>
+  fullName.vb: DataLayer.InjectionService(Of T)
+  nameWithType: InjectionService<T>
+  nameWithType.vb: InjectionService(Of T)
+- uid: DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)
+  name: GetRepositoryServiceAsync(string)
+  href: api/DataLayer.InjectionService-1.html#DataLayer_InjectionService_1_GetRepositoryServiceAsync_System_String_
+  commentId: M:DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)
+  name.vb: GetRepositoryServiceAsync(String)
+  fullName: DataLayer.InjectionService<T>.GetRepositoryServiceAsync(string)
+  fullName.vb: DataLayer.InjectionService(Of T).GetRepositoryServiceAsync(String)
+  nameWithType: InjectionService<T>.GetRepositoryServiceAsync(string)
+  nameWithType.vb: InjectionService(Of T).GetRepositoryServiceAsync(String)
+- uid: DataLayer.InjectionService`1.GetRepositoryServiceAsync*
+  name: GetRepositoryServiceAsync
+  href: api/DataLayer.InjectionService-1.html#DataLayer_InjectionService_1_GetRepositoryServiceAsync_
+  commentId: Overload:DataLayer.InjectionService`1.GetRepositoryServiceAsync
+  isSpec: "True"
+  fullName: DataLayer.InjectionService<T>.GetRepositoryServiceAsync
+  fullName.vb: DataLayer.InjectionService(Of T).GetRepositoryServiceAsync
+  nameWithType: InjectionService<T>.GetRepositoryServiceAsync
+  nameWithType.vb: InjectionService(Of T).GetRepositoryServiceAsync
+- uid: DataLayer.InjectionService`1.maxStarMagnitude
+  name: maxStarMagnitude
+  href: api/DataLayer.InjectionService-1.html#DataLayer_InjectionService_1_maxStarMagnitude
+  commentId: F:DataLayer.InjectionService`1.maxStarMagnitude
+  fullName: DataLayer.InjectionService<T>.maxStarMagnitude
+  fullName.vb: DataLayer.InjectionService(Of T).maxStarMagnitude
+  nameWithType: InjectionService<T>.maxStarMagnitude
+  nameWithType.vb: InjectionService(Of T).maxStarMagnitude
+- uid: DataLayer.Interfaces
+  name: DataLayer.Interfaces
+  href: api/DataLayer.Interfaces.html
+  commentId: N:DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+- uid: DataLayer.Interfaces.IConstellationRepository
+  name: IConstellationRepository
+  href: api/DataLayer.Interfaces.IConstellationRepository.html
+  commentId: T:DataLayer.Interfaces.IConstellationRepository
+  fullName: DataLayer.Interfaces.IConstellationRepository
+  nameWithType: IConstellationRepository
+- uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  name: GetAllConstellationsAsync()
+  href: api/DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  commentId: M:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  fullName: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  nameWithType: IConstellationRepository.GetAllConstellationsAsync()
+- uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync*
+  name: GetAllConstellationsAsync
+  href: api/DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync_
+  commentId: Overload:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  nameWithType: IConstellationRepository.GetAllConstellationsAsync
+- uid: DataLayer.Interfaces.IEquatorialConverter`1
+  name: IEquatorialConverter<T>
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
+  name.vb: IEquatorialConverter(Of T)
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  nameWithType: IEquatorialConverter<T>
+  nameWithType.vb: IEquatorialConverter(Of T)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  name: Convert
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
+  name: Convert
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+  nameWithType: IEquatorialConverter<T>.Convert
+  nameWithType.vb: IEquatorialConverter(Of T).Convert
+- uid: DataLayer.Interfaces.IMessierRepository
+  name: IMessierRepository
+  href: api/DataLayer.Interfaces.IMessierRepository.html
+  commentId: T:DataLayer.Interfaces.IMessierRepository
+  fullName: DataLayer.Interfaces.IMessierRepository
+  nameWithType: IMessierRepository
+- uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  name: GetRawMessierObjectsAsync()
+  href: api/DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
+  commentId: M:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync()
+  nameWithType: IMessierRepository.GetRawMessierObjectsAsync()
+- uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync*
+  name: GetRawMessierObjectsAsync
+  href: api/DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync_
+  commentId: Overload:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  nameWithType: IMessierRepository.GetRawMessierObjectsAsync
+- uid: DataLayer.Interfaces.IStarRepository
+  name: IStarRepository
+  href: api/DataLayer.Interfaces.IStarRepository.html
+  commentId: T:DataLayer.Interfaces.IStarRepository
+  fullName: DataLayer.Interfaces.IStarRepository
+  nameWithType: IStarRepository
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  name: GetAllStarsAsync(double)
+  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  name.vb: GetAllStarsAsync(Double)
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  fullName.vb: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(Double)
+  nameWithType: IStarRepository.GetAllStarsAsync(double)
+  nameWithType.vb: IStarRepository.GetAllStarsAsync(Double)
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
+  name: GetAllStarsAsync
+  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_
+  commentId: Overload:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  nameWithType: IStarRepository.GetAllStarsAsync
+- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  name: GetStarByHipAsync(int)
+  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  name.vb: GetStarByHipAsync(Integer)
+  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(int)
+  fullName.vb: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(Integer)
+  nameWithType: IStarRepository.GetStarByHipAsync(int)
+  nameWithType.vb: IStarRepository.GetStarByHipAsync(Integer)
+- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*
+  name: GetStarByHipAsync
+  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_
+  commentId: Overload:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
+  nameWithType: IStarRepository.GetStarByHipAsync
+- uid: DataLayer.StargazerRepositoryService`1
+  name: StargazerRepositoryService<T>
+  href: api/DataLayer.StargazerRepositoryService-1.html
+  commentId: T:DataLayer.StargazerRepositoryService`1
+  name.vb: StargazerRepositoryService(Of T)
+  fullName: DataLayer.StargazerRepositoryService<T>
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T)
+  nameWithType: StargazerRepositoryService<T>
+  nameWithType.vb: StargazerRepositoryService(Of T)
+- uid: DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IReadOnlyDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
+  name: StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IReadOnlyDictionary<int, EquatorialStar>, IEnumerable<EquatorialMessierObject>)
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IReadOnlyDictionary_System_Int32_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialMessierObject__
+  commentId: M:DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IReadOnlyDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
+  name.vb: New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IReadOnlyDictionary(Of Integer, EquatorialStar), IEnumerable(Of EquatorialMessierObject))
+  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IReadOnlyDictionary<int, DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IReadOnlyDictionary(Of Integer, DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
+  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IReadOnlyDictionary<int, EquatorialStar>, IEnumerable<EquatorialMessierObject>)
+  nameWithType.vb: StargazerRepositoryService(Of T).New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IReadOnlyDictionary(Of Integer, EquatorialStar), IEnumerable(Of EquatorialMessierObject))
+- uid: DataLayer.StargazerRepositoryService`1.#ctor*
+  name: StargazerRepositoryService
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New
+  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService
+  nameWithType.vb: StargazerRepositoryService(Of T).New
+- uid: DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
+  name: CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
+  commentId: M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
+  fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
+  nameWithType: StargazerRepositoryService<T>.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
+  nameWithType.vb: StargazerRepositoryService(Of T).CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
+- uid: DataLayer.StargazerRepositoryService`1.CreateAsync*
+  name: CreateAsync
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.CreateAsync
+  isSpec: "True"
+  fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync
+  nameWithType: StargazerRepositoryService<T>.CreateAsync
+  nameWithType.vb: StargazerRepositoryService(Of T).CreateAsync
+- uid: DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
+  name: GatherConstellationStars(Task<IList<EquatorialStar>>, Task<IList<Constellation>>, IStarRepository)
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_GatherConstellationStars_System_Threading_Tasks_Task_System_Collections_Generic_IList_DataLayer_EquatorialObjects_EquatorialStar___System_Threading_Tasks_Task_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation___DataLayer_Interfaces_IStarRepository_
+  commentId: M:DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
+  name.vb: GatherConstellationStars(Task(Of IList(Of EquatorialStar)), Task(Of IList(Of Constellation)), IStarRepository)
+  fullName: DataLayer.StargazerRepositoryService<T>.GatherConstellationStars(System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>, System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>>, DataLayer.Interfaces.IStarRepository)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).GatherConstellationStars(System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar)), System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation)), DataLayer.Interfaces.IStarRepository)
+  nameWithType: StargazerRepositoryService<T>.GatherConstellationStars(Task<IList<EquatorialStar>>, Task<IList<Constellation>>, IStarRepository)
+  nameWithType.vb: StargazerRepositoryService(Of T).GatherConstellationStars(Task(Of IList(Of EquatorialStar)), Task(Of IList(Of Constellation)), IStarRepository)
+- uid: DataLayer.StargazerRepositoryService`1.GatherConstellationStars*
+  name: GatherConstellationStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_GatherConstellationStars_
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.GatherConstellationStars
+  isSpec: "True"
+  fullName: DataLayer.StargazerRepositoryService<T>.GatherConstellationStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).GatherConstellationStars
+  nameWithType: StargazerRepositoryService<T>.GatherConstellationStars
+  nameWithType.vb: StargazerRepositoryService(Of T).GatherConstellationStars
+- uid: DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)
+  name: UpdateUserPosition(double, double, DateTime)
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_UpdateUserPosition_System_Double_System_Double_System_DateTime_
+  commentId: M:DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)
+  name.vb: UpdateUserPosition(Double, Double, Date)
+  fullName: DataLayer.StargazerRepositoryService<T>.UpdateUserPosition(double, double, System.DateTime)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition(Double, Double, Date)
+  nameWithType: StargazerRepositoryService<T>.UpdateUserPosition(double, double, DateTime)
+  nameWithType.vb: StargazerRepositoryService(Of T).UpdateUserPosition(Double, Double, Date)
+- uid: DataLayer.StargazerRepositoryService`1.UpdateUserPosition*
+  name: UpdateUserPosition
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_UpdateUserPosition_
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.UpdateUserPosition
+  isSpec: "True"
+  fullName: DataLayer.StargazerRepositoryService<T>.UpdateUserPosition
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition
+  nameWithType: StargazerRepositoryService<T>.UpdateUserPosition
+  nameWithType.vb: StargazerRepositoryService(Of T).UpdateUserPosition
+- uid: DataLayer.StargazerRepositoryService`1.constellationStars
+  name: constellationStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_constellationStars
+  commentId: P:DataLayer.StargazerRepositoryService`1.constellationStars
+  fullName: DataLayer.StargazerRepositoryService<T>.constellationStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellationStars
+  nameWithType: StargazerRepositoryService<T>.constellationStars
+  nameWithType.vb: StargazerRepositoryService(Of T).constellationStars
+- uid: DataLayer.StargazerRepositoryService`1.constellationStars*
+  name: constellationStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_constellationStars_
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.constellationStars
+  isSpec: "True"
+  fullName: DataLayer.StargazerRepositoryService<T>.constellationStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellationStars
+  nameWithType: StargazerRepositoryService<T>.constellationStars
+  nameWithType.vb: StargazerRepositoryService(Of T).constellationStars
+- uid: DataLayer.StargazerRepositoryService`1.constellations
+  name: constellations
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_constellations
+  commentId: F:DataLayer.StargazerRepositoryService`1.constellations
+  fullName: DataLayer.StargazerRepositoryService<T>.constellations
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellations
+  nameWithType: StargazerRepositoryService<T>.constellations
+  nameWithType.vb: StargazerRepositoryService(Of T).constellations
+- uid: DataLayer.StargazerRepositoryService`1.equatorialConstellationStars
+  name: equatorialConstellationStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_equatorialConstellationStars
+  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialConstellationStars
+  fullName: DataLayer.StargazerRepositoryService<T>.equatorialConstellationStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialConstellationStars
+  nameWithType: StargazerRepositoryService<T>.equatorialConstellationStars
+  nameWithType.vb: StargazerRepositoryService(Of T).equatorialConstellationStars
+- uid: DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
+  name: equatorialMessierObjects
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_equatorialMessierObjects
+  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
+  fullName: DataLayer.StargazerRepositoryService<T>.equatorialMessierObjects
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialMessierObjects
+  nameWithType: StargazerRepositoryService<T>.equatorialMessierObjects
+  nameWithType.vb: StargazerRepositoryService(Of T).equatorialMessierObjects
+- uid: DataLayer.StargazerRepositoryService`1.equatorialStars
+  name: equatorialStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_equatorialStars
+  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialStars
+  fullName: DataLayer.StargazerRepositoryService<T>.equatorialStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialStars
+  nameWithType: StargazerRepositoryService<T>.equatorialStars
+  nameWithType.vb: StargazerRepositoryService(Of T).equatorialStars
+- uid: DataLayer.StargazerRepositoryService`1.horizontalMessierObjects
+  name: horizontalMessierObjects
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_horizontalMessierObjects
+  commentId: F:DataLayer.StargazerRepositoryService`1.horizontalMessierObjects
+  fullName: DataLayer.StargazerRepositoryService<T>.horizontalMessierObjects
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).horizontalMessierObjects
+  nameWithType: StargazerRepositoryService<T>.horizontalMessierObjects
+  nameWithType.vb: StargazerRepositoryService(Of T).horizontalMessierObjects
+- uid: DataLayer.StargazerRepositoryService`1.horizontalStars
+  name: horizontalStars
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_horizontalStars
+  commentId: F:DataLayer.StargazerRepositoryService`1.horizontalStars
+  fullName: DataLayer.StargazerRepositoryService<T>.horizontalStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).horizontalStars
+  nameWithType: StargazerRepositoryService<T>.horizontalStars
+  nameWithType.vb: StargazerRepositoryService(Of T).horizontalStars
+- uid: DataLayer.StargazerRepositoryService`1.maxStarMagnitude
+  name: maxStarMagnitude
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_maxStarMagnitude
+  commentId: F:DataLayer.StargazerRepositoryService`1.maxStarMagnitude
+  fullName: DataLayer.StargazerRepositoryService<T>.maxStarMagnitude
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).maxStarMagnitude
+  nameWithType: StargazerRepositoryService<T>.maxStarMagnitude
+  nameWithType.vb: StargazerRepositoryService(Of T).maxStarMagnitude
+- uid: GodotPlugins.Game
+  name: GodotPlugins.Game
+  href: api/GodotPlugins.Game.html
+  commentId: N:GodotPlugins.Game
+  fullName: GodotPlugins.Game
+  nameWithType: GodotPlugins.Game
+- uid: GodotPlugins.Game.Main
+  name: Main
+  href: api/GodotPlugins.Game.Main.html
+  commentId: T:GodotPlugins.Game.Main
+  fullName: GodotPlugins.Game.Main
+  nameWithType: Main
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  name: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  href: api/GodotPlugins.Game.Main.html#GodotPlugins_Game_Main_InitializeFromGameProject_System_IntPtr_System_IntPtr_System_IntPtr_System_Int32_
+  commentId: M:GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr,System.IntPtr,System.IntPtr,System.Int32)
+  name.vb: InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, int)
+  fullName.vb: GodotPlugins.Game.Main.InitializeFromGameProject(System.IntPtr, System.IntPtr, System.IntPtr, Integer)
+  nameWithType: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, int)
+  nameWithType.vb: Main.InitializeFromGameProject(IntPtr, IntPtr, IntPtr, Integer)
+- uid: GodotPlugins.Game.Main.InitializeFromGameProject*
+  name: InitializeFromGameProject
+  href: api/GodotPlugins.Game.Main.html#GodotPlugins_Game_Main_InitializeFromGameProject_
+  commentId: Overload:GodotPlugins.Game.Main.InitializeFromGameProject
+  isSpec: "True"
+  fullName: GodotPlugins.Game.Main.InitializeFromGameProject
+  nameWithType: Main.InitializeFromGameProject
+- uid: Microsoft.CodeAnalysis
+  name: Microsoft.CodeAnalysis
+  href: api/Microsoft.CodeAnalysis.html
+  commentId: N:Microsoft.CodeAnalysis
+  fullName: Microsoft.CodeAnalysis
+  nameWithType: Microsoft.CodeAnalysis
+- uid: Microsoft.CodeAnalysis.EmbeddedAttribute
+  name: EmbeddedAttribute
+  href: api/Microsoft.CodeAnalysis.EmbeddedAttribute.html
+  commentId: T:Microsoft.CodeAnalysis.EmbeddedAttribute
+  fullName: Microsoft.CodeAnalysis.EmbeddedAttribute
+  nameWithType: EmbeddedAttribute
+- uid: Microsoft.CodeAnalysis.EmbeddedAttribute.#ctor
+  name: EmbeddedAttribute()
+  href: api/Microsoft.CodeAnalysis.EmbeddedAttribute.html#Microsoft_CodeAnalysis_EmbeddedAttribute__ctor
+  commentId: M:Microsoft.CodeAnalysis.EmbeddedAttribute.#ctor
+  name.vb: New()
+  fullName: Microsoft.CodeAnalysis.EmbeddedAttribute.EmbeddedAttribute()
+  fullName.vb: Microsoft.CodeAnalysis.EmbeddedAttribute.New()
+  nameWithType: EmbeddedAttribute.EmbeddedAttribute()
+  nameWithType.vb: EmbeddedAttribute.New()
+- uid: Microsoft.CodeAnalysis.EmbeddedAttribute.#ctor*
+  name: EmbeddedAttribute
+  href: api/Microsoft.CodeAnalysis.EmbeddedAttribute.html#Microsoft_CodeAnalysis_EmbeddedAttribute__ctor_
+  commentId: Overload:Microsoft.CodeAnalysis.EmbeddedAttribute.#ctor
+  name.vb: New
+  fullName: Microsoft.CodeAnalysis.EmbeddedAttribute.EmbeddedAttribute
+  fullName.vb: Microsoft.CodeAnalysis.EmbeddedAttribute.New
+  nameWithType: EmbeddedAttribute.EmbeddedAttribute
+  nameWithType.vb: EmbeddedAttribute.New
+- uid: System.Runtime.CompilerServices
+  name: System.Runtime.CompilerServices
+  href: api/System.Runtime.CompilerServices.html
+  commentId: N:System.Runtime.CompilerServices
+  fullName: System.Runtime.CompilerServices
+  nameWithType: System.Runtime.CompilerServices
+- uid: System.Runtime.CompilerServices.NullableAttribute
+  name: NullableAttribute
+  href: api/System.Runtime.CompilerServices.NullableAttribute.html
+  commentId: T:System.Runtime.CompilerServices.NullableAttribute
+  fullName: System.Runtime.CompilerServices.NullableAttribute
+  nameWithType: NullableAttribute
+- uid: System.Runtime.CompilerServices.NullableAttribute.#ctor(System.Byte)
+  name: NullableAttribute(byte)
+  href: api/System.Runtime.CompilerServices.NullableAttribute.html#System_Runtime_CompilerServices_NullableAttribute__ctor_System_Byte_
+  commentId: M:System.Runtime.CompilerServices.NullableAttribute.#ctor(System.Byte)
+  name.vb: New(Byte)
+  fullName: System.Runtime.CompilerServices.NullableAttribute.NullableAttribute(byte)
+  fullName.vb: System.Runtime.CompilerServices.NullableAttribute.New(Byte)
+  nameWithType: NullableAttribute.NullableAttribute(byte)
+  nameWithType.vb: NullableAttribute.New(Byte)
+- uid: System.Runtime.CompilerServices.NullableAttribute.#ctor(System.Byte[])
+  name: NullableAttribute(byte[])
+  href: api/System.Runtime.CompilerServices.NullableAttribute.html#System_Runtime_CompilerServices_NullableAttribute__ctor_System_Byte___
+  commentId: M:System.Runtime.CompilerServices.NullableAttribute.#ctor(System.Byte[])
+  name.vb: New(Byte())
+  fullName: System.Runtime.CompilerServices.NullableAttribute.NullableAttribute(byte[])
+  fullName.vb: System.Runtime.CompilerServices.NullableAttribute.New(Byte())
+  nameWithType: NullableAttribute.NullableAttribute(byte[])
+  nameWithType.vb: NullableAttribute.New(Byte())
+- uid: System.Runtime.CompilerServices.NullableAttribute.#ctor*
+  name: NullableAttribute
+  href: api/System.Runtime.CompilerServices.NullableAttribute.html#System_Runtime_CompilerServices_NullableAttribute__ctor_
+  commentId: Overload:System.Runtime.CompilerServices.NullableAttribute.#ctor
+  name.vb: New
+  fullName: System.Runtime.CompilerServices.NullableAttribute.NullableAttribute
+  fullName.vb: System.Runtime.CompilerServices.NullableAttribute.New
+  nameWithType: NullableAttribute.NullableAttribute
+  nameWithType.vb: NullableAttribute.New
+- uid: System.Runtime.CompilerServices.NullableAttribute.NullableFlags
+  name: NullableFlags
+  href: api/System.Runtime.CompilerServices.NullableAttribute.html#System_Runtime_CompilerServices_NullableAttribute_NullableFlags
+  commentId: F:System.Runtime.CompilerServices.NullableAttribute.NullableFlags
+  fullName: System.Runtime.CompilerServices.NullableAttribute.NullableFlags
+  nameWithType: NullableAttribute.NullableFlags
+- uid: System.Runtime.CompilerServices.NullableContextAttribute
+  name: NullableContextAttribute
+  href: api/System.Runtime.CompilerServices.NullableContextAttribute.html
+  commentId: T:System.Runtime.CompilerServices.NullableContextAttribute
+  fullName: System.Runtime.CompilerServices.NullableContextAttribute
+  nameWithType: NullableContextAttribute
+- uid: System.Runtime.CompilerServices.NullableContextAttribute.#ctor(System.Byte)
+  name: NullableContextAttribute(byte)
+  href: api/System.Runtime.CompilerServices.NullableContextAttribute.html#System_Runtime_CompilerServices_NullableContextAttribute__ctor_System_Byte_
+  commentId: M:System.Runtime.CompilerServices.NullableContextAttribute.#ctor(System.Byte)
+  name.vb: New(Byte)
+  fullName: System.Runtime.CompilerServices.NullableContextAttribute.NullableContextAttribute(byte)
+  fullName.vb: System.Runtime.CompilerServices.NullableContextAttribute.New(Byte)
+  nameWithType: NullableContextAttribute.NullableContextAttribute(byte)
+  nameWithType.vb: NullableContextAttribute.New(Byte)
+- uid: System.Runtime.CompilerServices.NullableContextAttribute.#ctor*
+  name: NullableContextAttribute
+  href: api/System.Runtime.CompilerServices.NullableContextAttribute.html#System_Runtime_CompilerServices_NullableContextAttribute__ctor_
+  commentId: Overload:System.Runtime.CompilerServices.NullableContextAttribute.#ctor
+  name.vb: New
+  fullName: System.Runtime.CompilerServices.NullableContextAttribute.NullableContextAttribute
+  fullName.vb: System.Runtime.CompilerServices.NullableContextAttribute.New
+  nameWithType: NullableContextAttribute.NullableContextAttribute
+  nameWithType.vb: NullableContextAttribute.New
+- uid: System.Runtime.CompilerServices.NullableContextAttribute.Flag
+  name: Flag
+  href: api/System.Runtime.CompilerServices.NullableContextAttribute.html#System_Runtime_CompilerServices_NullableContextAttribute_Flag
+  commentId: F:System.Runtime.CompilerServices.NullableContextAttribute.Flag
+  fullName: System.Runtime.CompilerServices.NullableContextAttribute.Flag
+  nameWithType: NullableContextAttribute.Flag

@@ -1,63 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="DataLayer.EquitorialObjects.EquitorialCelestialBody">
-    <Position X="9.75" Y="0.5" Width="2.75" />
+  <Class Name="DataLayer.EquatorialObjects.EquatorialCelestialBody">
+    <Position X="9.75" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEQABAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAEAABAAAAAAAEAAAA=</HashCode>
       <FileName>EquitorialObjects\EquitorialCelestialBody.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.EquitorialObjects.EquitorialConstellation">
-    <Position X="7.5" Y="3" Width="3.25" />
+  <Class Name="DataLayer.EquatorialObjects.Constellation">
+    <Position X="50.25" Y="3.75" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>EquitorialObjects\EquitorialConstellation.cs</FileName>
+      <FileName>EquitorialObjects\Constellation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.EquitorialObjects.EquitorialMessierObject">
-    <Position X="11.25" Y="2.75" Width="3" />
+  <Class Name="DataLayer.EquatorialObjects.EquitorialMessierObject">
+    <Position X="23.75" Y="5.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAgAAAIISAACAEgEABAABBAQAAAAABAgA=</HashCode>
+      <HashCode>AAIAAAAAAAAAgAAAIISAACAEgEABAAABAQAAAAABAgA=</HashCode>
       <FileName>EquitorialObjects\EquitorialMessierObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.EquitorialObjects.EquitorialStar">
-    <Position X="13.25" Y="0.5" Width="3.75" />
+  <Class Name="DataLayer.EquatorialObjects.EquitorialStar">
+    <Position X="13.25" Y="0.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>BAAAAAAIAAACCAAAAAAAAAAAQBAQIAAAAAAgAAAAABE=</HashCode>
       <FileName>EquitorialObjects\EquitorialStar.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.HorizonalObjects.HorizonalBody">
-    <Position X="2.25" Y="0.75" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAEACAA=</HashCode>
-      <FileName>HorizonalObjects\HorizonalBody.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DataLayer.HorizonalObjects.HorizonalConstellation">
-    <Position X="0.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HorizonalObjects\HorizonalConstellation.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DataLayer.HorizonalObjects.HorizonalMessierObject">
-    <Position X="2.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>HorizonalObjects\HorizonalMessierObject.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DataLayer.HorizonalObjects.HorizonalStar">
-    <Position X="4.25" Y="3" Width="3" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAIIAAACAAAAAAAAAAAAAAQAAAAAAAAAAAAABA=</HashCode>
-      <FileName>HorizonalObjects\HorizonalStar.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DataLayer.Implementations.CosineKittyEquitorialConverter&lt;T&gt;" BaseTypeListCollapsed="true">
-    <Position X="17.5" Y="0.5" Width="2.75" />
+  <Class Name="DataLayer.Implementations.CosineKittyEquatorialConverter&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="6.25" Width="5.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAQAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\CosineKittyEquitorialConverter.cs</FileName>
@@ -65,7 +37,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLayer.Implementations.HygCsvStarRepository" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="5.5" Width="6.75" />
+    <Position X="0.5" Y="5.5" Width="6.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -87,27 +59,27 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\HygCsvStarRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLayer.Implementations.NullableDoubleConverter">
-    <Position X="21.5" Y="6" Width="6.5" />
+    <Position X="8.25" Y="5.5" Width="6" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\NullableDoubleConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DataLayer.Implementations.NullableIntConverter">
-    <Position X="21.5" Y="8" Width="6.5" />
+    <Position X="15.75" Y="9" Width="6" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\NullableIntConverter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DataLayer.Implementations.StarLustMessierCsvRepository" BaseTypeListCollapsed="true">
-    <Position X="14.75" Y="4.5" Width="6.75" />
+    <Position X="32.75" Y="10.5" Width="6.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -117,12 +89,12 @@
           <Compartment Name="Nested Types" Collapsed="false" />
         </Compartments>
         <NestedTypes>
-          <Class Name="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter">
+          <Class Name="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter">
             <TypeIdentifier>
               <NewMemberFileName>Implementations\StarLustMessierCsvRepository.cs</NewMemberFileName>
             </TypeIdentifier>
           </Class>
-          <Class Name="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter">
+          <Class Name="DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter">
             <TypeIdentifier>
               <NewMemberFileName>Implementations\StarLustMessierCsvRepository.cs</NewMemberFileName>
             </TypeIdentifier>
@@ -134,58 +106,85 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\StarLustMessierCsvRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLayer.Implementations.StellariumJsonConstellationRepository" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="8.75" Width="6.5" />
+    <Position X="7.5" Y="8.75" Width="5.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Implementations\StellariumJsonConstellationRepository.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Implementations\StellariumJsonConstellationRepository.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Implementations\StellariumJsonConstellationRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="DataLayer.InjectionService">
-    <Position X="24.25" Y="0.75" Width="4.25" />
+  <Class Name="DataLayer.StargazerRepositoryService&lt;T&gt;">
+    <Position X="29.25" Y="1.5" Width="15.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
-      <FileName>InjectionService.cs</FileName>
+      <HashCode>AAAAIAgAAAAAAAACAAAAAAAAAAAEAACAEAAgCIEAAAA=</HashCode>
+      <FileName>StargazerRepositoryService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="horizontalStars" />
+      <Field Name="constellations" />
+      <Field Name="horizontalMessierObjects" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DataLayer.HorizontalObjects.HorizontalStar">
+    <Position X="45.5" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIIAAACAAAAAAAAAAAAAAQAAAAAAAgAAAAABA=</HashCode>
+      <FileName>HorizontalObjects\HorizontalStar.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.StargazerRepositoryService">
-    <Position X="23.75" Y="2.75" Width="9.25" />
+  <Class Name="DataLayer.HorizontalObjects.HorizontalMessierObject">
+    <Position X="50.75" Y="0.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAIAAICAAAABAAAAAAEAAAAAAAAAEAAAAg=</HashCode>
-      <FileName>StargazerRepositoryService.cs</FileName>
+      <HashCode>AAIAAAAAAAAAgAAAAAAAACAEgAAAAAABAQAAAAAAAAA=</HashCode>
+      <FileName>HorizontalObjects\HorizontalMessierObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="DataLayer.Interfaces.IConstellationRepository">
-    <Position X="10" Y="8" Width="4.5" />
+    <Position X="10" Y="8" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IConstellationRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLayer.Interfaces.IEquitorialConverter&lt;T&gt;">
-    <Position X="20.25" Y="0.5" Width="3.25" />
+    <Position X="23" Y="0.75" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IEquitorialConverter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLayer.Interfaces.IMessierRepository">
-    <Position X="18.25" Y="3.75" Width="4.5" />
+    <Position X="33.5" Y="9" Width="5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMessierRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLayer.Interfaces.IStarRepository">
-    <Position X="3.5" Y="5.25" Width="4.5" />
+    <Position X="3.5" Y="5.25" Width="5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IStarRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
