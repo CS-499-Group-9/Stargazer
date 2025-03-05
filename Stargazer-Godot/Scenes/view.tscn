@@ -9,12 +9,12 @@
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
-offsets = PackedFloat32Array(0.190476, 0.722222, 0.849206)
-colors = PackedColorArray(0.258316, 1.68217e-05, 0.224579, 1, 0, 0, 0.972549, 1, 0.254902, 0, 0.223529, 1)
+offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
+colors = PackedColorArray(0.258316, 1.68217e-05, 0.224579, 1, 0, 0, 0.972549, 1, 0, 0, 0.972549, 1, 0.258824, 0, 0.223529, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_16tw0"]
 gradient = SubResource("Gradient_wy82o")
-fill_from = Vector2(0.494737, 0.142105)
+fill_from = Vector2(0.5, 0.145299)
 fill_to = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku0cl"]
