@@ -7,10 +7,12 @@ public partial class Globals : Node
     public bool isAzimuth {get; set; }
     public bool isConstellation {get; set; }
     public bool isLabel {get; set; }
+    public Startup Startup { get => Startup; set { if (Startup == null) Startup = value; } }
     public override void _Ready(){
         Instance = this;
         isAzimuth = false; // Default for Azimuth view
         isConstellation = true; // Default for Constellations
         isLabel = true; // Default for Labels
     }
+
 }

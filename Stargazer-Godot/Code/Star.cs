@@ -1,18 +1,30 @@
+using DataLayer.HorizontalObjects;
 using Godot;
 using System;
 
 public partial class Star : Node3D
 {
+	private const float radians = (float)Math.PI / 180f;
+	
 	[Export] public float azimuth = 0f; // Rotation from North (X+), in degrees.
 	[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
 	[Export] public float dist = 74f; // Distance from (0, 0, 0)
 	[Export] public float mag = 1f;
 	[Export] public string starName;
 
-	private float radians = (float)Math.PI / 180f;
-	
-	// Gets the Cartesian position of the Celestial Body
-	private Vector3 getLocation(){
+    public static Star CreateStar(HorizontalStar horizontalStar, PackedScene packedScene)
+    {
+		Star star = packedScene.Instantiate<Star>();
+		star.azimuth = (float)horizontalStar.Azimuth;
+		star.altitude = (float)horizontalStar.Altitude;
+		star.dist = (float)horizontalStar.Distance;
+		star.mag = (float)horizontalStar.Magnitude;
+		star.starName = horizontalStar.StarName;
+		return star;
+    }
+
+    // Gets the Cartesian position of the Celestial Body
+    private Vector3 getLocation(){
 		var altRad = altitude * radians;
 		var azRad = azimuth * radians;
 		Vector3 pos = new()
@@ -29,6 +41,7 @@ public partial class Star : Node3D
 		Position = getLocation();
 		if(mag > 1) Scale = new Vector3(1/mag, 1/mag, 1/mag);
 		else Scale = new Vector3(0.6F, 0.6F, 0.6F);
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
