@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdnjfs0umedh0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_004va"]
+
+[node name="Star2d" type="Node3D"]
+
+[node name="2dStarMesh" type="MeshInstance2D" parent="."]
+rotation = 1.5708
+scale = Vector2(5, 5)
+mesh = SubResource("SphereMesh_004va")

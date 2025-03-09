@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-public partial class Spawner : Node3D
+public partial class Spawner2D : Node2D
 {
 	[Export] public PackedScene StarScene {get; set;}
 	[Export] public PackedScene LabelScene {get; set;}
@@ -23,7 +23,7 @@ public partial class Spawner : Node3D
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;
 
-	//CelestialDataPackage<Star> dataPackage;
+	CelestialDataPackage<Star> dataPackage;
 	private BlockingCollection<HorizontalStar> starProducer;
 	private BlockingCollection<HorizontalMessierObject> messierProducer;
 	private IEnumerable<Constellation> constellations;
@@ -34,36 +34,38 @@ public partial class Spawner : Node3D
         globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         Stopwatch sw = Stopwatch.StartNew();
         HuntsvilleCoordinates huntsvilleCoordinates = new HuntsvilleCoordinates();
-		GD.Print("3d turn!");
-		var repoService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-		globalVars.dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, DateTime.UtcNow);
-
-		starProducer = globalVars.dataPackage.Stars;
-		constellations = globalVars.dataPackage.Constellations;
-		messierProducer = globalVars.dataPackage.MessierObjects;
-		while (!starProducer.IsCompleted)
-		{
-			foreach (var star in starProducer.GetConsumingEnumerable())
-			{
+		while(!globalVars.populated){
+			await Task.Delay(100);
+		}
+        GD.Print("2d turn!");
+		dataPackage = globalVars.dataPackage;
+        starProducer = dataPackage.Stars;
+        constellations = dataPackage.Constellations;
+        messierProducer = dataPackage.MessierObjects;
+		
+        while (!starProducer.IsCompleted)
+        {
+            foreach (var star in starProducer.GetConsumingEnumerable())
+            {
 				SpawnStar(star);
-			}
-		}
+				
+            }
+			Thread.Sleep(10);
+        }
+		
 		DrawConstellations();
-		globalVars.populated = true;
+		
 		while (!messierProducer.IsCompleted)
-		{
-			foreach (var item in messierProducer.GetConsumingEnumerable())
-			{
-				GD.Print($"Messier: {item.MessierId} {item.Type}");
-			}
-		}
-		
-
-		
-
+        {
+            foreach (var item in messierProducer.GetConsumingEnumerable())
+            {
+                GD.Print($"Messier: {item.MessierId} {item.Type}");
+            }
+        }
 
         sw.Stop();
-        GD.Print($"That took {sw.Elapsed.TotalSeconds} seconds.");
+        GD.Print($"That took idk seconds.");
+
 		// ... then draw constellations
 	}
 
@@ -78,9 +80,9 @@ public partial class Spawner : Node3D
 		}
 		else if (!globalVars.isConstellation && constDrawn)
 		{
-			foreach (Node3D child in GetChildren())
+			foreach (Node2D child in GetChildren())
 			{
-				if (child is MeshInstance3D)
+				if (child is MeshInstance2D)
 				{
 					child.QueueFree();
 				} // Remove the constellation line meshes
@@ -112,37 +114,40 @@ public partial class Spawner : Node3D
 	private async void DrawConstellations()
 	{
 
-		MeshInstance3D constMesh = new MeshInstance3D();
-		Vector3 labelPos = new Vector3();
+		MeshInstance2D constMesh = new MeshInstance2D();
+		Vector2 labelPos = new Vector2();
 		ImmediateMesh mesh = new ImmediateMesh();
 		// Create a white material
 		StandardMaterial3D whiteMaterial = new StandardMaterial3D();
 		whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
 		whiteMaterial.ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded;
 		// Assign the material to the mesh
-		constMesh.MaterialOverride = whiteMaterial;
+		constMesh.Material = whiteMaterial;
 		mesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
 		labels = new List<LabelNode>();
 
         foreach (var constellation in constellations)
         { 
-			Vector3 totalPos = new Vector3(0, 0, 0);
+			Vector2 totalPos = new Vector2(0, 0);
 			int c = 0;
 			//GD.Print($"Drawing constellation {constellation.ConstellationName}");
 
 			foreach(var lines in constellation.ConstellationLines) {
 
-				Star s1 = globalVars.dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
-				Star s2 = globalVars.dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
-				mesh.SurfaceAddVertex(s1.Position);
-				GD.Print($"its at {s1.Position}");
-				mesh.SurfaceAddVertex(s2.Position);
-				if (totalPos == Vector3.Zero) // solely checked for the first star
+				Star s1 = dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
+				Star s2 = dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
+				if (s1.altitude >= 0 || s2.altitude >= 0){
+					mesh.SurfaceAddVertex(new Vector3(s1.Pos2D.X,s1.Pos2D.Y,0));
+					mesh.SurfaceAddVertex(new Vector3(s2.Pos2D.X,s2.Pos2D.Y,0));
+					GD.Print("Vec");
+					GD.Print(new Vector3(s1.Pos2D.X,s1.Pos2D.Y,0));
+				}
+				if (totalPos == Vector2.Zero) // solely checked for the first star
 				{
-					totalPos += s1.Position;
+					totalPos += s1.Pos2D;
 					c++;
 				}
-				totalPos += s2.Position;
+				totalPos += s2.Pos2D;
 				c++;
 			}
 		
@@ -151,14 +156,14 @@ public partial class Spawner : Node3D
 		
 			LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
 			labelNode.LabelText = constellation.ConstellationName;
-			labelNode.Position = labelPos;
+			labelNode.Position = new Vector3(labelPos.X,labelPos.Y,0);
 			labelNode.Visible = labelDrawn;
 			labels.Add(labelNode);
         }
 		mesh.SurfaceEnd();
 		constMesh.Mesh = mesh;
 		AddChild(constMesh);
-		labels.ForEach((label) => { AddChild(label); });
+		//labels.ForEach((label) => { AddChild(label); });
 	
 	}
 	
@@ -172,7 +177,7 @@ public partial class Spawner : Node3D
 		return star;
 	}
 
-    public struct HuntsvilleCoordinates
+    private struct HuntsvilleCoordinates
     {
         public double lattitude = 34.7304;
         public double longitude = -86.5861;

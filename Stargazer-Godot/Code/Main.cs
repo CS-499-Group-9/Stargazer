@@ -58,10 +58,10 @@ private void ZoomOut()
     public override void _Process(double delta)
     {
         // Check if the 'screenshot_key' action is pressed
-        if (Input.IsActionJustPressed("screenshot_key"))
-        {
-            TakeScreenshot();
-        }
+        // if (Input.IsActionJustPressed("screenshot_key"))
+        // {
+        //     TakeScreenshot();
+        // }
     }
 
     private void TakeScreenshot()

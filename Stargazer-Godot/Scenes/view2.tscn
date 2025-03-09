@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://cy7eamqc4g2tn"]
+
+[ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_4j1d1"]
+[ext_resource type="Shader" path="res://Scenes/gridlines.gdshader" id="1_8dsm4"]
+[ext_resource type="Script" path="res://Code/Star.cs" id="3_44f4r"]
+[ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="3_o0c6g"]
+[ext_resource type="Script" path="res://Code/StarMesh.cs" id="4_22oe4"]
+[ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="4_vmnx4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3ib3"]
+shader = ExtResource("4_vmnx4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4t3p"]
+shader = ExtResource("1_8dsm4")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/line_thickness = 0.1
+shader_parameter/angle_spacing = 15.0
+shader_parameter/circle_spacing = 0.08
+shader_parameter/circle_thickness = 0.004
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq72g"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.05
+
+[sub_resource type="SphereMesh" id="SphereMesh_donor"]
+material = SubResource("StandardMaterial3D_aq72g")
+radial_segments = 9
+
+[sub_resource type="PackedScene" id="PackedScene_1rl0y"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("CelestialBody", "Node3D", "script", "azimuth", "altitude", "StarMesh", "MeshInstance3D", "mesh", "skeleton", "script"),
+"node_count": 2,
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1073741824, 0, 6, 5, -1, 3, 7, 3, 8, 4, 9, 5, 0),
+"variants": [ExtResource("3_44f4r"), 45.0, 45.0, SubResource("SphereMesh_donor"), NodePath(""), ExtResource("4_22oe4")],
+"version": 3
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_dq8ai"]
+flip_faces = true
+radius = 1.0
+height = 2.0
+
+[sub_resource type="Gradient" id="Gradient_wjxnv"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5hj48"]
+gradient = SubResource("Gradient_wjxnv")
+
+[node name="View2" type="Node2D"]
+position = Vector2(-501, -501)
+scale = Vector2(1.99986, 1.99986)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_w3ib3")
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 1050.0
+offset_bottom = 1050.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_w4t3p")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 1850.0
+offset_bottom = 1850.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Stars2D" type="Node2D" parent="."]
+position = Vector2(650.546, 650.546)
+scale = Vector2(4, 4)
+script = ExtResource("1_4j1d1")
+StarScene = SubResource("PackedScene_1rl0y")
+LabelScene = ExtResource("3_o0c6g")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = -1000
+position = Vector2(650, 650)
+scale = Vector2(385, 385)
+mesh = SubResource("SphereMesh_dq8ai")
+texture = SubResource("GradientTexture1D_5hj48")
