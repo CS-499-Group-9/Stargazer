@@ -18,5 +18,8 @@ public partial class LabelNode : Node3D
 	{
 	}
 
-
+	public void ToggleLabelVisibility(object sender, bool showLabels)
+	{
+		Visible = showLabels;
+	}
 }

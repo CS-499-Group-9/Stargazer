@@ -1,6 +1,8 @@
 using DataLayer.HorizontalObjects;
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 public partial class Star : Node3D
 {
@@ -12,9 +14,10 @@ public partial class Star : Node3D
 	[Export] public float mag = 1f;
 	[Export] public string starName;
 
-    public static Star CreateStar(HorizontalStar horizontalStar, PackedScene packedScene)
+    public static Star CreateStar(HorizontalStar horizontalStar)
     {
-		Star star = packedScene.Instantiate<Star>();
+		
+		Star star = ResourceLoader.Load<PackedScene>("res://Scenes/star.tscn").Instantiate<Star>();
 		star.azimuth = (float)horizontalStar.Azimuth;
 		star.altitude = (float)horizontalStar.Altitude;
 		star.dist = (float)horizontalStar.Distance;

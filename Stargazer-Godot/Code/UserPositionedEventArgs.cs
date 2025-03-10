@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewGameProject.Code
 {
-    internal class UserPositionedEventArgs : EventArgs
+    public class UserPositionedEventArgs : EventArgs
     {
         public double Longitude { get; set; }
         public double Latitude { get; set; }

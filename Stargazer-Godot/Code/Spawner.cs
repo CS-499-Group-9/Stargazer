@@ -12,8 +12,8 @@ public partial class Spawner : Node3D
 {
 	[Export] public PackedScene StarScene {get; set;}
 	[Export] public PackedScene LabelScene {get; set;}
-	
-	private Globals globalVars ;
+
+	private Startup Startup;
 	private List<LabelNode> labels;
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;
@@ -23,8 +23,6 @@ public partial class Spawner : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-
 
 		// ... then draw constellations
 	}
@@ -33,62 +31,24 @@ public partial class Spawner : Node3D
 	public override void _Process(double delta)
 	{
 		// Triggers only once to save on performance.
-		if (globalVars.isConstellation && !constDrawn)
-		{
-			//DrawConstellations();
-			constDrawn = true;
-		}
-		else if (!globalVars.isConstellation && constDrawn)
-		{
-			foreach (Node3D child in GetChildren())
-			{
-				if (child is MeshInstance3D)
-				{
-					child.QueueFree();
-				} // Remove the constellation line meshes
-			}
-			constDrawn = false;
-		}
 		
-		// Triggers only once to save on performance.
-		if (globalVars.isLabel && !labelDrawn && constDrawn)
-		{
-			foreach (var label in labels)
-			{
-				label.Visible = true;
-			}
-			labelDrawn = true;
-		}
-		else if ((!globalVars.isLabel && labelDrawn) || !constDrawn)
-		{
-			foreach (var label in labels)
-			{
-				label.Visible = false;
-			}
-			labelDrawn = false;
-		}
 	}
 
 	public  void DrawStars(Object source, CelestialDataPackage<Star> dataPackage)
 	{
+		foreach (var s in GetChildren()) { s.Free(); }
 		var starProducer = dataPackage.Stars;
-        while (!starProducer.IsCompleted)
+        foreach (var star in starProducer)
         {
-            foreach (var star in starProducer.GetConsumingEnumerable())
-            {
-                SpawnStar(star);
-            }
+			SpawnStar(star);
         }
-
-        DrawConstellations(dataPackage);
+        
 		var messierProducer = dataPackage.MessierObjects;
-        while (!messierProducer.IsCompleted)
+        foreach (var item in messierProducer)
         {
-            foreach (var item in messierProducer.GetConsumingEnumerable())
-            {
-                GD.Print($"Messier: {item.MessierId} {item.Type}");
-            }
+            GD.Print($"Messier: {item.MessierId} {item.Type}");
         }
+        
     }
 	
 

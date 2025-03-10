@@ -21,11 +21,11 @@ namespace DataLayer
         /// <summary>
         /// Immutable in-memory collection of all stars that were retrieved during initialization (excluding stars in constellations)
         /// </summary>
-        private readonly IEnumerable<EquatorialStar> equatorialStars;
+        private IEnumerable<EquatorialStar> equatorialStars;
         /// <summary>
         /// Immutable collection of all constellations retrieved during initialization.
         /// </summary>
-        private readonly IEnumerable<Constellation> constellations;
+        private  IEnumerable<Constellation> constellations;
 
         /// <summary>
         /// Immutable collection of all Messier Deep Space Objects retrieved during initialization.
@@ -35,16 +35,16 @@ namespace DataLayer
         /// <summary>
         /// Immutable dictionary of all stars that are part of known constellations (no repeats, the HipparcosId is used as the key)
         /// </summary>
-        private readonly IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars;
+        private IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars;
 
         /// <summary>
         /// Producer-consumer collection of <see cref="HorizontalStar"/>s passed to the graphical layer
         /// </summary>
-        private readonly BlockingCollection<HorizontalStar> horizontalStars;
+        private IEnumerable<HorizontalStar> horizontalStars;
         /// <summary>
         /// Producer-consumer collection of converted <see cref="HorizontalMessierObject"/>s passed to the graphical layer
         /// </summary>
-        private readonly BlockingCollection<HorizontalMessierObject> horizontalMessierObjects;
+        private IEnumerable<HorizontalMessierObject> horizontalMessierObjects;
 
         /// <summary>
         /// Dictionary of <see cref="HorizontalStar"/>s contained in constellations 
@@ -203,6 +203,7 @@ namespace DataLayer
             // Calculate the stars
             await  Task.Factory.StartNew(() =>
             {
+                List<HorizontalStar> newStars = new();
                 foreach (var item in equatorialStars)
                 {
                     var star = starConverter.Convert(item);
@@ -212,15 +213,16 @@ namespace DataLayer
                     star.ColorIndex = item.ColorIndex;
                     star.Spectrum = item.Spectrum;
 
-                    horizontalStars.TryAdd(star);
+                    newStars.Add(star);
                 }
-                horizontalStars.CompleteAdding();
+                horizontalStars = newStars;
             });
 
             // Calculate the Messier Objects
             await  Task.Factory.StartNew(() =>
             {
                 CosineKittyEquatorialConverter<HorizontalMessierObject> converter = new(latitude, longitude, localUserTime);
+                List<HorizontalMessierObject> newMessier = new();
                 foreach (var item in equatorialMessierObjects)
                 {
                     var messier = converter.Convert(item);
@@ -230,9 +232,9 @@ namespace DataLayer
                     messier.Constellation = item.Constellation;
                     messier.NewGeneralCatalog = item.NewGeneralCatalog;
                     messier.ViewingSeason = item.ViewingSeason;
-                    horizontalMessierObjects.TryAdd(messier);
+                    newMessier.Add(messier);
                 }
-                horizontalMessierObjects.CompleteAdding();
+                horizontalMessierObjects = newMessier;
 
             });
 

@@ -1,4 +1,5 @@
 using DataLayer;
+using DataLayer.HorizontalObjects;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -8,20 +9,35 @@ public partial class Constellations : Node3D
 {
     [Export] public PackedScene StarScene { get; set; }
     [Export] public PackedScene LabelScene { get; set; }
+    internal Startup Startup { get; set; }
+    private MeshInstance3D constMesh;
+    private ImmediateMesh mesh;
+    private Node3D ConstellationLabels;
 
-    private void DrawConstellations(object source, CelestialDataPackage<Star> dataPackage)
+    public override void _Ready()
     {
-        var constellations = dataPackage.Constellations;
-        MeshInstance3D constMesh = new MeshInstance3D();
-        Vector3 labelPos = new Vector3();
-        ImmediateMesh mesh = new ImmediateMesh();
-        // Create a white material
+       
+        constMesh = GetNode<MeshInstance3D>("LineMesh");
+        mesh = (ImmediateMesh)constMesh.Mesh;
         StandardMaterial3D whiteMaterial = new StandardMaterial3D();
+        // Create a white material
         whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
         whiteMaterial.ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded;
         // Assign the material to the mesh
         constMesh.MaterialOverride = whiteMaterial;
-        mesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
+        ConstellationLabels = GetNode<Node3D>("ConstellationLabels");
+
+        base._Ready();
+
+    }
+
+    public void DrawConstellations(object source, CelestialDataPackage<Star> dataPackage)
+    {
+        var constellations = dataPackage.Constellations;
+        mesh.ClearSurfaces();
+        foreach (var l in ConstellationLabels.GetChildren()) { l.Free(); } 
+        mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
+        Vector3 labelPos = new Vector3();
 
         foreach (var constellation in constellations)
         {
@@ -34,6 +50,7 @@ public partial class Constellations : Node3D
 
                 Star s1 = dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
                 Star s2 = dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
+
                 mesh.SurfaceAddVertex(s1.Position);
                 mesh.SurfaceAddVertex(s2.Position);
                 if (totalPos == Vector3.Zero) // solely checked for the first star
@@ -51,14 +68,31 @@ public partial class Constellations : Node3D
             LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
             labelNode.LabelText = constellation.ConstellationName;
             labelNode.Position = labelPos;
-            labelNode.Visible = labelDrawn;
-            labels.Add(labelNode);
+            labelNode.Visible = true;
+            ConstellationLabels.AddChild(labelNode);
+
         }
         mesh.SurfaceEnd();
-        constMesh.Mesh = mesh;
-        AddChild(constMesh);
-        labels.ForEach((label) => { AddChild(label); });
-
+        var count = constMesh.Mesh.GetSurfaceCount();
+        GD.Print(count);
     }
 
+    public void ToggleConstellationLines(object source, bool showlines)
+    {
+        Visible = showlines;
+    }
+
+    public void ToggleConstellationLabels(object source, bool showlabels) { ConstellationLabels.Visible = showlabels; }
+
+    private Star SpawnStar(HorizontalStar horizontalStar)
+    {
+        Star star = StarScene.Instantiate<Star>();
+        star.azimuth = (float)horizontalStar.Azimuth;
+        star.altitude = (float)horizontalStar.Altitude;
+        star.mag = (float)horizontalStar.Magnitude;
+        star.starName = horizontalStar.StarName;
+
+        AddChild(star);
+        return star;
+    }
 }

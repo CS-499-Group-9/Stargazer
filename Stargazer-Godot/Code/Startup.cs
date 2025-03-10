@@ -1,5 +1,6 @@
 using DataLayer;
 using Godot;
+using NewGameProject.Code;
 using System;
 using System.Threading.Tasks;
 
@@ -9,24 +10,35 @@ public partial class Startup : Control
     private StargazerRepositoryService<Star> repositoryService;
 
     public event EventHandler<CelestialDataPackage<Star>> UserPositionUpdated;
-    public event EventHandler<bool> ToggleConstellationLines;
-    public event EventHandler<bool> ToggleConstellationNames;
-    public event EventHandler<bool> ToggleAzimuthLines;
+    public event EventHandler<bool> ConstellationLinesToggled;
+    public event EventHandler<bool> ConstellationNamesToggled;
+    public event EventHandler<bool> AzimuthLinesToggled;
+
 
     public async override void _Ready()
     {
         repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-        var globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-        globalVars.Startup = this;
-        var coords = new HuntsvilleCoordinates();
-        await UpdateUserPosition(coords.latitude, coords.longitude, DateTime.UtcNow);
+
     }
 
 
-    public async Task UpdateUserPosition(double latitude, double longitude, DateTime userLocalTime)
-    {
-        var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, userLocalTime);
+
+    public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
+    { 
+        GD.Print("Updating user position");
+        var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
         UserPositionUpdated?.Invoke(this, dataPackage);
+
+    }
+
+    public void ToggleConstellationLines(object sender, bool showLines)
+    {
+        ConstellationLinesToggled?.Invoke(this, showLines);
+    }
+
+    public void ToggleConstellationNames(object sender, bool showNames)
+    {
+        ConstellationNamesToggled?.Invoke(this, showNames);
     }
 
     private struct HuntsvilleCoordinates

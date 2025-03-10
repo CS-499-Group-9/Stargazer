@@ -6,16 +6,16 @@ public partial class ConstellationButton : Control
 	public event EventHandler<bool> Clicked;
 	private bool isVisible;
 
-	private Globals globalVars;
 	public override void _Ready()
 	{
-		globalVars = GetNode<Globals>("/root/Globals");
+		var startup = GetParent<Startup>();
+		Clicked += startup.ToggleConstellationLines;
 	}
 
 
 
 	private void ToggleConst(bool state)
 	{
-		globalVars.isConstellation = state;
+		Clicked?.Invoke(this, state);
 	}
 }

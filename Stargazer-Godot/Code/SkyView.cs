@@ -11,11 +11,13 @@ public partial class SkyView : Node3D
    
     public override void _Ready()
     {
-        var globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-        var controller = globalVars.Startup;
+        var startup = GetParent()?.GetParent().GetParent<Startup>();
         var spawner = GetNode<Spawner>("Stars");
-        controller.UserPositionUpdated += spawner.DrawStars;
+        startup.UserPositionUpdated += spawner.DrawStars;
         var constellationNode = GetNode<Constellations>("Constellations");
+        startup.UserPositionUpdated += constellationNode.DrawConstellations;
+        startup.ConstellationLinesToggled += constellationNode.ToggleConstellationLines;
+        startup.ConstellationNamesToggled += constellationNode.ToggleConstellationLabels;
         base._Ready();
     }
 }

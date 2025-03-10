@@ -8,8 +8,8 @@ public partial class CompassNeedle : Sprite2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Node viewNode = GetTree().Root.FindChild("View", true, false);
-		camera = (Camera3D)viewNode.GetNode("Camera3D");
+		Node viewNode = GetTree()?.Root.FindChild("View", true, false);
+		camera = (Camera3D)viewNode?.GetNode("Camera3D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
