@@ -45,7 +45,6 @@ public partial class Main : Camera3D
     
 private void ZoomIn()
 {
-    GD.Print($"{Fov}");
     // Decrease field of view for zooming in (if using a perspective camera)
     Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
 }
