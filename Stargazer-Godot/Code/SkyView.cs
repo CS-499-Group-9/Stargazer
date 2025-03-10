@@ -13,11 +13,11 @@ public partial class SkyView : Node3D
     {
         var startup = GetParent()?.GetParent().GetParent<Startup>();
         var spawner = GetNode<Spawner>("Stars");
-        startup.UserPositionUpdated += spawner.DrawStars;
+        startup.RegisterUserUpdateReceiver(spawner.DrawStars);
         var constellationNode = GetNode<Constellations>("Constellations");
-        startup.UserPositionUpdated += constellationNode.DrawConstellations;
-        startup.ConstellationLinesToggled += constellationNode.ToggleConstellationLines;
-        startup.ConstellationNamesToggled += constellationNode.ToggleConstellationLabels;
+        startup.RegisterUserUpdateReceiver(constellationNode.DrawConstellations);
+        startup.RegisterConstellationLineToggleReceiver(constellationNode.ToggleConstellationLines);
+        startup.RegisterConstellationLabelToggleReceiver(constellationNode.ToggleConstellationLabels);
         base._Ready();
     }
 }

@@ -34,7 +34,7 @@ public partial class Spawner : Node3D
 		
 	}
 
-	public  void DrawStars(Object source, CelestialDataPackage<Star> dataPackage)
+	public  void DrawStars(CelestialDataPackage<Star> dataPackage)
 	{
 		foreach (var s in GetChildren()) { s.Free(); }
 		var starProducer = dataPackage.Stars;
@@ -58,7 +58,6 @@ public partial class Spawner : Node3D
 		star.altitude = (float)horizontalStar.Altitude;
 		star.mag = (float)horizontalStar.Magnitude;
 		star.starName = horizontalStar.StarName;
-
 		AddChild(star);
 		return star;
 	}

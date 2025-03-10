@@ -31,7 +31,7 @@ public partial class Constellations : Node3D
 
     }
 
-    public void DrawConstellations(object source, CelestialDataPackage<Star> dataPackage)
+    public void DrawConstellations(CelestialDataPackage<Star> dataPackage)
     {
         var constellations = dataPackage.Constellations;
         mesh.ClearSurfaces();
@@ -77,12 +77,12 @@ public partial class Constellations : Node3D
         GD.Print(count);
     }
 
-    public void ToggleConstellationLines(object source, bool showlines)
+    public void ToggleConstellationLines(bool showlines)
     {
         Visible = showlines;
     }
 
-    public void ToggleConstellationLabels(object source, bool showlabels) { ConstellationLabels.Visible = showlabels; }
+    public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
 
     private Star SpawnStar(HorizontalStar horizontalStar)
     {
