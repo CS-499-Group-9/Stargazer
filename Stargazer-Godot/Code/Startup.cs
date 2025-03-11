@@ -26,7 +26,8 @@ public partial class Startup : Control
         var azimuthButton = GetNode<AzimuthButton>("AzimuthButton");
         azimuthButton.GridlinesToggled = skyView.ToggleGridlines;
 
-
+        var messierButton = GetNode<MessierButton>("MessierButton");
+        messierButton.NotifyControllerOfUserUpdate = UpdateUserPosition;
     }
 
    
