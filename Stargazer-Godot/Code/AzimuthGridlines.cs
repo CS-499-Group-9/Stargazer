@@ -9,28 +9,28 @@ public partial class AzimuthGridlines : MeshInstance3D
 	[Export] public float latitudeInterval = 15.0f;  // Latitude interval in degrees
 	[Export] public float cutoffLatitude = 75.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
 
-	private Globals globalVars;
 	private ImmediateMesh mesh;
 
 	public override void _Ready()
 	{
 		mesh = new ImmediateMesh();
-		globalVars = GetNode<Globals>("/root/Globals");
 	}
 
-
-    public override void _Process(double delta)
-    {
-    	if(globalVars.isAzimuth){
-			DrawLongitudeLines(mesh);
-			DrawLatitudeLines(mesh);
-			this.Mesh = mesh;
-		}
-		else{
+	public void ToggleGridlines(bool showLines)
+	{
+        if (showLines)
+        {
+            DrawLongitudeLines(mesh);
+            DrawLatitudeLines(mesh);
+            this.Mesh = mesh;
+        }
+        else
+        {
             mesh.ClearSurfaces();
-			this.Mesh = mesh;
+            this.Mesh = mesh;
         }
     }
+
     
     // Function to draw longitude lines
     private void DrawLongitudeLines(ImmediateMesh imMesh)

@@ -3,14 +3,18 @@ using System;
 
 public partial class ConstellationButton : Control
 {
-	private Globals globalVars;
+	public Action<bool> ConstellationLinesToggled;
+	private bool isVisible;
+
 	public override void _Ready()
 	{
-		globalVars = GetNode<Globals>("/root/Globals");
+		var startup = GetParent<Startup>();
 	}
+
+
 
 	private void ToggleConst(bool state)
 	{
-		globalVars.isConstellation = state;
+		ConstellationLinesToggled(state);
 	}
 }

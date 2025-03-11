@@ -3,14 +3,10 @@ using System;
 
 public partial class AzimuthButton : Control
 {
-    private Globals globalVars;
-    public override void _Ready()
-    {
-        globalVars = GetNode<Globals>("/root/Globals");
-    }
+    public Action<bool> GridlinesToggled;
 
     private void ToggleAzimuth(bool state)
     {
-        globalVars.isAzimuth = state;
+        GridlinesToggled(state);
     }
 }
