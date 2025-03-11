@@ -18,19 +18,21 @@ public partial class AzimuthGridlines : MeshInstance3D
 		globalVars = GetNode<Globals>("/root/Globals");
 	}
 
-
-    public override void _Process(double delta)
-    {
-    	if(globalVars.isAzimuth){
-			DrawLongitudeLines(mesh);
-			DrawLatitudeLines(mesh);
-			this.Mesh = mesh;
-		}
-		else{
+	public void ToggleGridlines(bool showLines)
+	{
+        if (showLines)
+        {
+            DrawLongitudeLines(mesh);
+            DrawLatitudeLines(mesh);
+            this.Mesh = mesh;
+        }
+        else
+        {
             mesh.ClearSurfaces();
-			this.Mesh = mesh;
+            this.Mesh = mesh;
         }
     }
+
     
     // Function to draw longitude lines
     private void DrawLongitudeLines(ImmediateMesh imMesh)

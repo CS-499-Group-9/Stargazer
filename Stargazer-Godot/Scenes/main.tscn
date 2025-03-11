@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
-[ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
+[ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/main.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
 [ext_resource type="Script" path="res://Code/LabelButton.cs" id="5_b3dcx"]
-[ext_resource type="Script" path="res://Scenes/MessierButton.cs" id="6_dawsw"]
+[ext_resource type="Script" path="res://Code/MessierButton.cs" id="6_dawsw"]
 [ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
 
