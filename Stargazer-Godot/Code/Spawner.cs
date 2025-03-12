@@ -8,32 +8,24 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Draws all stars that are not a part of constellations
+/// </summary>
 public partial class Spawner : Node3D
 {
+	/// <summary>
+	/// The scene used to instantiate the star objects.
+	/// </summary>
 	[Export] public PackedScene StarScene {get; set;}
-	[Export] public PackedScene LabelScene {get; set;}
-
-	private Startup Startup;
-	private List<LabelNode> labels;
-	private Boolean constDrawn = true;
-	private Boolean labelDrawn = true;
-
+	/// <summary>
+	/// The scene used to instantiate the labels for stars
+	/// </summary>
+	[Export] public PackedScene LabelScene {get; set;}	
 	
-	
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-
-		// ... then draw constellations
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		// Triggers only once to save on performance.
-		
-	}
-
+	/// <summary>
+	/// Receives the notification to update the stars drawn.
+	/// </summary>
+	/// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/> that contains the stars to draw.</param>
 	public  void DrawStars(CelestialDataPackage<Star> dataPackage)
 	{
 		foreach (var s in GetChildren()) { s.Free(); }
@@ -43,6 +35,8 @@ public partial class Spawner : Node3D
 			SpawnStar(star);
         }
         
+		// TODO: Move this into a dedicated Node3D that will be a sibling to the Spawner to handle the Messier Objects (drawing, showing, hiding etc).
+		// This will have to have a public void DrawMessierObjects(CelestialDataPackage<Star> dataPackage) method that will be wired up to the SkyView.UpdateUserPosition delegate.
 		var messierProducer = dataPackage.MessierObjects;
         foreach (var item in messierProducer)
         {
@@ -51,7 +45,9 @@ public partial class Spawner : Node3D
         
     }
 	
-
+	// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
+	// Perhaps more to follow.....
+	// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
 	private Star SpawnStar(HorizontalStar horizontalStar){
 		Star star = StarScene.Instantiate<Star>();
 		star.azimuth = (float)horizontalStar.Azimuth;

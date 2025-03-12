@@ -5,20 +5,32 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
+/// <summary>
+/// The <see cref="Node3D"/> used to contain the constellation stars and lines in the viewport.
+/// </summary>
 public partial class Constellations : Node3D
 {
+    /// <summary>
+    /// The scene used to instantiate the stars in the constellation
+    /// </summary>
     [Export] public PackedScene StarScene { get; set; }
+    /// <summary>
+    /// The scene used to instantiate the labels in the constellation
+    /// </summary>
     [Export] public PackedScene LabelScene { get; set; }
-    internal Startup Startup { get; set; }
+
+    private Node3D StarContainer;
     private MeshInstance3D constMesh;
     private ImmediateMesh mesh;
     private Node3D ConstellationLabels;
 
     public override void _Ready()
     {
-       
+        // Get references to child objects
+        StarContainer = GetNode<Node3D>("StarContainer");
         constMesh = GetNode<MeshInstance3D>("LineMesh");
         mesh = (ImmediateMesh)constMesh.Mesh;
+
         StandardMaterial3D whiteMaterial = new StandardMaterial3D();
         // Create a white material
         whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
@@ -31,11 +43,17 @@ public partial class Constellations : Node3D
 
     }
 
+    /// <summary>
+    /// Passed as a <see cref="Delegate"/> to <see cref="Startup.UserPositionUpdated"/> to be notified when a new star scene is ready to be drawn.
+    /// This should be done using the += operator to be notified in addition to other components in the viewport.
+    /// </summary>
+    /// <param name="dataPackage"></param>
     public void DrawConstellations(CelestialDataPackage<Star> dataPackage)
     {
         var constellations = dataPackage.Constellations;
         mesh.ClearSurfaces();
-        foreach (var l in ConstellationLabels.GetChildren()) { l.Free(); } 
+        foreach (var star in StarContainer.GetChildren()) {star.Free(); }
+        foreach (var line in ConstellationLabels.GetChildren()) { line.Free(); } 
         mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
         Vector3 labelPos = new Vector3();
 
@@ -79,7 +97,7 @@ public partial class Constellations : Node3D
 
     public void ToggleConstellationLines(bool showlines)
     {
-        Visible = showlines;
+        constMesh.Visible = showlines;
     }
 
     public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
@@ -92,7 +110,7 @@ public partial class Constellations : Node3D
         star.mag = (float)horizontalStar.Magnitude;
         star.starName = horizontalStar.StarName;
 
-        AddChild(star);
+        StarContainer.AddChild(star);
         return star;
     }
 }

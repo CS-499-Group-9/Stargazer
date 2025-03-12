@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
+/// <summary>
+/// This was originally created to explore adding color to the stars.
+/// The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers. 
+/// </summary>
 public partial class StarMesh : MeshInstance3D
 {
 
-    public override void _Ready()
-    {
-        
-    }
 
     private void UpdateColorFromParent(double bvIndex)
     {

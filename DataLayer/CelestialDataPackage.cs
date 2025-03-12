@@ -59,14 +59,16 @@ namespace DataLayer
         }
 
         /// <summary>
-        /// Used by the <see cref="StargazerRepositoryService{T}"/> to pack up the data and return it
+        /// Used by the <see cref="StargazerRepositoryService{T}"/> to pack up the data and return it.
+        /// All values are from the user's perspective.
         /// </summary>
         /// <param name="stars">A <see cref="List{HorizontalStar}"/> to be drawn.</param>
         /// <param name="messierObjects">A <see cref="List{HorizontalMessierObject}"/> to be drawn.</param>
         /// <param name="constellations">A <see cref="List{Constellation}"/>s in Horizontal Coordinate form. </param>
         /// <param name="constellationStars">A <see cref="IDictionary{Int32, HorizontalStar}"/> that have not yet been drawn in the GUI.</param>
         /// <param name="drawnStars">A <see cref="IDictionary{Int32, T}"/> that have already been drawn in the GUI.</param>
-        /// <param name="planets">A <see cref="List{HorizonalPlanet}"/> in the solar system in Horizontal Coordinate form.</param>
+        /// <param name="planets">A <see cref="List{HorizonalPlanet}"/> in the solar system from the users perspective.</param>
+        /// <param name="moon">A <see cref="HorizontalMoon"/>.</param>
         internal CelestialDataPackage(
             IEnumerable<HorizontalStar> stars, 
             IEnumerable<HorizontalMessierObject> messierObjects, 

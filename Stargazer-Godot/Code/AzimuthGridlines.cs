@@ -1,41 +1,56 @@
 using Godot;
 using System;
 
+/// <summary>
+/// The graphic object used to draw the lines.
+/// </summary>
 public partial class AzimuthGridlines : MeshInstance3D
 {
+	/// <summary>
+	/// The radius of the dome.
+	/// </summary>
 	[Export] public float radius = 49.5f;
-	[Export] public int longitudeSegments = 24;  // Number of vertical (longitude) lines
-	[Export] public int latitudeSegments = 24;   // Smoothness of each curve
-	[Export] public float latitudeInterval = 15.0f;  // Latitude interval in degrees
-	[Export] public float cutoffLatitude = 75.0f;  // Calculate cutoff latitude to ensure it aligns with the first visible circle
+	/// <summary>
+	/// The number of vertical (longitudinal) lines.
+	/// </summary>
+	[Export] public int longitudeSegments = 24;
+	/// <summary>
+	/// The smoothness of each curve
+	/// </summary>
+	[Export] public int latitudeSegments = 24;
+	/// <summary>
+	/// Latitude interval in degrees
+	/// </summary>
+	[Export] public float latitudeInterval = 15.0f;  
+	/// <summary>
+	/// Calculate cutoff latitude to ensure it aligns with the first visible circle
+	/// </summary>
+	[Export] public float cutoffLatitude = 75.0f;  
 
 	private ImmediateMesh mesh;
 
 	public override void _Ready()
 	{
 		mesh = new ImmediateMesh();
+        DrawLongitudeLines(mesh);
+        DrawLatitudeLines(mesh);
+        Mesh = mesh;
+		Visible = false;
 	}
 
+	/// <summary>
+	/// The method used receive the <see cref="AzimuthButton.GridlinesToggled"/> notification.
+	/// </summary>
+	/// <param name="showLines">True if the user has requested to show the lines.</param>
 	public void ToggleGridlines(bool showLines)
 	{
-        if (showLines)
-        {
-            DrawLongitudeLines(mesh);
-            DrawLatitudeLines(mesh);
-            this.Mesh = mesh;
-        }
-        else
-        {
-            mesh.ClearSurfaces();
-            this.Mesh = mesh;
-        }
+        Visible = showLines;
     }
 
     
     // Function to draw longitude lines
     private void DrawLongitudeLines(ImmediateMesh imMesh)
 	{
-		imMesh.ClearSurfaces();
 		imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
 
 		float cutoffRadians = Mathf.DegToRad(cutoffLatitude);  // Convert cutoff to radians

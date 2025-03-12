@@ -4,27 +4,23 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
+/// <summary>
+/// A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+/// </summary>
 public partial class Star : Node3D
 {
+
 	private const float radians = (float)Math.PI / 180f;
 	
+	// Since these are not being connected to anything in the Godot interface, I'm not sure we need to use the Export attribute.
+	// They are all accessed/set via code.
+	// Not sure what overhead is involved in labeling these as export.
+
 	[Export] public float azimuth = 0f; // Rotation from North (X+), in degrees.
 	[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
 	[Export] public float dist = 74f; // Distance from (0, 0, 0)
 	[Export] public float mag = 1f;
 	[Export] public string starName;
-
-    public static Star CreateStar(HorizontalStar horizontalStar)
-    {
-		
-		Star star = ResourceLoader.Load<PackedScene>("res://Scenes/star.tscn").Instantiate<Star>();
-		star.azimuth = (float)horizontalStar.Azimuth;
-		star.altitude = (float)horizontalStar.Altitude;
-		star.dist = (float)horizontalStar.Distance;
-		star.mag = (float)horizontalStar.Magnitude;
-		star.starName = horizontalStar.StarName;
-		return star;
-    }
 
     // Gets the Cartesian position of the Celestial Body
     private Vector3 getLocation(){
@@ -47,8 +43,4 @@ public partial class Star : Node3D
 		
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 }

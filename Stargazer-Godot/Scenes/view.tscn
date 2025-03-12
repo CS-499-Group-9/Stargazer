@@ -66,6 +66,8 @@ mesh = SubResource("ImmediateMesh_axyyf")
 
 [node name="ConstellationLabels" type="Node3D" parent="Constellations"]
 
+[node name="StarContainer" type="Node3D" parent="Constellations"]
+
 [node name="Dome" type="Node3D" parent="."]
 
 [node name="Skybox" type="MeshInstance3D" parent="Dome"]

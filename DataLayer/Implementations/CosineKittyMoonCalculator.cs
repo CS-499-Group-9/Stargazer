@@ -9,11 +9,20 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
+    /// <summary>
+    /// Uses the <see cref="CosineKitty.Astronomy"/> library to calculate the position and phase of the moon. 
+    /// </summary>
     internal class CosineKittyMoonCalculator : IMoonCalculator
     {
         private readonly Observer observer;
         private readonly AstroTime astroTime;
 
+        /// <summary>
+        /// Creates a new calculator
+        /// </summary>
+        /// <param name="latitude">The latitude of the observer</param>
+        /// <param name="longitude">The longitude of the observer</param>
+        /// <param name="universalTime">The UTC time of the observer</param>
         public CosineKittyMoonCalculator(double latitude, double longitude, DateTime universalTime)
         {
             observer = new Observer(latitude, longitude, 150);
