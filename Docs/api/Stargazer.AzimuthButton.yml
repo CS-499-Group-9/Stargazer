@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: AzimuthButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.AzimuthButton_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.AzimuthButton_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

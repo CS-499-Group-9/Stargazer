@@ -523,18 +523,11 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 37
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
-
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  summary: Gathers references to child nodes and connects <xref href="System.Delegate" data-throw-if-not-resolved="false"></xref>s to facilitate communication.
   example: []
   syntax:
     content: public override void _Ready()
@@ -7472,6 +7465,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: System.Delegate
+  commentId: T:System.Delegate
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.delegate
+  name: Delegate
+  nameWithType: Delegate
+  fullName: System.Delegate
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -7489,25 +7489,6 @@ references:
   - uid: Godot.Node._Ready
     name: _Ready
     isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
-  isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
   - name: (
   - name: )
 - uid: Stargazer.SkyView._Ready*

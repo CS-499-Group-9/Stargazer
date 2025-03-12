@@ -16,11 +16,13 @@ items:
   type: Class
   source:
     id: Globals
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Globals_ScriptProperties.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Globals_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Currently is no longer being used due to <xref href="System.Action" data-throw-if-not-resolved="false"></xref>s and <xref href="System.Delegate" data-throw-if-not-resolved="false"></xref>s
+  example: []
   syntax:
     content: >-
       [ScriptPath("res://Code/Globals.cs")]
@@ -309,7 +311,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Instance
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -338,7 +340,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -357,6 +359,20 @@ items:
   overridden: Godot.Node._Ready
   overload: Stargazer.Globals._Ready*
 references:
+- uid: System.Action
+  commentId: T:System.Action
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Delegate
+  commentId: T:System.Delegate
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.delegate
+  name: Delegate
+  nameWithType: Delegate
+  fullName: System.Delegate
 - uid: Stargazer
   commentId: N:Stargazer
   href: Stargazer.html

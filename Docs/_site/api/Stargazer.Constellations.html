@@ -1261,7 +1261,7 @@ public PackedScene StarScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Constellations_DrawConstellations_DataLayer_CelestialDataPackage_Stargazer_Star__" data-uid="Stargazer.Constellations.DrawConstellations(DataLayer.CelestialDataPackage{Stargazer.Star})">
   DrawConstellations(CelestialDataPackage&lt;Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Passed as a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a> to <a class="xref" href="Stargazer.Startup.html#Stargazer_Startup_UserPositionUpdated">UserPositionUpdated</a> to be notified when a new star scene is ready to be drawn.
@@ -1294,7 +1294,7 @@ This should be done using the += operator to be notified in addition to other co
 
   <h3 id="Stargazer_Constellations_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_" data-uid="Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)">
   SpawnStar(HorizontalStar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1330,10 +1330,11 @@ This should be done using the += operator to be notified in addition to other co
 
   <h3 id="Stargazer_Constellations_ToggleConstellationLabels_System_Boolean_" data-uid="Stargazer.Constellations.ToggleConstellationLabels(System.Boolean)">
   ToggleConstellationLabels(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Receives the notification to toggle the visibility of the constellation labels.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1343,7 +1344,8 @@ This should be done using the += operator to be notified in addition to other co
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>showlabels</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the user has requested to show the labels.</p>
+</dd>
   </dl>
 
 
@@ -1361,10 +1363,12 @@ This should be done using the += operator to be notified in addition to other co
 
   <h3 id="Stargazer_Constellations_ToggleConstellationLines_System_Boolean_" data-uid="Stargazer.Constellations.ToggleConstellationLines(System.Boolean)">
   ToggleConstellationLines(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Receives the notification to toggle the visibility of the constellation lines.
+Hiding the lines will also hide the labels.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1374,7 +1378,8 @@ This should be done using the += operator to be notified in addition to other co
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>showlines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the user has requested to show the lines.</p>
+</dd>
   </dl>
 
 
@@ -1392,13 +1397,10 @@ This should be done using the += operator to be notified in addition to other co
 
   <h3 id="Stargazer_Constellations__Ready" data-uid="Stargazer.Constellations._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Constellations.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
-<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
-<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
+  <div class="markdown level1 summary"><p>Gathers references to child nodes and initializes properties of the view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

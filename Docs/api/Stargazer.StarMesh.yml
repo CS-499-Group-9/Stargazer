@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     id: StarMesh
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.StarMesh_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.StarMesh_ScriptProperties.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

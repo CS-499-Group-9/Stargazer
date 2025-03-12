@@ -1324,13 +1324,10 @@ public Node2D needle</code></pre>
 
   <h3 id="Stargazer_CompassNeedle__Process_System_Double_" data-uid="Stargazer.CompassNeedle._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/CompassNeedle.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/CompassNeedle.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  <div class="markdown level1 summary"><p>Rotates the compass needle as the user view is rotated.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1359,13 +1356,10 @@ public Node2D needle</code></pre>
 
   <h3 id="Stargazer_CompassNeedle__Ready" data-uid="Stargazer.CompassNeedle._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/CompassNeedle.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/CompassNeedle.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
-<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
-<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
+  <div class="markdown level1 summary"><p>Gets a reference to the <span class="xref">Godot.Camera3D</span> in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

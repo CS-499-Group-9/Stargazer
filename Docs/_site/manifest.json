@@ -1016,7 +1016,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Globals",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Stargazer.Globals.yml\" sourcestartlinenumber=\"1\">Currently is no longer being used due to <xref href=\"System.Action\" data-throw-if-not-resolved=\"false\"></xref>s and <xref href=\"System.Delegate\" data-throw-if-not-resolved=\"false\"></xref>s</p>\n"
     },
     {
       "type": "ManagedReference",

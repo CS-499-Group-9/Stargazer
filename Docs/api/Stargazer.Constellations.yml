@@ -25,7 +25,7 @@ items:
   type: Class
   source:
     id: Constellations
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Constellations_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Constellations_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -578,18 +578,11 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
-
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  summary: Gathers references to child nodes and initializes properties of the view.
   example: []
   syntax:
     content: public override void _Ready()
@@ -614,7 +607,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 51
+    startLine: 54
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -652,15 +645,21 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 98
+    startLine: 106
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Receives the notification to toggle the visibility of the constellation lines.
+
+    Hiding the lines will also hide the labels.
+  example: []
   syntax:
     content: public void ToggleConstellationLines(bool showlines)
     parameters:
     - id: showlines
       type: System.Boolean
+      description: True if the user has requested to show the lines.
     content.vb: Public Sub ToggleConstellationLines(showlines As Boolean)
   overload: Stargazer.Constellations.ToggleConstellationLines*
   nameWithType.vb: Constellations.ToggleConstellationLines(Boolean)
@@ -684,15 +683,18 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 103
+    startLine: 115
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Receives the notification to toggle the visibility of the constellation labels.
+  example: []
   syntax:
     content: public void ToggleConstellationLabels(bool showlabels)
     parameters:
     - id: showlabels
       type: System.Boolean
+      description: True if the user has requested to show the labels.
     content.vb: Public Sub ToggleConstellationLabels(showlabels As Boolean)
   overload: Stargazer.Constellations.ToggleConstellationLabels*
   nameWithType.vb: Constellations.ToggleConstellationLabels(Boolean)
@@ -716,7 +718,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: SpawnStar
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 105
+    startLine: 117
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -7596,25 +7598,6 @@ references:
   - uid: Godot.Node._Ready
     name: _Ready
     isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
-  isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
   - name: (
   - name: )
 - uid: Stargazer.Constellations._Ready*

@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     id: ConstellationButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.ConstellationButton_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.ConstellationButton_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

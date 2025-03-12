@@ -1323,7 +1323,7 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_Main_TakeScreenshot" data-uid="Stargazer.Main.TakeScreenshot">
   TakeScreenshot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1349,7 +1349,7 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_Main_ZoomIn" data-uid="Stargazer.Main.ZoomIn">
   ZoomIn()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1375,7 +1375,7 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_Main_ZoomOut" data-uid="Stargazer.Main.ZoomOut">
   ZoomOut()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1401,14 +1401,10 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_Main__Input_Godot_InputEvent_" data-uid="Stargazer.Main._Input(Godot.InputEvent)">
   _Input(InputEvent)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called when there is an input event. The input event propagates up through the node tree until a node consumes it.</p>
-<p>It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcessInput(bool)</a>.</p>
-<p>To consume the input event and stop it propagating further to other nodes, <span class="xref">Godot.Viewport.SetInputAsHandled()</span> can be called.</p>
-<p>For gameplay input, <span class="xref">Godot.Node._UnhandledInput(Godot.InputEvent)</span> and <span class="xref">Godot.Node._UnhandledKeyInput(Godot.InputEvent)</span> are usually a better fit as they allow the GUI to intercept the events first.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  <div class="markdown level1 summary"><p>Checks if the right mouse button is being held down to pan the view.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1437,13 +1433,10 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_Main__Process_System_Double_" data-uid="Stargazer.Main._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Main.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  <div class="markdown level1 summary"><p>Used to check for the input for the screenshot key and take the screenshot.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

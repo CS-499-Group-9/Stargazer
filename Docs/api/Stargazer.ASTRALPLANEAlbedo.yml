@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     id: ASTRALPLANEAlbedo
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

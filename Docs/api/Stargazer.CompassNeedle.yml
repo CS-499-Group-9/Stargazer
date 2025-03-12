@@ -18,7 +18,7 @@ items:
   type: Class
   source:
     id: CompassNeedle
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.CompassNeedle_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.CompassNeedle_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -508,18 +508,11 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
-
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  summary: Gets a reference to the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref> in the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
     content: public override void _Ready()
@@ -544,24 +537,18 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Process
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 24
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-
-    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  summary: Rotates the compass needle as the user view is rotated.
   example: []
   syntax:
     content: public override void _Process(double delta)
     parameters:
     - id: delta
       type: System.Double
+      description: ''
     content.vb: Public Overrides Sub _Process(delta As Double)
   overridden: Godot.Node._Process(System.Double)
   overload: Stargazer.CompassNeedle._Process*
@@ -9868,6 +9855,12 @@ references:
   name: Camera3D
   nameWithType: Camera3D
   fullName: Godot.Camera3D
+- uid: Stargazer.SkyView
+  commentId: T:Stargazer.SkyView
+  href: Stargazer.SkyView.html
+  name: SkyView
+  nameWithType: SkyView
+  fullName: Stargazer.SkyView
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -9885,25 +9878,6 @@ references:
   - uid: Godot.Node._Ready
     name: _Ready
     isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
-  isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
   - name: (
   - name: )
 - uid: Stargazer.CompassNeedle._Ready*

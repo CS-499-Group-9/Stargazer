@@ -24,7 +24,7 @@ items:
   type: Class
   source:
     id: Main
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Main_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Main_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -564,26 +564,18 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Input
     path: ../Stargazer-Godot/Code/Main.cs
-    startLine: 20
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called when there is an input event. The input event propagates up through the node tree until a node consumes it.</p>
-
-    <p>It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcessInput(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p>To consume the input event and stop it propagating further to other nodes, <xref href="Godot.Viewport.SetInputAsHandled" data-throw-if-not-resolved="false"></xref> can be called.</p>
-
-    <p>For gameplay input, <xref href="Godot.Node._UnhandledInput(Godot.InputEvent)" data-throw-if-not-resolved="false"></xref> and <xref href="Godot.Node._UnhandledKeyInput(Godot.InputEvent)" data-throw-if-not-resolved="false"></xref> are usually a better fit as they allow the GUI to intercept the events first.</p>
-
-    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  summary: Checks if the right mouse button is being held down to pan the view.
   example: []
   syntax:
     content: public override void _Input(InputEvent @event)
     parameters:
     - id: event
       type: Godot.InputEvent
+      description: ''
     content.vb: Public Overrides Sub _Input([event] As InputEvent)
   overridden: Godot.Node._Input(Godot.InputEvent)
   overload: Stargazer.Main._Input*
@@ -605,7 +597,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ZoomIn
     path: ../Stargazer-Godot/Code/Main.cs
-    startLine: 56
+    startLine: 60
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -631,7 +623,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ZoomOut
     path: ../Stargazer-Godot/Code/Main.cs
-    startLine: 62
+    startLine: 66
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,24 +649,18 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Process
     path: ../Stargazer-Godot/Code/Main.cs
-    startLine: 68
+    startLine: 77
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-
-    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  summary: Used to check for the input for the screenshot key and take the screenshot.
   example: []
   syntax:
     content: public override void _Process(double delta)
     parameters:
     - id: delta
       type: System.Double
+      description: ''
     content.vb: Public Overrides Sub _Process(delta As Double)
   overridden: Godot.Node._Process(System.Double)
   overload: Stargazer.Main._Process*
@@ -699,7 +685,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: TakeScreenshot
     path: ../Stargazer-Godot/Code/Main.cs
-    startLine: 77
+    startLine: 86
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -8217,24 +8203,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Godot.Viewport.SetInputAsHandled
-  commentId: M:Godot.Viewport.SetInputAsHandled
-  isExternal: true
-  name: SetInputAsHandled()
-  nameWithType: Viewport.SetInputAsHandled()
-  fullName: Godot.Viewport.SetInputAsHandled()
-  spec.csharp:
-  - uid: Godot.Viewport.SetInputAsHandled
-    name: SetInputAsHandled
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Viewport.SetInputAsHandled
-    name: SetInputAsHandled
-    isExternal: true
-  - name: (
-  - name: )
 - uid: Godot.Node._Input(Godot.InputEvent)
   commentId: M:Godot.Node._Input(Godot.InputEvent)
   parent: Godot.Node

@@ -1628,7 +1628,7 @@ public class Startup : Control, IDisposable</code></pre>
 
   <h3 id="Stargazer_Startup_UpdateUserPosition_System_Double_System_Double_System_DateTime_" data-uid="Stargazer.Startup.UpdateUserPosition(System.Double,System.Double,System.DateTime)">
   UpdateUserPosition(double, double, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Startup.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Startup.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Passed to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a> of the user interface to notify the controller of a new user request to be processed.
@@ -1671,13 +1671,11 @@ Processes the request asynchronously and passes the result to all subscribers.</
 
   <h3 id="Stargazer_Startup__Ready" data-uid="Stargazer.Startup._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Startup.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/Startup.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
-<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
-<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
+  <div class="markdown level1 summary"><p>Creates the repository service and stores in memory
+Gathers references to sender/receiver nodes and connects <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a>s for communication.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
