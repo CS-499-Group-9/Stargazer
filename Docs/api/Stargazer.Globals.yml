@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: Globals
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Globals_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Globals_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

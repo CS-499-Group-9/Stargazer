@@ -14,14 +14,19 @@ namespace Stargazer
 		[Export] public Node2D needle;
 		private Camera3D camera;
 
-		// Called when the node enters the scene tree for the first time.
+		/// <summary>
+		/// Gets a reference to the <see cref="Camera3D"/> in the <see cref="SkyView"/>
+		/// </summary>
 		public override void _Ready()
 		{
 			Node viewNode = GetTree()?.Root.FindChild("View", true, false);
 			camera = (Camera3D)viewNode?.GetNode("Camera3D");
 		}
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		/// <summary>
+		/// Rotates the compass needle as the user view is rotated.
+		/// </summary>
+		/// <param name="delta"></param>
 		public override void _Process(double delta)
 		{
 			float yRotationDegrees = Mathf.RadToDeg(camera.Rotation.Y);

@@ -1,3 +1,4 @@
+### YamlMime:ManagedReference
 apiRules:
   - exclude:
       uidRegex: "^.*\\.[^.]*Name$"  # Excludes all subclasses ending in 'Name'

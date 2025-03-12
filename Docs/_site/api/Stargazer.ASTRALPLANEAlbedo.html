@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ASTRALPLANEAlbedo | Stargazer Data API ">
       
-      
+      <meta name="description" content="Handles the transparency of the floor.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,8 @@ Class ASTRALPLANEAlbedo
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Handles the transparency of the floor.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -1062,7 +1063,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_camera" data-uid="Stargazer.ASTRALPLANEAlbedo.camera">
   camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1092,7 +1093,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_material" data-uid="Stargazer.ASTRALPLANEAlbedo.material">
   material
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1122,7 +1123,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_mesh" data-uid="Stargazer.ASTRALPLANEAlbedo.mesh">
   mesh
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1157,13 +1158,10 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo__Process_System_Double_" data-uid="Stargazer.ASTRALPLANEAlbedo._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  <div class="markdown level1 summary"><p>Uses the <span class="xref">Godot.Camera3D</span><code>.Rotation</code> to alter make the floor transparent as the user pans down.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1192,13 +1190,10 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo__Ready" data-uid="Stargazer.ASTRALPLANEAlbedo._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
-<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
-<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
+  <div class="markdown level1 summary"><p>Gets references to the <span class="xref">Godot.Camera3D</span> and <span class="xref">Godot.StandardMaterial3D</span> of the <span class="xref">Godot.MeshInstance3D</span></p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

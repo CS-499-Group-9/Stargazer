@@ -31,6 +31,9 @@ namespace Stargazer
 
 		private ImmediateMesh mesh;
 
+		/// <summary>
+		/// Initially draws the azimuth lines and hides them.
+		/// </summary>
 		public override void _Ready()
 		{
 			mesh = new ImmediateMesh();

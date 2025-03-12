@@ -3,12 +3,18 @@ using System;
 
 namespace Stargazer
 {
+    /// <summary>
+    /// Handles the transparency of the floor.
+    /// </summary>
     public partial class ASTRALPLANEAlbedo : Node3D
     {
         private Camera3D camera;
         private MeshInstance3D mesh;
         private StandardMaterial3D material;
 
+        /// <summary>
+        /// Gets references to the <see cref="Camera3D"/> and <see cref="StandardMaterial3D"/> of the <see cref="MeshInstance3D"/>
+        /// </summary>
         public override void _Ready()
         {
             camera = (Camera3D)GetTree().Root.FindChild("Camera3D", true, false);
@@ -37,6 +43,10 @@ namespace Stargazer
             }
         }
 
+        /// <summary>
+        /// Uses the <see cref="Camera3D"/><c>.Rotation</c> to alter make the floor transparent as the user pans down.
+        /// </summary>
+        /// <param name="delta"></param>
         public override void _Process(double delta)
         {
             if (camera == null || material == null)

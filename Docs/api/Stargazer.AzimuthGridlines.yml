@@ -24,8 +24,8 @@ items:
   type: Class
   source:
     id: AzimuthGridlines
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.AzimuthGridlines_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.AzimuthGridlines_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

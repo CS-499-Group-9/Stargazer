@@ -20,8 +20,8 @@ items:
   type: Class
   source:
     id: SkyView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.SkyView_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.SkyView_ScriptSerialization.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

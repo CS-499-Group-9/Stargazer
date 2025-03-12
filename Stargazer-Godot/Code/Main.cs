@@ -18,6 +18,10 @@ namespace Stargazer
         private bool rightClickHeld = false;
         private string screenshotPath = "user://screenshot.jpeg";
 
+        /// <summary>
+        /// Checks if the right mouse button is being held down to pan the view.
+        /// </summary>
+        /// <param name="event"></param>
         public override void _Input(InputEvent @event)
         {
             if (@event is InputEventMouseButton mouseButton)
@@ -66,6 +70,11 @@ namespace Stargazer
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov + 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
+
+        /// <summary>
+        /// Used to check for the input for the screenshot key and take the screenshot.
+        /// </summary>
+        /// <param name="delta"></param>
         public override void _Process(double delta)
         {
             // Check if the 'screenshot_key' action is pressed

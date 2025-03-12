@@ -25,6 +25,9 @@ namespace Stargazer
         private ImmediateMesh mesh;
         private Node3D ConstellationLabels;
 
+        /// <summary>
+        /// Gathers references to child nodes and initializes properties of the view.
+        /// </summary>
         public override void _Ready()
         {
             // Get references to child objects
@@ -96,11 +99,20 @@ namespace Stargazer
             GD.Print(count);
         }
 
+        /// <summary>
+        /// Receives the notification to toggle the visibility of the constellation lines.
+        /// Hiding the lines will also hide the labels.
+        /// </summary>
+        /// <param name="showlines">True if the user has requested to show the lines.</param>
         public void ToggleConstellationLines(bool showlines)
         {
             constMesh.Visible = showlines;
         }
 
+        /// <summary>
+        /// Receives the notification to toggle the visibility of the constellation labels.
+        /// </summary>
+        /// <param name="showlabels">True if the user has requested to show the labels.</param>
         public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
 
         private Star SpawnStar(HorizontalStar horizontalStar)

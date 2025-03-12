@@ -21,6 +21,10 @@ namespace Stargazer
         /// </summary>
         public event Action<CelestialDataPackage<Star>> UserPositionUpdated;
 
+        /// <summary>
+        /// Creates the repository service and stores in memory
+        /// Gathers references to sender/receiver nodes and connects <see cref="Delegate"/>s for communication.
+        /// </summary>
         public async override void _Ready()
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));

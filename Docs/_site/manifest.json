@@ -624,7 +624,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.ASTRALPLANEAlbedo",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.yml\" sourcestartlinenumber=\"1\">Handles the transparency of the floor.</p>\n"
     },
     {
       "type": "ManagedReference",

@@ -18,7 +18,7 @@ items:
   type: Class
   source:
     id: Spawner
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Spawner_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Spawner_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

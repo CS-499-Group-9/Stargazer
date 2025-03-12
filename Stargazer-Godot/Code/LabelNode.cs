@@ -13,8 +13,9 @@ namespace Stargazer
 		/// </summary>
 		[Export] public string LabelText { get; set; }
 
-
-		// Called when the node enters the scene tree for the first time.
+		/// <summary>
+		/// Gets a reference to the <see cref="Label3D"/> and passes the text to be displayed.
+		/// </summary>
 		public override void _Ready()
 		{
 			// Get a reference to the label and pass the text.

@@ -17,7 +17,7 @@ items:
   type: Class
   source:
     id: MessierButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.MessierButton_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.MessierButton_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

@@ -35,6 +35,9 @@ namespace Stargazer
         /// </summary>
         public Action<bool> ToggleMessierObjects;
 
+        /// <summary>
+        /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
+        /// </summary>
         public override void _Ready()
         {
             base._Ready();
