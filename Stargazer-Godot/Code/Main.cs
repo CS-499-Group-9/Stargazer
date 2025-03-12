@@ -1,85 +1,89 @@
 using Godot;
 
-/// <summary>
-/// Contains the main camera used to create the user view.
-/// </summary>
-public partial class Main : Camera3D
+namespace Stargazer
 {
+
     /// <summary>
-    /// The base sensitivity of the mouse used when panning the view.
+    /// Contains the main camera used to create the user view.
     /// </summary>
-    [Export] public float MouseSensitivity = 0.002f;
-
-    private float yaw = 0f;  // Left/Right Rotation
-    private float pitch = 0f; // Up/Down Rotation
-    private bool rightClickHeld = false;
-    private string screenshotPath = "user://screenshot.jpeg";
-    
-    public override void _Input(InputEvent @event)
+    public partial class Main : Camera3D
     {
-        if (@event is InputEventMouseButton mouseButton)
+        /// <summary>
+        /// The base sensitivity of the mouse used when panning the view.
+        /// </summary>
+        [Export] public float MouseSensitivity = 0.002f;
+
+        private float yaw = 0f;  // Left/Right Rotation
+        private float pitch = 0f; // Up/Down Rotation
+        private bool rightClickHeld = false;
+        private string screenshotPath = "user://screenshot.jpeg";
+
+        public override void _Input(InputEvent @event)
         {
-            if (mouseButton.ButtonIndex == MouseButton.Right)
+            if (@event is InputEventMouseButton mouseButton)
             {
-                rightClickHeld = mouseButton.Pressed;
-                Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
-            }
+                if (mouseButton.ButtonIndex == MouseButton.Right)
+                {
+                    rightClickHeld = mouseButton.Pressed;
+                    Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
+                }
 
-            if (mouseButton.ButtonIndex == MouseButton.WheelUp || mouseButton.ButtonIndex == MouseButton.WheelDown)
+                if (mouseButton.ButtonIndex == MouseButton.WheelUp || mouseButton.ButtonIndex == MouseButton.WheelDown)
+                {
+                    // Check the direction of the scroll wheel
+                    if (mouseButton.ButtonIndex == MouseButton.WheelUp)
+                    {
+                        ZoomIn();
+                    }
+                    else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
+                    {
+                        ZoomOut();
+                    }
+                }
+            }
+            if (rightClickHeld && @event is InputEventMouseMotion mouseMotion)
             {
-                // Check the direction of the scroll wheel
-                if (mouseButton.ButtonIndex == MouseButton.WheelUp)
-                {
-                    ZoomIn();
-                }
-                else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
-                {
-                    ZoomOut();
-                }
+                yaw -= (Fov / 75) * mouseMotion.Relative.X * MouseSensitivity;
+                pitch -= (Fov / 75) * mouseMotion.Relative.Y * MouseSensitivity;
+
+                // Clamp pitch to prevent flipping
+                pitch = Mathf.Clamp(pitch, -Mathf.Pi / 2, Mathf.Pi / 2);
+
+                // Apply rotation
+                Rotation = new Vector3(pitch, yaw, 0);
             }
         }
-        if (rightClickHeld && @event is InputEventMouseMotion mouseMotion)
+
+        private void ZoomIn()
         {
-            yaw -= (Fov/75)*mouseMotion.Relative.X * MouseSensitivity;
-            pitch -= (Fov/75)*mouseMotion.Relative.Y * MouseSensitivity;
-
-            // Clamp pitch to prevent flipping
-            pitch = Mathf.Clamp(pitch, -Mathf.Pi / 2, Mathf.Pi / 2);
-
-            // Apply rotation
-            Rotation = new Vector3(pitch, yaw, 0);
+            GD.Print($"{Fov}");
+            // Decrease field of view for zooming in (if using a perspective camera)
+            Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
-    }
-    
-    private void ZoomIn()
-    {
-        GD.Print($"{Fov}");
-        // Decrease field of view for zooming in (if using a perspective camera)
-        Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
-    }
-    private void ZoomOut()
-    {
-
-        // Decrease field of view for zooming in (if using a perspective camera)
-        Fov = Mathf.Clamp(Fov + 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
-    }
-    public override void _Process(double delta)
-    {
-        // Check if the 'screenshot_key' action is pressed
-        if (Input.IsActionJustPressed("screenshot_key"))
+        private void ZoomOut()
         {
-            TakeScreenshot();
+
+            // Decrease field of view for zooming in (if using a perspective camera)
+            Fov = Mathf.Clamp(Fov + 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
-    }
+        public override void _Process(double delta)
+        {
+            // Check if the 'screenshot_key' action is pressed
+            if (Input.IsActionJustPressed("screenshot_key"))
+            {
+                TakeScreenshot();
+            }
+        }
 
-    private void TakeScreenshot()
-    {
-        // Get the current viewport as an Image
-        Viewport viewport = GetViewport();
-        Image screenshotImage = viewport.GetTexture().GetImage();
+        private void TakeScreenshot()
+        {
+            // Get the current viewport as an Image
+            Viewport viewport = GetViewport();
+            Image screenshotImage = viewport.GetTexture().GetImage();
 
-        // Save the screenshot as a JPEG
-        screenshotImage.SaveJpg(screenshotPath);
-        GD.Print($"Screenshot saved to {screenshotPath}");
+            // Save the screenshot as a JPEG
+            screenshotImage.SaveJpg(screenshotPath);
+            GD.Print($"Screenshot saved to {screenshotPath}");
+        }
     }
 }

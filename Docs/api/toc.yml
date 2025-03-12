@@ -33,11 +33,17 @@ items:
   name: DataLayer.HorizontalObjects
   type: Namespace
   items:
+  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
+    name: HorizonalPlanet
+    type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalBody
     name: HorizontalBody
     type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
     name: HorizontalMessierObject
+    type: Class
+  - uid: DataLayer.HorizontalObjects.HorizontalMoon
+    name: HorizontalMoon
     type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalStar
     name: HorizontalStar
@@ -48,6 +54,12 @@ items:
   items:
   - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
     name: CosineKittyEquatorialConverter<T>
+    type: Class
+  - uid: DataLayer.Implementations.CosineKittyMoonCalculator
+    name: CosineKittyMoonCalculator
+    type: Class
+  - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+    name: CosineKittyPlanetaryCalculator
     type: Class
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
@@ -79,9 +91,6 @@ items:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
     name: StellariumJsonConstellationRepository
     type: Class
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-    name: StellariumJsonConstellationRepository.ConstellationName
-    type: Class
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
     name: StellariumJsonConstellationRepository.JsonConstellationListConverter
     type: Class
@@ -98,7 +107,78 @@ items:
   - uid: DataLayer.Interfaces.IMessierRepository
     name: IMessierRepository
     type: Interface
+  - uid: DataLayer.Interfaces.IMoonCalculator
+    name: IMoonCalculator
+    type: Interface
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator<T>
+    type: Interface
   - uid: DataLayer.Interfaces.IStarRepository
     name: IStarRepository
     type: Interface
+- uid: GodotPlugins.Game
+  name: GodotPlugins.Game
+  type: Namespace
+  items:
+  - uid: GodotPlugins.Game.Main
+    name: Main
+    type: Class
+- uid: Stargazer
+  name: Stargazer
+  type: Namespace
+  items:
+  - uid: Stargazer.ASTRALPLANEAlbedo
+    name: ASTRALPLANEAlbedo
+    type: Class
+  - uid: Stargazer.AzimuthButton
+    name: AzimuthButton
+    type: Class
+  - uid: Stargazer.AzimuthGridlines
+    name: AzimuthGridlines
+    type: Class
+  - uid: Stargazer.CompassNeedle
+    name: CompassNeedle
+    type: Class
+  - uid: Stargazer.ConstellationButton
+    name: ConstellationButton
+    type: Class
+  - uid: Stargazer.ConstellationLabel
+    name: ConstellationLabel
+    type: Class
+  - uid: Stargazer.Constellations
+    name: Constellations
+    type: Class
+  - uid: Stargazer.Globals
+    name: Globals
+    type: Class
+  - uid: Stargazer.LabelButton
+    name: LabelButton
+    type: Class
+  - uid: Stargazer.LabelNode
+    name: LabelNode
+    type: Class
+  - uid: Stargazer.Main
+    name: Main
+    type: Class
+  - uid: Stargazer.MessierButton
+    name: MessierButton
+    type: Class
+  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
+    name: MessierButton.HuntsvilleCoordinates
+    type: Struct
+  - uid: Stargazer.SkyView
+    name: SkyView
+    type: Class
+  - uid: Stargazer.Spawner
+    name: Spawner
+    type: Class
+  - uid: Stargazer.Star
+    name: Star
+    type: Class
+  - uid: Stargazer.StarMesh
+    name: StarMesh
+    type: Class
+  - uid: Stargazer.Startup
+    name: Startup
+    type: Class
 memberLayout: SamePage

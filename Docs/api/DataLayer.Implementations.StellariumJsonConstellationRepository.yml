@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StellariumJsonConstellationRepository
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 10
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: filePath
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 15
@@ -86,8 +86,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 21
@@ -122,8 +122,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 31

@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer
+  commentId: N:Stargazer
+  id: Stargazer
+  children:
+  - Stargazer.ASTRALPLANEAlbedo
+  - Stargazer.AzimuthButton
+  - Stargazer.AzimuthGridlines
+  - Stargazer.CompassNeedle
+  - Stargazer.ConstellationButton
+  - Stargazer.ConstellationLabel
+  - Stargazer.Constellations
+  - Stargazer.Globals
+  - Stargazer.LabelButton
+  - Stargazer.LabelNode
+  - Stargazer.Main
+  - Stargazer.MessierButton
+  - Stargazer.MessierButton.HuntsvilleCoordinates
+  - Stargazer.SkyView
+  - Stargazer.Spawner
+  - Stargazer.Star
+  - Stargazer.StarMesh
+  - Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+  type: Namespace
+  assemblies:
+  - New Game Project
+references:
+- uid: Stargazer.ASTRALPLANEAlbedo
+  commentId: T:Stargazer.ASTRALPLANEAlbedo
+  href: Stargazer.ASTRALPLANEAlbedo.html
+  name: ASTRALPLANEAlbedo
+  nameWithType: ASTRALPLANEAlbedo
+  fullName: Stargazer.ASTRALPLANEAlbedo
+- uid: Stargazer.AzimuthButton
+  commentId: T:Stargazer.AzimuthButton
+  href: Stargazer.AzimuthButton.html
+  name: AzimuthButton
+  nameWithType: AzimuthButton
+  fullName: Stargazer.AzimuthButton
+- uid: Stargazer.AzimuthGridlines
+  commentId: T:Stargazer.AzimuthGridlines
+  href: Stargazer.AzimuthGridlines.html
+  name: AzimuthGridlines
+  nameWithType: AzimuthGridlines
+  fullName: Stargazer.AzimuthGridlines
+- uid: Stargazer.CompassNeedle
+  commentId: T:Stargazer.CompassNeedle
+  href: Stargazer.CompassNeedle.html
+  name: CompassNeedle
+  nameWithType: CompassNeedle
+  fullName: Stargazer.CompassNeedle
+- uid: Stargazer.ConstellationButton
+  commentId: T:Stargazer.ConstellationButton
+  href: Stargazer.ConstellationButton.html
+  name: ConstellationButton
+  nameWithType: ConstellationButton
+  fullName: Stargazer.ConstellationButton
+- uid: Stargazer.ConstellationLabel
+  commentId: T:Stargazer.ConstellationLabel
+  href: Stargazer.ConstellationLabel.html
+  name: ConstellationLabel
+  nameWithType: ConstellationLabel
+  fullName: Stargazer.ConstellationLabel
+- uid: Stargazer.Constellations
+  commentId: T:Stargazer.Constellations
+  href: Stargazer.Constellations.html
+  name: Constellations
+  nameWithType: Constellations
+  fullName: Stargazer.Constellations
+- uid: Stargazer.Globals
+  commentId: T:Stargazer.Globals
+  parent: Stargazer
+  href: Stargazer.Globals.html
+  name: Globals
+  nameWithType: Globals
+  fullName: Stargazer.Globals
+- uid: Stargazer.LabelButton
+  commentId: T:Stargazer.LabelButton
+  href: Stargazer.LabelButton.html
+  name: LabelButton
+  nameWithType: LabelButton
+  fullName: Stargazer.LabelButton
+- uid: Stargazer.LabelNode
+  commentId: T:Stargazer.LabelNode
+  href: Stargazer.LabelNode.html
+  name: LabelNode
+  nameWithType: LabelNode
+  fullName: Stargazer.LabelNode
+- uid: Stargazer.Main
+  commentId: T:Stargazer.Main
+  href: Stargazer.Main.html
+  name: Main
+  nameWithType: Main
+  fullName: Stargazer.Main
+- uid: Stargazer.MessierButton
+  commentId: T:Stargazer.MessierButton
+  href: Stargazer.MessierButton.html
+  name: MessierButton
+  nameWithType: MessierButton
+  fullName: Stargazer.MessierButton
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates
+  commentId: T:Stargazer.MessierButton.HuntsvilleCoordinates
+  href: Stargazer.MessierButton.html
+  name: MessierButton.HuntsvilleCoordinates
+  nameWithType: MessierButton.HuntsvilleCoordinates
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates
+  spec.csharp:
+  - uid: Stargazer.MessierButton
+    name: MessierButton
+    href: Stargazer.MessierButton.html
+  - name: .
+  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
+    name: HuntsvilleCoordinates
+    href: Stargazer.MessierButton.HuntsvilleCoordinates.html
+  spec.vb:
+  - uid: Stargazer.MessierButton
+    name: MessierButton
+    href: Stargazer.MessierButton.html
+  - name: .
+  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
+    name: HuntsvilleCoordinates
+    href: Stargazer.MessierButton.HuntsvilleCoordinates.html
+- uid: Stargazer.SkyView
+  commentId: T:Stargazer.SkyView
+  href: Stargazer.SkyView.html
+  name: SkyView
+  nameWithType: SkyView
+  fullName: Stargazer.SkyView
+- uid: Stargazer.Spawner
+  commentId: T:Stargazer.Spawner
+  href: Stargazer.Spawner.html
+  name: Spawner
+  nameWithType: Spawner
+  fullName: Stargazer.Spawner
+- uid: Stargazer.Star
+  commentId: T:Stargazer.Star
+  parent: Stargazer
+  href: Stargazer.Star.html
+  name: Star
+  nameWithType: Star
+  fullName: Stargazer.Star
+- uid: Stargazer.StarMesh
+  commentId: T:Stargazer.StarMesh
+  href: Stargazer.StarMesh.html
+  name: StarMesh
+  nameWithType: StarMesh
+  fullName: Stargazer.StarMesh
+- uid: Stargazer.Startup
+  commentId: T:Stargazer.Startup
+  href: Stargazer.Startup.html
+  name: Startup
+  nameWithType: Startup
+  fullName: Stargazer.Startup
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer

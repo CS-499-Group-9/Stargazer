@@ -64,7 +64,7 @@ LabelScene = ExtResource("4_hboln")
 [node name="LineMesh" type="MeshInstance3D" parent="Constellations"]
 mesh = SubResource("ImmediateMesh_axyyf")
 
-[node name="ConstellationLabels" type="Node3D" parent="Constellations"]
+[node name="ConstellationLabels" type="Node3D" parent="Constellations/LineMesh"]
 
 [node name="StarContainer" type="Node3D" parent="Constellations"]
 

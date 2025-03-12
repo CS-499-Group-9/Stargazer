@@ -1,18 +1,21 @@
 using Godot;
 using System;
 
-/// <summary>
-/// Contains the button used to toggle the constellations in the viewport.
-/// </summary>
-public partial class ConstellationButton : Control
+namespace Stargazer
 {
 	/// <summary>
-	/// The <see cref="Delegate"/> used to notify the viewport to show or hide the constellations.
+	/// Contains the button used to toggle the constellations in the viewport.
 	/// </summary>
-	public Action<bool> ConstellationLinesToggled;
-
-	private void ToggleConst(bool state)
+	public partial class ConstellationButton : Control
 	{
-		ConstellationLinesToggled(state);
+		/// <summary>
+		/// The <see cref="Delegate"/> used to notify the viewport to show or hide the constellations.
+		/// </summary>
+		public Action<bool> ConstellationLinesToggled;
+
+		private void ToggleConst(bool state)
+		{
+			ConstellationLinesToggled(state);
+		}
 	}
 }

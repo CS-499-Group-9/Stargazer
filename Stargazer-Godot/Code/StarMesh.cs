@@ -1,38 +1,41 @@
 using Godot;
 using System;
 
-/// <summary>
-/// This was originally created to explore adding color to the stars.
-/// The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers. 
-/// </summary>
-public partial class StarMesh : MeshInstance3D
+namespace Stargazer
 {
-
-
-    private void UpdateColorFromParent(double bvIndex)
+    /// <summary>
+    /// This was originally created to explore adding color to the stars.
+    /// The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers. 
+    /// </summary>
+    public partial class StarMesh : MeshInstance3D
     {
-        Color starColor = BvToGodotColor(bvIndex);
-        ApplyEmissionColor(starColor);
-    }
 
-    private Color BvToGodotColor(double bv)
-    {
-        bv = Math.Clamp(bv, -0.4, 2.0);
-        double r, g, b;
 
-        if (bv < 0.0) { r = 0.67 + (bv * 0.34); g = 0.83 + (bv * 0.17); b = 1.00; }
-        else if (bv < 0.4) { r = 1.00; g = 0.98 - (bv * 0.16); b = 1.00 - (bv * 0.47); }
-        else if (bv < 1.5) { r = 1.00; g = 0.82 - (bv * 0.44); b = 0.55 - (bv * 0.10); }
-        else { r = 1.00; g = 0.60 - ((bv - 1.5) * 0.15); b = 0.40 - ((bv - 1.5) * 0.20); }
+        private void UpdateColorFromParent(double bvIndex)
+        {
+            Color starColor = BvToGodotColor(bvIndex);
+            ApplyEmissionColor(starColor);
+        }
 
-        return new Color((float)r, (float)g, (float)b);
-    }
+        private Color BvToGodotColor(double bv)
+        {
+            bv = Math.Clamp(bv, -0.4, 2.0);
+            double r, g, b;
 
-    private void ApplyEmissionColor(Color color)
-    {
-        StandardMaterial3D material = new StandardMaterial3D();
-        material.EmissionEnabled = true;
-        material.Emission = color;
-        MaterialOverride = material;
+            if (bv < 0.0) { r = 0.67 + (bv * 0.34); g = 0.83 + (bv * 0.17); b = 1.00; }
+            else if (bv < 0.4) { r = 1.00; g = 0.98 - (bv * 0.16); b = 1.00 - (bv * 0.47); }
+            else if (bv < 1.5) { r = 1.00; g = 0.82 - (bv * 0.44); b = 0.55 - (bv * 0.10); }
+            else { r = 1.00; g = 0.60 - ((bv - 1.5) * 0.15); b = 0.40 - ((bv - 1.5) * 0.20); }
+
+            return new Color((float)r, (float)g, (float)b);
+        }
+
+        private void ApplyEmissionColor(Color color)
+        {
+            StandardMaterial3D material = new StandardMaterial3D();
+            material.EmissionEnabled = true;
+            material.Emission = color;
+            MaterialOverride = material;
+        }
     }
 }

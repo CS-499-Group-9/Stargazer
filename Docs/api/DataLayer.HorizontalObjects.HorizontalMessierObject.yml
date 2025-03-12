@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HorizontalMessierObject
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 6
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: MessierId
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 11
@@ -95,8 +95,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: NewGeneralCatalog
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 15
@@ -126,8 +126,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Type
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 19
@@ -157,8 +157,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Constellation
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 23
@@ -188,8 +188,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Size
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 27
@@ -219,8 +219,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ViewingSeason
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 31
@@ -250,8 +250,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ViewingDifficulty
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
     startLine: 35

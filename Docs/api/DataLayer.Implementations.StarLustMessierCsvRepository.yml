@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarLustMessierCsvRepository
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 12
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: filePath
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 17
@@ -86,8 +86,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 23
@@ -121,8 +121,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetRawMessierObjectsAsync
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 33

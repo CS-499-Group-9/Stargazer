@@ -25,8 +25,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: EquatorialStar
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 6
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarId
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 11
@@ -98,8 +98,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HipparcosId
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 15
@@ -129,8 +129,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HenryDraperId
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 19
@@ -160,8 +160,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HarvardRevisedId
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 23
@@ -191,8 +191,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GlieseId
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 27
@@ -222,8 +222,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: BayerFlamsteedDesignation
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 31
@@ -253,8 +253,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ProperName
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 35
@@ -284,8 +284,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: AbsoluteMagnitude
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 39
@@ -315,8 +315,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Spectrum
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 43
@@ -346,8 +346,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ColorIndex
     path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
     startLine: 47

@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/joshj/SOURCE/REPOS/CS-499-GROUP-9/STARGAZER/docs",
+  "source_base_path": "C:/Users/joshj/source/repos/CS-499-Group-9/Stargazer/Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -96,6 +96,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizonalPlanet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizonalPlanet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizonalPlanet",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizonalPlanet.yml\" sourcestartlinenumber=\"1\">A planet in our solar system in horizontal coordinate form.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalBody.yml",
       "output": {
         ".html": {
@@ -121,6 +135,20 @@
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalMessierObject",
       "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object located in Horizontal coordinates</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalMoon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalMoon.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalMoon",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMoon.yml\" sourcestartlinenumber=\"1\">Represents the moon in horizontal coordinate form.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -163,6 +191,34 @@
       "IsMRef": true,
       "Title": "DataLayer.Implementations.CosineKittyEquatorialConverter<T>",
       "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.yml\" sourcestartlinenumber=\"1\">Converts an object of type <xref href=\"DataLayer.EquatorialObjects.EquatorialCelestialBody\" data-throw-if-not-resolved=\"false\"></xref> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.CosineKittyMoonCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.CosineKittyMoonCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.CosineKittyMoonCalculator",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyMoonCalculator.yml\" sourcestartlinenumber=\"1\">Uses the <xref href=\"CosineKitty.Astronomy\" data-throw-if-not-resolved=\"false\"></xref> library to calculate the position and phase of the moon.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.CosineKittyPlanetaryCalculator",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.yml\" sourcestartlinenumber=\"1\">Uses the <xref href=\"CosineKitty.Astronomy\" data-throw-if-not-resolved=\"false\"></xref> library to calculate the position and magnitude of the planets.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -404,6 +460,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IMoonCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IMoonCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IMoonCalculator",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IMoonCalculator.yml\" sourcestartlinenumber=\"1\">Calculates the position of the moon in horizontal form and phase as a <xref href=\"System.Double\" data-throw-if-not-resolved=\"false\"></xref> between 0° and 360°</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IPlanetaryCalculator-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IPlanetaryCalculator-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IPlanetaryCalculator<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.Interfaces.IStarRepository.yml",
       "output": {
         ".html": {
@@ -488,72 +572,982 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.CodeAnalysis.EmbeddedAttribute.yml",
+      "source_relative_path": "api/Stargazer.ASTRALPLANEAlbedo.MethodName.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.CodeAnalysis.EmbeddedAttribute.html"
+          "relative_path": "api/Stargazer.ASTRALPLANEAlbedo.MethodName.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Microsoft.CodeAnalysis.EmbeddedAttribute",
+      "Title": "Stargazer.ASTRALPLANEAlbedo.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ASTRALPLANEAlbedo.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ASTRALPLANEAlbedo.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ASTRALPLANEAlbedo.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ASTRALPLANEAlbedo.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ASTRALPLANEAlbedo.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ASTRALPLANEAlbedo.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ASTRALPLANEAlbedo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ASTRALPLANEAlbedo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ASTRALPLANEAlbedo",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.CodeAnalysis.yml",
+      "source_relative_path": "api/Stargazer.AzimuthButton.MethodName.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.CodeAnalysis.html"
+          "relative_path": "api/Stargazer.AzimuthButton.MethodName.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Microsoft.CodeAnalysis",
+      "Title": "Stargazer.AzimuthButton.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthButton.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthButton.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthButton.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthButton.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthButton.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthButton.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthButton.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthButton.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthButton.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthButton",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthButton.yml\" sourcestartlinenumber=\"1\">Contains the button used to toggle the azimuth lines</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthGridlines.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthGridlines.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthGridlines.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthGridlines.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthGridlines.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthGridlines.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthGridlines.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthGridlines.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthGridlines.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.AzimuthGridlines.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.AzimuthGridlines.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.AzimuthGridlines",
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.yml\" sourcestartlinenumber=\"1\">The graphic object used to draw the lines.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.CompassNeedle.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.CompassNeedle.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.CompassNeedle.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.CompassNeedle.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.CompassNeedle.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.CompassNeedle.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.CompassNeedle.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.CompassNeedle.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.CompassNeedle.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.CompassNeedle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.CompassNeedle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.CompassNeedle",
+      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.yml\" sourcestartlinenumber=\"1\">Displays a compass needle to orient the user relative to North.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationButton.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationButton.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationButton.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationButton.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationButton.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationButton.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationButton.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationButton.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationButton.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationButton.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationButton.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationButton.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationButton",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationButton.yml\" sourcestartlinenumber=\"1\">Contains the button used to toggle the constellations in the viewport.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationLabel.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationLabel.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationLabel.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationLabel.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationLabel.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationLabel.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationLabel.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationLabel.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationLabel.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationLabel.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationLabel.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationLabel.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ConstellationLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ConstellationLabel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ConstellationLabel",
+      "Summary": "<p sourcefile=\"api/Stargazer.ConstellationLabel.yml\" sourcestartlinenumber=\"1\">Displays the constellation name.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Constellations.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Constellations.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Constellations.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Constellations.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Constellations.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Constellations.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Constellations.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Constellations.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Constellations.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Constellations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Constellations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Constellations",
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Globals.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Globals.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Globals.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Globals.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Globals.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Globals.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Globals.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Globals.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Globals.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Globals.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Globals.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Globals.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Globals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Globals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Globals",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/System.Runtime.CompilerServices.NullableAttribute.yml",
+      "source_relative_path": "api/Stargazer.LabelButton.MethodName.yml",
       "output": {
         ".html": {
-          "relative_path": "api/System.Runtime.CompilerServices.NullableAttribute.html"
+          "relative_path": "api/Stargazer.LabelButton.MethodName.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "System.Runtime.CompilerServices.NullableAttribute",
+      "Title": "Stargazer.LabelButton.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelButton.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelButton.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelButton.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelButton.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelButton.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelButton.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelButton.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelButton.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelButton.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelButton",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelButton.yml\" sourcestartlinenumber=\"1\">Contains the button used to toggle the constellation labels.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelNode.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelNode.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelNode.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelNode.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelNode.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelNode.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelNode.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelNode.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelNode.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.LabelNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.LabelNode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.LabelNode",
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.yml\" sourcestartlinenumber=\"1\">Contains the constellation label.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Main.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Main.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Main.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Main.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Main.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Main.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Main.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Main.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Main.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Main.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Main.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Main.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Main.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Main.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Main",
+      "Summary": "<p sourcefile=\"api/Stargazer.Main.yml\" sourcestartlinenumber=\"1\">Contains the main camera used to create the user view.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MessierButton.HuntsvilleCoordinates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MessierButton.HuntsvilleCoordinates.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MessierButton.HuntsvilleCoordinates",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/System.Runtime.CompilerServices.NullableContextAttribute.yml",
+      "source_relative_path": "api/Stargazer.MessierButton.MethodName.yml",
       "output": {
         ".html": {
-          "relative_path": "api/System.Runtime.CompilerServices.NullableContextAttribute.html"
+          "relative_path": "api/Stargazer.MessierButton.MethodName.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "System.Runtime.CompilerServices.NullableContextAttribute",
-      "Summary": null
+      "Title": "Stargazer.MessierButton.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierButton.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/System.Runtime.CompilerServices.yml",
+      "source_relative_path": "api/Stargazer.MessierButton.PropertyName.yml",
       "output": {
         ".html": {
-          "relative_path": "api/System.Runtime.CompilerServices.html"
+          "relative_path": "api/Stargazer.MessierButton.PropertyName.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "System.Runtime.CompilerServices",
+      "Title": "Stargazer.MessierButton.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierButton.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MessierButton.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MessierButton.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MessierButton.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierButton.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MessierButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MessierButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MessierButton",
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierButton.yml\" sourcestartlinenumber=\"1\">Contains the button used to toggle the visibility of the Messier Deep Space Objects</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyView.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyView.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyView.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyView.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyView.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyView.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyView.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyView.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyView.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyView",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.yml\" sourcestartlinenumber=\"1\">The parent object for all items in the viewport.\nResponsible for relaying notifications from senders throughout the program into the view port.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Spawner.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Spawner.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Spawner.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Spawner.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Spawner.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Spawner.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Spawner.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Spawner.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Spawner.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Spawner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Spawner.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Spawner",
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Star.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Star.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Star.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Star.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Star.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Star.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Star.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Star.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Star.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Star.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Star.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Star.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Star.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Star.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Star",
+      "Summary": "<p sourcefile=\"api/Stargazer.Star.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.StarMesh.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.StarMesh.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.StarMesh.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.StarMesh.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.StarMesh.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.StarMesh.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.StarMesh.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.StarMesh.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.StarMesh.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.StarMesh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.StarMesh.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.StarMesh",
+      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.yml\" sourcestartlinenumber=\"1\">This was originally created to explore adding color to the stars.\nThe current implementation is way too aggressive. We might be able to make this work by tweaking the numbers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Startup.MethodName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Startup.MethodName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Startup.MethodName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Startup.MethodName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the methods contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Startup.PropertyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Startup.PropertyName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Startup.PropertyName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Startup.PropertyName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the properties and fields contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Startup.SignalName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Startup.SignalName.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Startup.SignalName",
+      "Summary": "<p sourcefile=\"api/Stargazer.Startup.SignalName.yml\" sourcestartlinenumber=\"1\">Cached StringNames for the signals contained in this class, for fast lookup.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Startup.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Startup",
+      "Summary": "<p sourcefile=\"api/Stargazer.Startup.yml\" sourcestartlinenumber=\"1\">The top level controller for the program.\nHandles all communication between the GUI and the viewport.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer",
       "Summary": null
     },
     {

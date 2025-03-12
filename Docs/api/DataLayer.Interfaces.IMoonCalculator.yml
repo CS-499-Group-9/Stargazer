@@ -1,0 +1,138 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IMoonCalculator
+  commentId: T:DataLayer.Interfaces.IMoonCalculator
+  id: IMoonCalculator
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  langs:
+  - csharp
+  - vb
+  name: IMoonCalculator
+  nameWithType: IMoonCalculator
+  fullName: DataLayer.Interfaces.IMoonCalculator
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IMoonCalculator.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: IMoonCalculator
+    path: ../DataLayer/Interfaces/IMoonCalculator.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Calculates the position of the moon in horizontal form and phase as a <xref href="System.Double" data-throw-if-not-resolved="false"></xref> between 0° and 360°
+  example: []
+  syntax:
+    content: internal interface IMoonCalculator
+    content.vb: Friend Interface IMoonCalculator
+- uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  id: CalculateMoon
+  parent: DataLayer.Interfaces.IMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: CalculateMoon()
+  nameWithType: IMoonCalculator.CalculateMoon()
+  fullName: DataLayer.Interfaces.IMoonCalculator.CalculateMoon()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IMoonCalculator.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CalculateMoon
+    path: ../DataLayer/Interfaces/IMoonCalculator.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Performs the moon calculation
+  example: []
+  syntax:
+    content: HorizontalMoon CalculateMoon()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: A <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref> object.
+    content.vb: Function CalculateMoon() As HorizontalMoon
+  overload: DataLayer.Interfaces.IMoonCalculator.CalculateMoon*
+references:
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.HorizontalObjects.HorizontalMoon
+  commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  name: HorizontalMoon
+  nameWithType: HorizontalMoon
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon
+- uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon*
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon
+  name: CalculateMoon
+  nameWithType: IMoonCalculator.CalculateMoon
+  fullName: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
