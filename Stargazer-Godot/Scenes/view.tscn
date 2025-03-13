@@ -23,6 +23,7 @@ fill_to = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku0cl"]
 albedo_texture = SubResource("GradientTexture2D_16tw0")
+uv1_scale = Vector3(1, 0.97, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_kgvtr"]
 material = SubResource("StandardMaterial3D_ku0cl")
