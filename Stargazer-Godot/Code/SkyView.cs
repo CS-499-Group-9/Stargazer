@@ -5,24 +5,52 @@ using Godot;
 using System;
 using System.Collections.Concurrent;
 
-public partial class SkyView : Node3D
+namespace Stargazer
 {
-    public Action<CelestialDataPackage<Star>> UpdateUserPosition;
-    public Action<bool> ToggleConstellationLines;
-    public Action<bool> ToggleConstellationLabels;
-    public Action<bool> ToggleGridlines;
-   
-    public override void _Ready()
+
+    /// <summary>
+    /// The parent object for all items in the viewport.
+    /// Responsible for relaying notifications from senders throughout the program into the view port.
+    /// </summary>
+    public partial class SkyView : Node3D
     {
-        base._Ready();
-        var startup = GetParent()?.GetParent().GetParent<Startup>();
-        var spawner = GetNode<Spawner>("Stars");
-        UpdateUserPosition += spawner.DrawStars;
-        var constellationNode = GetNode<Constellations>("Constellations");
-        UpdateUserPosition += constellationNode.DrawConstellations;
-        ToggleConstellationLines = constellationNode.ToggleConstellationLines;
-        ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
-        var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
-        ToggleGridlines = azimuthGridlines.ToggleGridlines;
+        /// <summary>
+        /// Relays the updated user request from <see cref="Startup.UserPositionUpdated"/> to children which will handle drawing the objects.
+        /// </summary>
+        public Action<CelestialDataPackage<Star>> UpdateUserPosition;
+        /// <summary>
+        /// Relays the user request to toggle the constellations lines down to the child node that makes the change
+        /// </summary>
+        public Action<bool> ToggleConstellationLines;
+        /// <summary>
+        /// Relays the user request to toggle the constellation lables to the child node that makes the change
+        /// </summary>
+        public Action<bool> ToggleConstellationLabels;
+        /// <summary>
+        /// Relays the user request to toggle the gridlines to the child node that makes the change.
+        /// </summary>
+        public Action<bool> ToggleGridlines;
+        /// <summary>
+        /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
+        /// </summary>
+        public Action<bool> ToggleMessierObjects;
+
+        /// <summary>
+        /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
+        /// </summary>
+        public override void _Ready()
+        {
+            base._Ready();
+            var spawner = GetNode<Spawner>("Stars");
+            UpdateUserPosition += spawner.DrawStars;
+            var constellationNode = GetNode<Constellations>("Constellations");
+            UpdateUserPosition += constellationNode.DrawConstellations;
+            ToggleConstellationLines = constellationNode.ToggleConstellationLines;
+            ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
+            var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
+            ToggleGridlines = azimuthGridlines.ToggleGridlines;
+            // TODO: Get a reference to the Messier Objects parent node (should be a child of this node) and wire up the delegate.
+
+        }
     }
 }

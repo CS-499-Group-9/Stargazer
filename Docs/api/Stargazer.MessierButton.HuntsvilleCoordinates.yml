@@ -1,0 +1,365 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates
+  commentId: T:Stargazer.MessierButton.HuntsvilleCoordinates
+  id: MessierButton.HuntsvilleCoordinates
+  parent: Stargazer
+  children:
+  - Stargazer.MessierButton.HuntsvilleCoordinates.#ctor
+  - Stargazer.MessierButton.HuntsvilleCoordinates.latitude
+  - Stargazer.MessierButton.HuntsvilleCoordinates.longitude
+  langs:
+  - csharp
+  - vb
+  name: MessierButton.HuntsvilleCoordinates
+  nameWithType: MessierButton.HuntsvilleCoordinates
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates
+  type: Struct
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MessierButton.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: HuntsvilleCoordinates
+    path: ../Stargazer-Godot/Code/MessierButton.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private struct MessierButton.HuntsvilleCoordinates
+    content.vb: Private Structure MessierButton.HuntsvilleCoordinates
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates.latitude
+  commentId: F:Stargazer.MessierButton.HuntsvilleCoordinates.latitude
+  id: latitude
+  parent: Stargazer.MessierButton.HuntsvilleCoordinates
+  langs:
+  - csharp
+  - vb
+  name: latitude
+  nameWithType: MessierButton.HuntsvilleCoordinates.latitude
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates.latitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MessierButton.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: latitude
+    path: ../Stargazer-Godot/Code/MessierButton.cs
+    startLine: 38
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public double latitude
+    return:
+      type: System.Double
+    content.vb: Public latitude As Double
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates.longitude
+  commentId: F:Stargazer.MessierButton.HuntsvilleCoordinates.longitude
+  id: longitude
+  parent: Stargazer.MessierButton.HuntsvilleCoordinates
+  langs:
+  - csharp
+  - vb
+  name: longitude
+  nameWithType: MessierButton.HuntsvilleCoordinates.longitude
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates.longitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MessierButton.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: longitude
+    path: ../Stargazer-Godot/Code/MessierButton.cs
+    startLine: 39
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public double longitude
+    return:
+      type: System.Double
+    content.vb: Public longitude As Double
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates.#ctor
+  commentId: M:Stargazer.MessierButton.HuntsvilleCoordinates.#ctor
+  id: '#ctor'
+  parent: Stargazer.MessierButton.HuntsvilleCoordinates
+  langs:
+  - csharp
+  - vb
+  name: HuntsvilleCoordinates()
+  nameWithType: MessierButton.HuntsvilleCoordinates.HuntsvilleCoordinates()
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates.HuntsvilleCoordinates()
+  type: Constructor
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MessierButton.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: .ctor
+    path: ../Stargazer-Godot/Code/MessierButton.cs
+    startLine: 40
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public HuntsvilleCoordinates()
+    content.vb: Public Sub New()
+  overload: Stargazer.MessierButton.HuntsvilleCoordinates.#ctor*
+  nameWithType.vb: MessierButton.HuntsvilleCoordinates.New()
+  fullName.vb: Stargazer.MessierButton.HuntsvilleCoordinates.New()
+  name.vb: New()
+references:
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Stargazer.MessierButton.HuntsvilleCoordinates.#ctor*
+  commentId: Overload:Stargazer.MessierButton.HuntsvilleCoordinates.#ctor
+  href: Stargazer.MessierButton.HuntsvilleCoordinates.html#Stargazer_MessierButton_HuntsvilleCoordinates__ctor
+  name: HuntsvilleCoordinates
+  nameWithType: MessierButton.HuntsvilleCoordinates.HuntsvilleCoordinates
+  fullName: Stargazer.MessierButton.HuntsvilleCoordinates.HuntsvilleCoordinates
+  nameWithType.vb: MessierButton.HuntsvilleCoordinates.New
+  fullName.vb: Stargazer.MessierButton.HuntsvilleCoordinates.New
+  name.vb: New

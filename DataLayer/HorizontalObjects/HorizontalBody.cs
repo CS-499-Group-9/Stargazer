@@ -21,9 +21,6 @@ namespace DataLayer.HorizontalObjects
         /// <summary>
         /// The distance (in lightyears) from the star to earth
         /// </summary>
-        public double Distance { get; internal set; } 
-
-       
-
+        public double Distance { get; internal set; }
     }
 }

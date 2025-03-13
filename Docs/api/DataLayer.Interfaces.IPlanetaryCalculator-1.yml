@@ -1,0 +1,189 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
+  id: IPlanetaryCalculator`1
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  langs:
+  - csharp
+  - vb
+  name: IPlanetaryCalculator<T>
+  nameWithType: IPlanetaryCalculator<T>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPlanetaryCalculator.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: IPlanetaryCalculator
+    path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
+    startLine: 9
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: 'public interface IPlanetaryCalculator<T> where T : HorizontalBody'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IPlanetaryCalculator(Of T As HorizontalBody)
+  nameWithType.vb: IPlanetaryCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
+  name.vb: IPlanetaryCalculator(Of T)
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  id: CalculatePlanets
+  parent: DataLayer.Interfaces.IPlanetaryCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: CalculatePlanets()
+  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPlanetaryCalculator.cs
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CalculatePlanets
+    path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
+    startLine: 11
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: IEnumerable<T> CalculatePlanets()
+    return:
+      type: System.Collections.Generic.IEnumerable{{T}}
+    content.vb: Function CalculatePlanets() As IEnumerable(Of T)
+  overload: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets*
+  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets()
+references:
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets*
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  name: CalculatePlanets
+  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets
+  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/comment-back-end/apiSpec/new?filename=DataLayer_CelestialDataPackage_1.md&amp;value=---%0Auid%3A%20DataLayer.CelestialDataPackage%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/moon-and-planets/apiSpec/new?filename=DataLayer_CelestialDataPackage_1.md&amp;value=---%0Auid%3A%20DataLayer.CelestialDataPackage%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_CelestialDataPackage_1" data-uid="DataLayer.CelestialDataPackage`1" class="text-break">
-Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -161,31 +161,43 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <a id="DataLayer_CelestialDataPackage_1__ctor_" data-uid="DataLayer.CelestialDataPackage`1.#ctor*"></a>
 
-  <h3 id="DataLayer_CelestialDataPackage_1__ctor_System_Collections_Concurrent_BlockingCollection_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_BlockingCollection_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__" data-uid="DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.BlockingCollection{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0})">
-  CelestialDataPackage(BlockingCollection&lt;HorizontalStar&gt;, BlockingCollection&lt;HorizontalMessierObject&gt;, IEnumerable&lt;Constellation&gt;, ConcurrentDictionary&lt;int, HorizontalStar&gt;, ConcurrentDictionary&lt;int, T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_CelestialDataPackage_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizonalPlanet__DataLayer_HorizontalObjects_HorizontalMoon_" data-uid="DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet},DataLayer.HorizontalObjects.HorizontalMoon)">
+  CelestialDataPackage(IEnumerable&lt;HorizontalStar&gt;, IEnumerable&lt;HorizontalMessierObject&gt;, IEnumerable&lt;Constellation&gt;, ConcurrentDictionary&lt;int, HorizontalStar&gt;, ConcurrentDictionary&lt;int, T&gt;, IEnumerable&lt;HorizonalPlanet&gt;?, HorizontalMoon)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Used by the <a class="xref" href="DataLayer.StargazerRepositoryService-1.html">StargazerRepositoryService&lt;T&gt;</a> to pack up the data and return it</p>
+  <div class="markdown level1 summary"><p>Used by the <a class="xref" href="DataLayer.StargazerRepositoryService-1.html">StargazerRepositoryService&lt;T&gt;</a> to pack up the data and return it.
+All values are from the user's perspective.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal CelestialDataPackage(BlockingCollection&lt;HorizontalStar&gt; stars, BlockingCollection&lt;HorizontalMessierObject&gt; messierObjects, IEnumerable&lt;Constellation&gt; constellations, ConcurrentDictionary&lt;int, HorizontalStar&gt; constellationStars, ConcurrentDictionary&lt;int, T&gt; drawnStars)</code></pre>
+    <pre><code class="lang-csharp hljs">internal CelestialDataPackage(IEnumerable&lt;HorizontalStar&gt; stars, IEnumerable&lt;HorizontalMessierObject&gt; messierObjects, IEnumerable&lt;Constellation&gt; constellations, ConcurrentDictionary&lt;int, HorizontalStar&gt; constellationStars, ConcurrentDictionary&lt;int, T&gt; drawnStars, IEnumerable&lt;HorizonalPlanet&gt;? planets, HorizontalMoon moon)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stars</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.blockingcollection-1">BlockingCollection</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>messierObjects</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.blockingcollection-1">BlockingCollection</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalMessierObject.html">HorizontalMessierObject</a>&gt;</dt>
-    <dd></dd>
+    <dt><code>stars</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> to be drawn.</p>
+</dd>
+    <dt><code>messierObjects</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalMessierObject.html">HorizontalMessierObject</a>&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> to be drawn.</p>
+</dd>
     <dt><code>constellations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.Constellation.html">Constellation</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a>s in Horizontal Coordinate form.</p>
+</dd>
     <dt><code>constellationStars</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey, TValue&gt;</a> that have not yet been drawn in the GUI.</p>
+</dd>
     <dt><code>drawnStars</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, T&gt;</dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary&lt;TKey, TValue&gt;</a> that have already been drawn in the GUI.</p>
+</dd>
+    <dt><code>planets</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizonalPlanet.html">HorizonalPlanet</a>&gt;</dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> in the solar system from the users perspective.</p>
+</dd>
+    <dt><code>moon</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></dt>
+    <dd><p>A <a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a>.</p>
+</dd>
   </dl>
 
 
@@ -207,14 +219,14 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h3 id="DataLayer_CelestialDataPackage_1_ConstellationStars" data-uid="DataLayer.CelestialDataPackage`1.ConstellationStars">
   ConstellationStars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private ConcurrentDictionary&lt;int, HorizontalStar&gt; ConstellationStars { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">private IDictionary&lt;int, HorizontalStar&gt; ConstellationStars { get; }</code></pre>
   </div>
 
 
@@ -223,7 +235,7 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -238,7 +250,7 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h3 id="DataLayer_CelestialDataPackage_1_Constellations" data-uid="DataLayer.CelestialDataPackage`1.Constellations">
   Constellations
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A collection of Constellations to be displayed.</p>
@@ -266,18 +278,18 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
 
 
-  <a id="DataLayer_CelestialDataPackage_1_DrawnStars_" data-uid="DataLayer.CelestialDataPackage`1.DrawnStars*"></a>
+  <a id="DataLayer_CelestialDataPackage_1_DrawnConstellationStars_" data-uid="DataLayer.CelestialDataPackage`1.DrawnConstellationStars*"></a>
 
-  <h3 id="DataLayer_CelestialDataPackage_1_DrawnStars" data-uid="DataLayer.CelestialDataPackage`1.DrawnStars">
-  DrawnStars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_CelestialDataPackage_1_DrawnConstellationStars" data-uid="DataLayer.CelestialDataPackage`1.DrawnConstellationStars">
+  DrawnConstellationStars
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private ConcurrentDictionary&lt;int, T&gt; DrawnStars { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">private IDictionary&lt;int, T&gt; DrawnConstellationStars { get; }</code></pre>
   </div>
 
 
@@ -286,7 +298,7 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, T&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -301,22 +313,15 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h3 id="DataLayer_CelestialDataPackage_1_MessierObjects" data-uid="DataLayer.CelestialDataPackage`1.MessierObjects">
   MessierObjects
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A collection of Messier Deep Space Objects in the Horizontal Coordinate form to be displayed.</p>
-<pre><code class="lang-csharp">while(!MessierObjects.IsCompleted)
-    {
-        foreach(var star in MessierObjects.GetConsumingEnumerable()
-        {
-            //Convert and display
-        }
-    }</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BlockingCollection&lt;HorizontalMessierObject&gt; MessierObjects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;HorizontalMessierObject&gt; MessierObjects { get; }</code></pre>
   </div>
 
 
@@ -325,7 +330,71 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.blockingcollection-1">BlockingCollection</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalMessierObject.html">HorizontalMessierObject</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalMessierObject.html">HorizontalMessierObject</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DataLayer_CelestialDataPackage_1_Moon_" data-uid="DataLayer.CelestialDataPackage`1.Moon*"></a>
+
+  <h3 id="DataLayer_CelestialDataPackage_1_Moon" data-uid="DataLayer.CelestialDataPackage`1.Moon">
+  Moon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The moon in horizontal coordinate form</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HorizontalMoon Moon { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DataLayer_CelestialDataPackage_1_Planets_" data-uid="DataLayer.CelestialDataPackage`1.Planets*"></a>
+
+  <h3 id="DataLayer_CelestialDataPackage_1_Planets" data-uid="DataLayer.CelestialDataPackage`1.Planets">
+  Planets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A collection of solar planets in horizontal coordinate form.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;HorizonalPlanet&gt;? Planets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizonalPlanet.html">HorizonalPlanet</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -340,22 +409,15 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h3 id="DataLayer_CelestialDataPackage_1_Stars" data-uid="DataLayer.CelestialDataPackage`1.Stars">
   Stars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A collection of stars in the Horizontal Coordinate form to be displayed.</p>
-<pre><code class="lang-csharp">while(!Stars.IsCompleted)
-    {
-        foreach(var star in Stars.GetConsumingEnumerable()
-        {
-            //Convert and display
-        }
-    }</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BlockingCollection&lt;HorizontalStar&gt; Stars { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;HorizontalStar&gt; Stars { get; }</code></pre>
   </div>
 
 
@@ -364,7 +426,7 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.blockingcollection-1">BlockingCollection</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -383,7 +445,7 @@ Class CelestialDataPackage&lt;T&gt;  <a class="header-action link-secondary" tit
 
   <h3 id="DataLayer_CelestialDataPackage_1_GetConstellationStar_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar__0__" data-uid="DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})">
   GetConstellationStar(int, Func&lt;HorizontalStar, T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Searches the dictionary for a <code>HorizontalStar</code> using the Hip ID provided. If found, converts it to a T star, stores it and returns it.
@@ -430,7 +492,7 @@ If not found, retrieves it from the dictionary of stars already converted and re
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/comment-back-end/DataLayer/CelestialDataPackage.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/moon-and-planets/DataLayer/CelestialDataPackage.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -1,12 +1,21 @@
 using Godot;
 using System;
 
-public partial class AzimuthButton : Control
+namespace Stargazer
 {
-    public Action<bool> GridlinesToggled;
-
-    private void ToggleAzimuth(bool state)
+    /// <summary>
+    /// Contains the button used to toggle the azimuth lines
+    /// </summary>
+    public partial class AzimuthButton : Control
     {
-        GridlinesToggled(state);
+        /// <summary>
+        /// The <see cref="Delegate"/> used to notify the viewport to toggle the lines.
+        /// </summary>
+        public Action<bool> GridlinesToggled;
+
+        private void ToggleAzimuth(bool state)
+        {
+            GridlinesToggled(state);
+        }
     }
 }

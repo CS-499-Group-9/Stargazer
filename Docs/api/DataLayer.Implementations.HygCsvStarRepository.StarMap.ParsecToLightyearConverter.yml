@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ParsecToLightyearConverter
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 112
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: conversionFactor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 114
@@ -85,8 +85,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: moon-and-planets
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConvertFromString
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 115

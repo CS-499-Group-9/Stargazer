@@ -7,12 +7,14 @@
         {
           "src": "../",
           "files": [
-            "DataLayer/*.csproj"
+            "DataLayer/*.csproj",
+            "Stargazer-Godot/*.csproj"
           ]
         }
       ],
       "includePrivateMembers":true,
       "output": "api",
+      "filter":"filterconfig.yml",
       "properties": 
       {
         "TargetFramework":"net6.0"
