@@ -14,6 +14,8 @@ public partial class Globals : Node
     public bool isAzimuth { get; set; }
     public bool isConstellation { get; set; }
     public bool isLabel { get; set; }
+    public bool isHover { get; set; }
+    public string hoverLabel { get; set; }
 
     public coordData data = new coordData(); // Create a global instance
 
@@ -23,6 +25,8 @@ public partial class Globals : Node
         isAzimuth = false;
         isConstellation = true;
         isLabel = true;
+        isHover = false;
+        hoverLabel = "";
         
         // Huntsville by default
         data.timestamp = DateTime.Now.ToUniversalTime();

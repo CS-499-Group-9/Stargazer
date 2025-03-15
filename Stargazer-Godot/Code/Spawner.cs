@@ -17,7 +17,7 @@ public partial class Spawner : Node3D
 	private readonly float[,] starPos = {{0, 45, 1}, {10, 45, 2}, {20, 45, 3}, {30, 45, 4}, {40, 45, 5}, {50, 45, 6}};
 	private readonly string[,] constLines = { { "s1", "s2" }, { "s2", "s3" }, { "s3", "s4" }, { "s4", "s5" } };
 	
-	private Globals globalVars ;
+	private Globals globalVars;
 	private List<LabelNode> labels;
 	private Boolean constDrawn = true;
 	private Boolean labelDrawn = true;
@@ -163,7 +163,14 @@ public partial class Spawner : Node3D
 		star.azimuth = (float)horizontalStar.Azimuth;
 		star.altitude = (float)horizontalStar.Altitude;
 		star.mag = (float)horizontalStar.Magnitude;
-		star.starName = horizontalStar.StarName;
+		if (horizontalStar.StarName != " ")
+		{
+			star.starName = horizontalStar.StarName;
+		}
+		else
+		{
+			star.starName = $"ID: {horizontalStar.StarId}";
+		}
 		AddChild(star);
 		return star;
 	}

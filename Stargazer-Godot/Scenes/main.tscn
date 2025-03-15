@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=21 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="9_rl8tn"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="10_6a71k"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="11_imatn"]
+[ext_resource type="Script" path="res://Code/Label.cs" id="12_u6bob"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -40,6 +41,10 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
 bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdlkl"]
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -382,6 +387,14 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Enter Data"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "star"
+label_settings = SubResource("LabelSettings_gdlkl")
+script = ExtResource("12_u6bob")
 
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]

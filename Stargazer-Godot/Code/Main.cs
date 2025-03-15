@@ -7,6 +7,12 @@ public partial class Main : Camera3D
     private float pitch = 0f; // Up/Down Rotation
     private bool rightClickHeld = false;
     private string screenshotPath = "user://screenshot.jpeg";
+    private Globals globalVars;
+
+    public override void _Ready()
+    {
+        globalVars = GetNode<Globals>("/root/Globals"); // Import globals
+    }
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventMouseButton mouseButton)
@@ -41,6 +47,26 @@ public partial class Main : Camera3D
             // Apply rotation
             Rotation = new Vector3(pitch, yaw, 0);
         }
+
+        if (!rightClickHeld && @event is InputEventMouseMotion mouseMotion2)
+        {
+            var worldspace = GetWorld3D().DirectSpaceState;
+            var start = ProjectRayOrigin(mouseMotion2.Position);
+            var end = ProjectPosition(mouseMotion2.Position, 1000);
+            var result = worldspace.IntersectRay(PhysicsRayQueryParameters3D.Create(start, end));
+            if (result.Count > 0)
+            {
+                globalVars.isHover = true;
+                Node3D collider = result["collider"].As<Node3D>();
+                Star star = (Star)collider.GetParentNode3D();
+                globalVars.hoverLabel = star.starName;
+            }
+            else
+            {
+                globalVars.isHover = false;
+            }
+        }
+        
     }
     
 private void ZoomIn()
