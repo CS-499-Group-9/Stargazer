@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: LabelButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.LabelButton_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.LabelButton_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -534,7 +534,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationLabelsToggled
     path: ../Stargazer-Godot/Code/LabelButton.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleLabel
     path: ../Stargazer-Godot/Code/LabelButton.cs

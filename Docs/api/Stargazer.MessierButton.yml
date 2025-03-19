@@ -17,7 +17,7 @@ items:
   type: Class
   source:
     id: MessierButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.MessierButton_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.MessierButton_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -535,7 +535,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MessierButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: NotifyControllerOfUserUpdate
     path: ../Stargazer-Godot/Code/MessierButton.cs
@@ -562,7 +562,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MessierButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: RunTheThing
     path: ../Stargazer-Godot/Code/MessierButton.cs
@@ -588,7 +588,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MessierButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleMessierObjects
     path: ../Stargazer-Godot/Code/MessierButton.cs

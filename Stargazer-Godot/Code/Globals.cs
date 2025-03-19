@@ -8,8 +8,12 @@ namespace Stargazer
     /// </summary>
     public partial class Globals : Node
     {
+        /// <summary>
+        /// The singleton instance
+        /// </summary>
         public static Globals Instance { get; private set; }
 
+        /// <inheritdoc/>
         public override void _Ready()
         {
             Instance = this;

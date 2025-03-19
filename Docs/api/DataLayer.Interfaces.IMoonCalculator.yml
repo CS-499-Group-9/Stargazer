@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IMoonCalculator
     path: ../DataLayer/Interfaces/IMoonCalculator.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CalculateMoon
     path: ../DataLayer/Interfaces/IMoonCalculator.cs

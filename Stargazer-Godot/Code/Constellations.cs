@@ -1,7 +1,11 @@
 using DataLayer;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Stargazer
 {
@@ -22,81 +26,92 @@ namespace Stargazer
 
         private Node3D StarContainer;
         private MeshInstance3D constMesh;
-        private ImmediateMesh mesh;
         private Node3D ConstellationLabels;
 
-        /// <summary>
-        /// Gathers references to child nodes and initializes properties of the view.
-        /// </summary>
-        public override void _Ready()
-        {
-            // Get references to child objects
-            StarContainer = GetNode<Node3D>("StarContainer");
-            constMesh = GetNode<MeshInstance3D>("LineMesh");
-            mesh = (ImmediateMesh)constMesh.Mesh;
-
-            StandardMaterial3D whiteMaterial = new StandardMaterial3D();
-            // Create a white material
-            whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
-            whiteMaterial.ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded;
-            // Assign the material to the mesh
-            constMesh.MaterialOverride = whiteMaterial;
-            ConstellationLabels = GetNode<Node3D>("LineMesh/ConstellationLabels");
-
-            base._Ready();
-
-        }
 
         /// <summary>
-        /// Passed as a <see cref="Delegate"/> to <see cref="Startup.UserPositionUpdated"/> to be notified when a new star scene is ready to be drawn.
-        /// This should be done using the += operator to be notified in addition to other components in the viewport.
+        /// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
         /// </summary>
-        /// <param name="dataPackage"></param>
-        public void DrawConstellations(CelestialDataPackage<Star> dataPackage)
+        /// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
+        /// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
+        public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
         {
-            var constellations = dataPackage.Constellations;
-            mesh.ClearSurfaces();
-            foreach (var star in StarContainer.GetChildren()) { star.Free(); }
-            foreach (var line in ConstellationLabels.GetChildren()) { line.Free(); }
-            mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
-            Vector3 labelPos = new Vector3();
+            // Get references to the current containers of constellation objects
+            var oldMesh = constMesh;
+            var oldStars = StarContainer;
 
-            foreach (var constellation in constellations)
+            // Create the material used to draw the lines
+            StandardMaterial3D whiteMaterial = new()
             {
-                Vector3 totalPos = new Vector3(0, 0, 0);
-                int c = 0;
-                GD.Print($"Drawing constellation {constellation.ConstellationName}");
+                AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f), // White color
+                ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded
+            };
 
-                foreach (var lines in constellation.ConstellationLines)
+            // Create new containers for stars, labels and constellation lines
+            StarContainer = new();
+            ConstellationLabels = new();
+            constMesh = new()
+            {
+                MaterialOverride = whiteMaterial
+            };
+
+            // Create a new mesh for the constellation lines
+            var mesh = new ImmediateMesh();
+
+            // Create a new task to complete all the calculations and await that task to complete
+            await Task.Run(() =>
+            {
+
+                mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
+                
+                foreach (var constellation in constellations)
                 {
+                    // Used to aggregate the positions of the stars in the constellation
+                    Vector3 totalPos = new(0, 0, 0);
+                    // The number of stars in the constellation
+                    int c = 0;
 
-                    Star s1 = dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
-                    Star s2 = dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
-
-                    mesh.SurfaceAddVertex(s1.Position);
-                    mesh.SurfaceAddVertex(s2.Position);
-                    if (totalPos == Vector3.Zero) // solely checked for the first star
+                    foreach (var lines in constellation.ConstellationLines)
                     {
-                        totalPos += s1.Position;
+                        // Get the stars from the dictionary
+                        Star s1 = GetConstellationStar(lines.Item1, SpawnStar);
+                        Star s2 = GetConstellationStar(lines.Item2, SpawnStar);
+
+                        // Draw the line between the stars
+                        mesh.SurfaceAddVertex(s1.Position);
+                        mesh.SurfaceAddVertex(s2.Position);
+
+                        if (totalPos == Vector3.Zero) // solely checked for the first star
+                        {
+                            totalPos += s1.Position;
+                            c++;
+                        }
+
+                        totalPos += s2.Position;
                         c++;
                     }
-                    totalPos += s2.Position;
-                    c++;
+
+                    // Creating labels
+                    var labelPos = totalPos / c;
+
+                    LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
+                    labelNode.LabelText = constellation.ConstellationName;
+                    labelNode.Position = labelPos;
+                    labelNode.Visible = true;
+                    ConstellationLabels.AddChild(labelNode);
                 }
-
-                // Creating labels
-                labelPos = totalPos / c;
-
-                LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
-                labelNode.LabelText = constellation.ConstellationName;
-                labelNode.Position = labelPos;
-                labelNode.Visible = true;
-                ConstellationLabels.AddChild(labelNode);
-
-            }
+            });
             mesh.SurfaceEnd();
-            var count = constMesh.Mesh.GetSurfaceCount();
-            GD.Print(count);
+            constMesh.Mesh  = mesh;
+
+            // If the old containers exist, remove them from the tree
+            oldMesh?.Free();
+            oldStars?.Free();
+
+            // Add the new containers to the tree
+            AddChild(StarContainer);
+            constMesh.AddChild(ConstellationLabels);
+            AddChild(constMesh);
         }
 
         /// <summary>
@@ -118,11 +133,7 @@ namespace Stargazer
         private Star SpawnStar(HorizontalStar horizontalStar)
         {
             Star star = StarScene.Instantiate<Star>();
-            star.azimuth = (float)horizontalStar.Azimuth;
-            star.altitude = (float)horizontalStar.Altitude;
-            star.mag = (float)horizontalStar.Magnitude;
-            star.starName = horizontalStar.StarName;
-
+            star.FromHorizontal(horizontalStar);
             StarContainer.AddChild(star);
             return star;
         }

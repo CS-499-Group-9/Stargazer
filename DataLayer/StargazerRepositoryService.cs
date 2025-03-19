@@ -3,6 +3,7 @@ using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using DataLayer.EquatorialObjects;
 using DataLayer.Implementations;
+using System.Diagnostics;
 
 namespace DataLayer
 {
@@ -17,6 +18,7 @@ namespace DataLayer
         /// Used to filter the maximum magnitude of stars retrieved from the Yale Star repository
         /// </summary>
         const double maxStarMagnitude = 6;
+        private const string Value = "Messier Complete";
 
         /// <summary>
         /// Immutable in-memory collection of all stars that were retrieved during initialization (excluding stars in constellations)
@@ -198,6 +200,7 @@ namespace DataLayer
             // Create a Star converter (created outside of the task because it is used for the stars and constellations
             // I really wish all three of these could happen concurrently instead of waiting for one to complete before staring the other, but it causes MAJOR issues
             // Doesn't really make sense to me...
+
             CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);
             CosineKittyEquatorialConverter<HorizontalMessierObject> converter = new(latitude, longitude, localUserTime);
             // Calculate the stars
@@ -230,6 +233,7 @@ namespace DataLayer
 
         private void CalculateConstellationStars(IEquatorialConverter<HorizontalStar> starConverter)
         {
+            ConstellationStars.Clear();
             foreach (var item in equatorialConstellationStars)
             {
                 var star = starConverter.Convert(item.Value);
@@ -258,6 +262,7 @@ namespace DataLayer
                 newMessier.Add(messier);
             }
             horizontalMessierObjects = newMessier;
+            Debug.Print(Value);
         }
 
         private void CalculateStars(IEquatorialConverter<HorizontalStar> starConverter)

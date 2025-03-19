@@ -2,6 +2,9 @@ using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Stargazer
 {
@@ -20,27 +23,32 @@ namespace Stargazer
 		/// </summary>
 		[Export] public PackedScene LabelScene { get; set; }
 
+		private Node3D StarContainer;
+
 		/// <summary>
 		/// Receives the notification to update the stars drawn.
 		/// </summary>
-		/// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/> that contains the stars to draw.</param>
-		public void DrawStars(CelestialDataPackage<Star> dataPackage)
+		/// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
+		public async Task DrawStars(IEnumerable<HorizontalStar> stars)
 		{
-			foreach (var s in GetChildren()) { s.Free(); }
-			var starProducer = dataPackage.Stars;
-			foreach (var star in starProducer)
-			{
-				SpawnStar(star);
-			}
+			// Get a reference to the current star container
+			var oldContainer = StarContainer;
 
-			// TODO: Move this into a dedicated Node3D that will be a sibling to the Spawner to handle the Messier Objects (drawing, showing, hiding etc).
-			// This will have to have a public void DrawMessierObjects(CelestialDataPackage<Star> dataPackage) method that will be wired up to the SkyView.UpdateUserPosition delegate.
-			var messierProducer = dataPackage.MessierObjects;
-			foreach (var item in messierProducer)
+			// Create a new star container in memory
+			StarContainer = new();
+			
+			// Create a new task to calcualte the positions of the stars and add them to the container and await completion
+			await Task.Run(() =>
 			{
-				GD.Print($"Messier: {item.MessierId} {item.Type}");
-			}
+				foreach (var star in stars)
+				{
+					SpawnStar(star);
+				}
+			});
 
+			// If the previous container exists, remove it from the tree then add the new container.
+			oldContainer?.Free();
+			AddChild(StarContainer);
 		}
 
 		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
@@ -49,11 +57,8 @@ namespace Stargazer
 		private Star SpawnStar(HorizontalStar horizontalStar)
 		{
 			Star star = StarScene.Instantiate<Star>();
-			star.azimuth = (float)horizontalStar.Azimuth;
-			star.altitude = (float)horizontalStar.Altitude;
-			star.mag = (float)horizontalStar.Magnitude;
-			star.starName = horizontalStar.StarName;
-			AddChild(star);
+			star.FromHorizontal(horizontalStar);
+			StarContainer.AddChild(star);
 			return star;
 		}
 

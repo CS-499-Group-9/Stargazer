@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HygCsvStarRepository
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: filePath
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetStarByHipAsync
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs

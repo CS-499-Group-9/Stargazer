@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IConstellationRepository
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetAllConstellationsAsync
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
