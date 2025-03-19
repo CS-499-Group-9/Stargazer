@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarLustMessierCsvRepository
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: filePath
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetRawMessierObjectsAsync
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs

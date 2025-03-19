@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=17 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/Main.cs" id="1_t068r"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_axyyf"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
@@ -61,13 +59,6 @@ LabelScene = ExtResource("4_hboln")
 script = ExtResource("6_erqrm")
 StarScene = ExtResource("3_54qo3")
 LabelScene = ExtResource("4_hboln")
-
-[node name="LineMesh" type="MeshInstance3D" parent="Constellations"]
-mesh = SubResource("ImmediateMesh_axyyf")
-
-[node name="ConstellationLabels" type="Node3D" parent="Constellations/LineMesh"]
-
-[node name="StarContainer" type="Node3D" parent="Constellations"]
 
 [node name="Dome" type="Node3D" parent="."]
 

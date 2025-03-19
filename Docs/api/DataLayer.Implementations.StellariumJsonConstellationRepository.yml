@@ -6,7 +6,7 @@ items:
   parent: DataLayer.Implementations
   children:
   - DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
-  - DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+  - DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
   - DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
   langs:
   - csharp
@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StellariumJsonConstellationRepository
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: filePath
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -107,24 +107,23 @@ items:
   nameWithType.vb: StellariumJsonConstellationRepository.New(String)
   fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New(String)
   name.vb: New(String)
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  id: DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  isEii: true
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  id: GetAllConstellationsAsync
   parent: DataLayer.Implementations.StellariumJsonConstellationRepository
   langs:
   - csharp
   - vb
-  name: IConstellationRepository.GetAllConstellationsAsync()
-  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync()
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  name: GetAllConstellationsAsync()
+  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync()
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync()
   type: Method
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+    id: GetAllConstellationsAsync
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 31
   assemblies:
@@ -133,21 +132,18 @@ items:
   summary: Asynchronously retrieves a <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> from the Json file.
   example: []
   syntax:
-    content: Task<IList<Constellation>> IConstellationRepository.GetAllConstellationsAsync()
+    content: public Task<IList<Constellation>?> GetAllConstellationsAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
       description: An <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>
-    content.vb: ''
-  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
+    content.vb: Public Function GetAllConstellationsAsync() As Task(Of IList(Of Constellation))
+  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync*
   exceptions:
   - type: System.IO.FileNotFoundException
     commentId: T:System.IO.FileNotFoundException
     description: ''
   implements:
   - DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-  nameWithType.vb: ''
-  fullName.vb: ''
-  name.vb: ''
 references:
 - uid: DataLayer.Implementations
   commentId: N:DataLayer.Implementations
@@ -492,20 +488,12 @@ references:
   name: FileNotFoundException
   nameWithType: FileNotFoundException
   fullName: System.IO.FileNotFoundException
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  href: DataLayer.Interfaces.IConstellationRepository.html
-  name: IConstellationRepository.GetAllConstellationsAsync
-  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IConstellationRepository*
-    name: IConstellationRepository
-    href: DataLayer.Interfaces.IConstellationRepository.html
-  - name: .
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
-    name: GetAllConstellationsAsync
-    href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync*
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_GetAllConstellationsAsync
+  name: GetAllConstellationsAsync
+  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
 - uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
   commentId: M:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
   parent: DataLayer.Interfaces.IConstellationRepository

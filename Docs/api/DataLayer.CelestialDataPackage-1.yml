@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CelestialDataPackage
     path: ../DataLayer/CelestialDataPackage.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationStars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DrawnConstellationStars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Stars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: MessierObjects
     path: ../DataLayer/CelestialDataPackage.cs
@@ -195,7 +195,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Constellations
     path: ../DataLayer/CelestialDataPackage.cs
@@ -228,7 +228,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Planets
     path: ../DataLayer/CelestialDataPackage.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Moon
     path: ../DataLayer/CelestialDataPackage.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetConstellationStar
     path: ../DataLayer/CelestialDataPackage.cs
@@ -342,7 +342,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/CelestialDataPackage.cs

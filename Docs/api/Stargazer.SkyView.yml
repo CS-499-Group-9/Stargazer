@@ -9,8 +9,10 @@ items:
   - Stargazer.SkyView.ToggleConstellationLines
   - Stargazer.SkyView.ToggleGridlines
   - Stargazer.SkyView.ToggleMessierObjects
-  - Stargazer.SkyView.UpdateUserPosition
+  - Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   - Stargazer.SkyView._Ready
+  - Stargazer.SkyView.constellationNode
+  - Stargazer.SkyView.spawner
   langs:
   - csharp
   - vb
@@ -20,7 +22,7 @@ items:
   type: Class
   source:
     id: SkyView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.SkyView_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.SkyView_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -360,35 +362,6 @@ items:
     arguments:
     - type: System.String
       value: res://Code/SkyView.cs
-- uid: Stargazer.SkyView.UpdateUserPosition
-  commentId: F:Stargazer.SkyView.UpdateUserPosition
-  id: UpdateUserPosition
-  parent: Stargazer.SkyView
-  langs:
-  - csharp
-  - vb
-  name: UpdateUserPosition
-  nameWithType: SkyView.UpdateUserPosition
-  fullName: Stargazer.SkyView.UpdateUserPosition
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: UpdateUserPosition
-    path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 19
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Relays the updated user request from <xref href="Stargazer.Startup.UserPositionUpdated" data-throw-if-not-resolved="false"></xref> to children which will handle drawing the objects.
-  example: []
-  syntax:
-    content: public Action<CelestialDataPackage<Star>> UpdateUserPosition
-    return:
-      type: System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
-    content.vb: Public UpdateUserPosition As Action(Of CelestialDataPackage(Of Star))
 - uid: Stargazer.SkyView.ToggleConstellationLines
   commentId: F:Stargazer.SkyView.ToggleConstellationLines
   id: ToggleConstellationLines
@@ -403,11 +376,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -432,15 +405,15 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Relays the user request to toggle the constellation lables to the child node that makes the change
+  summary: Relays the user request to toggle the constellation labels to the child node that makes the change
   example: []
   syntax:
     content: public Action<bool> ToggleConstellationLabels
@@ -461,11 +434,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -490,11 +463,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleMessierObjects
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 35
+    startLine: 34
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -505,6 +478,60 @@ items:
     return:
       type: System.Action{System.Boolean}
     content.vb: Public ToggleMessierObjects As Action(Of Boolean)
+- uid: Stargazer.SkyView.spawner
+  commentId: F:Stargazer.SkyView.spawner
+  id: spawner
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: spawner
+  nameWithType: SkyView.spawner
+  fullName: Stargazer.SkyView.spawner
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: spawner
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Spawner spawner
+    return:
+      type: Stargazer.Spawner
+    content.vb: Private spawner As Spawner
+- uid: Stargazer.SkyView.constellationNode
+  commentId: F:Stargazer.SkyView.constellationNode
+  id: constellationNode
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: constellationNode
+  nameWithType: SkyView.constellationNode
+  fullName: Stargazer.SkyView.constellationNode
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: constellationNode
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 37
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Constellations constellationNode
+    return:
+      type: Stargazer.Constellations
+    content.vb: Private constellationNode As Constellations
 - uid: Stargazer.SkyView._Ready
   commentId: M:Stargazer.SkyView._Ready
   id: _Ready
@@ -519,11 +546,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -534,6 +561,44 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.SkyView._Ready*
+- uid: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  commentId: M:Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType: SkyView.UpdateUserPosition(CelestialDataPackage<Star>)
+  fullName: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: UpdateUserPosition
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 62
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies child notes of a new <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref> that is ready to be drawn.
+  example: []
+  syntax:
+    content: public Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+    parameters:
+    - id: dataPackage
+      type: DataLayer.CelestialDataPackage{Stargazer.Star}
+      description: The <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Threading.Tasks.Task
+      description: <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that can be awaited.
+    content.vb: Public Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star)) As Task
+  overload: Stargazer.SkyView.UpdateUserPosition*
+  nameWithType.vb: SkyView.UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName.vb: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -7351,85 +7416,6 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: Stargazer.Startup.UserPositionUpdated
-  commentId: E:Stargazer.Startup.UserPositionUpdated
-  href: Stargazer.Startup.html#Stargazer_Startup_UserPositionUpdated
-  name: UserPositionUpdated
-  nameWithType: Startup.UserPositionUpdated
-  fullName: Stargazer.Startup.UserPositionUpdated
-- uid: System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
-  commentId: T:System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
-  parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<CelestialDataPackage<Star>>
-  nameWithType: Action<CelestialDataPackage<Star>>
-  fullName: System.Action<DataLayer.CelestialDataPackage<Stargazer.Star>>
-  nameWithType.vb: Action(Of CelestialDataPackage(Of Star))
-  fullName.vb: System.Action(Of DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  name.vb: Action(Of CelestialDataPackage(Of Star))
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: <
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: )
-  - name: )
-- uid: System.Action`1
-  commentId: T:System.Action`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<T>
-  nameWithType: Action<T>
-  fullName: System.Action<T>
-  nameWithType.vb: Action(Of T)
-  fullName.vb: System.Action(Of T)
-  name.vb: Action(Of T)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: System.Action{System.Boolean}
   commentId: T:System.Action{System.Boolean}
   parent: System
@@ -7465,6 +7451,48 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Stargazer.Spawner
+  commentId: T:Stargazer.Spawner
+  parent: Stargazer
+  href: Stargazer.Spawner.html
+  name: Spawner
+  nameWithType: Spawner
+  fullName: Stargazer.Spawner
+- uid: Stargazer.Constellations
+  commentId: T:Stargazer.Constellations
+  parent: Stargazer
+  href: Stargazer.Constellations.html
+  name: Constellations
+  nameWithType: Constellations
+  fullName: Stargazer.Constellations
 - uid: System.Delegate
   commentId: T:System.Delegate
   isExternal: true
@@ -7497,3 +7525,116 @@ references:
   name: _Ready
   nameWithType: SkyView._Ready
   fullName: Stargazer.SkyView._Ready
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Stargazer.SkyView.UpdateUserPosition*
+  commentId: Overload:Stargazer.SkyView.UpdateUserPosition
+  href: Stargazer.SkyView.html#Stargazer_SkyView_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  name: UpdateUserPosition
+  nameWithType: SkyView.UpdateUserPosition
+  fullName: Stargazer.SkyView.UpdateUserPosition
+- uid: DataLayer.CelestialDataPackage{Stargazer.Star}
+  commentId: T:DataLayer.CelestialDataPackage{Stargazer.Star}
+  parent: DataLayer
+  definition: DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<Star>
+  nameWithType: CelestialDataPackage<Star>
+  fullName: DataLayer.CelestialDataPackage<Stargazer.Star>
+  nameWithType.vb: CelestialDataPackage(Of Star)
+  fullName.vb: DataLayer.CelestialDataPackage(Of Stargazer.Star)
+  name.vb: CelestialDataPackage(Of Star)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: DataLayer
+  commentId: N:DataLayer
+  href: DataLayer.html
+  name: DataLayer
+  nameWithType: DataLayer
+  fullName: DataLayer

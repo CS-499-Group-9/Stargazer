@@ -24,7 +24,7 @@ items:
   type: Class
   source:
     id: Main
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Main_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Main_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -409,7 +409,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: MouseSensitivity
     path: ../Stargazer-Godot/Code/Main.cs
@@ -452,7 +452,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: yaw
     path: ../Stargazer-Godot/Code/Main.cs
@@ -479,7 +479,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: pitch
     path: ../Stargazer-Godot/Code/Main.cs
@@ -506,7 +506,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: rightClickHeld
     path: ../Stargazer-Godot/Code/Main.cs
@@ -533,7 +533,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: screenshotPath
     path: ../Stargazer-Godot/Code/Main.cs
@@ -560,7 +560,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Input
     path: ../Stargazer-Godot/Code/Main.cs
@@ -593,7 +593,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ZoomIn
     path: ../Stargazer-Godot/Code/Main.cs
@@ -619,7 +619,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ZoomOut
     path: ../Stargazer-Godot/Code/Main.cs
@@ -645,7 +645,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Process
     path: ../Stargazer-Godot/Code/Main.cs
@@ -681,7 +681,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Main.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: TakeScreenshot
     path: ../Stargazer-Godot/Code/Main.cs

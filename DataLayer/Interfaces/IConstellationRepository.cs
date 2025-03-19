@@ -11,6 +11,6 @@ namespace DataLayer.Interfaces
         /// Gets all <see cref="Constellation"/>s from the repository
         /// </summary>
         /// <returns>A running task that can be awaited</returns>
-        internal Task<IList<Constellation>?> GetAllConstellationsAsync();
+        public Task<IList<Constellation>?> GetAllConstellationsAsync();
     }
 }

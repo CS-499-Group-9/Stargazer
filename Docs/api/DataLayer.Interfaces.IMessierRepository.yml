@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMessierRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IMessierRepository
     path: ../DataLayer/Interfaces/IMessierRepository.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMessierRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetRawMessierObjectsAsync
     path: ../DataLayer/Interfaces/IMessierRepository.cs

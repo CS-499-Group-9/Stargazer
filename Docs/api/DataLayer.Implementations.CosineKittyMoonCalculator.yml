@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CosineKittyMoonCalculator
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: observer
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
@@ -153,7 +153,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CalculateMoon
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs

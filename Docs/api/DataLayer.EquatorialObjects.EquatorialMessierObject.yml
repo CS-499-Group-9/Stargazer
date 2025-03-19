@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: EquatorialMessierObject
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: MessierId
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -95,7 +95,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: NewGeneralCatalog
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Type
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Constellation
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -188,7 +188,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Size
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -219,7 +219,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ViewingSeason
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ViewingDifficulty
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs

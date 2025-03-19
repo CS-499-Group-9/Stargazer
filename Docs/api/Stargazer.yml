@@ -70,6 +70,7 @@ references:
   fullName: Stargazer.ConstellationLabel
 - uid: Stargazer.Constellations
   commentId: T:Stargazer.Constellations
+  parent: Stargazer
   href: Stargazer.Constellations.html
   name: Constellations
   nameWithType: Constellations
@@ -135,6 +136,7 @@ references:
   fullName: Stargazer.SkyView
 - uid: Stargazer.Spawner
   commentId: T:Stargazer.Spawner
+  parent: Stargazer
   href: Stargazer.Spawner.html
   name: Spawner
   nameWithType: Spawner

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: EquatorialCelestialBody
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: RightAscension
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Declination
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Magnitude
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Distance
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs

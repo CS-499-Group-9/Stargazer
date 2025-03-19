@@ -3,7 +3,10 @@ using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Stargazer
 {
@@ -15,15 +18,11 @@ namespace Stargazer
     public partial class SkyView : Node3D
     {
         /// <summary>
-        /// Relays the updated user request from <see cref="Startup.UserPositionUpdated"/> to children which will handle drawing the objects.
-        /// </summary>
-        public Action<CelestialDataPackage<Star>> UpdateUserPosition;
-        /// <summary>
         /// Relays the user request to toggle the constellations lines down to the child node that makes the change
         /// </summary>
         public Action<bool> ToggleConstellationLines;
         /// <summary>
-        /// Relays the user request to toggle the constellation lables to the child node that makes the change
+        /// Relays the user request to toggle the constellation labels to the child node that makes the change
         /// </summary>
         public Action<bool> ToggleConstellationLabels;
         /// <summary>
@@ -35,22 +34,40 @@ namespace Stargazer
         /// </summary>
         public Action<bool> ToggleMessierObjects;
 
+        private Spawner spawner;
+        private Constellations constellationNode;
+
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
         /// </summary>
         public override void _Ready()
         {
             base._Ready();
-            var spawner = GetNode<Spawner>("Stars");
-            UpdateUserPosition += spawner.DrawStars;
-            var constellationNode = GetNode<Constellations>("Constellations");
-            UpdateUserPosition += constellationNode.DrawConstellations;
+            spawner = GetNode<Spawner>("Stars");
+            constellationNode = GetNode<Constellations>("Constellations");
+            
+            var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
-            var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             ToggleGridlines = azimuthGridlines.ToggleGridlines;
-            // TODO: Get a reference to the Messier Objects parent node (should be a child of this node) and wire up the delegate.
-
+            // TODO: Get a reference to the Messier Objects parent node (should be a child of this node)
+            // TODO: Get a reference to the Moon object parent node (should be a child of this node) 
+            // TODO: Get a reference to the Planets object parent node (should be a child of this node)
         }
+
+        /// <summary>
+        /// Notifies child notes of a new <see cref="CelestialDataPackage{Star}"/> that is ready to be drawn.
+        /// </summary>
+        /// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/></param>
+        /// <returns><see cref="Task"/> that can be awaited.</returns>
+        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+        {
+            await spawner.DrawStars(dataPackage.Stars);
+            await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
+            // TODO: Notify the Messier Objects node to draw the Messier Objects
+            // TODO: Notify the Moon node to draw the moon
+            // TODO: Notify the Planets node to draw the planets
+        }
+
     }
 }

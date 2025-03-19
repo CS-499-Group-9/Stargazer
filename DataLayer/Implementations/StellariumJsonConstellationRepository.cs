@@ -29,12 +29,12 @@ namespace DataLayer.Implementations
         /// </summary>
         /// <returns>An <see cref="IList{Constellation}"/></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        Task<IList<Constellation>> IConstellationRepository.GetAllConstellationsAsync()
+        public Task<IList<Constellation>?> GetAllConstellationsAsync()
         {
 
             if (File.Exists(filePath))
             {
-                return Task<IList<Constellation>>.Factory.StartNew(() =>
+                return Task<IList<Constellation>?>.Factory.StartNew(() =>
                 {
                     // Null values are not handled because the program SHOULD break if this does not work. 
                     // TODO: May need to consider a more elegant failure for production version.
@@ -66,7 +66,7 @@ namespace DataLayer.Implementations
                 foreach (var constellation in jsonConstellations)
                 {
                     // Get the constellation name (and native name) 
-                    ConstellationName name = constellation["common_name"].ToObject<ConstellationName>();
+                    ConstellationName? name = constellation["common_name"]?.ToObject<ConstellationName>();
 
                     // Build out the graph of lines
                     var lines = BuildLines((JArray)constellation["lines"], new List<Tuple<int,int>>());
@@ -96,7 +96,7 @@ namespace DataLayer.Implementations
                 foreach (var item in jArray)
                 {
 
-                    // If the nested item is an array call recursevely to skip to another iteration
+                    // If the nested item is an array call recursively to skip to another iteration
                     if (item is JArray list) { BuildLines(list, lines); }
                         else 
                         { 
