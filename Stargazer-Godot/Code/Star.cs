@@ -23,6 +23,8 @@ namespace Stargazer
 		[Export] public float dist = 74f; // Distance from (0, 0, 0)
 		[Export] public float mag = 1f;
 		[Export] public string starName;
+		[Export] public int hipID;
+		[Export] public Vector2 Pos2D;
 
 		// Gets the Cartesian position of the Celestial Body
 		private Vector3 getLocation()
@@ -35,6 +37,10 @@ namespace Stargazer
 				Y = dist * Mathf.Sin(altRad),
 				Z = dist * Mathf.Cos(altRad) * Mathf.Sin(azRad)
 			};
+			// Pos2D = new Vector2(
+            //     x:(90.0f-altitude)*Mathf.Cos((azimuth-90)*radians),
+            //     y:(90.0f-altitude)*Mathf.Sin((azimuth-90)*radians)
+            // );
 			return pos;
 		}
 		// Called when the node enters the scene tree for the first time.

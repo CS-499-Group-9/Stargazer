@@ -42,9 +42,13 @@ namespace Stargazer
         {
             base._Ready();
             var spawner = GetNode<Spawner>("Stars");
+            var spawner2d = GetNode<Spawner2D>("/root/Control/SubViewport2/View2d/Stars2D");
             UpdateUserPosition += spawner.DrawStars;
+            UpdateUserPosition += spawner2d.DrawStars;
             var constellationNode = GetNode<Constellations>("Constellations");
+            var constellation2dNode = GetNode<Constellations2D>("/root/Control/SubViewport2/View2d/Constellations2D");
             UpdateUserPosition += constellationNode.DrawConstellations;
+            UpdateUserPosition += constellation2dNode.DrawConstellations;
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");

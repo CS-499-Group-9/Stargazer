@@ -6,7 +6,7 @@ namespace Stargazer
     /// <summary>
     /// Contains the main camera used to create the user view.
     /// </summary>
-    public partial class Main : Camera3D
+    public partial class MainCamera : Camera3D
     {
         /// <summary>
         /// The base sensitivity of the mouse used when panning the view.
@@ -24,6 +24,12 @@ namespace Stargazer
         /// <param name="event"></param>
         public override void _Input(InputEvent @event)
         {
+            if(@event.IsAction("forward")){
+
+                GD.Print("go!");
+                Position -= 0.5f*Basis.Z;
+
+            }
             if (@event is InputEventMouseButton mouseButton)
             {
                 if (mouseButton.ButtonIndex == MouseButton.Right)
@@ -87,11 +93,11 @@ namespace Stargazer
         private void TakeScreenshot()
         {
             // Get the current viewport as an Image
-            Viewport viewport = GetViewport();
+            Viewport viewport = GetNode<Viewport>("/root/Control/SubViewport2");
             Image screenshotImage = viewport.GetTexture().GetImage();
 
             // Save the screenshot as a JPEG
-            screenshotImage.SaveJpg(screenshotPath);
+            screenshotImage.SavePng(screenshotPath);
             GD.Print($"Screenshot saved to {screenshotPath}");
         }
     }

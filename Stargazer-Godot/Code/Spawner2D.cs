@@ -1,3 +1,4 @@
+using System;
 using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
@@ -5,20 +6,23 @@ using Godot;
 
 namespace Stargazer
 {
+	
 
 	/// <summary>
 	/// Draws all stars that are not a part of constellations
 	/// </summary>
-	public partial class Spawner : Node3D
+	public partial class Spawner2D : Node2D
 	{
+		private int count = 0;
+		private const float radians = (float)Math.PI / 180f;
 		/// <summary>
 		/// The scene used to instantiate the star objects.
 		/// </summary>
-		[Export] public PackedScene StarScene { get; set; }
+		[Export] public PackedScene Star2DScene { get; set; }
 		/// <summary>
 		/// The scene used to instantiate the labels for stars
 		/// </summary>
-		[Export] public PackedScene LabelScene { get; set; }
+		[Export] public PackedScene Label2DScene { get; set; }
 
 		/// <summary>
 		/// Receives the notification to update the stars drawn.
@@ -46,24 +50,21 @@ namespace Stargazer
 		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
 		// Perhaps more to follow.....
 		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
-		private Star SpawnStar(HorizontalStar horizontalStar)
+		private Star2D SpawnStar(HorizontalStar horizontalStar)
 		{
-			Star star = StarScene.Instantiate<Star>();
-			star.azimuth = (float)horizontalStar.Azimuth;
-			star.altitude = (float)horizontalStar.Altitude;
-			star.mag = (float)horizontalStar.Magnitude;
-			star.starName = horizontalStar.StarName;
-			if (horizontalStar.HipparcosId != null){
-				star.hipID = (int)horizontalStar.HipparcosId;
-			}
-			
-			if(star.hipID == 105199){
-				GD.Print($"Alt:{star.altitude}\nAzi:{star.azimuth}");
-			}
-			AddChild(star);
-			return star;
+			Star2D outstar = Star2DScene.Instantiate<Star2D>();
+			outstar.azimuth = (float)horizontalStar.Azimuth;
+			outstar.altitude = (float)horizontalStar.Altitude;
+			outstar.mag = (float)horizontalStar.Magnitude;
+			outstar.starName = horizontalStar.StarName;
+			//Star2D outstar = fromStar(star);
+			AddChild(outstar);
+			count += 1;
+			//GD.Print($"Star added at {outstar.Position}");
+			//GD.Print(count);
+			return outstar;
 		}
 
 
-	}
+    }
 }

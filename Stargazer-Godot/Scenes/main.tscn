@@ -1,14 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=20 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
+[ext_resource type="Script" path="res://Code/GridLabel.cs" id="3_x74pm"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
 [ext_resource type="Script" path="res://Code/LabelButton.cs" id="5_b3dcx"]
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="6_dawsw"]
 [ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
+[ext_resource type="PackedScene" uid="uid://k4fs3pummlhb" path="res://Scenes/view2d.tscn" id="10_asg56"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hqli8"]
+radius = 0.125
+height = 0.25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -20,6 +26,7 @@ border_blend = true
 
 [sub_resource type="SystemFont" id="SystemFont_smpph"]
 font_names = PackedStringArray("Cascadia Mono")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_pw72o"]
 font = SubResource("SystemFont_smpph")
@@ -70,6 +77,21 @@ size = Vector2i(952, 565)
 render_target_update_mode = 4
 
 [node name="View" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_vwov6")]
+
+[node name="GridLabel" type="Control" parent="SubViewportContainer/SubViewport/View"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_x74pm")
+
+[node name="TestSpheres" type="Control" parent="SubViewportContainer/SubViewport/View"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/View/TestSpheres"]
+mesh = SubResource("SphereMesh_hqli8")
+skeleton = NodePath("../../../../..")
 
 [node name="AzimuthButton" type="Control" parent="."]
 layout_mode = 1
@@ -245,6 +267,21 @@ layout_mode = 0
 offset_right = 129.0
 offset_bottom = 129.0
 
+[node name="AltSubViewport" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 1153.0
+offset_top = 86.2547
+offset_right = 2753.0
+offset_bottom = 1686.25
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(1600, 1600)
+render_target_update_mode = 4
+
+[node name="View2d" parent="SubViewport2" instance=ExtResource("10_asg56")]
+
+[connection signal="toggled" from="AzimuthButton/CheckBox" to="SubViewportContainer/SubViewport/View/GridLabel" method="ToggleGridlines"]
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
 [connection signal="toggled" from="LabelButton/CheckBox" to="LabelButton" method="ToggleLabel"]
