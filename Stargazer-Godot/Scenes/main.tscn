@@ -1,4 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=23 format=3 uid="uid://dmonwxoowo044"]
+
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
@@ -8,7 +9,13 @@
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="6_dawsw"]
 [ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
+[ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="8_o88uu"]
+[ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="9_rl8tn"]
+[ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="10_6a71k"]
+[ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="11_imatn"]
+[ext_resource type="Script" path="res://Code/Label.cs" id="12_u6bob"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -36,11 +43,18 @@ gradient = SubResource("Gradient_vpwdv")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdlkl"]
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u6x5u"]
 shader = ExtResource("9_nn2sp")
 shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
+
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -239,6 +253,162 @@ texture = ExtResource("6_oit80")
 script = ExtResource("7_81dkj")
 needle = NodePath(".")
 
+
+[node name="LatitudeButton" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 246.0
+offset_right = 200.0
+offset_bottom = 286.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="LatitudeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="LatitudeButton"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 187.0
+offset_bottom = 36.0
+placeholder_text = "Enter Latitude"
+
+[node name="LongitudeButton" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 286.0
+offset_right = 200.0
+offset_bottom = 326.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="LongitudeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="LongitudeButton"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 187.0
+offset_bottom = 36.0
+placeholder_text = "Enter Longitude"
+
+[node name="DateTime" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 326.0
+offset_right = 200.0
+offset_bottom = 366.0
+
+[node name="Panel" type="Panel" parent="DateTime"]
+z_index = -120
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.05
+anchor_bottom = 0.156028
+offset_right = -9.99998
+offset_bottom = 33.7589
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Control" parent="DateTime"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DateTime/Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.925
+anchor_right = 5.0
+anchor_bottom = 1.0
+
+[node name="TimeLineEdit" type="LineEdit" parent="DateTime/Time/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.68
+placeholder_text = "Enter Time"
+
+[node name="TimeHalfSelector" type="OptionButton" parent="DateTime/Time/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+item_count = 2
+popup/item_0/text = "AM"
+popup/item_1/text = "PM"
+popup/item_1/id = 1
+
+[node name="CalendarButton" type="TextureButton" parent="DateTime"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.325
+offset_top = 3.345
+offset_right = 36.325
+offset_bottom = 37.345
+toggle_mode = true
+texture_normal = ExtResource("9_rl8tn")
+texture_hover = ExtResource("10_6a71k")
+script = ExtResource("8_o88uu")
+image_normal = ExtResource("9_rl8tn")
+image_pressed = ExtResource("10_6a71k")
+
+[node name="EnterButton" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 366.0
+offset_right = 200.0
+offset_bottom = 406.0
+script = ExtResource("11_imatn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="EnterButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="EnterButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -15.5
+offset_right = 70.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter Data"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "star"
+label_settings = SubResource("LabelSettings_gdlkl")
+script = ExtResource("12_u6bob")
+
 [node name="ColorRect" type="ColorRect" parent="Compass"]
 material = SubResource("ShaderMaterial_u6x5u")
 layout_mode = 0
@@ -248,4 +418,6 @@ offset_bottom = 129.0
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
 [connection signal="toggled" from="LabelButton/CheckBox" to="LabelButton" method="ToggleLabel"]
+[connection signal="pressed" from="EnterButton/Button" to="EnterButton" method="ButtonPressed"]
 [connection signal="button_up" from="MessierButton/CheckBox" to="MessierButton" method="RunTheThing"]
+

@@ -58,10 +58,16 @@ namespace Stargazer
 		{
 			Star star = StarScene.Instantiate<Star>();
 			star.FromHorizontal(horizontalStar);
+      if (horizontalStar.StarName != " ")
+      {
+        star.starName = horizontalStar.StarName;
+      }
+      else
+      {
+        star.starName = $"ID: {horizontalStar.StarId}";
+      }
 			StarContainer.AddChild(star);
 			return star;
 		}
 
-
-	}
 }

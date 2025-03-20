@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq4oe468ff0nb"]
+[gd_scene load_steps=6 format=3 uid="uid://bq4oe468ff0nb"]
 
 [ext_resource type="Script" path="res://Code/Star.cs" id="1_jyeas"]
 [ext_resource type="Script" path="res://Code/StarMesh.cs" id="2_kl77t"]
@@ -12,12 +12,19 @@ emission_energy_multiplier = 1.05
 material = SubResource("StandardMaterial3D_aq72g")
 radial_segments = 9
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]
+
 [node name="CelestialBody" type="Node3D"]
 script = ExtResource("1_jyeas")
 azimuth = 45.0
 altitude = 45.0
 
-[node name="StarMesh" type="MeshInstance3D" parent="."]
+[node name="StarBody" type="StaticBody3D" parent="."]
+
+[node name="StarMesh" type="MeshInstance3D" parent="StarBody"]
 mesh = SubResource("SphereMesh_donor")
 skeleton = NodePath("")
 script = ExtResource("2_kl77t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StarBody"]
+shape = SubResource("SphereShape3D_tl7gt")
