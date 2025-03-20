@@ -1,5 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dmonwxoowo044"]
-
+[gd_scene load_steps=24 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
 [ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
@@ -10,12 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
 [ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="8_o88uu"]
+[ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="9_rl8tn"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="10_6a71k"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="11_imatn"]
 [ext_resource type="Script" path="res://Code/Label.cs" id="12_u6bob"]
-[ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
-
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -43,18 +41,18 @@ gradient = SubResource("Gradient_vpwdv")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
-bg_color = Color(0.329412, 0.329412, 0.329412, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gdlkl"]
-outline_size = 4
-outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u6x5u"]
 shader = ExtResource("9_nn2sp")
 shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdlkl"]
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -253,6 +251,11 @@ texture = ExtResource("6_oit80")
 script = ExtResource("7_81dkj")
 needle = NodePath(".")
 
+[node name="ColorRect" type="ColorRect" parent="Compass"]
+material = SubResource("ShaderMaterial_u6x5u")
+layout_mode = 0
+offset_right = 129.0
+offset_bottom = 129.0
 
 [node name="LatitudeButton" type="Control" parent="."]
 layout_mode = 3
@@ -409,15 +412,8 @@ text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
 script = ExtResource("12_u6bob")
 
-[node name="ColorRect" type="ColorRect" parent="Compass"]
-material = SubResource("ShaderMaterial_u6x5u")
-layout_mode = 0
-offset_right = 129.0
-offset_bottom = 129.0
-
 [connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
 [connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
 [connection signal="toggled" from="LabelButton/CheckBox" to="LabelButton" method="ToggleLabel"]
-[connection signal="pressed" from="EnterButton/Button" to="EnterButton" method="ButtonPressed"]
 [connection signal="button_up" from="MessierButton/CheckBox" to="MessierButton" method="RunTheThing"]
-
+[connection signal="pressed" from="EnterButton/Button" to="EnterButton" method="ButtonPressed"]

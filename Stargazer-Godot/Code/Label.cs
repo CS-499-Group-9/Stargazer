@@ -1,4 +1,5 @@
 using Godot;
+using Stargazer;
 using System;
 
 public partial class Label : Godot.Label
