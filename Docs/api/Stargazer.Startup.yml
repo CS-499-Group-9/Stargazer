@@ -5,10 +5,15 @@ items:
   id: Startup
   parent: Stargazer
   children:
+  - Stargazer.Startup.OnTimer
   - Stargazer.Startup.UpdateUserPosition(System.Double,System.Double,System.DateTime)
   - Stargazer.Startup.UserPositionUpdated
   - Stargazer.Startup._Ready
+  - Stargazer.Startup.latitude
+  - Stargazer.Startup.longitude
   - Stargazer.Startup.repositoryService
+  - Stargazer.Startup.timer
+  - Stargazer.Startup.userTime
   - Stargazer.Startup.viewPortPath
   langs:
   - csharp
@@ -539,7 +544,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: viewPortPath
     path: ../Stargazer-Godot/Code/Startup.cs
@@ -566,7 +571,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: repositoryService
     path: ../Stargazer-Godot/Code/Startup.cs
@@ -593,7 +598,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: UserPositionUpdated
     path: ../Stargazer-Godot/Code/Startup.cs
@@ -607,10 +612,118 @@ items:
     DO NOT use the = operator to set this. Always use the += operator to add additional subscribers to the list.
   example: []
   syntax:
-    content: public event Action<CelestialDataPackage<Star>> UserPositionUpdated
+    content: public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated
     return:
-      type: System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
-    content.vb: Public Event UserPositionUpdated As Action(Of CelestialDataPackage(Of Star))
+      type: System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
+    content.vb: Public Event UserPositionUpdated As Func(Of CelestialDataPackage(Of Star), Task)
+- uid: Stargazer.Startup.timer
+  commentId: F:Stargazer.Startup.timer
+  id: timer
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: timer
+  nameWithType: Startup.timer
+  fullName: Stargazer.Startup.timer
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: timer
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 23
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Timer timer
+    return:
+      type: Godot.Timer
+    content.vb: Private timer As Timer
+- uid: Stargazer.Startup.latitude
+  commentId: F:Stargazer.Startup.latitude
+  id: latitude
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: latitude
+  nameWithType: Startup.latitude
+  fullName: Stargazer.Startup.latitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: latitude
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double latitude
+    return:
+      type: System.Double
+    content.vb: Private latitude As Double
+- uid: Stargazer.Startup.longitude
+  commentId: F:Stargazer.Startup.longitude
+  id: longitude
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: longitude
+  nameWithType: Startup.longitude
+  fullName: Stargazer.Startup.longitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: longitude
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double longitude
+    return:
+      type: System.Double
+    content.vb: Private longitude As Double
+- uid: Stargazer.Startup.userTime
+  commentId: F:Stargazer.Startup.userTime
+  id: userTime
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: userTime
+  nameWithType: Startup.userTime
+  fullName: Stargazer.Startup.userTime
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: userTime
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 25
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private DateTime userTime
+    return:
+      type: System.DateTime
+    content.vb: Private userTime As Date
 - uid: Stargazer.Startup._Ready
   commentId: M:Stargazer.Startup._Ready
   id: _Ready
@@ -625,11 +738,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,11 +770,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 55
+    startLine: 67
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -690,6 +803,32 @@ items:
   nameWithType.vb: Startup.UpdateUserPosition(Double, Double, Date)
   fullName.vb: Stargazer.Startup.UpdateUserPosition(Double, Double, Date)
   name.vb: UpdateUserPosition(Double, Double, Date)
+- uid: Stargazer.Startup.OnTimer
+  commentId: M:Stargazer.Startup.OnTimer
+  id: OnTimer
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: OnTimer()
+  nameWithType: Startup.OnTimer()
+  fullName: Stargazer.Startup.OnTimer()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: OnTimer
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 79
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private void OnTimer()
+    content.vb: Private Sub OnTimer()
+  overload: Stargazer.Startup.OnTimer*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12290,22 +12429,22 @@ references:
   name: Delegate
   nameWithType: Delegate
   fullName: System.Delegate
-- uid: System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
-  commentId: T:System.Action{DataLayer.CelestialDataPackage{Stargazer.Star}}
+- uid: System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
+  commentId: T:System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
   parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<CelestialDataPackage<Star>>
-  nameWithType: Action<CelestialDataPackage<Star>>
-  fullName: System.Action<DataLayer.CelestialDataPackage<Stargazer.Star>>
-  nameWithType.vb: Action(Of CelestialDataPackage(Of Star))
-  fullName.vb: System.Action(Of DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  name.vb: Action(Of CelestialDataPackage(Of Star))
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<CelestialDataPackage<Star>, Task>
+  nameWithType: Func<CelestialDataPackage<Star>, Task>
+  fullName: System.Func<DataLayer.CelestialDataPackage<Stargazer.Star>, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of CelestialDataPackage(Of Star), Task)
+  fullName.vb: System.Func(Of DataLayer.CelestialDataPackage(Of Stargazer.Star), System.Threading.Tasks.Task)
+  name.vb: Func(Of CelestialDataPackage(Of Star), Task)
   spec.csharp:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
   - uid: DataLayer.CelestialDataPackage`1
     name: CelestialDataPackage
@@ -12315,12 +12454,18 @@ references:
     name: Star
     href: Stargazer.Star.html
   - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: '>'
   spec.vb:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: (
   - name: Of
   - name: " "
@@ -12334,35 +12479,76 @@ references:
     name: Star
     href: Stargazer.Star.html
   - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: )
-- uid: System.Action`1
-  commentId: T:System.Action`1
+- uid: System.Func`2
+  commentId: T:System.Func`2
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<T>
-  nameWithType: Action<T>
-  fullName: System.Action<T>
-  nameWithType.vb: Action(Of T)
-  fullName.vb: System.Action(Of T)
-  name.vb: Action(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
   spec.csharp:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
   - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
   - name: '>'
   spec.vb:
-  - uid: System.Action`1
-    name: Action
+  - uid: System.Func`2
+    name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: (
   - name: Of
   - name: " "
   - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
   - name: )
+- uid: Godot.Timer
+  commentId: T:Godot.Timer
+  parent: Godot
+  isExternal: true
+  name: Timer
+  nameWithType: Timer
+  fullName: Godot.Timer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -12394,28 +12580,6 @@ references:
   name: UpdateUserPosition
   nameWithType: Startup.UpdateUserPosition
   fullName: Stargazer.Startup.UpdateUserPosition
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -12461,3 +12625,9 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Stargazer.Startup.OnTimer*
+  commentId: Overload:Stargazer.Startup.OnTimer
+  href: Stargazer.Startup.html#Stargazer_Startup_OnTimer
+  name: OnTimer
+  nameWithType: Startup.OnTimer
+  fullName: Stargazer.Startup.OnTimer

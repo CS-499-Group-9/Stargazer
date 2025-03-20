@@ -1338,22 +1338,19 @@ references:
   isSpec: "True"
   fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.Native
   nameWithType: StellariumJsonConstellationRepository.ConstellationName.Native
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  name: IConstellationRepository.GetAllConstellationsAsync()
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
-  name.vb: ''
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
-  fullName.vb: ''
-  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync()
-  nameWithType.vb: ''
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync*
-  name: IConstellationRepository.GetAllConstellationsAsync
-  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync_
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer#Interfaces#IConstellationRepository#GetAllConstellationsAsync
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  name: GetAllConstellationsAsync()
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_GetAllConstellationsAsync
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync()
+  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync()
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync*
+  name: GetAllConstellationsAsync
+  href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_GetAllConstellationsAsync_
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
   isSpec: "True"
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-  nameWithType: StellariumJsonConstellationRepository.IConstellationRepository.GetAllConstellationsAsync
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync
 - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   name: StellariumJsonConstellationRepository.JsonConstellationListConverter
   href: api/DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html
@@ -1754,6 +1751,14 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition
   nameWithType: StargazerRepositoryService<T>.UpdateUserPosition
   nameWithType.vb: StargazerRepositoryService(Of T).UpdateUserPosition
+- uid: DataLayer.StargazerRepositoryService`1.Value
+  name: Value
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_Value
+  commentId: F:DataLayer.StargazerRepositoryService`1.Value
+  fullName: DataLayer.StargazerRepositoryService<T>.Value
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).Value
+  nameWithType: StargazerRepositoryService<T>.Value
+  nameWithType.vb: StargazerRepositoryService(Of T).Value
 - uid: DataLayer.StargazerRepositoryService`1.constellations
   name: constellations
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_constellations
@@ -2349,15 +2354,15 @@ references:
   commentId: F:Stargazer.Constellations.ConstellationLabels
   fullName: Stargazer.Constellations.ConstellationLabels
   nameWithType: Constellations.ConstellationLabels
-- uid: Stargazer.Constellations.DrawConstellations(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name: DrawConstellations(CelestialDataPackage<Star>)
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_DataLayer_CelestialDataPackage_Stargazer_Star__
-  commentId: M:Stargazer.Constellations.DrawConstellations(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name.vb: DrawConstellations(CelestialDataPackage(Of Star))
-  fullName: Stargazer.Constellations.DrawConstellations(DataLayer.CelestialDataPackage<Stargazer.Star>)
-  fullName.vb: Stargazer.Constellations.DrawConstellations(DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  nameWithType: Constellations.DrawConstellations(CelestialDataPackage<Star>)
-  nameWithType.vb: Constellations.DrawConstellations(CelestialDataPackage(Of Star))
+- uid: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
+  commentId: M:Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+  fullName: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
+  fullName.vb: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
+  nameWithType: Constellations.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
+  nameWithType.vb: Constellations.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
 - uid: Stargazer.Constellations.DrawConstellations*
   name: DrawConstellations
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_
@@ -2514,31 +2519,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.Constellations.ToggleConstellationLines
   nameWithType: Constellations.ToggleConstellationLines
-- uid: Stargazer.Constellations._Ready
-  name: _Ready()
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations__Ready
-  commentId: M:Stargazer.Constellations._Ready
-  fullName: Stargazer.Constellations._Ready()
-  nameWithType: Constellations._Ready()
-- uid: Stargazer.Constellations._Ready*
-  name: _Ready
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations__Ready_
-  commentId: Overload:Stargazer.Constellations._Ready
-  isSpec: "True"
-  fullName: Stargazer.Constellations._Ready
-  nameWithType: Constellations._Ready
 - uid: Stargazer.Constellations.constMesh
   name: constMesh
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_constMesh
   commentId: F:Stargazer.Constellations.constMesh
   fullName: Stargazer.Constellations.constMesh
   nameWithType: Constellations.constMesh
-- uid: Stargazer.Constellations.mesh
-  name: mesh
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations_mesh
-  commentId: F:Stargazer.Constellations.mesh
-  fullName: Stargazer.Constellations.mesh
-  nameWithType: Constellations.mesh
 - uid: Stargazer.Globals
   name: Globals
   href: api/Stargazer.Globals.html
@@ -3053,10 +3039,20 @@ references:
   commentId: F:Stargazer.SkyView.ToggleMessierObjects
   fullName: Stargazer.SkyView.ToggleMessierObjects
   nameWithType: SkyView.ToggleMessierObjects
-- uid: Stargazer.SkyView.UpdateUserPosition
+- uid: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  commentId: M:Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  fullName.vb: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  nameWithType: SkyView.UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType.vb: SkyView.UpdateUserPosition(CelestialDataPackage(Of Star))
+- uid: Stargazer.SkyView.UpdateUserPosition*
   name: UpdateUserPosition
-  href: api/Stargazer.SkyView.html#Stargazer_SkyView_UpdateUserPosition
-  commentId: F:Stargazer.SkyView.UpdateUserPosition
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_UpdateUserPosition_
+  commentId: Overload:Stargazer.SkyView.UpdateUserPosition
+  isSpec: "True"
   fullName: Stargazer.SkyView.UpdateUserPosition
   nameWithType: SkyView.UpdateUserPosition
 - uid: Stargazer.SkyView._Ready
@@ -3072,21 +3068,33 @@ references:
   isSpec: "True"
   fullName: Stargazer.SkyView._Ready
   nameWithType: SkyView._Ready
+- uid: Stargazer.SkyView.constellationNode
+  name: constellationNode
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_constellationNode
+  commentId: F:Stargazer.SkyView.constellationNode
+  fullName: Stargazer.SkyView.constellationNode
+  nameWithType: SkyView.constellationNode
+- uid: Stargazer.SkyView.spawner
+  name: spawner
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_spawner
+  commentId: F:Stargazer.SkyView.spawner
+  fullName: Stargazer.SkyView.spawner
+  nameWithType: SkyView.spawner
 - uid: Stargazer.Spawner
   name: Spawner
   href: api/Stargazer.Spawner.html
   commentId: T:Stargazer.Spawner
   fullName: Stargazer.Spawner
   nameWithType: Spawner
-- uid: Stargazer.Spawner.DrawStars(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name: DrawStars(CelestialDataPackage<Star>)
-  href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_DataLayer_CelestialDataPackage_Stargazer_Star__
-  commentId: M:Stargazer.Spawner.DrawStars(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name.vb: DrawStars(CelestialDataPackage(Of Star))
-  fullName: Stargazer.Spawner.DrawStars(DataLayer.CelestialDataPackage<Stargazer.Star>)
-  fullName.vb: Stargazer.Spawner.DrawStars(DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  nameWithType: Spawner.DrawStars(CelestialDataPackage<Star>)
-  nameWithType.vb: Spawner.DrawStars(CelestialDataPackage(Of Star))
+- uid: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
+  name: DrawStars(IEnumerable<HorizontalStar>)
+  href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__
+  commentId: M:Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
+  name.vb: DrawStars(IEnumerable(Of HorizontalStar))
+  fullName: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>)
+  fullName.vb: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar))
+  nameWithType: Spawner.DrawStars(IEnumerable<HorizontalStar>)
+  nameWithType.vb: Spawner.DrawStars(IEnumerable(Of HorizontalStar))
 - uid: Stargazer.Spawner.DrawStars*
   name: DrawStars
   href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_
@@ -3150,6 +3158,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.Spawner.SpawnStar
   nameWithType: Spawner.SpawnStar
+- uid: Stargazer.Spawner.StarContainer
+  name: StarContainer
+  href: api/Stargazer.Spawner.html#Stargazer_Spawner_StarContainer
+  commentId: F:Stargazer.Spawner.StarContainer
+  fullName: Stargazer.Spawner.StarContainer
+  nameWithType: Spawner.StarContainer
 - uid: Stargazer.Spawner.StarScene
   name: StarScene
   href: api/Stargazer.Spawner.html#Stargazer_Spawner_StarScene
@@ -3169,6 +3183,32 @@ references:
   commentId: T:Stargazer.Star
   fullName: Stargazer.Star
   nameWithType: Star
+- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  name: FromHorizontal(HorizontalStar)
+  href: api/Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_
+  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  nameWithType: Star.FromHorizontal(HorizontalStar)
+- uid: Stargazer.Star.FromHorizontal*
+  name: FromHorizontal
+  href: api/Stargazer.Star.html#Stargazer_Star_FromHorizontal_
+  commentId: Overload:Stargazer.Star.FromHorizontal
+  isSpec: "True"
+  fullName: Stargazer.Star.FromHorizontal
+  nameWithType: Star.FromHorizontal
+- uid: Stargazer.Star.GetLocation
+  name: GetLocation()
+  href: api/Stargazer.Star.html#Stargazer_Star_GetLocation
+  commentId: M:Stargazer.Star.GetLocation
+  fullName: Stargazer.Star.GetLocation()
+  nameWithType: Star.GetLocation()
+- uid: Stargazer.Star.GetLocation*
+  name: GetLocation
+  href: api/Stargazer.Star.html#Stargazer_Star_GetLocation_
+  commentId: Overload:Stargazer.Star.GetLocation
+  isSpec: "True"
+  fullName: Stargazer.Star.GetLocation
+  nameWithType: Star.GetLocation
 - uid: Stargazer.Star.MethodName
   name: Star.MethodName
   href: api/Stargazer.Star.MethodName.html
@@ -3229,19 +3269,6 @@ references:
   commentId: T:Stargazer.Star.SignalName
   fullName: Stargazer.Star.SignalName
   nameWithType: Star.SignalName
-- uid: Stargazer.Star._Ready
-  name: _Ready()
-  href: api/Stargazer.Star.html#Stargazer_Star__Ready
-  commentId: M:Stargazer.Star._Ready
-  fullName: Stargazer.Star._Ready()
-  nameWithType: Star._Ready()
-- uid: Stargazer.Star._Ready*
-  name: _Ready
-  href: api/Stargazer.Star.html#Stargazer_Star__Ready_
-  commentId: Overload:Stargazer.Star._Ready
-  isSpec: "True"
-  fullName: Stargazer.Star._Ready
-  nameWithType: Star._Ready
 - uid: Stargazer.Star.altitude
   name: altitude
   href: api/Stargazer.Star.html#Stargazer_Star_altitude
@@ -3260,19 +3287,6 @@ references:
   commentId: F:Stargazer.Star.dist
   fullName: Stargazer.Star.dist
   nameWithType: Star.dist
-- uid: Stargazer.Star.getLocation
-  name: getLocation()
-  href: api/Stargazer.Star.html#Stargazer_Star_getLocation
-  commentId: M:Stargazer.Star.getLocation
-  fullName: Stargazer.Star.getLocation()
-  nameWithType: Star.getLocation()
-- uid: Stargazer.Star.getLocation*
-  name: getLocation
-  href: api/Stargazer.Star.html#Stargazer_Star_getLocation_
-  commentId: Overload:Stargazer.Star.getLocation
-  isSpec: "True"
-  fullName: Stargazer.Star.getLocation
-  nameWithType: Star.getLocation
 - uid: Stargazer.Star.mag
   name: mag
   href: api/Stargazer.Star.html#Stargazer_Star_mag
@@ -3396,6 +3410,19 @@ references:
   commentId: F:Stargazer.Startup.MethodName._Ready
   fullName: Stargazer.Startup.MethodName._Ready
   nameWithType: Startup.MethodName._Ready
+- uid: Stargazer.Startup.OnTimer
+  name: OnTimer()
+  href: api/Stargazer.Startup.html#Stargazer_Startup_OnTimer
+  commentId: M:Stargazer.Startup.OnTimer
+  fullName: Stargazer.Startup.OnTimer()
+  nameWithType: Startup.OnTimer()
+- uid: Stargazer.Startup.OnTimer*
+  name: OnTimer
+  href: api/Stargazer.Startup.html#Stargazer_Startup_OnTimer_
+  commentId: Overload:Stargazer.Startup.OnTimer
+  isSpec: "True"
+  fullName: Stargazer.Startup.OnTimer
+  nameWithType: Startup.OnTimer
 - uid: Stargazer.Startup.PropertyName
   name: Startup.PropertyName
   href: api/Stargazer.Startup.PropertyName.html
@@ -3443,12 +3470,36 @@ references:
   isSpec: "True"
   fullName: Stargazer.Startup._Ready
   nameWithType: Startup._Ready
+- uid: Stargazer.Startup.latitude
+  name: latitude
+  href: api/Stargazer.Startup.html#Stargazer_Startup_latitude
+  commentId: F:Stargazer.Startup.latitude
+  fullName: Stargazer.Startup.latitude
+  nameWithType: Startup.latitude
+- uid: Stargazer.Startup.longitude
+  name: longitude
+  href: api/Stargazer.Startup.html#Stargazer_Startup_longitude
+  commentId: F:Stargazer.Startup.longitude
+  fullName: Stargazer.Startup.longitude
+  nameWithType: Startup.longitude
 - uid: Stargazer.Startup.repositoryService
   name: repositoryService
   href: api/Stargazer.Startup.html#Stargazer_Startup_repositoryService
   commentId: F:Stargazer.Startup.repositoryService
   fullName: Stargazer.Startup.repositoryService
   nameWithType: Startup.repositoryService
+- uid: Stargazer.Startup.timer
+  name: timer
+  href: api/Stargazer.Startup.html#Stargazer_Startup_timer
+  commentId: F:Stargazer.Startup.timer
+  fullName: Stargazer.Startup.timer
+  nameWithType: Startup.timer
+- uid: Stargazer.Startup.userTime
+  name: userTime
+  href: api/Stargazer.Startup.html#Stargazer_Startup_userTime
+  commentId: F:Stargazer.Startup.userTime
+  fullName: Stargazer.Startup.userTime
+  nameWithType: Startup.userTime
 - uid: Stargazer.Startup.viewPortPath
   name: viewPortPath
   href: api/Stargazer.Startup.html#Stargazer_Startup_viewPortPath

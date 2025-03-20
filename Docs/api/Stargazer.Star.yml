@@ -5,11 +5,11 @@ items:
   id: Star
   parent: Stargazer
   children:
-  - Stargazer.Star._Ready
+  - Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  - Stargazer.Star.GetLocation
   - Stargazer.Star.altitude
   - Stargazer.Star.azimuth
   - Stargazer.Star.dist
-  - Stargazer.Star.getLocation
   - Stargazer.Star.mag
   - Stargazer.Star.radians
   - Stargazer.Star.starName
@@ -22,7 +22,7 @@ items:
   type: Class
   source:
     id: Star
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Star_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Star_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -165,6 +165,7 @@ items:
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
   - Godot.Node._Process(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -373,7 +374,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: radians
     path: ../Stargazer-Godot/Code/Star.cs
@@ -400,7 +401,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: azimuth
     path: ../Stargazer-Godot/Code/Star.cs
@@ -441,7 +442,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: altitude
     path: ../Stargazer-Godot/Code/Star.cs
@@ -482,7 +483,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: dist
     path: ../Stargazer-Godot/Code/Star.cs
@@ -523,7 +524,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: mag
     path: ../Stargazer-Godot/Code/Star.cs
@@ -564,7 +565,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: starName
     path: ../Stargazer-Godot/Code/Star.cs
@@ -591,70 +592,66 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: Stargazer.Star.getLocation
-  commentId: M:Stargazer.Star.getLocation
-  id: getLocation
+- uid: Stargazer.Star.GetLocation
+  commentId: M:Stargazer.Star.GetLocation
+  id: GetLocation
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: getLocation()
-  nameWithType: Star.getLocation()
-  fullName: Stargazer.Star.getLocation()
+  name: GetLocation()
+  nameWithType: Star.GetLocation()
+  fullName: Stargazer.Star.GetLocation()
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: getLocation
+    id: GetLocation
     path: ../Stargazer-Godot/Code/Star.cs
     startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Vector3 getLocation()
+    content: private Vector3 GetLocation()
     return:
       type: Godot.Vector3
-    content.vb: Private Function getLocation() As Vector3
-  overload: Stargazer.Star.getLocation*
-- uid: Stargazer.Star._Ready
-  commentId: M:Stargazer.Star._Ready
-  id: _Ready
+    content.vb: Private Function GetLocation() As Vector3
+  overload: Stargazer.Star.GetLocation*
+- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: _Ready()
-  nameWithType: Star._Ready()
-  fullName: Stargazer.Star._Ready()
+  name: FromHorizontal(HorizontalStar)
+  nameWithType: Star.FromHorizontal(HorizontalStar)
+  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: _Ready
+    id: FromHorizontal
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 40
+    startLine: 45
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
-
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  summary: Populates the field according to the field in a <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: Stargazer.Star._Ready*
+    content: public void FromHorizontal(HorizontalStar star)
+    parameters:
+    - id: star
+      type: DataLayer.HorizontalObjects.HorizontalStar
+      description: The <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Sub FromHorizontal(star As HorizontalStar)
+  overload: Stargazer.Star.FromHorizontal*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -2705,6 +2702,25 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7494,12 +7510,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Stargazer.Star.getLocation*
-  commentId: Overload:Stargazer.Star.getLocation
-  href: Stargazer.Star.html#Stargazer_Star_getLocation
-  name: getLocation
-  nameWithType: Star.getLocation
-  fullName: Stargazer.Star.getLocation
+- uid: Stargazer.Star.GetLocation*
+  commentId: Overload:Stargazer.Star.GetLocation
+  href: Stargazer.Star.html#Stargazer_Star_GetLocation
+  name: GetLocation
+  nameWithType: Star.GetLocation
+  fullName: Stargazer.Star.GetLocation
 - uid: Godot.Vector3
   commentId: T:Godot.Vector3
   parent: Godot
@@ -7507,47 +7523,38 @@ references:
   name: Vector3
   nameWithType: Vector3
   fullName: Godot.Vector3
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
+- uid: DataLayer.HorizontalObjects.HorizontalStar
+  commentId: T:DataLayer.HorizontalObjects.HorizontalStar
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalStar.html
+  name: HorizontalStar
+  nameWithType: HorizontalStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar
+- uid: Stargazer.Star.FromHorizontal*
+  commentId: Overload:Stargazer.Star.FromHorizontal
+  href: Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_
+  name: FromHorizontal
+  nameWithType: Star.FromHorizontal
+  fullName: Stargazer.Star.FromHorizontal
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
   spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
   spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
-  isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
-  - name: (
-  - name: )
-- uid: Stargazer.Star._Ready*
-  commentId: Overload:Stargazer.Star._Ready
-  href: Stargazer.Star.html#Stargazer_Star__Ready
-  name: _Ready
-  nameWithType: Star._Ready
-  fullName: Stargazer.Star._Ready
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html

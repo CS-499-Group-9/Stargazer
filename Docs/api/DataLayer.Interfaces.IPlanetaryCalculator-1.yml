@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IPlanetaryCalculator
     path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CalculatePlanets
     path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs

@@ -23,6 +23,10 @@ Globals="*res://Code/Globals.cs"
 
 project/assembly_name="New Game Project"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/calendar_button/plugin.cfg")
+
 [input]
 
 screenshot_key={

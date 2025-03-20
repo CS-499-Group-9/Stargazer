@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IStarRepository
     path: ../DataLayer/Interfaces/IStarRepository.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetAllStarsAsync
     path: ../DataLayer/Interfaces/IStarRepository.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IStarRepository.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetStarByHipAsync
     path: ../DataLayer/Interfaces/IStarRepository.cs

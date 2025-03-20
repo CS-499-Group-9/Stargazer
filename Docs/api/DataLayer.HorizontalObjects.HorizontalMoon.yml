@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HorizontalMoon
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Phase
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs

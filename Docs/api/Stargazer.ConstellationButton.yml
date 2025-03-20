@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: ConstellationButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.ConstellationButton_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ConstellationButton_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -534,7 +534,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationLinesToggled
     path: ../Stargazer-Godot/Code/ConstellationButton.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleConst
     path: ../Stargazer-Godot/Code/ConstellationButton.cs

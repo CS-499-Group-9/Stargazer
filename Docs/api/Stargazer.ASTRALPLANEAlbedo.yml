@@ -19,7 +19,7 @@ items:
   type: Class
   source:
     id: ASTRALPLANEAlbedo
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -369,7 +369,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: camera
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
@@ -396,7 +396,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: mesh
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
@@ -423,7 +423,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: material
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
@@ -450,7 +450,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
@@ -479,7 +479,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Process
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs

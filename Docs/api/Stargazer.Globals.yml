@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     id: Globals
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Globals_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Globals_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -307,7 +307,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Instance
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -336,7 +336,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/Globals.cs

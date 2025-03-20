@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CosineKittyPlanetaryCalculator
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _bodies
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: observer
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
@@ -181,7 +181,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CalculatePlanets
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs

@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     id: LabelNode
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.LabelNode_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.LabelNode_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -367,7 +367,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: LabelText
     path: ../Stargazer-Godot/Code/LabelNode.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/LabelNode.cs

@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HorizontalStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HipparcosId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarName
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: AbsoluteMagnitude
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -187,7 +187,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Spectrum
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ColorIndex
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs

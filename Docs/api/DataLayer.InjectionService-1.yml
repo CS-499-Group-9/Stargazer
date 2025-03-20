@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: InjectionService
     path: ../DataLayer/InjectionService.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: maxStarMagnitude
     path: ../DataLayer/InjectionService.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: GetRepositoryServiceAsync
     path: ../DataLayer/InjectionService.cs

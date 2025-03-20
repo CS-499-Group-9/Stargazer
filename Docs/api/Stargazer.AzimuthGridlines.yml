@@ -24,8 +24,8 @@ items:
   type: Class
   source:
     id: AzimuthGridlines
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.AzimuthGridlines_ScriptSerialization.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.AzimuthGridlines_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: radius
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -465,7 +465,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: longitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -508,7 +508,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: latitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -551,7 +551,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: latitudeInterval
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -594,7 +594,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: cutoffLatitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -637,7 +637,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: mesh
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -664,7 +664,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: _Ready
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -693,7 +693,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -728,7 +728,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DrawLongitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
@@ -757,7 +757,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: DrawLatitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs

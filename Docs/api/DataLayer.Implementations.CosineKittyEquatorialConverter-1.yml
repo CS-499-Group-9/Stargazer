@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: CosineKittyEquatorialConverter
     path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: observer
     path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
-      branch: moon-and-planets
+      branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Convert
     path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
