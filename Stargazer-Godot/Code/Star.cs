@@ -55,10 +55,6 @@ namespace Stargazer
 				Y = dist * Mathf.Sin(altRad),
 				Z = dist * Mathf.Cos(altRad) * Mathf.Sin(azRad)
 			};
-			// Pos2D = new Vector2(
-            //     x:(90.0f-altitude)*Mathf.Cos((azimuth-90)*radians),
-            //     y:(90.0f-altitude)*Mathf.Sin((azimuth-90)*radians)
-            // );
 			return pos;
 		}
 		// Called when the node enters the scene tree for the first time.
@@ -73,6 +69,12 @@ namespace Stargazer
 			altitude = (float)star.Altitude;
 			mag = (float)star.Magnitude;
 			starName = star.StarName;
+			if(star.HipparcosId != null){
+				hipID = (int)star.HipparcosId;
+			}else{
+				hipID = 0;
+			}
+			//hipID = (int)star.HipparcosId;
 			Position = GetLocation();
             if (mag > 1) Scale = new Vector3(1 / mag, 1 / mag, 1 / mag);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);

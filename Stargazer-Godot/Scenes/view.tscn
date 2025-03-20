@@ -35,7 +35,7 @@ height = 200.0
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.490196)
 albedo_texture = ExtResource("2_7lioy")
-uv1_scale = Vector3(15, 15, 15)
+uv1_scale = Vector3(30, 30, 15)
 
 [sub_resource type="Environment" id="Environment_aofdk"]
 glow_enabled = true
@@ -53,6 +53,7 @@ albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
 script = ExtResource("1_b8fgf")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_t068r")
 
 [node name="Stars" type="Node3D" parent="."]
@@ -84,7 +85,7 @@ light_energy = 0.297
 script = ExtResource("6_pddxn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="THE ASTRAL PLANE"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+transform = Transform3D(140, 0, 0, 0, -6.11959e-06, 140, 0, -140, -6.11959e-06, 0, 0, 0)
 mesh = SubResource("QuadMesh_pe3po")
 surface_material_override/0 = SubResource("StandardMaterial3D_n6hq7")
 
@@ -93,8 +94,10 @@ environment = SubResource("Environment_aofdk")
 
 [node name="MessierObject" type="Node3D" parent="."]
 transform = Transform3D(3.775, 0, 0, 0, 3.775, 0, 0, 0, 3.775, 10.45, 10.815, 0)
+visible = false
 
 [node name="O1" type="StaticBody3D" parent="MessierObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.93076, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MessierObject/O1"]
 mesh = SubResource("BoxMesh_j2p66")

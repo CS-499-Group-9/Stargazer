@@ -3,11 +3,11 @@ using Stargazer;
 using System;
 using System.Collections.Generic;
 
-public partial class GridLabel : Node
+public partial class GridLabel : Control
 {
     private Camera3D camera;
     private SubViewport viewport;
-    private Dictionary<int, Label> labels = new Dictionary<int, Label>();
+    private Dictionary<int, Label> gridlabels = new Dictionary<int, Label>();
     private Plane leftPlane;
     private float storedfov;
     private float lineinterval;
@@ -21,18 +21,20 @@ public partial class GridLabel : Node
         // Create labels
         for (int altitude = 0; altitude < 180; altitude++)
         {
-                Label label = new Label();
-                label.Text = $"{-90 + altitude * lineinterval}°";
-                label.AddThemeFontSizeOverride("font_size", 25);
-                label.SetAnchorsPreset(Control.LayoutPreset.Center);
-                AddChild(label);
-                labels[altitude] = label;
+                Label gridlabel = new Label();
+                gridlabel.Text = $"{-90 + altitude * lineinterval}°";
+                gridlabel.AddThemeFontSizeOverride("font_size", 25);
+                gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);
+                AddChild(gridlabel);
+                gridlabels[altitude] = gridlabel;
 
         }
+        
     }
 
     public override void _Process(double delta)
     {
+        
         if(render){
             leftPlane = camera.GetFrustum()[2];
             const float radians = Mathf.Pi / 180.0f;
@@ -59,7 +61,7 @@ public partial class GridLabel : Node
             }
             storedfov = camera.Fov;
             var countdraw = 0;
-            foreach (var kvp in labels)
+            foreach (var kvp in gridlabels)
             {
                 
                 int index = kvp.Key;
@@ -87,7 +89,7 @@ public partial class GridLabel : Node
                         z:(flipfactor*a*bigsqrt-b*c*c*tantheta)/(c*(a*a+c*c))
                         );
                     }
-                    var unprojected = camera.UnprojectPosition(49.5f*placement.Normalized());
+                    var unprojected = camera.UnprojectPosition(75f*placement.Normalized());
                     label.Position = new Vector2(0.0f,unprojected[1]-30.0f);//new Vector2(0,unprojected[1]);
                 }else{
                     label.Visible = false;
@@ -95,7 +97,7 @@ public partial class GridLabel : Node
 
             }
         }else{
-            foreach (var kvp in labels)
+            foreach (var kvp in gridlabels)
             {
                 
                 int index = kvp.Key;

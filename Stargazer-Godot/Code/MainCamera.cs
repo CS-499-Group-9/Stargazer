@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace Stargazer
@@ -76,10 +77,15 @@ namespace Stargazer
                 var result = worldspace.IntersectRay(PhysicsRayQueryParameters3D.Create(start, end));
                 if (result.Count > 0)
                 {
+                    GD.Print("colliding!");
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
                     Star star = (Star)collider.GetParentNode3D();
-                    globalVars.hoverLabel = star.starName;
+                    if (!String.IsNullOrWhiteSpace(star.starName)){
+                        globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
+                    }else{
+                        globalVars.hoverLabel = $"Unnamed Star\nHIP {star.hipID}";
+                    }
                 }
                 else
                 {
