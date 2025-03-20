@@ -36,7 +36,7 @@ namespace Stargazer
 
 			// Create a new star container in memory
 			StarContainer = new();
-			
+
 			// Create a new task to calcualte the positions of the stars and add them to the container and await completion
 			await Task.Run(() =>
 			{
@@ -58,16 +58,17 @@ namespace Stargazer
 		{
 			Star star = StarScene.Instantiate<Star>();
 			star.FromHorizontal(horizontalStar);
-      if (horizontalStar.StarName != " ")
-      {
-        star.starName = horizontalStar.StarName;
-      }
-      else
-      {
-        star.starName = $"ID: {horizontalStar.StarId}";
-      }
+			if (horizontalStar.StarName != " ")
+			{
+				star.starName = horizontalStar.StarName;
+			}
+			else
+			{
+				star.starName = $"ID: {horizontalStar.StarId}";
+			}
 			StarContainer.AddChild(star);
 			return star;
 		}
+	}
 
 }
