@@ -34,6 +34,7 @@ namespace Stargazer
 			var starProducer = dataPackage.Stars;
 			foreach (var star in starProducer)
 			{
+
 				SpawnStar(star);
 			}
 

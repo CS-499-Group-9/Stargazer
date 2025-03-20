@@ -297,15 +297,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.99176)
 metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="LatitudeButton"]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 5.0
 offset_top = 5.0
-offset_right = 187.0
+offset_right = 194.0
 offset_bottom = 36.0
-placeholder_text = "Enter Latitude"
+placeholder_text = "   Enter Latitude"
 
 [node name="LongitudeButton" type="Control" parent="."]
 layout_mode = 3
@@ -327,11 +328,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="LongitudeButton"]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 5.0
 offset_top = 5.0
-offset_right = 187.0
+offset_right = 194.0
 offset_bottom = 36.0
-placeholder_text = "Enter Longitude"
+placeholder_text = "   Enter Longitude"
 
 [node name="DateTime" type="Control" parent="."]
 layout_mode = 1
@@ -361,9 +362,10 @@ offset_bottom = 40.0
 [node name="HBoxContainer" type="HBoxContainer" parent="DateTime/Time"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.925
 anchor_right = 5.0
 anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = -6.0
 
 [node name="TimeLineEdit" type="LineEdit" parent="DateTime/Time/HBoxContainer"]
 layout_mode = 2
@@ -437,13 +439,6 @@ theme = SubResource("Theme_g7sve")
 text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
 script = ExtResource("15_gllst")
-
-[node name="AltSubViewport" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 1153.0
-offset_top = 86.2547
-offset_right = 2753.0
-offset_bottom = 1686.25
 
 [node name="SubViewport2" type="SubViewport" parent="."]
 handle_input_locally = false

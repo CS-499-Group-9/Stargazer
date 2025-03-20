@@ -65,6 +65,9 @@ namespace Stargazer
         /// <returns><see cref="Task"/> that can be awaited.</returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
         {
+            var count = 0;
+            var nonnullcount = 0;
+            GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects

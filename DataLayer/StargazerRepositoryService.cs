@@ -243,6 +243,9 @@ namespace DataLayer
                 star.ColorIndex = item.Value.ColorIndex;
                 star.Spectrum = item.Value.Spectrum;
                 star.HipparcosId = item.Value.HipparcosId;
+                if(!star.HipparcosId.HasValue){
+                }
+                
                 ConstellationStars.TryAdd(star.HipparcosId ?? -1, star);
             }
         }

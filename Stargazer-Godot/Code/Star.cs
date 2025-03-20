@@ -69,6 +69,7 @@ namespace Stargazer
 			altitude = (float)star.Altitude;
 			mag = (float)star.Magnitude;
 			starName = star.StarName;
+			//GD.Print(star.HipparcosId);
 			if(star.HipparcosId != null){
 				hipID = (int)star.HipparcosId;
 			}else{

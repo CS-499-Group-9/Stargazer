@@ -132,8 +132,6 @@ namespace Stargazer
             outstar.altitude = star3d.altitude;
             outstar.mag = star3d.mag;
             outstar.scalestar(new Vector2(1.0f,1.0f));
-            GD.Print("Fuck!!!");
-            GD.Print(outstar.Scale);
             //outstar.Scale  = new Vector2(1F,1F);
             outstar.starName = star3d.starName;
             StarContainer.AddChild(outstar);

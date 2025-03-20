@@ -94,7 +94,7 @@ public partial class TestSpheres : Node
                 label.Position = 50*placement.Normalized();
 				// }
 				if(altitude == -61 || altitude == -60 || altitude == -59){
-					GD.Print($"{altitude} {placement}");
+					//GD.Print($"{altitude} {placement}");
 					//GD.Print(bigsqrt);
 				}
 				//new Vector2(0,unprojected[1]);
