@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Constellation
     path: ../DataLayer/EquatorialObjects/Constellation.cs
     startLine: 6
@@ -56,8 +56,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationId
     path: ../DataLayer/EquatorialObjects/Constellation.cs
     startLine: 11
@@ -87,8 +87,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationLines
     path: ../DataLayer/EquatorialObjects/Constellation.cs
     startLine: 16
@@ -118,8 +118,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ConstellationName
     path: ../DataLayer/EquatorialObjects/Constellation.cs
     startLine: 21
@@ -149,8 +149,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/EquatorialObjects/Constellation.cs
     startLine: 29

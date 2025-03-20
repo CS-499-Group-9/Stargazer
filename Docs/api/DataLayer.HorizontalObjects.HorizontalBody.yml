@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HorizontalBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
     startLine: 6
@@ -35,7 +35,9 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - DataLayer.HorizontalObjects.HorizonalPlanet
   - DataLayer.HorizontalObjects.HorizontalMessierObject
+  - DataLayer.HorizontalObjects.HorizontalMoon
   - DataLayer.HorizontalObjects.HorizontalStar
   inheritedMembers:
   - System.Object.Equals(System.Object)
@@ -59,8 +61,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Altitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
     startLine: 11
@@ -90,8 +92,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Azimuth
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
     startLine: 15
@@ -121,8 +123,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Magnitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
     startLine: 19
@@ -152,8 +154,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Distance
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
     startLine: 23

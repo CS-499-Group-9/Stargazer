@@ -1,0 +1,574 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyMoonCalculator
+  id: CosineKittyMoonCalculator
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  - DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+  - DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
+  - DataLayer.Implementations.CosineKittyMoonCalculator.observer
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyMoonCalculator
+  nameWithType: CosineKittyMoonCalculator
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator
+  type: Class
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CosineKittyMoonCalculator
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 14
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Uses the <xref href="CosineKitty.Astronomy" data-throw-if-not-resolved="false"></xref> library to calculate the position and phase of the moon.
+  example: []
+  syntax:
+    content: 'internal class CosineKittyMoonCalculator : IMoonCalculator'
+    content.vb: Friend Class CosineKittyMoonCalculator Implements IMoonCalculator
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IMoonCalculator
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.observer
+  commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.observer
+  id: observer
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: observer
+  nameWithType: CosineKittyMoonCalculator.observer
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.observer
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: observer
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly Observer observer
+    return:
+      type: CosineKitty.Observer
+    content.vb: Private ReadOnly observer As Observer
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
+  commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
+  id: astroTime
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: astroTime
+  nameWithType: CosineKittyMoonCalculator.astroTime
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: astroTime
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly AstroTime astroTime
+    return:
+      type: CosineKitty.AstroTime
+    content.vb: Private ReadOnly astroTime As AstroTime
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  id: '#ctor(System.Double,System.Double,System.DateTime)'
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyMoonCalculator(double, double, DateTime)
+  nameWithType: CosineKittyMoonCalculator.CosineKittyMoonCalculator(double, double, DateTime)
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CosineKittyMoonCalculator(double, double, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 25
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Creates a new calculator
+  example: []
+  syntax:
+    content: public CosineKittyMoonCalculator(double latitude, double longitude, DateTime universalTime)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The latitude of the observer
+    - id: longitude
+      type: System.Double
+      description: The longitude of the observer
+    - id: universalTime
+      type: System.DateTime
+      description: The UTC time of the observer
+    content.vb: Public Sub New(latitude As Double, longitude As Double, universalTime As Date)
+  overload: DataLayer.Implementations.CosineKittyMoonCalculator.#ctor*
+  nameWithType.vb: CosineKittyMoonCalculator.New(Double, Double, Date)
+  fullName.vb: DataLayer.Implementations.CosineKittyMoonCalculator.New(Double, Double, Date)
+  name.vb: New(Double, Double, Date)
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+  id: CalculateMoon
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: CalculateMoon()
+  nameWithType: CosineKittyMoonCalculator.CalculateMoon()
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CalculateMoon
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 31
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Performs the moon calculation
+  example: []
+  syntax:
+    content: public HorizontalMoon CalculateMoon()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: A <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref> object.
+    content.vb: Public Function CalculateMoon() As HorizontalMoon
+  overload: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon*
+  implements:
+  - DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+references:
+- uid: CosineKitty.Astronomy
+  commentId: T:CosineKitty.Astronomy
+  isExternal: true
+  name: Astronomy
+  nameWithType: Astronomy
+  fullName: CosineKitty.Astronomy
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IMoonCalculator
+  commentId: T:DataLayer.Interfaces.IMoonCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IMoonCalculator.html
+  name: IMoonCalculator
+  nameWithType: IMoonCalculator
+  fullName: DataLayer.Interfaces.IMoonCalculator
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: CosineKitty.Observer
+  commentId: T:CosineKitty.Observer
+  parent: CosineKitty
+  isExternal: true
+  name: Observer
+  nameWithType: Observer
+  fullName: CosineKitty.Observer
+- uid: CosineKitty
+  commentId: N:CosineKitty
+  isExternal: true
+  name: CosineKitty
+  nameWithType: CosineKitty
+  fullName: CosineKitty
+- uid: CosineKitty.AstroTime
+  commentId: T:CosineKitty.AstroTime
+  parent: CosineKitty
+  isExternal: true
+  name: AstroTime
+  nameWithType: AstroTime
+  fullName: CosineKitty.AstroTime
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.#ctor*
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.#ctor
+  href: DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator__ctor_System_Double_System_Double_System_DateTime_
+  name: CosineKittyMoonCalculator
+  nameWithType: CosineKittyMoonCalculator.CosineKittyMoonCalculator
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CosineKittyMoonCalculator
+  nameWithType.vb: CosineKittyMoonCalculator.New
+  fullName.vb: DataLayer.Implementations.CosineKittyMoonCalculator.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: DataLayer.HorizontalObjects.HorizontalMoon
+  commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  name: HorizontalMoon
+  nameWithType: HorizontalMoon
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon*
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+  href: DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_CalculateMoon
+  name: CalculateMoon
+  nameWithType: CosineKittyMoonCalculator.CalculateMoon
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+- uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  parent: DataLayer.Interfaces.IMoonCalculator
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon
+  name: CalculateMoon()
+  nameWithType: IMoonCalculator.CalculateMoon()
+  fullName: DataLayer.Interfaces.IMoonCalculator.CalculateMoon()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+    name: CalculateMoon
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+    name: CalculateMoon
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon
+  - name: (
+  - name: )
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html

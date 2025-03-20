@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=20 format=3 uid="uid://dmonwxoowo044"]
 
+[ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/Main.cs" id="1_t068r"]
 [ext_resource type="Texture2D" uid="uid://btfum2cg0tcf1" path="res://Textures/chercker.png" id="2_7lioy"]
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
+[ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
@@ -19,6 +21,7 @@ fill_to = Vector2(0.5, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku0cl"]
 albedo_texture = SubResource("GradientTexture2D_16tw0")
+uv1_scale = Vector3(1, 0.97, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_kgvtr"]
 material = SubResource("StandardMaterial3D_ku0cl")
@@ -48,6 +51,7 @@ albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
 
 [node name="View" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00757194, -0.00452363, -0.00741911)
+script = ExtResource("1_b8fgf")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -55,6 +59,11 @@ script = ExtResource("1_t068r")
 
 [node name="Stars" type="Node3D" parent="."]
 script = ExtResource("2_dkqjn")
+StarScene = ExtResource("3_54qo3")
+LabelScene = ExtResource("4_hboln")
+
+[node name="Constellations" type="Node3D" parent="."]
+script = ExtResource("6_erqrm")
 StarScene = ExtResource("3_54qo3")
 LabelScene = ExtResource("4_hboln")
 

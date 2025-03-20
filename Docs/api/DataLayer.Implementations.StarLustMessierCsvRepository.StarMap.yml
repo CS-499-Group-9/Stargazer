@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarMap
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 57
@@ -81,8 +81,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 62

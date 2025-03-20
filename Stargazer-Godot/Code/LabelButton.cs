@@ -1,16 +1,21 @@
 using Godot;
 using System;
 
-public partial class LabelButton : Control
+namespace Stargazer
 {
-    private Globals globalVars;
-    public override void _Ready()
+    /// <summary>
+    /// Contains the button used to toggle the constellation labels.
+    /// </summary>
+    public partial class LabelButton : Control
     {
-        globalVars = GetNode<Globals>("/root/Globals");
-    }
+        /// <summary>
+        /// Contains the <see cref="Delegate"/> used to notify the viewport to toggle the constellation label visibility. 
+        /// </summary>
+        public Action<bool> ConstellationLabelsToggled;
 
-    private void ToggleLabel(bool state)
-    {
-        globalVars.isLabel = state;
+        private void ToggleLabel(bool state)
+        {
+            ConstellationLabelsToggled(state);
+        }
     }
 }

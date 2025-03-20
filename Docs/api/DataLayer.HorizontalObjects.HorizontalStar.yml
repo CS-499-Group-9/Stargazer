@@ -21,8 +21,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HorizontalStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 6
@@ -63,8 +63,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 11
@@ -94,8 +94,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: HipparcosId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 15
@@ -125,8 +125,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: StarName
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 19
@@ -156,8 +156,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: AbsoluteMagnitude
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 23
@@ -187,8 +187,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Spectrum
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 27
@@ -218,8 +218,8 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: ColorIndex
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
     startLine: 31

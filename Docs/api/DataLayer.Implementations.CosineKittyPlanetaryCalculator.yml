@@ -1,0 +1,776 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  id: CosineKittyPlanetaryCalculator
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyPlanetaryCalculator
+  nameWithType: CosineKittyPlanetaryCalculator
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  type: Class
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CosineKittyPlanetaryCalculator
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 14
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Uses the <xref href="CosineKitty.Astronomy" data-throw-if-not-resolved="false"></xref> library to calculate the position and magnitude of the planets.
+  example: []
+  syntax:
+    content: 'internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizonalPlanet>'
+    content.vb: Friend Class CosineKittyPlanetaryCalculator Implements IPlanetaryCalculator(Of HorizonalPlanet)
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
+  commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
+  id: _bodies
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: _bodies
+  nameWithType: CosineKittyPlanetaryCalculator._bodies
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: _bodies
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly IEnumerable<Body> _bodies
+    return:
+      type: System.Collections.Generic.IEnumerable{CosineKitty.Body}
+    content.vb: Private ReadOnly _bodies As IEnumerable(Of Body)
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
+  commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
+  id: observer
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: observer
+  nameWithType: CosineKittyPlanetaryCalculator.observer
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: observer
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly Observer observer
+    return:
+      type: CosineKitty.Observer
+    content.vb: Private ReadOnly observer As Observer
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
+  commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
+  id: astroTime
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: astroTime
+  nameWithType: CosineKittyPlanetaryCalculator.astroTime
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: astroTime
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly AstroTime astroTime
+    return:
+      type: CosineKitty.AstroTime
+    content.vb: Private ReadOnly astroTime As AstroTime
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  id: '#ctor(System.Double,System.Double,System.DateTime)'
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyPlanetaryCalculator(double, double, DateTime)
+  nameWithType: CosineKittyPlanetaryCalculator.CosineKittyPlanetaryCalculator(double, double, DateTime)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CosineKittyPlanetaryCalculator(double, double, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 26
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Used to perform the calculations for a given user's position and universal time.
+  example: []
+  syntax:
+    content: public CosineKittyPlanetaryCalculator(double latitude, double longitude, DateTime universalTime)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The latitude of the user.
+    - id: longitude
+      type: System.Double
+      description: The longitude of the user.
+    - id: universalTime
+      type: System.DateTime
+      description: The user's time in universtal time code form.
+    content.vb: Public Sub New(latitude As Double, longitude As Double, universalTime As Date)
+  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor*
+  nameWithType.vb: CosineKittyPlanetaryCalculator.New(Double, Double, Date)
+  fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.New(Double, Double, Date)
+  name.vb: New(Double, Double, Date)
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+  id: CalculatePlanets
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: CalculatePlanets()
+  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets()
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
+    id: CalculatePlanets
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 36
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Performs the calculations for all planets.
+  example: []
+  syntax:
+    content: public IEnumerable<HorizonalPlanet> CalculatePlanets()
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
+      description: A <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> in horizontal coordinate form.
+    content.vb: Public Function CalculatePlanets() As IEnumerable(Of HorizonalPlanet)
+  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets*
+  implements:
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+references:
+- uid: CosineKitty.Astronomy
+  commentId: T:CosineKitty.Astronomy
+  isExternal: true
+  name: Astronomy
+  nameWithType: Astronomy
+  fullName: CosineKitty.Astronomy
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  name: IPlanetaryCalculator<HorizonalPlanet>
+  nameWithType: IPlanetaryCalculator<HorizonalPlanet>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizonalPlanet>
+  nameWithType.vb: IPlanetaryCalculator(Of HorizonalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizonalPlanet)
+  name.vb: IPlanetaryCalculator(Of HorizonalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
+    name: HorizonalPlanet
+    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
+    name: HorizonalPlanet
+    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  name: IPlanetaryCalculator<T>
+  nameWithType: IPlanetaryCalculator<T>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
+  nameWithType.vb: IPlanetaryCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
+  name.vb: IPlanetaryCalculator(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System.Collections.Generic.IEnumerable{CosineKitty.Body}
+  commentId: T:System.Collections.Generic.IEnumerable{CosineKitty.Body}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Body>
+  nameWithType: IEnumerable<Body>
+  fullName: System.Collections.Generic.IEnumerable<CosineKitty.Body>
+  nameWithType.vb: IEnumerable(Of Body)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CosineKitty.Body)
+  name.vb: IEnumerable(Of Body)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: CosineKitty.Body
+    name: Body
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CosineKitty.Body
+    name: Body
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CosineKitty.Observer
+  commentId: T:CosineKitty.Observer
+  parent: CosineKitty
+  isExternal: true
+  name: Observer
+  nameWithType: Observer
+  fullName: CosineKitty.Observer
+- uid: CosineKitty
+  commentId: N:CosineKitty
+  isExternal: true
+  name: CosineKitty
+  nameWithType: CosineKitty
+  fullName: CosineKitty
+- uid: CosineKitty.AstroTime
+  commentId: T:CosineKitty.AstroTime
+  parent: CosineKitty
+  isExternal: true
+  name: AstroTime
+  nameWithType: AstroTime
+  fullName: CosineKitty.AstroTime
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor*
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator__ctor_System_Double_System_Double_System_DateTime_
+  name: CosineKittyPlanetaryCalculator
+  nameWithType: CosineKittyPlanetaryCalculator.CosineKittyPlanetaryCalculator
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CosineKittyPlanetaryCalculator
+  nameWithType.vb: CosineKittyPlanetaryCalculator.New
+  fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets*
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CalculatePlanets
+  name: CalculatePlanets
+  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+  parent: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  name: CalculatePlanets()
+  nameWithType: IPlanetaryCalculator<HorizonalPlanet>.CalculatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizonalPlanet>.CalculatePlanets()
+  nameWithType.vb: IPlanetaryCalculator(Of HorizonalPlanet).CalculatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizonalPlanet).CalculatePlanets()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+    name: CalculatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+    name: CalculatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<HorizonalPlanet>
+  nameWithType: IEnumerable<HorizonalPlanet>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizonalPlanet>
+  nameWithType.vb: IEnumerable(Of HorizonalPlanet)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizonalPlanet)
+  name.vb: IEnumerable(Of HorizonalPlanet)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
+    name: HorizonalPlanet
+    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
+    name: HorizonalPlanet
+    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: )
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  name: CalculatePlanets()
+  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets()
+  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+    name: CalculatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+    name: CalculatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - name: (
+  - name: )

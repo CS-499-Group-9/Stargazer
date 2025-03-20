@@ -1,16 +1,21 @@
 using Godot;
 using System;
 
-public partial class AzimuthButton : Control
+namespace Stargazer
 {
-    private Globals globalVars;
-    public override void _Ready()
+    /// <summary>
+    /// Contains the button used to toggle the azimuth lines
+    /// </summary>
+    public partial class AzimuthButton : Control
     {
-        globalVars = GetNode<Globals>("/root/Globals");
-    }
+        /// <summary>
+        /// The <see cref="Delegate"/> used to notify the viewport to toggle the lines.
+        /// </summary>
+        public Action<bool> GridlinesToggled;
 
-    private void ToggleAzimuth(bool state)
-    {
-        globalVars.isAzimuth = state;
+        private void ToggleAzimuth(bool state)
+        {
+            GridlinesToggled(state);
+        }
     }
 }

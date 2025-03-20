@@ -1,17 +1,27 @@
 using Godot;
 using System;
 
-public partial class LabelNode : Node3D
+namespace Stargazer
 {
-	[Export] public string LabelText { get; set; }
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	/// <summary>
+	/// Contains the constellation label.
+	/// </summary>
+	public partial class LabelNode : Node3D
 	{
-	}
+		/// <summary>
+		/// Used to receive the text to display on the label on instantiation.
+		/// </summary>
+		[Export] public string LabelText { get; set; }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		/// <summary>
+		/// Gets a reference to the <see cref="Label3D"/> and passes the text to be displayed.
+		/// </summary>
+		public override void _Ready()
+		{
+			// Get a reference to the label and pass the text.
+			var child = GetChild<Label3D>(0);
+			child.Text = LabelText;
+		}
+
 	}
 }

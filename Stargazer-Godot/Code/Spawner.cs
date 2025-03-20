@@ -2,185 +2,72 @@ using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using Godot;
-using System;
-using System.Collections.Concurrent;
+using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
-public partial class Spawner : Node3D
+namespace Stargazer
 {
-	[Export] public PackedScene StarScene {get; set;}
-	[Export] public PackedScene LabelScene {get; set;}
-	
-	// This is for building our sample constellation
-	private readonly float[,] starPos = {{0, 45, 1}, {10, 45, 2}, {20, 45, 3}, {30, 45, 4}, {40, 45, 5}, {50, 45, 6}};
-	private readonly string[,] constLines = { { "s1", "s2" }, { "s2", "s3" }, { "s3", "s4" }, { "s4", "s5" } };
-	
-	private Globals globalVars;
-	private List<LabelNode> labels;
-	private Boolean constDrawn = true;
-	private Boolean labelDrawn = true;
 
-	CelestialDataPackage<Star> dataPackage;
-	private BlockingCollection<HorizontalStar> starProducer;
-	private BlockingCollection<HorizontalMessierObject> messierProducer;
-	private IEnumerable<Constellation> constellations;
-	
-	// Called when the node enters the scene tree for the first time.
-	public override async void _Ready()
+	/// <summary>
+	/// Draws all stars that are not a part of constellations
+	/// </summary>
+	public partial class Spawner : Node3D
 	{
-        globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-        Stopwatch sw = Stopwatch.StartNew();
-        HuntsvilleCoordinates huntsvilleCoordinates = new HuntsvilleCoordinates();
-        var repoService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-        
-		dataPackage = await repoService.UpdateUserPosition(huntsvilleCoordinates.lattitude, huntsvilleCoordinates.longitude, new DateTime(2025, 02, 28,12,00,00 ).ToUniversalTime());
-        starProducer = dataPackage.Stars;
-        constellations = dataPackage.Constellations;
-        messierProducer = dataPackage.MessierObjects;
-		
-        while (!starProducer.IsCompleted)
-        {
-            foreach (var star in starProducer.GetConsumingEnumerable())
-            {
-				SpawnStar(star);
-            }
-        }
-		
-		DrawConstellations();
-		
-		while (!messierProducer.IsCompleted)
-        {
-            foreach (var item in messierProducer.GetConsumingEnumerable())
-            {
-                GD.Print($"Messier: {item.MessierId} {item.Type}");
-            }
-        }
+		/// <summary>
+		/// The scene used to instantiate the star objects.
+		/// </summary>
+		[Export] public PackedScene StarScene { get; set; }
+		/// <summary>
+		/// The scene used to instantiate the labels for stars
+		/// </summary>
+		[Export] public PackedScene LabelScene { get; set; }
 
-        sw.Stop();
-        GD.Print($"That took {sw.Elapsed.TotalSeconds} seconds.");
+		private Node3D StarContainer;
 
-		// ... then draw constellations
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		// Triggers only once to save on performance.
-		if (globalVars.isConstellation && !constDrawn)
+		/// <summary>
+		/// Receives the notification to update the stars drawn.
+		/// </summary>
+		/// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
+		public async Task DrawStars(IEnumerable<HorizontalStar> stars)
 		{
-			DrawConstellations();
-			constDrawn = true;
-		}
-		else if (!globalVars.isConstellation && constDrawn)
-		{
-			foreach (Node3D child in GetChildren())
+			// Get a reference to the current star container
+			var oldContainer = StarContainer;
+
+			// Create a new star container in memory
+			StarContainer = new();
+			
+			// Create a new task to calcualte the positions of the stars and add them to the container and await completion
+			await Task.Run(() =>
 			{
-				if (child is MeshInstance3D)
+				foreach (var star in stars)
 				{
-					child.QueueFree();
-				} // Remove the constellation line meshes
-			}
-			constDrawn = false;
-		}
-		
-		// Triggers only once to save on performance.
-		if (globalVars.isLabel && !labelDrawn && constDrawn)
-		{
-			foreach (var label in labels)
-			{
-				label.Visible = true;
-			}
-			labelDrawn = true;
-		}
-		else if ((!globalVars.isLabel && labelDrawn) || !constDrawn)
-		{
-			foreach (var label in labels)
-			{
-				label.Visible = false;
-			}
-			labelDrawn = false;
-		}
-	}
-
-
-	
-	private async void DrawConstellations()
-	{
-
-		MeshInstance3D constMesh = new MeshInstance3D();
-		Vector3 labelPos = new Vector3();
-		ImmediateMesh mesh = new ImmediateMesh();
-		// Create a white material
-		StandardMaterial3D whiteMaterial = new StandardMaterial3D();
-		whiteMaterial.AlbedoColor = new Color(0.8f, 0.8f, 0.8f, 0.8f); // White color
-		whiteMaterial.ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded;
-		// Assign the material to the mesh
-		constMesh.MaterialOverride = whiteMaterial;
-		mesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-		labels = new List<LabelNode>();
-
-        foreach (var constellation in constellations)
-        { 
-			Vector3 totalPos = new Vector3(0, 0, 0);
-			int c = 0;
-			GD.Print($"Drawing constellation {constellation.ConstellationName}");
-
-			foreach(var lines in constellation.ConstellationLines) {
-
-				Star s1 = dataPackage.GetConstellationStar(lines.Item1, SpawnStar);
-				Star s2 = dataPackage.GetConstellationStar(lines.Item2, SpawnStar);
-				mesh.SurfaceAddVertex(s1.Position);
-				mesh.SurfaceAddVertex(s2.Position);
-				if (totalPos == Vector3.Zero) // solely checked for the first star
-				{
-					totalPos += s1.Position;
-					c++;
+					SpawnStar(star);
 				}
-				totalPos += s2.Position;
-				c++;
-			}
-		
-			// Creating labels
-			labelPos = totalPos / c;
-		
-			LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
-			labelNode.LabelText = constellation.ConstellationName;
-			labelNode.Position = labelPos;
-			labelNode.Visible = labelDrawn;
-			labels.Add(labelNode);
-        }
-		mesh.SurfaceEnd();
-		constMesh.Mesh = mesh;
-		AddChild(constMesh);
-		labels.ForEach((label) => { AddChild(label); });
-	
-	}
-	
-	private Star SpawnStar(HorizontalStar horizontalStar){
-		Star star = StarScene.Instantiate<Star>();
-		star.azimuth = (float)horizontalStar.Azimuth;
-		star.altitude = (float)horizontalStar.Altitude;
-		star.mag = (float)horizontalStar.Magnitude;
-		if (horizontalStar.StarName != " ")
-		{
-			star.starName = horizontalStar.StarName;
-		}
-		else
-		{
-			star.starName = $"ID: {horizontalStar.StarId}";
-		}
-		AddChild(star);
-		return star;
-	}
+			});
 
-    private struct HuntsvilleCoordinates
-    {
-        public double lattitude = 34.7304;
-        public double longitude = -86.5861;
-        public HuntsvilleCoordinates()
-        {
-        }
-    }
+			// If the previous container exists, remove it from the tree then add the new container.
+			oldContainer?.Free();
+			AddChild(StarContainer);
+		}
+
+		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
+		// Perhaps more to follow.....
+		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
+		private Star SpawnStar(HorizontalStar horizontalStar)
+		{
+			Star star = StarScene.Instantiate<Star>();
+			star.FromHorizontal(horizontalStar);
+      if (horizontalStar.StarName != " ")
+      {
+        star.starName = horizontalStar.StarName;
+      }
+      else
+      {
+        star.starName = $"ID: {horizontalStar.StarId}";
+      }
+			StarContainer.AddChild(star);
+			return star;
+		}
+
 }

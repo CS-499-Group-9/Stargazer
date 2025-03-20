@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IEquatorialConverter
     path: ../DataLayer/Interfaces/IEquitorialConverter.cs
     startLine: 11
@@ -49,8 +49,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: comment-back-end
-      repo: https://github.com/CS-499-Group-9/Stargazer
+      branch: animated-orbit
+      repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Convert
     path: ../DataLayer/Interfaces/IEquitorialConverter.cs
     startLine: 16

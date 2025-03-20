@@ -5,6 +5,8 @@ items:
   id: DataLayer.Implementations
   children:
   - DataLayer.Implementations.CosineKittyEquatorialConverter`1
+  - DataLayer.Implementations.CosineKittyMoonCalculator
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator
   - DataLayer.Implementations.HygCsvStarRepository
   - DataLayer.Implementations.HygCsvStarRepository.StarMap
   - DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
@@ -15,7 +17,6 @@ items:
   - DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.DdmToDecimalDegreesConverter
   - DataLayer.Implementations.StarLustMessierCsvRepository.StarMap.HmsToDecimalDegreesConverter
   - DataLayer.Implementations.StellariumJsonConstellationRepository
-  - DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
   - DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
   langs:
   - csharp
@@ -52,6 +53,18 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyMoonCalculator
+  href: DataLayer.Implementations.CosineKittyMoonCalculator.html
+  name: CosineKittyMoonCalculator
+  nameWithType: CosineKittyMoonCalculator
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html
+  name: CosineKittyPlanetaryCalculator
+  nameWithType: CosineKittyPlanetaryCalculator
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator
 - uid: DataLayer.Implementations.HygCsvStarRepository
   commentId: T:DataLayer.Implementations.HygCsvStarRepository
   href: DataLayer.Implementations.HygCsvStarRepository.html
@@ -238,25 +251,3 @@ references:
   - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter
     name: JsonConstellationListConverter
     href: DataLayer.Implementations.StellariumJsonConstellationRepository.JsonConstellationListConverter.html
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-  commentId: T:DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-  href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
-  name: StellariumJsonConstellationRepository.ConstellationName
-  nameWithType: StellariumJsonConstellationRepository.ConstellationName
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-  spec.csharp:
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
-    name: StellariumJsonConstellationRepository
-    href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
-  - name: .
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-    name: ConstellationName
-    href: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html
-  spec.vb:
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository
-    name: StellariumJsonConstellationRepository
-    href: DataLayer.Implementations.StellariumJsonConstellationRepository.html
-  - name: .
-  - uid: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName
-    name: ConstellationName
-    href: DataLayer.Implementations.StellariumJsonConstellationRepository.ConstellationName.html

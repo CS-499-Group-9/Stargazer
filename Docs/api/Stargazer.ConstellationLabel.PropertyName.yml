@@ -1,0 +1,1086 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.ConstellationLabel.PropertyName
+  commentId: T:Stargazer.ConstellationLabel.PropertyName
+  id: ConstellationLabel.PropertyName
+  parent: Stargazer
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ConstellationLabel.PropertyName
+  nameWithType: ConstellationLabel.PropertyName
+  fullName: Stargazer.ConstellationLabel.PropertyName
+  type: Class
+  source:
+    id: PropertyName
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.ConstellationLabel_ScriptProperties.generated.cs
+    startLine: 11
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Cached StringNames for the properties and fields contained in this class, for fast lookup.
+  example: []
+  syntax:
+    content: 'public class ConstellationLabel.PropertyName : Label3D.PropertyName'
+    content.vb: Public Class ConstellationLabel.PropertyName Inherits Label3D.PropertyName
+  inheritance:
+  - System.Object
+  - Godot.GodotObject.PropertyName
+  - Godot.Node.PropertyName
+  - Godot.Node3D.PropertyName
+  - Godot.VisualInstance3D.PropertyName
+  - Godot.GeometryInstance3D.PropertyName
+  - Godot.Label3D.PropertyName
+  inheritedMembers:
+  - Godot.Label3D.PropertyName.PixelSize
+  - Godot.Label3D.PropertyName.Offset
+  - Godot.Label3D.PropertyName.Billboard
+  - Godot.Label3D.PropertyName.Shaded
+  - Godot.Label3D.PropertyName.DoubleSided
+  - Godot.Label3D.PropertyName.NoDepthTest
+  - Godot.Label3D.PropertyName.FixedSize
+  - Godot.Label3D.PropertyName.AlphaCut
+  - Godot.Label3D.PropertyName.AlphaScissorThreshold
+  - Godot.Label3D.PropertyName.AlphaHashScale
+  - Godot.Label3D.PropertyName.AlphaAntialiasingMode
+  - Godot.Label3D.PropertyName.AlphaAntialiasingEdge
+  - Godot.Label3D.PropertyName.TextureFilter
+  - Godot.Label3D.PropertyName.RenderPriority
+  - Godot.Label3D.PropertyName.OutlineRenderPriority
+  - Godot.Label3D.PropertyName.Modulate
+  - Godot.Label3D.PropertyName.OutlineModulate
+  - Godot.Label3D.PropertyName.Text
+  - Godot.Label3D.PropertyName.Font
+  - Godot.Label3D.PropertyName.FontSize
+  - Godot.Label3D.PropertyName.OutlineSize
+  - Godot.Label3D.PropertyName.HorizontalAlignment
+  - Godot.Label3D.PropertyName.VerticalAlignment
+  - Godot.Label3D.PropertyName.Uppercase
+  - Godot.Label3D.PropertyName.LineSpacing
+  - Godot.Label3D.PropertyName.AutowrapMode
+  - Godot.Label3D.PropertyName.JustificationFlags
+  - Godot.Label3D.PropertyName.Width
+  - Godot.Label3D.PropertyName.TextDirection
+  - Godot.Label3D.PropertyName.Language
+  - Godot.Label3D.PropertyName.StructuredTextBidiOverride
+  - Godot.Label3D.PropertyName.StructuredTextBidiOverrideOptions
+  - Godot.GeometryInstance3D.PropertyName.MaterialOverride
+  - Godot.GeometryInstance3D.PropertyName.MaterialOverlay
+  - Godot.GeometryInstance3D.PropertyName.Transparency
+  - Godot.GeometryInstance3D.PropertyName.CastShadow
+  - Godot.GeometryInstance3D.PropertyName.ExtraCullMargin
+  - Godot.GeometryInstance3D.PropertyName.CustomAabb
+  - Godot.GeometryInstance3D.PropertyName.LodBias
+  - Godot.GeometryInstance3D.PropertyName.IgnoreOcclusionCulling
+  - Godot.GeometryInstance3D.PropertyName.GIMode
+  - Godot.GeometryInstance3D.PropertyName.GILightmapScale
+  - Godot.GeometryInstance3D.PropertyName.VisibilityRangeBegin
+  - Godot.GeometryInstance3D.PropertyName.VisibilityRangeBeginMargin
+  - Godot.GeometryInstance3D.PropertyName.VisibilityRangeEnd
+  - Godot.GeometryInstance3D.PropertyName.VisibilityRangeEndMargin
+  - Godot.GeometryInstance3D.PropertyName.VisibilityRangeFadeMode
+  - Godot.VisualInstance3D.PropertyName.Layers
+  - Godot.VisualInstance3D.PropertyName.SortingOffset
+  - Godot.VisualInstance3D.PropertyName.SortingUseAabbCenter
+  - Godot.Node3D.PropertyName.Transform
+  - Godot.Node3D.PropertyName.GlobalTransform
+  - Godot.Node3D.PropertyName.Position
+  - Godot.Node3D.PropertyName.Rotation
+  - Godot.Node3D.PropertyName.RotationDegrees
+  - Godot.Node3D.PropertyName.Quaternion
+  - Godot.Node3D.PropertyName.Basis
+  - Godot.Node3D.PropertyName.Scale
+  - Godot.Node3D.PropertyName.RotationEditMode
+  - Godot.Node3D.PropertyName.RotationOrder
+  - Godot.Node3D.PropertyName.TopLevel
+  - Godot.Node3D.PropertyName.GlobalPosition
+  - Godot.Node3D.PropertyName.GlobalBasis
+  - Godot.Node3D.PropertyName.GlobalRotation
+  - Godot.Node3D.PropertyName.GlobalRotationDegrees
+  - Godot.Node3D.PropertyName.Visible
+  - Godot.Node3D.PropertyName.VisibilityParent
+  - Godot.Node.PropertyName._ImportPath
+  - Godot.Node.PropertyName.Name
+  - Godot.Node.PropertyName.UniqueNameInOwner
+  - Godot.Node.PropertyName.SceneFilePath
+  - Godot.Node.PropertyName.Owner
+  - Godot.Node.PropertyName.Multiplayer
+  - Godot.Node.PropertyName.ProcessMode
+  - Godot.Node.PropertyName.ProcessPriority
+  - Godot.Node.PropertyName.ProcessPhysicsPriority
+  - Godot.Node.PropertyName.ProcessThreadGroup
+  - Godot.Node.PropertyName.ProcessThreadGroupOrder
+  - Godot.Node.PropertyName.ProcessThreadMessages
+  - Godot.Node.PropertyName.PhysicsInterpolationMode
+  - Godot.Node.PropertyName.AutoTranslateMode
+  - Godot.Node.PropertyName.EditorDescription
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+references:
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Godot.GodotObject.PropertyName
+  commentId: T:Godot.GodotObject.PropertyName
+  parent: Godot
+  isExternal: true
+  name: GodotObject.PropertyName
+  nameWithType: GodotObject.PropertyName
+  fullName: Godot.GodotObject.PropertyName
+  spec.csharp:
+  - uid: Godot.GodotObject
+    name: GodotObject
+    isExternal: true
+  - name: .
+  - uid: Godot.GodotObject.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.GodotObject
+    name: GodotObject
+    isExternal: true
+  - name: .
+  - uid: Godot.GodotObject.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.Node.PropertyName
+  commentId: T:Godot.Node.PropertyName
+  parent: Godot
+  isExternal: true
+  name: Node.PropertyName
+  nameWithType: Node.PropertyName
+  fullName: Godot.Node.PropertyName
+  spec.csharp:
+  - uid: Godot.Node
+    name: Node
+    isExternal: true
+  - name: .
+  - uid: Godot.Node.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.Node
+    name: Node
+    isExternal: true
+  - name: .
+  - uid: Godot.Node.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.Node3D.PropertyName
+  commentId: T:Godot.Node3D.PropertyName
+  parent: Godot
+  isExternal: true
+  name: Node3D.PropertyName
+  nameWithType: Node3D.PropertyName
+  fullName: Godot.Node3D.PropertyName
+  spec.csharp:
+  - uid: Godot.Node3D
+    name: Node3D
+    isExternal: true
+  - name: .
+  - uid: Godot.Node3D.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.Node3D
+    name: Node3D
+    isExternal: true
+  - name: .
+  - uid: Godot.Node3D.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.VisualInstance3D.PropertyName
+  commentId: T:Godot.VisualInstance3D.PropertyName
+  parent: Godot
+  isExternal: true
+  name: VisualInstance3D.PropertyName
+  nameWithType: VisualInstance3D.PropertyName
+  fullName: Godot.VisualInstance3D.PropertyName
+  spec.csharp:
+  - uid: Godot.VisualInstance3D
+    name: VisualInstance3D
+    isExternal: true
+  - name: .
+  - uid: Godot.VisualInstance3D.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.VisualInstance3D
+    name: VisualInstance3D
+    isExternal: true
+  - name: .
+  - uid: Godot.VisualInstance3D.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.GeometryInstance3D.PropertyName
+  commentId: T:Godot.GeometryInstance3D.PropertyName
+  parent: Godot
+  isExternal: true
+  name: GeometryInstance3D.PropertyName
+  nameWithType: GeometryInstance3D.PropertyName
+  fullName: Godot.GeometryInstance3D.PropertyName
+  spec.csharp:
+  - uid: Godot.GeometryInstance3D
+    name: GeometryInstance3D
+    isExternal: true
+  - name: .
+  - uid: Godot.GeometryInstance3D.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.GeometryInstance3D
+    name: GeometryInstance3D
+    isExternal: true
+  - name: .
+  - uid: Godot.GeometryInstance3D.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.Label3D.PropertyName
+  commentId: T:Godot.Label3D.PropertyName
+  parent: Godot
+  isExternal: true
+  name: Label3D.PropertyName
+  nameWithType: Label3D.PropertyName
+  fullName: Godot.Label3D.PropertyName
+  spec.csharp:
+  - uid: Godot.Label3D
+    name: Label3D
+    isExternal: true
+  - name: .
+  - uid: Godot.Label3D.PropertyName
+    name: PropertyName
+    isExternal: true
+  spec.vb:
+  - uid: Godot.Label3D
+    name: Label3D
+    isExternal: true
+  - name: .
+  - uid: Godot.Label3D.PropertyName
+    name: PropertyName
+    isExternal: true
+- uid: Godot.Label3D.PropertyName.PixelSize
+  commentId: F:Godot.Label3D.PropertyName.PixelSize
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: PixelSize
+  nameWithType: Label3D.PropertyName.PixelSize
+  fullName: Godot.Label3D.PropertyName.PixelSize
+- uid: Godot.Label3D.PropertyName.Offset
+  commentId: F:Godot.Label3D.PropertyName.Offset
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Offset
+  nameWithType: Label3D.PropertyName.Offset
+  fullName: Godot.Label3D.PropertyName.Offset
+- uid: Godot.Label3D.PropertyName.Billboard
+  commentId: F:Godot.Label3D.PropertyName.Billboard
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Billboard
+  nameWithType: Label3D.PropertyName.Billboard
+  fullName: Godot.Label3D.PropertyName.Billboard
+- uid: Godot.Label3D.PropertyName.Shaded
+  commentId: F:Godot.Label3D.PropertyName.Shaded
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Shaded
+  nameWithType: Label3D.PropertyName.Shaded
+  fullName: Godot.Label3D.PropertyName.Shaded
+- uid: Godot.Label3D.PropertyName.DoubleSided
+  commentId: F:Godot.Label3D.PropertyName.DoubleSided
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: DoubleSided
+  nameWithType: Label3D.PropertyName.DoubleSided
+  fullName: Godot.Label3D.PropertyName.DoubleSided
+- uid: Godot.Label3D.PropertyName.NoDepthTest
+  commentId: F:Godot.Label3D.PropertyName.NoDepthTest
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: NoDepthTest
+  nameWithType: Label3D.PropertyName.NoDepthTest
+  fullName: Godot.Label3D.PropertyName.NoDepthTest
+- uid: Godot.Label3D.PropertyName.FixedSize
+  commentId: F:Godot.Label3D.PropertyName.FixedSize
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: FixedSize
+  nameWithType: Label3D.PropertyName.FixedSize
+  fullName: Godot.Label3D.PropertyName.FixedSize
+- uid: Godot.Label3D.PropertyName.AlphaCut
+  commentId: F:Godot.Label3D.PropertyName.AlphaCut
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AlphaCut
+  nameWithType: Label3D.PropertyName.AlphaCut
+  fullName: Godot.Label3D.PropertyName.AlphaCut
+- uid: Godot.Label3D.PropertyName.AlphaScissorThreshold
+  commentId: F:Godot.Label3D.PropertyName.AlphaScissorThreshold
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AlphaScissorThreshold
+  nameWithType: Label3D.PropertyName.AlphaScissorThreshold
+  fullName: Godot.Label3D.PropertyName.AlphaScissorThreshold
+- uid: Godot.Label3D.PropertyName.AlphaHashScale
+  commentId: F:Godot.Label3D.PropertyName.AlphaHashScale
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AlphaHashScale
+  nameWithType: Label3D.PropertyName.AlphaHashScale
+  fullName: Godot.Label3D.PropertyName.AlphaHashScale
+- uid: Godot.Label3D.PropertyName.AlphaAntialiasingMode
+  commentId: F:Godot.Label3D.PropertyName.AlphaAntialiasingMode
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AlphaAntialiasingMode
+  nameWithType: Label3D.PropertyName.AlphaAntialiasingMode
+  fullName: Godot.Label3D.PropertyName.AlphaAntialiasingMode
+- uid: Godot.Label3D.PropertyName.AlphaAntialiasingEdge
+  commentId: F:Godot.Label3D.PropertyName.AlphaAntialiasingEdge
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AlphaAntialiasingEdge
+  nameWithType: Label3D.PropertyName.AlphaAntialiasingEdge
+  fullName: Godot.Label3D.PropertyName.AlphaAntialiasingEdge
+- uid: Godot.Label3D.PropertyName.TextureFilter
+  commentId: F:Godot.Label3D.PropertyName.TextureFilter
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: TextureFilter
+  nameWithType: Label3D.PropertyName.TextureFilter
+  fullName: Godot.Label3D.PropertyName.TextureFilter
+- uid: Godot.Label3D.PropertyName.RenderPriority
+  commentId: F:Godot.Label3D.PropertyName.RenderPriority
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: RenderPriority
+  nameWithType: Label3D.PropertyName.RenderPriority
+  fullName: Godot.Label3D.PropertyName.RenderPriority
+- uid: Godot.Label3D.PropertyName.OutlineRenderPriority
+  commentId: F:Godot.Label3D.PropertyName.OutlineRenderPriority
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: OutlineRenderPriority
+  nameWithType: Label3D.PropertyName.OutlineRenderPriority
+  fullName: Godot.Label3D.PropertyName.OutlineRenderPriority
+- uid: Godot.Label3D.PropertyName.Modulate
+  commentId: F:Godot.Label3D.PropertyName.Modulate
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Modulate
+  nameWithType: Label3D.PropertyName.Modulate
+  fullName: Godot.Label3D.PropertyName.Modulate
+- uid: Godot.Label3D.PropertyName.OutlineModulate
+  commentId: F:Godot.Label3D.PropertyName.OutlineModulate
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: OutlineModulate
+  nameWithType: Label3D.PropertyName.OutlineModulate
+  fullName: Godot.Label3D.PropertyName.OutlineModulate
+- uid: Godot.Label3D.PropertyName.Text
+  commentId: F:Godot.Label3D.PropertyName.Text
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Text
+  nameWithType: Label3D.PropertyName.Text
+  fullName: Godot.Label3D.PropertyName.Text
+- uid: Godot.Label3D.PropertyName.Font
+  commentId: F:Godot.Label3D.PropertyName.Font
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Font
+  nameWithType: Label3D.PropertyName.Font
+  fullName: Godot.Label3D.PropertyName.Font
+- uid: Godot.Label3D.PropertyName.FontSize
+  commentId: F:Godot.Label3D.PropertyName.FontSize
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: FontSize
+  nameWithType: Label3D.PropertyName.FontSize
+  fullName: Godot.Label3D.PropertyName.FontSize
+- uid: Godot.Label3D.PropertyName.OutlineSize
+  commentId: F:Godot.Label3D.PropertyName.OutlineSize
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: OutlineSize
+  nameWithType: Label3D.PropertyName.OutlineSize
+  fullName: Godot.Label3D.PropertyName.OutlineSize
+- uid: Godot.Label3D.PropertyName.HorizontalAlignment
+  commentId: F:Godot.Label3D.PropertyName.HorizontalAlignment
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: HorizontalAlignment
+  nameWithType: Label3D.PropertyName.HorizontalAlignment
+  fullName: Godot.Label3D.PropertyName.HorizontalAlignment
+- uid: Godot.Label3D.PropertyName.VerticalAlignment
+  commentId: F:Godot.Label3D.PropertyName.VerticalAlignment
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: VerticalAlignment
+  nameWithType: Label3D.PropertyName.VerticalAlignment
+  fullName: Godot.Label3D.PropertyName.VerticalAlignment
+- uid: Godot.Label3D.PropertyName.Uppercase
+  commentId: F:Godot.Label3D.PropertyName.Uppercase
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Uppercase
+  nameWithType: Label3D.PropertyName.Uppercase
+  fullName: Godot.Label3D.PropertyName.Uppercase
+- uid: Godot.Label3D.PropertyName.LineSpacing
+  commentId: F:Godot.Label3D.PropertyName.LineSpacing
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: LineSpacing
+  nameWithType: Label3D.PropertyName.LineSpacing
+  fullName: Godot.Label3D.PropertyName.LineSpacing
+- uid: Godot.Label3D.PropertyName.AutowrapMode
+  commentId: F:Godot.Label3D.PropertyName.AutowrapMode
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: AutowrapMode
+  nameWithType: Label3D.PropertyName.AutowrapMode
+  fullName: Godot.Label3D.PropertyName.AutowrapMode
+- uid: Godot.Label3D.PropertyName.JustificationFlags
+  commentId: F:Godot.Label3D.PropertyName.JustificationFlags
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: JustificationFlags
+  nameWithType: Label3D.PropertyName.JustificationFlags
+  fullName: Godot.Label3D.PropertyName.JustificationFlags
+- uid: Godot.Label3D.PropertyName.Width
+  commentId: F:Godot.Label3D.PropertyName.Width
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Width
+  nameWithType: Label3D.PropertyName.Width
+  fullName: Godot.Label3D.PropertyName.Width
+- uid: Godot.Label3D.PropertyName.TextDirection
+  commentId: F:Godot.Label3D.PropertyName.TextDirection
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: TextDirection
+  nameWithType: Label3D.PropertyName.TextDirection
+  fullName: Godot.Label3D.PropertyName.TextDirection
+- uid: Godot.Label3D.PropertyName.Language
+  commentId: F:Godot.Label3D.PropertyName.Language
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: Language
+  nameWithType: Label3D.PropertyName.Language
+  fullName: Godot.Label3D.PropertyName.Language
+- uid: Godot.Label3D.PropertyName.StructuredTextBidiOverride
+  commentId: F:Godot.Label3D.PropertyName.StructuredTextBidiOverride
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: StructuredTextBidiOverride
+  nameWithType: Label3D.PropertyName.StructuredTextBidiOverride
+  fullName: Godot.Label3D.PropertyName.StructuredTextBidiOverride
+- uid: Godot.Label3D.PropertyName.StructuredTextBidiOverrideOptions
+  commentId: F:Godot.Label3D.PropertyName.StructuredTextBidiOverrideOptions
+  parent: Godot.Label3D.PropertyName
+  isExternal: true
+  name: StructuredTextBidiOverrideOptions
+  nameWithType: Label3D.PropertyName.StructuredTextBidiOverrideOptions
+  fullName: Godot.Label3D.PropertyName.StructuredTextBidiOverrideOptions
+- uid: Godot.GeometryInstance3D.PropertyName.MaterialOverride
+  commentId: F:Godot.GeometryInstance3D.PropertyName.MaterialOverride
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: MaterialOverride
+  nameWithType: GeometryInstance3D.PropertyName.MaterialOverride
+  fullName: Godot.GeometryInstance3D.PropertyName.MaterialOverride
+- uid: Godot.GeometryInstance3D.PropertyName.MaterialOverlay
+  commentId: F:Godot.GeometryInstance3D.PropertyName.MaterialOverlay
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: MaterialOverlay
+  nameWithType: GeometryInstance3D.PropertyName.MaterialOverlay
+  fullName: Godot.GeometryInstance3D.PropertyName.MaterialOverlay
+- uid: Godot.GeometryInstance3D.PropertyName.Transparency
+  commentId: F:Godot.GeometryInstance3D.PropertyName.Transparency
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: Transparency
+  nameWithType: GeometryInstance3D.PropertyName.Transparency
+  fullName: Godot.GeometryInstance3D.PropertyName.Transparency
+- uid: Godot.GeometryInstance3D.PropertyName.CastShadow
+  commentId: F:Godot.GeometryInstance3D.PropertyName.CastShadow
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: CastShadow
+  nameWithType: GeometryInstance3D.PropertyName.CastShadow
+  fullName: Godot.GeometryInstance3D.PropertyName.CastShadow
+- uid: Godot.GeometryInstance3D.PropertyName.ExtraCullMargin
+  commentId: F:Godot.GeometryInstance3D.PropertyName.ExtraCullMargin
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: ExtraCullMargin
+  nameWithType: GeometryInstance3D.PropertyName.ExtraCullMargin
+  fullName: Godot.GeometryInstance3D.PropertyName.ExtraCullMargin
+- uid: Godot.GeometryInstance3D.PropertyName.CustomAabb
+  commentId: F:Godot.GeometryInstance3D.PropertyName.CustomAabb
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: CustomAabb
+  nameWithType: GeometryInstance3D.PropertyName.CustomAabb
+  fullName: Godot.GeometryInstance3D.PropertyName.CustomAabb
+- uid: Godot.GeometryInstance3D.PropertyName.LodBias
+  commentId: F:Godot.GeometryInstance3D.PropertyName.LodBias
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: LodBias
+  nameWithType: GeometryInstance3D.PropertyName.LodBias
+  fullName: Godot.GeometryInstance3D.PropertyName.LodBias
+- uid: Godot.GeometryInstance3D.PropertyName.IgnoreOcclusionCulling
+  commentId: F:Godot.GeometryInstance3D.PropertyName.IgnoreOcclusionCulling
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: IgnoreOcclusionCulling
+  nameWithType: GeometryInstance3D.PropertyName.IgnoreOcclusionCulling
+  fullName: Godot.GeometryInstance3D.PropertyName.IgnoreOcclusionCulling
+- uid: Godot.GeometryInstance3D.PropertyName.GIMode
+  commentId: F:Godot.GeometryInstance3D.PropertyName.GIMode
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: GIMode
+  nameWithType: GeometryInstance3D.PropertyName.GIMode
+  fullName: Godot.GeometryInstance3D.PropertyName.GIMode
+- uid: Godot.GeometryInstance3D.PropertyName.GILightmapScale
+  commentId: F:Godot.GeometryInstance3D.PropertyName.GILightmapScale
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: GILightmapScale
+  nameWithType: GeometryInstance3D.PropertyName.GILightmapScale
+  fullName: Godot.GeometryInstance3D.PropertyName.GILightmapScale
+- uid: Godot.GeometryInstance3D.PropertyName.VisibilityRangeBegin
+  commentId: F:Godot.GeometryInstance3D.PropertyName.VisibilityRangeBegin
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: VisibilityRangeBegin
+  nameWithType: GeometryInstance3D.PropertyName.VisibilityRangeBegin
+  fullName: Godot.GeometryInstance3D.PropertyName.VisibilityRangeBegin
+- uid: Godot.GeometryInstance3D.PropertyName.VisibilityRangeBeginMargin
+  commentId: F:Godot.GeometryInstance3D.PropertyName.VisibilityRangeBeginMargin
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: VisibilityRangeBeginMargin
+  nameWithType: GeometryInstance3D.PropertyName.VisibilityRangeBeginMargin
+  fullName: Godot.GeometryInstance3D.PropertyName.VisibilityRangeBeginMargin
+- uid: Godot.GeometryInstance3D.PropertyName.VisibilityRangeEnd
+  commentId: F:Godot.GeometryInstance3D.PropertyName.VisibilityRangeEnd
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: VisibilityRangeEnd
+  nameWithType: GeometryInstance3D.PropertyName.VisibilityRangeEnd
+  fullName: Godot.GeometryInstance3D.PropertyName.VisibilityRangeEnd
+- uid: Godot.GeometryInstance3D.PropertyName.VisibilityRangeEndMargin
+  commentId: F:Godot.GeometryInstance3D.PropertyName.VisibilityRangeEndMargin
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: VisibilityRangeEndMargin
+  nameWithType: GeometryInstance3D.PropertyName.VisibilityRangeEndMargin
+  fullName: Godot.GeometryInstance3D.PropertyName.VisibilityRangeEndMargin
+- uid: Godot.GeometryInstance3D.PropertyName.VisibilityRangeFadeMode
+  commentId: F:Godot.GeometryInstance3D.PropertyName.VisibilityRangeFadeMode
+  parent: Godot.GeometryInstance3D.PropertyName
+  isExternal: true
+  name: VisibilityRangeFadeMode
+  nameWithType: GeometryInstance3D.PropertyName.VisibilityRangeFadeMode
+  fullName: Godot.GeometryInstance3D.PropertyName.VisibilityRangeFadeMode
+- uid: Godot.VisualInstance3D.PropertyName.Layers
+  commentId: F:Godot.VisualInstance3D.PropertyName.Layers
+  parent: Godot.VisualInstance3D.PropertyName
+  isExternal: true
+  name: Layers
+  nameWithType: VisualInstance3D.PropertyName.Layers
+  fullName: Godot.VisualInstance3D.PropertyName.Layers
+- uid: Godot.VisualInstance3D.PropertyName.SortingOffset
+  commentId: F:Godot.VisualInstance3D.PropertyName.SortingOffset
+  parent: Godot.VisualInstance3D.PropertyName
+  isExternal: true
+  name: SortingOffset
+  nameWithType: VisualInstance3D.PropertyName.SortingOffset
+  fullName: Godot.VisualInstance3D.PropertyName.SortingOffset
+- uid: Godot.VisualInstance3D.PropertyName.SortingUseAabbCenter
+  commentId: F:Godot.VisualInstance3D.PropertyName.SortingUseAabbCenter
+  parent: Godot.VisualInstance3D.PropertyName
+  isExternal: true
+  name: SortingUseAabbCenter
+  nameWithType: VisualInstance3D.PropertyName.SortingUseAabbCenter
+  fullName: Godot.VisualInstance3D.PropertyName.SortingUseAabbCenter
+- uid: Godot.Node3D.PropertyName.Transform
+  commentId: F:Godot.Node3D.PropertyName.Transform
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Transform
+  nameWithType: Node3D.PropertyName.Transform
+  fullName: Godot.Node3D.PropertyName.Transform
+- uid: Godot.Node3D.PropertyName.GlobalTransform
+  commentId: F:Godot.Node3D.PropertyName.GlobalTransform
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: GlobalTransform
+  nameWithType: Node3D.PropertyName.GlobalTransform
+  fullName: Godot.Node3D.PropertyName.GlobalTransform
+- uid: Godot.Node3D.PropertyName.Position
+  commentId: F:Godot.Node3D.PropertyName.Position
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Position
+  nameWithType: Node3D.PropertyName.Position
+  fullName: Godot.Node3D.PropertyName.Position
+- uid: Godot.Node3D.PropertyName.Rotation
+  commentId: F:Godot.Node3D.PropertyName.Rotation
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Rotation
+  nameWithType: Node3D.PropertyName.Rotation
+  fullName: Godot.Node3D.PropertyName.Rotation
+- uid: Godot.Node3D.PropertyName.RotationDegrees
+  commentId: F:Godot.Node3D.PropertyName.RotationDegrees
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: RotationDegrees
+  nameWithType: Node3D.PropertyName.RotationDegrees
+  fullName: Godot.Node3D.PropertyName.RotationDegrees
+- uid: Godot.Node3D.PropertyName.Quaternion
+  commentId: F:Godot.Node3D.PropertyName.Quaternion
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Quaternion
+  nameWithType: Node3D.PropertyName.Quaternion
+  fullName: Godot.Node3D.PropertyName.Quaternion
+- uid: Godot.Node3D.PropertyName.Basis
+  commentId: F:Godot.Node3D.PropertyName.Basis
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Basis
+  nameWithType: Node3D.PropertyName.Basis
+  fullName: Godot.Node3D.PropertyName.Basis
+- uid: Godot.Node3D.PropertyName.Scale
+  commentId: F:Godot.Node3D.PropertyName.Scale
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Scale
+  nameWithType: Node3D.PropertyName.Scale
+  fullName: Godot.Node3D.PropertyName.Scale
+- uid: Godot.Node3D.PropertyName.RotationEditMode
+  commentId: F:Godot.Node3D.PropertyName.RotationEditMode
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: RotationEditMode
+  nameWithType: Node3D.PropertyName.RotationEditMode
+  fullName: Godot.Node3D.PropertyName.RotationEditMode
+- uid: Godot.Node3D.PropertyName.RotationOrder
+  commentId: F:Godot.Node3D.PropertyName.RotationOrder
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: RotationOrder
+  nameWithType: Node3D.PropertyName.RotationOrder
+  fullName: Godot.Node3D.PropertyName.RotationOrder
+- uid: Godot.Node3D.PropertyName.TopLevel
+  commentId: F:Godot.Node3D.PropertyName.TopLevel
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: TopLevel
+  nameWithType: Node3D.PropertyName.TopLevel
+  fullName: Godot.Node3D.PropertyName.TopLevel
+- uid: Godot.Node3D.PropertyName.GlobalPosition
+  commentId: F:Godot.Node3D.PropertyName.GlobalPosition
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: GlobalPosition
+  nameWithType: Node3D.PropertyName.GlobalPosition
+  fullName: Godot.Node3D.PropertyName.GlobalPosition
+- uid: Godot.Node3D.PropertyName.GlobalBasis
+  commentId: F:Godot.Node3D.PropertyName.GlobalBasis
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: GlobalBasis
+  nameWithType: Node3D.PropertyName.GlobalBasis
+  fullName: Godot.Node3D.PropertyName.GlobalBasis
+- uid: Godot.Node3D.PropertyName.GlobalRotation
+  commentId: F:Godot.Node3D.PropertyName.GlobalRotation
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: GlobalRotation
+  nameWithType: Node3D.PropertyName.GlobalRotation
+  fullName: Godot.Node3D.PropertyName.GlobalRotation
+- uid: Godot.Node3D.PropertyName.GlobalRotationDegrees
+  commentId: F:Godot.Node3D.PropertyName.GlobalRotationDegrees
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: GlobalRotationDegrees
+  nameWithType: Node3D.PropertyName.GlobalRotationDegrees
+  fullName: Godot.Node3D.PropertyName.GlobalRotationDegrees
+- uid: Godot.Node3D.PropertyName.Visible
+  commentId: F:Godot.Node3D.PropertyName.Visible
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: Visible
+  nameWithType: Node3D.PropertyName.Visible
+  fullName: Godot.Node3D.PropertyName.Visible
+- uid: Godot.Node3D.PropertyName.VisibilityParent
+  commentId: F:Godot.Node3D.PropertyName.VisibilityParent
+  parent: Godot.Node3D.PropertyName
+  isExternal: true
+  name: VisibilityParent
+  nameWithType: Node3D.PropertyName.VisibilityParent
+  fullName: Godot.Node3D.PropertyName.VisibilityParent
+- uid: Godot.Node.PropertyName._ImportPath
+  commentId: F:Godot.Node.PropertyName._ImportPath
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: _ImportPath
+  nameWithType: Node.PropertyName._ImportPath
+  fullName: Godot.Node.PropertyName._ImportPath
+- uid: Godot.Node.PropertyName.Name
+  commentId: F:Godot.Node.PropertyName.Name
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: Name
+  nameWithType: Node.PropertyName.Name
+  fullName: Godot.Node.PropertyName.Name
+- uid: Godot.Node.PropertyName.UniqueNameInOwner
+  commentId: F:Godot.Node.PropertyName.UniqueNameInOwner
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: UniqueNameInOwner
+  nameWithType: Node.PropertyName.UniqueNameInOwner
+  fullName: Godot.Node.PropertyName.UniqueNameInOwner
+- uid: Godot.Node.PropertyName.SceneFilePath
+  commentId: F:Godot.Node.PropertyName.SceneFilePath
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: SceneFilePath
+  nameWithType: Node.PropertyName.SceneFilePath
+  fullName: Godot.Node.PropertyName.SceneFilePath
+- uid: Godot.Node.PropertyName.Owner
+  commentId: F:Godot.Node.PropertyName.Owner
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: Owner
+  nameWithType: Node.PropertyName.Owner
+  fullName: Godot.Node.PropertyName.Owner
+- uid: Godot.Node.PropertyName.Multiplayer
+  commentId: F:Godot.Node.PropertyName.Multiplayer
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: Multiplayer
+  nameWithType: Node.PropertyName.Multiplayer
+  fullName: Godot.Node.PropertyName.Multiplayer
+- uid: Godot.Node.PropertyName.ProcessMode
+  commentId: F:Godot.Node.PropertyName.ProcessMode
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessMode
+  nameWithType: Node.PropertyName.ProcessMode
+  fullName: Godot.Node.PropertyName.ProcessMode
+- uid: Godot.Node.PropertyName.ProcessPriority
+  commentId: F:Godot.Node.PropertyName.ProcessPriority
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessPriority
+  nameWithType: Node.PropertyName.ProcessPriority
+  fullName: Godot.Node.PropertyName.ProcessPriority
+- uid: Godot.Node.PropertyName.ProcessPhysicsPriority
+  commentId: F:Godot.Node.PropertyName.ProcessPhysicsPriority
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessPhysicsPriority
+  nameWithType: Node.PropertyName.ProcessPhysicsPriority
+  fullName: Godot.Node.PropertyName.ProcessPhysicsPriority
+- uid: Godot.Node.PropertyName.ProcessThreadGroup
+  commentId: F:Godot.Node.PropertyName.ProcessThreadGroup
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessThreadGroup
+  nameWithType: Node.PropertyName.ProcessThreadGroup
+  fullName: Godot.Node.PropertyName.ProcessThreadGroup
+- uid: Godot.Node.PropertyName.ProcessThreadGroupOrder
+  commentId: F:Godot.Node.PropertyName.ProcessThreadGroupOrder
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessThreadGroupOrder
+  nameWithType: Node.PropertyName.ProcessThreadGroupOrder
+  fullName: Godot.Node.PropertyName.ProcessThreadGroupOrder
+- uid: Godot.Node.PropertyName.ProcessThreadMessages
+  commentId: F:Godot.Node.PropertyName.ProcessThreadMessages
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: ProcessThreadMessages
+  nameWithType: Node.PropertyName.ProcessThreadMessages
+  fullName: Godot.Node.PropertyName.ProcessThreadMessages
+- uid: Godot.Node.PropertyName.PhysicsInterpolationMode
+  commentId: F:Godot.Node.PropertyName.PhysicsInterpolationMode
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: PhysicsInterpolationMode
+  nameWithType: Node.PropertyName.PhysicsInterpolationMode
+  fullName: Godot.Node.PropertyName.PhysicsInterpolationMode
+- uid: Godot.Node.PropertyName.AutoTranslateMode
+  commentId: F:Godot.Node.PropertyName.AutoTranslateMode
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: AutoTranslateMode
+  nameWithType: Node.PropertyName.AutoTranslateMode
+  fullName: Godot.Node.PropertyName.AutoTranslateMode
+- uid: Godot.Node.PropertyName.EditorDescription
+  commentId: F:Godot.Node.PropertyName.EditorDescription
+  parent: Godot.Node.PropertyName
+  isExternal: true
+  name: EditorDescription
+  nameWithType: Node.PropertyName.EditorDescription
+  fullName: Godot.Node.PropertyName.EditorDescription
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Godot
+  commentId: N:Godot
+  isExternal: true
+  name: Godot
+  nameWithType: Godot
+  fullName: Godot
