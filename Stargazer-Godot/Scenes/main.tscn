@@ -13,7 +13,7 @@
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="9_rl8tn"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="10_6a71k"]
-[ext_resource type="PackedScene" uid="uid://k4fs3pummlhb" path="res://Scenes/view2d.tscn" id="10_asg56"]
+[ext_resource type="PackedScene" uid="uid://ujvt4iftkmki" path="res://Scenes/view2d.tscn" id="10_asg56"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="11_imatn"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="15_gllst"]
 

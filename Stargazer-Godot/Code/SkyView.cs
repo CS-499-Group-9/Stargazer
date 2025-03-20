@@ -67,9 +67,11 @@ namespace Stargazer
         {
             var count = 0;
             var nonnullcount = 0;
-            GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
+            //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.Stars);
+            await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
+            await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects
             // TODO: Notify the Moon node to draw the moon
             // TODO: Notify the Planets node to draw the planets

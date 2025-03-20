@@ -21,7 +21,10 @@ namespace Stargazer
         // This will need to be attached to the signal on the UpdateButton class, and get the lat/long/time from the other objects.
         private async void RunTheThing()
         {
+            Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
             var coords = new HuntsvilleCoordinates();
+            globalVars.requestTime = DateTime.UtcNow;
+            GD.Print("Update");
             await NotifyControllerOfUserUpdate(coords.latitude, coords.longitude, DateTime.UtcNow);
 
         }

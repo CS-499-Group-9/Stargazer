@@ -242,9 +242,8 @@ namespace DataLayer
                 star.AbsoluteMagnitude = item.Value.AbsoluteMagnitude;
                 star.ColorIndex = item.Value.ColorIndex;
                 star.Spectrum = item.Value.Spectrum;
+                //Console.WriteLine($"HIP: {item.Value.HipparcosId}");
                 star.HipparcosId = item.Value.HipparcosId;
-                if(!star.HipparcosId.HasValue){
-                }
                 
                 ConstellationStars.TryAdd(star.HipparcosId ?? -1, star);
             }
@@ -279,6 +278,8 @@ namespace DataLayer
                 star.AbsoluteMagnitude = item.AbsoluteMagnitude;
                 star.ColorIndex = item.ColorIndex;
                 star.Spectrum = item.Spectrum;
+                star.HipparcosId = item.HipparcosId;
+                //Console.WriteLine($"Non-Constell HIP: {star.HipparcosId}");
 
                 newStars.Add(star);
             }

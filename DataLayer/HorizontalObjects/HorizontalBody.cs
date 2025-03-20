@@ -17,6 +17,8 @@ namespace DataLayer.HorizontalObjects
         /// <summary>
         /// The apparent brightness of the star
         /// </summary>
+        public double FutureAltitude{ get; internal set;}
+        public double FutureAzimuth{ get; internal set;}
         public double Magnitude { get; internal set; }
         /// <summary>
         /// The distance (in lightyears) from the star to earth

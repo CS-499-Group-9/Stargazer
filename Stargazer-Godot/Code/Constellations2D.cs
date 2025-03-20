@@ -1,7 +1,10 @@
 using DataLayer;
 using DataLayer.HorizontalObjects;
+using DataLayer.EquatorialObjects;
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Stargazer
 {
@@ -43,8 +46,6 @@ namespace Stargazer
             constMesh.Material = whiteMaterial;
             ConstellationLabels = GetNode<Node2D>("LineMesh/Constellation2DLabels");
 
-            base._Ready();
-
         }
 
         /// <summary>
@@ -52,9 +53,9 @@ namespace Stargazer
         /// This should be done using the += operator to be notified in addition to other components in the viewport.
         /// </summary>
         /// <param name="dataPackage"></param>
-        public void DrawConstellations(CelestialDataPackage<Star> dataPackage)
+        public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
         {
-            var constellations = dataPackage.Constellations;
+            //var constellations = dataPackage.Constellations;
             mesh.ClearSurfaces();
             foreach (var star in StarContainer.GetChildren()) { star.Free(); }
             foreach (var line in ConstellationLabels.GetChildren()) { line.Free(); }
@@ -70,8 +71,8 @@ namespace Stargazer
                 foreach (var lines in constellation.ConstellationLines)
                 {
                     //GD.Print("gonna grab a constellation");
-                    Star s1 = dataPackage.GetConstellationStar(lines.Item1, (S)=>{return null;});
-                    Star s2 = dataPackage.GetConstellationStar(lines.Item2, (S)=>{return null;});
+                    Star s1 = GetConstellationStar(lines.Item1, (S)=>{return null;});
+                    Star s2 = GetConstellationStar(lines.Item2, (S)=>{return null;});
                     if (s1.altitude > -45.0 || s2.altitude > -45.0){
                         Star2D s12d = Spawn2DStar(s1);
                         Star2D s22d = Spawn2DStar(s2);
@@ -131,7 +132,7 @@ namespace Stargazer
             outstar.azimuth = star3d.azimuth;
             outstar.altitude = star3d.altitude;
             outstar.mag = star3d.mag;
-            outstar.scalestar(new Vector2(1.0f,1.0f));
+            outstar.scalestar(new Vector2(0.7f,0.7f));
             //outstar.Scale  = new Vector2(1F,1F);
             outstar.starName = star3d.starName;
             StarContainer.AddChild(outstar);

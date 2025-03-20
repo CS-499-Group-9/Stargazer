@@ -17,7 +17,7 @@ namespace Stargazer
         public bool isLabel { get; set; }
         public bool isHover { get; set; }
         public string hoverLabel { get; set; }
-
+        public DateTime requestTime {get; set;}
         public coordData data = new coordData(); // Create a global instance
 
         public override void _Ready()

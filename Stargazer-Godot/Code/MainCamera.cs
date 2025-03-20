@@ -41,6 +41,7 @@ namespace Stargazer
             {
                 if (mouseButton.ButtonIndex == MouseButton.Right)
                 {
+                    globalVars.isHover = false;
                     rightClickHeld = mouseButton.Pressed;
                     Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
                 }
@@ -81,11 +82,16 @@ namespace Stargazer
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
                     Star star = (Star)collider.GetParentNode3D();
-                    if (!String.IsNullOrWhiteSpace(star.starName)){
-                        globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
-                    }else{
-                        globalVars.hoverLabel = $"Unnamed Star\nHIP {star.hipID}";
-                    }
+                    globalVars.hoverLabel = 
+                    $"{(String.IsNullOrWhiteSpace(star.starName) ? "Unnamed Star" : star.starName)}\n"+
+                    $"HIP {star.hipID}\n"+
+                    $"Altitude {star.altitude} -> {star.futureAltitude}\n"+
+                    $"Azimuth {star.azimuth} -> {star.futureAzimuth}";
+                    // if (!String.IsNullOrWhiteSpace(star.starName)){
+                    //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
+                    // }else{
+                    //     globalVars.hoverLabel = $"Unnamed Star\nHIP {star.hipID}";
+                    // }
                 }
                 else
                 {
@@ -96,7 +102,6 @@ namespace Stargazer
 
         private void ZoomIn()
         {
-            GD.Print($"{Fov}");
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }

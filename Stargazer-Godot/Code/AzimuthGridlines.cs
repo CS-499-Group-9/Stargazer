@@ -135,7 +135,6 @@ namespace Stargazer
 		private void DrawLatitudeLines(ImmediateMesh imMesh)
 		{
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-			GD.Print("redrawin");
 			for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 			{
 				int storelat = lat;
