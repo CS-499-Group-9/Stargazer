@@ -37,8 +37,7 @@ namespace Stargazer
 		/// </summary>
 		/// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
 		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
-		public override
-		 void _Process(double delta)
+		public override void _Process(double delta)
 		{
 			if(constMesh == null){
 				GD.Print("constmesh null");
@@ -177,12 +176,10 @@ namespace Stargazer
 			constMesh.Mesh  = mesh;
 
 			// If the old containers exist, remove them from the tree
-			// oldMesh?.Free();
-			// oldStars?.Free();
+			oldMesh?.Free();
+			oldStars?.Free();
 
-			foreach(var child in GetChildren()){
-				child.Free();
-			}
+
 			// Add the new containers to the tree
 			AddChild(StarContainer);
 			constMesh.AddChild(ConstellationLabels);
