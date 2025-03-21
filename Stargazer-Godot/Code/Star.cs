@@ -102,6 +102,7 @@ namespace Stargazer
 			//Rolling over from 1 degree to 359
 			var calcAzimuth = azimuth;
 			var calcFutureAzimuth = futureAzimuth;
+			calcAzimuth = (futureAzimuth - calcAzimuth)%360;
 			if(futureAzimuth - azimuth > 300){
 				calcAzimuth += 360;
 			}
