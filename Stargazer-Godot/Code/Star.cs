@@ -47,17 +47,9 @@ namespace Stargazer
 		public string starName;
 		public int hipID;
 		public Vector2 Pos2D;
+
+
 		private Globals globalVars;
-
-        public override void _Ready()
-        {
-            globalVars = GetNode<Globals>("/root/Globals");
-        }
-        public override void _Process(double delta)
-        {
-            Position = GetLocation(LerpCoords());
-        }
-
 		// Gets the Cartesian position of the Celestial Body
 		private Vector3 GetLocation(Vector2 altazi)
 		{
@@ -72,12 +64,16 @@ namespace Stargazer
 			return pos;
 		}
 
-        // 
+        // Called when the node enters the scene tree for the first time.
+
         /// <summary>
         /// Populates the field according to the field in a <see cref="HorizontalStar"/>
-		/// Called when the node enters the scene tree for the first time.
         /// </summary>
         /// <param name="star">The <see cref="HorizontalStar"/></param>
+        public override void _Ready()
+        {
+            globalVars = GetNode<Globals>("/root/Globals");
+        }
         public void FromHorizontal(HorizontalStar star)
 		{
 			azimuth = (float)star.Azimuth;
@@ -98,11 +94,14 @@ namespace Stargazer
             if (mag > 1) Scale = new Vector3(1 / mag, 1 / mag, 1 / mag);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
         }
+        public override void _Process(double delta)
+        {
+            Position = GetLocation(LerpCoords());
+        }
 		private Vector2 LerpCoords(){
 			//Rolling over from 1 degree to 359
 			var calcAzimuth = azimuth;
 			var calcFutureAzimuth = futureAzimuth;
-			calcAzimuth = (futureAzimuth - calcAzimuth)%360;
 			if(futureAzimuth - azimuth > 300){
 				calcAzimuth += 360;
 			}
