@@ -19,6 +19,7 @@ namespace Stargazer
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
         /// </summary>
         public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated;
+       
 
         private Timer timer;
         private double latitude, longitude;
