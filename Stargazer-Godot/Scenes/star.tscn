@@ -16,6 +16,8 @@ radial_segments = 9
 
 [node name="CelestialBody" type="Node3D"]
 script = ExtResource("1_jyeas")
+azimuth = 45.0
+altitude = 45.0
 
 [node name="StarBody" type="StaticBody3D" parent="."]
 
