@@ -24,9 +24,9 @@ namespace Stargazer
 		/// </summary>
 		[Export] public PackedScene LabelScene { get; set; }
 
-		private Node3D StarContainer;
-		private MeshInstance3D constMesh;
-		private Node3D ConstellationLabels;
+		private Node3D? StarContainer;
+		private MeshInstance3D? constMesh;
+		private Node3D? ConstellationLabels;
 		//private List<(Star,Star)> starRefList;
 		private IEnumerable<Constellation> constellations; 
 		private Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar;
@@ -198,6 +198,7 @@ namespace Stargazer
 		/// <param name="showlines">True if the user has requested to show the lines.</param>
 		public void ToggleConstellationLines(bool showlines)
 		{
+			if (constMesh == null) return;
 			constMesh.Visible = showlines;
 		}
 
@@ -205,7 +206,11 @@ namespace Stargazer
 		/// Receives the notification to toggle the visibility of the constellation labels.
 		/// </summary>
 		/// <param name="showlabels">True if the user has requested to show the labels.</param>
-		public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
+		public void ToggleConstellationLabels(bool showlabels) 
+		{
+			if (ConstellationLabels == null) return;	
+			ConstellationLabels.Visible = showlabels; 
+		}
 
 		private Star SpawnStar(HorizontalStar horizontalStar)
 		{

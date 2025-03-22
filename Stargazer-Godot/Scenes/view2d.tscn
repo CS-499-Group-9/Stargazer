@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ujvt4iftkmki"]
 
 [ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
-[ext_resource type="PackedScene" path="res://Scenes/star2d.tscn" id="2_u1lwa"]
+[ext_resource type="PackedScene" uid="uid://baskob1q5tm0q" path="res://Scenes/star2d.tscn" id="2_u1lwa"]
 [ext_resource type="Script" path="res://Code/Constellations2D.cs" id="3_h3n60"]
 [ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="3_vnxwx"]
 [ext_resource type="Shader" path="res://Scenes/gridlines.gdshader" id="3_x45qy"]

@@ -32,21 +32,21 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");   
-            var skyView = GetNode<SkyView>(viewPortPath);
+            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
+            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+            var skyView = skyViewContainer.SkyView;
+
+            controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
+            controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
+            controlContainer.UserPositionUpdated = UpdateUserPosition;
+
+
+            //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
+
             UserPositionUpdated = skyView.UpdateUserPosition;
 
-            var constellationButton = GetNode<ConstellationButton>("ConstellationButton");
-            constellationButton.ConstellationLinesToggled = skyView.ToggleConstellationLines;
-
-            var labelButton = GetNode<LabelButton>("LabelButton");
-            labelButton.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
-
-            var azimuthButton = GetNode<AzimuthButton>("AzimuthButton");
-            azimuthButton.GridlinesToggled = skyView.ToggleGridlines;
-
-            var messierButton = GetNode<MessierButton>("MessierButton");
-            messierButton.NotifyControllerOfUserUpdate = UpdateUserPosition;
+            
             timer = new Timer
             {
                 WaitTime = 1.5f,

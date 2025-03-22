@@ -33,11 +33,14 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
+        public Camera3D Camera {  get; set; }
+        
 
         private Spawner spawner;
         private Spawner2D spawner2d;
         private Constellations constellationNode;
         private Constellations2D constellation2dNode;
+        
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -46,13 +49,23 @@ namespace Stargazer
         {
             base._Ready();
             spawner = GetNode<Spawner>("Stars");
-            spawner2d = GetNode<Spawner2D>("/root/Control/SubViewport2/View2d/Stars2D");
+            //spawner2d = GetNode<Spawner2D>("/root/Control/SubViewport2/View2d/Stars2D");
             constellationNode = GetNode<Constellations>("Constellations");
-            constellation2dNode = GetNode<Constellations2D>("/root/Control/SubViewport2/View2d/Constellations2D");
+            //constellation2dNode = GetNode<Constellations2D>("/root/Control/SubViewport2/View2d/Constellations2D");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
-            ToggleGridlines = azimuthGridlines.ToggleGridlines;
+            ToggleGridlines += azimuthGridlines.ToggleGridlines;
+
+
+            Camera = GetNode<Camera3D>("Camera3D");
+            var needle = GetNode<CompassNeedle>("Compass/Needle");
+            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
+            azimuthGridlines.SetCamera(Camera);
+            needle.SetCamera(Camera);
+            gridLabel.SetCamera(Camera);
+            ToggleGridlines += gridLabel.ToggleGridlines;
+
             // TODO: Get a reference to the Messier Objects parent node (should be a child of this node)
             // TODO: Get a reference to the Moon object parent node (should be a child of this node) 
             // TODO: Get a reference to the Planets object parent node (should be a child of this node)
@@ -69,13 +82,14 @@ namespace Stargazer
             var nonnullcount = 0;
             //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.Stars);
-            await spawner2d.DrawStars(dataPackage.Stars);
+            //await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
-            await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
+            //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects
             // TODO: Notify the Moon node to draw the moon
             // TODO: Notify the Planets node to draw the planets
         }
+
 
     }
 }

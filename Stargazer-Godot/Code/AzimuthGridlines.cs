@@ -28,10 +28,11 @@ namespace Stargazer
 		/// Calculate cutoff latitude to ensure it aligns with the first visible circle
 		/// </summary>
 		[Export] public float cutoffLatitude = 75.0f;
+		
 
 		private ImmediateMesh mesh;
-		private Camera3D camera;
 		private float storedfov;
+		private Camera3D camera;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
 		/// </summary>
@@ -42,11 +43,10 @@ namespace Stargazer
 			DrawLatitudeLines(mesh);
 			Mesh = mesh;
 			Visible = false;
-			camera = GetNode<Camera3D>("/root/Control/SubViewportContainer/SubViewport/View/Camera3D");
-			storedfov = camera.Fov;
 		}
         public override void _Process(double delta)
         {
+			if (camera == null) return;
             if (camera.Fov < 15 && storedfov >= 15){
 				latitudeInterval = 1.0f;
 				mesh.ClearSurfaces();
@@ -80,6 +80,12 @@ namespace Stargazer
         public void ToggleGridlines(bool showLines)
 		{
 			Visible = showLines;
+		}
+
+		public void SetCamera(Camera3D camera)
+		{
+			this.camera = camera;
+			storedfov = camera.Fov;
 		}
 
 

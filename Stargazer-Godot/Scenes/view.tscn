@@ -1,15 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=28 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
 [ext_resource type="Texture2D" uid="uid://btfum2cg0tcf1" path="res://Textures/chercker.png" id="2_7lioy"]
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
+[ext_resource type="Script" path="res://Code/GridLabel.cs" id="2_oxt5r"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
 [ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_1t5an"]
+[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="11_eka2m"]
+[ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
+[ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
@@ -50,8 +54,30 @@ albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
 
-[node name="View" type="Node3D"]
+[sub_resource type="Gradient" id="Gradient_vpwdv"]
+offsets = PackedFloat32Array(0.609347, 0.609357, 0.645897, 0.661094, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.992157, 0, 0.956863, 0.956863, 0.956863, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iahmf"]
+gradient = SubResource("Gradient_vpwdv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vsn0o"]
+shader = ExtResource("13_xn4y0")
+shader_parameter/radius = 0.4
+shader_parameter/thickness = 0.01
+shader_parameter/feather = 0.01
+
+[node name="SkyView" type="Node3D"]
 script = ExtResource("1_b8fgf")
+
+[node name="GridLabel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_oxt5r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -109,3 +135,34 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MessierObject/O1"]
 shape = SubResource("BoxShape3D_5gvf6")
+
+[node name="Compass" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -130.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Outline" type="Sprite2D" parent="Compass"]
+visible = false
+position = Vector2(65, 65)
+scale = Vector2(1.76563, 1.76563)
+texture = SubResource("GradientTexture2D_iahmf")
+
+[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
+position = Vector2(65, 65)
+scale = Vector2(0.069375, 0.069375)
+texture = ExtResource("11_eka2m")
+script = ExtResource("12_nu1as")
+needle = NodePath(".")
+
+[node name="ColorRect" type="ColorRect" parent="Compass"]
+material = SubResource("ShaderMaterial_vsn0o")
+layout_mode = 0
+offset_right = 129.0
+offset_bottom = 129.0
