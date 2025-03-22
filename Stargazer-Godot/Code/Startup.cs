@@ -32,6 +32,7 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
+            var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");   
             var skyView = GetNode<SkyView>(viewPortPath);
             UserPositionUpdated = skyView.UpdateUserPosition;
 

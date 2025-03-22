@@ -1,19 +1,23 @@
 using Godot;
+using Stargazer;
 using System;
 
-public partial class Label : Godot.Label
+public partial class HoverLabel : Label
 {
     private Globals globalVars;
     public override void _Ready()
     {
         globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-        this.Visible = globalVars.isHover;
+        Visible = globalVars.isHover;
+        AddThemeFontSizeOverride("font_size", 25);
+        LabelSettings.FontSize = 30;
     }
     
     public override void _Process(double delta)
     {
-        this.Visible = globalVars.isHover;
-        this.SetText(globalVars.hoverLabel);
+        Visible = globalVars.isHover;
+        SetText(globalVars.hoverLabel);
+
     }
     
     public override void _Input(InputEvent @event)

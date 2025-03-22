@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://ujvt4iftkmki"]
+
+[ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
+[ext_resource type="PackedScene" path="res://Scenes/star2d.tscn" id="2_u1lwa"]
+[ext_resource type="Script" path="res://Code/Constellations2D.cs" id="3_h3n60"]
+[ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="3_vnxwx"]
+[ext_resource type="Shader" path="res://Scenes/gridlines.gdshader" id="3_x45qy"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_p52lc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpq4s"]
+shader = ExtResource("3_x45qy")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/line_thickness = 0.1
+shader_parameter/angle_spacing = 15.0
+shader_parameter/circle_spacing = 0.08
+shader_parameter/circle_thickness = 0.002
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncvx4"]
+shader = ExtResource("3_vnxwx")
+
+[node name="View2d" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Stars2D" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(400, 400)
+scale = Vector2(4.265, 4.265)
+script = ExtResource("1_gbvg1")
+Star2DScene = ExtResource("2_u1lwa")
+
+[node name="Constellations2D" type="Node2D" parent="."]
+position = Vector2(400, 400)
+scale = Vector2(4.265, 4.265)
+script = ExtResource("3_h3n60")
+Star2DScene = ExtResource("2_u1lwa")
+
+[node name="Star2DContainer" type="Node2D" parent="Constellations2D"]
+z_index = -1
+
+[node name="LineMesh" type="MeshInstance2D" parent="Constellations2D"]
+mesh = SubResource("ImmediateMesh_p52lc")
+
+[node name="Constellation2DLabels" type="Node2D" parent="Constellations2D/LineMesh"]
+
+[node name="Grid Lines" type="ColorRect" parent="."]
+z_index = -3
+material = SubResource("ShaderMaterial_cpq4s")
+offset_right = 800.0
+offset_bottom = 800.0
+
+[node name="Inverted Circle" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_ncvx4")
+offset_right = 800.0
+offset_bottom = 800.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4
+offset_right = 800.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 1)

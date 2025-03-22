@@ -56,18 +56,13 @@ namespace Stargazer
 		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
 		private Star SpawnStar(HorizontalStar horizontalStar)
 		{
+// 			GD.Print($@"
+// Star ID: {horizontalStar.StarId}
+//  Hip ID: {horizontalStar.HipparcosId}");
 			Star star = StarScene.Instantiate<Star>();
 			star.FromHorizontal(horizontalStar);
-      if (horizontalStar.StarName != " ")
-      {
-        star.starName = horizontalStar.StarName;
-      }
-      else
-      {
-        star.starName = $"ID: {horizontalStar.StarId}";
-      }
 			StarContainer.AddChild(star);
 			return star;
 		}
-
+	}
 }

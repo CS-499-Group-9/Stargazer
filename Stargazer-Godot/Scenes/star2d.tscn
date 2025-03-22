@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://baskob1q5tm0q"]
+
+[ext_resource type="Shader" path="res://2dstar.gdshader" id="1_cjqmj"]
+[ext_resource type="Script" path="res://Code/Star2D.cs" id="1_e2076"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6sxhg"]
+shader = ExtResource("1_cjqmj")
+shader_parameter/starColor = Vector3(1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l586q"]
+shader = ExtResource("1_cjqmj")
+shader_parameter/starColor = Vector3(1, 1, 1)
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_6sxhg")
+position = Vector2(-181, -177)
+scale = Vector2(3, 3)
+script = ExtResource("1_e2076")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_l586q")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

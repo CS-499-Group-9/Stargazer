@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace Stargazer
@@ -5,7 +6,7 @@ namespace Stargazer
     /// <summary>
     /// Contains the main camera used to create the user view.
     /// </summary>
-    public partial class Main : Camera3D
+    public partial class MainCamera : Camera3D
     {
         /// <summary>
         /// The base sensitivity of the mouse used when panning the view.
@@ -30,10 +31,17 @@ namespace Stargazer
         /// <param name="event"></param>
         public override void _Input(InputEvent @event)
         {
+            if(@event.IsAction("forward")){
+
+                GD.Print("go!");
+                Position -= 0.5f*Basis.Z;
+
+            }
             if (@event is InputEventMouseButton mouseButton)
             {
                 if (mouseButton.ButtonIndex == MouseButton.Right)
                 {
+                    globalVars.isHover = false;
                     rightClickHeld = mouseButton.Pressed;
                     Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
                 }
@@ -70,10 +78,20 @@ namespace Stargazer
                 var result = worldspace.IntersectRay(PhysicsRayQueryParameters3D.Create(start, end));
                 if (result.Count > 0)
                 {
+                    GD.Print("colliding!");
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
                     Star star = (Star)collider.GetParentNode3D();
-                    globalVars.hoverLabel = star.starName;
+                    globalVars.hoverLabel = 
+                    $"{(String.IsNullOrWhiteSpace(star.starName) ? "Unnamed Star" : star.starName)}\n"+
+                    $"HIP {star.hipID}\n"+
+                    $"Altitude {star.altitude} -> {star.futureAltitude}\n"+
+                    $"Azimuth {star.azimuth} -> {star.futureAzimuth}";
+                    // if (!String.IsNullOrWhiteSpace(star.starName)){
+                    //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
+                    // }else{
+                    //     globalVars.hoverLabel = $"Unnamed Star\nHIP {star.hipID}";
+                    // }
                 }
                 else
                 {
@@ -84,7 +102,6 @@ namespace Stargazer
 
         private void ZoomIn()
         {
-            GD.Print($"{Fov}");
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
@@ -112,11 +129,11 @@ namespace Stargazer
         private void TakeScreenshot()
         {
             // Get the current viewport as an Image
-            Viewport viewport = GetViewport();
+            Viewport viewport = GetNode<Viewport>("/root/Control/SubViewport2");
             Image screenshotImage = viewport.GetTexture().GetImage();
 
             // Save the screenshot as a JPEG
-            screenshotImage.SaveJpg(screenshotPath);
+            screenshotImage.SavePng(screenshotPath);
             GD.Print($"Screenshot saved to {screenshotPath}");
         }
     }

@@ -37,12 +37,16 @@ namespace DataLayer.Implementations
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             // Determine that stars horizontal coordinates
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
+            AstroTime futureTime = new AstroTime(astroTime.ToUtcDateTime().AddMinutes(120));
+            Topocentric horFuture = Astronomy.Horizon(futureTime,observer, eq.ra, eq.dec, Refraction.None);
 
             // Create the new object.
             T newBody = new()
             {
                 Altitude = hor.altitude,
                 Azimuth = hor.azimuth,
+                FutureAltitude = horFuture.altitude,
+                FutureAzimuth = horFuture.azimuth,
                 Magnitude = eqStar.Magnitude,
                 Distance = eqStar.Distance
             };

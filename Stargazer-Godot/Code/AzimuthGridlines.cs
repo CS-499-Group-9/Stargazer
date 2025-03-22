@@ -11,7 +11,7 @@ namespace Stargazer
 		/// <summary>
 		/// The radius of the dome.
 		/// </summary>
-		[Export] public float radius = 49.5f;
+		[Export] public float radius = 75f;
 		/// <summary>
 		/// The number of vertical (longitudinal) lines.
 		/// </summary>
@@ -30,7 +30,8 @@ namespace Stargazer
 		[Export] public float cutoffLatitude = 75.0f;
 
 		private ImmediateMesh mesh;
-
+		private Camera3D camera;
+		private float storedfov;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
 		/// </summary>
@@ -41,13 +42,42 @@ namespace Stargazer
 			DrawLatitudeLines(mesh);
 			Mesh = mesh;
 			Visible = false;
+			camera = GetNode<Camera3D>("/root/Control/SubViewportContainer/SubViewport/View/Camera3D");
+			storedfov = camera.Fov;
 		}
-
-		/// <summary>
-		/// The method used receive the <see cref="AzimuthButton.GridlinesToggled"/> notification.
-		/// </summary>
-		/// <param name="showLines">True if the user has requested to show the lines.</param>
-		public void ToggleGridlines(bool showLines)
+        public override void _Process(double delta)
+        {
+            if (camera.Fov < 15 && storedfov >= 15){
+				latitudeInterval = 1.0f;
+				mesh.ClearSurfaces();
+				DrawLongitudeLines(mesh);
+				DrawLatitudeLines(mesh);
+			}
+            else if (camera.Fov > 15 && storedfov <= 15){
+				latitudeInterval = 10.0f;
+				mesh.ClearSurfaces();
+				DrawLongitudeLines(mesh);
+				DrawLatitudeLines(mesh);
+			}
+            else if (camera.Fov < 35 && storedfov >= 35){
+				latitudeInterval = 10.0f;
+				mesh.ClearSurfaces();
+				DrawLongitudeLines(mesh);
+				DrawLatitudeLines(mesh);
+			}
+			else if (camera.Fov > 35 && storedfov <= 35){
+				latitudeInterval = 15.0f;
+				mesh.ClearSurfaces();
+				DrawLongitudeLines(mesh);
+				DrawLatitudeLines(mesh);
+			}
+			storedfov = camera.Fov;
+        }
+        /// <summary>
+        /// The method used receive the <see cref="AzimuthButton.GridlinesToggled"/> notification.
+        /// </summary>
+        /// <param name="showLines">True if the user has requested to show the lines.</param>
+        public void ToggleGridlines(bool showLines)
 		{
 			Visible = showLines;
 		}
@@ -105,9 +135,15 @@ namespace Stargazer
 		private void DrawLatitudeLines(ImmediateMesh imMesh)
 		{
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
-
 			for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 			{
+				int storelat = lat;
+				if (lat > 75){
+					lat = 75;
+				}
+				if (lat < -75){
+					lat = -75;
+				}
 				float latAngle = Mathf.DegToRad(lat);  // Convert to radians
 
 				// Loop through longitude to draw a full circle at this latitude
@@ -115,22 +151,26 @@ namespace Stargazer
 				{
 					float lonAngle1 = lon * Mathf.Tau / longitudeSegments;  // Longitude angle (0 to 2π)
 
-					// Convert spherical coordinates to Cartesian (x, y, z)
-					Vector3 p1 = new Vector3(
-						Mathf.Cos(lonAngle1) * Mathf.Cos(latAngle) * radius,
-						Mathf.Sin(latAngle) * radius,
-						Mathf.Sin(lonAngle1) * Mathf.Cos(latAngle) * radius
-					);
+						for(int i = 0; i < 4; i++){
+						// Convert spherical coordinates to Cartesian (x, y, z)
+						Vector3 p1 = new Vector3(
+							Mathf.Cos(lonAngle1 + i*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius,
+							Mathf.Sin(latAngle) * radius,
+							Mathf.Sin(lonAngle1 + i*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius
+						);
 
-					Vector3 p2 = new Vector3(
-						Mathf.Cos(lonAngle1 + (Mathf.Tau / longitudeSegments)) * Mathf.Cos(latAngle) * radius,
-						Mathf.Sin(latAngle) * radius,
-						Mathf.Sin(lonAngle1 + (Mathf.Tau / longitudeSegments)) * Mathf.Cos(latAngle) * radius
-					);
+						Vector3 p2 = new Vector3(
+							Mathf.Cos(lonAngle1 + (i+1)*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius,
+							Mathf.Sin(latAngle) * radius,
+							Mathf.Sin(lonAngle1 + (i+1)*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius
+						);
 
-					imMesh.SurfaceAddVertex(p1);
-					imMesh.SurfaceAddVertex(p2);
+						imMesh.SurfaceAddVertex(p1);
+						imMesh.SurfaceAddVertex(p2);
+					}
+
 				}
+				lat = storelat;
 			}
 
 			imMesh.SurfaceEnd();
