@@ -167,7 +167,7 @@ layout_mode = 0
 offset_right = 129.0
 offset_bottom = 129.0
 
-[node name="Label" type="Label" parent="."]
+[node name="TimeLabel" type="Label" parent="."]
 offset_right = 158.0
 offset_bottom = 29.0
 text = "Test"

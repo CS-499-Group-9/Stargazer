@@ -58,7 +58,7 @@ namespace Stargazer
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
-            datelabel = GetNode<Label>("Label");
+            datelabel = GetNode<Label>("TimeLabel");
 
             Camera = GetNode<Camera3D>("Camera3D");
             var needle = GetNode<CompassNeedle>("Compass/Needle");
@@ -76,7 +76,7 @@ namespace Stargazer
         public override void _Process(double delta)
         {
             StarConverter?.UpdateTime(delta*100);
-            datelabel.Text = StarConverter?.CurrentTime.ToString() ?? "";
+            datelabel.Text = $"{StarConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
 
