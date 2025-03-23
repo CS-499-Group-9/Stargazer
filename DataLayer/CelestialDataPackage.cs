@@ -99,6 +99,7 @@ namespace DataLayer
             Constellations = constellations;
             this.DrawnStars = drawnStars;
             Planets = planets;
+            this.PlanetaryCalculator = planetCalculator;
             Moon = moon;
             MoonCalculator = moonCalculator;
         }

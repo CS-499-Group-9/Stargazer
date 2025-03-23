@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.EquatorialObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,20 +16,16 @@ namespace DataLayer.HorizontalObjects
         /// The common name of the planet.
         /// </summary>
         public string Name { get; set; }
+        public double PhaseAngle { get; set; }
         
         /// <summary>
         /// Returns a new planet object
         /// </summary>
         /// <param name="name">The name of the planet</param>
-        /// <param name="altitude">The vertical angle formed with the horizon.</param>
-        /// <param name="azimuth">The horizontal angle formed with the north pole.</param>
-        /// <param name="magnitude">The apparent magnitude of the planet.</param>
-        public HorizonalPlanet(string name, double altitude, double azimuth, double magnitude)
+        public HorizonalPlanet(string name, double phaseAngle, EquatorialCelestialBody body) : base(body)
         {
             Name = name;
-            Altitude = altitude;
-            Azimuth = azimuth;
-            Magnitude = magnitude;
+            PhaseAngle = phaseAngle;
         }
 
 

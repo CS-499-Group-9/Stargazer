@@ -1,4 +1,5 @@
 ﻿using CosineKitty;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using System;
@@ -14,9 +15,10 @@ namespace DataLayer.Implementations
     /// </summary>
     internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizonalPlanet> 
     {
-        private readonly IEnumerable<Body> _bodies = new List<Body> { Body.Mercury, Body.Venus, Body.Mars, Body.Jupiter, Body.Saturn, Body.Uranus, Body.Neptune};
+        private readonly IDictionary<string,Body> _bodies;
         private readonly Observer observer;
-        private readonly AstroTime astroTime;
+        private DateTime currentTime;
+        private AstroTime astroTime;
 
         /// <summary>
         /// Used to perform the calculations for a given user's position and universal time.
@@ -26,6 +28,15 @@ namespace DataLayer.Implementations
         /// <param name="universalTime">The user's time in universtal time code form.</param>
         public CosineKittyPlanetaryCalculator(double latitude, double longitude, DateTime universalTime)
         {
+            _bodies = new Dictionary<string, Body> 
+            { 
+                {Body.Mercury.ToString(), Body.Mercury }, 
+                { Body.Venus.ToString(), Body.Venus }, 
+                { Body.Mars.ToString(), Body.Mars },
+                { Body.Jupiter.ToString(), Body.Jupiter }, 
+                { Body.Saturn.ToString(), Body.Saturn }, {Body.Uranus.ToString(), Body.Uranus },
+                {Body.Neptune.ToString(), Body.Neptune } 
+            };
             observer = new Observer(latitude, longitude, 150);
             astroTime = new AstroTime(universalTime);
         }
@@ -37,15 +48,35 @@ namespace DataLayer.Implementations
         public IEnumerable<HorizonalPlanet> CalculatePlanets()
         {
             List<HorizonalPlanet> planets = new();
-            foreach (Body body in _bodies)
+            foreach (var body in _bodies)
             {
-
-                Equatorial equ = Astronomy.Equator(body, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+                Equatorial equ = Astronomy.Equator(body.Value, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+                var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
                 Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
-                var illumination = Astronomy.Illumination(body, astroTime);
-                planets.Add(new HorizonalPlanet(body.ToString(),hor.altitude, hor.azimuth, illumination.mag));
+                var illumination = Astronomy.Illumination(body.Value, astroTime);
+                planets.Add(new HorizonalPlanet(body.Key, illumination.phase_angle, eqBody));
             }
             return planets;
+        }
+
+        public void IncrementTime(double increment)
+        {
+            currentTime = currentTime.AddSeconds(increment);
+            astroTime = new(currentTime);
+        }
+
+        public void UpdatePosition(HorizonalPlanet planet)
+        {
+            if(_bodies.TryGetValue(planet.Name, out var body))
+            {
+                Equatorial equ = Astronomy.Equator(body, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+                var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
+                Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
+                var illumination = Astronomy.Illumination(body, astroTime);
+                planet.Azimuth = hor.azimuth;
+                planet.Altitude = hor.altitude;
+                planet.PhaseAngle = illumination.phase_angle;
+            }
         }
     }
 }

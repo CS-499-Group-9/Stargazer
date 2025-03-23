@@ -1,4 +1,6 @@
 ﻿
+using DataLayer.EquatorialObjects;
+
 namespace DataLayer.HorizontalObjects
 {
     /// <summary>
@@ -6,6 +8,17 @@ namespace DataLayer.HorizontalObjects
     /// </summary>
     public class HorizontalMessierObject : HorizontalBody
     {
+        public HorizontalMessierObject(EquatorialMessierObject body) : base(body)
+        {
+            MessierId = body.MessierId;
+            NewGeneralCatalog = body.NewGeneralCatalog;
+            Type = body.Type;
+            Constellation = body.Constellation;
+            Size = body.Size;
+            ViewingDifficulty = body.ViewingDifficulty;
+            ViewingSeason = body.ViewingSeason;
+        }
+
         /// <summary>
         /// <see cref="EquatorialObjects.EquatorialMessierObject.MessierId"/>
         /// </summary>

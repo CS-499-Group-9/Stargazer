@@ -228,7 +228,7 @@ namespace DataLayer
             List<HorizontalMessierObject> newMessier = new();
             foreach (var item in equatorialMessierObjects)
             {
-                var messier = converter.Convert(item);
+                var messier = new HorizontalMessierObject(item);
                 messier.MessierId = item.MessierId;
                 messier.Size = item.Size;
                 messier.ViewingDifficulty = item.ViewingDifficulty;
@@ -238,7 +238,6 @@ namespace DataLayer
                 newMessier.Add(messier);
             }
             horizontalMessierObjects = newMessier;
-            Debug.Print(Value);
         }
 
         private void CalculateStars(IEquatorialConverter<HorizontalStar> starConverter)
@@ -246,15 +245,7 @@ namespace DataLayer
             List<HorizontalStar> newStars = new();
             foreach (var item in equatorialStars)
             {
-                var star = starConverter.Convert(item);
-                star.EquatorialBody = item;
-                star.StarId = item.StarId;
-                star.StarName = item.ProperName;
-                star.AbsoluteMagnitude = item.AbsoluteMagnitude;
-                star.ColorIndex = item.ColorIndex;
-                star.Spectrum = item.Spectrum;
-                star.HipparcosId = item.HipparcosId;
-
+                var star = new HorizontalStar(item);
                 newStars.Add(star);
             }
             horizontalStars = newStars;

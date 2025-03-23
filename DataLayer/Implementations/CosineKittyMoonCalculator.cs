@@ -1,4 +1,5 @@
 ﻿using CosineKitty;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using System;
@@ -15,7 +16,8 @@ namespace DataLayer.Implementations
     internal class CosineKittyMoonCalculator : IMoonCalculator
     {
         private readonly Observer observer;
-        private readonly AstroTime astroTime;
+        private DateTime currentTime;
+        private AstroTime astroTime;
 
         /// <summary>
         /// Creates a new calculator
@@ -25,6 +27,7 @@ namespace DataLayer.Implementations
         /// <param name="universalTime">The UTC time of the observer</param>
         public CosineKittyMoonCalculator(double latitude, double longitude, DateTime universalTime)
         {
+            currentTime = universalTime;
             observer = new Observer(latitude, longitude, 150);
             astroTime = new AstroTime(universalTime);
         }
@@ -35,7 +38,25 @@ namespace DataLayer.Implementations
             Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
             var illumination = Astronomy.Illumination(Body.Moon, astroTime);
             var phase = Astronomy.MoonPhase(astroTime);
-            return new HorizontalMoon { Altitude = hor.altitude, Azimuth = hor.azimuth, Phase = phase, Magnitude = illumination.mag };
+            var eqBody = new EquatorialStar { Declination = equ.dec, RightAscension = equ.ra, Distance = equ.dist , Magnitude = illumination.mag};
+            return new HorizontalMoon (eqBody);
+        }
+
+        public void UpdatePosition(HorizontalMoon moon)
+        {
+            Equatorial equ = Astronomy.Equator(Body.Moon, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+            Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
+            var illumination = Astronomy.Illumination(Body.Moon, astroTime);
+            var phase = Astronomy.MoonPhase(astroTime);
+            moon.Azimuth = hor.azimuth;
+            moon.Altitude = hor.altitude;
+            moon.Phase = phase;
+        }
+
+        public void UpdateTime(double increment)
+        {
+            currentTime = currentTime.AddSeconds(increment);
+            astroTime = new(currentTime);
         }
     }
 }

@@ -56,5 +56,3 @@ theme = SubResource("Theme_g7sve")
 text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
 script = ExtResource("15_gllst")
-
-[editable path="MainContainer/InteractionContainer/SkyViewContainer"]

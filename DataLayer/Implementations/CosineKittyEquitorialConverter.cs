@@ -9,7 +9,7 @@ namespace DataLayer.Implementations
     /// Converts an object of type <see cref="EquatorialCelestialBody"/> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library
     /// </summary>
     /// <typeparam name="T">The type of <see cref="HorizontalBody"/> to convert to</typeparam>
-    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody, new()
+    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody
     {
         private DateTime currentTime;
         private AstroTime astroTime;
@@ -28,29 +28,6 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
-        /// <summary>
-        /// Performs the conversion and returns the <c>T</c> object of type <see cref="HorizontalBody"/>
-        /// </summary>
-        public Func<EquatorialCelestialBody, T> Convert => (eqBody) => 
-        {
-            // Define a new star
-            Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance);
-            // Place that star in the equatorial coordinate system for the observers location and time
-            Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
-            // Determine that stars horizontal coordinates
-            Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
-
-            // Create the new object.
-            T newBody = new()
-            {
-                EquatorialBody = eqBody,
-                Altitude = hor.altitude,
-                Azimuth = hor.azimuth,
-                Magnitude = eqBody.Magnitude,
-                Distance = eqBody.Distance
-            };
-            return newBody;
-        };
 
         public DateTime CurrentTime { get { return currentTime; } }
 

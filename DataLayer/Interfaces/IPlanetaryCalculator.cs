@@ -10,5 +10,9 @@ namespace DataLayer.Interfaces
     public interface IPlanetaryCalculator<T> where T : HorizontalBody
     {
         public IEnumerable<T> CalculatePlanets();
+
+        public void IncrementTime(double increment);
+
+        public void UpdatePosition(HorizonalPlanet planet);
     }
 }
