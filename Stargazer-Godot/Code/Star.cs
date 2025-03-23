@@ -47,8 +47,13 @@ namespace Stargazer
 		/// Common name of the star
 		/// </summary>
 		public string StarName { get { return horizontalStar.StarName; } }
+		public Vector3 Position3D { get; private set; }
 		public Vector2 Position2D;
 
+		public Vector3 GetPosition()
+		{
+			return Position;
+		}
 
 		private Globals globalVars;
 		// Gets the Cartesian position of the Celestial Body
@@ -91,6 +96,7 @@ namespace Stargazer
         {
 			starConverter.UpdatePosition(horizontalStar);
             Position = GetLocation();
+			Position3D = Position;
         }
 
 

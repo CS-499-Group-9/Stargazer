@@ -48,9 +48,6 @@ layout_mode = 2
 [node name="SkyViewContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("4_ch8am")]
 layout_mode = 2
 
-[node name="SubViewport" parent="MainContainer/InteractionContainer/SkyViewContainer" index="0"]
-size = Vector2i(948, 559)
-
 [node name="HoverLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 37.0

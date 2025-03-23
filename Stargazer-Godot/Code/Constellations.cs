@@ -25,6 +25,7 @@ namespace Stargazer
 		/// </summary>
 		[Export] public PackedScene LabelScene { get; set; }
 
+
 		private Node3D? StarContainer;
 		private MeshInstance3D? constMesh;
 		private Node3D? ConstellationLabels;
@@ -59,8 +60,8 @@ namespace Stargazer
 					Star s1 = GetConstellationStar(lines.Item1, (s) => { return null; });
 					Star s2 = GetConstellationStar(lines.Item2, (s) => { return null; });
 					// Draw the line between the stars
-					mesh.SurfaceAddVertex(s1.Position);
-					mesh.SurfaceAddVertex(s2.Position);
+					mesh.SurfaceAddVertex(s1.Position3D);
+					mesh.SurfaceAddVertex(s2.Position3D);
 					if (ConstellationLabels.Visible)
 					{
 						if (totalPos == Vector3.Zero) // solely checked for the first star
@@ -121,12 +122,7 @@ namespace Stargazer
 			{
 
 				mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
-				var i = 0;
-				foreach (var constellation in this.constellations)
-				{
-					i += 1;
-				}
-				GD.Print($"reporting {i} constellations");
+
 				foreach (var constellation in this.constellations)
 				{
 					
@@ -148,16 +144,16 @@ namespace Stargazer
 						GD.Print("I made it here");
 						//starRefList.Add((&s1, &s2));
 						// Draw the line between the stars
-						mesh.SurfaceAddVertex(s1.Position);
-						mesh.SurfaceAddVertex(s2.Position);
+						mesh.SurfaceAddVertex(s1.Position3D);
+						mesh.SurfaceAddVertex(s2.Position3D);
 
 						if (totalPos == Vector3.Zero) // solely checked for the first star
 						{
-							totalPos += s1.Position;
+							totalPos += s1.Position3D;
 							c++;
 						}
 
-						totalPos += s2.Position;
+						totalPos += s2.Position3D;
 						c++;
 					}
 
