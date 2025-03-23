@@ -48,6 +48,7 @@ namespace Stargazer
         private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         private Label datelabel;
+        private double timeMultiplier = 60*60;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -83,9 +84,9 @@ namespace Stargazer
 
         public override void _Process(double delta)
         {
-            starConverter?.UpdateTime(delta*100);
-            planetaryCalculator?.IncrementTime(delta*100);
-            moonCalculator?.UpdateTime(delta*100);
+            starConverter?.UpdateTime(delta*timeMultiplier);
+            planetaryCalculator?.IncrementTime(delta*timeMultiplier);
+            moonCalculator?.UpdateTime(delta*timeMultiplier);
             datelabel.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
