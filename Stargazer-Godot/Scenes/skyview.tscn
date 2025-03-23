@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=21 format=3 uid="uid://dci0aiov00oqt"]
 
-[ext_resource type="Script" path="res://Code/SkyView.cs" id="1_lwqgm"]
+[ext_resource type="Script" path="res://Code/SkyView.cs" id="1_p4gdt"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="2_ftmjj"]
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="3_f0pv8"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="4_ueuxr"]
@@ -51,7 +51,7 @@ albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
 
 [node name="SkyView" type="Node3D"]
-script = ExtResource("1_lwqgm")
+script = ExtResource("1_p4gdt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -109,3 +109,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MessierObject/O1"]
 shape = SubResource("BoxShape3D_5gvf6")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 157.0
+offset_bottom = 28.0
+text = "TEST"

@@ -1,6 +1,7 @@
 using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Collections;
@@ -31,14 +32,14 @@ namespace Stargazer
 		private IEnumerable<Constellation> constellations; 
 		private Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar;
 		private bool canProcess = false;
+		private IDictionary<string, LabelNode> constellationLabels;
 
 		/// <summary>
 		/// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
 		/// </summary>
 		/// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
 		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
-		public override
-		 void _Process(double delta)
+		public override void _Process(double delta)
 		{
 			if(constMesh == null){
 				GD.Print("constmesh null");
@@ -64,8 +65,8 @@ namespace Stargazer
 				foreach (var lines in constellation.ConstellationLines)
 				{
 					// Get the stars from the dictionary
-					Star s1 = GetConstellationStar(lines.Item1, SpawnStar);
-					Star s2 = GetConstellationStar(lines.Item2, SpawnStar);
+					Star s1 = GetConstellationStar(lines.Item1, (s) => { return null; });
+					Star s2 = GetConstellationStar(lines.Item2, (s) => { return null; });
 					// Draw the line between the stars
 					mesh.SurfaceAddVertex(s1.Position);
 					mesh.SurfaceAddVertex(s2.Position);
@@ -79,17 +80,19 @@ namespace Stargazer
 					totalPos += s2.Position;
 					c++;
 				}
+				var labelPos = totalPos / c;
+				if (constellationLabels.TryGetValue(constellation.ConstellationId, out var label)) label.Position = labelPos; 
 			}
 			mesh.SurfaceEnd();
 			constMesh.Mesh = mesh;
 		}
 
-		public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
+		public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetStar, Func<HorizontalStar, Star> SpawnStar)
 		{
 			canProcess = false;
-			this.GetConstellationStar = GetConstellationStar;
+			this.GetConstellationStar = GetStar;
 			this.constellations = constellations;
-			
+			constellationLabels = new Dictionary<string, LabelNode>();
 			// Get references to the current containers of constellation objects
 			var oldMesh = constMesh;
 			var oldStars = StarContainer;
@@ -144,8 +147,8 @@ namespace Stargazer
 					foreach (var lines in constellation.ConstellationLines)
 					{
 						// Get the stars from the dictionary
-						Star s1 = GetConstellationStar(lines.Item1, SpawnStar);
-						Star s2 = GetConstellationStar(lines.Item2, SpawnStar);
+						Star s1 = GetStar(lines.Item1, SpawnStar);
+						Star s2 = GetStar(lines.Item2, SpawnStar);
 						GD.Print("I made it here");
 						//starRefList.Add((&s1, &s2));
 						// Draw the line between the stars
@@ -169,6 +172,7 @@ namespace Stargazer
 					labelNode.LabelText = constellation.ConstellationName;
 					labelNode.Position = labelPos;
 					labelNode.Visible = true;
+					constellationLabels.Add(constellation.ConstellationId, labelNode);
 					ConstellationLabels.AddChild(labelNode);
 				}
 				
@@ -212,12 +216,6 @@ namespace Stargazer
 			ConstellationLabels.Visible = showlabels; 
 		}
 
-		private Star SpawnStar(HorizontalStar horizontalStar)
-		{
-			Star star = StarScene.Instantiate<Star>();
-			star.FromHorizontal(horizontalStar);
-			StarContainer.AddChild(star);
-			return star;
-		}
+		
 	}
 }

@@ -1,3 +1,5 @@
+using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 
@@ -19,6 +21,7 @@ namespace Stargazer
         public string hoverLabel { get; set; }
         public DateTime requestTime {get; set;}
         public coordData data = new coordData(); // Create a global instance
+
 
         public override void _Ready()
         {

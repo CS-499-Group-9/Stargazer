@@ -166,3 +166,8 @@ material = SubResource("ShaderMaterial_vsn0o")
 layout_mode = 0
 offset_right = 129.0
 offset_bottom = 129.0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 158.0
+offset_bottom = 29.0
+text = "Test"

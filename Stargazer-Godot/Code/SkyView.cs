@@ -1,6 +1,7 @@
 using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Collections;
@@ -15,7 +16,7 @@ namespace Stargazer
     /// The parent object for all items in the viewport.
     /// Responsible for relaying notifications from senders throughout the program into the view port.
     /// </summary>
-    public partial class SkyView : Node3D
+    public partial class SkyView : Node3D, IUserUpdateReceiver
     {
         /// <summary>
         /// Relays the user request to toggle the constellations lines down to the child node that makes the change
@@ -40,7 +41,8 @@ namespace Stargazer
         private Spawner2D spawner2d;
         private Constellations constellationNode;
         private Constellations2D constellation2dNode;
-        
+        private IEquatorialConverter<HorizontalStar> StarConverter;
+        private Label datelabel;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -56,7 +58,7 @@ namespace Stargazer
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
-
+            datelabel = GetNode<Label>("Label");
 
             Camera = GetNode<Camera3D>("Camera3D");
             var needle = GetNode<CompassNeedle>("Compass/Needle");
@@ -71,6 +73,16 @@ namespace Stargazer
             // TODO: Get a reference to the Planets object parent node (should be a child of this node)
         }
 
+        public override void _Process(double delta)
+        {
+            StarConverter?.UpdateTime(delta*100);
+            datelabel.Text = StarConverter?.CurrentTime.ToString() ?? "";
+            base._Process(delta);
+        }
+
+
+
+
         /// <summary>
         /// Notifies child notes of a new <see cref="CelestialDataPackage{Star}"/> that is ready to be drawn.
         /// </summary>
@@ -80,10 +92,12 @@ namespace Stargazer
         {
             var count = 0;
             var nonnullcount = 0;
+            StarConverter = dataPackage.StarConverter;
+            datelabel.Text = StarConverter.CurrentTime.ToString();
             //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
-            await spawner.DrawStars(dataPackage.Stars);
+            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarConverter);
             //await spawner2d.DrawStars(dataPackage.Stars);
-            await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
+            await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
             //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects
             // TODO: Notify the Moon node to draw the moon

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=10 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="PackedScene" uid="uid://cpnjhw02imc4o" path="res://Scenes/banner.tscn" id="1_2aeuw"]
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
+[ext_resource type="Script" path="res://Code/Main.cs" id="1_sxr3h"]
 [ext_resource type="PackedScene" uid="uid://ccf161pss0iua" path="res://Scenes/control_container.tscn" id="2_0ds6g"]
+[ext_resource type="Script" path="res://Code/MainContainer.cs" id="2_q8paj"]
 [ext_resource type="PackedScene" uid="uid://qst6jthb1tgv" path="res://Scenes/sky_view_container.tscn" id="4_ch8am"]
-[ext_resource type="PackedScene" uid="uid://ujvt4iftkmki" path="res://Scenes/view2d.tscn" id="10_asg56"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="15_gllst"]
 
 [sub_resource type="Theme" id="Theme_g7sve"]
@@ -22,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.997047)
+script = ExtResource("1_sxr3h")
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_q8paj")
 
 [node name="Banner" parent="MainContainer" instance=ExtResource("1_2aeuw")]
 layout_mode = 2
@@ -45,6 +48,9 @@ layout_mode = 2
 [node name="SkyViewContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("4_ch8am")]
 layout_mode = 2
 
+[node name="SubViewport" parent="MainContainer/InteractionContainer/SkyViewContainer" index="0"]
+size = Vector2i(948, 559)
+
 [node name="HoverLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 37.0
@@ -54,9 +60,4 @@ text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
 script = ExtResource("15_gllst")
 
-[node name="SubViewport2" type="SubViewport" parent="."]
-handle_input_locally = false
-size = Vector2i(1600, 1600)
-render_target_update_mode = 4
-
-[node name="View2d" parent="SubViewport2" instance=ExtResource("10_asg56")]
+[editable path="MainContainer/InteractionContainer/SkyViewContainer"]

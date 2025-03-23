@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ujvt4iftkmki"]
+[gd_scene load_steps=10 format=3 uid="uid://ujvt4iftkmki"]
 
 [ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
+[ext_resource type="Script" path="res://Code/SkyView2D.cs" id="1_hfig6"]
 [ext_resource type="PackedScene" uid="uid://baskob1q5tm0q" path="res://Scenes/star2d.tscn" id="2_u1lwa"]
 [ext_resource type="Script" path="res://Code/Constellations2D.cs" id="3_h3n60"]
 [ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="3_vnxwx"]
@@ -21,6 +22,7 @@ shader = ExtResource("3_vnxwx")
 
 [node name="View2d" type="Node2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_hfig6")
 
 [node name="Stars2D" type="Node2D" parent="."]
 z_index = -1

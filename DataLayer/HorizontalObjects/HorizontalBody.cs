@@ -1,4 +1,7 @@
 ﻿
+using DataLayer.EquatorialObjects;
+using DataLayer.Interfaces;
+
 namespace DataLayer.HorizontalObjects
 {    
     /// <summary>
@@ -6,6 +9,8 @@ namespace DataLayer.HorizontalObjects
      /// </summary>
     public abstract class HorizontalBody
     {
+        public EquatorialCelestialBody EquatorialBody { get; set; }
+
         /// <summary>
         /// The angle in decimal degrees formed between the horizon and the star
         /// </summary>
@@ -24,5 +29,6 @@ namespace DataLayer.HorizontalObjects
         /// The distance (in lightyears) from the star to earth
         /// </summary>
         public double Distance { get; internal set; }
+
     }
 }

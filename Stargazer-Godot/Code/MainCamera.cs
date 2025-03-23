@@ -83,10 +83,10 @@ namespace Stargazer
                     Node3D collider = result["collider"].As<Node3D>();
                     Star star = (Star)collider.GetParentNode3D();
                     globalVars.hoverLabel = 
-                    $"{(String.IsNullOrWhiteSpace(star.starName) ? "Unnamed Star" : star.starName)}\n"+
-                    $"HIP {star.hipID}\n"+
-                    $"Altitude {star.altitude} -> {star.futureAltitude}\n"+
-                    $"Azimuth {star.azimuth} -> {star.futureAzimuth}";
+                    $"{(String.IsNullOrWhiteSpace(star.StarName) ? "Unnamed Star" : star.StarName)}\n"+
+                    $"HIP {star.HipparcosId}\n"+
+                    $"Altitude {star.Altitude}"+
+                    $"Azimuth {star.Azimuth}";
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
                     // }else{

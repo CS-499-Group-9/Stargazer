@@ -19,11 +19,7 @@ namespace Stargazer
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
         /// </summary>
         public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated;
-       
 
-        private Timer timer;
-        private double latitude, longitude;
-        private DateTime userTime;
 
         /// <summary>
         /// Creates the repository service and stores in memory
@@ -47,15 +43,6 @@ namespace Stargazer
 
             UserPositionUpdated = skyView.UpdateUserPosition;
 
-            
-            timer = new Timer
-            {
-                WaitTime = 1.5f,
-                Autostart = false,
-                OneShot = false
-            };
-            timer.Timeout += OnTimer;
-            AddChild(timer);
         }
 
         /// <summary>
@@ -69,22 +56,12 @@ namespace Stargazer
         public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
-            //timer.Stop();
-            this.latitude = latitude;
-            this.longitude = longitude;
-            this.userTime  = dateTime;
+          
             var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            UserPositionUpdated?.Invoke(dataPackage);
-            //timer.Start();
+            await UserPositionUpdated(dataPackage);
+
         }
 
-        private async void OnTimer()
-        {
-            // Change the value in AddMinutes to change how much the sky changes per iteration
-            userTime = userTime.AddMinutes(10);
-            GD.Print($"{userTime}");
-            var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, userTime);
-            UserPositionUpdated?.Invoke(dataPackage);
-        }
+
     }
 }

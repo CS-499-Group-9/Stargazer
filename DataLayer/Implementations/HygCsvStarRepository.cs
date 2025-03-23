@@ -60,7 +60,7 @@ namespace DataLayer.Implementations
         /// </summary>
         /// <param name="maximumMagnitude">The minimum brightness of the stars to include.</param>
         /// <returns>A list of stars in the equatorial coordinate form.</returns>
-        Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
+        Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync()
         {
             // Start a new task to retrieve the data and return the running task
             return Task<IList<EquatorialStar>>.Factory.StartNew(() =>
@@ -76,7 +76,7 @@ namespace DataLayer.Implementations
 
                 // Provide a filter to select only the stars needed from the IEnumerable
                 // Create a new thread for each row that will read that row into the list
-                return records.Where(s => s.Magnitude <= maximumMagnitude).ToList();
+                return records.ToList();
 
             });
         }

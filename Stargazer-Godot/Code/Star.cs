@@ -1,4 +1,5 @@
 using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
@@ -13,53 +14,53 @@ namespace Stargazer
 	{
 
 		private const float radians = (float)Math.PI / 180f;
-
+		private HorizontalStar horizontalStar;
+		private IEquatorialConverter<HorizontalStar> starConverter;
 		// Since these are not being connected to anything in the Godot interface, I'm not sure we need to use the Export attribute.
 		// They are all accessed/set via code.
 		// Not sure what overhead is involved in labeling these as export.
 
+		public int HipparcosId { get { return horizontalStar.HipparcosId ?? 0; } }
+
 		/// <summary>
 		/// Rotation from North (X+), in degrees
 		/// </summary>
-		public float azimuth = 0f;
+		public float Azimuth { get{ return (float)horizontalStar.Azimuth; } }
 
         /// <summary>
         /// Rotation from Y=0, in degrees.
         /// </summary>
-        public float altitude = 0f;
+        public float Altitude { get { return (float)horizontalStar.Altitude; } }
 
-		public float futureAltitude = 0f;
 
-		public float futureAzimuth = 0f;
         /// <summary>
         /// Distance from (0, 0, 0)
         /// </summary>
-        public float dist = 74f;
+        public float Distance { get { return 74f; } }
 
 		/// <summary>
 		/// Apparent brightness of the star
 		/// </summary>
-		public float mag = 1f;
+		public float Magnitude { get { return (float)(horizontalStar.Magnitude); } }
 
 		/// <summary>
 		/// Common name of the star
 		/// </summary>
-		public string starName;
-		public int hipID;
-		public Vector2 Pos2D;
+		public string StarName { get { return horizontalStar.StarName; } }
+		public Vector2 Position2D;
 
 
 		private Globals globalVars;
 		// Gets the Cartesian position of the Celestial Body
-		private Vector3 GetLocation(Vector2 altazi)
+		private Vector3 GetLocation()
 		{
-			var altRad = altazi[0] * radians;
-			var azRad = altazi[1] * radians;
+			var altRad = Altitude * radians;
+			var azRad = Azimuth * radians;
 			Vector3 pos = new()
 			{
-				X = dist * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
-				Y = dist * Mathf.Sin(altRad),
-				Z = dist * Mathf.Cos(altRad) * Mathf.Sin(azRad)
+				X = Distance * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
+				Y = Distance * Mathf.Sin(altRad),
+				Z = Distance * Mathf.Cos(altRad) * Mathf.Sin(azRad)
 			};
 			return pos;
 		}
@@ -73,47 +74,25 @@ namespace Stargazer
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals");
-        }
-        public void FromHorizontal(HorizontalStar star)
-		{
-			azimuth = (float)star.Azimuth;
-			altitude = (float)star.Altitude;
-			futureAltitude = (float)star.FutureAltitude;
-			futureAzimuth = (float)star.FutureAzimuth;
-			mag = (float)star.Magnitude;
-			starName = star.StarName;
 			
+        }
+        public void FromHorizontal(HorizontalStar star, IEquatorialConverter<HorizontalStar> starConverter)
+		{
+			horizontalStar = star;
+			this.starConverter = starConverter;
+			starConverter.UpdatePosition(horizontalStar);
 			//GD.Print(star.HipparcosId);
-			if(star.HipparcosId != null){
-				hipID = (int)star.HipparcosId;
-			}else{
-				hipID = 0;
-			}
 			//hipID = (int)star.HipparcosId;
-			Position = GetLocation(new Vector2(altitude,azimuth));
-            if (mag > 1) Scale = new Vector3(1 / mag, 1 / mag, 1 / mag);
+			Position = GetLocation();
+            if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
         }
         public override void _Process(double delta)
         {
-            Position = GetLocation(LerpCoords());
+			starConverter.UpdatePosition(horizontalStar);
+            Position = GetLocation();
         }
-		private Vector2 LerpCoords(){
-			//Rolling over from 1 degree to 359
-			var calcAzimuth = azimuth;
-			var calcFutureAzimuth = futureAzimuth;
-			if(futureAzimuth - azimuth > 300){
-				calcAzimuth += 360;
-			}
-			//Rolling over from 359 degrees to 1
-			else if(futureAzimuth - azimuth < -300){
-				calcFutureAzimuth += 360;
-			}
-			return new Vector2(
-				x:(float)(altitude + (futureAltitude-altitude)*((DateTime.UtcNow - globalVars.requestTime).TotalSeconds/120)),
-				y:(float)(azimuth + (calcFutureAzimuth-calcAzimuth)*((DateTime.UtcNow - globalVars.requestTime).TotalSeconds/120))
-			);
-		}
+
 
     }
 }

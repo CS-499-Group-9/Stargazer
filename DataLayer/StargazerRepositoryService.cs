@@ -35,11 +35,6 @@ namespace DataLayer
         private readonly IEnumerable<EquatorialMessierObject> equatorialMessierObjects;
 
         /// <summary>
-        /// Immutable dictionary of all stars that are part of known constellations (no repeats, the HipparcosId is used as the key)
-        /// </summary>
-        private readonly IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars;
-
-        /// <summary>
         /// Producer-consumer collection of <see cref="HorizontalStar"/>s passed to the graphical layer
         /// </summary>
         private IEnumerable<HorizontalStar> horizontalStars;
@@ -58,17 +53,14 @@ namespace DataLayer
         /// </summary>
         /// <param name="equatorialStars">The stars retrieved from the repository</param>
         /// <param name="equatorialConstellations">The constellations retrieved from the repository</param>
-        /// <param name="equatorialConstellationStars">The stars retrieved from the repository that are part of constellations</param>
         /// <param name="equatorialMessierObjects">The Messier Deep Space Objects retrieved from the repository</param>
         private StargazerRepositoryService(
             IEnumerable<EquatorialStar> equatorialStars,
             IEnumerable<Constellation> equatorialConstellations,
-            IReadOnlyDictionary<int, EquatorialStar> equatorialConstellationStars,
             IEnumerable<EquatorialMessierObject> equatorialMessierObjects)
         {
             this.equatorialStars = equatorialStars;
             this.constellations = equatorialConstellations;
-            this.equatorialConstellationStars = equatorialConstellationStars;
             this.equatorialMessierObjects = equatorialMessierObjects;
 
             // Create new empty concurrent collections
@@ -90,12 +82,12 @@ namespace DataLayer
             IMessierRepository messierRepository)
         {
             // Create tasks to retrieve all objects and have them run on separate threads
-            var getStars = starRepository.GetAllStarsAsync(maxStarMagnitude);
+            var getStars = starRepository.GetAllStarsAsync();
             var getMessierObjects = messierRepository.GetRawMessierObjectsAsync();
             var getConstellations = constellationRepository.GetAllConstellationsAsync();
 
             // Pull the constellation stars out of the collection and into the dictionary.
-            var equatorialConstellationStars = await GatherConstellationStars(getStars, getConstellations, starRepository);
+            //var equatorialConstellationStars = await GatherConstellationStars(getStars, getConstellations, starRepository);
 
             // If the Messier Repository has not finished retrieving data, wait for it.
             await Task.WhenAny(getMessierObjects);
@@ -111,7 +103,6 @@ namespace DataLayer
             return new StargazerRepositoryService<T>(
                 equatorialStars,
                 equatorialConstellations,
-                new Dictionary<int, EquatorialStar>(equatorialConstellationStars),
                 equatorialMessierObjects
             );
         }
@@ -202,7 +193,7 @@ namespace DataLayer
             // Doesn't really make sense to me...
 
             CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);
-            CosineKittyEquatorialConverter<HorizontalMessierObject> converter = new(latitude, longitude, localUserTime);
+            CosineKittyEquatorialConverter<HorizontalMessierObject> messierConverter = new(latitude, longitude, localUserTime);
             // Calculate the stars
             await Task.Run(() =>
             {
@@ -212,42 +203,25 @@ namespace DataLayer
             // Calculate the Messier Objects
             await Task.Run(() =>
             {
-                CalculateMessierObjects(converter);
+                CalculateMessierObjects(messierConverter);
 
             });
-
-            // Calculate the constellation stars
-            await Task.Run(() =>
-            {
-                CalculateConstellationStars(starConverter);
-            });
-
-  
-            var planets = new CosineKittyPlanetaryCalculator (latitude, longitude, localUserTime).CalculatePlanets();
-            var moon = new CosineKittyMoonCalculator(latitude, longitude, localUserTime).CalculateMoon();
+            var planetaryCalculator = new CosineKittyPlanetaryCalculator(latitude, longitude, localUserTime);
+            var planets = planetaryCalculator.CalculatePlanets();
+            var moonCalculator = new CosineKittyMoonCalculator(latitude, longitude, localUserTime);
+            var moon = moonCalculator.CalculateMoon();
 
             // Pack up the data and ship it back.
-            return new CelestialDataPackage<T>(horizontalStars, horizontalMessierObjects,constellations, ConstellationStars, new ConcurrentDictionary<int, T>(), planets, moon);
+            return new CelestialDataPackage<T>(
+                horizontalStars,starConverter, 
+                horizontalMessierObjects,messierConverter,
+                constellations, 
+                new ConcurrentDictionary<int, T>(), 
+                planets, planetaryCalculator,
+                moon, moonCalculator);
             
         }
 
-        private void CalculateConstellationStars(IEquatorialConverter<HorizontalStar> starConverter)
-        {
-            ConstellationStars.Clear();
-            foreach (var item in equatorialConstellationStars)
-            {
-                var star = starConverter.Convert(item.Value);
-                star.StarId = item.Value.StarId;
-                star.StarName = item.Value.ProperName;
-                star.AbsoluteMagnitude = item.Value.AbsoluteMagnitude;
-                star.ColorIndex = item.Value.ColorIndex;
-                star.Spectrum = item.Value.Spectrum;
-                //Console.WriteLine($"HIP: {item.Value.HipparcosId}");
-                star.HipparcosId = item.Value.HipparcosId;
-                
-                ConstellationStars.TryAdd(star.HipparcosId ?? -1, star);
-            }
-        }
 
         private void CalculateMessierObjects(IEquatorialConverter<HorizontalMessierObject> converter)
         {
@@ -273,13 +247,13 @@ namespace DataLayer
             foreach (var item in equatorialStars)
             {
                 var star = starConverter.Convert(item);
+                star.EquatorialBody = item;
                 star.StarId = item.StarId;
                 star.StarName = item.ProperName;
                 star.AbsoluteMagnitude = item.AbsoluteMagnitude;
                 star.ColorIndex = item.ColorIndex;
                 star.Spectrum = item.Spectrum;
                 star.HipparcosId = item.HipparcosId;
-                //Console.WriteLine($"Non-Constell HIP: {star.HipparcosId}");
 
                 newStars.Add(star);
             }
