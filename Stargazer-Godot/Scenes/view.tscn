@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=31 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="Script" path="res://Code/GridLabel.cs" id="2_oxt5r"]
+[ext_resource type="PackedScene" uid="uid://dl1s5y7yff15e" path="res://Scenes/moon.tscn" id="2_wg1wp"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
@@ -73,6 +74,7 @@ shader_parameter/feather = 0.01
 
 [node name="SkyView" type="Node3D"]
 script = ExtResource("1_b8fgf")
+MoonScene = ExtResource("2_wg1wp")
 
 [node name="GridLabel" type="Control" parent="."]
 layout_mode = 3

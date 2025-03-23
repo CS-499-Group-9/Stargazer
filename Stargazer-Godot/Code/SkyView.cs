@@ -18,6 +18,7 @@ namespace Stargazer
     /// </summary>
     public partial class SkyView : Node3D, IUserUpdateReceiver
     {
+        [Export] PackedScene MoonScene { get; set; }
         /// <summary>
         /// Relays the user request to toggle the constellations lines down to the child node that makes the change
         /// </summary>
@@ -42,8 +43,10 @@ namespace Stargazer
         private Constellations constellationNode;
         private Constellations2D constellation2dNode;
         private Planets planetNode;
+        private Moon moon;
         private IEquatorialConverter<HorizontalStar> starConverter;
         private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
+        private IMoonCalculator moonCalculator;
         private Label datelabel;
 
         /// <summary>
@@ -82,6 +85,7 @@ namespace Stargazer
         {
             starConverter?.UpdateTime(delta*100);
             planetaryCalculator?.IncrementTime(delta*100);
+            moonCalculator?.UpdateTime(delta*100);
             datelabel.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
@@ -106,6 +110,11 @@ namespace Stargazer
             //await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
             planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
+            moon?.Free();
+            moonCalculator = dataPackage.MoonCalculator;
+            moon = MoonScene.Instantiate<Moon>();
+            moon.FromHorizontal(dataPackage.Moon, moonCalculator);
+            AddChild(moon);
             //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects
             // TODO: Notify the Moon node to draw the moon

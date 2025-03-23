@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl1s5y7yff15e"]
+
+[ext_resource type="Script" path="res://Code/Moon.cs" id="1_7apsu"]
+[ext_resource type="Shader" path="res://Scenes/planet.gdshader" id="2_hordq"]
+[ext_resource type="Script" path="res://Code/StarMesh.cs" id="3_vqt4r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x22ly"]
+render_priority = 0
+shader = ExtResource("2_hordq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ulwwr"]
+material = SubResource("ShaderMaterial_x22ly")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]
+
+[node name="CelestialBody" type="Node3D"]
+script = ExtResource("1_7apsu")
+
+[node name="PlanetBody" type="StaticBody3D" parent="."]
+
+[node name="PlanetMesh" type="MeshInstance3D" parent="PlanetBody"]
+mesh = SubResource("SphereMesh_ulwwr")
+skeleton = NodePath("")
+script = ExtResource("3_vqt4r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlanetBody"]
+shape = SubResource("SphereShape3D_tl7gt")
