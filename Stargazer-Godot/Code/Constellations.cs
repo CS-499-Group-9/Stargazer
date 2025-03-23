@@ -41,7 +41,7 @@ namespace Stargazer
 		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
 		public override void _Process(double delta)
 		{
-			if (!constMesh?.Visible?? false) return;
+			if (!constMesh?.Visible?? true) return;
 			
 			var mesh = new ImmediateMesh();
  
