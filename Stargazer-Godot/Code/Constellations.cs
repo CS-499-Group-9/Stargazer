@@ -32,7 +32,7 @@ namespace Stargazer
 		private IEnumerable<Constellation> constellations; 
 		private Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar;
 		private bool canProcess = false;
-		private IDictionary<string, LabelNode> constellationLabels;
+		private IDictionary<string, LabelNode> labelDictionary;
 
 		/// <summary>
 		/// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
@@ -41,17 +41,8 @@ namespace Stargazer
 		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
 		public override void _Process(double delta)
 		{
-			if(constMesh == null){
-				GD.Print("constmesh null");
-			}
-			if(!canProcess){
-				GD.Print("can't process");
-			}
-			if(constMesh == null || !canProcess){
-				return;
-			}
-
-
+			if (!constMesh?.Visible?? false) return;
+			
 			var mesh = new ImmediateMesh();
  
 			mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
@@ -70,18 +61,23 @@ namespace Stargazer
 					// Draw the line between the stars
 					mesh.SurfaceAddVertex(s1.Position);
 					mesh.SurfaceAddVertex(s2.Position);
-
-					if (totalPos == Vector3.Zero) // solely checked for the first star
+					if (ConstellationLabels.Visible)
 					{
-						totalPos += s1.Position;
+						if (totalPos == Vector3.Zero) // solely checked for the first star
+						{
+							totalPos += s1.Position;
+							c++;
+						}
+
+						totalPos += s2.Position;
 						c++;
 					}
-
-					totalPos += s2.Position;
-					c++;
 				}
-				var labelPos = totalPos / c;
-				if (constellationLabels.TryGetValue(constellation.ConstellationId, out var label)) label.Position = labelPos; 
+				if (ConstellationLabels.Visible) 
+				{ 
+					var labelPos = totalPos / c;
+					if (labelDictionary.TryGetValue(constellation.ConstellationId, out var label)) label.Position = labelPos; 
+				}
 			}
 			mesh.SurfaceEnd();
 			constMesh.Mesh = mesh;
@@ -92,7 +88,7 @@ namespace Stargazer
 			canProcess = false;
 			this.GetConstellationStar = GetStar;
 			this.constellations = constellations;
-			constellationLabels = new Dictionary<string, LabelNode>();
+			labelDictionary = new Dictionary<string, LabelNode>();
 			// Get references to the current containers of constellation objects
 			var oldMesh = constMesh;
 			var oldStars = StarContainer;
@@ -172,7 +168,7 @@ namespace Stargazer
 					labelNode.LabelText = constellation.ConstellationName;
 					labelNode.Position = labelPos;
 					labelNode.Visible = true;
-					constellationLabels.Add(constellation.ConstellationId, labelNode);
+					labelDictionary.Add(constellation.ConstellationId, labelNode);
 					ConstellationLabels.AddChild(labelNode);
 				}
 				
