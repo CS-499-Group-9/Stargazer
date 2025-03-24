@@ -19,10 +19,9 @@ public partial class TimeLocEntered : Control
 		AMorPMButton = GetTree().Root.FindChild("TimeHalfSelector", true, false) as OptionButton;
 	}
 
-	private void OnDateSelected(object dateObj)
+	private void OnDateSelected(Variant selectedDate)
 	{
-		// Assuming dateObj has a method Date that returns a formatted date string
-		GD.Print(dateObj.ToString());
+		GD.Print("Date selected: " + selectedDate.ToString());
 	}
 	
 	private void ButtonPressed()
