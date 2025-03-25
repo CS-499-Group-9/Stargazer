@@ -48,7 +48,7 @@ namespace Stargazer
         private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         private Label datelabel;
-        private double timeMultiplier = 60*60;
+        private double timeMultiplier = 1;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.

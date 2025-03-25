@@ -1,4 +1,5 @@
 ﻿using CosineKitty;
+using CsvHelper.Delegates;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
@@ -34,10 +35,13 @@ namespace DataLayer.Implementations
                 { Body.Venus.ToString(), Body.Venus }, 
                 { Body.Mars.ToString(), Body.Mars },
                 { Body.Jupiter.ToString(), Body.Jupiter }, 
-                { Body.Saturn.ToString(), Body.Saturn }, {Body.Uranus.ToString(), Body.Uranus },
-                {Body.Neptune.ToString(), Body.Neptune } 
+                { Body.Saturn.ToString(), Body.Saturn }, 
+                {Body.Uranus.ToString(), Body.Uranus },
+                {Body.Neptune.ToString(), Body.Neptune },
+                {Body.Sun.ToString(), Body.Sun}
             };
             observer = new Observer(latitude, longitude, 150);
+            currentTime = universalTime;
             astroTime = new AstroTime(universalTime);
         }
 
@@ -50,9 +54,9 @@ namespace DataLayer.Implementations
             List<HorizonalPlanet> planets = new();
             foreach (var body in _bodies)
             {
-                Equatorial equ = Astronomy.Equator(body.Value, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+                Equatorial equ = Astronomy.Equator(body.Value, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
                 var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
-                Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
+                //Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
                 var illumination = Astronomy.Illumination(body.Value, astroTime);
                 planets.Add(new HorizonalPlanet(body.Key, illumination.phase_angle, eqBody));
             }
@@ -69,8 +73,8 @@ namespace DataLayer.Implementations
         {
             if(_bodies.TryGetValue(planet.Name, out var body))
             {
-                Equatorial equ = Astronomy.Equator(body, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
-                var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
+                Equatorial equ = Astronomy.Equator(body, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
+                //var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
                 Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
                 var illumination = Astronomy.Illumination(body, astroTime);
                 planet.Azimuth = hor.azimuth;

@@ -17,7 +17,7 @@ namespace DataLayer
         /// <summary>
         /// Used to filter the maximum magnitude of stars retrieved from the Yale Star repository
         /// </summary>
-        const double maxStarMagnitude = 6;
+        // const double maxStarMagnitude = 15;
         private const string Value = "Messier Complete";
 
         /// <summary>

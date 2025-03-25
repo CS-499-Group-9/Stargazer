@@ -28,6 +28,7 @@ namespace Stargazer
 
 		private Node3D StarContainer;
 		private IEquatorialConverter<HorizontalStar> starConverter;
+		const float maxStarMagnitude = 6.0f;
 		/// <summary>
 		/// Receives the notification to update the stars drawn.
 		/// </summary>
@@ -44,7 +45,7 @@ namespace Stargazer
 			// Create a new task to calculate the positions of the stars and add them to the container and await completion
 			await Task.Run(() =>
 			{
-				foreach (var star in stars.Where((s) =>  s.Magnitude < 6))
+				foreach (var star in stars.Where((s) =>  s.Magnitude < maxStarMagnitude))
 				{
 					GetStar(star?.HipparcosId ?? 0, SpawnStar);
 				}

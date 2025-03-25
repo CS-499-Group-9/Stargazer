@@ -141,8 +141,6 @@ namespace Stargazer
 						// Get the stars from the dictionary
 						Star s1 = GetStar(lines.Item1, SpawnStar);
 						Star s2 = GetStar(lines.Item2, SpawnStar);
-						GD.Print("I made it here");
-						//starRefList.Add((&s1, &s2));
 						// Draw the line between the stars
 						mesh.SurfaceAddVertex(s1.Position3D);
 						mesh.SurfaceAddVertex(s2.Position3D);

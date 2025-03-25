@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://chupug8ydyv5d"]
+[gd_scene load_steps=8 format=3 uid="uid://cvbesqw1kvrp8"]
 
 [ext_resource type="Script" path="res://Code/Planet.cs" id="1_rl75h"]
 [ext_resource type="Script" path="res://Code/StarMesh.cs" id="2_dhl4j"]
 [ext_resource type="Shader" path="res://Scenes/planet.gdshader" id="2_gv85t"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x22ly"]
+[sub_resource type="SphereMesh" id="SphereMesh_ulwwr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sqvk1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5s6q"]
 render_priority = 0
 shader = ExtResource("2_gv85t")
-
-[sub_resource type="SphereMesh" id="SphereMesh_ulwwr"]
-material = SubResource("ShaderMaterial_x22ly")
+shader_parameter/albedo_texture = SubResource("PlaceholderTexture2D_sqvk1")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]
 
@@ -21,6 +23,7 @@ script = ExtResource("1_rl75h")
 [node name="PlanetMesh" type="MeshInstance3D" parent="PlanetBody"]
 mesh = SubResource("SphereMesh_ulwwr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_t5s6q")
 script = ExtResource("2_dhl4j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlanetBody"]

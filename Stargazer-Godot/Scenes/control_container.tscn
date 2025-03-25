@@ -16,17 +16,25 @@ bg_color = Color(0.329158, 0.329158, 0.329158, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
 bg_color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 200.0
+offset_bottom = 348.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
 script = ExtResource("1_5vufv")
 
-[node name="AzimuthButton" type="Control" parent="."]
+[node name="AzimuthButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 script = ExtResource("1_difw8")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="AzimuthButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/AzimuthButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="AzimuthButton"]
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/AzimuthButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,13 +54,13 @@ text = "Toggle Azimuth"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="ConstellationButton" type="Control" parent="."]
+[node name="ConstellationButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 script = ExtResource("2_aaufq")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="ConstellationButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/ConstellationButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,7 +70,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="ConstellationButton"]
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ConstellationButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,13 +83,13 @@ text = "Toggle Constellations
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="LabelButton" type="Control" parent="."]
+[node name="LabelButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 script = ExtResource("3_1akgr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="LabelButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/LabelButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="LabelButton"]
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/LabelButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,13 +110,13 @@ text = "Toggle Labels"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="MessierButton" type="Control" parent="."]
+[node name="MessierButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 script = ExtResource("4_mt1r5")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="MessierButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MessierButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,7 +126,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckBox" type="CheckBox" parent="MessierButton"]
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/MessierButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,11 +137,11 @@ text = "Toggle Messier"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="LatitudeButton" type="Control" parent="."]
+[node name="LatitudeButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="LatitudeButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/LatitudeButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,7 +151,7 @@ grow_vertical = 2
 scale = Vector2(1, 0.99176)
 metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="LatitudeButton"]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/LatitudeButton"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -151,11 +159,11 @@ offset_right = 194.0
 offset_bottom = 36.0
 placeholder_text = "   Enter Latitude"
 
-[node name="LongitudeButton" type="Control" parent="."]
+[node name="LongitudeButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="LongitudeButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/LongitudeButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,7 +173,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
 metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="LongitudeButton"]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/LongitudeButton"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -173,11 +181,11 @@ offset_right = 194.0
 offset_bottom = 36.0
 placeholder_text = "   Enter Longitude"
 
-[node name="DateTime" type="Control" parent="."]
+[node name="DateTime" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="DateTime"]
+[node name="Panel" type="Panel" parent="VBoxContainer/DateTime"]
 z_index = -120
 layout_mode = 1
 anchors_preset = -1
@@ -190,12 +198,12 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Time" type="Control" parent="DateTime"]
+[node name="Time" type="Control" parent="VBoxContainer/DateTime"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DateTime/Time"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/DateTime/Time"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 5.0
@@ -203,14 +211,14 @@ anchor_bottom = 1.0
 offset_left = 40.0
 offset_right = -6.0
 
-[node name="TimeLineEdit" type="LineEdit" parent="DateTime/Time/HBoxContainer"]
+[node name="TimeLineEdit" type="LineEdit" parent="VBoxContainer/DateTime/Time/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.68
 placeholder_text = "Enter Time"
 
-[node name="TimeHalfSelector" type="OptionButton" parent="DateTime/Time/HBoxContainer"]
+[node name="TimeHalfSelector" type="OptionButton" parent="VBoxContainer/DateTime/Time/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
@@ -219,7 +227,7 @@ popup/item_0/text = "AM"
 popup/item_1/text = "PM"
 popup/item_1/id = 1
 
-[node name="CalendarButton" type="TextureButton" parent="DateTime"]
+[node name="CalendarButton" type="TextureButton" parent="VBoxContainer/DateTime"]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 4.325
@@ -233,13 +241,13 @@ script = ExtResource("7_r6oyu")
 image_normal = ExtResource("5_g42sv")
 image_pressed = ExtResource("6_6fvns")
 
-[node name="EnterButton" type="Control" parent="."]
+[node name="EnterButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 script = ExtResource("8_iply7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="EnterButton"]
+[node name="Panel" type="Panel" parent="VBoxContainer/EnterButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -249,7 +257,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="EnterButton"]
+[node name="Button" type="Button" parent="VBoxContainer/EnterButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -264,8 +272,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Enter Data"
 
-[connection signal="toggled" from="AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
-[connection signal="toggled" from="ConstellationButton/CheckBox" to="." method="ToggleConstellations"]
-[connection signal="toggled" from="LabelButton/CheckBox" to="." method="ToggleConstellationLabels"]
-[connection signal="toggled" from="MessierButton/CheckBox" to="." method="ToggleMessierObjects"]
-[connection signal="pressed" from="EnterButton/Button" to="." method="UpdateUserPosition"]
+[connection signal="toggled" from="VBoxContainer/AzimuthButton/CheckBox" to="VBoxContainer" method="ToggleAzimuth"]
+[connection signal="toggled" from="VBoxContainer/ConstellationButton/CheckBox" to="VBoxContainer" method="ToggleConstellations"]
+[connection signal="toggled" from="VBoxContainer/LabelButton/CheckBox" to="VBoxContainer" method="ToggleConstellationLabels"]
+[connection signal="toggled" from="VBoxContainer/MessierButton/CheckBox" to="VBoxContainer" method="ToggleMessierObjects"]
+[connection signal="pressed" from="VBoxContainer/EnterButton/Button" to="VBoxContainer" method="UpdateUserPosition"]

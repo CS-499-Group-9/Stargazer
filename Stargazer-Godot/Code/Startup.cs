@@ -29,7 +29,7 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
+            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer)+"/VBoxContainer");
             var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
             var skyView = skyViewContainer.SkyView;
 

@@ -3,7 +3,7 @@ using DataLayer.Interfaces;
 using Godot;
 using System;
 
-public partial class Moon : Node3D
+public partial class Moon : Node3D,IHoverable
 {
     private HorizontalMoon horizontalMoon;
     private IMoonCalculator calculator;
@@ -13,12 +13,13 @@ public partial class Moon : Node3D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        Scale = new Vector3(10, 10, 10);
+        Scale = new Vector3(4, 4, 4);
 	}
     public override void _Process(double delta)
     {
         calculator?.UpdatePosition(horizontalMoon);
         Position = GetLocation();
+        LookAt(Vector3.Up);
     }
 
     private Vector3 GetLocation()
@@ -39,4 +40,11 @@ public partial class Moon : Node3D
 		horizontalMoon = moon;
 		calculator = moonCalculator;
 	}
+
+    public string getHoverText()
+    {
+                    return $"The Moon\n"+
+                    $"Altitude {horizontalMoon.Altitude}\n"+
+                    $"Azimuth {horizontalMoon.Azimuth}";
+    }
 }

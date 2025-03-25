@@ -10,7 +10,7 @@ namespace Stargazer
 	/// <summary>
 	/// A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
 	/// </summary>
-	public partial class Star : Node3D
+	public partial class Star : Node3D,IHoverable
 	{
 
 		private const float radians = (float)Math.PI / 180f;
@@ -99,6 +99,12 @@ namespace Stargazer
 			Position3D = Position;
         }
 
-
+        public string getHoverText()
+        {
+					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+
+                    $"HIP {HipparcosId}\n"+
+                    $"Altitude {Altitude}"+
+                    $"Azimuth {Azimuth}";
+        }
     }
 }

@@ -12,9 +12,6 @@ namespace DataLayer
 
     public static class InjectionService<T>
     {
-        // Set the max (min) star magnitude. The magnitude is stored with smaller numbers being brighter, so the filter ends up being magnitude <= maxStarMagnitude
-        const int maxStarMagnitude = 6;
-
         /// <summary>
         /// Used to asynchronously instantiate the repository service. This should be called in an <c>async</c> method using the <c>await</c> keyword.
         /// </summary>

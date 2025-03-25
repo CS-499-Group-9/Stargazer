@@ -33,16 +33,24 @@ namespace Stargazer
 		private ImmediateMesh mesh;
 		private float storedfov;
 		private Camera3D camera;
+		private StandardMaterial3D greenMaterial;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
 		/// </summary>
 		public override void _Ready()
 		{
+			greenMaterial = new()
+			{
+
+				AlbedoColor = new Color(0.4f, 0.8f, 0.4f, 0.8f), // Green color
+				ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded
+			};
 			mesh = new ImmediateMesh();
 			DrawLongitudeLines(mesh);
 			DrawLatitudeLines(mesh);
 			Mesh = mesh;
 			Visible = false;
+
 		}
         public override void _Process(double delta)
         {
@@ -92,7 +100,7 @@ namespace Stargazer
 		// Function to draw longitude lines
 		private void DrawLongitudeLines(ImmediateMesh imMesh)
 		{
-			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
+			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
 
 			float cutoffRadians = Mathf.DegToRad(cutoffLatitude);  // Convert cutoff to radians
 
@@ -140,7 +148,7 @@ namespace Stargazer
 		// Function to draw latitude lines
 		private void DrawLatitudeLines(ImmediateMesh imMesh)
 		{
-			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
+			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
 			for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 			{
 				int storelat = lat;

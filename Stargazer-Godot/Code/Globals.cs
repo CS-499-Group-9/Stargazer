@@ -20,7 +20,6 @@ namespace Stargazer
         public bool isHover { get; set; }
         public string hoverLabel { get; set; }
         public DateTime requestTime {get; set;}
-        public coordData data = new coordData(); // Create a global instance
 
 
         public override void _Ready()
@@ -33,16 +32,9 @@ namespace Stargazer
             hoverLabel = "";
             
             // Huntsville by default
-            data.timestamp = DateTime.Now.ToUniversalTime();
-            data.latitude = 34.7304;
-            data.longitude = -86.5861;
+
         }
     }
 
-    public class coordData
-    {
-        public DateTime timestamp;
-        public double latitude;
-        public double longitude;
-    }
+
 }
