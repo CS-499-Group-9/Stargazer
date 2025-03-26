@@ -1,0 +1,116 @@
+[gd_scene load_steps=21 format=3 uid="uid://dci0aiov00oqt"]
+
+[ext_resource type="Script" path="res://Code/SkyView.cs" id="1_p4gdt"]
+[ext_resource type="Script" path="res://Code/MainCamera.cs" id="2_ftmjj"]
+[ext_resource type="Script" path="res://Code/Spawner.cs" id="3_f0pv8"]
+[ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="4_ueuxr"]
+[ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="5_6m3em"]
+[ext_resource type="Script" path="res://Code/Constellations.cs" id="6_ay5ec"]
+[ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_mysaa"]
+[ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="8_skho6"]
+[ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="9_cwh47"]
+[ext_resource type="Texture2D" uid="uid://btfum2cg0tcf1" path="res://Textures/chercker.png" id="10_1bcgs"]
+
+[sub_resource type="Gradient" id="Gradient_2ot7h"]
+offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
+colors = PackedColorArray(0.258316, 1.68217e-05, 0.224579, 1, 0, 0, 0.972549, 1, 0, 0, 0.972549, 1, 0.258824, 0, 0.223529, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_16tw0"]
+gradient = SubResource("Gradient_2ot7h")
+fill_from = Vector2(0.5, 0.145299)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wku30"]
+albedo_texture = SubResource("GradientTexture2D_16tw0")
+uv1_scale = Vector3(1, 0.97, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kgvtr"]
+material = SubResource("StandardMaterial3D_wku30")
+flip_faces = true
+radius = 100.0
+height = 200.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_pe3po"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6hq7"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.490196)
+albedo_texture = ExtResource("10_1bcgs")
+uv1_scale = Vector3(30, 30, 15)
+
+[sub_resource type="Environment" id="Environment_aofdk"]
+glow_enabled = true
+glow_intensity = 3.07
+glow_strength = 1.46
+
+[sub_resource type="BoxMesh" id="BoxMesh_j2p66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3e2k"]
+albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
+
+[node name="SkyView" type="Node3D"]
+script = ExtResource("1_p4gdt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_ftmjj")
+
+[node name="Stars" type="Node3D" parent="."]
+script = ExtResource("3_f0pv8")
+StarScene = ExtResource("4_ueuxr")
+LabelScene = ExtResource("5_6m3em")
+
+[node name="Constellations" type="Node3D" parent="."]
+script = ExtResource("6_ay5ec")
+StarScene = ExtResource("4_ueuxr")
+LabelScene = ExtResource("5_6m3em")
+
+[node name="LineMesh" type="MultiMeshInstance3D" parent="Constellations"]
+script = ExtResource("7_mysaa")
+
+[node name="Dome" type="Node3D" parent="."]
+
+[node name="Skybox" type="MeshInstance3D" parent="Dome"]
+mesh = SubResource("SphereMesh_kgvtr")
+skeleton = NodePath("")
+
+[node name="Azimuth Gridlines" type="MeshInstance3D" parent="Dome"]
+mesh = SubResource("SphereMesh_kgvtr")
+skeleton = NodePath("")
+script = ExtResource("8_skho6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_energy = 0.297
+
+[node name="THE ASTRAL PLANE" type="Node3D" parent="."]
+script = ExtResource("9_cwh47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="THE ASTRAL PLANE"]
+transform = Transform3D(140, 0, 0, 0, -6.11959e-06, 140, 0, -140, -6.11959e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_pe3po")
+surface_material_override/0 = SubResource("StandardMaterial3D_n6hq7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aofdk")
+
+[node name="MessierObject" type="Node3D" parent="."]
+transform = Transform3D(3.775, 0, 0, 0, 3.775, 0, 0, 0, 3.775, 10.45, 10.815, 0)
+visible = false
+
+[node name="O1" type="StaticBody3D" parent="MessierObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.93076, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MessierObject/O1"]
+mesh = SubResource("BoxMesh_j2p66")
+surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MessierObject/O1"]
+shape = SubResource("BoxShape3D_5gvf6")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 157.0
+offset_bottom = 28.0
+text = "TEST"

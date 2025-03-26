@@ -20,9 +20,6 @@ namespace Stargazer
         /// </summary>
         public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated;
 
-        private Timer timer;
-        private double latitude, longitude;
-        private DateTime userTime;
 
         /// <summary>
         /// Creates the repository service and stores in memory
@@ -32,29 +29,20 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");   
-            var skyView = GetNode<SkyView>(viewPortPath);
+            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer)+"/VBoxContainer");
+            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+            var skyView = skyViewContainer.SkyView;
+
+            controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
+            controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
+            controlContainer.UserPositionUpdated = UpdateUserPosition;
+
+
+            //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
+
             UserPositionUpdated = skyView.UpdateUserPosition;
 
-            var constellationButton = GetNode<ConstellationButton>("ConstellationButton");
-            constellationButton.ConstellationLinesToggled = skyView.ToggleConstellationLines;
-
-            var labelButton = GetNode<LabelButton>("LabelButton");
-            labelButton.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
-
-            var azimuthButton = GetNode<AzimuthButton>("AzimuthButton");
-            azimuthButton.GridlinesToggled = skyView.ToggleGridlines;
-
-            var messierButton = GetNode<MessierButton>("MessierButton");
-            messierButton.NotifyControllerOfUserUpdate = UpdateUserPosition;
-            timer = new Timer
-            {
-                WaitTime = 1.5f,
-                Autostart = false,
-                OneShot = false
-            };
-            timer.Timeout += OnTimer;
-            AddChild(timer);
         }
 
         /// <summary>
@@ -68,22 +56,12 @@ namespace Stargazer
         public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
-            //timer.Stop();
-            this.latitude = latitude;
-            this.longitude = longitude;
-            this.userTime  = dateTime;
+          
             var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            UserPositionUpdated?.Invoke(dataPackage);
-            //timer.Start();
+            await UserPositionUpdated(dataPackage);
+
         }
 
-        private async void OnTimer()
-        {
-            // Change the value in AddMinutes to change how much the sky changes per iteration
-            userTime = userTime.AddMinutes(10);
-            GD.Print($"{userTime}");
-            var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, userTime);
-            UserPositionUpdated?.Invoke(dataPackage);
-        }
+
     }
 }

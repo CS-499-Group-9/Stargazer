@@ -73,7 +73,7 @@ namespace Stargazer
                     //GD.Print("gonna grab a constellation");
                     Star s1 = GetConstellationStar(lines.Item1, (S)=>{return null;});
                     Star s2 = GetConstellationStar(lines.Item2, (S)=>{return null;});
-                    if (s1.altitude > -45.0 || s2.altitude > -45.0){
+                    if (s1.Altitude > -45.0 || s2.Altitude > -45.0){
                         Star2D s12d = Spawn2DStar(s1);
                         Star2D s22d = Spawn2DStar(s2);
 
@@ -82,10 +82,10 @@ namespace Stargazer
 
                         if (totalPos == Vector2.Zero) // solely checked for the first star
                         {
-                            totalPos += s1.Pos2D;
+                            totalPos += s1.Position2D;
                             c++;
                         }
-                        totalPos += s2.Pos2D;
+                        totalPos += s2.Position2D;
                         c++;
                     }
 
@@ -128,13 +128,9 @@ namespace Stargazer
         private Star2D Spawn2DStar(Star star3d)
         {
             Star2D outstar = Star2DScene.Instantiate<Star2D>();
-            
-            outstar.azimuth = star3d.azimuth;
-            outstar.altitude = star3d.altitude;
-            outstar.mag = star3d.mag;
+            outstar.From3dStar(star3d);
             outstar.scalestar(new Vector2(0.7f,0.7f));
             //outstar.Scale  = new Vector2(1F,1F);
-            outstar.starName = star3d.starName;
             StarContainer.AddChild(outstar);
             return outstar;
         }

@@ -18,17 +18,18 @@ namespace Stargazer
 		// They are all accessed/set via code.
 		// Not sure what overhead is involved in labeling these as export.
 
-		[Export] public float azimuth = 0f; // Rotation from North (X+), in degrees.
-		[Export] public float altitude = 0f; // Rotation from Y=0, in degrees.
-		[Export] public float dist = 74f; // Distance from (0, 0, 0)
-		[Export] public float mag = 1f;
-		[Export] public string starName;
+        private Star? star3d;
+        public float Altitude { get { return (float)star3d?.Altitude; } }
+        public float Azimuth { get { return (float)star3d?.Azimuth; } }
 
-        private Vector2 getLocation(){
+        public string StarName { get { return star3d?.StarName; } }
+
+        private Vector2 getLocation()
+        {
 
             Vector2 Pos2D = new Vector2(
-                x:(90.0f-altitude)*Mathf.Cos((-azimuth-90)*radians),
-                y:(90.0f-altitude)*Mathf.Sin((-azimuth-90)*radians)
+                x:(90.0f-Altitude)*Mathf.Cos((-Azimuth-90)*radians),
+                y:(90.0f-Altitude)*Mathf.Sin((-Azimuth-90)*radians)
             );
             return Pos2D;
         }
@@ -37,7 +38,7 @@ namespace Stargazer
 		public override void _Ready()
 		{
             ColorRect colorRect = GetNode<ColorRect>("ColorRect");
-            if (altitude < 0.5){
+            if (Altitude < 0.5){
                 Visible = true;
             }
 			Position = getLocation();
@@ -60,6 +61,11 @@ namespace Stargazer
 		}
         public void scalestar(Vector2 scale){
             Scale = scale;
+        }
+
+        public void From3dStar(Star star)
+        {
+            star3d = star;
         }
 
 	}

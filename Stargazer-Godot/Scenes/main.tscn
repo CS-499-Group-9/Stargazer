@@ -1,61 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=10 format=3 uid="uid://dmonwxoowo044"]
 
+[ext_resource type="PackedScene" uid="uid://cpnjhw02imc4o" path="res://Scenes/banner.tscn" id="1_2aeuw"]
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
-[ext_resource type="PackedScene" uid="uid://dmonwxoowo044" path="res://Scenes/view.tscn" id="1_vwov6"]
-[ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="2_coh25"]
-[ext_resource type="Script" path="res://Code/GridLabel.cs" id="3_x74pm"]
-[ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="4_e4wm7"]
-[ext_resource type="Script" path="res://Code/LabelButton.cs" id="5_b3dcx"]
-[ext_resource type="Script" path="res://Code/MessierButton.cs" id="6_dawsw"]
-[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="6_oit80"]
-[ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="7_81dkj"]
-[ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="8_o88uu"]
-[ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="9_nn2sp"]
-[ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="9_rl8tn"]
-[ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="10_6a71k"]
-[ext_resource type="PackedScene" uid="uid://ujvt4iftkmki" path="res://Scenes/view2d.tscn" id="10_asg56"]
-[ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="11_imatn"]
+[ext_resource type="Script" path="res://Code/Main.cs" id="1_sxr3h"]
+[ext_resource type="PackedScene" uid="uid://ccf161pss0iua" path="res://Scenes/control_container.tscn" id="2_0ds6g"]
+[ext_resource type="Script" path="res://Code/MainContainer.cs" id="2_q8paj"]
+[ext_resource type="PackedScene" uid="uid://qst6jthb1tgv" path="res://Scenes/sky_view_container.tscn" id="4_ch8am"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="15_gllst"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_hqli8"]
-radius = 0.125
-height = 0.25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
-bg_color = Color(0.329158, 0.329158, 0.329158, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lmxy"]
-bg_color = Color(0.247059, 0.00392157, 0.32549, 1)
-border_color = Color(4.01388e-05, 0.00302327, 0.0630179, 1)
-border_blend = true
-
-[sub_resource type="SystemFont" id="SystemFont_smpph"]
-font_names = PackedStringArray("Cascadia Mono")
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_pw72o"]
-font = SubResource("SystemFont_smpph")
-font_size = 66
-outline_size = 15
-outline_color = Color(1, 0.215686, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_vpwdv"]
-offsets = PackedFloat32Array(0.609347, 0.609357, 0.645897, 0.661094, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.992157, 0, 0.956863, 0.956863, 0.956863, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nmdm5"]
-gradient = SubResource("Gradient_vpwdv")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6x5u"]
-shader = ExtResource("9_nn2sp")
-shader_parameter/radius = 0.4
-shader_parameter/thickness = 0.01
-shader_parameter/feather = 0.01
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
-bg_color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [sub_resource type="Theme" id="Theme_g7sve"]
 default_font_size = 20
@@ -72,364 +23,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.997047)
+script = ExtResource("1_sxr3h")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("2_q8paj")
+
+[node name="Banner" parent="MainContainer" instance=ExtResource("1_2aeuw")]
+layout_mode = 2
+
+[node name="InteractionContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
 script = ExtResource("1_7h08j")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 85.0
-offset_bottom = 2.0
-grow_horizontal = 0
-stretch = true
-metadata/_edit_use_anchors_ = true
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(952, 565)
-render_target_update_mode = 4
-
-[node name="View" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_vwov6")]
-
-[node name="GridLabel" type="Control" parent="SubViewportContainer/SubViewport/View"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("3_x74pm")
-
-[node name="TestSpheres" type="Control" parent="SubViewportContainer/SubViewport/View"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/View/TestSpheres"]
-mesh = SubResource("SphereMesh_hqli8")
-skeleton = NodePath("../../../../..")
-
-[node name="AzimuthButton" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 85.0
-offset_right = 200.0
-offset_bottom = 125.0
-script = ExtResource("2_coh25")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="AzimuthButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckBox" type="CheckBox" parent="AzimuthButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Toggle Azimuth"
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="ConstellationButton" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 125.0
-offset_right = 200.0
-offset_bottom = 165.0
-script = ExtResource("4_e4wm7")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="ConstellationButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckBox" type="CheckBox" parent="ConstellationButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-button_pressed = true
-text = "Toggle Constellations
-"
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="LabelButton" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 165.0
-offset_right = 200.0
-offset_bottom = 205.0
-script = ExtResource("5_b3dcx")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="LabelButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckBox" type="CheckBox" parent="LabelButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-button_pressed = true
-text = "Toggle Labels"
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="MessierButton" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 205.0
-offset_right = 200.0
-offset_bottom = 245.0
-script = ExtResource("6_dawsw")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="MessierButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckBox" type="CheckBox" parent="MessierButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Toggle Messier"
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_bottom = 85.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_6lmxy")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_right = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Stargazer"
-label_settings = SubResource("LabelSettings_pw72o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Compass" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -130.0
-offset_top = -130.0
-grow_horizontal = 0
-grow_vertical = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Outline" type="Sprite2D" parent="Compass"]
-visible = false
-position = Vector2(65, 65)
-scale = Vector2(1.76563, 1.76563)
-texture = SubResource("GradientTexture2D_nmdm5")
-
-[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
-position = Vector2(65, 65)
-scale = Vector2(0.069375, 0.069375)
-texture = ExtResource("6_oit80")
-script = ExtResource("7_81dkj")
-needle = NodePath(".")
-
-[node name="ColorRect" type="ColorRect" parent="Compass"]
-material = SubResource("ShaderMaterial_u6x5u")
-layout_mode = 0
-offset_right = 129.0
-offset_bottom = 129.0
-
-[node name="LatitudeButton" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 246.0
-offset_right = 200.0
-offset_bottom = 286.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="LatitudeButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.99176)
-metadata/_edit_use_anchors_ = true
-
-[node name="LineEdit" type="LineEdit" parent="LatitudeButton"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 194.0
-offset_bottom = 36.0
-placeholder_text = "   Enter Latitude"
-
-[node name="LongitudeButton" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 286.0
-offset_right = 200.0
-offset_bottom = 326.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="LongitudeButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
-metadata/_edit_use_anchors_ = true
-
-[node name="LineEdit" type="LineEdit" parent="LongitudeButton"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 194.0
-offset_bottom = 36.0
-placeholder_text = "   Enter Longitude"
-
-[node name="DateTime" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 326.0
-offset_right = 200.0
-offset_bottom = 366.0
-
-[node name="Panel" type="Panel" parent="DateTime"]
-z_index = -120
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.05
-anchor_bottom = 0.156028
-offset_right = -9.99998
-offset_bottom = 33.7589
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Time" type="Control" parent="DateTime"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="DateTime/Time"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 5.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_right = -6.0
-
-[node name="TimeLineEdit" type="LineEdit" parent="DateTime/Time/HBoxContainer"]
+[node name="ControlContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("2_0ds6g")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.68
-placeholder_text = "Enter Time"
 
-[node name="TimeHalfSelector" type="OptionButton" parent="DateTime/Time/HBoxContainer"]
+[node name="SkyViewContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("4_ch8am")]
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 4
-item_count = 2
-popup/item_0/text = "AM"
-popup/item_1/text = "PM"
-popup/item_1/id = 1
-
-[node name="CalendarButton" type="TextureButton" parent="DateTime"]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 4.325
-offset_top = 3.345
-offset_right = 36.325
-offset_bottom = 37.345
-toggle_mode = true
-texture_normal = ExtResource("9_rl8tn")
-texture_hover = ExtResource("10_6a71k")
-script = ExtResource("8_o88uu")
-image_normal = ExtResource("9_rl8tn")
-image_pressed = ExtResource("10_6a71k")
-
-[node name="EnterButton" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 366.0
-offset_right = 200.0
-offset_bottom = 406.0
-script = ExtResource("11_imatn")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="EnterButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="EnterButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.5
-offset_top = -15.5
-offset_right = 70.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Enter Data"
 
 [node name="HoverLabel" type="Label" parent="."]
 layout_mode = 0
@@ -439,17 +58,3 @@ theme = SubResource("Theme_g7sve")
 text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
 script = ExtResource("15_gllst")
-
-[node name="SubViewport2" type="SubViewport" parent="."]
-handle_input_locally = false
-size = Vector2i(1600, 1600)
-render_target_update_mode = 4
-
-[node name="View2d" parent="SubViewport2" instance=ExtResource("10_asg56")]
-
-[connection signal="toggled" from="AzimuthButton/CheckBox" to="SubViewportContainer/SubViewport/View/GridLabel" method="ToggleGridlines"]
-[connection signal="toggled" from="AzimuthButton/CheckBox" to="AzimuthButton" method="ToggleAzimuth"]
-[connection signal="toggled" from="ConstellationButton/CheckBox" to="ConstellationButton" method="ToggleConst"]
-[connection signal="toggled" from="LabelButton/CheckBox" to="LabelButton" method="ToggleLabel"]
-[connection signal="button_up" from="MessierButton/CheckBox" to="MessierButton" method="RunTheThing"]
-[connection signal="pressed" from="EnterButton/Button" to="EnterButton" method="ButtonPressed"]

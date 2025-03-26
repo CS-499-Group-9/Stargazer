@@ -21,11 +21,7 @@ namespace Stargazer
         // This will need to be attached to the signal on the UpdateButton class, and get the lat/long/time from the other objects.
         private async void RunTheThing()
         {
-            Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-            var coords = new HuntsvilleCoordinates();
-            globalVars.requestTime = DateTime.UtcNow;
-            GD.Print("Update");
-            await NotifyControllerOfUserUpdate(coords.latitude, coords.longitude, DateTime.UtcNow);
+           
 
         }
 
@@ -37,13 +33,6 @@ namespace Stargazer
         }
 
         // TODO: Delete this struct.
-        private struct HuntsvilleCoordinates
-        {
-            public double latitude = 34.7304;
-            public double longitude = -86.5861;
-            public HuntsvilleCoordinates()
-            {
-            }
-        }
+        
     }
 }

@@ -23,6 +23,8 @@ namespace Stargazer
 			camera = (Camera3D)viewNode?.GetNode("Camera3D");
 		}
 
+		public void SetCamera(Camera3D camera) { this.camera = camera; }
+
 		/// <summary>
 		/// Rotates the compass needle as the user view is rotated.
 		/// </summary>

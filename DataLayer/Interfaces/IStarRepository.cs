@@ -12,7 +12,7 @@ namespace DataLayer.Interfaces
         /// </summary>
         /// <param name="maximumMagnitude">The minimum brightness to include (negative numbers are brighter)</param>
         /// <returns>A running task that can be awaited to obtain a list of stars</returns>
-        public Task<IList<EquatorialStar>> GetAllStarsAsync(double maximumMagnitude);
+        public Task<IList<EquatorialStar>> GetAllStarsAsync();
 
         /// <summary>
         /// Gets a single star from the repository

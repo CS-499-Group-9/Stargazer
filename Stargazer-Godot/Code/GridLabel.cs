@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public partial class GridLabel : Control
 {
     private Camera3D camera;
-    private SubViewport viewport;
     private Dictionary<int, Label> gridlabels = new Dictionary<int, Label>();
     private Plane leftPlane;
     private float storedfov;
@@ -14,9 +13,7 @@ public partial class GridLabel : Control
     private bool render;
     public override void _Ready()
     {
-        camera = GetNode<Camera3D>("/root/Control/SubViewportContainer/SubViewport/View/Camera3D");
-        viewport = GetNode<SubViewport>("/root/Control/SubViewportContainer/SubViewport");
-        storedfov = camera.Fov;
+       
         lineinterval = 15;
         // Create labels
         for (int altitude = 0; altitude < 180; altitude++)
@@ -109,6 +106,11 @@ public partial class GridLabel : Control
         //GD.Print($"i drew {countdraw}");
     }
 
+    public void SetCamera(Camera3D camera)
+    {
+        this.camera = camera;
+        storedfov = camera.Fov;
+    }
     private void updateLabels(){
         var childlabels = GetChildren();
         var altitude = -90.0;

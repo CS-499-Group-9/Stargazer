@@ -28,25 +28,33 @@ namespace Stargazer
 		/// Calculate cutoff latitude to ensure it aligns with the first visible circle
 		/// </summary>
 		[Export] public float cutoffLatitude = 75.0f;
+		
 
 		private ImmediateMesh mesh;
-		private Camera3D camera;
 		private float storedfov;
+		private Camera3D camera;
+		private StandardMaterial3D greenMaterial;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
 		/// </summary>
 		public override void _Ready()
 		{
+			greenMaterial = new()
+			{
+
+				AlbedoColor = new Color(0.4f, 0.8f, 0.4f, 0.8f), // Green color
+				ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded
+			};
 			mesh = new ImmediateMesh();
 			DrawLongitudeLines(mesh);
 			DrawLatitudeLines(mesh);
 			Mesh = mesh;
 			Visible = false;
-			camera = GetNode<Camera3D>("/root/Control/SubViewportContainer/SubViewport/View/Camera3D");
-			storedfov = camera.Fov;
+
 		}
         public override void _Process(double delta)
         {
+			if (camera == null) return;
             if (camera.Fov < 15 && storedfov >= 15){
 				latitudeInterval = 1.0f;
 				mesh.ClearSurfaces();
@@ -82,11 +90,17 @@ namespace Stargazer
 			Visible = showLines;
 		}
 
+		public void SetCamera(Camera3D camera)
+		{
+			this.camera = camera;
+			storedfov = camera.Fov;
+		}
+
 
 		// Function to draw longitude lines
 		private void DrawLongitudeLines(ImmediateMesh imMesh)
 		{
-			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
+			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
 
 			float cutoffRadians = Mathf.DegToRad(cutoffLatitude);  // Convert cutoff to radians
 
@@ -134,7 +148,7 @@ namespace Stargazer
 		// Function to draw latitude lines
 		private void DrawLatitudeLines(ImmediateMesh imMesh)
 		{
-			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines);
+			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
 			for (int lat = -90; lat <= 90; lat += (int)latitudeInterval)  // Loop through latitudes from -90 to 90 with the interval
 			{
 				int storelat = lat;

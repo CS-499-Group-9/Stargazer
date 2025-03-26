@@ -18,3 +18,5 @@ mono_crash.*.json
 /Stargazer-Godot/addons/godot-git-plugin
 /DataLayer/bin
 /DataLayer/obj
+launch.json
+tasks.json

@@ -1,5 +1,6 @@
 ﻿using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using System.Collections.Concurrent;
 
 namespace DataLayer
@@ -11,32 +12,41 @@ namespace DataLayer
     /// <typeparam name="T">The class type of star that is used in the database</typeparam>
     public class CelestialDataPackage<T>
     {
+
         // These two collections handle the logic of the GetConstellationStar method.
-        private  IDictionary<int, HorizontalStar> ConstellationStars { get;  }
-        private IDictionary<int, T> DrawnConstellationStars { get; }
+        private IEnumerable<HorizontalStar> horizontalStars;
+
+        public ConcurrentDictionary<int, T> DrawnStars { get; }
 
 
-        /// <summary>
-        /// A collection of stars in the Horizontal Coordinate form to be displayed.
-        /// </summary>
-        public IEnumerable<HorizontalStar> Stars { get; }
+
+        public IEnumerable<HorizontalStar> HorizontalStars { get { return horizontalStars; } }
+
+        public IEquatorialConverter<HorizontalStar> StarConverter { get; }
+        public IEquatorialConverter<HorizontalMessierObject> MessierConverter { get; }
+
 
         /// <summary>
         /// A collection of Messier Deep Space Objects in the Horizontal Coordinate form to be displayed.
         /// </summary>
-        public IEnumerable<HorizontalMessierObject> MessierObjects { get;  }
+        public IEnumerable<HorizontalMessierObject> MessierObjects { get; }
         /// <summary>
         /// A collection of Constellations to be displayed.
         /// </summary>
-        public  IEnumerable<Constellation> Constellations { get;  }
+        public IEnumerable<Constellation> Constellations { get; }
         /// <summary>
         /// A collection of solar planets in horizontal coordinate form.
         /// </summary>
         public IEnumerable<HorizonalPlanet>? Planets { get; }
+        public IPlanetaryCalculator<HorizonalPlanet> PlanetaryCalculator {get;}
+
+        public IMoonCalculator MoonCalculator {get;}
         /// <summary>
         /// The moon in horizontal coordinate form
         /// </summary>
         public HorizontalMoon Moon { get; }
+
+      
 
         /// <summary>
         /// Searches the dictionary for a <c>HorizontalStar</c> using the Hip ID provided. If found, converts it to a T star, stores it and returns it.
@@ -46,16 +56,17 @@ namespace DataLayer
         /// <param name="SpawnStar">The function provided to spawn a new star in the graphic scene. Must take a <c>HorizontalStar</c> as and argument and return a <c>T</c> star</param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
-        public T GetConstellationStar(int hipId, Func<HorizontalStar, T> SpawnStar)
+        public T GetStar(int hipId, Func<HorizontalStar, T> SpawnStar)
         {
-            if (ConstellationStars.Remove(hipId, out var horizontalStar))
+            if (DrawnStars.TryGetValue(hipId, out var star))  return star;
+            var horizontalStar = horizontalStars.First(s => s.HipparcosId == hipId);
+            if (horizontalStar != null)
             {
                 var newStar = SpawnStar(horizontalStar);
-                DrawnConstellationStars.TryAdd(hipId, newStar);
+                DrawnStars.TryAdd(hipId, newStar);
                 return newStar;
             }
-            if (!DrawnConstellationStars.TryGetValue(hipId, out var star))  throw new KeyNotFoundException();
-            return star;
+            else throw new KeyNotFoundException($"Star with HipparcosId {hipId} not found!");
         }
 
         /// <summary>
@@ -70,21 +81,27 @@ namespace DataLayer
         /// <param name="planets">A <see cref="List{HorizonalPlanet}"/> in the solar system from the users perspective.</param>
         /// <param name="moon">A <see cref="HorizontalMoon"/>.</param>
         internal CelestialDataPackage(
-            IEnumerable<HorizontalStar> stars, 
-            IEnumerable<HorizontalMessierObject> messierObjects, 
+            IEnumerable<HorizontalStar> stars,
+            IEquatorialConverter<HorizontalStar> starConverter,
+            IEnumerable<HorizontalMessierObject> messierObjects,
+            IEquatorialConverter<HorizontalMessierObject> messierConverter,
             IEnumerable<Constellation> constellations, 
-            ConcurrentDictionary<int, HorizontalStar> constellationStars, 
             ConcurrentDictionary<int, T> drawnStars,
             IEnumerable<HorizonalPlanet>? planets,
-            HorizontalMoon moon)
+            IPlanetaryCalculator<HorizonalPlanet> planetCalculator,
+            HorizontalMoon moon,
+            IMoonCalculator moonCalculator)
         {
-            Stars = stars;
+            horizontalStars = stars;
+            StarConverter = starConverter;
             MessierObjects = messierObjects;
+            MessierConverter = messierConverter;
             Constellations = constellations;
-            ConstellationStars = constellationStars;
-            DrawnConstellationStars = drawnStars;
+            this.DrawnStars = drawnStars;
             Planets = planets;
+            this.PlanetaryCalculator = planetCalculator;
             Moon = moon;
+            MoonCalculator = moonCalculator;
         }
     };
 }

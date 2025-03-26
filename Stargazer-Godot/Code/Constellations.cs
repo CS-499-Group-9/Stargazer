@@ -1,6 +1,7 @@
 using DataLayer;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Collections;
@@ -24,33 +25,25 @@ namespace Stargazer
 		/// </summary>
 		[Export] public PackedScene LabelScene { get; set; }
 
-		private Node3D StarContainer;
-		private MeshInstance3D constMesh;
-		private Node3D ConstellationLabels;
+
+		private Node3D? StarContainer;
+		private MeshInstance3D? constMesh;
+		private Node3D? ConstellationLabels;
 		//private List<(Star,Star)> starRefList;
 		private IEnumerable<Constellation> constellations; 
 		private Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar;
 		private bool canProcess = false;
+		private IDictionary<string, LabelNode> labelDictionary;
 
 		/// <summary>
 		/// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
 		/// </summary>
 		/// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
 		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
-		public override
-		 void _Process(double delta)
+		public override void _Process(double delta)
 		{
-			if(constMesh == null){
-				GD.Print("constmesh null");
-			}
-			if(!canProcess){
-				GD.Print("can't process");
-			}
-			if(constMesh == null || !canProcess){
-				return;
-			}
-
-
+			if (!constMesh?.Visible?? true) return;
+			
 			var mesh = new ImmediateMesh();
  
 			mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
@@ -64,32 +57,39 @@ namespace Stargazer
 				foreach (var lines in constellation.ConstellationLines)
 				{
 					// Get the stars from the dictionary
-					Star s1 = GetConstellationStar(lines.Item1, SpawnStar);
-					Star s2 = GetConstellationStar(lines.Item2, SpawnStar);
+					Star s1 = GetConstellationStar(lines.Item1, (s) => { return null; });
+					Star s2 = GetConstellationStar(lines.Item2, (s) => { return null; });
 					// Draw the line between the stars
-					mesh.SurfaceAddVertex(s1.Position);
-					mesh.SurfaceAddVertex(s2.Position);
-
-					if (totalPos == Vector3.Zero) // solely checked for the first star
+					mesh.SurfaceAddVertex(s1.Position3D);
+					mesh.SurfaceAddVertex(s2.Position3D);
+					if (ConstellationLabels.Visible)
 					{
-						totalPos += s1.Position;
+						if (totalPos == Vector3.Zero) // solely checked for the first star
+						{
+							totalPos += s1.Position;
+							c++;
+						}
+
+						totalPos += s2.Position;
 						c++;
 					}
-
-					totalPos += s2.Position;
-					c++;
+				}
+				if (ConstellationLabels.Visible) 
+				{ 
+					var labelPos = totalPos / c;
+					if (labelDictionary.TryGetValue(constellation.ConstellationId, out var label)) label.Position = labelPos; 
 				}
 			}
 			mesh.SurfaceEnd();
 			constMesh.Mesh = mesh;
 		}
 
-		public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
+		public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetStar, Func<HorizontalStar, Star> SpawnStar)
 		{
 			canProcess = false;
-			this.GetConstellationStar = GetConstellationStar;
+			this.GetConstellationStar = GetStar;
 			this.constellations = constellations;
-			
+			labelDictionary = new Dictionary<string, LabelNode>();
 			// Get references to the current containers of constellation objects
 			var oldMesh = constMesh;
 			var oldStars = StarContainer;
@@ -122,12 +122,7 @@ namespace Stargazer
 			{
 
 				mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.MaterialOverride);
-				var i = 0;
-				foreach (var constellation in this.constellations)
-				{
-					i += 1;
-				}
-				GD.Print($"reporting {i} constellations");
+
 				foreach (var constellation in this.constellations)
 				{
 					
@@ -144,21 +139,19 @@ namespace Stargazer
 					foreach (var lines in constellation.ConstellationLines)
 					{
 						// Get the stars from the dictionary
-						Star s1 = GetConstellationStar(lines.Item1, SpawnStar);
-						Star s2 = GetConstellationStar(lines.Item2, SpawnStar);
-						GD.Print("I made it here");
-						//starRefList.Add((&s1, &s2));
+						Star s1 = GetStar(lines.Item1, SpawnStar);
+						Star s2 = GetStar(lines.Item2, SpawnStar);
 						// Draw the line between the stars
-						mesh.SurfaceAddVertex(s1.Position);
-						mesh.SurfaceAddVertex(s2.Position);
+						mesh.SurfaceAddVertex(s1.Position3D);
+						mesh.SurfaceAddVertex(s2.Position3D);
 
 						if (totalPos == Vector3.Zero) // solely checked for the first star
 						{
-							totalPos += s1.Position;
+							totalPos += s1.Position3D;
 							c++;
 						}
 
-						totalPos += s2.Position;
+						totalPos += s2.Position3D;
 						c++;
 					}
 
@@ -169,6 +162,7 @@ namespace Stargazer
 					labelNode.LabelText = constellation.ConstellationName;
 					labelNode.Position = labelPos;
 					labelNode.Visible = true;
+					labelDictionary.Add(constellation.ConstellationId, labelNode);
 					ConstellationLabels.AddChild(labelNode);
 				}
 				
@@ -198,6 +192,7 @@ namespace Stargazer
 		/// <param name="showlines">True if the user has requested to show the lines.</param>
 		public void ToggleConstellationLines(bool showlines)
 		{
+			if (constMesh == null) return;
 			constMesh.Visible = showlines;
 		}
 
@@ -205,14 +200,12 @@ namespace Stargazer
 		/// Receives the notification to toggle the visibility of the constellation labels.
 		/// </summary>
 		/// <param name="showlabels">True if the user has requested to show the labels.</param>
-		public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
-
-		private Star SpawnStar(HorizontalStar horizontalStar)
+		public void ToggleConstellationLabels(bool showlabels) 
 		{
-			Star star = StarScene.Instantiate<Star>();
-			star.FromHorizontal(horizontalStar);
-			StarContainer.AddChild(star);
-			return star;
+			if (ConstellationLabels == null) return;	
+			ConstellationLabels.Visible = showlabels; 
 		}
+
+		
 	}
 }

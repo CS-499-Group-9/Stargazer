@@ -30,17 +30,17 @@ namespace Stargazer
 		/// <summary>
 		/// Receives the notification to update the stars drawn.
 		/// </summary>
-		/// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/> that contains the stars to draw.</param>
-		public async Task DrawStars(IEnumerable<HorizontalStar> stars)
+		/// <param name="starDictionary">The <see cref="IDictionary{Int32, Star}{Star}"/> that contains the stars to draw.</param>
+		public async Task DrawStars(IDictionary<int, Star> starDictionary)
 		{
 			var oldContainer = Star2dContainer;
 			Star2dContainer = new();
 
 			await Task.Run(() =>
 			{
-				foreach (var star in stars)
+				foreach (var entry in starDictionary)
 				{
-					SpawnStar(star);
+					SpawnStar(entry.Value);
 				}
 			});	
 			oldContainer?.Free();
@@ -52,13 +52,10 @@ namespace Stargazer
 		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
 		// Perhaps more to follow.....
 		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
-		private Star2D SpawnStar(HorizontalStar horizontalStar)
+		private Star2D SpawnStar(Star godotStar)
 		{
 			Star2D outstar = Star2DScene.Instantiate<Star2D>();
-			outstar.azimuth = (float)horizontalStar.Azimuth;
-			outstar.altitude = (float)horizontalStar.Altitude;
-			outstar.mag = (float)horizontalStar.Magnitude;
-			outstar.starName = horizontalStar.StarName;
+			outstar.From3dStar(godotStar);
 			Star2dContainer.AddChild(outstar);
 			return outstar;
 		}

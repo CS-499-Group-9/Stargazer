@@ -1,0 +1,279 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccf161pss0iua"]
+
+[ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
+[ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="1_difw8"]
+[ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="2_aaufq"]
+[ext_resource type="Script" path="res://Code/LabelButton.cs" id="3_1akgr"]
+[ext_resource type="Script" path="res://Code/MessierButton.cs" id="4_mt1r5"]
+[ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
+[ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
+[ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="7_r6oyu"]
+[ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="8_iply7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
+bg_color = Color(0.329158, 0.329158, 0.329158, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 200.0
+offset_bottom = 348.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+script = ExtResource("1_5vufv")
+
+[node name="AzimuthButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("1_difw8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/AzimuthButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/AzimuthButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Toggle Azimuth"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ConstellationButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("2_aaufq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/ConstellationButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ConstellationButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+button_pressed = true
+text = "Toggle Constellations
+"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("3_1akgr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/LabelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/LabelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+button_pressed = true
+text = "Toggle Labels"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MessierButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("4_mt1r5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MessierButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/MessierButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Toggle Messier"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="LatitudeButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/LatitudeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99176)
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/LatitudeButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 194.0
+offset_bottom = 36.0
+placeholder_text = "   Enter Latitude"
+
+[node name="LongitudeButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/LongitudeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/LongitudeButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 194.0
+offset_bottom = 36.0
+placeholder_text = "   Enter Longitude"
+
+[node name="DateTime" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/DateTime"]
+z_index = -120
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.05
+anchor_bottom = 0.156028
+offset_right = -9.99998
+offset_bottom = 33.7589
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Control" parent="VBoxContainer/DateTime"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/DateTime/Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 5.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = -6.0
+
+[node name="TimeLineEdit" type="LineEdit" parent="VBoxContainer/DateTime/Time/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.68
+placeholder_text = "Enter Time"
+
+[node name="TimeHalfSelector" type="OptionButton" parent="VBoxContainer/DateTime/Time/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+item_count = 2
+popup/item_0/text = "AM"
+popup/item_1/text = "PM"
+popup/item_1/id = 1
+
+[node name="CalendarButton" type="TextureButton" parent="VBoxContainer/DateTime"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 4.325
+offset_top = 3.345
+offset_right = 36.325
+offset_bottom = 37.345
+toggle_mode = true
+texture_normal = ExtResource("5_g42sv")
+texture_hover = ExtResource("6_6fvns")
+script = ExtResource("7_r6oyu")
+image_normal = ExtResource("5_g42sv")
+image_pressed = ExtResource("6_6fvns")
+
+[node name="EnterButton" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("8_iply7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/EnterButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6e37")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="VBoxContainer/EnterButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -15.5
+offset_right = 70.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter Data"
+
+[connection signal="toggled" from="VBoxContainer/AzimuthButton/CheckBox" to="VBoxContainer" method="ToggleAzimuth"]
+[connection signal="toggled" from="VBoxContainer/ConstellationButton/CheckBox" to="VBoxContainer" method="ToggleConstellations"]
+[connection signal="toggled" from="VBoxContainer/LabelButton/CheckBox" to="VBoxContainer" method="ToggleConstellationLabels"]
+[connection signal="toggled" from="VBoxContainer/MessierButton/CheckBox" to="VBoxContainer" method="ToggleMessierObjects"]
+[connection signal="pressed" from="VBoxContainer/EnterButton/Button" to="VBoxContainer" method="UpdateUserPosition"]

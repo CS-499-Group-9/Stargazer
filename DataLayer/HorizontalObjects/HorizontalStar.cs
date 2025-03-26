@@ -1,4 +1,6 @@
 ﻿
+using DataLayer.EquatorialObjects;
+
 namespace DataLayer.HorizontalObjects
 {
     /// <summary>
@@ -6,29 +8,35 @@ namespace DataLayer.HorizontalObjects
     /// </summary>
     public class HorizontalStar : HorizontalBody
     {
+        EquatorialStar EquatorialStar;
+        public HorizontalStar(EquatorialStar body) : base(body)
+        {
+            EquatorialStar = body;
+        }
+
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.StarId"/>
+        /// <see cref="EquatorialStar.StarId"/>
         /// </summary>
-        public int StarId { get; internal set; }
+        public int StarId { get { return EquatorialStar.StarId; } }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.HipparcosId"/>
+        /// <see cref="EquatorialStar.HipparcosId"/>
         /// </summary>
-        public int? HipparcosId { get; internal set; }
+        public int? HipparcosId { get { return EquatorialStar.HipparcosId; } }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.ProperName"/>
+        /// <see cref="EquatorialStar.ProperName"/>
         /// </summary>
-        public string? StarName { get; internal set; }
+        public string? StarName { get { return EquatorialStar.ProperName ?? $"HipId: {EquatorialStar.HipparcosId}"; } }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.AbsoluteMagnitude"/>
+        /// <see cref="EquatorialStar.AbsoluteMagnitude"/>
         /// </summary>
-        public double? AbsoluteMagnitude { get; internal set; }
+        public double? AbsoluteMagnitude { get { return EquatorialStar.AbsoluteMagnitude; } }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.Spectrum"/>
+        /// <see cref="EquatorialStar.Spectrum"/>
         /// </summary>
-        public string? Spectrum { get; internal set; }
+        public string? Spectrum { get { return EquatorialStar.Spectrum; } }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialStar.ColorIndex"/>
+        /// <see cref="EquatorialStar.ColorIndex"/>
         /// </summary>
-        public double? ColorIndex { get; internal set; }
+        public double? ColorIndex { get { return EquatorialStar.ColorIndex; } }
     }
 }

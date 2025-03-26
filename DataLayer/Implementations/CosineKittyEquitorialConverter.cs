@@ -9,9 +9,10 @@ namespace DataLayer.Implementations
     /// Converts an object of type <see cref="EquatorialCelestialBody"/> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library
     /// </summary>
     /// <typeparam name="T">The type of <see cref="HorizontalBody"/> to convert to</typeparam>
-    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody , new()
+    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody
     {
-        private readonly AstroTime astroTime;
+        private DateTime currentTime;
+        private AstroTime astroTime;
         private readonly Observer observer;
 
         /// <summary>
@@ -23,36 +24,28 @@ namespace DataLayer.Implementations
         internal CosineKittyEquatorialConverter(double latitude, double longitude, DateTime universalTime)
         {
             observer = new Observer(latitude, longitude, 150);
+            currentTime = universalTime;
             astroTime = new AstroTime(universalTime);
         }
 
-        /// <summary>
-        /// Performs the conversion and returns the <c>T</c> object of type <see cref="HorizontalBody"/>
-        /// </summary>
-        public Func<EquatorialCelestialBody, T> Convert => (eqStar) => 
+
+        public DateTime CurrentTime { get { return currentTime; } }
+
+        public void UpdateTime(double increment) 
+        { 
+            currentTime = currentTime.AddSeconds(increment);
+            astroTime = new(currentTime); 
+        }
+
+        public void UpdatePosition(T hoBody)
         {
-            // Define a new star
-            Astronomy.DefineStar(Body.Star1, eqStar.RightAscension, eqStar.Declination, eqStar.Distance);
-            // Place that star in the equatorial coordinate system for the observers location and time
+            var eqBody = hoBody.EquatorialBody;
+            Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance);
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             // Determine that stars horizontal coordinates
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
-            AstroTime futureTime = new AstroTime(astroTime.ToUtcDateTime().AddMinutes(120));
-            Topocentric horFuture = Astronomy.Horizon(futureTime,observer, eq.ra, eq.dec, Refraction.None);
-
-            // Create the new object.
-            T newBody = new()
-            {
-                Altitude = hor.altitude,
-                Azimuth = hor.azimuth,
-                FutureAltitude = horFuture.altitude,
-                FutureAzimuth = horFuture.azimuth,
-                Magnitude = eqStar.Magnitude,
-                Distance = eqStar.Distance
-            };
-            return newBody;
-        };
-
-
+            hoBody.Altitude = hor.altitude;
+            hoBody.Azimuth = hor.azimuth;
+        }
     }
 }

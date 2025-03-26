@@ -1,4 +1,7 @@
 ﻿
+using DataLayer.EquatorialObjects;
+using DataLayer.Interfaces;
+
 namespace DataLayer.HorizontalObjects
 {    
     /// <summary>
@@ -6,6 +9,13 @@ namespace DataLayer.HorizontalObjects
      /// </summary>
     public abstract class HorizontalBody
     {
+
+        protected HorizontalBody(EquatorialCelestialBody body)
+        {
+            EquatorialBody = body;
+        }
+        public EquatorialCelestialBody EquatorialBody { get; set; }
+
         /// <summary>
         /// The angle in decimal degrees formed between the horizon and the star
         /// </summary>
@@ -14,15 +24,16 @@ namespace DataLayer.HorizontalObjects
         /// The angle in decimal degrees formed between due north and the star
         /// </summary>
         public double Azimuth { get; internal set; }
+
         /// <summary>
         /// The apparent brightness of the star
         /// </summary>
-        public double FutureAltitude{ get; internal set;}
-        public double FutureAzimuth{ get; internal set;}
-        public double Magnitude { get; internal set; }
+        public double Magnitude { get { return EquatorialBody.Magnitude; } internal set { EquatorialBody.Magnitude = value; } }
+
         /// <summary>
         /// The distance (in lightyears) from the star to earth
         /// </summary>
-        public double Distance { get; internal set; }
+        public double Distance { get { return EquatorialBody.Distance; } }
+
     }
 }
