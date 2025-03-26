@@ -32,6 +32,10 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
+        /// <summary>
+        /// Instantiates a new <see cref="HorizontalMoon"/> object.
+        /// </summary>
+        /// <returns>The instantiated moon.</returns>
         public HorizontalMoon CalculateMoon()
         {
             Equatorial equ = Astronomy.Equator(Body.Moon, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
@@ -42,7 +46,8 @@ namespace DataLayer.Implementations
             return new HorizontalMoon (eqBody);
         }
 
-        public void UpdatePosition(HorizontalMoon moon)
+        /// <inheritdoc/>
+        public void UpdatePositionOf(HorizontalMoon moon)
         {
             Equatorial equ = Astronomy.Equator(Body.Moon, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
@@ -53,9 +58,10 @@ namespace DataLayer.Implementations
             moon.Phase = phase;
         }
 
-        public void UpdateTime(double increment)
+        /// <inheritdoc/>
+        public void IncrementTimeBy(double seconds)
         {
-            currentTime = currentTime.AddSeconds(increment);
+            currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime);
         }
     }

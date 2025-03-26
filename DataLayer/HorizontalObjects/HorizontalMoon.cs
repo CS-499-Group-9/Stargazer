@@ -12,15 +12,13 @@ namespace DataLayer.HorizontalObjects
     /// </summary>
     public class HorizontalMoon : HorizontalBody
     {
+        /// <summary>
+        /// Creates a new object by wrapping a <see cref="EquatorialCelestialBody"/>
+        /// </summary>
+        /// <param name="body">The <see cref="EquatorialCelestialBody"/> to base this object off of.</param>
         public HorizontalMoon(EquatorialCelestialBody body) : base(body)
         {
         }
-
-        public HorizontalMoon() : base(null)
-        {
-
-        }
-
         /// <summary>
         /// A double representing the moon phase from 0° to 360°
         /// </summary>

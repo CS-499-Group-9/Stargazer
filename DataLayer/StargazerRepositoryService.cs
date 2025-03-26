@@ -108,6 +108,7 @@ namespace DataLayer
         }
 
         /// <summary>
+        /// NO LONGER USED!
         /// Gathers all stars that are a part of constellations into a separate dictionary using the HipparcosId as the key.
         /// This is because the Hip ID is used by the constellations to list the nodes of the constellation graph.
         /// Removes the stars from the master listing.
@@ -223,7 +224,7 @@ namespace DataLayer
         }
 
 
-        private void CalculateMessierObjects(IEquatorialConverter<HorizontalMessierObject> converter)
+        private void CalculateMessierObjects(IEquatorialCalculator<HorizontalMessierObject> converter)
         {
             List<HorizontalMessierObject> newMessier = new();
             foreach (var item in equatorialMessierObjects)
@@ -240,7 +241,7 @@ namespace DataLayer
             horizontalMessierObjects = newMessier;
         }
 
-        private void CalculateStars(IEquatorialConverter<HorizontalStar> starConverter)
+        private void CalculateStars(IEquatorialCalculator<HorizontalStar> starConverter)
         {
             List<HorizontalStar> newStars = new();
             foreach (var item in equatorialStars)

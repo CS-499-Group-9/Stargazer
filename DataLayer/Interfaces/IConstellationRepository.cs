@@ -3,7 +3,7 @@
 namespace DataLayer.Interfaces
 {
     /// <summary>
-    /// Used to retrive a collection of <see cref="Constellation"/> from a repository.
+    /// Used to retrieve a collection of <see cref="Constellation"/> from a repository.
     /// </summary>
     public interface IConstellationRepository
     {

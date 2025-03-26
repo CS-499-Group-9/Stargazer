@@ -15,7 +15,7 @@ namespace Stargazer
 
 		private const float radians = (float)Math.PI / 180f;
 		private HorizontalStar horizontalStar;
-		private IEquatorialConverter<HorizontalStar> starConverter;
+		private IEquatorialCalculator<HorizontalStar> starConverter;
 		// Since these are not being connected to anything in the Godot interface, I'm not sure we need to use the Export attribute.
 		// They are all accessed/set via code.
 		// Not sure what overhead is involved in labeling these as export.
@@ -81,11 +81,11 @@ namespace Stargazer
             globalVars = GetNode<Globals>("/root/Globals");
 			
         }
-        public void FromHorizontal(HorizontalStar star, IEquatorialConverter<HorizontalStar> starConverter)
+        public void FromHorizontal(HorizontalStar star, IEquatorialCalculator<HorizontalStar> starConverter)
 		{
 			horizontalStar = star;
 			this.starConverter = starConverter;
-			starConverter.UpdatePosition(horizontalStar);
+			starConverter.UpdatePositionOf(horizontalStar);
 			//GD.Print(star.HipparcosId);
 			//hipID = (int)star.HipparcosId;
 			Position = GetLocation();
@@ -94,12 +94,12 @@ namespace Stargazer
         }
         public override void _Process(double delta)
         {
-			starConverter.UpdatePosition(horizontalStar);
+			starConverter.UpdatePositionOf(horizontalStar);
             Position = GetLocation();
 			Position3D = Position;
         }
 
-        public string getHoverText()
+        public string GetHoverText()
         {
 					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+
                     $"HIP {HipparcosId}\n"+
