@@ -5,11 +5,13 @@ items:
   id: Spawner
   parent: Stargazer
   children:
-  - Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
+  - Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
   - Stargazer.Spawner.LabelScene
   - Stargazer.Spawner.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
   - Stargazer.Spawner.StarContainer
   - Stargazer.Spawner.StarScene
+  - Stargazer.Spawner.maxStarMagnitude
+  - Stargazer.Spawner.starConverter
   langs:
   - csharp
   - vb
@@ -19,8 +21,8 @@ items:
   type: Class
   source:
     id: Spawner
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Spawner_ScriptSerialization.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Spawner_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -371,11 +373,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarScene
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -416,11 +418,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelScene
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -461,11 +463,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -474,43 +476,103 @@ items:
     return:
       type: Godot.Node3D
     content.vb: Private StarContainer As Node3D
-- uid: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
-  commentId: M:Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
-  id: DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
+- uid: Stargazer.Spawner.starConverter
+  commentId: F:Stargazer.Spawner.starConverter
+  id: starConverter
   parent: Stargazer.Spawner
   langs:
   - csharp
   - vb
-  name: DrawStars(IEnumerable<HorizontalStar>)
-  nameWithType: Spawner.DrawStars(IEnumerable<HorizontalStar>)
-  fullName: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>)
+  name: starConverter
+  nameWithType: Spawner.starConverter
+  fullName: Stargazer.Spawner.starConverter
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Spawner.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: starConverter
+    path: ../Stargazer-Godot/Code/Spawner.cs
+    startLine: 29
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IEquatorialCalculator<HorizontalStar> starConverter
+    return:
+      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+    content.vb: Private starConverter As IEquatorialCalculator(Of HorizontalStar)
+- uid: Stargazer.Spawner.maxStarMagnitude
+  commentId: F:Stargazer.Spawner.maxStarMagnitude
+  id: maxStarMagnitude
+  parent: Stargazer.Spawner
+  langs:
+  - csharp
+  - vb
+  name: maxStarMagnitude
+  nameWithType: Spawner.maxStarMagnitude
+  fullName: Stargazer.Spawner.maxStarMagnitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Spawner.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: maxStarMagnitude
+    path: ../Stargazer-Godot/Code/Spawner.cs
+    startLine: 30
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private const float maxStarMagnitude = 6
+    return:
+      type: System.Single
+    content.vb: Private Const maxStarMagnitude As Single = 6
+- uid: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
+  commentId: M:Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
+  id: DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
+  parent: Stargazer.Spawner
+  langs:
+  - csharp
+  - vb
+  name: DrawStars(IEnumerable<HorizontalStar>, Func<int, Func<HorizontalStar, Star>, Star>, IEquatorialCalculator<HorizontalStar>)
+  nameWithType: Spawner.DrawStars(IEnumerable<HorizontalStar>, Func<int, Func<HorizontalStar, Star>, Star>, IEquatorialCalculator<HorizontalStar>)
+  fullName: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>, DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawStars
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Receives the notification to update the stars drawn.
   example: []
   syntax:
-    content: public Task DrawStars(IEnumerable<HorizontalStar> stars)
+    content: public Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator<HorizontalStar> starConverter)
     parameters:
     - id: stars
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
       description: The <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> that contains the stars to draw.
+    - id: GetStar
+      type: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
+      description: Used to retrieve a star from the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>
+    - id: starConverter
+      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+      description: Used to calculate star data.
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Public Function DrawStars(stars As IEnumerable(Of HorizontalStar)) As Task
+    content.vb: Public Function DrawStars(stars As IEnumerable(Of HorizontalStar), GetStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star), starConverter As IEquatorialCalculator(Of HorizontalStar)) As Task
   overload: Stargazer.Spawner.DrawStars*
-  nameWithType.vb: Spawner.DrawStars(IEnumerable(Of HorizontalStar))
-  fullName.vb: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar))
-  name.vb: DrawStars(IEnumerable(Of HorizontalStar))
+  nameWithType.vb: Spawner.DrawStars(IEnumerable(Of HorizontalStar), Func(Of Integer, Func(Of HorizontalStar, Star), Star), IEquatorialCalculator(Of HorizontalStar))
+  fullName.vb: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star), DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar))
+  name.vb: DrawStars(IEnumerable(Of HorizontalStar), Func(Of Integer, Func(Of HorizontalStar, Star), Star), IEquatorialCalculator(Of HorizontalStar))
 - uid: Stargazer.Spawner.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
   commentId: M:Stargazer.Spawner.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
   id: SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
@@ -525,22 +587,29 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: SpawnStar
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 52
+    startLine: 66
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Used to spawn a new star in the sky view scene.
+
+    I'm rather proud of how this is handled in other classes.
+  example: []
   syntax:
-    content: private Star SpawnStar(HorizontalStar horizontalStar)
+    content: public Star SpawnStar(HorizontalStar horizontalStar)
     parameters:
     - id: horizontalStar
       type: DataLayer.HorizontalObjects.HorizontalStar
+      description: The <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref> to base the <xref href="Stargazer.Star" data-throw-if-not-resolved="false"></xref> on.
     return:
       type: Stargazer.Star
-    content.vb: Private Function SpawnStar(horizontalStar As HorizontalStar) As Star
+      description: ''
+    content.vb: Public Function SpawnStar(horizontalStar As HorizontalStar) As Star
   overload: Stargazer.Spawner.SpawnStar*
 references:
 - uid: Stargazer
@@ -7397,6 +7466,95 @@ references:
   name: LabelScene
   nameWithType: Spawner.LabelScene
   fullName: Stargazer.Spawner.LabelScene
+- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IEquatorialCalculator`1
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  name: IEquatorialCalculator<HorizontalStar>
+  nameWithType: IEquatorialCalculator<HorizontalStar>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>
+  nameWithType.vb: IEquatorialCalculator(Of HorizontalStar)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar)
+  name.vb: IEquatorialCalculator(Of HorizontalStar)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  name: IEquatorialCalculator<T>
+  nameWithType: IEquatorialCalculator<T>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
+  nameWithType.vb: IEquatorialCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
+  name.vb: IEquatorialCalculator(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -7425,9 +7583,34 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: Stargazer.Spawner.DrawStars*
   commentId: Overload:Stargazer.Spawner.DrawStars
-  href: Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__
+  href: Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalStar__
   name: DrawStars
   nameWithType: Spawner.DrawStars
   fullName: Stargazer.Spawner.DrawStars
@@ -7463,6 +7646,85 @@ references:
   - uid: DataLayer.HorizontalObjects.HorizontalStar
     name: HorizontalStar
     href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: )
+- uid: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
+  commentId: T:System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<int, Func<HorizontalStar, Star>, Star>
+  nameWithType: Func<int, Func<HorizontalStar, Star>, Star>
+  fullName: System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>
+  nameWithType.vb: Func(Of Integer, Func(Of HorizontalStar, Star), Star)
+  fullName.vb: System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star)
+  name.vb: Func(Of Integer, Func(Of HorizontalStar, Star), Star)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
   - name: )
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
@@ -7509,6 +7771,46 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true
@@ -7546,12 +7848,6 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Stargazer.Spawner.SpawnStar*
-  commentId: Overload:Stargazer.Spawner.SpawnStar
-  href: Stargazer.Spawner.html#Stargazer_Spawner_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_
-  name: SpawnStar
-  nameWithType: Spawner.SpawnStar
-  fullName: Stargazer.Spawner.SpawnStar
 - uid: DataLayer.HorizontalObjects.HorizontalStar
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
   parent: DataLayer.HorizontalObjects
@@ -7566,6 +7862,12 @@ references:
   name: Star
   nameWithType: Star
   fullName: Stargazer.Star
+- uid: Stargazer.Spawner.SpawnStar*
+  commentId: Overload:Stargazer.Spawner.SpawnStar
+  href: Stargazer.Spawner.html#Stargazer_Spawner_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_
+  name: SpawnStar
+  nameWithType: Spawner.SpawnStar
+  fullName: Stargazer.Spawner.SpawnStar
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
   href: DataLayer.html

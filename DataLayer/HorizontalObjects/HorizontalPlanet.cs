@@ -10,7 +10,7 @@ namespace DataLayer.HorizontalObjects
     /// <summary>
     /// A planet in our solar system in horizontal coordinate form.
     /// </summary>
-    public class HorizonalPlanet : HorizontalBody
+    public class HorizontalPlanet : HorizontalBody
     {
         /// <summary>
         /// The common name of the planet.
@@ -22,7 +22,7 @@ namespace DataLayer.HorizontalObjects
         /// Returns a new planet object
         /// </summary>
         /// <param name="name">The name of the planet</param>
-        public HorizonalPlanet(string name, double phaseAngle, EquatorialCelestialBody body) : base(body)
+        public HorizontalPlanet(string name, double phaseAngle, EquatorialCelestialBody body) : base(body)
         {
             Name = name;
             PhaseAngle = phaseAngle;

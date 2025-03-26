@@ -11,17 +11,29 @@ items:
   - Stargazer.ConstellationButton
   - Stargazer.ConstellationLabel
   - Stargazer.Constellations
+  - Stargazer.Constellations2D
   - Stargazer.Globals
+  - Stargazer.GridLabel
+  - Stargazer.HoverLabel
+  - Stargazer.IHoverable
   - Stargazer.LabelButton
   - Stargazer.LabelNode
-  - Stargazer.Main
+  - Stargazer.MainCamera
+  - Stargazer.MainContainer
   - Stargazer.MessierButton
-  - Stargazer.MessierButton.HuntsvilleCoordinates
+  - Stargazer.Moon
+  - Stargazer.Planet
+  - Stargazer.Planets
   - Stargazer.SkyView
+  - Stargazer.SkyView2D
+  - Stargazer.SkyViewContainer
   - Stargazer.Spawner
+  - Stargazer.Spawner2D
   - Stargazer.Star
+  - Stargazer.Star2D
   - Stargazer.StarMesh
   - Stargazer.Startup
+  - Stargazer.TimeLocEntered
   langs:
   - csharp
   - vb
@@ -75,6 +87,13 @@ references:
   name: Constellations
   nameWithType: Constellations
   fullName: Stargazer.Constellations
+- uid: Stargazer.Constellations2D
+  commentId: T:Stargazer.Constellations2D
+  parent: Stargazer
+  href: Stargazer.Constellations2D.html
+  name: Constellations2D
+  nameWithType: Constellations2D
+  fullName: Stargazer.Constellations2D
 - uid: Stargazer.Globals
   commentId: T:Stargazer.Globals
   parent: Stargazer
@@ -82,6 +101,25 @@ references:
   name: Globals
   nameWithType: Globals
   fullName: Stargazer.Globals
+- uid: Stargazer.GridLabel
+  commentId: T:Stargazer.GridLabel
+  href: Stargazer.GridLabel.html
+  name: GridLabel
+  nameWithType: GridLabel
+  fullName: Stargazer.GridLabel
+- uid: Stargazer.HoverLabel
+  commentId: T:Stargazer.HoverLabel
+  href: Stargazer.HoverLabel.html
+  name: HoverLabel
+  nameWithType: HoverLabel
+  fullName: Stargazer.HoverLabel
+- uid: Stargazer.IHoverable
+  commentId: T:Stargazer.IHoverable
+  parent: Stargazer
+  href: Stargazer.IHoverable.html
+  name: IHoverable
+  nameWithType: IHoverable
+  fullName: Stargazer.IHoverable
 - uid: Stargazer.LabelButton
   commentId: T:Stargazer.LabelButton
   href: Stargazer.LabelButton.html
@@ -94,46 +132,63 @@ references:
   name: LabelNode
   nameWithType: LabelNode
   fullName: Stargazer.LabelNode
-- uid: Stargazer.Main
-  commentId: T:Stargazer.Main
-  href: Stargazer.Main.html
-  name: Main
-  nameWithType: Main
-  fullName: Stargazer.Main
+- uid: Stargazer.MainCamera
+  commentId: T:Stargazer.MainCamera
+  href: Stargazer.MainCamera.html
+  name: MainCamera
+  nameWithType: MainCamera
+  fullName: Stargazer.MainCamera
+- uid: Stargazer.MainContainer
+  commentId: T:Stargazer.MainContainer
+  href: Stargazer.MainContainer.html
+  name: MainContainer
+  nameWithType: MainContainer
+  fullName: Stargazer.MainContainer
 - uid: Stargazer.MessierButton
   commentId: T:Stargazer.MessierButton
   href: Stargazer.MessierButton.html
   name: MessierButton
   nameWithType: MessierButton
   fullName: Stargazer.MessierButton
-- uid: Stargazer.MessierButton.HuntsvilleCoordinates
-  commentId: T:Stargazer.MessierButton.HuntsvilleCoordinates
-  href: Stargazer.MessierButton.html
-  name: MessierButton.HuntsvilleCoordinates
-  nameWithType: MessierButton.HuntsvilleCoordinates
-  fullName: Stargazer.MessierButton.HuntsvilleCoordinates
-  spec.csharp:
-  - uid: Stargazer.MessierButton
-    name: MessierButton
-    href: Stargazer.MessierButton.html
-  - name: .
-  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
-    name: HuntsvilleCoordinates
-    href: Stargazer.MessierButton.HuntsvilleCoordinates.html
-  spec.vb:
-  - uid: Stargazer.MessierButton
-    name: MessierButton
-    href: Stargazer.MessierButton.html
-  - name: .
-  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
-    name: HuntsvilleCoordinates
-    href: Stargazer.MessierButton.HuntsvilleCoordinates.html
+- uid: Stargazer.Moon
+  commentId: T:Stargazer.Moon
+  parent: Stargazer
+  href: Stargazer.Moon.html
+  name: Moon
+  nameWithType: Moon
+  fullName: Stargazer.Moon
+- uid: Stargazer.Planet
+  commentId: T:Stargazer.Planet
+  href: Stargazer.Planet.html
+  name: Planet
+  nameWithType: Planet
+  fullName: Stargazer.Planet
+- uid: Stargazer.Planets
+  commentId: T:Stargazer.Planets
+  parent: Stargazer
+  href: Stargazer.Planets.html
+  name: Planets
+  nameWithType: Planets
+  fullName: Stargazer.Planets
 - uid: Stargazer.SkyView
   commentId: T:Stargazer.SkyView
+  parent: Stargazer
   href: Stargazer.SkyView.html
   name: SkyView
   nameWithType: SkyView
   fullName: Stargazer.SkyView
+- uid: Stargazer.SkyView2D
+  commentId: T:Stargazer.SkyView2D
+  href: Stargazer.SkyView2D.html
+  name: SkyView2D
+  nameWithType: SkyView2D
+  fullName: Stargazer.SkyView2D
+- uid: Stargazer.SkyViewContainer
+  commentId: T:Stargazer.SkyViewContainer
+  href: Stargazer.SkyViewContainer.html
+  name: SkyViewContainer
+  nameWithType: SkyViewContainer
+  fullName: Stargazer.SkyViewContainer
 - uid: Stargazer.Spawner
   commentId: T:Stargazer.Spawner
   parent: Stargazer
@@ -141,6 +196,13 @@ references:
   name: Spawner
   nameWithType: Spawner
   fullName: Stargazer.Spawner
+- uid: Stargazer.Spawner2D
+  commentId: T:Stargazer.Spawner2D
+  parent: Stargazer
+  href: Stargazer.Spawner2D.html
+  name: Spawner2D
+  nameWithType: Spawner2D
+  fullName: Stargazer.Spawner2D
 - uid: Stargazer.Star
   commentId: T:Stargazer.Star
   parent: Stargazer
@@ -148,6 +210,13 @@ references:
   name: Star
   nameWithType: Star
   fullName: Stargazer.Star
+- uid: Stargazer.Star2D
+  commentId: T:Stargazer.Star2D
+  parent: Stargazer
+  href: Stargazer.Star2D.html
+  name: Star2D
+  nameWithType: Star2D
+  fullName: Stargazer.Star2D
 - uid: Stargazer.StarMesh
   commentId: T:Stargazer.StarMesh
   href: Stargazer.StarMesh.html
@@ -156,10 +225,17 @@ references:
   fullName: Stargazer.StarMesh
 - uid: Stargazer.Startup
   commentId: T:Stargazer.Startup
+  parent: Stargazer
   href: Stargazer.Startup.html
   name: Startup
   nameWithType: Startup
   fullName: Stargazer.Startup
+- uid: Stargazer.TimeLocEntered
+  commentId: T:Stargazer.TimeLocEntered
+  href: Stargazer.TimeLocEntered.html
+  name: TimeLocEntered
+  nameWithType: TimeLocEntered
+  fullName: Stargazer.TimeLocEntered
 - uid: Stargazer
   commentId: N:Stargazer
   href: Stargazer.html

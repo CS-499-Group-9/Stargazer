@@ -5,8 +5,10 @@ items:
   id: HorizontalStar
   parent: DataLayer.HorizontalObjects
   children:
+  - DataLayer.HorizontalObjects.HorizontalStar.#ctor(DataLayer.EquatorialObjects.EquatorialStar)
   - DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
   - DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
+  - DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
   - DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
   - DataLayer.HorizontalObjects.HorizontalStar.Spectrum
   - DataLayer.HorizontalObjects.HorizontalStar.StarId
@@ -21,11 +23,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -38,6 +40,7 @@ items:
   - System.Object
   - DataLayer.HorizontalObjects.HorizontalBody
   inheritedMembers:
+  - DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
   - DataLayer.HorizontalObjects.HorizontalBody.Altitude
   - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
@@ -49,6 +52,68 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  commentId: F:DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  id: EquatorialStar
+  parent: DataLayer.HorizontalObjects.HorizontalStar
+  langs:
+  - csharp
+  - vb
+  name: EquatorialStar
+  nameWithType: HorizontalStar.EquatorialStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  type: Field
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalStar.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: EquatorialStar
+    path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
+    startLine: 10
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  syntax:
+    content: private EquatorialStar EquatorialStar
+    return:
+      type: DataLayer.EquatorialObjects.EquatorialStar
+    content.vb: Private EquatorialStar As EquatorialStar
+- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor(DataLayer.EquatorialObjects.EquatorialStar)
+  commentId: M:DataLayer.HorizontalObjects.HorizontalStar.#ctor(DataLayer.EquatorialObjects.EquatorialStar)
+  id: '#ctor(DataLayer.EquatorialObjects.EquatorialStar)'
+  parent: DataLayer.HorizontalObjects.HorizontalStar
+  langs:
+  - csharp
+  - vb
+  name: HorizontalStar(EquatorialStar)
+  nameWithType: HorizontalStar.HorizontalStar(EquatorialStar)
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar(DataLayer.EquatorialObjects.EquatorialStar)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalStar.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: Creates a new object by wrapping an <xref href="DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public HorizontalStar(EquatorialStar body)
+    parameters:
+    - id: body
+      type: DataLayer.EquatorialObjects.EquatorialStar
+      description: The <xref href="DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar" data-throw-if-not-resolved="false"></xref> to base this object off of.
+    content.vb: Public Sub New(body As EquatorialStar)
+  overload: DataLayer.HorizontalObjects.HorizontalStar.#ctor*
+  nameWithType.vb: HorizontalStar.New(EquatorialStar)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New(DataLayer.EquatorialObjects.EquatorialStar)
+  name.vb: New(EquatorialStar)
 - uid: DataLayer.HorizontalObjects.HorizontalStar.StarId
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.StarId
   id: StarId
@@ -63,22 +128,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 11
+    startLine: 24
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.StarId" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public int StarId { get; internal set; }
+    content: public int StarId { get; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property StarId As Integer
+    content.vb: Public ReadOnly Property StarId As Integer
   overload: DataLayer.HorizontalObjects.HorizontalStar.StarId*
 - uid: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
@@ -94,22 +159,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 15
+    startLine: 28
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.HipparcosId" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public int? HipparcosId { get; internal set; }
+    content: public int? HipparcosId { get; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: Public Property HipparcosId As Integer?
+    content.vb: Public ReadOnly Property HipparcosId As Integer?
   overload: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId*
 - uid: DataLayer.HorizontalObjects.HorizontalStar.StarName
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.StarName
@@ -125,22 +190,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 19
+    startLine: 32
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.ProperName" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public string? StarName { get; internal set; }
+    content: public string? StarName { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property StarName As String
+    content.vb: Public ReadOnly Property StarName As String
   overload: DataLayer.HorizontalObjects.HorizontalStar.StarName*
 - uid: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
@@ -156,22 +221,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: AbsoluteMagnitude
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 23
+    startLine: 36
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.AbsoluteMagnitude" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public double? AbsoluteMagnitude { get; internal set; }
+    content: public double? AbsoluteMagnitude { get; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: Public Property AbsoluteMagnitude As Double?
+    content.vb: Public ReadOnly Property AbsoluteMagnitude As Double?
   overload: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude*
 - uid: DataLayer.HorizontalObjects.HorizontalStar.Spectrum
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.Spectrum
@@ -187,22 +252,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spectrum
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 27
+    startLine: 40
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.Spectrum" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public string? Spectrum { get; internal set; }
+    content: public string? Spectrum { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Spectrum As String
+    content.vb: Public ReadOnly Property Spectrum As String
   overload: DataLayer.HorizontalObjects.HorizontalStar.Spectrum*
 - uid: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
   commentId: P:DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
@@ -218,22 +283,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ColorIndex
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 31
+    startLine: 44
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: <xref href="DataLayer.EquatorialObjects.EquatorialStar.ColorIndex" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public double? ColorIndex { get; internal set; }
+    content: public double? ColorIndex { get; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: Public Property ColorIndex As Double?
+    content.vb: Public ReadOnly Property ColorIndex As Double?
   overload: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex*
 references:
 - uid: DataLayer.HorizontalObjects
@@ -276,6 +341,13 @@ references:
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   parent: DataLayer.HorizontalObjects.HorizontalBody
@@ -530,6 +602,50 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DataLayer.EquatorialObjects.EquatorialStar
+  commentId: T:DataLayer.EquatorialObjects.EquatorialStar
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialStar.html
+  name: EquatorialStar
+  nameWithType: EquatorialStar
+  fullName: DataLayer.EquatorialObjects.EquatorialStar
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+- uid: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  commentId: F:DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  href: DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_EquatorialStar
+  name: EquatorialStar
+  nameWithType: HorizontalStar.EquatorialStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.#ctor
+  href: DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar__ctor_DataLayer_EquatorialObjects_EquatorialStar_
+  name: HorizontalStar
+  nameWithType: HorizontalStar.HorizontalStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar
+  nameWithType.vb: HorizontalStar.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New
+  name.vb: New
 - uid: DataLayer.EquatorialObjects.EquatorialStar.StarId
   commentId: P:DataLayer.EquatorialObjects.EquatorialStar.StarId
   href: DataLayer.EquatorialObjects.EquatorialStar.html#DataLayer_EquatorialObjects_EquatorialStar_StarId

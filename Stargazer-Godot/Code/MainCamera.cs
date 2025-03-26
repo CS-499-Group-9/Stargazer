@@ -20,6 +20,7 @@ namespace Stargazer
   
         private Globals globalVars;
 
+        /// <inheritdoc/>
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
@@ -28,7 +29,7 @@ namespace Stargazer
         /// <summary>
         /// Checks if the right mouse button is being held down to pan the view.
         /// </summary>
-        /// <param name="event"></param>
+        /// <param name="event">The event data passed in.</param>
         public override void _Input(InputEvent @event)
         {
             if(@event.IsAction("forward")){
@@ -82,7 +83,7 @@ namespace Stargazer
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
                     IHoverable star = (IHoverable)collider.GetParentNode3D();
-                    globalVars.hoverLabel = star.getHoverText();
+                    globalVars.hoverLabel = star.GetHoverText();
                     
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";

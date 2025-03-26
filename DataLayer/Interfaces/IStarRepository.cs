@@ -10,7 +10,6 @@ namespace DataLayer.Interfaces
         /// <summary>
         /// Gets all stars that are brighter than a certain magnitude.
         /// </summary>
-        /// <param name="maximumMagnitude">The minimum brightness to include (negative numbers are brighter)</param>
         /// <returns>A running task that can be awaited to obtain a list of stars</returns>
         public Task<IList<EquatorialStar>> GetAllStarsAsync();
 

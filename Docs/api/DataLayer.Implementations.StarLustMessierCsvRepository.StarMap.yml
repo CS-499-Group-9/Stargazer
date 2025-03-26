@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarMap
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 57
@@ -81,8 +81,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
     startLine: 62
@@ -107,6 +107,7 @@ references:
   fullName: DataLayer.Implementations.StarLustMessierCsvRepository
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
   commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
+  parent: DataLayer.EquatorialObjects
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
   name: EquatorialMessierObject
   nameWithType: EquatorialMessierObject
@@ -1429,6 +1430,28 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
 - uid: System
   commentId: N:System
   isExternal: true

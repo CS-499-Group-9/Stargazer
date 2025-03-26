@@ -16,15 +16,15 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: IConstellationRepository
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
     startLine: 7
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
-  summary: Used to retrive a collection of <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref> from a repository.
+  summary: Used to retrieve a collection of <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref> from a repository.
   example: []
   syntax:
     content: public interface IConstellationRepository
@@ -43,8 +43,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetAllConstellationsAsync
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
     startLine: 13

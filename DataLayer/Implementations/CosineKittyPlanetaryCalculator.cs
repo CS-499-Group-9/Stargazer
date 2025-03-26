@@ -14,7 +14,7 @@ namespace DataLayer.Implementations
     /// <summary>
     /// Uses the <see cref="CosineKitty.Astronomy"/> library to calculate the position and magnitude of the planets.
     /// </summary>
-    internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizonalPlanet> 
+    internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizontalPlanet> 
     {
         private readonly IDictionary<string,Body> _bodies;
         private readonly Observer observer;
@@ -49,27 +49,29 @@ namespace DataLayer.Implementations
         /// Performs the calculations for all planets.
         /// </summary>
         /// <returns>A <see cref="IEnumerable{HorizonalPlanet}"/> in horizontal coordinate form.</returns>
-        public IEnumerable<HorizonalPlanet> CalculatePlanets()
+        public IEnumerable<HorizontalPlanet> CalculatePlanets()
         {
-            List<HorizonalPlanet> planets = new();
+            List<HorizontalPlanet> planets = new();
             foreach (var body in _bodies)
             {
                 Equatorial equ = Astronomy.Equator(body.Value, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
                 var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };
                 //Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
                 var illumination = Astronomy.Illumination(body.Value, astroTime);
-                planets.Add(new HorizonalPlanet(body.Key, illumination.phase_angle, eqBody));
+                planets.Add(new HorizontalPlanet(body.Key, illumination.phase_angle, eqBody));
             }
             return planets;
         }
 
-        public void IncrementTime(double increment)
+       /// <inheritdoc/>
+        public void IncrementTimeBy(double seconds)
         {
-            currentTime = currentTime.AddSeconds(increment);
+            currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime);
         }
 
-        public void UpdatePosition(HorizonalPlanet planet)
+        ///<inheritdoc/>
+        public void UpdatePositionOf(HorizontalPlanet planet)
         {
             if(_bodies.TryGetValue(planet.Name, out var body))
             {

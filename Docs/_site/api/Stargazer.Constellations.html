@@ -486,9 +486,6 @@ public class Constellations : Node3D, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
-    </div>
-    <div>
       <span class="xref">Node._Ready()</span>
     </div>
     <div>
@@ -1069,14 +1066,14 @@ public class Constellations : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Constellations_ConstellationLabels" data-uid="Stargazer.Constellations.ConstellationLabels">
   ConstellationLabels
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Node3D ConstellationLabels</code></pre>
+    <pre><code class="lang-csharp hljs">private Node3D? ConstellationLabels</code></pre>
   </div>
 
 
@@ -1085,6 +1082,36 @@ public class Constellations : Node3D, IDisposable</code></pre>
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><span class="xref">Node3D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Constellations_GetConstellationStar" data-uid="Stargazer.Constellations.GetConstellationStar">
+  GetConstellationStar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt; GetConstellationStar</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1099,14 +1126,14 @@ public class Constellations : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Constellations_StarContainer" data-uid="Stargazer.Constellations.StarContainer">
   StarContainer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Node3D StarContainer</code></pre>
+    <pre><code class="lang-csharp hljs">private Node3D? StarContainer</code></pre>
   </div>
 
 
@@ -1127,16 +1154,46 @@ public class Constellations : Node3D, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_Constellations_constMesh" data-uid="Stargazer.Constellations.constMesh">
-  constMesh
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Constellations_canProcess" data-uid="Stargazer.Constellations.canProcess">
+  canProcess
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private MeshInstance3D constMesh</code></pre>
+    <pre><code class="lang-csharp hljs">private bool canProcess</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Constellations_constMesh" data-uid="Stargazer.Constellations.constMesh">
+  constMesh
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private MeshInstance3D? constMesh</code></pre>
   </div>
 
 
@@ -1156,6 +1213,66 @@ public class Constellations : Node3D, IDisposable</code></pre>
 
 
 
+
+  <h3 id="Stargazer_Constellations_constellations" data-uid="Stargazer.Constellations.constellations">
+  constellations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private IEnumerable&lt;Constellation&gt; constellations</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.Constellation.html">Constellation</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Constellations_labelDictionary" data-uid="Stargazer.Constellations.labelDictionary">
+  labelDictionary
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private IDictionary&lt;string, LabelNode&gt; labelDictionary</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Stargazer.LabelNode.html">LabelNode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -1164,7 +1281,7 @@ public class Constellations : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Constellations_LabelScene" data-uid="Stargazer.Constellations.LabelScene">
   LabelScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the labels in the constellation</p>
@@ -1197,7 +1314,7 @@ public PackedScene LabelScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Constellations_StarScene" data-uid="Stargazer.Constellations.StarScene">
   StarScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the stars in the constellation</p>
@@ -1232,9 +1349,9 @@ public PackedScene StarScene { get; set; }</code></pre>
 
   <a id="Stargazer_Constellations_DrawConstellations_" data-uid="Stargazer.Constellations.DrawConstellations*"></a>
 
-  <h3 id="Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__" data-uid="Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})">
-  DrawConstellations(IEnumerable&lt;Constellation&gt;, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__" data-uid="Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})">
+  DrawConstellations(IEnumerable&lt;Constellation&gt;, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt;, Func&lt;HorizontalStar, Star&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Draws the stars and constellation lines for each of the <a class="xref" href="DataLayer.EquatorialObjects.Constellation.html">Constellation</a>s</p>
@@ -1242,7 +1359,7 @@ public PackedScene StarScene { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DrawConstellations(IEnumerable&lt;Constellation&gt; constellations, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt; GetConstellationStar)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task DrawConstellations(IEnumerable&lt;Constellation&gt; constellations, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt; GetStar, Func&lt;HorizontalStar, Star&gt; SpawnStar)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1250,8 +1367,11 @@ public PackedScene StarScene { get; set; }</code></pre>
     <dt><code>constellations</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.Constellation.html">Constellation</a>&gt;</dt>
     <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> list of constellations</p>
 </dd>
-    <dt><code>GetConstellationStar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
+    <dt><code>GetStar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
     <dd><p>The method used to retrieve a <a class="xref" href="Stargazer.Star.html">Star</a>From the dictionary of drawn stars.</p>
+</dd>
+    <dt><code>SpawnStar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
+    <dd><p>Used to spawn a new star and draw it in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a> star container.</p>
 </dd>
   </dl>
 
@@ -1271,47 +1391,11 @@ public PackedScene StarScene { get; set; }</code></pre>
 
 
 
-  <a id="Stargazer_Constellations_SpawnStar_" data-uid="Stargazer.Constellations.SpawnStar*"></a>
-
-  <h3 id="Stargazer_Constellations_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_" data-uid="Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)">
-  SpawnStar(HorizontalStar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L124"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Star SpawnStar(HorizontalStar horizontalStar)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>horizontalStar</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Stargazer.Star.html">Star</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="Stargazer_Constellations_ToggleConstellationLabels_" data-uid="Stargazer.Constellations.ToggleConstellationLabels*"></a>
 
   <h3 id="Stargazer_Constellations_ToggleConstellationLabels_System_Boolean_" data-uid="Stargazer.Constellations.ToggleConstellationLabels(System.Boolean)">
   ToggleConstellationLabels(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L204"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives the notification to toggle the visibility of the constellation labels.</p>
@@ -1319,12 +1403,12 @@ public PackedScene StarScene { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ToggleConstellationLabels(bool showlabels)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToggleConstellationLabels(bool showLabels)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>showlabels</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>showLabels</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the user has requested to show the labels.</p>
 </dd>
   </dl>
@@ -1344,7 +1428,7 @@ public PackedScene StarScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Constellations_ToggleConstellationLines_System_Boolean_" data-uid="Stargazer.Constellations.ToggleConstellationLines(System.Boolean)">
   ToggleConstellationLines(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Constellations.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L194"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives the notification to toggle the visibility of the constellation lines.
@@ -1353,14 +1437,49 @@ Hiding the lines will also hide the labels.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ToggleConstellationLines(bool showlines)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToggleConstellationLines(bool showLines)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>showlines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>showLines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the user has requested to show the lines.</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Constellations__Process_" data-uid="Stargazer.Constellations._Process*"></a>
+
+  <h3 id="Stargazer_Constellations__Process_System_Double_" data-uid="Stargazer.Constellations._Process(System.Double)">
+  _Process(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Constellations.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
+<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
+<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
+<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
   </dl>
 
 

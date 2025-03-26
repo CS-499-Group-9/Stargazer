@@ -9,11 +9,18 @@ namespace DataLayer.HorizontalObjects
      /// </summary>
     public abstract class HorizontalBody
     {
-
+        /// <summary>
+        /// Creates a new object by wrapping a <see cref="EquatorialCelestialBody"/>
+        /// </summary>
+        /// <param name="body"></param>
         protected HorizontalBody(EquatorialCelestialBody body)
         {
             EquatorialBody = body;
         }
+
+        /// <summary>
+        /// The <see cref="EquatorialCelestialBody"/> to base off of.
+        /// </summary>
         public EquatorialCelestialBody EquatorialBody { get; set; }
 
         /// <summary>

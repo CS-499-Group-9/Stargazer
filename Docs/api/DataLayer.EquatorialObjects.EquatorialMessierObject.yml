@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialMessierObject
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 6
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 12
@@ -95,8 +95,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 16
@@ -126,8 +126,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 20
@@ -157,8 +157,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 24
@@ -188,8 +188,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 28
@@ -219,8 +219,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 32
@@ -250,8 +250,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
     startLine: 36

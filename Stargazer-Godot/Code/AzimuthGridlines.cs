@@ -52,37 +52,34 @@ namespace Stargazer
 			Visible = false;
 
 		}
+
+		/// <summary>
+		/// Dynamically draws the gridlines based on camera FOV
+		/// </summary>
+		/// <param name="delta"></param>
         public override void _Process(double delta)
         {
 			if (camera == null) return;
             if (camera.Fov < 15 && storedfov >= 15){
 				latitudeInterval = 1.0f;
-				mesh.ClearSurfaces();
-				DrawLongitudeLines(mesh);
-				DrawLatitudeLines(mesh);
 			}
             else if (camera.Fov > 15 && storedfov <= 15){
 				latitudeInterval = 10.0f;
-				mesh.ClearSurfaces();
-				DrawLongitudeLines(mesh);
-				DrawLatitudeLines(mesh);
 			}
             else if (camera.Fov < 35 && storedfov >= 35){
 				latitudeInterval = 10.0f;
-				mesh.ClearSurfaces();
-				DrawLongitudeLines(mesh);
-				DrawLatitudeLines(mesh);
 			}
 			else if (camera.Fov > 35 && storedfov <= 35){
 				latitudeInterval = 15.0f;
-				mesh.ClearSurfaces();
-				DrawLongitudeLines(mesh);
-				DrawLatitudeLines(mesh);
 			}
+			mesh.ClearSurfaces();
+			DrawLongitudeLines(mesh);
+			DrawLatitudeLines(mesh);
 			storedfov = camera.Fov;
         }
+
         /// <summary>
-        /// The method used receive the <see cref="AzimuthButton.GridlinesToggled"/> notification.
+        /// The method used receive the <see cref="ControlContainer.AzimuthToggled"/> notification.
         /// </summary>
         /// <param name="showLines">True if the user has requested to show the lines.</param>
         public void ToggleGridlines(bool showLines)
@@ -90,6 +87,10 @@ namespace Stargazer
 			Visible = showLines;
 		}
 
+		/// <summary>
+		/// Gets a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
+		/// </summary>
+		/// <param name="camera"></param>
 		public void SetCamera(Camera3D camera)
 		{
 			this.camera = camera;
@@ -97,7 +98,6 @@ namespace Stargazer
 		}
 
 
-		// Function to draw longitude lines
 		private void DrawLongitudeLines(ImmediateMesh imMesh)
 		{
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
