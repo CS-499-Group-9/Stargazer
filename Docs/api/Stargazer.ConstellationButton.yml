@@ -4,9 +4,7 @@ items:
   commentId: T:Stargazer.ConstellationButton
   id: ConstellationButton
   parent: Stargazer
-  children:
-  - Stargazer.ConstellationButton.ConstellationLinesToggled
-  - Stargazer.ConstellationButton.ToggleConst(System.Boolean)
+  children: []
   langs:
   - csharp
   - vb
@@ -16,7 +14,7 @@ items:
   type: Class
   source:
     id: ConstellationButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ConstellationButton_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.ConstellationButton_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -520,67 +518,6 @@ items:
     arguments:
     - type: System.String
       value: res://Code/ConstellationButton.cs
-- uid: Stargazer.ConstellationButton.ConstellationLinesToggled
-  commentId: F:Stargazer.ConstellationButton.ConstellationLinesToggled
-  id: ConstellationLinesToggled
-  parent: Stargazer.ConstellationButton
-  langs:
-  - csharp
-  - vb
-  name: ConstellationLinesToggled
-  nameWithType: ConstellationButton.ConstellationLinesToggled
-  fullName: Stargazer.ConstellationButton.ConstellationLinesToggled
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: ConstellationLinesToggled
-    path: ../Stargazer-Godot/Code/ConstellationButton.cs
-    startLine: 13
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: The <xref href="System.Delegate" data-throw-if-not-resolved="false"></xref> used to notify the viewport to show or hide the constellations.
-  example: []
-  syntax:
-    content: public Action<bool> ConstellationLinesToggled
-    return:
-      type: System.Action{System.Boolean}
-    content.vb: Public ConstellationLinesToggled As Action(Of Boolean)
-- uid: Stargazer.ConstellationButton.ToggleConst(System.Boolean)
-  commentId: M:Stargazer.ConstellationButton.ToggleConst(System.Boolean)
-  id: ToggleConst(System.Boolean)
-  parent: Stargazer.ConstellationButton
-  langs:
-  - csharp
-  - vb
-  name: ToggleConst(bool)
-  nameWithType: ConstellationButton.ToggleConst(bool)
-  fullName: Stargazer.ConstellationButton.ToggleConst(bool)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: ToggleConst
-    path: ../Stargazer-Godot/Code/ConstellationButton.cs
-    startLine: 15
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private void ToggleConst(bool state)
-    parameters:
-    - id: state
-      type: System.Boolean
-    content.vb: Private Sub ToggleConst(state As Boolean)
-  overload: Stargazer.ConstellationButton.ToggleConst*
-  nameWithType.vb: ConstellationButton.ToggleConst(Boolean)
-  fullName.vb: Stargazer.ConstellationButton.ToggleConst(Boolean)
-  name.vb: ToggleConst(Boolean)
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12120,90 +12057,3 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: System.Delegate
-  commentId: T:System.Delegate
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.delegate
-  name: Delegate
-  nameWithType: Delegate
-  fullName: System.Delegate
-- uid: System.Action{System.Boolean}
-  commentId: T:System.Action{System.Boolean}
-  parent: System
-  definition: System.Action`1
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<bool>
-  nameWithType: Action<bool>
-  fullName: System.Action<bool>
-  nameWithType.vb: Action(Of Boolean)
-  fullName.vb: System.Action(Of Boolean)
-  name.vb: Action(Of Boolean)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: System.Action`1
-  commentId: T:System.Action`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.action-1
-  name: Action<T>
-  nameWithType: Action<T>
-  fullName: System.Action<T>
-  nameWithType.vb: Action(Of T)
-  fullName.vb: System.Action(Of T)
-  name.vb: Action(Of T)
-  spec.csharp:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Action`1
-    name: Action
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Stargazer.ConstellationButton.ToggleConst*
-  commentId: Overload:Stargazer.ConstellationButton.ToggleConst
-  href: Stargazer.ConstellationButton.html#Stargazer_ConstellationButton_ToggleConst_System_Boolean_
-  name: ToggleConst
-  nameWithType: ConstellationButton.ToggleConst
-  fullName: Stargazer.ConstellationButton.ToggleConst
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean

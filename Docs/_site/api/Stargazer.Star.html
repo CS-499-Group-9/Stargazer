@@ -103,7 +103,7 @@ Class Star
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/Star.cs&quot;)]
-public class Star : Node3D, IDisposable</code></pre>
+public class Star : Node3D, IDisposable, IHoverable</code></pre>
   </div>
 
 
@@ -124,6 +124,7 @@ public class Star : Node3D, IDisposable</code></pre>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="Stargazer.IHoverable.html">IHoverable</a></div>
     </dd>
   </dl>
 
@@ -484,12 +485,6 @@ public class Star : Node3D, IDisposable</code></pre>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
-    </div>
-    <div>
-      <span class="xref">Node._Ready()</span>
     </div>
     <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
@@ -1067,17 +1062,16 @@ public class Star : Node3D, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_Star_altitude" data-uid="Stargazer.Star.altitude">
-  altitude
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Star_Position2D" data-uid="Stargazer.Star.Position2D">
+  Position2D
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-public float altitude</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector2 Position2D</code></pre>
   </div>
 
 
@@ -1085,7 +1079,7 @@ public float altitude</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dt><span class="xref">Vector2</span></dt>
     <dd></dd>
   </dl>
 
@@ -1098,17 +1092,16 @@ public float altitude</code></pre>
 
 
 
-  <h3 id="Stargazer_Star_azimuth" data-uid="Stargazer.Star.azimuth">
-  azimuth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Star_globalVars" data-uid="Stargazer.Star.globalVars">
+  globalVars
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-public float azimuth</code></pre>
+    <pre><code class="lang-csharp hljs">private Globals globalVars</code></pre>
   </div>
 
 
@@ -1116,7 +1109,7 @@ public float azimuth</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dt><a class="xref" href="Stargazer.Globals.html">Globals</a></dt>
     <dd></dd>
   </dl>
 
@@ -1129,17 +1122,16 @@ public float azimuth</code></pre>
 
 
 
-  <h3 id="Stargazer_Star_dist" data-uid="Stargazer.Star.dist">
-  dist
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Star_horizontalStar" data-uid="Stargazer.Star.horizontalStar">
+  horizontalStar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-public float dist</code></pre>
+    <pre><code class="lang-csharp hljs">private HorizontalStar horizontalStar</code></pre>
   </div>
 
 
@@ -1147,38 +1139,7 @@ public float dist</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Stargazer_Star_mag" data-uid="Stargazer.Star.mag">
-  mag
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L24"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-public float mag</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dt><a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></dt>
     <dd></dd>
   </dl>
 
@@ -1193,7 +1154,7 @@ public float mag</code></pre>
 
   <h3 id="Stargazer_Star_radians" data-uid="Stargazer.Star.radians">
   radians
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1221,17 +1182,16 @@ public float mag</code></pre>
 
 
 
-  <h3 id="Stargazer_Star_starName" data-uid="Stargazer.Star.starName">
-  starName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Star_starConverter" data-uid="Stargazer.Star.starConverter">
+  starConverter
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-public string starName</code></pre>
+    <pre><code class="lang-csharp hljs">private IEquatorialCalculator&lt;HorizontalStar&gt; starConverter</code></pre>
   </div>
 
 
@@ -1239,10 +1199,236 @@ public string starName</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Stargazer_Star_Altitude_" data-uid="Stargazer.Star.Altitude*"></a>
+
+  <h3 id="Stargazer_Star_Altitude" data-uid="Stargazer.Star.Altitude">
+  Altitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotation from Y=0, in degrees.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Altitude { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_Azimuth_" data-uid="Stargazer.Star.Azimuth*"></a>
+
+  <h3 id="Stargazer_Star_Azimuth" data-uid="Stargazer.Star.Azimuth">
+  Azimuth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rotation from North (X+), in degrees</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Azimuth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_Distance_" data-uid="Stargazer.Star.Distance*"></a>
+
+  <h3 id="Stargazer_Star_Distance" data-uid="Stargazer.Star.Distance">
+  Distance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Distance from (0, 0, 0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_HipparcosId_" data-uid="Stargazer.Star.HipparcosId*"></a>
+
+  <h3 id="Stargazer_Star_HipparcosId" data-uid="Stargazer.Star.HipparcosId">
+  HipparcosId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HipparcosId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_Magnitude_" data-uid="Stargazer.Star.Magnitude*"></a>
+
+  <h3 id="Stargazer_Star_Magnitude" data-uid="Stargazer.Star.Magnitude">
+  Magnitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Apparent brightness of the star</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Magnitude { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_Position3D_" data-uid="Stargazer.Star.Position3D*"></a>
+
+  <h3 id="Stargazer_Star_Position3D" data-uid="Stargazer.Star.Position3D">
+  Position3D
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Position3D { get; private set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_StarName_" data-uid="Stargazer.Star.StarName*"></a>
+
+  <h3 id="Stargazer_Star_StarName" data-uid="Stargazer.Star.StarName">
+  StarName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Common name of the star</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StarName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -1257,26 +1443,59 @@ public string starName</code></pre>
 
   <a id="Stargazer_Star_FromHorizontal_" data-uid="Stargazer.Star.FromHorizontal*"></a>
 
-  <h3 id="Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_" data-uid="Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)">
-  FromHorizontal(HorizontalStar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalStar__" data-uid="Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})">
+  FromHorizontal(HorizontalStar, IEquatorialCalculator&lt;HorizontalStar&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Populates the field according to the field in a <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void FromHorizontal(HorizontalStar star)</code></pre>
+    <pre><code class="lang-csharp hljs">public void FromHorizontal(HorizontalStar star, IEquatorialCalculator&lt;HorizontalStar&gt; starConverter)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>star</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></dt>
-    <dd><p>The <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></p>
-</dd>
+    <dd></dd>
+    <dt><code>starConverter</code> <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star_GetHoverText_" data-uid="Stargazer.Star.GetHoverText*"></a>
+
+  <h3 id="Stargazer_Star_GetHoverText" data-uid="Stargazer.Star.GetHoverText">
+  GetHoverText()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the text to display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetHoverText()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A formatted text string.</p>
+</dd>
+  </dl>
 
 
 
@@ -1292,7 +1511,7 @@ public string starName</code></pre>
 
   <h3 id="Stargazer_Star_GetLocation" data-uid="Stargazer.Star.GetLocation">
   GetLocation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/Stargazer-Godot/Code/Star.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1308,6 +1527,68 @@ public string starName</code></pre>
     <dt><span class="xref">Vector3</span></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star__Process_" data-uid="Stargazer.Star._Process*"></a>
+
+  <h3 id="Stargazer_Star__Process_System_Double_" data-uid="Stargazer.Star._Process(System.Double)">
+  _Process(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
+<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
+<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
+<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Star__Ready_" data-uid="Stargazer.Star._Ready*"></a>
+
+  <h3 id="Stargazer_Star__Ready" data-uid="Stargazer.Star._Ready">
+  _Ready()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Star.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Populates the field according to the field in a <a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void _Ready()</code></pre>
+  </div>
+
+
 
 
 

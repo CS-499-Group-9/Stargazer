@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialCelestialBody
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
     startLine: 7
@@ -59,8 +59,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: RightAscension
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
     startLine: 12
@@ -90,8 +90,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Declination
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
     startLine: 16
@@ -121,8 +121,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
     startLine: 20
@@ -152,8 +152,8 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
     startLine: 24

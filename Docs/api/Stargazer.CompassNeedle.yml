@@ -5,6 +5,7 @@ items:
   id: CompassNeedle
   parent: Stargazer
   children:
+  - Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
   - Stargazer.CompassNeedle._Process(System.Double)
   - Stargazer.CompassNeedle._Ready
   - Stargazer.CompassNeedle.camera
@@ -434,8 +435,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: needle
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
     startLine: 13
@@ -477,8 +478,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: camera
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
     startLine: 14
@@ -504,8 +505,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
     startLine: 19
@@ -519,6 +520,35 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.CompassNeedle._Ready*
+- uid: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  commentId: M:Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  id: SetCamera(Godot.Camera3D)
+  parent: Stargazer.CompassNeedle
+  langs:
+  - csharp
+  - vb
+  name: SetCamera(Camera3D)
+  nameWithType: CompassNeedle.SetCamera(Camera3D)
+  fullName: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/CompassNeedle.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetCamera
+    path: ../Stargazer-Godot/Code/CompassNeedle.cs
+    startLine: 25
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void SetCamera(Camera3D camera)
+    parameters:
+    - id: camera
+      type: Godot.Camera3D
+    content.vb: Public Sub SetCamera(camera As Camera3D)
+  overload: Stargazer.CompassNeedle.SetCamera*
 - uid: Stargazer.CompassNeedle._Process(System.Double)
   commentId: M:Stargazer.CompassNeedle._Process(System.Double)
   id: _Process(System.Double)
@@ -533,11 +563,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -9857,6 +9887,7 @@ references:
   fullName: Godot.Camera3D
 - uid: Stargazer.SkyView
   commentId: T:Stargazer.SkyView
+  parent: Stargazer
   href: Stargazer.SkyView.html
   name: SkyView
   nameWithType: SkyView
@@ -9886,6 +9917,12 @@ references:
   name: _Ready
   nameWithType: CompassNeedle._Ready
   fullName: Stargazer.CompassNeedle._Ready
+- uid: Stargazer.CompassNeedle.SetCamera*
+  commentId: Overload:Stargazer.CompassNeedle.SetCamera
+  href: Stargazer.CompassNeedle.html#Stargazer_CompassNeedle_SetCamera_Godot_Camera3D_
+  name: SetCamera
+  nameWithType: CompassNeedle.SetCamera
+  fullName: Stargazer.CompassNeedle.SetCamera
 - uid: Godot.Node._Process(System.Double)
   commentId: M:Godot.Node._Process(System.Double)
   parent: Godot.Node

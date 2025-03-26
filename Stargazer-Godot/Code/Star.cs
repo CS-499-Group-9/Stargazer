@@ -50,10 +50,6 @@ namespace Stargazer
 		public Vector3 Position3D { get; private set; }
 		public Vector2 Position2D;
 
-		public Vector3 GetPosition()
-		{
-			return Position;
-		}
 
 		private Globals globalVars;
 		// Gets the Cartesian position of the Celestial Body
@@ -92,6 +88,8 @@ namespace Stargazer
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
         }
+
+
         public override void _Process(double delta)
         {
 			starConverter.UpdatePositionOf(horizontalStar);
@@ -99,6 +97,7 @@ namespace Stargazer
 			Position3D = Position;
         }
 
+		/// <inheritdoc/>
         public string GetHoverText()
         {
 					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+

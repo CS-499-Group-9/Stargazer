@@ -152,6 +152,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalPlanet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalPlanet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalPlanet",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalPlanet.yml\" sourcestartlinenumber=\"1\">A planet in our solar system in horizontal coordinate form.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalStar.yml",
       "output": {
         ".html": {
@@ -428,7 +442,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IConstellationRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrive a collection of <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> from a repository.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve a collection of <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> from a repository.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IEquatorialCalculator-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IEquatorialCalculator-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IEquatorialCalculator<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IEquatorialCalculator-1.yml\" sourcestartlinenumber=\"1\">Converts a <xref href=\"DataLayer.HorizontalObjects.HorizontalBody\" data-throw-if-not-resolved=\"false\"></xref> to a {T} object</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -484,7 +512,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IPlanetaryCalculator<T>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IPlanetaryCalculator-1.yml\" sourcestartlinenumber=\"1\">Used to perform planetary calculations</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -964,6 +992,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Constellations2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Constellations2D.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Constellations2D",
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations2D.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node2D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.Globals.MethodName.yml",
       "output": {
         ".html": {
@@ -1017,6 +1059,48 @@
       "IsMRef": true,
       "Title": "Stargazer.Globals",
       "Summary": "<p sourcefile=\"api/Stargazer.Globals.yml\" sourcestartlinenumber=\"1\">Currently is no longer being used due to <xref href=\"System.Action\" data-throw-if-not-resolved=\"false\"></xref>s and <xref href=\"System.Delegate\" data-throw-if-not-resolved=\"false\"></xref>s</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.GridLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.GridLabel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.GridLabel",
+      "Summary": "<p sourcefile=\"api/Stargazer.GridLabel.yml\" sourcestartlinenumber=\"1\">Displays the latitude value on the grid.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.HoverLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.HoverLabel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.HoverLabel",
+      "Summary": "<p sourcefile=\"api/Stargazer.HoverLabel.yml\" sourcestartlinenumber=\"1\">The label that is displayed when hovering over an <xref href=\"Stargazer.IHoverable\" data-throw-if-not-resolved=\"false\"></xref> object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.IHoverable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.IHoverable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.IHoverable",
+      "Summary": "<p sourcefile=\"api/Stargazer.IHoverable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to display a hover label.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1188,6 +1272,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MainCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MainCamera.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MainCamera",
+      "Summary": "<p sourcefile=\"api/Stargazer.MainCamera.yml\" sourcestartlinenumber=\"1\">Contains the main camera used to create the user view.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MainContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MainContainer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MainContainer",
+      "Summary": "<p sourcefile=\"api/Stargazer.MainContainer.yml\" sourcestartlinenumber=\"1\">The main container of the program.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.MessierButton.HuntsvilleCoordinates.yml",
       "output": {
         ".html": {
@@ -1258,6 +1370,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Moon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Moon.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Moon",
+      "Summary": "<p sourcefile=\"api/Stargazer.Moon.yml\" sourcestartlinenumber=\"1\">A moon object to be drawn.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Planet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Planet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Planet",
+      "Summary": "<p sourcefile=\"api/Stargazer.Planet.yml\" sourcestartlinenumber=\"1\">Used to draw a planet in the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Planets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Planets.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Planets",
+      "Summary": "<p sourcefile=\"api/Stargazer.Planets.yml\" sourcestartlinenumber=\"1\">A <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> container for the planets.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.SkyView.MethodName.yml",
       "output": {
         ".html": {
@@ -1311,6 +1465,34 @@
       "IsMRef": true,
       "Title": "Stargazer.SkyView",
       "Summary": "<p sourcefile=\"api/Stargazer.SkyView.yml\" sourcestartlinenumber=\"1\">The parent object for all items in the viewport.\nResponsible for relaying notifications from senders throughout the program into the view port.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyView2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyView2D.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyView2D",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView2D.yml\" sourcestartlinenumber=\"1\">Used to create the 2D star scene (for screenshot export).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.SkyViewContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.SkyViewContainer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.SkyViewContainer",
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyViewContainer.yml\" sourcestartlinenumber=\"1\">The parent container of the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref> object (used for anchoring).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1370,6 +1552,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Spawner2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Spawner2D.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Spawner2D",
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner2D.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.Star.MethodName.yml",
       "output": {
         ".html": {
@@ -1423,6 +1619,20 @@
       "IsMRef": true,
       "Title": "Stargazer.Star",
       "Summary": "<p sourcefile=\"api/Stargazer.Star.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Star2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Star2D.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Star2D",
+      "Summary": "<p sourcefile=\"api/Stargazer.Star2D.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1535,6 +1745,20 @@
       "IsMRef": true,
       "Title": "Stargazer.Startup",
       "Summary": "<p sourcefile=\"api/Stargazer.Startup.yml\" sourcestartlinenumber=\"1\">The top level controller for the program.\nHandles all communication between the GUI and the viewport.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.TimeLocEntered.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.TimeLocEntered.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.TimeLocEntered",
+      "Summary": "<p sourcefile=\"api/Stargazer.TimeLocEntered.yml\" sourcestartlinenumber=\"1\">Used to gather user input and notify the <xref href=\"Stargazer.Startup\" data-throw-if-not-resolved=\"false\"></xref> object of a new user request.</p>\n"
     },
     {
       "type": "ManagedReference",

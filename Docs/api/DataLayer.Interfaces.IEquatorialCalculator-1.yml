@@ -1,0 +1,256 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
+  id: IEquatorialCalculator`1
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime
+  - DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy(System.Double)
+  - DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf(`0)
+  langs:
+  - csharp
+  - vb
+  name: IEquatorialCalculator<T>
+  nameWithType: IEquatorialCalculator<T>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IEquatorialCalculator
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Converts a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to a {T} object
+  example: []
+  syntax:
+    content: 'public interface IEquatorialCalculator<T> where T : HorizontalBody'
+    typeParameters:
+    - id: T
+      description: The converted value of type {T} (defined by the front end)
+    content.vb: Public Interface IEquatorialCalculator(Of T As HorizontalBody)
+  nameWithType.vb: IEquatorialCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
+  name.vb: IEquatorialCalculator(Of T)
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime
+  id: CurrentTime
+  parent: DataLayer.Interfaces.IEquatorialCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: CurrentTime
+  nameWithType: IEquatorialCalculator<T>.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.CurrentTime
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The current internal universal time used for calculations.
+  example: []
+  syntax:
+    content: DateTime CurrentTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: ReadOnly Property CurrentTime As Date
+  overload: DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime*
+  nameWithType.vb: IEquatorialCalculator(Of T).CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).CurrentTime
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf(`0)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf(`0)
+  id: UpdatePositionOf(`0)
+  parent: DataLayer.Interfaces.IEquatorialCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(T)
+  nameWithType: IEquatorialCalculator<T>.UpdatePositionOf(T)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.UpdatePositionOf(T)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 23
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Calculates and updates the position of a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: void UpdatePositionOf(T hoBody)
+    parameters:
+    - id: hoBody
+      type: '{T}'
+      description: The body to perform the calculation on.
+    content.vb: Sub UpdatePositionOf(hoBody As T)
+  overload: DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf*
+  nameWithType.vb: IEquatorialCalculator(Of T).UpdatePositionOf(T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).UpdatePositionOf(T)
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IEquatorialCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: IEquatorialCalculator<T>.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 29
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Increments the time of the internal universal time used to perform calculations.
+  example: []
+  syntax:
+    content: void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: ''
+    content.vb: Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy*
+  nameWithType.vb: IEquatorialCalculator(Of T).IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+references:
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator`1.CurrentTime
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html#DataLayer_Interfaces_IEquatorialCalculator_1_CurrentTime
+  name: CurrentTime
+  nameWithType: IEquatorialCalculator<T>.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.CurrentTime
+  nameWithType.vb: IEquatorialCalculator(Of T).CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).CurrentTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator`1.UpdatePositionOf
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html#DataLayer_Interfaces_IEquatorialCalculator_1_UpdatePositionOf__0_
+  name: UpdatePositionOf
+  nameWithType: IEquatorialCalculator<T>.UpdatePositionOf
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.UpdatePositionOf
+  nameWithType.vb: IEquatorialCalculator(Of T).UpdatePositionOf
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).UpdatePositionOf
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator`1.IncrementTimeBy
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html#DataLayer_Interfaces_IEquatorialCalculator_1_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: IEquatorialCalculator<T>.IncrementTimeBy
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>.IncrementTimeBy
+  nameWithType.vb: IEquatorialCalculator(Of T).IncrementTimeBy
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T).IncrementTimeBy
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

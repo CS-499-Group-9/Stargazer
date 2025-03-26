@@ -130,8 +130,23 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Constellations2D.html">Constellations2D</a></dt>
+      <dd><p>The <span class="xref">Godot.Node2D</span> used to contain the constellation stars and lines in the viewport.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Globals.html">Globals</a></dt>
       <dd><p>Currently is no longer being used due to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a>s and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a>s</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.GridLabel.html">GridLabel</a></dt>
+      <dd><p>Displays the latitude value on the grid.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.HoverLabel.html">HoverLabel</a></dt>
+      <dd><p>The label that is displayed when hovering over an <a class="xref" href="Stargazer.IHoverable.html">IHoverable</a> object.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -145,13 +160,33 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.Main.html">Main</a></dt>
+      <dt><a class="xref" href="Stargazer.MainCamera.html">MainCamera</a></dt>
       <dd><p>Contains the main camera used to create the user view.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.MainContainer.html">MainContainer</a></dt>
+      <dd><p>The main container of the program.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.MessierButton.html">MessierButton</a></dt>
       <dd><p>Contains the button used to toggle the visibility of the Messier Deep Space Objects</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Moon.html">Moon</a></dt>
+      <dd><p>A moon object to be drawn.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Planet.html">Planet</a></dt>
+      <dd><p>Used to draw a planet in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Planets.html">Planets</a></dt>
+      <dd><p>A <span class="xref">Godot.Node3D</span> container for the planets.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -161,12 +196,32 @@ Responsible for relaying notifications from senders throughout the program into 
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.SkyView2D.html">SkyView2D</a></dt>
+      <dd><p>Used to create the 2D star scene (for screenshot export).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.SkyViewContainer.html">SkyViewContainer</a></dt>
+      <dd><p>The parent container of the <a class="xref" href="Stargazer.SkyView.html">SkyView</a> object (used for anchoring).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Spawner.html">Spawner</a></dt>
       <dd><p>Draws all stars that are not a part of constellations</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Spawner2D.html">Spawner2D</a></dt>
+      <dd><p>Draws all stars that are not a part of constellations</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Star.html">Star</a></dt>
+      <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.Star2D.html">Star2D</a></dt>
       <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>
 </dd>
     </dl>
@@ -182,12 +237,18 @@ The current implementation is way too aggressive. We might be able to make this 
 Handles all communication between the GUI and the viewport.</p>
 </dd>
     </dl>
-    <h3 id="structs">
-Structs
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.TimeLocEntered.html">TimeLocEntered</a></dt>
+      <dd><p>Used to gather user input and notify the <a class="xref" href="Stargazer.Startup.html">Startup</a> object of a new user request.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.MessierButton.HuntsvilleCoordinates.html">MessierButton.HuntsvilleCoordinates</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="Stargazer.IHoverable.html">IHoverable</a></dt>
+      <dd><p>Provides the ability of an object to display a hover label.</p>
+</dd>
     </dl>
 
 

@@ -6,14 +6,18 @@ items:
   parent: Stargazer
   children:
   - Stargazer.Constellations.ConstellationLabels
-  - Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  - Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  - Stargazer.Constellations.GetConstellationStar
   - Stargazer.Constellations.LabelScene
-  - Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
   - Stargazer.Constellations.StarContainer
   - Stargazer.Constellations.StarScene
   - Stargazer.Constellations.ToggleConstellationLabels(System.Boolean)
   - Stargazer.Constellations.ToggleConstellationLines(System.Boolean)
+  - Stargazer.Constellations._Process(System.Double)
+  - Stargazer.Constellations.canProcess
   - Stargazer.Constellations.constMesh
+  - Stargazer.Constellations.constellations
+  - Stargazer.Constellations.labelDictionary
   langs:
   - csharp
   - vb
@@ -23,8 +27,8 @@ items:
   type: Class
   source:
     id: Constellations
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Constellations_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Constellations_ScriptProperties.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -165,7 +169,6 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
   - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
@@ -375,11 +378,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -420,11 +423,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -465,16 +468,16 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Node3D StarContainer
+    content: private Node3D? StarContainer
     return:
       type: Godot.Node3D
     content.vb: Private StarContainer As Node3D
@@ -492,16 +495,16 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: constMesh
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private MeshInstance3D constMesh
+    content: private MeshInstance3D? constMesh
     return:
       type: Godot.MeshInstance3D
     content.vb: Private constMesh As MeshInstance3D
@@ -519,59 +522,212 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Node3D ConstellationLabels
+    content: private Node3D? ConstellationLabels
     return:
       type: Godot.Node3D
     content.vb: Private ConstellationLabels As Node3D
-- uid: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  commentId: M:Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  id: DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+- uid: Stargazer.Constellations.constellations
+  commentId: F:Stargazer.Constellations.constellations
+  id: constellations
   parent: Stargazer.Constellations
   langs:
   - csharp
   - vb
-  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  nameWithType: Constellations.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  fullName: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
+  name: constellations
+  nameWithType: Constellations.constellations
+  fullName: Stargazer.Constellations.constellations
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Constellations.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: constellations
+    path: ../Stargazer-Godot/Code/Constellations.cs
+    startLine: 32
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IEnumerable<Constellation> constellations
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+    content.vb: Private constellations As IEnumerable(Of Constellation)
+- uid: Stargazer.Constellations.GetConstellationStar
+  commentId: F:Stargazer.Constellations.GetConstellationStar
+  id: GetConstellationStar
+  parent: Stargazer.Constellations
+  langs:
+  - csharp
+  - vb
+  name: GetConstellationStar
+  nameWithType: Constellations.GetConstellationStar
+  fullName: Stargazer.Constellations.GetConstellationStar
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Constellations.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetConstellationStar
+    path: ../Stargazer-Godot/Code/Constellations.cs
+    startLine: 33
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar
+    return:
+      type: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
+    content.vb: Private GetConstellationStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star)
+- uid: Stargazer.Constellations.canProcess
+  commentId: F:Stargazer.Constellations.canProcess
+  id: canProcess
+  parent: Stargazer.Constellations
+  langs:
+  - csharp
+  - vb
+  name: canProcess
+  nameWithType: Constellations.canProcess
+  fullName: Stargazer.Constellations.canProcess
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Constellations.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: canProcess
+    path: ../Stargazer-Godot/Code/Constellations.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private bool canProcess
+    return:
+      type: System.Boolean
+    content.vb: Private canProcess As Boolean
+- uid: Stargazer.Constellations.labelDictionary
+  commentId: F:Stargazer.Constellations.labelDictionary
+  id: labelDictionary
+  parent: Stargazer.Constellations
+  langs:
+  - csharp
+  - vb
+  name: labelDictionary
+  nameWithType: Constellations.labelDictionary
+  fullName: Stargazer.Constellations.labelDictionary
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Constellations.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: labelDictionary
+    path: ../Stargazer-Godot/Code/Constellations.cs
+    startLine: 35
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IDictionary<string, LabelNode> labelDictionary
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,Stargazer.LabelNode}
+    content.vb: Private labelDictionary As IDictionary(Of String, LabelNode)
+- uid: Stargazer.Constellations._Process(System.Double)
+  commentId: M:Stargazer.Constellations._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.Constellations
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: Constellations._Process(double)
+  fullName: Stargazer.Constellations._Process(double)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/Constellations.cs
+    startLine: 37
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
+
+    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.Constellations._Process*
+  nameWithType.vb: Constellations._Process(Double)
+  fullName.vb: Stargazer.Constellations._Process(Double)
+  name.vb: _Process(Double)
+- uid: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  commentId: M:Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  id: DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  parent: Stargazer.Constellations
+  langs:
+  - csharp
+  - vb
+  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>, Func<HorizontalStar, Star>)
+  nameWithType: Constellations.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>, Func<HorizontalStar, Star>)
+  fullName: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Constellations.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 36
+    startLine: 87
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Draws the stars and constellation lines for each of the <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref>s
   example: []
   syntax:
-    content: public Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
+    content: public Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetStar, Func<HorizontalStar, Star> SpawnStar)
     parameters:
     - id: constellations
       type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
       description: The <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> list of constellations
-    - id: GetConstellationStar
+    - id: GetStar
       type: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
       description: The method used to retrieve a <xref href="Stargazer.Star" data-throw-if-not-resolved="false"></xref>From the dictionary of drawn stars.
+    - id: SpawnStar
+      type: System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star}
+      description: Used to spawn a new star and draw it in the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref> star container.
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Public Function DrawConstellations(constellations As IEnumerable(Of Constellation), GetConstellationStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star)) As Task
+    content.vb: Public Function DrawConstellations(constellations As IEnumerable(Of Constellation), GetStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star), SpawnStar As Func(Of HorizontalStar, Star)) As Task
   overload: Stargazer.Constellations.DrawConstellations*
-  nameWithType.vb: Constellations.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
-  fullName.vb: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
-  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+  nameWithType.vb: Constellations.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star), Func(Of HorizontalStar, Star))
+  fullName.vb: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star), System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star))
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star), Func(Of HorizontalStar, Star))
 - uid: Stargazer.Constellations.ToggleConstellationLines(System.Boolean)
   commentId: M:Stargazer.Constellations.ToggleConstellationLines(System.Boolean)
   id: ToggleConstellationLines(System.Boolean)
@@ -586,11 +742,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 112
+    startLine: 193
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -600,12 +756,12 @@ items:
     Hiding the lines will also hide the labels.
   example: []
   syntax:
-    content: public void ToggleConstellationLines(bool showlines)
+    content: public void ToggleConstellationLines(bool showLines)
     parameters:
-    - id: showlines
+    - id: showLines
       type: System.Boolean
       description: True if the user has requested to show the lines.
-    content.vb: Public Sub ToggleConstellationLines(showlines As Boolean)
+    content.vb: Public Sub ToggleConstellationLines(showLines As Boolean)
   overload: Stargazer.Constellations.ToggleConstellationLines*
   nameWithType.vb: Constellations.ToggleConstellationLines(Boolean)
   fullName.vb: Stargazer.Constellations.ToggleConstellationLines(Boolean)
@@ -624,58 +780,27 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 121
+    startLine: 203
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Receives the notification to toggle the visibility of the constellation labels.
   example: []
   syntax:
-    content: public void ToggleConstellationLabels(bool showlabels)
+    content: public void ToggleConstellationLabels(bool showLabels)
     parameters:
-    - id: showlabels
+    - id: showLabels
       type: System.Boolean
       description: True if the user has requested to show the labels.
-    content.vb: Public Sub ToggleConstellationLabels(showlabels As Boolean)
+    content.vb: Public Sub ToggleConstellationLabels(showLabels As Boolean)
   overload: Stargazer.Constellations.ToggleConstellationLabels*
   nameWithType.vb: Constellations.ToggleConstellationLabels(Boolean)
   fullName.vb: Stargazer.Constellations.ToggleConstellationLabels(Boolean)
   name.vb: ToggleConstellationLabels(Boolean)
-- uid: Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  commentId: M:Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  id: SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  parent: Stargazer.Constellations
-  langs:
-  - csharp
-  - vb
-  name: SpawnStar(HorizontalStar)
-  nameWithType: Constellations.SpawnStar(HorizontalStar)
-  fullName: Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Constellations.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: SpawnStar
-    path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 123
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Star SpawnStar(HorizontalStar horizontalStar)
-    parameters:
-    - id: horizontalStar
-      type: DataLayer.HorizontalObjects.HorizontalStar
-    return:
-      type: Stargazer.Star
-    content.vb: Private Function SpawnStar(horizontalStar As HorizontalStar) As Star
-  overload: Stargazer.Constellations.SpawnStar*
 references:
 - uid: Godot.Node3D
   commentId: T:Godot.Node3D
@@ -2689,37 +2814,6 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -7538,53 +7632,6 @@ references:
   name: MeshInstance3D
   nameWithType: MeshInstance3D
   fullName: Godot.MeshInstance3D
-- uid: DataLayer.EquatorialObjects.Constellation
-  commentId: T:DataLayer.EquatorialObjects.Constellation
-  href: DataLayer.EquatorialObjects.Constellation.html
-  name: Constellation
-  nameWithType: Constellation
-  fullName: DataLayer.EquatorialObjects.Constellation
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Stargazer.Star
-  commentId: T:Stargazer.Star
-  parent: Stargazer
-  href: Stargazer.Star.html
-  name: Star
-  nameWithType: Star
-  fullName: Stargazer.Star
-- uid: Stargazer.Constellations.DrawConstellations*
-  commentId: Overload:Stargazer.Constellations.DrawConstellations
-  href: Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
-  name: DrawConstellations
-  nameWithType: Constellations.DrawConstellations
-  fullName: Stargazer.Constellations.DrawConstellations
 - uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
   commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
   parent: System.Collections.Generic
@@ -7618,6 +7665,71 @@ references:
     name: Constellation
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
   commentId: T:System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
   parent: System
@@ -7697,51 +7809,6 @@ references:
     name: Star
     href: Stargazer.Star.html
   - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Func`3
   commentId: T:System.Func`3
   isExternal: true
@@ -7778,6 +7845,255 @@ references:
   - name: ','
   - name: " "
   - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.IDictionary{System.String,Stargazer.LabelNode}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,Stargazer.LabelNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, LabelNode>
+  nameWithType: IDictionary<string, LabelNode>
+  fullName: System.Collections.Generic.IDictionary<string, Stargazer.LabelNode>
+  nameWithType.vb: IDictionary(Of String, LabelNode)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Stargazer.LabelNode)
+  name.vb: IDictionary(Of String, LabelNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Stargazer.LabelNode
+    name: LabelNode
+    href: Stargazer.LabelNode.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Stargazer.LabelNode
+    name: LabelNode
+    href: Stargazer.LabelNode.html
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Stargazer.Constellations._Process*
+  commentId: Overload:Stargazer.Constellations._Process
+  href: Stargazer.Constellations.html#Stargazer_Constellations__Process_System_Double_
+  name: _Process
+  nameWithType: Constellations._Process
+  fullName: Stargazer.Constellations._Process
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  href: DataLayer.EquatorialObjects.Constellation.html
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+- uid: Stargazer.Star
+  commentId: T:Stargazer.Star
+  parent: Stargazer
+  href: Stargazer.Star.html
+  name: Star
+  nameWithType: Star
+  fullName: Stargazer.Star
+- uid: Stargazer.SkyView
+  commentId: T:Stargazer.SkyView
+  parent: Stargazer
+  href: Stargazer.SkyView.html
+  name: SkyView
+  nameWithType: SkyView
+  fullName: Stargazer.SkyView
+- uid: Stargazer.Constellations.DrawConstellations*
+  commentId: Overload:Stargazer.Constellations.DrawConstellations
+  href: Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__
+  name: DrawConstellations
+  nameWithType: Constellations.DrawConstellations
+  fullName: Stargazer.Constellations.DrawConstellations
+- uid: System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star}
+  commentId: T:System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<HorizontalStar, Star>
+  nameWithType: Func<HorizontalStar, Star>
+  fullName: System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>
+  nameWithType.vb: Func(Of HorizontalStar, Star)
+  fullName.vb: System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star)
+  name.vb: Func(Of HorizontalStar, Star)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
   - name: ','
   - name: " "
   - name: TResult
@@ -7825,55 +8141,9 @@ references:
   name: ToggleConstellationLines
   nameWithType: Constellations.ToggleConstellationLines
   fullName: Stargazer.Constellations.ToggleConstellationLines
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Stargazer.Constellations.ToggleConstellationLabels*
   commentId: Overload:Stargazer.Constellations.ToggleConstellationLabels
   href: Stargazer.Constellations.html#Stargazer_Constellations_ToggleConstellationLabels_System_Boolean_
   name: ToggleConstellationLabels
   nameWithType: Constellations.ToggleConstellationLabels
   fullName: Stargazer.Constellations.ToggleConstellationLabels
-- uid: Stargazer.Constellations.SpawnStar*
-  commentId: Overload:Stargazer.Constellations.SpawnStar
-  href: Stargazer.Constellations.html#Stargazer_Constellations_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_
-  name: SpawnStar
-  nameWithType: Constellations.SpawnStar
-  fullName: Stargazer.Constellations.SpawnStar
-- uid: DataLayer.HorizontalObjects.HorizontalStar
-  commentId: T:DataLayer.HorizontalObjects.HorizontalStar
-  parent: DataLayer.HorizontalObjects
-  href: DataLayer.HorizontalObjects.HorizontalStar.html
-  name: HorizontalStar
-  nameWithType: HorizontalStar
-  fullName: DataLayer.HorizontalObjects.HorizontalStar
-- uid: DataLayer.HorizontalObjects
-  commentId: N:DataLayer.HorizontalObjects
-  href: DataLayer.html
-  name: DataLayer.HorizontalObjects
-  nameWithType: DataLayer.HorizontalObjects
-  fullName: DataLayer.HorizontalObjects
-  spec.csharp:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.HorizontalObjects
-    name: HorizontalObjects
-    href: DataLayer.HorizontalObjects.html
-  spec.vb:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.HorizontalObjects
-    name: HorizontalObjects
-    href: DataLayer.HorizontalObjects.html

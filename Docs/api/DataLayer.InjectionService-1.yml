@@ -6,7 +6,6 @@ items:
   parent: DataLayer
   children:
   - DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)
-  - DataLayer.InjectionService`1.maxStarMagnitude
   langs:
   - csharp
   - vb
@@ -17,8 +16,8 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: InjectionService
     path: ../DataLayer/InjectionService.cs
     startLine: 12
@@ -49,35 +48,6 @@ items:
   nameWithType.vb: InjectionService(Of T)
   fullName.vb: DataLayer.InjectionService(Of T)
   name.vb: InjectionService(Of T)
-- uid: DataLayer.InjectionService`1.maxStarMagnitude
-  commentId: F:DataLayer.InjectionService`1.maxStarMagnitude
-  id: maxStarMagnitude
-  parent: DataLayer.InjectionService`1
-  langs:
-  - csharp
-  - vb
-  name: maxStarMagnitude
-  nameWithType: InjectionService<T>.maxStarMagnitude
-  fullName: DataLayer.InjectionService<T>.maxStarMagnitude
-  type: Field
-  source:
-    remote:
-      path: DataLayer/InjectionService.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: maxStarMagnitude
-    path: ../DataLayer/InjectionService.cs
-    startLine: 15
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  syntax:
-    content: private const int maxStarMagnitude = 6
-    return:
-      type: System.Int32
-    content.vb: Private Const maxStarMagnitude As Integer = 6
-  nameWithType.vb: InjectionService(Of T).maxStarMagnitude
-  fullName.vb: DataLayer.InjectionService(Of T).maxStarMagnitude
 - uid: DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)
   commentId: M:DataLayer.InjectionService`1.GetRepositoryServiceAsync(System.String)
   id: GetRepositoryServiceAsync(System.String)
@@ -92,11 +62,11 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetRepositoryServiceAsync
     path: ../DataLayer/InjectionService.cs
-    startLine: 23
+    startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -364,17 +334,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: System.IO.DirectoryNotFoundException
   commentId: T:System.IO.DirectoryNotFoundException
   isExternal: true

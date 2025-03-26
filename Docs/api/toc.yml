@@ -33,9 +33,6 @@ items:
   name: DataLayer.HorizontalObjects
   type: Namespace
   items:
-  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
-    name: HorizonalPlanet
-    type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalBody
     name: HorizontalBody
     type: Class
@@ -44,6 +41,9 @@ items:
     type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalMoon
     name: HorizontalMoon
+    type: Class
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
     type: Class
   - uid: DataLayer.HorizontalObjects.HorizontalStar
     name: HorizontalStar
@@ -101,8 +101,8 @@ items:
   - uid: DataLayer.Interfaces.IConstellationRepository
     name: IConstellationRepository
     type: Interface
-  - uid: DataLayer.Interfaces.IEquatorialConverter`1
-    name: IEquatorialConverter<T>
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator<T>
     type: Interface
   - uid: DataLayer.Interfaces.IMessierRepository
     name: IMessierRepository
@@ -116,13 +116,6 @@ items:
   - uid: DataLayer.Interfaces.IStarRepository
     name: IStarRepository
     type: Interface
-- uid: GodotPlugins.Game
-  name: GodotPlugins.Game
-  type: Namespace
-  items:
-  - uid: GodotPlugins.Game.Main
-    name: Main
-    type: Class
 - uid: Stargazer
   name: Stargazer
   type: Namespace
@@ -148,37 +141,73 @@ items:
   - uid: Stargazer.Constellations
     name: Constellations
     type: Class
+  - uid: Stargazer.Constellations2D
+    name: Constellations2D
+    type: Class
   - uid: Stargazer.Globals
     name: Globals
     type: Class
+  - uid: Stargazer.GridLabel
+    name: GridLabel
+    type: Class
+  - uid: Stargazer.HoverLabel
+    name: HoverLabel
+    type: Class
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    type: Interface
   - uid: Stargazer.LabelButton
     name: LabelButton
     type: Class
   - uid: Stargazer.LabelNode
     name: LabelNode
     type: Class
-  - uid: Stargazer.Main
-    name: Main
+  - uid: Stargazer.MainCamera
+    name: MainCamera
+    type: Class
+  - uid: Stargazer.MainContainer
+    name: MainContainer
     type: Class
   - uid: Stargazer.MessierButton
     name: MessierButton
     type: Class
-  - uid: Stargazer.MessierButton.HuntsvilleCoordinates
-    name: MessierButton.HuntsvilleCoordinates
-    type: Struct
+  - uid: Stargazer.Moon
+    name: Moon
+    type: Class
+  - uid: Stargazer.Planet
+    name: Planet
+    type: Class
+  - uid: Stargazer.Planets
+    name: Planets
+    type: Class
   - uid: Stargazer.SkyView
     name: SkyView
+    type: Class
+  - uid: Stargazer.SkyView2D
+    name: SkyView2D
+    type: Class
+  - uid: Stargazer.SkyViewContainer
+    name: SkyViewContainer
     type: Class
   - uid: Stargazer.Spawner
     name: Spawner
     type: Class
+  - uid: Stargazer.Spawner2D
+    name: Spawner2D
+    type: Class
   - uid: Stargazer.Star
     name: Star
+    type: Class
+  - uid: Stargazer.Star2D
+    name: Star2D
     type: Class
   - uid: Stargazer.StarMesh
     name: StarMesh
     type: Class
   - uid: Stargazer.Startup
     name: Startup
+    type: Class
+  - uid: Stargazer.TimeLocEntered
+    name: TimeLocEntered
     type: Class
 memberLayout: SamePage

@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: StellariumJsonConstellationRepository
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 10
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 15
@@ -86,8 +86,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 21
@@ -121,8 +121,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetAllConstellationsAsync
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 31
