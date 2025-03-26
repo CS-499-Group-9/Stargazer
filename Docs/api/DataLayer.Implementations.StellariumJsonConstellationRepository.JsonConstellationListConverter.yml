@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: JsonConstellationListConverter
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 53
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ReadJson
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 55
@@ -113,8 +113,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: BuildLines
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 90
@@ -154,8 +154,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: WriteJson
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
     startLine: 120

@@ -5,9 +5,11 @@ items:
   id: HorizontalBody
   parent: DataLayer.HorizontalObjects
   children:
+  - DataLayer.HorizontalObjects.HorizontalBody.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
   - DataLayer.HorizontalObjects.HorizontalBody.Altitude
   - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   - DataLayer.HorizontalObjects.HorizontalBody.Distance
+  - DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
   - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   langs:
   - csharp
@@ -19,11 +21,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -35,9 +37,9 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - DataLayer.HorizontalObjects.HorizonalPlanet
   - DataLayer.HorizontalObjects.HorizontalMessierObject
   - DataLayer.HorizontalObjects.HorizontalMoon
+  - DataLayer.HorizontalObjects.HorizontalPlanet
   - DataLayer.HorizontalObjects.HorizontalStar
   inheritedMembers:
   - System.Object.Equals(System.Object)
@@ -47,6 +49,69 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  commentId: M:DataLayer.HorizontalObjects.HorizontalBody.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  id: '#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)'
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  langs:
+  - csharp
+  - vb
+  name: HorizontalBody(EquatorialCelestialBody)
+  nameWithType: HorizontalBody.HorizontalBody(EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalBody.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  syntax:
+    content: protected HorizontalBody(EquatorialCelestialBody body)
+    parameters:
+    - id: body
+      type: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    content.vb: Protected Sub New(body As EquatorialCelestialBody)
+  overload: DataLayer.HorizontalObjects.HorizontalBody.#ctor*
+  nameWithType.vb: HorizontalBody.New(EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(EquatorialCelestialBody)
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  id: EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  langs:
+  - csharp
+  - vb
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  type: Property
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalBody.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: EquatorialBody
+    path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
+    startLine: 19
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: The <xref href="DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody" data-throw-if-not-resolved="false"></xref> that this body is based off of.
+  example: []
+  syntax:
+    content: public EquatorialCelestialBody EquatorialBody { get; set; }
+    parameters: []
+    return:
+      type: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    content.vb: Public Property EquatorialBody As EquatorialCelestialBody
+  overload: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody*
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   id: Altitude
@@ -61,11 +126,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 11
+    startLine: 24
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -92,11 +157,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 15
+    startLine: 28
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -123,11 +188,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 19
+    startLine: 33
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -154,22 +219,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 23
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: The distance (in lightyears) from the star to earth
   example: []
   syntax:
-    content: public double Distance { get; internal set; }
+    content: public double Distance { get; }
     parameters: []
     return:
       type: System.Double
-    content.vb: Public Property Distance As Double
+    content.vb: Public ReadOnly Property Distance As Double
   overload: DataLayer.HorizontalObjects.HorizontalBody.Distance*
 references:
 - uid: DataLayer.HorizontalObjects
@@ -431,6 +496,64 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.#ctor
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__ctor_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  name: HorizontalBody
+  nameWithType: HorizontalBody.HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody
+  nameWithType.vb: HorizontalBody.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude

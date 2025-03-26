@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: IConstellationRepository
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
     startLine: 7
@@ -43,8 +43,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IConstellationRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetAllConstellationsAsync
     path: ../DataLayer/Interfaces/IConstellationRepository.cs
     startLine: 13

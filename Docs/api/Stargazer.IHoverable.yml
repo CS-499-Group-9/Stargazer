@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.IHoverable
+  commentId: T:Stargazer.IHoverable
+  id: IHoverable
+  parent: Stargazer
+  children:
+  - Stargazer.IHoverable.GetHoverText
+  langs:
+  - csharp
+  - vb
+  name: IHoverable
+  nameWithType: IHoverable
+  fullName: Stargazer.IHoverable
+  type: Interface
+  source:
+    remote:
+      path: Stargazer-Godot/Code/IHoverable.CS
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IHoverable
+    path: ../Stargazer-Godot/Code/IHoverable.CS
+    startLine: 7
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Indicates that an object is capable of providing test to display when the mouse hovers over it.
+  example: []
+  syntax:
+    content: public interface IHoverable
+    content.vb: Public Interface IHoverable
+- uid: Stargazer.IHoverable.GetHoverText
+  commentId: M:Stargazer.IHoverable.GetHoverText
+  id: GetHoverText
+  parent: Stargazer.IHoverable
+  langs:
+  - csharp
+  - vb
+  name: GetHoverText()
+  nameWithType: IHoverable.GetHoverText()
+  fullName: Stargazer.IHoverable.GetHoverText()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/IHoverable.CS
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetHoverText
+    path: ../Stargazer-Godot/Code/IHoverable.CS
+    startLine: 13
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Gets the text to be be displayed in the <xref href="Stargazer.HoverLabel" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: string GetHoverText()
+    return:
+      type: System.String
+      description: The formatted text <xref href="System.String" data-throw-if-not-resolved="false"></xref> to display.
+    content.vb: Function GetHoverText() As String
+  overload: Stargazer.IHoverable.GetHoverText*
+references:
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: Stargazer.HoverLabel
+  commentId: T:Stargazer.HoverLabel
+  href: Stargazer.HoverLabel.html
+  name: HoverLabel
+  nameWithType: HoverLabel
+  fullName: Stargazer.HoverLabel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Stargazer.IHoverable.GetHoverText*
+  commentId: Overload:Stargazer.IHoverable.GetHoverText
+  href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
+  name: GetHoverText
+  nameWithType: IHoverable.GetHoverText
+  fullName: Stargazer.IHoverable.GetHoverText
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

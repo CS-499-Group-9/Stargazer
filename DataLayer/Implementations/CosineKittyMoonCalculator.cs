@@ -32,7 +32,11 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
-        public HorizontalMoon CalculateMoon()
+        /// <summary>
+        /// Used for initial creation of the moon object.
+        /// </summary>
+        /// <returns>A moon object that can be passed to <see cref="UpdatePositionOf(HorizontalMoon)"/> for future calculations.</returns>
+        public HorizontalMoon CreateMoon()
         {
             Equatorial equ = Astronomy.Equator(Body.Moon, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
@@ -42,7 +46,11 @@ namespace DataLayer.Implementations
             return new HorizontalMoon (eqBody);
         }
 
-        public void UpdatePosition(HorizontalMoon moon)
+        /// <summary>
+        /// Updates the position of the moon for the current time.
+        /// </summary>
+        /// <param name="moon">The moon object to update.</param>
+        public void UpdatePositionOf(HorizontalMoon moon)
         {
             Equatorial equ = Astronomy.Equator(Body.Moon, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
             Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
@@ -53,9 +61,13 @@ namespace DataLayer.Implementations
             moon.Phase = phase;
         }
 
-        public void UpdateTime(double increment)
+        /// <summary>
+        /// Increments the universal time to perform the calculation.
+        /// </summary>
+        /// <param name="seconds">The number of seconds to increment the universal time.</param>
+        public void IncrementTimeBy(double seconds)
         {
-            currentTime = currentTime.AddSeconds(increment);
+            currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime);
         }
     }

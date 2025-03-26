@@ -17,7 +17,7 @@ namespace DataLayer.Interfaces
         /// A function accepting an object of type <see cref="EquatorialCelestialBody"/> to type {T}
         /// </summary>
 
-        void UpdatePosition(T hoBody);
-        void UpdateTime(double seconds);
+        void UpdatePositionOf(T hoBody);
+        void IncrementTimeBy(double seconds);
     }
 }

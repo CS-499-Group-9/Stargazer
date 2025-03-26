@@ -13,6 +13,10 @@ namespace Stargazer
 		/// </summary>
 		public Action<bool> ConstellationLinesToggled;
 
+		/// <summary>
+		/// Receives the <see cref="Signal"/> from the <see cref="CheckBox"/>
+		/// </summary>
+		/// <param name="state"></param>
 		private void ToggleConst(bool state)
 		{
 			ConstellationLinesToggled(state);

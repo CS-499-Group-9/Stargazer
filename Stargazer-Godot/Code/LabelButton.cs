@@ -13,6 +13,10 @@ namespace Stargazer
         /// </summary>
         public Action<bool> ConstellationLabelsToggled;
 
+        /// <summary>
+        /// Receives the <see cref="Signal"/> from the <see cref="LabelButton"/>
+        /// </summary>
+        /// <param name="state">True if the constellation labels should be shown.</param>
         private void ToggleLabel(bool state)
         {
             ConstellationLabelsToggled(state);

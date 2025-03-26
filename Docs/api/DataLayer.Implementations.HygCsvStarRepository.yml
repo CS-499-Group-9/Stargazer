@@ -6,7 +6,7 @@ items:
   parent: DataLayer.Implementations
   children:
   - DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
-  - DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+  - DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
   - DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
   - DataLayer.Implementations.HygCsvStarRepository.filePath
   langs:
@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HygCsvStarRepository
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 12
@@ -58,8 +58,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 17
@@ -87,8 +87,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 23
@@ -122,8 +122,8 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetStarByHipAsync
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
     startLine: 34
@@ -148,44 +148,40 @@ items:
   nameWithType.vb: HygCsvStarRepository.GetStarByHipAsync(Integer)
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(Integer)
   name.vb: GetStarByHipAsync(Integer)
-- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
-  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
-  id: DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  id: DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
   isEii: true
   parent: DataLayer.Implementations.HygCsvStarRepository
   langs:
   - csharp
   - vb
-  name: IStarRepository.GetAllStarsAsync(double)
-  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync(double)
-  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  name: IStarRepository.GetAllStarsAsync()
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync()
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
   type: Method
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 62
+    startLine: 61
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   summary: Gets all stars that are brighter than a defined brightness.
   example: []
   syntax:
-    content: Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync(double maximumMagnitude)
-    parameters:
-    - id: maximumMagnitude
-      type: System.Double
-      description: The minimum brightness of the stars to include.
+    content: Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
       description: A list of stars in the equatorial coordinate form.
     content.vb: ''
   overload: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
   implements:
-  - DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  - DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
   nameWithType.vb: ''
   fullName.vb: ''
   name.vb: ''
@@ -657,49 +653,26 @@ references:
   - name: .
   - uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
     name: GetAllStarsAsync
-    href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
-- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+    href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
   parent: DataLayer.Interfaces.IStarRepository
-  isExternal: true
-  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
-  name: GetAllStarsAsync(double)
-  nameWithType: IStarRepository.GetAllStarsAsync(double)
-  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
-  nameWithType.vb: IStarRepository.GetAllStarsAsync(Double)
-  fullName.vb: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(Double)
-  name.vb: GetAllStarsAsync(Double)
+  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
+  name: GetAllStarsAsync()
+  nameWithType: IStarRepository.GetAllStarsAsync()
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
   spec.csharp:
-  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
     name: GetAllStarsAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
   - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
     name: GetAllStarsAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
   - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
 - uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
   commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
   parent: System.Threading.Tasks

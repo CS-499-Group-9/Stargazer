@@ -14,6 +14,9 @@ namespace DataLayer.HorizontalObjects
         {
             EquatorialBody = body;
         }
+        /// <summary>
+        /// The <see cref="EquatorialBody"/> that this body is based off of.
+        /// </summary>
         public EquatorialCelestialBody EquatorialBody { get; set; }
 
         /// <summary>

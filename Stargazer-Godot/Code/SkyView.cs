@@ -35,6 +35,9 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
+        /// <summary>
+        /// The <see cref="Camera3D"/> that is the user's perspective.
+        /// </summary>
         public Camera3D Camera {  get; set; }
         
 
@@ -45,7 +48,7 @@ namespace Stargazer
         private Planets planetNode;
         private Moon moon;
         private IEquatorialConverter<HorizontalStar> starConverter;
-        private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
+        private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         private Label datelabel;
         private double timeMultiplier = 1;
@@ -82,17 +85,18 @@ namespace Stargazer
             // TODO: Get a reference to the Planets object parent node (should be a child of this node)
         }
 
+        /// <summary>
+        /// Increments the universal time in each of the calculators.
+        /// </summary>
+        /// <param name="delta">The number of seconds since the last frame.</param>
         public override void _Process(double delta)
         {
-            starConverter?.UpdateTime(delta*timeMultiplier);
-            planetaryCalculator?.IncrementTime(delta*timeMultiplier);
-            moonCalculator?.UpdateTime(delta*timeMultiplier);
+            starConverter?.IncrementTimeBy(delta*timeMultiplier);
+            planetaryCalculator?.IncrementTimeBy(delta*timeMultiplier);
+            moonCalculator?.IncrementTimeBy(delta*timeMultiplier);
             datelabel.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
-
-
-
 
         /// <summary>
         /// Notifies child notes of a new <see cref="CelestialDataPackage{Star}"/> that is ready to be drawn.
@@ -106,9 +110,7 @@ namespace Stargazer
             starConverter = dataPackage.StarConverter;
             planetaryCalculator = dataPackage.PlanetaryCalculator;
             datelabel.Text = starConverter.CurrentTime.ToString();
-            //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarConverter);
-            //await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
             planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
             moon?.Free();
@@ -116,10 +118,9 @@ namespace Stargazer
             moon = MoonScene.Instantiate<Moon>();
             moon.FromHorizontal(dataPackage.Moon, moonCalculator);
             AddChild(moon);
-            //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
+
             // TODO: Notify the Messier Objects node to draw the Messier Objects
-            // TODO: Notify the Moon node to draw the moon
-            // TODO: Notify the Planets node to draw the planets
+
         }
 
 

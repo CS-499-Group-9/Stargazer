@@ -8,6 +8,10 @@ namespace DataLayer.HorizontalObjects
     /// </summary>
     public class HorizontalMessierObject : HorizontalBody
     {
+        /// <summary>
+        /// Creates a new new object based on a <see cref="EquatorialMessierObject"/>
+        /// </summary>
+        /// <param name="body">The <see cref="EquatorialMessierObject"/> the object is based on.</param>
         public HorizontalMessierObject(EquatorialMessierObject body) : base(body)
         {
             MessierId = body.MessierId;
@@ -20,31 +24,31 @@ namespace DataLayer.HorizontalObjects
         }
 
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.MessierId"/>
+        /// <see cref="EquatorialMessierObject.MessierId"/>
         /// </summary>
         public string? MessierId { get; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog"/>
+        /// <see cref="EquatorialMessierObject.NewGeneralCatalog"/>
         /// </summary>
         public string? NewGeneralCatalog { get ; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.Type"/>
+        /// <see cref="EquatorialMessierObject.Type"/>
         /// </summary>
         public string? Type { get; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.Constellation"/>
+        /// <see cref="EquatorialMessierObject.Constellation"/>
         /// </summary>
         public string? Constellation { get; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.Size"/>
+        /// <see cref="EquatorialMessierObject.Size"/>
         /// </summary>
         public string? Size { get; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.ViewingSeason"/>
+        /// <see cref="EquatorialMessierObject.ViewingSeason"/>
         /// </summary>
         public string? ViewingSeason { get; internal set; }
         /// <summary>
-        /// <see cref="EquatorialObjects.EquatorialMessierObject.ViewingDifficulty"/>
+        /// <see cref="EquatorialMessierObject.ViewingDifficulty"/>
         /// </summary>
         public string? ViewingDifficulty { get; internal set; }
     }

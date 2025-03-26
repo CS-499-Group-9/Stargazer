@@ -5,7 +5,9 @@ items:
   id: IPlanetaryCalculator`1
   parent: DataLayer.Interfaces
   children:
-  - DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+  - DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  - DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  - DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
   langs:
   - csharp
   - vb
@@ -16,52 +18,127 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: IPlanetaryCalculator
     path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Used to calculate the altitude and azimuths of planets.
+  example: []
   syntax:
     content: 'public interface IPlanetaryCalculator<T> where T : HorizontalBody'
     typeParameters:
     - id: T
+      description: ''
     content.vb: Public Interface IPlanetaryCalculator(Of T As HorizontalBody)
   nameWithType.vb: IPlanetaryCalculator(Of T)
   fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
   name.vb: IPlanetaryCalculator(Of T)
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  id: CalculatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  id: CreatePlanets
   parent: DataLayer.Interfaces.IPlanetaryCalculator`1
   langs:
   - csharp
   - vb
-  name: CalculatePlanets()
-  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets()
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets()
+  name: CreatePlanets()
+  nameWithType: IPlanetaryCalculator<T>.CreatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CreatePlanets()
   type: Method
   source:
     remote:
       path: DataLayer/Interfaces/IPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: CalculatePlanets
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
     path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
-    startLine: 11
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
+  summary: Used to initially create the planets
+  example: []
   syntax:
-    content: IEnumerable<T> CalculatePlanets()
+    content: IEnumerable<T> CreatePlanets()
     return:
       type: System.Collections.Generic.IEnumerable{{T}}
-    content.vb: Function CalculatePlanets() As IEnumerable(Of T)
-  overload: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets*
-  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets()
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets()
+      description: ''
+    content.vb: Function CreatePlanets() As IEnumerable(Of T)
+  overload: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets*
+  nameWithType.vb: IPlanetaryCalculator(Of T).CreatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CreatePlanets()
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IPlanetaryCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPlanetaryCalculator.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
+    startLine: 25
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Increments the internal universal time of the calculator.
+  example: []
+  syntax:
+    content: void IncrementTimeBy(double increment)
+    parameters:
+    - id: increment
+      type: System.Double
+      description: ''
+    content.vb: Sub IncrementTimeBy(increment As Double)
+  overload: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy*
+  nameWithType.vb: IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Interfaces.IPlanetaryCalculator`1
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: IPlanetaryCalculator<T>.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPlanetaryCalculator.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IPlanetaryCalculator.cs
+    startLine: 31
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Updates the position of the passed planet using the current internal universal time.
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalPlanet planet)
+    parameters:
+    - id: planet
+      type: DataLayer.HorizontalObjects.HorizontalPlanet
+      description: The planet to perform the calculations on.
+    content.vb: Sub UpdatePositionOf(planet As HorizontalPlanet)
+  overload: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf*
+  nameWithType.vb: IPlanetaryCalculator(Of T).UpdatePositionOf(HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
 references:
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
@@ -85,14 +162,14 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets*
-  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  name: CalculatePlanets
-  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets
-  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets*
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  name: CreatePlanets
+  nameWithType: IPlanetaryCalculator<T>.CreatePlanets
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CreatePlanets
+  nameWithType.vb: IPlanetaryCalculator(Of T).CreatePlanets
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CreatePlanets
 - uid: System.Collections.Generic.IEnumerable{{T}}
   commentId: T:System.Collections.Generic.IEnumerable{`0}
   parent: System.Collections.Generic
@@ -187,3 +264,66 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy*
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: IPlanetaryCalculator<T>.IncrementTimeBy
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.IncrementTimeBy
+  nameWithType.vb: IPlanetaryCalculator(Of T).IncrementTimeBy
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).IncrementTimeBy
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf*
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf
+  nameWithType: IPlanetaryCalculator<T>.UpdatePositionOf
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.UpdatePositionOf
+  nameWithType.vb: IPlanetaryCalculator(Of T).UpdatePositionOf
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).UpdatePositionOf
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html

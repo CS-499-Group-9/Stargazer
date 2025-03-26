@@ -1,0 +1,198 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.IUserUpdateReceiver
+  commentId: T:Stargazer.IUserUpdateReceiver
+  id: IUserUpdateReceiver
+  parent: Stargazer
+  children:
+  - Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  langs:
+  - csharp
+  - vb
+  name: IUserUpdateReceiver
+  nameWithType: IUserUpdateReceiver
+  fullName: Stargazer.IUserUpdateReceiver
+  type: Interface
+  source:
+    remote:
+      path: Stargazer-Godot/Code/IUserUpdateReceiver.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IUserUpdateReceiver
+    path: ../Stargazer-Godot/Code/IUserUpdateReceiver.cs
+    startLine: 12
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Can be used to indicate that a class is capable of receiving the <xref href="Stargazer.Startup.UserPositionUpdated" data-throw-if-not-resolved="false"></xref> notification.
+
+    Is not currently used due to only one class implementing this and then handling individual dispersal of information.
+  example: []
+  syntax:
+    content: public interface IUserUpdateReceiver
+    content.vb: Public Interface IUserUpdateReceiver
+- uid: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  commentId: M:Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  parent: Stargazer.IUserUpdateReceiver
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage<Star>)
+  fullName: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/IUserUpdateReceiver.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdateUserPosition
+    path: ../Stargazer-Godot/Code/IUserUpdateReceiver.cs
+    startLine: 19
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the notification
+  example: []
+  syntax:
+    content: Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+    parameters:
+    - id: dataPackage
+      type: DataLayer.CelestialDataPackage{Stargazer.Star}
+      description: The <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref> containing the data to be drawn
+    return:
+      type: System.Threading.Tasks.Task
+      description: A Task that can be awaited.
+    content.vb: Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star)) As Task
+  overload: Stargazer.IUserUpdateReceiver.UpdateUserPosition*
+  nameWithType.vb: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName.vb: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+references:
+- uid: Stargazer.Startup.UserPositionUpdated
+  commentId: E:Stargazer.Startup.UserPositionUpdated
+  href: Stargazer.Startup.html#Stargazer_Startup_UserPositionUpdated
+  name: UserPositionUpdated
+  nameWithType: Startup.UserPositionUpdated
+  fullName: Stargazer.Startup.UserPositionUpdated
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Stargazer.IUserUpdateReceiver.UpdateUserPosition*
+  commentId: Overload:Stargazer.IUserUpdateReceiver.UpdateUserPosition
+  href: Stargazer.IUserUpdateReceiver.html#Stargazer_IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  name: UpdateUserPosition
+  nameWithType: IUserUpdateReceiver.UpdateUserPosition
+  fullName: Stargazer.IUserUpdateReceiver.UpdateUserPosition
+- uid: DataLayer.CelestialDataPackage{Stargazer.Star}
+  commentId: T:DataLayer.CelestialDataPackage{Stargazer.Star}
+  parent: DataLayer
+  definition: DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<Star>
+  nameWithType: CelestialDataPackage<Star>
+  fullName: DataLayer.CelestialDataPackage<Stargazer.Star>
+  nameWithType.vb: CelestialDataPackage(Of Star)
+  fullName.vb: DataLayer.CelestialDataPackage(Of Stargazer.Star)
+  name.vb: CelestialDataPackage(Of Star)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: DataLayer
+  commentId: N:DataLayer
+  href: DataLayer.html
+  name: DataLayer
+  nameWithType: DataLayer
+  fullName: DataLayer
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

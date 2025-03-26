@@ -1,19 +1,24 @@
 using Godot;
-using Stargazer;
-using System;
 
-public partial class SkyViewContainer : SubViewportContainer
+namespace Stargazer
 {
-	public SkyView SkyView { get; private set; }
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	/// <summary>
+	/// A basic container to hold the <see cref="Stargazer.SkyView"/>
+	/// </summary>
+	public partial class SkyViewContainer : SubViewportContainer
 	{
-		base._Ready();
-		SkyView = GetNode<SkyView>("SubViewport/SkyView");
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		/// <summary>
+		/// A reference to the <see cref="Stargazer.SkyView"/> child.
+		/// </summary>
+		public SkyView SkyView { get; private set; }
+		
+		/// <summary>
+		/// Gets the reference to the <see cref="Stargazer.SkyView"/> child
+		/// </summary>
+		public override void _Ready()
+		{
+			base._Ready();
+			SkyView = GetNode<SkyView>("SubViewport/SkyView");
+		}
 	}
 }

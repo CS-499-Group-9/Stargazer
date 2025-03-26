@@ -58,7 +58,6 @@ namespace DataLayer.Implementations
         /// <summary>
         /// Gets all stars that are brighter than a defined brightness.
         /// </summary>
-        /// <param name="maximumMagnitude">The minimum brightness of the stars to include.</param>
         /// <returns>A list of stars in the equatorial coordinate form.</returns>
         Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync()
         {

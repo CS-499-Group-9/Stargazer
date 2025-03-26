@@ -52,6 +52,11 @@ namespace Stargazer
 			Visible = false;
 
 		}
+
+		/// <summary>
+		/// Determines the number of gridlines to display for the given FOV each frame.
+		/// </summary>
+		/// <param name="delta"></param>
         public override void _Process(double delta)
         {
 			if (camera == null) return;
@@ -90,6 +95,10 @@ namespace Stargazer
 			Visible = showLines;
 		}
 
+		/// <summary>
+		/// Receives the <see cref="Camera3D"/> from the <see cref="SkyView"/>
+		/// </summary>
+		/// <param name="camera"></param>
 		public void SetCamera(Camera3D camera)
 		{
 			this.camera = camera;
@@ -97,7 +106,10 @@ namespace Stargazer
 		}
 
 
-		// Function to draw longitude lines
+		/// <summary>
+		/// Draws all the longitudinal lines on the screen
+		/// </summary>
+		/// <param name="imMesh">The <see cref="ImmediateMesh"/> used to draw the lines on.</param>
 		private void DrawLongitudeLines(ImmediateMesh imMesh)
 		{
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);
@@ -145,7 +157,10 @@ namespace Stargazer
 			imMesh.SurfaceEnd();
 		}
 
-		// Function to draw latitude lines
+		/// <summary>
+		/// Draws the longitudinal lines on the screen
+		/// </summary>
+		/// <param name="imMesh">The <see cref="ImmediateMesh"/>To draw the lines on.</param>
 		private void DrawLatitudeLines(ImmediateMesh imMesh)
 		{
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,greenMaterial);

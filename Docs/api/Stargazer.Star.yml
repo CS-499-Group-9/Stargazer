@@ -5,14 +5,22 @@ items:
   id: Star
   parent: Stargazer
   children:
-  - Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  - Stargazer.Star.Altitude
+  - Stargazer.Star.Azimuth
+  - Stargazer.Star.Distance
+  - Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
   - Stargazer.Star.GetLocation
-  - Stargazer.Star.altitude
-  - Stargazer.Star.azimuth
-  - Stargazer.Star.dist
-  - Stargazer.Star.mag
+  - Stargazer.Star.HipparcosId
+  - Stargazer.Star.Magnitude
+  - Stargazer.Star.Position2D
+  - Stargazer.Star.Position3D
+  - Stargazer.Star.StarName
+  - Stargazer.Star._Process(System.Double)
+  - Stargazer.Star._Ready
+  - Stargazer.Star.globalVars
+  - Stargazer.Star.horizontalStar
   - Stargazer.Star.radians
-  - Stargazer.Star.starName
+  - Stargazer.Star.starConverter
   langs:
   - csharp
   - vb
@@ -22,8 +30,8 @@ items:
   type: Class
   source:
     id: Star
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Star_ScriptSignals.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Star_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -164,8 +172,6 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
-  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -360,6 +366,33 @@ items:
     arguments:
     - type: System.String
       value: res://Code/Star.cs
+- uid: Stargazer.Star.globalVars
+  commentId: F:Stargazer.Star.globalVars
+  id: globalVars
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: globalVars
+  nameWithType: Star.globalVars
+  fullName: Stargazer.Star.globalVars
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: globalVars
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 14
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Globals globalVars
+    return:
+      type: Stargazer.Globals
+    content.vb: Private globalVars As Globals
 - uid: Stargazer.Star.radians
   commentId: F:Stargazer.Star.radians
   id: radians
@@ -374,11 +407,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -387,211 +420,306 @@ items:
     return:
       type: System.Single
     content.vb: Private Const radians As Single = 0.017453292
-- uid: Stargazer.Star.azimuth
-  commentId: F:Stargazer.Star.azimuth
-  id: azimuth
+- uid: Stargazer.Star.horizontalStar
+  commentId: F:Stargazer.Star.horizontalStar
+  id: horizontalStar
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: azimuth
-  nameWithType: Star.azimuth
-  fullName: Stargazer.Star.azimuth
+  name: horizontalStar
+  nameWithType: Star.horizontalStar
+  fullName: Stargazer.Star.horizontalStar
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: azimuth
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: horizontalStar
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 20
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: >-
-      [Export(PropertyHint.None, "")]
-
-      public float azimuth
+    content: private HorizontalStar horizontalStar
     return:
-      type: System.Single
-    content.vb: >-
-      <Export(PropertyHint.None, "")>
-
-      Public azimuth As Single
-  attributes:
-  - type: Godot.ExportAttribute
-    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
-    arguments:
-    - type: Godot.PropertyHint
-      value: "0"
-    - type: System.String
-      value: ''
-- uid: Stargazer.Star.altitude
-  commentId: F:Stargazer.Star.altitude
-  id: altitude
+      type: DataLayer.HorizontalObjects.HorizontalStar
+    content.vb: Private horizontalStar As HorizontalStar
+- uid: Stargazer.Star.starConverter
+  commentId: F:Stargazer.Star.starConverter
+  id: starConverter
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: altitude
-  nameWithType: Star.altitude
-  fullName: Stargazer.Star.altitude
+  name: starConverter
+  nameWithType: Star.starConverter
+  fullName: Stargazer.Star.starConverter
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: altitude
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: starConverter
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 21
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: >-
-      [Export(PropertyHint.None, "")]
-
-      public float altitude
+    content: private IEquatorialConverter<HorizontalStar> starConverter
     return:
-      type: System.Single
-    content.vb: >-
-      <Export(PropertyHint.None, "")>
-
-      Public altitude As Single
-  attributes:
-  - type: Godot.ExportAttribute
-    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
-    arguments:
-    - type: Godot.PropertyHint
-      value: "0"
-    - type: System.String
-      value: ''
-- uid: Stargazer.Star.dist
-  commentId: F:Stargazer.Star.dist
-  id: dist
+      type: DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar}
+    content.vb: Private starConverter As IEquatorialConverter(Of HorizontalStar)
+- uid: Stargazer.Star.HipparcosId
+  commentId: P:Stargazer.Star.HipparcosId
+  id: HipparcosId
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: dist
-  nameWithType: Star.dist
-  fullName: Stargazer.Star.dist
-  type: Field
+  name: HipparcosId
+  nameWithType: Star.HipparcosId
+  fullName: Stargazer.Star.HipparcosId
+  type: Property
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: dist
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: HipparcosId
     path: ../Stargazer-Godot/Code/Star.cs
     startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: The Hipparcos Id of the star
+  example: []
   syntax:
-    content: >-
-      [Export(PropertyHint.None, "")]
-
-      public float dist
+    content: public int HipparcosId { get; }
+    parameters: []
     return:
-      type: System.Single
-    content.vb: >-
-      <Export(PropertyHint.None, "")>
-
-      Public dist As Single
-  attributes:
-  - type: Godot.ExportAttribute
-    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
-    arguments:
-    - type: Godot.PropertyHint
-      value: "0"
-    - type: System.String
-      value: ''
-- uid: Stargazer.Star.mag
-  commentId: F:Stargazer.Star.mag
-  id: mag
+      type: System.Int32
+    content.vb: Public ReadOnly Property HipparcosId As Integer
+  overload: Stargazer.Star.HipparcosId*
+- uid: Stargazer.Star.Azimuth
+  commentId: P:Stargazer.Star.Azimuth
+  id: Azimuth
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: mag
-  nameWithType: Star.mag
-  fullName: Stargazer.Star.mag
-  type: Field
+  name: Azimuth
+  nameWithType: Star.Azimuth
+  fullName: Stargazer.Star.Azimuth
+  type: Property
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: mag
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Azimuth
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 23
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Rotation from North (X+), in degrees
+  example: []
   syntax:
-    content: >-
-      [Export(PropertyHint.None, "")]
-
-      public float mag
+    content: public float Azimuth { get; }
+    parameters: []
     return:
       type: System.Single
-    content.vb: >-
-      <Export(PropertyHint.None, "")>
-
-      Public mag As Single
-  attributes:
-  - type: Godot.ExportAttribute
-    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
-    arguments:
-    - type: Godot.PropertyHint
-      value: "0"
-    - type: System.String
-      value: ''
-- uid: Stargazer.Star.starName
-  commentId: F:Stargazer.Star.starName
-  id: starName
+    content.vb: Public ReadOnly Property Azimuth As Single
+  overload: Stargazer.Star.Azimuth*
+- uid: Stargazer.Star.Altitude
+  commentId: P:Stargazer.Star.Altitude
+  id: Altitude
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: starName
-  nameWithType: Star.starName
-  fullName: Stargazer.Star.starName
-  type: Field
+  name: Altitude
+  nameWithType: Star.Altitude
+  fullName: Stargazer.Star.Altitude
+  type: Property
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: starName
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Altitude
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 24
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Rotation from Y=0, in degrees.
+  example: []
   syntax:
-    content: >-
-      [Export(PropertyHint.None, "")]
-
-      public string starName
+    content: public float Altitude { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Altitude As Single
+  overload: Stargazer.Star.Altitude*
+- uid: Stargazer.Star.Distance
+  commentId: P:Stargazer.Star.Distance
+  id: Distance
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: Distance
+  nameWithType: Star.Distance
+  fullName: Stargazer.Star.Distance
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Distance
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 38
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Distance from (0, 0, 0)
+  example: []
+  syntax:
+    content: public float Distance { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Distance As Single
+  overload: Stargazer.Star.Distance*
+- uid: Stargazer.Star.Magnitude
+  commentId: P:Stargazer.Star.Magnitude
+  id: Magnitude
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: Magnitude
+  nameWithType: Star.Magnitude
+  fullName: Stargazer.Star.Magnitude
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Magnitude
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 43
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Apparent brightness of the star
+  example: []
+  syntax:
+    content: public float Magnitude { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Magnitude As Single
+  overload: Stargazer.Star.Magnitude*
+- uid: Stargazer.Star.StarName
+  commentId: P:Stargazer.Star.StarName
+  id: StarName
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: StarName
+  nameWithType: Star.StarName
+  fullName: Stargazer.Star.StarName
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: StarName
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 48
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Common name of the star
+  example: []
+  syntax:
+    content: public string StarName { get; }
+    parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <Export(PropertyHint.None, "")>
-
-      Public starName As String
-  attributes:
-  - type: Godot.ExportAttribute
-    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
-    arguments:
-    - type: Godot.PropertyHint
-      value: "0"
-    - type: System.String
-      value: ''
+    content.vb: Public ReadOnly Property StarName As String
+  overload: Stargazer.Star.StarName*
+- uid: Stargazer.Star.Position3D
+  commentId: P:Stargazer.Star.Position3D
+  id: Position3D
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: Position3D
+  nameWithType: Star.Position3D
+  fullName: Stargazer.Star.Position3D
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Position3D
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 53
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Used to safely request the position of the star from a thread other than the main thread.
+  example: []
+  syntax:
+    content: public Vector3 Position3D { get; private set; }
+    parameters: []
+    return:
+      type: Godot.Vector3
+    content.vb: Public Property Position3D As Vector3
+  overload: Stargazer.Star.Position3D*
+- uid: Stargazer.Star.Position2D
+  commentId: F:Stargazer.Star.Position2D
+  id: Position2D
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: Position2D
+  nameWithType: Star.Position2D
+  fullName: Stargazer.Star.Position2D
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Position2D
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 58
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Will be used to get the 2D position of the star (maybe... maybe not..)
+  example: []
+  syntax:
+    content: public Vector2 Position2D
+    return:
+      type: Godot.Vector2
+    content.vb: Public Position2D As Vector2
 - uid: Stargazer.Star.GetLocation
   commentId: M:Stargazer.Star.GetLocation
   id: GetLocation
@@ -606,52 +734,132 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetLocation
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 27
+    startLine: 65
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Calculates the position of the object in Godot cartesian coordinates.
+  example: []
   syntax:
     content: private Vector3 GetLocation()
     return:
       type: Godot.Vector3
+      description: A <xref href="Godot.Vector3" data-throw-if-not-resolved="false"></xref> for the position.
     content.vb: Private Function GetLocation() As Vector3
   overload: Stargazer.Star.GetLocation*
-- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
-  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
-  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+- uid: Stargazer.Star._Ready
+  commentId: M:Stargazer.Star._Ready
+  id: _Ready
   parent: Stargazer.Star
   langs:
   - csharp
   - vb
-  name: FromHorizontal(HorizontalStar)
-  nameWithType: Star.FromHorizontal(HorizontalStar)
-  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
+  name: _Ready()
+  nameWithType: Star._Ready()
+  fullName: Stargazer.Star._Ready()
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Ready
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 79
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+
+    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
+
+    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  example: []
+  syntax:
+    content: public override void _Ready()
+    content.vb: Public Overrides Sub _Ready()
+  overridden: Godot.Node._Ready
+  overload: Stargazer.Star._Ready*
+- uid: Stargazer.Star._Process(System.Double)
+  commentId: M:Stargazer.Star._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: Star._Process(double)
+  fullName: Stargazer.Star._Process(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/Star.cs
+    startLine: 89
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Calculates the position of the star each frame.
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+      description: Unused.
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.Star._Process*
+  nameWithType.vb: Star._Process(Double)
+  fullName.vb: Stargazer.Star._Process(Double)
+  name.vb: _Process(Double)
+- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  parent: Stargazer.Star
+  langs:
+  - csharp
+  - vb
+  name: FromHorizontal(HorizontalStar, IEquatorialConverter<HorizontalStar>)
+  nameWithType: Star.FromHorizontal(HorizontalStar, IEquatorialConverter<HorizontalStar>)
+  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar, DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 45
+    startLine: 100
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Populates the field according to the field in a <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>
   example: []
   syntax:
-    content: public void FromHorizontal(HorizontalStar star)
+    content: public void FromHorizontal(HorizontalStar star, IEquatorialConverter<HorizontalStar> starConverter)
     parameters:
     - id: star
       type: DataLayer.HorizontalObjects.HorizontalStar
       description: The <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>
-    content.vb: Public Sub FromHorizontal(star As HorizontalStar)
+    - id: starConverter
+      type: DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar}
+    content.vb: Public Sub FromHorizontal(star As HorizontalStar, starConverter As IEquatorialConverter(Of HorizontalStar))
   overload: Stargazer.Star.FromHorizontal*
+  nameWithType.vb: Star.FromHorizontal(HorizontalStar, IEquatorialConverter(Of HorizontalStar))
+  fullName.vb: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar, DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar))
+  name.vb: FromHorizontal(HorizontalStar, IEquatorialConverter(Of HorizontalStar))
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -2671,56 +2879,6 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7488,6 +7646,13 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
+- uid: Stargazer.Globals
+  commentId: T:Stargazer.Globals
+  parent: Stargazer
+  href: Stargazer.Globals.html
+  name: Globals
+  nameWithType: Globals
+  fullName: Stargazer.Globals
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -7499,30 +7664,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: Stargazer.Star.GetLocation*
-  commentId: Overload:Stargazer.Star.GetLocation
-  href: Stargazer.Star.html#Stargazer_Star_GetLocation
-  name: GetLocation
-  nameWithType: Star.GetLocation
-  fullName: Stargazer.Star.GetLocation
-- uid: Godot.Vector3
-  commentId: T:Godot.Vector3
-  parent: Godot
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: Godot.Vector3
 - uid: DataLayer.HorizontalObjects.HorizontalStar
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
   parent: DataLayer.HorizontalObjects
@@ -7530,12 +7671,6 @@ references:
   name: HorizontalStar
   nameWithType: HorizontalStar
   fullName: DataLayer.HorizontalObjects.HorizontalStar
-- uid: Stargazer.Star.FromHorizontal*
-  commentId: Overload:Stargazer.Star.FromHorizontal
-  href: Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_
-  name: FromHorizontal
-  nameWithType: Star.FromHorizontal
-  fullName: Stargazer.Star.FromHorizontal
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
   href: DataLayer.html
@@ -7558,3 +7693,263 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar}
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IEquatorialConverter`1
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  name: IEquatorialConverter<HorizontalStar>
+  nameWithType: IEquatorialConverter<HorizontalStar>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>
+  nameWithType.vb: IEquatorialConverter(Of HorizontalStar)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar)
+  name.vb: IEquatorialConverter(Of HorizontalStar)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialConverter`1
+  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  name: IEquatorialConverter<T>
+  nameWithType: IEquatorialConverter<T>
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
+  nameWithType.vb: IEquatorialConverter(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
+  name.vb: IEquatorialConverter(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialConverter`1
+    name: IEquatorialConverter
+    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: Stargazer.Star.HipparcosId*
+  commentId: Overload:Stargazer.Star.HipparcosId
+  href: Stargazer.Star.html#Stargazer_Star_HipparcosId
+  name: HipparcosId
+  nameWithType: Star.HipparcosId
+  fullName: Stargazer.Star.HipparcosId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Stargazer.Star.Azimuth*
+  commentId: Overload:Stargazer.Star.Azimuth
+  href: Stargazer.Star.html#Stargazer_Star_Azimuth
+  name: Azimuth
+  nameWithType: Star.Azimuth
+  fullName: Stargazer.Star.Azimuth
+- uid: Stargazer.Star.Altitude*
+  commentId: Overload:Stargazer.Star.Altitude
+  href: Stargazer.Star.html#Stargazer_Star_Altitude
+  name: Altitude
+  nameWithType: Star.Altitude
+  fullName: Stargazer.Star.Altitude
+- uid: Stargazer.Star.Distance*
+  commentId: Overload:Stargazer.Star.Distance
+  href: Stargazer.Star.html#Stargazer_Star_Distance
+  name: Distance
+  nameWithType: Star.Distance
+  fullName: Stargazer.Star.Distance
+- uid: Stargazer.Star.Magnitude*
+  commentId: Overload:Stargazer.Star.Magnitude
+  href: Stargazer.Star.html#Stargazer_Star_Magnitude
+  name: Magnitude
+  nameWithType: Star.Magnitude
+  fullName: Stargazer.Star.Magnitude
+- uid: Stargazer.Star.StarName*
+  commentId: Overload:Stargazer.Star.StarName
+  href: Stargazer.Star.html#Stargazer_Star_StarName
+  name: StarName
+  nameWithType: Star.StarName
+  fullName: Stargazer.Star.StarName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Stargazer.Star.Position3D*
+  commentId: Overload:Stargazer.Star.Position3D
+  href: Stargazer.Star.html#Stargazer_Star_Position3D
+  name: Position3D
+  nameWithType: Star.Position3D
+  fullName: Stargazer.Star.Position3D
+- uid: Godot.Vector3
+  commentId: T:Godot.Vector3
+  parent: Godot
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Godot.Vector3
+- uid: Godot.Vector2
+  commentId: T:Godot.Vector2
+  parent: Godot
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Godot.Vector2
+- uid: Stargazer.Star.GetLocation*
+  commentId: Overload:Stargazer.Star.GetLocation
+  href: Stargazer.Star.html#Stargazer_Star_GetLocation
+  name: GetLocation
+  nameWithType: Star.GetLocation
+  fullName: Stargazer.Star.GetLocation
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.GodotObject.#ctor
+  commentId: M:Godot.GodotObject.#ctor
+  isExternal: true
+  name: GodotObject()
+  nameWithType: GodotObject.GodotObject()
+  fullName: Godot.GodotObject.GodotObject()
+  nameWithType.vb: GodotObject.New()
+  fullName.vb: Godot.GodotObject.New()
+  name.vb: New()
+  spec.csharp:
+  - uid: Godot.GodotObject.#ctor
+    name: GodotObject
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - name: )
+- uid: Stargazer.Star._Ready*
+  commentId: Overload:Stargazer.Star._Ready
+  href: Stargazer.Star.html#Stargazer_Star__Ready
+  name: _Ready
+  nameWithType: Star._Ready
+  fullName: Stargazer.Star._Ready
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Stargazer.Star._Process*
+  commentId: Overload:Stargazer.Star._Process
+  href: Stargazer.Star.html#Stargazer_Star__Process_System_Double_
+  name: _Process
+  nameWithType: Star._Process
+  fullName: Stargazer.Star._Process
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Stargazer.Star.FromHorizontal*
+  commentId: Overload:Stargazer.Star.FromHorizontal
+  href: Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__
+  name: FromHorizontal
+  nameWithType: Star.FromHorizontal
+  fullName: Stargazer.Star.FromHorizontal

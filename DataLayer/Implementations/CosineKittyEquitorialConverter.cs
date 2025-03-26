@@ -28,16 +28,26 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
-
+        /// <summary>
+        /// Gets the current universal time used to perform calculations.
+        /// </summary>
         public DateTime CurrentTime { get { return currentTime; } }
 
-        public void UpdateTime(double increment) 
+        /// <summary>
+        /// Increments the internal universal time by seconds
+        /// </summary>
+        /// <param name="seconds">The number of seconds to increment the universal time.</param>
+        public void IncrementTimeBy(double seconds) 
         { 
-            currentTime = currentTime.AddSeconds(increment);
+            currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime); 
         }
 
-        public void UpdatePosition(T hoBody)
+        /// <summary>
+        /// Updates the altitude and azimuth of the passed <see cref="HorizontalBody"/>
+        /// </summary>
+        /// <param name="hoBody">The <see cref="HorizontalBody"/> to perform the calculation on.</param>
+        public void UpdatePositionOf(T hoBody)
         {
             var eqBody = hoBody.EquatorialBody;
             Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance);

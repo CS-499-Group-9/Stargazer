@@ -9,6 +9,10 @@ namespace DataLayer.HorizontalObjects
     public class HorizontalStar : HorizontalBody
     {
         EquatorialStar EquatorialStar;
+        /// <summary>
+        /// Creates a new object
+        /// </summary>
+        /// <param name="body">The <see cref="EquatorialStar"/> the object is based on.</param>
         public HorizontalStar(EquatorialStar body) : base(body)
         {
             EquatorialStar = body;

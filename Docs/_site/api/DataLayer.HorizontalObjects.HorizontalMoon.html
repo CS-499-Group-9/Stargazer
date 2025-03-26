@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/animated-orbit/apiSpec/new?filename=DataLayer_HorizontalObjects_HorizontalMoon.md&amp;value=---%0Auid%3A%20DataLayer.HorizontalObjects.HorizontalMoon%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/update-docs/apiSpec/new?filename=DataLayer_HorizontalObjects_HorizontalMoon.md&amp;value=---%0Auid%3A%20DataLayer.HorizontalObjects.HorizontalMoon%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_HorizontalObjects_HorizontalMoon" data-uid="DataLayer.HorizontalObjects.HorizontalMoon" class="text-break">
-Class HorizontalMoon  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class HorizontalMoon  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Class HorizontalMoon  <a class="header-action link-secondary" title="View source
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class HorizontalMoon : HorizontalBody</code></pre>
+    <pre><code class="lang-csharp hljs">public class HorizontalMoon : HorizontalBody, IPhaseable</code></pre>
   </div>
 
 
@@ -117,11 +117,20 @@ Class HorizontalMoon  <a class="header-action link-secondary" title="View source
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DataLayer.Interfaces.IPhaseable.html">IPhaseable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody">HorizontalBody.EquatorialBody</a>
+    </div>
     <div>
       <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude">HorizontalBody.Altitude</a>
     </div>
@@ -162,6 +171,77 @@ Class HorizontalMoon  <a class="header-action link-secondary" title="View source
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DataLayer_HorizontalObjects_HorizontalMoon__ctor_" data-uid="DataLayer.HorizontalObjects.HorizontalMoon.#ctor*"></a>
+
+  <h3 id="DataLayer_HorizontalObjects_HorizontalMoon__ctor_DataLayer_EquatorialObjects_EquatorialCelestialBody_" data-uid="DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)">
+  HorizontalMoon(EquatorialCelestialBody)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new moon</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HorizontalMoon(EquatorialCelestialBody body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>body</code> <a class="xref" href="DataLayer.EquatorialObjects.EquatorialCelestialBody.html">EquatorialCelestialBody</a></dt>
+    <dd><p>The <a class="xref" href="DataLayer.EquatorialObjects.EquatorialCelestialBody.html">EquatorialCelestialBody</a> used to perform calculations.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DataLayer_HorizontalObjects_HorizontalMoon_moonPhase" data-uid="DataLayer.HorizontalObjects.HorizontalMoon.moonPhase">
+  moonPhase
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private double moonPhase</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -170,15 +250,15 @@ Class HorizontalMoon  <a class="header-action link-secondary" title="View source
 
   <h3 id="DataLayer_HorizontalObjects_HorizontalMoon_Phase" data-uid="DataLayer.HorizontalObjects.HorizontalMoon.Phase">
   Phase
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>A double representing the moon phase from 0° to 360°</p>
+  <div class="markdown level1 summary"><p>The phase in degrees (angle formed between the object and the earth and the object and the sun.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double Phase { get; internal set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public double Phase { get; set; }</code></pre>
   </div>
 
 
@@ -202,7 +282,7 @@ Class HorizontalMoon  <a class="header-action link-secondary" title="View source
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/HorizontalObjects/HorizontalMoon.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -21,10 +21,7 @@ namespace Stargazer
 		/// The scene used to instantiate the star objects.
 		/// </summary>
 		[Export] public PackedScene StarScene { get; set; }
-		/// <summary>
-		/// The scene used to instantiate the labels for stars
-		/// </summary>
-		[Export] public PackedScene LabelScene { get; set; }
+
 
 		private Node3D StarContainer;
 		private IEquatorialConverter<HorizontalStar> starConverter;
@@ -56,22 +53,25 @@ namespace Stargazer
 			AddChild(StarContainer);
 		}
 
-		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
-		// Perhaps more to follow.....
-		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
+		/// <summary>
+		/// Used to instantiate a new star and place it in the scene tree (draw it).
+		/// </summary>
+		/// <param name="horizontalStar">The <see cref="HorizontalStar"/> to base the <see cref="Star"/> on.</param>
+		/// <returns>A reference to the new <see cref="Star"/></returns>
 		public Star SpawnStar(HorizontalStar horizontalStar)
 		{
-			// 			GD.Print($@"
-			// Star ID: {horizontalStar.StarId}
-			//  Hip ID: {horizontalStar.HipparcosId}");
+
 			Star star = StarScene.Instantiate<Star>();
 			star.FromHorizontal(horizontalStar, starConverter);
+			// Because this may be called by the constellation container after the star container has been added to the tree...
 			if (StarContainer.IsInsideTree())
 			{
+				// Can only be added by the main thread. Notify Godot to complete this at the end of the current frame.
 				StarContainer.CallDeferred("add_child", star);
 			}
 			else
 			{
+				// Use whatever thread has called this method.
 				StarContainer.AddChild(star);
 			}
 			return star;

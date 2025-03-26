@@ -33,12 +33,14 @@ references:
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
   commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
+  parent: DataLayer.EquatorialObjects
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
   name: EquatorialMessierObject
   nameWithType: EquatorialMessierObject
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
 - uid: DataLayer.EquatorialObjects.EquatorialStar
   commentId: T:DataLayer.EquatorialObjects.EquatorialStar
+  parent: DataLayer.EquatorialObjects
   href: DataLayer.EquatorialObjects.EquatorialStar.html
   name: EquatorialStar
   nameWithType: EquatorialStar

@@ -16,10 +16,10 @@ namespace DataLayer.Interfaces
         /// Performs the moon calculation
         /// </summary>
         /// <returns>A <see cref="HorizontalMoon"/> object.</returns>
-        public HorizontalMoon CalculateMoon();
+        public HorizontalMoon CreateMoon();
 
-        public void UpdateTime(double increment);
+        public void IncrementTimeBy(double increment);
 
-        public void UpdatePosition(HorizontalMoon moon);
+        public void UpdatePositionOf(HorizontalMoon moon);
     }
 }

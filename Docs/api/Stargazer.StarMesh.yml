@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     id: StarMesh
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.StarMesh_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.StarMesh_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -419,8 +419,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/StarMesh.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateColorFromParent
     path: ../Stargazer-Godot/Code/StarMesh.cs
     startLine: 13
@@ -451,8 +451,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/StarMesh.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: BvToGodotColor
     path: ../Stargazer-Godot/Code/StarMesh.cs
     startLine: 19
@@ -485,8 +485,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/StarMesh.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ApplyEmissionColor
     path: ../Stargazer-Godot/Code/StarMesh.cs
     startLine: 32

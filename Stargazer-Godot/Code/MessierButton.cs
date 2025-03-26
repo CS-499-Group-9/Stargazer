@@ -9,30 +9,18 @@ namespace Stargazer
     /// </summary>
     public partial class MessierButton : Control
     {
+        /// <summary>
+        /// Used to broadcast the notification to toggle the visibility of Messier Deep Space Objects.
+        /// </summary>
+        public Action<bool> MessierObjectsToggled;
 
-        // TODO: DELETE THIS! This is just used right now to show how to pass the user request from the update button.
-        // This will need to be cut and pasted into the UpdateButton class.
-        public Func<double, double, DateTime, Task> NotifyControllerOfUserUpdate;
-
-        // TODO: Uncomment this next line and provide code comments.
-        //public Action<bool> MessierObjectsToggled;
-
-        // TODO: DELETE THIS
-        // This will need to be attached to the signal on the UpdateButton class, and get the lat/long/time from the other objects.
-        private async void RunTheThing()
-        {
-           
-
-        }
-
-        // Set the button signal to this. Or it can actually be set directly to MessierObjectsToggled above.
+        /// <summary>
+        /// Receives the <see cref="Signal"/> from the <see cref="CheckBox"/>
+        /// </summary>
+        /// <param name="state">True if the Messier Objects should be visible.</param>
         private void ToggleMessierObjects(bool state)
         {
-            // TODO: Uncomment this next line once the messier objects are ready to go live.
-            //MessierObjectsToggled(state);
+            MessierObjectsToggled(state);
         }
-
-        // TODO: Delete this struct.
-        
     }
 }

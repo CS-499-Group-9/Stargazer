@@ -5,6 +5,7 @@ items:
   id: HorizontalMessierObject
   parent: DataLayer.HorizontalObjects
   children:
+  - DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)
   - DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   - DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   - DataLayer.HorizontalObjects.HorizontalMessierObject.NewGeneralCatalog
@@ -22,11 +23,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalMessierObject
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -39,6 +40,7 @@ items:
   - System.Object
   - DataLayer.HorizontalObjects.HorizontalBody
   inheritedMembers:
+  - DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
   - DataLayer.HorizontalObjects.HorizontalBody.Altitude
   - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
@@ -50,6 +52,41 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  commentId: M:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  id: '#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)'
+  parent: DataLayer.HorizontalObjects.HorizontalMessierObject
+  langs:
+  - csharp
+  - vb
+  name: HorizontalMessierObject(EquatorialMessierObject)
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject(EquatorialMessierObject)
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
+    startLine: 14
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: Creates a new new object based on a <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public HorizontalMessierObject(EquatorialMessierObject body)
+    parameters:
+    - id: body
+      type: DataLayer.EquatorialObjects.EquatorialMessierObject
+      description: The <xref href="DataLayer.EquatorialObjects.EquatorialMessierObject" data-throw-if-not-resolved="false"></xref> the object is based on.
+    content.vb: Public Sub New(body As EquatorialMessierObject)
+  overload: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
+  nameWithType.vb: HorizontalMessierObject.New(EquatorialMessierObject)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  name.vb: New(EquatorialMessierObject)
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.MessierId
   id: MessierId
@@ -64,11 +101,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 11
+    startLine: 28
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -95,11 +132,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 15
+    startLine: 32
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -126,11 +163,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 19
+    startLine: 36
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -157,11 +194,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 23
+    startLine: 40
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -188,11 +225,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 27
+    startLine: 44
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -219,11 +256,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 31
+    startLine: 48
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -250,11 +287,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 35
+    startLine: 52
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -308,6 +345,13 @@ references:
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   parent: DataLayer.HorizontalObjects.HorizontalBody
@@ -562,6 +606,44 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+  commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  name: EquatorialMessierObject
+  nameWithType: EquatorialMessierObject
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
+  href: DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor_DataLayer_EquatorialObjects_EquatorialMessierObject_
+  name: HorizontalMessierObject
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject
+  nameWithType.vb: HorizontalMessierObject.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId

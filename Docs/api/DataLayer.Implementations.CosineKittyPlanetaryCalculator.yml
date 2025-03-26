@@ -6,9 +6,12 @@ items:
   parent: DataLayer.Implementations
   children:
   - DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
-  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(System.Double)
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
   - DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
   - DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
+  - DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
   - DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
   langs:
   - csharp
@@ -20,23 +23,23 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: CosineKittyPlanetaryCalculator
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   summary: Uses the <xref href="CosineKitty.Astronomy" data-throw-if-not-resolved="false"></xref> library to calculate the position and magnitude of the planets.
   example: []
   syntax:
-    content: 'internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizonalPlanet>'
-    content.vb: Friend Class CosineKittyPlanetaryCalculator Implements IPlanetaryCalculator(Of HorizonalPlanet)
+    content: 'internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizontalPlanet>'
+    content.vb: Friend Class CosineKittyPlanetaryCalculator Implements IPlanetaryCalculator(Of HorizontalPlanet)
   inheritance:
   - System.Object
   implements:
-  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -59,19 +62,19 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _bodies
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   syntax:
-    content: private readonly IEnumerable<Body> _bodies
+    content: private readonly IDictionary<string, Body> _bodies
     return:
-      type: System.Collections.Generic.IEnumerable{CosineKitty.Body}
-    content.vb: Private ReadOnly _bodies As IEnumerable(Of Body)
+      type: System.Collections.Generic.IDictionary{System.String,CosineKitty.Body}
+    content.vb: Private ReadOnly _bodies As IDictionary(Of String, Body)
 - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
   commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
   id: observer
@@ -86,11 +89,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: observer
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -99,6 +102,33 @@ items:
     return:
       type: CosineKitty.Observer
     content.vb: Private ReadOnly observer As Observer
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  id: currentTime
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: currentTime
+  nameWithType: CosineKittyPlanetaryCalculator.currentTime
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: currentTime
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 20
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private DateTime currentTime
+    return:
+      type: System.DateTime
+    content.vb: Private currentTime As Date
 - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
   commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
   id: astroTime
@@ -113,19 +143,19 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   syntax:
-    content: private readonly AstroTime astroTime
+    content: private AstroTime astroTime
     return:
       type: CosineKitty.AstroTime
-    content.vb: Private ReadOnly astroTime As AstroTime
+    content.vb: Private astroTime As AstroTime
 - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
   commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.#ctor(System.Double,System.Double,System.DateTime)
   id: '#ctor(System.Double,System.Double,System.DateTime)'
@@ -140,11 +170,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -167,39 +197,110 @@ items:
   nameWithType.vb: CosineKittyPlanetaryCalculator.New(Double, Double, Date)
   fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.New(Double, Double, Date)
   name.vb: New(Double, Double, Date)
-- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  id: CalculatePlanets
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  id: CreatePlanets
   parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
   langs:
   - csharp
   - vb
-  name: CalculatePlanets()
-  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets()
-  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets()
+  name: CreatePlanets()
+  nameWithType: CosineKittyPlanetaryCalculator.CreatePlanets()
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets()
   type: Method
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: CalculatePlanets
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
     path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
-    startLine: 36
+    startLine: 51
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   summary: Performs the calculations for all planets.
   example: []
   syntax:
-    content: public IEnumerable<HorizonalPlanet> CalculatePlanets()
+    content: public IEnumerable<HorizontalPlanet> CreatePlanets()
     return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
       description: A <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> in horizontal coordinate form.
-    content.vb: Public Function CalculatePlanets() As IEnumerable(Of HorizonalPlanet)
-  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets*
+    content.vb: Public Function CreatePlanets() As IEnumerable(Of HorizontalPlanet)
+  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets*
   implements:
-  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.CreatePlanets
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: CosineKittyPlanetaryCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 69
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Increments the internal universal time used to perform the calculations in <xref href="DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: The number of seconds to increment the time.
+    content.vb: Public Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy*
+  implements:
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.IncrementTimeBy(System.Double)
+  nameWithType.vb: CosineKittyPlanetaryCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: CosineKittyPlanetaryCalculator.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyPlanetaryCalculator.cs
+    startLine: 79
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Updates the altitude and azimuth of the planet.
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalPlanet planet)
+    parameters:
+    - id: planet
+      type: DataLayer.HorizontalObjects.HorizontalPlanet
+      description: The planet object to perform the calculations on and update.
+    content.vb: Public Sub UpdatePositionOf(planet As HorizontalPlanet)
+  overload: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
 references:
 - uid: CosineKitty.Astronomy
   commentId: T:CosineKitty.Astronomy
@@ -240,25 +341,25 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
   parent: DataLayer.Interfaces
   definition: DataLayer.Interfaces.IPlanetaryCalculator`1
   href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<HorizonalPlanet>
-  nameWithType: IPlanetaryCalculator<HorizonalPlanet>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizonalPlanet>
-  nameWithType.vb: IPlanetaryCalculator(Of HorizonalPlanet)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizonalPlanet)
-  name.vb: IPlanetaryCalculator(Of HorizonalPlanet)
+  name: IPlanetaryCalculator<HorizontalPlanet>
+  nameWithType: IPlanetaryCalculator<HorizontalPlanet>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>
+  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet)
+  name.vb: IPlanetaryCalculator(Of HorizontalPlanet)
   spec.csharp:
   - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
     name: IPlanetaryCalculator
     href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
   - name: <
-  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
-    name: HorizonalPlanet
-    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
   - name: '>'
   spec.vb:
   - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
@@ -267,9 +368,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
-    name: HorizonalPlanet
-    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
   - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
@@ -544,66 +645,84 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: System.Collections.Generic.IEnumerable{CosineKitty.Body}
-  commentId: T:System.Collections.Generic.IEnumerable{CosineKitty.Body}
+- uid: System.Collections.Generic.IDictionary{System.String,CosineKitty.Body}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,CosineKitty.Body}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Body>
-  nameWithType: IEnumerable<Body>
-  fullName: System.Collections.Generic.IEnumerable<CosineKitty.Body>
-  nameWithType.vb: IEnumerable(Of Body)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of CosineKitty.Body)
-  name.vb: IEnumerable(Of Body)
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, Body>
+  nameWithType: IDictionary<string, Body>
+  fullName: System.Collections.Generic.IDictionary<string, CosineKitty.Body>
+  nameWithType.vb: IDictionary(Of String, Body)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, CosineKitty.Body)
+  name.vb: IDictionary(Of String, Body)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: CosineKitty.Body
     name: Body
     isExternal: true
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: (
   - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
   - name: " "
   - uid: CosineKitty.Body
     name: Body
     isExternal: true
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: <
-  - name: T
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: (
   - name: Of
   - name: " "
-  - name: T
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
   - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
@@ -655,6 +774,17 @@ references:
   name: CosineKitty
   nameWithType: CosineKitty
   fullName: CosineKitty
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: CosineKitty.AstroTime
   commentId: T:CosineKitty.AstroTime
   parent: CosineKitty
@@ -682,65 +812,23 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
-- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets*
-  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CalculatePlanets
-  name: CalculatePlanets
-  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets
-  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
-  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
-  parent: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}
-  definition: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  name: CalculatePlanets()
-  nameWithType: IPlanetaryCalculator<HorizonalPlanet>.CalculatePlanets()
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizonalPlanet>.CalculatePlanets()
-  nameWithType.vb: IPlanetaryCalculator(Of HorizonalPlanet).CalculatePlanets()
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizonalPlanet).CalculatePlanets()
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
-    name: CalculatePlanets
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizonalPlanet}.CalculatePlanets
-    name: CalculatePlanets
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  - name: (
-  - name: )
-- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
-  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<HorizonalPlanet>
-  nameWithType: IEnumerable<HorizonalPlanet>
-  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizonalPlanet>
-  nameWithType.vb: IEnumerable(Of HorizonalPlanet)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizonalPlanet)
-  name.vb: IEnumerable(Of HorizonalPlanet)
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
-    name: HorizonalPlanet
-    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: T
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -750,27 +838,266 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizonalPlanet
-    name: HorizonalPlanet
-    href: DataLayer.HorizontalObjects.HorizonalPlanet.html
+  - name: T
   - name: )
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  name: CalculatePlanets()
-  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets()
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets()
-  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets()
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets()
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets*
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CreatePlanets
+  name: CreatePlanets
+  nameWithType: CosineKittyPlanetaryCalculator.CreatePlanets
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.CreatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.CreatePlanets
+  parent: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  name: CreatePlanets()
+  nameWithType: IPlanetaryCalculator<HorizontalPlanet>.CreatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>.CreatePlanets()
+  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet).CreatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet).CreatePlanets()
   spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-    name: CalculatePlanets
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
   - name: (
   - name: )
   spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-    name: CalculatePlanets
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
   - name: (
   - name: )
+- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<HorizontalPlanet>
+  nameWithType: IEnumerable<HorizontalPlanet>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>
+  nameWithType.vb: IEnumerable(Of HorizontalPlanet)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet)
+  name.vb: IEnumerable(Of HorizontalPlanet)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  name: CreatePlanets()
+  nameWithType: IPlanetaryCalculator<T>.CreatePlanets()
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CreatePlanets()
+  nameWithType.vb: IPlanetaryCalculator(Of T).CreatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CreatePlanets()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  - name: (
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: CosineKittyPlanetaryCalculator.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy*
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: CosineKittyPlanetaryCalculator.IncrementTimeBy
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy(double)
+  nameWithType: IPlanetaryCalculator<HorizontalPlanet>.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>.IncrementTimeBy(double)
+  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet).IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet).IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  isExternal: true
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy(double)
+  nameWithType: IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  nameWithType.vb: IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf*
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf
+  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf
+  nameWithType: CosineKittyPlanetaryCalculator.UpdatePositionOf
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: IPlanetaryCalculator<HorizontalPlanet>.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet).UpdatePositionOf(HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet).UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: IPlanetaryCalculator<T>.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  nameWithType.vb: IPlanetaryCalculator(Of T).UpdatePositionOf(HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html

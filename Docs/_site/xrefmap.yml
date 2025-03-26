@@ -16,15 +16,15 @@ references:
   fullName.vb: DataLayer.CelestialDataPackage(Of T)
   nameWithType: CelestialDataPackage<T>
   nameWithType.vb: CelestialDataPackage(Of T)
-- uid: DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet},DataLayer.HorizontalObjects.HorizontalMoon)
-  name: CelestialDataPackage(IEnumerable<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, HorizontalStar>, ConcurrentDictionary<int, T>, IEnumerable<HorizonalPlanet>?, HorizontalMoon)
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizonalPlanet__DataLayer_HorizontalObjects_HorizontalMoon_
-  commentId: M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizonalPlanet},DataLayer.HorizontalObjects.HorizontalMoon)
-  name.vb: New(IEnumerable(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, HorizontalStar), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizonalPlanet), HorizontalMoon)
-  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Concurrent.ConcurrentDictionary<int, DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Concurrent.ConcurrentDictionary<int, T>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizonalPlanet>?, DataLayer.HorizontalObjects.HorizontalMoon)
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, T), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizonalPlanet), DataLayer.HorizontalObjects.HorizontalMoon)
-  nameWithType: CelestialDataPackage<T>.CelestialDataPackage(IEnumerable<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, HorizontalStar>, ConcurrentDictionary<int, T>, IEnumerable<HorizonalPlanet>?, HorizontalMoon)
-  nameWithType.vb: CelestialDataPackage(Of T).New(IEnumerable(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, HorizontalStar), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizonalPlanet), HorizontalMoon)
+- uid: DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  name: CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialConverter<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEquatorialConverter<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, T>, IEnumerable<HorizontalPlanet>?, IPlanetaryCalculator<HorizontalPlanet>, HorizontalMoon, IMoonCalculator)
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalMessierObject__DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IMoonCalculator_
+  commentId: M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  name.vb: New(IEnumerable(Of HorizontalStar), IEquatorialConverter(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEquatorialConverter(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet), HorizontalMoon, IMoonCalculator)
+  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>, DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalMessierObject>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Concurrent.ConcurrentDictionary<int, T>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>?, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>, DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject), DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalMessierObject), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, T), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
+  nameWithType: CelestialDataPackage<T>.CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialConverter<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEquatorialConverter<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, T>, IEnumerable<HorizontalPlanet>?, IPlanetaryCalculator<HorizontalPlanet>, HorizontalMoon, IMoonCalculator)
+  nameWithType.vb: CelestialDataPackage(Of T).New(IEnumerable(Of HorizontalStar), IEquatorialConverter(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEquatorialConverter(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet), HorizontalMoon, IMoonCalculator)
 - uid: DataLayer.CelestialDataPackage`1.#ctor*
   name: CelestialDataPackage
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_
@@ -35,23 +35,6 @@ references:
   fullName.vb: DataLayer.CelestialDataPackage(Of T).New
   nameWithType: CelestialDataPackage<T>.CelestialDataPackage
   nameWithType.vb: CelestialDataPackage(Of T).New
-- uid: DataLayer.CelestialDataPackage`1.ConstellationStars
-  name: ConstellationStars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_ConstellationStars
-  commentId: P:DataLayer.CelestialDataPackage`1.ConstellationStars
-  fullName: DataLayer.CelestialDataPackage<T>.ConstellationStars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).ConstellationStars
-  nameWithType: CelestialDataPackage<T>.ConstellationStars
-  nameWithType.vb: CelestialDataPackage(Of T).ConstellationStars
-- uid: DataLayer.CelestialDataPackage`1.ConstellationStars*
-  name: ConstellationStars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_ConstellationStars_
-  commentId: Overload:DataLayer.CelestialDataPackage`1.ConstellationStars
-  isSpec: "True"
-  fullName: DataLayer.CelestialDataPackage<T>.ConstellationStars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).ConstellationStars
-  nameWithType: CelestialDataPackage<T>.ConstellationStars
-  nameWithType.vb: CelestialDataPackage(Of T).ConstellationStars
 - uid: DataLayer.CelestialDataPackage`1.Constellations
   name: Constellations
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Constellations
@@ -69,41 +52,75 @@ references:
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Constellations
   nameWithType: CelestialDataPackage<T>.Constellations
   nameWithType.vb: CelestialDataPackage(Of T).Constellations
-- uid: DataLayer.CelestialDataPackage`1.DrawnConstellationStars
-  name: DrawnConstellationStars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnConstellationStars
-  commentId: P:DataLayer.CelestialDataPackage`1.DrawnConstellationStars
-  fullName: DataLayer.CelestialDataPackage<T>.DrawnConstellationStars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnConstellationStars
-  nameWithType: CelestialDataPackage<T>.DrawnConstellationStars
-  nameWithType.vb: CelestialDataPackage(Of T).DrawnConstellationStars
-- uid: DataLayer.CelestialDataPackage`1.DrawnConstellationStars*
-  name: DrawnConstellationStars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnConstellationStars_
-  commentId: Overload:DataLayer.CelestialDataPackage`1.DrawnConstellationStars
+- uid: DataLayer.CelestialDataPackage`1.DrawnStars
+  name: DrawnStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnStars
+  commentId: P:DataLayer.CelestialDataPackage`1.DrawnStars
+  fullName: DataLayer.CelestialDataPackage<T>.DrawnStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnStars
+  nameWithType: CelestialDataPackage<T>.DrawnStars
+  nameWithType.vb: CelestialDataPackage(Of T).DrawnStars
+- uid: DataLayer.CelestialDataPackage`1.DrawnStars*
+  name: DrawnStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_DrawnStars_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.DrawnStars
   isSpec: "True"
-  fullName: DataLayer.CelestialDataPackage<T>.DrawnConstellationStars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnConstellationStars
-  nameWithType: CelestialDataPackage<T>.DrawnConstellationStars
-  nameWithType.vb: CelestialDataPackage(Of T).DrawnConstellationStars
-- uid: DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
-  name: GetConstellationStar(int, Func<HorizontalStar, T>)
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetConstellationStar_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar__0__
-  commentId: M:DataLayer.CelestialDataPackage`1.GetConstellationStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
-  name.vb: GetConstellationStar(Integer, Func(Of HorizontalStar, T))
-  fullName: DataLayer.CelestialDataPackage<T>.GetConstellationStar(int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, T>)
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetConstellationStar(Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, T))
-  nameWithType: CelestialDataPackage<T>.GetConstellationStar(int, Func<HorizontalStar, T>)
-  nameWithType.vb: CelestialDataPackage(Of T).GetConstellationStar(Integer, Func(Of HorizontalStar, T))
-- uid: DataLayer.CelestialDataPackage`1.GetConstellationStar*
-  name: GetConstellationStar
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetConstellationStar_
-  commentId: Overload:DataLayer.CelestialDataPackage`1.GetConstellationStar
+  fullName: DataLayer.CelestialDataPackage<T>.DrawnStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).DrawnStars
+  nameWithType: CelestialDataPackage<T>.DrawnStars
+  nameWithType.vb: CelestialDataPackage(Of T).DrawnStars
+- uid: DataLayer.CelestialDataPackage`1.GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
+  name: GetStar(int, Func<HorizontalStar, T>)
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetStar_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar__0__
+  commentId: M:DataLayer.CelestialDataPackage`1.GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
+  name.vb: GetStar(Integer, Func(Of HorizontalStar, T))
+  fullName: DataLayer.CelestialDataPackage<T>.GetStar(int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, T>)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetStar(Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, T))
+  nameWithType: CelestialDataPackage<T>.GetStar(int, Func<HorizontalStar, T>)
+  nameWithType.vb: CelestialDataPackage(Of T).GetStar(Integer, Func(Of HorizontalStar, T))
+- uid: DataLayer.CelestialDataPackage`1.GetStar*
+  name: GetStar
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_GetStar_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.GetStar
   isSpec: "True"
-  fullName: DataLayer.CelestialDataPackage<T>.GetConstellationStar
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetConstellationStar
-  nameWithType: CelestialDataPackage<T>.GetConstellationStar
-  nameWithType.vb: CelestialDataPackage(Of T).GetConstellationStar
+  fullName: DataLayer.CelestialDataPackage<T>.GetStar
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).GetStar
+  nameWithType: CelestialDataPackage<T>.GetStar
+  nameWithType.vb: CelestialDataPackage(Of T).GetStar
+- uid: DataLayer.CelestialDataPackage`1.HorizontalStars
+  name: HorizontalStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_HorizontalStars
+  commentId: P:DataLayer.CelestialDataPackage`1.HorizontalStars
+  fullName: DataLayer.CelestialDataPackage<T>.HorizontalStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).HorizontalStars
+  nameWithType: CelestialDataPackage<T>.HorizontalStars
+  nameWithType.vb: CelestialDataPackage(Of T).HorizontalStars
+- uid: DataLayer.CelestialDataPackage`1.HorizontalStars*
+  name: HorizontalStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_HorizontalStars_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.HorizontalStars
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.HorizontalStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).HorizontalStars
+  nameWithType: CelestialDataPackage<T>.HorizontalStars
+  nameWithType.vb: CelestialDataPackage(Of T).HorizontalStars
+- uid: DataLayer.CelestialDataPackage`1.MessierConverter
+  name: MessierConverter
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierConverter
+  commentId: P:DataLayer.CelestialDataPackage`1.MessierConverter
+  fullName: DataLayer.CelestialDataPackage<T>.MessierConverter
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierConverter
+  nameWithType: CelestialDataPackage<T>.MessierConverter
+  nameWithType.vb: CelestialDataPackage(Of T).MessierConverter
+- uid: DataLayer.CelestialDataPackage`1.MessierConverter*
+  name: MessierConverter
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierConverter_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.MessierConverter
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.MessierConverter
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierConverter
+  nameWithType: CelestialDataPackage<T>.MessierConverter
+  nameWithType.vb: CelestialDataPackage(Of T).MessierConverter
 - uid: DataLayer.CelestialDataPackage`1.MessierObjects
   name: MessierObjects
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierObjects
@@ -138,6 +155,40 @@ references:
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Moon
   nameWithType: CelestialDataPackage<T>.Moon
   nameWithType.vb: CelestialDataPackage(Of T).Moon
+- uid: DataLayer.CelestialDataPackage`1.MoonCalculator
+  name: MoonCalculator
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MoonCalculator
+  commentId: P:DataLayer.CelestialDataPackage`1.MoonCalculator
+  fullName: DataLayer.CelestialDataPackage<T>.MoonCalculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MoonCalculator
+  nameWithType: CelestialDataPackage<T>.MoonCalculator
+  nameWithType.vb: CelestialDataPackage(Of T).MoonCalculator
+- uid: DataLayer.CelestialDataPackage`1.MoonCalculator*
+  name: MoonCalculator
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MoonCalculator_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.MoonCalculator
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.MoonCalculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).MoonCalculator
+  nameWithType: CelestialDataPackage<T>.MoonCalculator
+  nameWithType.vb: CelestialDataPackage(Of T).MoonCalculator
+- uid: DataLayer.CelestialDataPackage`1.PlanetaryCalculator
+  name: PlanetaryCalculator
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_PlanetaryCalculator
+  commentId: P:DataLayer.CelestialDataPackage`1.PlanetaryCalculator
+  fullName: DataLayer.CelestialDataPackage<T>.PlanetaryCalculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).PlanetaryCalculator
+  nameWithType: CelestialDataPackage<T>.PlanetaryCalculator
+  nameWithType.vb: CelestialDataPackage(Of T).PlanetaryCalculator
+- uid: DataLayer.CelestialDataPackage`1.PlanetaryCalculator*
+  name: PlanetaryCalculator
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_PlanetaryCalculator_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.PlanetaryCalculator
+  isSpec: "True"
+  fullName: DataLayer.CelestialDataPackage<T>.PlanetaryCalculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).PlanetaryCalculator
+  nameWithType: CelestialDataPackage<T>.PlanetaryCalculator
+  nameWithType.vb: CelestialDataPackage(Of T).PlanetaryCalculator
 - uid: DataLayer.CelestialDataPackage`1.Planets
   name: Planets
   href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Planets
@@ -155,23 +206,31 @@ references:
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Planets
   nameWithType: CelestialDataPackage<T>.Planets
   nameWithType.vb: CelestialDataPackage(Of T).Planets
-- uid: DataLayer.CelestialDataPackage`1.Stars
-  name: Stars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Stars
-  commentId: P:DataLayer.CelestialDataPackage`1.Stars
-  fullName: DataLayer.CelestialDataPackage<T>.Stars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).Stars
-  nameWithType: CelestialDataPackage<T>.Stars
-  nameWithType.vb: CelestialDataPackage(Of T).Stars
-- uid: DataLayer.CelestialDataPackage`1.Stars*
-  name: Stars
-  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Stars_
-  commentId: Overload:DataLayer.CelestialDataPackage`1.Stars
+- uid: DataLayer.CelestialDataPackage`1.StarConverter
+  name: StarConverter
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_StarConverter
+  commentId: P:DataLayer.CelestialDataPackage`1.StarConverter
+  fullName: DataLayer.CelestialDataPackage<T>.StarConverter
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).StarConverter
+  nameWithType: CelestialDataPackage<T>.StarConverter
+  nameWithType.vb: CelestialDataPackage(Of T).StarConverter
+- uid: DataLayer.CelestialDataPackage`1.StarConverter*
+  name: StarConverter
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_StarConverter_
+  commentId: Overload:DataLayer.CelestialDataPackage`1.StarConverter
   isSpec: "True"
-  fullName: DataLayer.CelestialDataPackage<T>.Stars
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).Stars
-  nameWithType: CelestialDataPackage<T>.Stars
-  nameWithType.vb: CelestialDataPackage(Of T).Stars
+  fullName: DataLayer.CelestialDataPackage<T>.StarConverter
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).StarConverter
+  nameWithType: CelestialDataPackage<T>.StarConverter
+  nameWithType.vb: CelestialDataPackage(Of T).StarConverter
+- uid: DataLayer.CelestialDataPackage`1.horizontalStars
+  name: horizontalStars
+  href: api/DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_horizontalStars
+  commentId: F:DataLayer.CelestialDataPackage`1.horizontalStars
+  fullName: DataLayer.CelestialDataPackage<T>.horizontalStars
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).horizontalStars
+  nameWithType: CelestialDataPackage<T>.horizontalStars
+  nameWithType.vb: CelestialDataPackage(Of T).horizontalStars
 - uid: DataLayer.EquatorialObjects
   name: DataLayer.EquatorialObjects
   href: api/DataLayer.EquatorialObjects.html
@@ -583,6 +642,25 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
   nameWithType: HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name: HorizontalBody(EquatorialCelestialBody)
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__ctor_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  commentId: M:DataLayer.HorizontalObjects.HorizontalBody.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  nameWithType: HorizontalBody.HorizontalBody(EquatorialCelestialBody)
+  nameWithType.vb: HorizontalBody.New(EquatorialCelestialBody)
+- uid: DataLayer.HorizontalObjects.HorizontalBody.#ctor*
+  name: HorizontalBody
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody__ctor_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.HorizontalBody
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalBody.New
+  nameWithType: HorizontalBody.HorizontalBody
+  nameWithType.vb: HorizontalBody.New
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   name: Altitude
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude
@@ -622,6 +700,19 @@ references:
   isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
   nameWithType: HorizontalBody.Distance
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  name: EquatorialBody
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody*
+  name: EquatorialBody
+  href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
   name: Magnitude
   href: api/DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude
@@ -641,6 +732,25 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
   fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
   nameWithType: HorizontalMessierObject
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  name: HorizontalMessierObject(EquatorialMessierObject)
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor_DataLayer_EquatorialObjects_EquatorialMessierObject_
+  commentId: M:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  name.vb: New(EquatorialMessierObject)
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New(DataLayer.EquatorialObjects.EquatorialMessierObject)
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject(EquatorialMessierObject)
+  nameWithType.vb: HorizontalMessierObject.New(EquatorialMessierObject)
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor*
+  name: HorizontalMessierObject
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject__ctor_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.HorizontalMessierObject
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New
+  nameWithType: HorizontalMessierObject.HorizontalMessierObject
+  nameWithType.vb: HorizontalMessierObject.New
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   name: Constellation
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation
@@ -738,6 +848,25 @@ references:
   commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
   fullName: DataLayer.HorizontalObjects.HorizontalMoon
   nameWithType: HorizontalMoon
+- uid: DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name: HorizontalMoon(EquatorialCelestialBody)
+  href: api/DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon__ctor_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  commentId: M:DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon.HorizontalMoon(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMoon.New(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  nameWithType: HorizontalMoon.HorizontalMoon(EquatorialCelestialBody)
+  nameWithType.vb: HorizontalMoon.New(EquatorialCelestialBody)
+- uid: DataLayer.HorizontalObjects.HorizontalMoon.#ctor*
+  name: HorizontalMoon
+  href: api/DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon__ctor_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMoon.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon.HorizontalMoon
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMoon.New
+  nameWithType: HorizontalMoon.HorizontalMoon
+  nameWithType.vb: HorizontalMoon.New
 - uid: DataLayer.HorizontalObjects.HorizontalMoon.Phase
   name: Phase
   href: api/DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon_Phase
@@ -751,12 +880,88 @@ references:
   isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalMoon.Phase
   nameWithType: HorizontalMoon.Phase
+- uid: DataLayer.HorizontalObjects.HorizontalMoon.moonPhase
+  name: moonPhase
+  href: api/DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon_moonPhase
+  commentId: F:DataLayer.HorizontalObjects.HorizontalMoon.moonPhase
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon.moonPhase
+  nameWithType: HorizontalMoon.moonPhase
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  name: HorizontalPlanet
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
+  nameWithType: HorizontalPlanet
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name: HorizontalPlanet(string, double, EquatorialCelestialBody)
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet__ctor_System_String_System_Double_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  commentId: M:DataLayer.HorizontalObjects.HorizontalPlanet.#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(String, Double, EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.HorizontalPlanet(string, double, DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalPlanet.New(String, Double, DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  nameWithType: HorizontalPlanet.HorizontalPlanet(string, double, EquatorialCelestialBody)
+  nameWithType.vb: HorizontalPlanet.New(String, Double, EquatorialCelestialBody)
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.#ctor*
+  name: HorizontalPlanet
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet__ctor_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.HorizontalPlanet
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalPlanet.New
+  nameWithType: HorizontalPlanet.HorizontalPlanet
+  nameWithType.vb: HorizontalPlanet.New
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  name: Name
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_Name
+  commentId: P:DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  nameWithType: HorizontalPlanet.Name
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.Name*
+  name: Name
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_Name_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  nameWithType: HorizontalPlanet.Name
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  name: PhaseAngle
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_PhaseAngle
+  commentId: P:DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  nameWithType: HorizontalPlanet.PhaseAngle
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle*
+  name: PhaseAngle
+  href: api/DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_PhaseAngle_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  nameWithType: HorizontalPlanet.PhaseAngle
 - uid: DataLayer.HorizontalObjects.HorizontalStar
   name: HorizontalStar
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
   fullName: DataLayer.HorizontalObjects.HorizontalStar
   nameWithType: HorizontalStar
+- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor(DataLayer.EquatorialObjects.EquatorialStar)
+  name: HorizontalStar(EquatorialStar)
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar__ctor_DataLayer_EquatorialObjects_EquatorialStar_
+  commentId: M:DataLayer.HorizontalObjects.HorizontalStar.#ctor(DataLayer.EquatorialObjects.EquatorialStar)
+  name.vb: New(EquatorialStar)
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar(DataLayer.EquatorialObjects.EquatorialStar)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New(DataLayer.EquatorialObjects.EquatorialStar)
+  nameWithType: HorizontalStar.HorizontalStar(EquatorialStar)
+  nameWithType.vb: HorizontalStar.New(EquatorialStar)
+- uid: DataLayer.HorizontalObjects.HorizontalStar.#ctor*
+  name: HorizontalStar
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar__ctor_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalStar.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.HorizontalStar
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalStar.New
+  nameWithType: HorizontalStar.HorizontalStar
+  nameWithType.vb: HorizontalStar.New
 - uid: DataLayer.HorizontalObjects.HorizontalStar.AbsoluteMagnitude
   name: AbsoluteMagnitude
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_AbsoluteMagnitude
@@ -783,6 +988,12 @@ references:
   isSpec: "True"
   fullName: DataLayer.HorizontalObjects.HorizontalStar.ColorIndex
   nameWithType: HorizontalStar.ColorIndex
+- uid: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  name: EquatorialStar
+  href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_EquatorialStar
+  commentId: F:DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  fullName: DataLayer.HorizontalObjects.HorizontalStar.EquatorialStar
+  nameWithType: HorizontalStar.EquatorialStar
 - uid: DataLayer.HorizontalObjects.HorizontalStar.HipparcosId
   name: HipparcosId
   href: api/DataLayer.HorizontalObjects.HorizontalStar.html#DataLayer_HorizontalObjects_HorizontalStar_HipparcosId
@@ -869,23 +1080,58 @@ references:
   fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).New
   nameWithType: CosineKittyEquatorialConverter<T>.CosineKittyEquatorialConverter
   nameWithType.vb: CosineKittyEquatorialConverter(Of T).New
-- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
-  name: Convert
-  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert
-  commentId: P:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
-  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
-  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
-  nameWithType: CosineKittyEquatorialConverter<T>.Convert
-  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
-- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert*
-  name: Convert
-  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert_
-  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime
+  name: CurrentTime
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_CurrentTime
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CurrentTime
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).CurrentTime
+  nameWithType: CosineKittyEquatorialConverter<T>.CurrentTime
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).CurrentTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime*
+  name: CurrentTime
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_CurrentTime_
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime
   isSpec: "True"
-  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.Convert
-  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).Convert
-  nameWithType: CosineKittyEquatorialConverter<T>.Convert
-  nameWithType.vb: CosineKittyEquatorialConverter(Of T).Convert
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.CurrentTime
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).CurrentTime
+  nameWithType: CosineKittyEquatorialConverter<T>.CurrentTime
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).CurrentTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).IncrementTimeBy(Double)
+  nameWithType: CosineKittyEquatorialConverter<T>.IncrementTimeBy(double)
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).IncrementTimeBy(Double)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_IncrementTimeBy_
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.IncrementTimeBy
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).IncrementTimeBy
+  nameWithType: CosineKittyEquatorialConverter<T>.IncrementTimeBy
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).IncrementTimeBy
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf(`0)
+  name: UpdatePositionOf(T)
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_UpdatePositionOf__0_
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf(`0)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.UpdatePositionOf(T)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).UpdatePositionOf(T)
+  nameWithType: CosineKittyEquatorialConverter<T>.UpdatePositionOf(T)
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).UpdatePositionOf(T)
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_UpdatePositionOf_
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.UpdatePositionOf
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).UpdatePositionOf
+  nameWithType: CosineKittyEquatorialConverter<T>.UpdatePositionOf
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).UpdatePositionOf
 - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime
   name: astroTime
   href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_astroTime
@@ -894,6 +1140,14 @@ references:
   fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).astroTime
   nameWithType: CosineKittyEquatorialConverter<T>.astroTime
   nameWithType.vb: CosineKittyEquatorialConverter(Of T).astroTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.currentTime
+  name: currentTime
+  href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialConverter`1.currentTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>.currentTime
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T).currentTime
+  nameWithType: CosineKittyEquatorialConverter<T>.currentTime
+  nameWithType.vb: CosineKittyEquatorialConverter(Of T).currentTime
 - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer
   name: observer
   href: api/DataLayer.Implementations.CosineKittyEquatorialConverter-1.html#DataLayer_Implementations_CosineKittyEquatorialConverter_1_observer
@@ -927,25 +1181,60 @@ references:
   fullName.vb: DataLayer.Implementations.CosineKittyMoonCalculator.New
   nameWithType: CosineKittyMoonCalculator.CosineKittyMoonCalculator
   nameWithType.vb: CosineKittyMoonCalculator.New
-- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
-  name: CalculateMoon()
-  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_CalculateMoon
-  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
-  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon()
-  nameWithType: CosineKittyMoonCalculator.CalculateMoon()
-- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon*
-  name: CalculateMoon
-  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_CalculateMoon_
-  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon
+  name: CreateMoon()
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_CreateMoon
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon()
+  nameWithType: CosineKittyMoonCalculator.CreateMoon()
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon*
+  name: CreateMoon
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_CreateMoon_
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon
   isSpec: "True"
-  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
-  nameWithType: CosineKittyMoonCalculator.CalculateMoon
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.CreateMoon
+  nameWithType: CosineKittyMoonCalculator.CreateMoon
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(Double)
+  nameWithType: CosineKittyMoonCalculator.IncrementTimeBy(double)
+  nameWithType.vb: CosineKittyMoonCalculator.IncrementTimeBy(Double)
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_IncrementTimeBy_
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy
+  nameWithType: CosineKittyMoonCalculator.IncrementTimeBy
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  name: UpdatePositionOf(HorizontalMoon)
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  nameWithType: CosineKittyMoonCalculator.UpdatePositionOf(HorizontalMoon)
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_UpdatePositionOf_
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf
+  nameWithType: CosineKittyMoonCalculator.UpdatePositionOf
 - uid: DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
   name: astroTime
   href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_astroTime
   commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
   fullName: DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
   nameWithType: CosineKittyMoonCalculator.astroTime
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  name: currentTime
+  href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  nameWithType: CosineKittyMoonCalculator.currentTime
 - uid: DataLayer.Implementations.CosineKittyMoonCalculator.observer
   name: observer
   href: api/DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_observer
@@ -977,19 +1266,48 @@ references:
   fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.New
   nameWithType: CosineKittyPlanetaryCalculator.CosineKittyPlanetaryCalculator
   nameWithType.vb: CosineKittyPlanetaryCalculator.New
-- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  name: CalculatePlanets()
-  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CalculatePlanets
-  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets()
-  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets()
-- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets*
-  name: CalculatePlanets
-  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CalculatePlanets_
-  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  name: CreatePlanets()
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CreatePlanets
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets()
+  nameWithType: CosineKittyPlanetaryCalculator.CreatePlanets()
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets*
+  name: CreatePlanets
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_CreatePlanets_
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
   isSpec: "True"
-  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CalculatePlanets
-  nameWithType: CosineKittyPlanetaryCalculator.CalculatePlanets
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.CreatePlanets
+  nameWithType: CosineKittyPlanetaryCalculator.CreatePlanets
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy(Double)
+  nameWithType: CosineKittyPlanetaryCalculator.IncrementTimeBy(double)
+  nameWithType.vb: CosineKittyPlanetaryCalculator.IncrementTimeBy(Double)
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_IncrementTimeBy_
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.IncrementTimeBy
+  nameWithType: CosineKittyPlanetaryCalculator.IncrementTimeBy
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  name: UpdatePositionOf(HorizontalPlanet)
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  commentId: M:DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  nameWithType: CosineKittyPlanetaryCalculator.UpdatePositionOf(HorizontalPlanet)
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_UpdatePositionOf_
+  commentId: Overload:DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.UpdatePositionOf
+  nameWithType: CosineKittyPlanetaryCalculator.UpdatePositionOf
 - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator._bodies
   name: _bodies
   href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator__bodies
@@ -1002,6 +1320,12 @@ references:
   commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
   fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.astroTime
   nameWithType: CosineKittyPlanetaryCalculator.astroTime
+- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  name: currentTime
+  href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator.currentTime
+  nameWithType: CosineKittyPlanetaryCalculator.currentTime
 - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator.observer
   name: observer
   href: api/DataLayer.Implementations.CosineKittyPlanetaryCalculator.html#DataLayer_Implementations_CosineKittyPlanetaryCalculator_observer
@@ -1033,14 +1357,14 @@ references:
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New
   nameWithType: HygCsvStarRepository.HygCsvStarRepository
   nameWithType.vb: HygCsvStarRepository.New
-- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
-  name: IStarRepository.GetAllStarsAsync(double)
-  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
-  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync(System.Double)
+- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
+  name: IStarRepository.GetAllStarsAsync()
+  href: api/DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
   name.vb: ''
-  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
+  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
   fullName.vb: ''
-  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync(double)
+  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync()
   nameWithType.vb: ''
 - uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
   name: IStarRepository.GetAllStarsAsync
@@ -1438,14 +1762,6 @@ references:
   fullName.vb: DataLayer.InjectionService(Of T).GetRepositoryServiceAsync
   nameWithType: InjectionService<T>.GetRepositoryServiceAsync
   nameWithType.vb: InjectionService(Of T).GetRepositoryServiceAsync
-- uid: DataLayer.InjectionService`1.maxStarMagnitude
-  name: maxStarMagnitude
-  href: api/DataLayer.InjectionService-1.html#DataLayer_InjectionService_1_maxStarMagnitude
-  commentId: F:DataLayer.InjectionService`1.maxStarMagnitude
-  fullName: DataLayer.InjectionService<T>.maxStarMagnitude
-  fullName.vb: DataLayer.InjectionService(Of T).maxStarMagnitude
-  nameWithType: InjectionService<T>.maxStarMagnitude
-  nameWithType.vb: InjectionService(Of T).maxStarMagnitude
 - uid: DataLayer.Interfaces
   name: DataLayer.Interfaces
   href: api/DataLayer.Interfaces.html
@@ -1480,23 +1796,58 @@ references:
   fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
   nameWithType: IEquatorialConverter<T>
   nameWithType.vb: IEquatorialConverter(Of T)
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  name: Convert
-  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
-  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
-  nameWithType: IEquatorialConverter<T>.Convert
-  nameWithType.vb: IEquatorialConverter(Of T).Convert
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
-  name: Convert
-  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert_
-  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  name: CurrentTime
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_CurrentTime
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).CurrentTime
+  nameWithType: IEquatorialConverter<T>.CurrentTime
+  nameWithType.vb: IEquatorialConverter(Of T).CurrentTime
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime*
+  name: CurrentTime
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_CurrentTime_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
   isSpec: "True"
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
-  nameWithType: IEquatorialConverter<T>.Convert
-  nameWithType.vb: IEquatorialConverter(Of T).Convert
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).CurrentTime
+  nameWithType: IEquatorialConverter<T>.CurrentTime
+  nameWithType.vb: IEquatorialConverter(Of T).CurrentTime
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).IncrementTimeBy(Double)
+  nameWithType: IEquatorialConverter<T>.IncrementTimeBy(double)
+  nameWithType.vb: IEquatorialConverter(Of T).IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_IncrementTimeBy_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.IncrementTimeBy
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).IncrementTimeBy
+  nameWithType: IEquatorialConverter<T>.IncrementTimeBy
+  nameWithType.vb: IEquatorialConverter(Of T).IncrementTimeBy
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf(`0)
+  name: UpdatePositionOf(T)
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_UpdatePositionOf__0_
+  commentId: M:DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf(`0)
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.UpdatePositionOf(T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).UpdatePositionOf(T)
+  nameWithType: IEquatorialConverter<T>.UpdatePositionOf(T)
+  nameWithType.vb: IEquatorialConverter(Of T).UpdatePositionOf(T)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_UpdatePositionOf_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.UpdatePositionOf
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).UpdatePositionOf
+  nameWithType: IEquatorialConverter<T>.UpdatePositionOf
+  nameWithType.vb: IEquatorialConverter(Of T).UpdatePositionOf
 - uid: DataLayer.Interfaces.IMessierRepository
   name: IMessierRepository
   href: api/DataLayer.Interfaces.IMessierRepository.html
@@ -1522,19 +1873,67 @@ references:
   commentId: T:DataLayer.Interfaces.IMoonCalculator
   fullName: DataLayer.Interfaces.IMoonCalculator
   nameWithType: IMoonCalculator
-- uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
-  name: CalculateMoon()
-  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon
-  commentId: M:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
-  fullName: DataLayer.Interfaces.IMoonCalculator.CalculateMoon()
-  nameWithType: IMoonCalculator.CalculateMoon()
-- uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon*
-  name: CalculateMoon
-  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CalculateMoon_
-  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+- uid: DataLayer.Interfaces.IMoonCalculator.CreateMoon
+  name: CreateMoon()
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CreateMoon
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.CreateMoon
+  fullName: DataLayer.Interfaces.IMoonCalculator.CreateMoon()
+  nameWithType: IMoonCalculator.CreateMoon()
+- uid: DataLayer.Interfaces.IMoonCalculator.CreateMoon*
+  name: CreateMoon
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_CreateMoon_
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.CreateMoon
   isSpec: "True"
-  fullName: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
-  nameWithType: IMoonCalculator.CalculateMoon
+  fullName: DataLayer.Interfaces.IMoonCalculator.CreateMoon
+  nameWithType: IMoonCalculator.CreateMoon
+- uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(Double)
+  nameWithType: IMoonCalculator.IncrementTimeBy(double)
+  nameWithType.vb: IMoonCalculator.IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy
+  nameWithType: IMoonCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  name: UpdatePositionOf(HorizontalMoon)
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  fullName: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  nameWithType: IMoonCalculator.UpdatePositionOf(HorizontalMoon)
+- uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf
+  nameWithType: IMoonCalculator.UpdatePositionOf
+- uid: DataLayer.Interfaces.IPhaseable
+  name: IPhaseable
+  href: api/DataLayer.Interfaces.IPhaseable.html
+  commentId: T:DataLayer.Interfaces.IPhaseable
+  fullName: DataLayer.Interfaces.IPhaseable
+  nameWithType: IPhaseable
+- uid: DataLayer.Interfaces.IPhaseable.Phase
+  name: Phase
+  href: api/DataLayer.Interfaces.IPhaseable.html#DataLayer_Interfaces_IPhaseable_Phase
+  commentId: P:DataLayer.Interfaces.IPhaseable.Phase
+  fullName: DataLayer.Interfaces.IPhaseable.Phase
+  nameWithType: IPhaseable.Phase
+- uid: DataLayer.Interfaces.IPhaseable.Phase*
+  name: Phase
+  href: api/DataLayer.Interfaces.IPhaseable.html#DataLayer_Interfaces_IPhaseable_Phase_
+  commentId: Overload:DataLayer.Interfaces.IPhaseable.Phase
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IPhaseable.Phase
+  nameWithType: IPhaseable.Phase
 - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
   name: IPlanetaryCalculator<T>
   href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html
@@ -1544,38 +1943,70 @@ references:
   fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
   nameWithType: IPlanetaryCalculator<T>
   nameWithType.vb: IPlanetaryCalculator(Of T)
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  name: CalculatePlanets()
-  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets
-  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets()
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets()
-  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets()
-  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets()
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets*
-  name: CalculatePlanets
-  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CalculatePlanets_
-  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.CalculatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  name: CreatePlanets()
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CreatePlanets()
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CreatePlanets()
+  nameWithType: IPlanetaryCalculator<T>.CreatePlanets()
+  nameWithType.vb: IPlanetaryCalculator(Of T).CreatePlanets()
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets*
+  name: CreatePlanets
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_CreatePlanets_
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.CreatePlanets
   isSpec: "True"
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CalculatePlanets
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CalculatePlanets
-  nameWithType: IPlanetaryCalculator<T>.CalculatePlanets
-  nameWithType.vb: IPlanetaryCalculator(Of T).CalculatePlanets
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.CreatePlanets
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).CreatePlanets
+  nameWithType: IPlanetaryCalculator<T>.CreatePlanets
+  nameWithType.vb: IPlanetaryCalculator(Of T).CreatePlanets
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  name: IncrementTimeBy(double)
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_System_Double_
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy(System.Double)
+  name.vb: IncrementTimeBy(Double)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+  nameWithType: IPlanetaryCalculator<T>.IncrementTimeBy(double)
+  nameWithType.vb: IPlanetaryCalculator(Of T).IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy*
+  name: IncrementTimeBy
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_IncrementTimeBy_
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.IncrementTimeBy
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.IncrementTimeBy
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).IncrementTimeBy
+  nameWithType: IPlanetaryCalculator<T>.IncrementTimeBy
+  nameWithType.vb: IPlanetaryCalculator(Of T).IncrementTimeBy
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  name: UpdatePositionOf(HorizontalPlanet)
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  commentId: M:DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  nameWithType: IPlanetaryCalculator<T>.UpdatePositionOf(HorizontalPlanet)
+  nameWithType.vb: IPlanetaryCalculator(Of T).UpdatePositionOf(HorizontalPlanet)
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf*
+  name: UpdatePositionOf
+  href: api/DataLayer.Interfaces.IPlanetaryCalculator-1.html#DataLayer_Interfaces_IPlanetaryCalculator_1_UpdatePositionOf_
+  commentId: Overload:DataLayer.Interfaces.IPlanetaryCalculator`1.UpdatePositionOf
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>.UpdatePositionOf
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T).UpdatePositionOf
+  nameWithType: IPlanetaryCalculator<T>.UpdatePositionOf
+  nameWithType.vb: IPlanetaryCalculator(Of T).UpdatePositionOf
 - uid: DataLayer.Interfaces.IStarRepository
   name: IStarRepository
   href: api/DataLayer.Interfaces.IStarRepository.html
   commentId: T:DataLayer.Interfaces.IStarRepository
   fullName: DataLayer.Interfaces.IStarRepository
   nameWithType: IStarRepository
-- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
-  name: GetAllStarsAsync(double)
-  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_System_Double_
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(System.Double)
-  name.vb: GetAllStarsAsync(Double)
-  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(double)
-  fullName.vb: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync(Double)
-  nameWithType: IStarRepository.GetAllStarsAsync(double)
-  nameWithType.vb: IStarRepository.GetAllStarsAsync(Double)
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  name: GetAllStarsAsync()
+  href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
+  nameWithType: IStarRepository.GetAllStarsAsync()
 - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
   name: GetAllStarsAsync
   href: api/DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_
@@ -1608,15 +2039,15 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T)
   nameWithType: StargazerRepositoryService<T>
   nameWithType.vb: StargazerRepositoryService(Of T)
-- uid: DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IReadOnlyDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
-  name: StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IReadOnlyDictionary<int, EquatorialStar>, IEnumerable<EquatorialMessierObject>)
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IReadOnlyDictionary_System_Int32_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialMessierObject__
-  commentId: M:DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IReadOnlyDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
-  name.vb: New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IReadOnlyDictionary(Of Integer, EquatorialStar), IEnumerable(Of EquatorialMessierObject))
-  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IReadOnlyDictionary<int, DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IReadOnlyDictionary(Of Integer, DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
-  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IReadOnlyDictionary<int, EquatorialStar>, IEnumerable<EquatorialMessierObject>)
-  nameWithType.vb: StargazerRepositoryService(Of T).New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IReadOnlyDictionary(Of Integer, EquatorialStar), IEnumerable(Of EquatorialMessierObject))
+- uid: DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
+  name: StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IEnumerable<EquatorialMessierObject>)
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialMessierObject__
+  commentId: M:DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
+  name.vb: New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IEnumerable(Of EquatorialMessierObject))
+  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
+  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IEnumerable<EquatorialMessierObject>)
+  nameWithType.vb: StargazerRepositoryService(Of T).New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IEnumerable(Of EquatorialMessierObject))
 - uid: DataLayer.StargazerRepositoryService`1.#ctor*
   name: StargazerRepositoryService
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_
@@ -1627,33 +2058,14 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).New
   nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService
   nameWithType.vb: StargazerRepositoryService(Of T).New
-- uid: DataLayer.StargazerRepositoryService`1.CalculateConstellationStars(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
-  name: CalculateConstellationStars(IEquatorialConverter<HorizontalStar>)
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateConstellationStars_DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__
-  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateConstellationStars(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
-  name.vb: CalculateConstellationStars(IEquatorialConverter(Of HorizontalStar))
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateConstellationStars(DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateConstellationStars(DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar))
-  nameWithType: StargazerRepositoryService<T>.CalculateConstellationStars(IEquatorialConverter<HorizontalStar>)
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateConstellationStars(IEquatorialConverter(Of HorizontalStar))
-- uid: DataLayer.StargazerRepositoryService`1.CalculateConstellationStars*
-  name: CalculateConstellationStars
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateConstellationStars_
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.CalculateConstellationStars
-  isSpec: "True"
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateConstellationStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateConstellationStars
-  nameWithType: StargazerRepositoryService<T>.CalculateConstellationStars
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateConstellationStars
-- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalMessierObject})
-  name: CalculateMessierObjects(IEquatorialConverter<HorizontalMessierObject>)
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateMessierObjects_DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalMessierObject__
-  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalMessierObject})
-  name.vb: CalculateMessierObjects(IEquatorialConverter(Of HorizontalMessierObject))
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalMessierObject>)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects(DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalMessierObject))
-  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects(IEquatorialConverter<HorizontalMessierObject>)
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects(IEquatorialConverter(Of HorizontalMessierObject))
+- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  name: CalculateMessierObjects()
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateMessierObjects
+  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects()
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects()
+  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects()
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects()
 - uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects*
   name: CalculateMessierObjects
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateMessierObjects_
@@ -1663,15 +2075,14 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects
   nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects
   nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects
-- uid: DataLayer.StargazerRepositoryService`1.CalculateStars(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
-  name: CalculateStars(IEquatorialConverter<HorizontalStar>)
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateStars_DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__
-  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateStars(DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
-  name.vb: CalculateStars(IEquatorialConverter(Of HorizontalStar))
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars(DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars(DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar))
-  nameWithType: StargazerRepositoryService<T>.CalculateStars(IEquatorialConverter<HorizontalStar>)
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars(IEquatorialConverter(Of HorizontalStar))
+- uid: DataLayer.StargazerRepositoryService`1.CalculateStars
+  name: CalculateStars()
+  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateStars
+  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateStars
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars()
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars()
+  nameWithType: StargazerRepositoryService<T>.CalculateStars()
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars()
 - uid: DataLayer.StargazerRepositoryService`1.CalculateStars*
   name: CalculateStars
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateStars_
@@ -1767,14 +2178,6 @@ references:
   fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellations
   nameWithType: StargazerRepositoryService<T>.constellations
   nameWithType.vb: StargazerRepositoryService(Of T).constellations
-- uid: DataLayer.StargazerRepositoryService`1.equatorialConstellationStars
-  name: equatorialConstellationStars
-  href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_equatorialConstellationStars
-  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialConstellationStars
-  fullName: DataLayer.StargazerRepositoryService<T>.equatorialConstellationStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialConstellationStars
-  nameWithType: StargazerRepositoryService<T>.equatorialConstellationStars
-  nameWithType.vb: StargazerRepositoryService(Of T).equatorialConstellationStars
 - uid: DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
   name: equatorialMessierObjects
   href: api/DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_equatorialMessierObjects
@@ -2106,6 +2509,19 @@ references:
   commentId: F:Stargazer.AzimuthGridlines.PropertyName.radius
   fullName: Stargazer.AzimuthGridlines.PropertyName.radius
   nameWithType: AzimuthGridlines.PropertyName.radius
+- uid: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  name: SetCamera(Camera3D)
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_SetCamera_Godot_Camera3D_
+  commentId: M:Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  fullName: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  nameWithType: AzimuthGridlines.SetCamera(Camera3D)
+- uid: Stargazer.AzimuthGridlines.SetCamera*
+  name: SetCamera
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_SetCamera_
+  commentId: Overload:Stargazer.AzimuthGridlines.SetCamera
+  isSpec: "True"
+  fullName: Stargazer.AzimuthGridlines.SetCamera
+  nameWithType: AzimuthGridlines.SetCamera
 - uid: Stargazer.AzimuthGridlines.SignalName
   name: AzimuthGridlines.SignalName
   href: api/Stargazer.AzimuthGridlines.SignalName.html
@@ -2128,6 +2544,22 @@ references:
   isSpec: "True"
   fullName: Stargazer.AzimuthGridlines.ToggleGridlines
   nameWithType: AzimuthGridlines.ToggleGridlines
+- uid: Stargazer.AzimuthGridlines._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines__Process_System_Double_
+  commentId: M:Stargazer.AzimuthGridlines._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.AzimuthGridlines._Process(double)
+  fullName.vb: Stargazer.AzimuthGridlines._Process(Double)
+  nameWithType: AzimuthGridlines._Process(double)
+  nameWithType.vb: AzimuthGridlines._Process(Double)
+- uid: Stargazer.AzimuthGridlines._Process*
+  name: _Process
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines__Process_
+  commentId: Overload:Stargazer.AzimuthGridlines._Process
+  isSpec: "True"
+  fullName: Stargazer.AzimuthGridlines._Process
+  nameWithType: AzimuthGridlines._Process
 - uid: Stargazer.AzimuthGridlines._Ready
   name: _Ready()
   href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines__Ready
@@ -2141,12 +2573,24 @@ references:
   isSpec: "True"
   fullName: Stargazer.AzimuthGridlines._Ready
   nameWithType: AzimuthGridlines._Ready
+- uid: Stargazer.AzimuthGridlines.camera
+  name: camera
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_camera
+  commentId: F:Stargazer.AzimuthGridlines.camera
+  fullName: Stargazer.AzimuthGridlines.camera
+  nameWithType: AzimuthGridlines.camera
 - uid: Stargazer.AzimuthGridlines.cutoffLatitude
   name: cutoffLatitude
   href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_cutoffLatitude
   commentId: F:Stargazer.AzimuthGridlines.cutoffLatitude
   fullName: Stargazer.AzimuthGridlines.cutoffLatitude
   nameWithType: AzimuthGridlines.cutoffLatitude
+- uid: Stargazer.AzimuthGridlines.greenMaterial
+  name: greenMaterial
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_greenMaterial
+  commentId: F:Stargazer.AzimuthGridlines.greenMaterial
+  fullName: Stargazer.AzimuthGridlines.greenMaterial
+  nameWithType: AzimuthGridlines.greenMaterial
 - uid: Stargazer.AzimuthGridlines.latitudeInterval
   name: latitudeInterval
   href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_latitudeInterval
@@ -2177,6 +2621,12 @@ references:
   commentId: F:Stargazer.AzimuthGridlines.radius
   fullName: Stargazer.AzimuthGridlines.radius
   nameWithType: AzimuthGridlines.radius
+- uid: Stargazer.AzimuthGridlines.storedfov
+  name: storedfov
+  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_storedfov
+  commentId: F:Stargazer.AzimuthGridlines.storedfov
+  fullName: Stargazer.AzimuthGridlines.storedfov
+  nameWithType: AzimuthGridlines.storedfov
 - uid: Stargazer.CompassNeedle
   name: CompassNeedle
   href: api/Stargazer.CompassNeedle.html
@@ -2219,6 +2669,19 @@ references:
   commentId: F:Stargazer.CompassNeedle.PropertyName.needle
   fullName: Stargazer.CompassNeedle.PropertyName.needle
   nameWithType: CompassNeedle.PropertyName.needle
+- uid: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  name: SetCamera(Camera3D)
+  href: api/Stargazer.CompassNeedle.html#Stargazer_CompassNeedle_SetCamera_Godot_Camera3D_
+  commentId: M:Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  fullName: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  nameWithType: CompassNeedle.SetCamera(Camera3D)
+- uid: Stargazer.CompassNeedle.SetCamera*
+  name: SetCamera
+  href: api/Stargazer.CompassNeedle.html#Stargazer_CompassNeedle_SetCamera_
+  commentId: Overload:Stargazer.CompassNeedle.SetCamera
+  isSpec: "True"
+  fullName: Stargazer.CompassNeedle.SetCamera
+  nameWithType: CompassNeedle.SetCamera
 - uid: Stargazer.CompassNeedle.SignalName
   name: CompassNeedle.SignalName
   href: api/Stargazer.CompassNeedle.SignalName.html
@@ -2354,15 +2817,15 @@ references:
   commentId: F:Stargazer.Constellations.ConstellationLabels
   fullName: Stargazer.Constellations.ConstellationLabels
   nameWithType: Constellations.ConstellationLabels
-- uid: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
-  commentId: M:Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
-  fullName: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
-  fullName.vb: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
-  nameWithType: Constellations.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  nameWithType.vb: Constellations.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+- uid: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>, Func<HorizontalStar, Star>)
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__
+  commentId: M:Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star})
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star), Func(Of HorizontalStar, Star))
+  fullName: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>)
+  fullName.vb: Stargazer.Constellations.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star), System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star))
+  nameWithType: Constellations.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>, Func<HorizontalStar, Star>)
+  nameWithType.vb: Constellations.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star), Func(Of HorizontalStar, Star))
 - uid: Stargazer.Constellations.DrawConstellations*
   name: DrawConstellations
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_DrawConstellations_
@@ -2370,6 +2833,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.Constellations.DrawConstellations
   nameWithType: Constellations.DrawConstellations
+- uid: Stargazer.Constellations.GetConstellationStar
+  name: GetConstellationStar
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_GetConstellationStar
+  commentId: F:Stargazer.Constellations.GetConstellationStar
+  fullName: Stargazer.Constellations.GetConstellationStar
+  nameWithType: Constellations.GetConstellationStar
 - uid: Stargazer.Constellations.LabelScene
   name: LabelScene
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_LabelScene
@@ -2455,19 +2924,6 @@ references:
   commentId: T:Stargazer.Constellations.SignalName
   fullName: Stargazer.Constellations.SignalName
   nameWithType: Constellations.SignalName
-- uid: Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  name: SpawnStar(HorizontalStar)
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_
-  commentId: M:Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  fullName: Stargazer.Constellations.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)
-  nameWithType: Constellations.SpawnStar(HorizontalStar)
-- uid: Stargazer.Constellations.SpawnStar*
-  name: SpawnStar
-  href: api/Stargazer.Constellations.html#Stargazer_Constellations_SpawnStar_
-  commentId: Overload:Stargazer.Constellations.SpawnStar
-  isSpec: "True"
-  fullName: Stargazer.Constellations.SpawnStar
-  nameWithType: Constellations.SpawnStar
 - uid: Stargazer.Constellations.StarContainer
   name: StarContainer
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_StarContainer
@@ -2519,12 +2975,262 @@ references:
   isSpec: "True"
   fullName: Stargazer.Constellations.ToggleConstellationLines
   nameWithType: Constellations.ToggleConstellationLines
+- uid: Stargazer.Constellations._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations__Process_System_Double_
+  commentId: M:Stargazer.Constellations._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.Constellations._Process(double)
+  fullName.vb: Stargazer.Constellations._Process(Double)
+  nameWithType: Constellations._Process(double)
+  nameWithType.vb: Constellations._Process(Double)
+- uid: Stargazer.Constellations._Process*
+  name: _Process
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations__Process_
+  commentId: Overload:Stargazer.Constellations._Process
+  isSpec: "True"
+  fullName: Stargazer.Constellations._Process
+  nameWithType: Constellations._Process
+- uid: Stargazer.Constellations.canProcess
+  name: canProcess
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_canProcess
+  commentId: F:Stargazer.Constellations.canProcess
+  fullName: Stargazer.Constellations.canProcess
+  nameWithType: Constellations.canProcess
 - uid: Stargazer.Constellations.constMesh
   name: constMesh
   href: api/Stargazer.Constellations.html#Stargazer_Constellations_constMesh
   commentId: F:Stargazer.Constellations.constMesh
   fullName: Stargazer.Constellations.constMesh
   nameWithType: Constellations.constMesh
+- uid: Stargazer.Constellations.constellations
+  name: constellations
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_constellations
+  commentId: F:Stargazer.Constellations.constellations
+  fullName: Stargazer.Constellations.constellations
+  nameWithType: Constellations.constellations
+- uid: Stargazer.Constellations.labelDictionary
+  name: labelDictionary
+  href: api/Stargazer.Constellations.html#Stargazer_Constellations_labelDictionary
+  commentId: F:Stargazer.Constellations.labelDictionary
+  fullName: Stargazer.Constellations.labelDictionary
+  nameWithType: Constellations.labelDictionary
+- uid: Stargazer.Constellations2D
+  name: Constellations2D
+  href: api/Stargazer.Constellations2D.html
+  commentId: T:Stargazer.Constellations2D
+  fullName: Stargazer.Constellations2D
+  nameWithType: Constellations2D
+- uid: Stargazer.Constellations2D.ConstellationLabels
+  name: ConstellationLabels
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ConstellationLabels
+  commentId: F:Stargazer.Constellations2D.ConstellationLabels
+  fullName: Stargazer.Constellations2D.ConstellationLabels
+  nameWithType: Constellations2D.ConstellationLabels
+- uid: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
+  commentId: M:Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+  fullName: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
+  fullName.vb: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
+  nameWithType: Constellations2D.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
+  nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+- uid: Stargazer.Constellations2D.DrawConstellations*
+  name: DrawConstellations
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_
+  commentId: Overload:Stargazer.Constellations2D.DrawConstellations
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.DrawConstellations
+  nameWithType: Constellations2D.DrawConstellations
+- uid: Stargazer.Constellations2D.Label2DScene
+  name: Label2DScene
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Label2DScene
+  commentId: P:Stargazer.Constellations2D.Label2DScene
+  fullName: Stargazer.Constellations2D.Label2DScene
+  nameWithType: Constellations2D.Label2DScene
+- uid: Stargazer.Constellations2D.Label2DScene*
+  name: Label2DScene
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Label2DScene_
+  commentId: Overload:Stargazer.Constellations2D.Label2DScene
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.Label2DScene
+  nameWithType: Constellations2D.Label2DScene
+- uid: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
+  name: Spawn2DStar(Star)
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Spawn2DStar_Stargazer_Star_
+  commentId: M:Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
+  fullName: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
+  nameWithType: Constellations2D.Spawn2DStar(Star)
+- uid: Stargazer.Constellations2D.Spawn2DStar*
+  name: Spawn2DStar
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Spawn2DStar_
+  commentId: Overload:Stargazer.Constellations2D.Spawn2DStar
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.Spawn2DStar
+  nameWithType: Constellations2D.Spawn2DStar
+- uid: Stargazer.Constellations2D.Star2DScene
+  name: Star2DScene
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Star2DScene
+  commentId: P:Stargazer.Constellations2D.Star2DScene
+  fullName: Stargazer.Constellations2D.Star2DScene
+  nameWithType: Constellations2D.Star2DScene
+- uid: Stargazer.Constellations2D.Star2DScene*
+  name: Star2DScene
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Star2DScene_
+  commentId: Overload:Stargazer.Constellations2D.Star2DScene
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.Star2DScene
+  nameWithType: Constellations2D.Star2DScene
+- uid: Stargazer.Constellations2D.StarContainer
+  name: StarContainer
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_StarContainer
+  commentId: F:Stargazer.Constellations2D.StarContainer
+  fullName: Stargazer.Constellations2D.StarContainer
+  nameWithType: Constellations2D.StarContainer
+- uid: Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
+  name: ToggleConstellationLabels(bool)
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLabels_System_Boolean_
+  commentId: M:Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
+  name.vb: ToggleConstellationLabels(Boolean)
+  fullName: Stargazer.Constellations2D.ToggleConstellationLabels(bool)
+  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLabels(Boolean)
+  nameWithType: Constellations2D.ToggleConstellationLabels(bool)
+  nameWithType.vb: Constellations2D.ToggleConstellationLabels(Boolean)
+- uid: Stargazer.Constellations2D.ToggleConstellationLabels*
+  name: ToggleConstellationLabels
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLabels_
+  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLabels
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.ToggleConstellationLabels
+  nameWithType: Constellations2D.ToggleConstellationLabels
+- uid: Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
+  name: ToggleConstellationLines(bool)
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLines_System_Boolean_
+  commentId: M:Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
+  name.vb: ToggleConstellationLines(Boolean)
+  fullName: Stargazer.Constellations2D.ToggleConstellationLines(bool)
+  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLines(Boolean)
+  nameWithType: Constellations2D.ToggleConstellationLines(bool)
+  nameWithType.vb: Constellations2D.ToggleConstellationLines(Boolean)
+- uid: Stargazer.Constellations2D.ToggleConstellationLines*
+  name: ToggleConstellationLines
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLines_
+  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLines
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D.ToggleConstellationLines
+  nameWithType: Constellations2D.ToggleConstellationLines
+- uid: Stargazer.Constellations2D._Ready
+  name: _Ready()
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D__Ready
+  commentId: M:Stargazer.Constellations2D._Ready
+  fullName: Stargazer.Constellations2D._Ready()
+  nameWithType: Constellations2D._Ready()
+- uid: Stargazer.Constellations2D._Ready*
+  name: _Ready
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D__Ready_
+  commentId: Overload:Stargazer.Constellations2D._Ready
+  isSpec: "True"
+  fullName: Stargazer.Constellations2D._Ready
+  nameWithType: Constellations2D._Ready
+- uid: Stargazer.Constellations2D.constMesh
+  name: constMesh
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_constMesh
+  commentId: F:Stargazer.Constellations2D.constMesh
+  fullName: Stargazer.Constellations2D.constMesh
+  nameWithType: Constellations2D.constMesh
+- uid: Stargazer.Constellations2D.mesh
+  name: mesh
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_mesh
+  commentId: F:Stargazer.Constellations2D.mesh
+  fullName: Stargazer.Constellations2D.mesh
+  nameWithType: Constellations2D.mesh
+- uid: Stargazer.ControlContainer
+  name: ControlContainer
+  href: api/Stargazer.ControlContainer.html
+  commentId: T:Stargazer.ControlContainer
+  fullName: Stargazer.ControlContainer
+  nameWithType: ControlContainer
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  name: AzimuthToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  name: ConstellationLabelsToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  name: ConstellationsToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+- uid: Stargazer.ControlContainer.HuntsvilleCoordinates
+  name: ControlContainer.HuntsvilleCoordinates
+  href: api/Stargazer.ControlContainer.HuntsvilleCoordinates.html
+  commentId: T:Stargazer.ControlContainer.HuntsvilleCoordinates
+  fullName: Stargazer.ControlContainer.HuntsvilleCoordinates
+  nameWithType: ControlContainer.HuntsvilleCoordinates
+- uid: Stargazer.ControlContainer.HuntsvilleCoordinates.#ctor
+  name: HuntsvilleCoordinates()
+  href: api/Stargazer.ControlContainer.HuntsvilleCoordinates.html#Stargazer_ControlContainer_HuntsvilleCoordinates__ctor
+  commentId: M:Stargazer.ControlContainer.HuntsvilleCoordinates.#ctor
+  name.vb: New()
+  fullName: Stargazer.ControlContainer.HuntsvilleCoordinates.HuntsvilleCoordinates()
+  fullName.vb: Stargazer.ControlContainer.HuntsvilleCoordinates.New()
+  nameWithType: ControlContainer.HuntsvilleCoordinates.HuntsvilleCoordinates()
+  nameWithType.vb: ControlContainer.HuntsvilleCoordinates.New()
+- uid: Stargazer.ControlContainer.HuntsvilleCoordinates.#ctor*
+  name: HuntsvilleCoordinates
+  href: api/Stargazer.ControlContainer.HuntsvilleCoordinates.html#Stargazer_ControlContainer_HuntsvilleCoordinates__ctor_
+  commentId: Overload:Stargazer.ControlContainer.HuntsvilleCoordinates.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Stargazer.ControlContainer.HuntsvilleCoordinates.HuntsvilleCoordinates
+  fullName.vb: Stargazer.ControlContainer.HuntsvilleCoordinates.New
+  nameWithType: ControlContainer.HuntsvilleCoordinates.HuntsvilleCoordinates
+  nameWithType.vb: ControlContainer.HuntsvilleCoordinates.New
+- uid: Stargazer.ControlContainer.HuntsvilleCoordinates.latitude
+  name: latitude
+  href: api/Stargazer.ControlContainer.HuntsvilleCoordinates.html#Stargazer_ControlContainer_HuntsvilleCoordinates_latitude
+  commentId: F:Stargazer.ControlContainer.HuntsvilleCoordinates.latitude
+  fullName: Stargazer.ControlContainer.HuntsvilleCoordinates.latitude
+  nameWithType: ControlContainer.HuntsvilleCoordinates.latitude
+- uid: Stargazer.ControlContainer.HuntsvilleCoordinates.longitude
+  name: longitude
+  href: api/Stargazer.ControlContainer.HuntsvilleCoordinates.html#Stargazer_ControlContainer_HuntsvilleCoordinates_longitude
+  commentId: F:Stargazer.ControlContainer.HuntsvilleCoordinates.longitude
+  fullName: Stargazer.ControlContainer.HuntsvilleCoordinates.longitude
+  nameWithType: ControlContainer.HuntsvilleCoordinates.longitude
+- uid: Stargazer.ControlContainer.MessierObjectsTogggled
+  name: MessierObjectsTogggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsTogggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsTogggled
+  fullName: Stargazer.ControlContainer.MessierObjectsTogggled
+  nameWithType: ControlContainer.MessierObjectsTogggled
+- uid: Stargazer.ControlContainer.UpdateUserPosition
+  name: UpdateUserPosition()
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition
+  commentId: M:Stargazer.ControlContainer.UpdateUserPosition
+  fullName: Stargazer.ControlContainer.UpdateUserPosition()
+  nameWithType: ControlContainer.UpdateUserPosition()
+- uid: Stargazer.ControlContainer.UpdateUserPosition*
+  name: UpdateUserPosition
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition_
+  commentId: Overload:Stargazer.ControlContainer.UpdateUserPosition
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.UpdateUserPosition
+  nameWithType: ControlContainer.UpdateUserPosition
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  name: UserPositionUpdated
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
 - uid: Stargazer.Globals
   name: Globals
   href: api/Stargazer.Globals.html
@@ -2581,6 +3287,292 @@ references:
   isSpec: "True"
   fullName: Stargazer.Globals._Ready
   nameWithType: Globals._Ready
+- uid: Stargazer.Globals.hoverLabel
+  name: hoverLabel
+  href: api/Stargazer.Globals.html#Stargazer_Globals_hoverLabel
+  commentId: P:Stargazer.Globals.hoverLabel
+  fullName: Stargazer.Globals.hoverLabel
+  nameWithType: Globals.hoverLabel
+- uid: Stargazer.Globals.hoverLabel*
+  name: hoverLabel
+  href: api/Stargazer.Globals.html#Stargazer_Globals_hoverLabel_
+  commentId: Overload:Stargazer.Globals.hoverLabel
+  isSpec: "True"
+  fullName: Stargazer.Globals.hoverLabel
+  nameWithType: Globals.hoverLabel
+- uid: Stargazer.Globals.isAzimuth
+  name: isAzimuth
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isAzimuth
+  commentId: P:Stargazer.Globals.isAzimuth
+  fullName: Stargazer.Globals.isAzimuth
+  nameWithType: Globals.isAzimuth
+- uid: Stargazer.Globals.isAzimuth*
+  name: isAzimuth
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isAzimuth_
+  commentId: Overload:Stargazer.Globals.isAzimuth
+  isSpec: "True"
+  fullName: Stargazer.Globals.isAzimuth
+  nameWithType: Globals.isAzimuth
+- uid: Stargazer.Globals.isConstellation
+  name: isConstellation
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isConstellation
+  commentId: P:Stargazer.Globals.isConstellation
+  fullName: Stargazer.Globals.isConstellation
+  nameWithType: Globals.isConstellation
+- uid: Stargazer.Globals.isConstellation*
+  name: isConstellation
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isConstellation_
+  commentId: Overload:Stargazer.Globals.isConstellation
+  isSpec: "True"
+  fullName: Stargazer.Globals.isConstellation
+  nameWithType: Globals.isConstellation
+- uid: Stargazer.Globals.isHover
+  name: isHover
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isHover
+  commentId: P:Stargazer.Globals.isHover
+  fullName: Stargazer.Globals.isHover
+  nameWithType: Globals.isHover
+- uid: Stargazer.Globals.isHover*
+  name: isHover
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isHover_
+  commentId: Overload:Stargazer.Globals.isHover
+  isSpec: "True"
+  fullName: Stargazer.Globals.isHover
+  nameWithType: Globals.isHover
+- uid: Stargazer.Globals.isLabel
+  name: isLabel
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isLabel
+  commentId: P:Stargazer.Globals.isLabel
+  fullName: Stargazer.Globals.isLabel
+  nameWithType: Globals.isLabel
+- uid: Stargazer.Globals.isLabel*
+  name: isLabel
+  href: api/Stargazer.Globals.html#Stargazer_Globals_isLabel_
+  commentId: Overload:Stargazer.Globals.isLabel
+  isSpec: "True"
+  fullName: Stargazer.Globals.isLabel
+  nameWithType: Globals.isLabel
+- uid: Stargazer.Globals.requestTime
+  name: requestTime
+  href: api/Stargazer.Globals.html#Stargazer_Globals_requestTime
+  commentId: P:Stargazer.Globals.requestTime
+  fullName: Stargazer.Globals.requestTime
+  nameWithType: Globals.requestTime
+- uid: Stargazer.Globals.requestTime*
+  name: requestTime
+  href: api/Stargazer.Globals.html#Stargazer_Globals_requestTime_
+  commentId: Overload:Stargazer.Globals.requestTime
+  isSpec: "True"
+  fullName: Stargazer.Globals.requestTime
+  nameWithType: Globals.requestTime
+- uid: Stargazer.GridLabel
+  name: GridLabel
+  href: api/Stargazer.GridLabel.html
+  commentId: T:Stargazer.GridLabel
+  fullName: Stargazer.GridLabel
+  nameWithType: GridLabel
+- uid: Stargazer.GridLabel.SetCamera(Godot.Camera3D)
+  name: SetCamera(Camera3D)
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_SetCamera_Godot_Camera3D_
+  commentId: M:Stargazer.GridLabel.SetCamera(Godot.Camera3D)
+  fullName: Stargazer.GridLabel.SetCamera(Godot.Camera3D)
+  nameWithType: GridLabel.SetCamera(Camera3D)
+- uid: Stargazer.GridLabel.SetCamera*
+  name: SetCamera
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_SetCamera_
+  commentId: Overload:Stargazer.GridLabel.SetCamera
+  isSpec: "True"
+  fullName: Stargazer.GridLabel.SetCamera
+  nameWithType: GridLabel.SetCamera
+- uid: Stargazer.GridLabel.ToggleGridlines(System.Boolean)
+  name: ToggleGridlines(bool)
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_ToggleGridlines_System_Boolean_
+  commentId: M:Stargazer.GridLabel.ToggleGridlines(System.Boolean)
+  name.vb: ToggleGridlines(Boolean)
+  fullName: Stargazer.GridLabel.ToggleGridlines(bool)
+  fullName.vb: Stargazer.GridLabel.ToggleGridlines(Boolean)
+  nameWithType: GridLabel.ToggleGridlines(bool)
+  nameWithType.vb: GridLabel.ToggleGridlines(Boolean)
+- uid: Stargazer.GridLabel.ToggleGridlines*
+  name: ToggleGridlines
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_ToggleGridlines_
+  commentId: Overload:Stargazer.GridLabel.ToggleGridlines
+  isSpec: "True"
+  fullName: Stargazer.GridLabel.ToggleGridlines
+  nameWithType: GridLabel.ToggleGridlines
+- uid: Stargazer.GridLabel._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel__Process_System_Double_
+  commentId: M:Stargazer.GridLabel._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.GridLabel._Process(double)
+  fullName.vb: Stargazer.GridLabel._Process(Double)
+  nameWithType: GridLabel._Process(double)
+  nameWithType.vb: GridLabel._Process(Double)
+- uid: Stargazer.GridLabel._Process*
+  name: _Process
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel__Process_
+  commentId: Overload:Stargazer.GridLabel._Process
+  isSpec: "True"
+  fullName: Stargazer.GridLabel._Process
+  nameWithType: GridLabel._Process
+- uid: Stargazer.GridLabel._Ready
+  name: _Ready()
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel__Ready
+  commentId: M:Stargazer.GridLabel._Ready
+  fullName: Stargazer.GridLabel._Ready()
+  nameWithType: GridLabel._Ready()
+- uid: Stargazer.GridLabel._Ready*
+  name: _Ready
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel__Ready_
+  commentId: Overload:Stargazer.GridLabel._Ready
+  isSpec: "True"
+  fullName: Stargazer.GridLabel._Ready
+  nameWithType: GridLabel._Ready
+- uid: Stargazer.GridLabel.camera
+  name: camera
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_camera
+  commentId: F:Stargazer.GridLabel.camera
+  fullName: Stargazer.GridLabel.camera
+  nameWithType: GridLabel.camera
+- uid: Stargazer.GridLabel.gridlabels
+  name: gridlabels
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_gridlabels
+  commentId: F:Stargazer.GridLabel.gridlabels
+  fullName: Stargazer.GridLabel.gridlabels
+  nameWithType: GridLabel.gridlabels
+- uid: Stargazer.GridLabel.leftPlane
+  name: leftPlane
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_leftPlane
+  commentId: F:Stargazer.GridLabel.leftPlane
+  fullName: Stargazer.GridLabel.leftPlane
+  nameWithType: GridLabel.leftPlane
+- uid: Stargazer.GridLabel.lineinterval
+  name: lineinterval
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_lineinterval
+  commentId: F:Stargazer.GridLabel.lineinterval
+  fullName: Stargazer.GridLabel.lineinterval
+  nameWithType: GridLabel.lineinterval
+- uid: Stargazer.GridLabel.render
+  name: render
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_render
+  commentId: F:Stargazer.GridLabel.render
+  fullName: Stargazer.GridLabel.render
+  nameWithType: GridLabel.render
+- uid: Stargazer.GridLabel.storedfov
+  name: storedfov
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_storedfov
+  commentId: F:Stargazer.GridLabel.storedfov
+  fullName: Stargazer.GridLabel.storedfov
+  nameWithType: GridLabel.storedfov
+- uid: Stargazer.GridLabel.updateLabels
+  name: updateLabels()
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_updateLabels
+  commentId: M:Stargazer.GridLabel.updateLabels
+  fullName: Stargazer.GridLabel.updateLabels()
+  nameWithType: GridLabel.updateLabels()
+- uid: Stargazer.GridLabel.updateLabels*
+  name: updateLabels
+  href: api/Stargazer.GridLabel.html#Stargazer_GridLabel_updateLabels_
+  commentId: Overload:Stargazer.GridLabel.updateLabels
+  isSpec: "True"
+  fullName: Stargazer.GridLabel.updateLabels
+  nameWithType: GridLabel.updateLabels
+- uid: Stargazer.HoverLabel
+  name: HoverLabel
+  href: api/Stargazer.HoverLabel.html
+  commentId: T:Stargazer.HoverLabel
+  fullName: Stargazer.HoverLabel
+  nameWithType: HoverLabel
+- uid: Stargazer.HoverLabel._Input(Godot.InputEvent)
+  name: _Input(InputEvent)
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Input_Godot_InputEvent_
+  commentId: M:Stargazer.HoverLabel._Input(Godot.InputEvent)
+  fullName: Stargazer.HoverLabel._Input(Godot.InputEvent)
+  nameWithType: HoverLabel._Input(InputEvent)
+- uid: Stargazer.HoverLabel._Input*
+  name: _Input
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Input_
+  commentId: Overload:Stargazer.HoverLabel._Input
+  isSpec: "True"
+  fullName: Stargazer.HoverLabel._Input
+  nameWithType: HoverLabel._Input
+- uid: Stargazer.HoverLabel._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Process_System_Double_
+  commentId: M:Stargazer.HoverLabel._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.HoverLabel._Process(double)
+  fullName.vb: Stargazer.HoverLabel._Process(Double)
+  nameWithType: HoverLabel._Process(double)
+  nameWithType.vb: HoverLabel._Process(Double)
+- uid: Stargazer.HoverLabel._Process*
+  name: _Process
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Process_
+  commentId: Overload:Stargazer.HoverLabel._Process
+  isSpec: "True"
+  fullName: Stargazer.HoverLabel._Process
+  nameWithType: HoverLabel._Process
+- uid: Stargazer.HoverLabel._Ready
+  name: _Ready()
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Ready
+  commentId: M:Stargazer.HoverLabel._Ready
+  fullName: Stargazer.HoverLabel._Ready()
+  nameWithType: HoverLabel._Ready()
+- uid: Stargazer.HoverLabel._Ready*
+  name: _Ready
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel__Ready_
+  commentId: Overload:Stargazer.HoverLabel._Ready
+  isSpec: "True"
+  fullName: Stargazer.HoverLabel._Ready
+  nameWithType: HoverLabel._Ready
+- uid: Stargazer.HoverLabel.globalVars
+  name: globalVars
+  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel_globalVars
+  commentId: F:Stargazer.HoverLabel.globalVars
+  fullName: Stargazer.HoverLabel.globalVars
+  nameWithType: HoverLabel.globalVars
+- uid: Stargazer.IHoverable
+  name: IHoverable
+  href: api/Stargazer.IHoverable.html
+  commentId: T:Stargazer.IHoverable
+  fullName: Stargazer.IHoverable
+  nameWithType: IHoverable
+- uid: Stargazer.IHoverable.GetHoverText
+  name: GetHoverText()
+  href: api/Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
+  commentId: M:Stargazer.IHoverable.GetHoverText
+  fullName: Stargazer.IHoverable.GetHoverText()
+  nameWithType: IHoverable.GetHoverText()
+- uid: Stargazer.IHoverable.GetHoverText*
+  name: GetHoverText
+  href: api/Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText_
+  commentId: Overload:Stargazer.IHoverable.GetHoverText
+  isSpec: "True"
+  fullName: Stargazer.IHoverable.GetHoverText
+  nameWithType: IHoverable.GetHoverText
+- uid: Stargazer.IUserUpdateReceiver
+  name: IUserUpdateReceiver
+  href: api/Stargazer.IUserUpdateReceiver.html
+  commentId: T:Stargazer.IUserUpdateReceiver
+  fullName: Stargazer.IUserUpdateReceiver
+  nameWithType: IUserUpdateReceiver
+- uid: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  href: api/Stargazer.IUserUpdateReceiver.html#Stargazer_IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  commentId: M:Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  fullName.vb: Stargazer.IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  nameWithType: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType.vb: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage(Of Star))
+- uid: Stargazer.IUserUpdateReceiver.UpdateUserPosition*
+  name: UpdateUserPosition
+  href: api/Stargazer.IUserUpdateReceiver.html#Stargazer_IUserUpdateReceiver_UpdateUserPosition_
+  commentId: Overload:Stargazer.IUserUpdateReceiver.UpdateUserPosition
+  isSpec: "True"
+  fullName: Stargazer.IUserUpdateReceiver.UpdateUserPosition
+  nameWithType: IUserUpdateReceiver.UpdateUserPosition
 - uid: Stargazer.LabelButton
   name: LabelButton
   href: api/Stargazer.LabelButton.html
@@ -2877,6 +3869,148 @@ references:
   commentId: F:Stargazer.Main.yaw
   fullName: Stargazer.Main.yaw
   nameWithType: Main.yaw
+- uid: Stargazer.MainCamera
+  name: MainCamera
+  href: api/Stargazer.MainCamera.html
+  commentId: T:Stargazer.MainCamera
+  fullName: Stargazer.MainCamera
+  nameWithType: MainCamera
+- uid: Stargazer.MainCamera.MouseSensitivity
+  name: MouseSensitivity
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_MouseSensitivity
+  commentId: F:Stargazer.MainCamera.MouseSensitivity
+  fullName: Stargazer.MainCamera.MouseSensitivity
+  nameWithType: MainCamera.MouseSensitivity
+- uid: Stargazer.MainCamera.TakeScreenshot
+  name: TakeScreenshot()
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_TakeScreenshot
+  commentId: M:Stargazer.MainCamera.TakeScreenshot
+  fullName: Stargazer.MainCamera.TakeScreenshot()
+  nameWithType: MainCamera.TakeScreenshot()
+- uid: Stargazer.MainCamera.TakeScreenshot*
+  name: TakeScreenshot
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_TakeScreenshot_
+  commentId: Overload:Stargazer.MainCamera.TakeScreenshot
+  isSpec: "True"
+  fullName: Stargazer.MainCamera.TakeScreenshot
+  nameWithType: MainCamera.TakeScreenshot
+- uid: Stargazer.MainCamera.ZoomIn
+  name: ZoomIn()
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_ZoomIn
+  commentId: M:Stargazer.MainCamera.ZoomIn
+  fullName: Stargazer.MainCamera.ZoomIn()
+  nameWithType: MainCamera.ZoomIn()
+- uid: Stargazer.MainCamera.ZoomIn*
+  name: ZoomIn
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_ZoomIn_
+  commentId: Overload:Stargazer.MainCamera.ZoomIn
+  isSpec: "True"
+  fullName: Stargazer.MainCamera.ZoomIn
+  nameWithType: MainCamera.ZoomIn
+- uid: Stargazer.MainCamera.ZoomOut
+  name: ZoomOut()
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_ZoomOut
+  commentId: M:Stargazer.MainCamera.ZoomOut
+  fullName: Stargazer.MainCamera.ZoomOut()
+  nameWithType: MainCamera.ZoomOut()
+- uid: Stargazer.MainCamera.ZoomOut*
+  name: ZoomOut
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_ZoomOut_
+  commentId: Overload:Stargazer.MainCamera.ZoomOut
+  isSpec: "True"
+  fullName: Stargazer.MainCamera.ZoomOut
+  nameWithType: MainCamera.ZoomOut
+- uid: Stargazer.MainCamera._Input(Godot.InputEvent)
+  name: _Input(InputEvent)
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Input_Godot_InputEvent_
+  commentId: M:Stargazer.MainCamera._Input(Godot.InputEvent)
+  fullName: Stargazer.MainCamera._Input(Godot.InputEvent)
+  nameWithType: MainCamera._Input(InputEvent)
+- uid: Stargazer.MainCamera._Input*
+  name: _Input
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Input_
+  commentId: Overload:Stargazer.MainCamera._Input
+  isSpec: "True"
+  fullName: Stargazer.MainCamera._Input
+  nameWithType: MainCamera._Input
+- uid: Stargazer.MainCamera._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Process_System_Double_
+  commentId: M:Stargazer.MainCamera._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.MainCamera._Process(double)
+  fullName.vb: Stargazer.MainCamera._Process(Double)
+  nameWithType: MainCamera._Process(double)
+  nameWithType.vb: MainCamera._Process(Double)
+- uid: Stargazer.MainCamera._Process*
+  name: _Process
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Process_
+  commentId: Overload:Stargazer.MainCamera._Process
+  isSpec: "True"
+  fullName: Stargazer.MainCamera._Process
+  nameWithType: MainCamera._Process
+- uid: Stargazer.MainCamera._Ready
+  name: _Ready()
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Ready
+  commentId: M:Stargazer.MainCamera._Ready
+  fullName: Stargazer.MainCamera._Ready()
+  nameWithType: MainCamera._Ready()
+- uid: Stargazer.MainCamera._Ready*
+  name: _Ready
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera__Ready_
+  commentId: Overload:Stargazer.MainCamera._Ready
+  isSpec: "True"
+  fullName: Stargazer.MainCamera._Ready
+  nameWithType: MainCamera._Ready
+- uid: Stargazer.MainCamera.globalVars
+  name: globalVars
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_globalVars
+  commentId: F:Stargazer.MainCamera.globalVars
+  fullName: Stargazer.MainCamera.globalVars
+  nameWithType: MainCamera.globalVars
+- uid: Stargazer.MainCamera.pitch
+  name: pitch
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_pitch
+  commentId: F:Stargazer.MainCamera.pitch
+  fullName: Stargazer.MainCamera.pitch
+  nameWithType: MainCamera.pitch
+- uid: Stargazer.MainCamera.rightClickHeld
+  name: rightClickHeld
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_rightClickHeld
+  commentId: F:Stargazer.MainCamera.rightClickHeld
+  fullName: Stargazer.MainCamera.rightClickHeld
+  nameWithType: MainCamera.rightClickHeld
+- uid: Stargazer.MainCamera.screenshotPath
+  name: screenshotPath
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_screenshotPath
+  commentId: F:Stargazer.MainCamera.screenshotPath
+  fullName: Stargazer.MainCamera.screenshotPath
+  nameWithType: MainCamera.screenshotPath
+- uid: Stargazer.MainCamera.yaw
+  name: yaw
+  href: api/Stargazer.MainCamera.html#Stargazer_MainCamera_yaw
+  commentId: F:Stargazer.MainCamera.yaw
+  fullName: Stargazer.MainCamera.yaw
+  nameWithType: MainCamera.yaw
+- uid: Stargazer.MainContainer
+  name: MainContainer
+  href: api/Stargazer.MainContainer.html
+  commentId: T:Stargazer.MainContainer
+  fullName: Stargazer.MainContainer
+  nameWithType: MainContainer
+- uid: Stargazer.MainContainer.GetStartup
+  name: GetStartup()
+  href: api/Stargazer.MainContainer.html#Stargazer_MainContainer_GetStartup
+  commentId: M:Stargazer.MainContainer.GetStartup
+  fullName: Stargazer.MainContainer.GetStartup()
+  nameWithType: MainContainer.GetStartup()
+- uid: Stargazer.MainContainer.GetStartup*
+  name: GetStartup
+  href: api/Stargazer.MainContainer.html#Stargazer_MainContainer_GetStartup_
+  commentId: Overload:Stargazer.MainContainer.GetStartup
+  isSpec: "True"
+  fullName: Stargazer.MainContainer.GetStartup
+  nameWithType: MainContainer.GetStartup
 - uid: Stargazer.MessierButton
   name: MessierButton
   href: api/Stargazer.MessierButton.html
@@ -2920,6 +4054,12 @@ references:
   commentId: F:Stargazer.MessierButton.HuntsvilleCoordinates.longitude
   fullName: Stargazer.MessierButton.HuntsvilleCoordinates.longitude
   nameWithType: MessierButton.HuntsvilleCoordinates.longitude
+- uid: Stargazer.MessierButton.MessierObjectsToggled
+  name: MessierObjectsToggled
+  href: api/Stargazer.MessierButton.html#Stargazer_MessierButton_MessierObjectsToggled
+  commentId: F:Stargazer.MessierButton.MessierObjectsToggled
+  fullName: Stargazer.MessierButton.MessierObjectsToggled
+  nameWithType: MessierButton.MessierObjectsToggled
 - uid: Stargazer.MessierButton.MethodName
   name: MessierButton.MethodName
   href: api/Stargazer.MessierButton.MethodName.html
@@ -2938,31 +4078,12 @@ references:
   commentId: F:Stargazer.MessierButton.MethodName.ToggleMessierObjects
   fullName: Stargazer.MessierButton.MethodName.ToggleMessierObjects
   nameWithType: MessierButton.MethodName.ToggleMessierObjects
-- uid: Stargazer.MessierButton.NotifyControllerOfUserUpdate
-  name: NotifyControllerOfUserUpdate
-  href: api/Stargazer.MessierButton.html#Stargazer_MessierButton_NotifyControllerOfUserUpdate
-  commentId: F:Stargazer.MessierButton.NotifyControllerOfUserUpdate
-  fullName: Stargazer.MessierButton.NotifyControllerOfUserUpdate
-  nameWithType: MessierButton.NotifyControllerOfUserUpdate
 - uid: Stargazer.MessierButton.PropertyName
   name: MessierButton.PropertyName
   href: api/Stargazer.MessierButton.PropertyName.html
   commentId: T:Stargazer.MessierButton.PropertyName
   fullName: Stargazer.MessierButton.PropertyName
   nameWithType: MessierButton.PropertyName
-- uid: Stargazer.MessierButton.RunTheThing
-  name: RunTheThing()
-  href: api/Stargazer.MessierButton.html#Stargazer_MessierButton_RunTheThing
-  commentId: M:Stargazer.MessierButton.RunTheThing
-  fullName: Stargazer.MessierButton.RunTheThing()
-  nameWithType: MessierButton.RunTheThing()
-- uid: Stargazer.MessierButton.RunTheThing*
-  name: RunTheThing
-  href: api/Stargazer.MessierButton.html#Stargazer_MessierButton_RunTheThing_
-  commentId: Overload:Stargazer.MessierButton.RunTheThing
-  isSpec: "True"
-  fullName: Stargazer.MessierButton.RunTheThing
-  nameWithType: MessierButton.RunTheThing
 - uid: Stargazer.MessierButton.SignalName
   name: MessierButton.SignalName
   href: api/Stargazer.MessierButton.SignalName.html
@@ -2985,12 +4106,220 @@ references:
   isSpec: "True"
   fullName: Stargazer.MessierButton.ToggleMessierObjects
   nameWithType: MessierButton.ToggleMessierObjects
+- uid: Stargazer.Moon
+  name: Moon
+  href: api/Stargazer.Moon.html
+  commentId: T:Stargazer.Moon
+  fullName: Stargazer.Moon
+  nameWithType: Moon
+- uid: Stargazer.Moon.Distance
+  name: Distance
+  href: api/Stargazer.Moon.html#Stargazer_Moon_Distance
+  commentId: F:Stargazer.Moon.Distance
+  fullName: Stargazer.Moon.Distance
+  nameWithType: Moon.Distance
+- uid: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  name: FromHorizontal(HorizontalMoon, IMoonCalculator)
+  href: api/Stargazer.Moon.html#Stargazer_Moon_FromHorizontal_DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IMoonCalculator_
+  commentId: M:Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  fullName: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
+  nameWithType: Moon.FromHorizontal(HorizontalMoon, IMoonCalculator)
+- uid: Stargazer.Moon.FromHorizontal*
+  name: FromHorizontal
+  href: api/Stargazer.Moon.html#Stargazer_Moon_FromHorizontal_
+  commentId: Overload:Stargazer.Moon.FromHorizontal
+  isSpec: "True"
+  fullName: Stargazer.Moon.FromHorizontal
+  nameWithType: Moon.FromHorizontal
+- uid: Stargazer.Moon.GetLocation
+  name: GetLocation()
+  href: api/Stargazer.Moon.html#Stargazer_Moon_GetLocation
+  commentId: M:Stargazer.Moon.GetLocation
+  fullName: Stargazer.Moon.GetLocation()
+  nameWithType: Moon.GetLocation()
+- uid: Stargazer.Moon.GetLocation*
+  name: GetLocation
+  href: api/Stargazer.Moon.html#Stargazer_Moon_GetLocation_
+  commentId: Overload:Stargazer.Moon.GetLocation
+  isSpec: "True"
+  fullName: Stargazer.Moon.GetLocation
+  nameWithType: Moon.GetLocation
+- uid: Stargazer.Moon._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Process_System_Double_
+  commentId: M:Stargazer.Moon._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.Moon._Process(double)
+  fullName.vb: Stargazer.Moon._Process(Double)
+  nameWithType: Moon._Process(double)
+  nameWithType.vb: Moon._Process(Double)
+- uid: Stargazer.Moon._Process*
+  name: _Process
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Process_
+  commentId: Overload:Stargazer.Moon._Process
+  isSpec: "True"
+  fullName: Stargazer.Moon._Process
+  nameWithType: Moon._Process
+- uid: Stargazer.Moon._Ready
+  name: _Ready()
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Ready
+  commentId: M:Stargazer.Moon._Ready
+  fullName: Stargazer.Moon._Ready()
+  nameWithType: Moon._Ready()
+- uid: Stargazer.Moon._Ready*
+  name: _Ready
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Ready_
+  commentId: Overload:Stargazer.Moon._Ready
+  isSpec: "True"
+  fullName: Stargazer.Moon._Ready
+  nameWithType: Moon._Ready
+- uid: Stargazer.Moon.calculator
+  name: calculator
+  href: api/Stargazer.Moon.html#Stargazer_Moon_calculator
+  commentId: F:Stargazer.Moon.calculator
+  fullName: Stargazer.Moon.calculator
+  nameWithType: Moon.calculator
+- uid: Stargazer.Moon.horizontalMoon
+  name: horizontalMoon
+  href: api/Stargazer.Moon.html#Stargazer_Moon_horizontalMoon
+  commentId: F:Stargazer.Moon.horizontalMoon
+  fullName: Stargazer.Moon.horizontalMoon
+  nameWithType: Moon.horizontalMoon
+- uid: Stargazer.Moon.radians
+  name: radians
+  href: api/Stargazer.Moon.html#Stargazer_Moon_radians
+  commentId: F:Stargazer.Moon.radians
+  fullName: Stargazer.Moon.radians
+  nameWithType: Moon.radians
+- uid: Stargazer.Planet
+  name: Planet
+  href: api/Stargazer.Planet.html
+  commentId: T:Stargazer.Planet
+  fullName: Stargazer.Planet
+  nameWithType: Planet
+- uid: Stargazer.Planet.Distance
+  name: Distance
+  href: api/Stargazer.Planet.html#Stargazer_Planet_Distance
+  commentId: F:Stargazer.Planet.Distance
+  fullName: Stargazer.Planet.Distance
+  nameWithType: Planet.Distance
+- uid: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  name: FromHorizontal(HorizontalPlanet, IPlanetaryCalculator<HorizontalPlanet>)
+  href: api/Stargazer.Planet.html#Stargazer_Planet_FromHorizontal_DataLayer_HorizontalObjects_HorizontalPlanet_DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__
+  commentId: M:Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  name.vb: FromHorizontal(HorizontalPlanet, IPlanetaryCalculator(Of HorizontalPlanet))
+  fullName: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>)
+  fullName.vb: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet, DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet))
+  nameWithType: Planet.FromHorizontal(HorizontalPlanet, IPlanetaryCalculator<HorizontalPlanet>)
+  nameWithType.vb: Planet.FromHorizontal(HorizontalPlanet, IPlanetaryCalculator(Of HorizontalPlanet))
+- uid: Stargazer.Planet.FromHorizontal*
+  name: FromHorizontal
+  href: api/Stargazer.Planet.html#Stargazer_Planet_FromHorizontal_
+  commentId: Overload:Stargazer.Planet.FromHorizontal
+  isSpec: "True"
+  fullName: Stargazer.Planet.FromHorizontal
+  nameWithType: Planet.FromHorizontal
+- uid: Stargazer.Planet.GetLocation
+  name: GetLocation()
+  href: api/Stargazer.Planet.html#Stargazer_Planet_GetLocation
+  commentId: M:Stargazer.Planet.GetLocation
+  fullName: Stargazer.Planet.GetLocation()
+  nameWithType: Planet.GetLocation()
+- uid: Stargazer.Planet.GetLocation*
+  name: GetLocation
+  href: api/Stargazer.Planet.html#Stargazer_Planet_GetLocation_
+  commentId: Overload:Stargazer.Planet.GetLocation
+  isSpec: "True"
+  fullName: Stargazer.Planet.GetLocation
+  nameWithType: Planet.GetLocation
+- uid: Stargazer.Planet._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.Planet.html#Stargazer_Planet__Process_System_Double_
+  commentId: M:Stargazer.Planet._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.Planet._Process(double)
+  fullName.vb: Stargazer.Planet._Process(Double)
+  nameWithType: Planet._Process(double)
+  nameWithType.vb: Planet._Process(Double)
+- uid: Stargazer.Planet._Process*
+  name: _Process
+  href: api/Stargazer.Planet.html#Stargazer_Planet__Process_
+  commentId: Overload:Stargazer.Planet._Process
+  isSpec: "True"
+  fullName: Stargazer.Planet._Process
+  nameWithType: Planet._Process
+- uid: Stargazer.Planet.calculator
+  name: calculator
+  href: api/Stargazer.Planet.html#Stargazer_Planet_calculator
+  commentId: F:Stargazer.Planet.calculator
+  fullName: Stargazer.Planet.calculator
+  nameWithType: Planet.calculator
+- uid: Stargazer.Planet.horizonalPlanet
+  name: horizonalPlanet
+  href: api/Stargazer.Planet.html#Stargazer_Planet_horizonalPlanet
+  commentId: F:Stargazer.Planet.horizonalPlanet
+  fullName: Stargazer.Planet.horizonalPlanet
+  nameWithType: Planet.horizonalPlanet
+- uid: Stargazer.Planet.radians
+  name: radians
+  href: api/Stargazer.Planet.html#Stargazer_Planet_radians
+  commentId: F:Stargazer.Planet.radians
+  fullName: Stargazer.Planet.radians
+  nameWithType: Planet.radians
+- uid: Stargazer.Planets
+  name: Planets
+  href: api/Stargazer.Planets.html
+  commentId: T:Stargazer.Planets
+  fullName: Stargazer.Planets
+  nameWithType: Planets
+- uid: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  name: DrawPlanets(IEnumerable<HorizontalPlanet>, IPlanetaryCalculator<HorizontalPlanet>)
+  href: api/Stargazer.Planets.html#Stargazer_Planets_DrawPlanets_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__
+  commentId: M:Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  name.vb: DrawPlanets(IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet))
+  fullName: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>)
+  fullName.vb: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet))
+  nameWithType: Planets.DrawPlanets(IEnumerable<HorizontalPlanet>, IPlanetaryCalculator<HorizontalPlanet>)
+  nameWithType.vb: Planets.DrawPlanets(IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet))
+- uid: Stargazer.Planets.DrawPlanets*
+  name: DrawPlanets
+  href: api/Stargazer.Planets.html#Stargazer_Planets_DrawPlanets_
+  commentId: Overload:Stargazer.Planets.DrawPlanets
+  isSpec: "True"
+  fullName: Stargazer.Planets.DrawPlanets
+  nameWithType: Planets.DrawPlanets
+- uid: Stargazer.Planets.PlanetScene
+  name: PlanetScene
+  href: api/Stargazer.Planets.html#Stargazer_Planets_PlanetScene
+  commentId: P:Stargazer.Planets.PlanetScene
+  fullName: Stargazer.Planets.PlanetScene
+  nameWithType: Planets.PlanetScene
+- uid: Stargazer.Planets.PlanetScene*
+  name: PlanetScene
+  href: api/Stargazer.Planets.html#Stargazer_Planets_PlanetScene_
+  commentId: Overload:Stargazer.Planets.PlanetScene
+  isSpec: "True"
+  fullName: Stargazer.Planets.PlanetScene
+  nameWithType: Planets.PlanetScene
 - uid: Stargazer.SkyView
   name: SkyView
   href: api/Stargazer.SkyView.html
   commentId: T:Stargazer.SkyView
   fullName: Stargazer.SkyView
   nameWithType: SkyView
+- uid: Stargazer.SkyView.Camera
+  name: Camera
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_Camera
+  commentId: P:Stargazer.SkyView.Camera
+  fullName: Stargazer.SkyView.Camera
+  nameWithType: SkyView.Camera
+- uid: Stargazer.SkyView.Camera*
+  name: Camera
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_Camera_
+  commentId: Overload:Stargazer.SkyView.Camera
+  isSpec: "True"
+  fullName: Stargazer.SkyView.Camera
+  nameWithType: SkyView.Camera
 - uid: Stargazer.SkyView.MethodName
   name: SkyView.MethodName
   href: api/Stargazer.SkyView.MethodName.html
@@ -3003,6 +4332,19 @@ references:
   commentId: F:Stargazer.SkyView.MethodName._Ready
   fullName: Stargazer.SkyView.MethodName._Ready
   nameWithType: SkyView.MethodName._Ready
+- uid: Stargazer.SkyView.MoonScene
+  name: MoonScene
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_MoonScene
+  commentId: P:Stargazer.SkyView.MoonScene
+  fullName: Stargazer.SkyView.MoonScene
+  nameWithType: SkyView.MoonScene
+- uid: Stargazer.SkyView.MoonScene*
+  name: MoonScene
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_MoonScene_
+  commentId: Overload:Stargazer.SkyView.MoonScene
+  isSpec: "True"
+  fullName: Stargazer.SkyView.MoonScene
+  nameWithType: SkyView.MoonScene
 - uid: Stargazer.SkyView.PropertyName
   name: SkyView.PropertyName
   href: api/Stargazer.SkyView.PropertyName.html
@@ -3055,6 +4397,22 @@ references:
   isSpec: "True"
   fullName: Stargazer.SkyView.UpdateUserPosition
   nameWithType: SkyView.UpdateUserPosition
+- uid: Stargazer.SkyView._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView__Process_System_Double_
+  commentId: M:Stargazer.SkyView._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.SkyView._Process(double)
+  fullName.vb: Stargazer.SkyView._Process(Double)
+  nameWithType: SkyView._Process(double)
+  nameWithType.vb: SkyView._Process(Double)
+- uid: Stargazer.SkyView._Process*
+  name: _Process
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView__Process_
+  commentId: Overload:Stargazer.SkyView._Process
+  isSpec: "True"
+  fullName: Stargazer.SkyView._Process
+  nameWithType: SkyView._Process
 - uid: Stargazer.SkyView._Ready
   name: _Ready()
   href: api/Stargazer.SkyView.html#Stargazer_SkyView__Ready
@@ -3068,33 +4426,166 @@ references:
   isSpec: "True"
   fullName: Stargazer.SkyView._Ready
   nameWithType: SkyView._Ready
+- uid: Stargazer.SkyView.constellation2dNode
+  name: constellation2dNode
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_constellation2dNode
+  commentId: F:Stargazer.SkyView.constellation2dNode
+  fullName: Stargazer.SkyView.constellation2dNode
+  nameWithType: SkyView.constellation2dNode
 - uid: Stargazer.SkyView.constellationNode
   name: constellationNode
   href: api/Stargazer.SkyView.html#Stargazer_SkyView_constellationNode
   commentId: F:Stargazer.SkyView.constellationNode
   fullName: Stargazer.SkyView.constellationNode
   nameWithType: SkyView.constellationNode
+- uid: Stargazer.SkyView.datelabel
+  name: datelabel
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_datelabel
+  commentId: F:Stargazer.SkyView.datelabel
+  fullName: Stargazer.SkyView.datelabel
+  nameWithType: SkyView.datelabel
+- uid: Stargazer.SkyView.moon
+  name: moon
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_moon
+  commentId: F:Stargazer.SkyView.moon
+  fullName: Stargazer.SkyView.moon
+  nameWithType: SkyView.moon
+- uid: Stargazer.SkyView.moonCalculator
+  name: moonCalculator
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_moonCalculator
+  commentId: F:Stargazer.SkyView.moonCalculator
+  fullName: Stargazer.SkyView.moonCalculator
+  nameWithType: SkyView.moonCalculator
+- uid: Stargazer.SkyView.planetNode
+  name: planetNode
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_planetNode
+  commentId: F:Stargazer.SkyView.planetNode
+  fullName: Stargazer.SkyView.planetNode
+  nameWithType: SkyView.planetNode
+- uid: Stargazer.SkyView.planetaryCalculator
+  name: planetaryCalculator
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_planetaryCalculator
+  commentId: F:Stargazer.SkyView.planetaryCalculator
+  fullName: Stargazer.SkyView.planetaryCalculator
+  nameWithType: SkyView.planetaryCalculator
 - uid: Stargazer.SkyView.spawner
   name: spawner
   href: api/Stargazer.SkyView.html#Stargazer_SkyView_spawner
   commentId: F:Stargazer.SkyView.spawner
   fullName: Stargazer.SkyView.spawner
   nameWithType: SkyView.spawner
+- uid: Stargazer.SkyView.spawner2d
+  name: spawner2d
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_spawner2d
+  commentId: F:Stargazer.SkyView.spawner2d
+  fullName: Stargazer.SkyView.spawner2d
+  nameWithType: SkyView.spawner2d
+- uid: Stargazer.SkyView.starConverter
+  name: starConverter
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_starConverter
+  commentId: F:Stargazer.SkyView.starConverter
+  fullName: Stargazer.SkyView.starConverter
+  nameWithType: SkyView.starConverter
+- uid: Stargazer.SkyView.timeMultiplier
+  name: timeMultiplier
+  href: api/Stargazer.SkyView.html#Stargazer_SkyView_timeMultiplier
+  commentId: F:Stargazer.SkyView.timeMultiplier
+  fullName: Stargazer.SkyView.timeMultiplier
+  nameWithType: SkyView.timeMultiplier
+- uid: Stargazer.SkyView2D
+  name: SkyView2D
+  href: api/Stargazer.SkyView2D.html
+  commentId: T:Stargazer.SkyView2D
+  fullName: Stargazer.SkyView2D
+  nameWithType: SkyView2D
+- uid: Stargazer.SkyView2D.Constellations
+  name: Constellations
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_Constellations
+  commentId: F:Stargazer.SkyView2D.Constellations
+  fullName: Stargazer.SkyView2D.Constellations
+  nameWithType: SkyView2D.Constellations
+- uid: Stargazer.SkyView2D.Stars
+  name: Stars
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_Stars
+  commentId: F:Stargazer.SkyView2D.Stars
+  fullName: Stargazer.SkyView2D.Stars
+  nameWithType: SkyView2D.Stars
+- uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  nameWithType: SkyView2D.UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star))
+- uid: Stargazer.SkyView2D.UpdateUserPosition*
+  name: UpdateUserPosition
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_
+  commentId: Overload:Stargazer.SkyView2D.UpdateUserPosition
+  isSpec: "True"
+  fullName: Stargazer.SkyView2D.UpdateUserPosition
+  nameWithType: SkyView2D.UpdateUserPosition
+- uid: Stargazer.SkyView2D._Ready
+  name: _Ready()
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D__Ready
+  commentId: M:Stargazer.SkyView2D._Ready
+  fullName: Stargazer.SkyView2D._Ready()
+  nameWithType: SkyView2D._Ready()
+- uid: Stargazer.SkyView2D._Ready*
+  name: _Ready
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D__Ready_
+  commentId: Overload:Stargazer.SkyView2D._Ready
+  isSpec: "True"
+  fullName: Stargazer.SkyView2D._Ready
+  nameWithType: SkyView2D._Ready
+- uid: Stargazer.SkyViewContainer
+  name: SkyViewContainer
+  href: api/Stargazer.SkyViewContainer.html
+  commentId: T:Stargazer.SkyViewContainer
+  fullName: Stargazer.SkyViewContainer
+  nameWithType: SkyViewContainer
+- uid: Stargazer.SkyViewContainer.SkyView
+  name: SkyView
+  href: api/Stargazer.SkyViewContainer.html#Stargazer_SkyViewContainer_SkyView
+  commentId: P:Stargazer.SkyViewContainer.SkyView
+  fullName: Stargazer.SkyViewContainer.SkyView
+  nameWithType: SkyViewContainer.SkyView
+- uid: Stargazer.SkyViewContainer.SkyView*
+  name: SkyView
+  href: api/Stargazer.SkyViewContainer.html#Stargazer_SkyViewContainer_SkyView_
+  commentId: Overload:Stargazer.SkyViewContainer.SkyView
+  isSpec: "True"
+  fullName: Stargazer.SkyViewContainer.SkyView
+  nameWithType: SkyViewContainer.SkyView
+- uid: Stargazer.SkyViewContainer._Ready
+  name: _Ready()
+  href: api/Stargazer.SkyViewContainer.html#Stargazer_SkyViewContainer__Ready
+  commentId: M:Stargazer.SkyViewContainer._Ready
+  fullName: Stargazer.SkyViewContainer._Ready()
+  nameWithType: SkyViewContainer._Ready()
+- uid: Stargazer.SkyViewContainer._Ready*
+  name: _Ready
+  href: api/Stargazer.SkyViewContainer.html#Stargazer_SkyViewContainer__Ready_
+  commentId: Overload:Stargazer.SkyViewContainer._Ready
+  isSpec: "True"
+  fullName: Stargazer.SkyViewContainer._Ready
+  nameWithType: SkyViewContainer._Ready
 - uid: Stargazer.Spawner
   name: Spawner
   href: api/Stargazer.Spawner.html
   commentId: T:Stargazer.Spawner
   fullName: Stargazer.Spawner
   nameWithType: Spawner
-- uid: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
-  name: DrawStars(IEnumerable<HorizontalStar>)
-  href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__
-  commentId: M:Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar})
-  name.vb: DrawStars(IEnumerable(Of HorizontalStar))
-  fullName: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>)
-  fullName.vb: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar))
-  nameWithType: Spawner.DrawStars(IEnumerable<HorizontalStar>)
-  nameWithType.vb: Spawner.DrawStars(IEnumerable(Of HorizontalStar))
+- uid: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  name: DrawStars(IEnumerable<HorizontalStar>, Func<int, Func<HorizontalStar, Star>, Star>, IEquatorialConverter<HorizontalStar>)
+  href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__
+  commentId: M:Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  name.vb: DrawStars(IEnumerable(Of HorizontalStar), Func(Of Integer, Func(Of HorizontalStar, Star), Star), IEquatorialConverter(Of HorizontalStar))
+  fullName: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>, DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>)
+  fullName.vb: Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star), DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar))
+  nameWithType: Spawner.DrawStars(IEnumerable<HorizontalStar>, Func<int, Func<HorizontalStar, Star>, Star>, IEquatorialConverter<HorizontalStar>)
+  nameWithType.vb: Spawner.DrawStars(IEnumerable(Of HorizontalStar), Func(Of Integer, Func(Of HorizontalStar, Star), Star), IEquatorialConverter(Of HorizontalStar))
 - uid: Stargazer.Spawner.DrawStars*
   name: DrawStars
   href: api/Stargazer.Spawner.html#Stargazer_Spawner_DrawStars_
@@ -3102,19 +4593,6 @@ references:
   isSpec: "True"
   fullName: Stargazer.Spawner.DrawStars
   nameWithType: Spawner.DrawStars
-- uid: Stargazer.Spawner.LabelScene
-  name: LabelScene
-  href: api/Stargazer.Spawner.html#Stargazer_Spawner_LabelScene
-  commentId: P:Stargazer.Spawner.LabelScene
-  fullName: Stargazer.Spawner.LabelScene
-  nameWithType: Spawner.LabelScene
-- uid: Stargazer.Spawner.LabelScene*
-  name: LabelScene
-  href: api/Stargazer.Spawner.html#Stargazer_Spawner_LabelScene_
-  commentId: Overload:Stargazer.Spawner.LabelScene
-  isSpec: "True"
-  fullName: Stargazer.Spawner.LabelScene
-  nameWithType: Spawner.LabelScene
 - uid: Stargazer.Spawner.MethodName
   name: Spawner.MethodName
   href: api/Stargazer.Spawner.MethodName.html
@@ -3177,18 +4655,151 @@ references:
   isSpec: "True"
   fullName: Stargazer.Spawner.StarScene
   nameWithType: Spawner.StarScene
+- uid: Stargazer.Spawner.maxStarMagnitude
+  name: maxStarMagnitude
+  href: api/Stargazer.Spawner.html#Stargazer_Spawner_maxStarMagnitude
+  commentId: F:Stargazer.Spawner.maxStarMagnitude
+  fullName: Stargazer.Spawner.maxStarMagnitude
+  nameWithType: Spawner.maxStarMagnitude
+- uid: Stargazer.Spawner.starConverter
+  name: starConverter
+  href: api/Stargazer.Spawner.html#Stargazer_Spawner_starConverter
+  commentId: F:Stargazer.Spawner.starConverter
+  fullName: Stargazer.Spawner.starConverter
+  nameWithType: Spawner.starConverter
+- uid: Stargazer.Spawner2D
+  name: Spawner2D
+  href: api/Stargazer.Spawner2D.html
+  commentId: T:Stargazer.Spawner2D
+  fullName: Stargazer.Spawner2D
+  nameWithType: Spawner2D
+- uid: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
+  name: DrawStars(IDictionary<int, Star>)
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_DrawStars_System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star__
+  commentId: M:Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
+  name.vb: DrawStars(IDictionary(Of Integer, Star))
+  fullName: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary<int, Stargazer.Star>)
+  fullName.vb: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star))
+  nameWithType: Spawner2D.DrawStars(IDictionary<int, Star>)
+  nameWithType.vb: Spawner2D.DrawStars(IDictionary(Of Integer, Star))
+- uid: Stargazer.Spawner2D.DrawStars*
+  name: DrawStars
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_DrawStars_
+  commentId: Overload:Stargazer.Spawner2D.DrawStars
+  isSpec: "True"
+  fullName: Stargazer.Spawner2D.DrawStars
+  nameWithType: Spawner2D.DrawStars
+- uid: Stargazer.Spawner2D.Label2DScene
+  name: Label2DScene
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Label2DScene
+  commentId: P:Stargazer.Spawner2D.Label2DScene
+  fullName: Stargazer.Spawner2D.Label2DScene
+  nameWithType: Spawner2D.Label2DScene
+- uid: Stargazer.Spawner2D.Label2DScene*
+  name: Label2DScene
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Label2DScene_
+  commentId: Overload:Stargazer.Spawner2D.Label2DScene
+  isSpec: "True"
+  fullName: Stargazer.Spawner2D.Label2DScene
+  nameWithType: Spawner2D.Label2DScene
+- uid: Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
+  name: SpawnStar(Star)
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_SpawnStar_Stargazer_Star_
+  commentId: M:Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
+  fullName: Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
+  nameWithType: Spawner2D.SpawnStar(Star)
+- uid: Stargazer.Spawner2D.SpawnStar*
+  name: SpawnStar
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_SpawnStar_
+  commentId: Overload:Stargazer.Spawner2D.SpawnStar
+  isSpec: "True"
+  fullName: Stargazer.Spawner2D.SpawnStar
+  nameWithType: Spawner2D.SpawnStar
+- uid: Stargazer.Spawner2D.Star2DScene
+  name: Star2DScene
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Star2DScene
+  commentId: P:Stargazer.Spawner2D.Star2DScene
+  fullName: Stargazer.Spawner2D.Star2DScene
+  nameWithType: Spawner2D.Star2DScene
+- uid: Stargazer.Spawner2D.Star2DScene*
+  name: Star2DScene
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Star2DScene_
+  commentId: Overload:Stargazer.Spawner2D.Star2DScene
+  isSpec: "True"
+  fullName: Stargazer.Spawner2D.Star2DScene
+  nameWithType: Spawner2D.Star2DScene
+- uid: Stargazer.Spawner2D.Star2dContainer
+  name: Star2dContainer
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Star2dContainer
+  commentId: F:Stargazer.Spawner2D.Star2dContainer
+  fullName: Stargazer.Spawner2D.Star2dContainer
+  nameWithType: Spawner2D.Star2dContainer
+- uid: Stargazer.Spawner2D.count
+  name: count
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_count
+  commentId: F:Stargazer.Spawner2D.count
+  fullName: Stargazer.Spawner2D.count
+  nameWithType: Spawner2D.count
+- uid: Stargazer.Spawner2D.radians
+  name: radians
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_radians
+  commentId: F:Stargazer.Spawner2D.radians
+  fullName: Stargazer.Spawner2D.radians
+  nameWithType: Spawner2D.radians
 - uid: Stargazer.Star
   name: Star
   href: api/Stargazer.Star.html
   commentId: T:Stargazer.Star
   fullName: Stargazer.Star
   nameWithType: Star
-- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
-  name: FromHorizontal(HorizontalStar)
-  href: api/Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_
-  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
-  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar)
-  nameWithType: Star.FromHorizontal(HorizontalStar)
+- uid: Stargazer.Star.Altitude
+  name: Altitude
+  href: api/Stargazer.Star.html#Stargazer_Star_Altitude
+  commentId: P:Stargazer.Star.Altitude
+  fullName: Stargazer.Star.Altitude
+  nameWithType: Star.Altitude
+- uid: Stargazer.Star.Altitude*
+  name: Altitude
+  href: api/Stargazer.Star.html#Stargazer_Star_Altitude_
+  commentId: Overload:Stargazer.Star.Altitude
+  isSpec: "True"
+  fullName: Stargazer.Star.Altitude
+  nameWithType: Star.Altitude
+- uid: Stargazer.Star.Azimuth
+  name: Azimuth
+  href: api/Stargazer.Star.html#Stargazer_Star_Azimuth
+  commentId: P:Stargazer.Star.Azimuth
+  fullName: Stargazer.Star.Azimuth
+  nameWithType: Star.Azimuth
+- uid: Stargazer.Star.Azimuth*
+  name: Azimuth
+  href: api/Stargazer.Star.html#Stargazer_Star_Azimuth_
+  commentId: Overload:Stargazer.Star.Azimuth
+  isSpec: "True"
+  fullName: Stargazer.Star.Azimuth
+  nameWithType: Star.Azimuth
+- uid: Stargazer.Star.Distance
+  name: Distance
+  href: api/Stargazer.Star.html#Stargazer_Star_Distance
+  commentId: P:Stargazer.Star.Distance
+  fullName: Stargazer.Star.Distance
+  nameWithType: Star.Distance
+- uid: Stargazer.Star.Distance*
+  name: Distance
+  href: api/Stargazer.Star.html#Stargazer_Star_Distance_
+  commentId: Overload:Stargazer.Star.Distance
+  isSpec: "True"
+  fullName: Stargazer.Star.Distance
+  nameWithType: Star.Distance
+- uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  name: FromHorizontal(HorizontalStar, IEquatorialConverter<HorizontalStar>)
+  href: api/Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_DataLayer_Interfaces_IEquatorialConverter_DataLayer_HorizontalObjects_HorizontalStar__
+  commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialConverter{DataLayer.HorizontalObjects.HorizontalStar})
+  name.vb: FromHorizontal(HorizontalStar, IEquatorialConverter(Of HorizontalStar))
+  fullName: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar, DataLayer.Interfaces.IEquatorialConverter<DataLayer.HorizontalObjects.HorizontalStar>)
+  fullName.vb: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar, DataLayer.Interfaces.IEquatorialConverter(Of DataLayer.HorizontalObjects.HorizontalStar))
+  nameWithType: Star.FromHorizontal(HorizontalStar, IEquatorialConverter<HorizontalStar>)
+  nameWithType.vb: Star.FromHorizontal(HorizontalStar, IEquatorialConverter(Of HorizontalStar))
 - uid: Stargazer.Star.FromHorizontal*
   name: FromHorizontal
   href: api/Stargazer.Star.html#Stargazer_Star_FromHorizontal_
@@ -3209,6 +4820,32 @@ references:
   isSpec: "True"
   fullName: Stargazer.Star.GetLocation
   nameWithType: Star.GetLocation
+- uid: Stargazer.Star.HipparcosId
+  name: HipparcosId
+  href: api/Stargazer.Star.html#Stargazer_Star_HipparcosId
+  commentId: P:Stargazer.Star.HipparcosId
+  fullName: Stargazer.Star.HipparcosId
+  nameWithType: Star.HipparcosId
+- uid: Stargazer.Star.HipparcosId*
+  name: HipparcosId
+  href: api/Stargazer.Star.html#Stargazer_Star_HipparcosId_
+  commentId: Overload:Stargazer.Star.HipparcosId
+  isSpec: "True"
+  fullName: Stargazer.Star.HipparcosId
+  nameWithType: Star.HipparcosId
+- uid: Stargazer.Star.Magnitude
+  name: Magnitude
+  href: api/Stargazer.Star.html#Stargazer_Star_Magnitude
+  commentId: P:Stargazer.Star.Magnitude
+  fullName: Stargazer.Star.Magnitude
+  nameWithType: Star.Magnitude
+- uid: Stargazer.Star.Magnitude*
+  name: Magnitude
+  href: api/Stargazer.Star.html#Stargazer_Star_Magnitude_
+  commentId: Overload:Stargazer.Star.Magnitude
+  isSpec: "True"
+  fullName: Stargazer.Star.Magnitude
+  nameWithType: Star.Magnitude
 - uid: Stargazer.Star.MethodName
   name: Star.MethodName
   href: api/Stargazer.Star.MethodName.html
@@ -3227,6 +4864,25 @@ references:
   commentId: F:Stargazer.Star.MethodName.getLocation
   fullName: Stargazer.Star.MethodName.getLocation
   nameWithType: Star.MethodName.getLocation
+- uid: Stargazer.Star.Position2D
+  name: Position2D
+  href: api/Stargazer.Star.html#Stargazer_Star_Position2D
+  commentId: F:Stargazer.Star.Position2D
+  fullName: Stargazer.Star.Position2D
+  nameWithType: Star.Position2D
+- uid: Stargazer.Star.Position3D
+  name: Position3D
+  href: api/Stargazer.Star.html#Stargazer_Star_Position3D
+  commentId: P:Stargazer.Star.Position3D
+  fullName: Stargazer.Star.Position3D
+  nameWithType: Star.Position3D
+- uid: Stargazer.Star.Position3D*
+  name: Position3D
+  href: api/Stargazer.Star.html#Stargazer_Star_Position3D_
+  commentId: Overload:Stargazer.Star.Position3D
+  isSpec: "True"
+  fullName: Stargazer.Star.Position3D
+  nameWithType: Star.Position3D
 - uid: Stargazer.Star.PropertyName
   name: Star.PropertyName
   href: api/Stargazer.Star.PropertyName.html
@@ -3269,42 +4925,181 @@ references:
   commentId: T:Stargazer.Star.SignalName
   fullName: Stargazer.Star.SignalName
   nameWithType: Star.SignalName
-- uid: Stargazer.Star.altitude
-  name: altitude
-  href: api/Stargazer.Star.html#Stargazer_Star_altitude
-  commentId: F:Stargazer.Star.altitude
-  fullName: Stargazer.Star.altitude
-  nameWithType: Star.altitude
-- uid: Stargazer.Star.azimuth
-  name: azimuth
-  href: api/Stargazer.Star.html#Stargazer_Star_azimuth
-  commentId: F:Stargazer.Star.azimuth
-  fullName: Stargazer.Star.azimuth
-  nameWithType: Star.azimuth
-- uid: Stargazer.Star.dist
-  name: dist
-  href: api/Stargazer.Star.html#Stargazer_Star_dist
-  commentId: F:Stargazer.Star.dist
-  fullName: Stargazer.Star.dist
-  nameWithType: Star.dist
-- uid: Stargazer.Star.mag
-  name: mag
-  href: api/Stargazer.Star.html#Stargazer_Star_mag
-  commentId: F:Stargazer.Star.mag
-  fullName: Stargazer.Star.mag
-  nameWithType: Star.mag
+- uid: Stargazer.Star.StarName
+  name: StarName
+  href: api/Stargazer.Star.html#Stargazer_Star_StarName
+  commentId: P:Stargazer.Star.StarName
+  fullName: Stargazer.Star.StarName
+  nameWithType: Star.StarName
+- uid: Stargazer.Star.StarName*
+  name: StarName
+  href: api/Stargazer.Star.html#Stargazer_Star_StarName_
+  commentId: Overload:Stargazer.Star.StarName
+  isSpec: "True"
+  fullName: Stargazer.Star.StarName
+  nameWithType: Star.StarName
+- uid: Stargazer.Star._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.Star.html#Stargazer_Star__Process_System_Double_
+  commentId: M:Stargazer.Star._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.Star._Process(double)
+  fullName.vb: Stargazer.Star._Process(Double)
+  nameWithType: Star._Process(double)
+  nameWithType.vb: Star._Process(Double)
+- uid: Stargazer.Star._Process*
+  name: _Process
+  href: api/Stargazer.Star.html#Stargazer_Star__Process_
+  commentId: Overload:Stargazer.Star._Process
+  isSpec: "True"
+  fullName: Stargazer.Star._Process
+  nameWithType: Star._Process
+- uid: Stargazer.Star._Ready
+  name: _Ready()
+  href: api/Stargazer.Star.html#Stargazer_Star__Ready
+  commentId: M:Stargazer.Star._Ready
+  fullName: Stargazer.Star._Ready()
+  nameWithType: Star._Ready()
+- uid: Stargazer.Star._Ready*
+  name: _Ready
+  href: api/Stargazer.Star.html#Stargazer_Star__Ready_
+  commentId: Overload:Stargazer.Star._Ready
+  isSpec: "True"
+  fullName: Stargazer.Star._Ready
+  nameWithType: Star._Ready
+- uid: Stargazer.Star.globalVars
+  name: globalVars
+  href: api/Stargazer.Star.html#Stargazer_Star_globalVars
+  commentId: F:Stargazer.Star.globalVars
+  fullName: Stargazer.Star.globalVars
+  nameWithType: Star.globalVars
+- uid: Stargazer.Star.horizontalStar
+  name: horizontalStar
+  href: api/Stargazer.Star.html#Stargazer_Star_horizontalStar
+  commentId: F:Stargazer.Star.horizontalStar
+  fullName: Stargazer.Star.horizontalStar
+  nameWithType: Star.horizontalStar
 - uid: Stargazer.Star.radians
   name: radians
   href: api/Stargazer.Star.html#Stargazer_Star_radians
   commentId: F:Stargazer.Star.radians
   fullName: Stargazer.Star.radians
   nameWithType: Star.radians
-- uid: Stargazer.Star.starName
-  name: starName
-  href: api/Stargazer.Star.html#Stargazer_Star_starName
-  commentId: F:Stargazer.Star.starName
-  fullName: Stargazer.Star.starName
-  nameWithType: Star.starName
+- uid: Stargazer.Star.starConverter
+  name: starConverter
+  href: api/Stargazer.Star.html#Stargazer_Star_starConverter
+  commentId: F:Stargazer.Star.starConverter
+  fullName: Stargazer.Star.starConverter
+  nameWithType: Star.starConverter
+- uid: Stargazer.Star2D
+  name: Star2D
+  href: api/Stargazer.Star2D.html
+  commentId: T:Stargazer.Star2D
+  fullName: Stargazer.Star2D
+  nameWithType: Star2D
+- uid: Stargazer.Star2D.Altitude
+  name: Altitude
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_Altitude
+  commentId: P:Stargazer.Star2D.Altitude
+  fullName: Stargazer.Star2D.Altitude
+  nameWithType: Star2D.Altitude
+- uid: Stargazer.Star2D.Altitude*
+  name: Altitude
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_Altitude_
+  commentId: Overload:Stargazer.Star2D.Altitude
+  isSpec: "True"
+  fullName: Stargazer.Star2D.Altitude
+  nameWithType: Star2D.Altitude
+- uid: Stargazer.Star2D.Azimuth
+  name: Azimuth
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_Azimuth
+  commentId: P:Stargazer.Star2D.Azimuth
+  fullName: Stargazer.Star2D.Azimuth
+  nameWithType: Star2D.Azimuth
+- uid: Stargazer.Star2D.Azimuth*
+  name: Azimuth
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_Azimuth_
+  commentId: Overload:Stargazer.Star2D.Azimuth
+  isSpec: "True"
+  fullName: Stargazer.Star2D.Azimuth
+  nameWithType: Star2D.Azimuth
+- uid: Stargazer.Star2D.From3dStar(Stargazer.Star)
+  name: From3dStar(Star)
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_From3dStar_Stargazer_Star_
+  commentId: M:Stargazer.Star2D.From3dStar(Stargazer.Star)
+  fullName: Stargazer.Star2D.From3dStar(Stargazer.Star)
+  nameWithType: Star2D.From3dStar(Star)
+- uid: Stargazer.Star2D.From3dStar*
+  name: From3dStar
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_From3dStar_
+  commentId: Overload:Stargazer.Star2D.From3dStar
+  isSpec: "True"
+  fullName: Stargazer.Star2D.From3dStar
+  nameWithType: Star2D.From3dStar
+- uid: Stargazer.Star2D.StarName
+  name: StarName
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_StarName
+  commentId: P:Stargazer.Star2D.StarName
+  fullName: Stargazer.Star2D.StarName
+  nameWithType: Star2D.StarName
+- uid: Stargazer.Star2D.StarName*
+  name: StarName
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_StarName_
+  commentId: Overload:Stargazer.Star2D.StarName
+  isSpec: "True"
+  fullName: Stargazer.Star2D.StarName
+  nameWithType: Star2D.StarName
+- uid: Stargazer.Star2D._Ready
+  name: _Ready()
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D__Ready
+  commentId: M:Stargazer.Star2D._Ready
+  fullName: Stargazer.Star2D._Ready()
+  nameWithType: Star2D._Ready()
+- uid: Stargazer.Star2D._Ready*
+  name: _Ready
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D__Ready_
+  commentId: Overload:Stargazer.Star2D._Ready
+  isSpec: "True"
+  fullName: Stargazer.Star2D._Ready
+  nameWithType: Star2D._Ready
+- uid: Stargazer.Star2D.getLocation
+  name: getLocation()
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_getLocation
+  commentId: M:Stargazer.Star2D.getLocation
+  fullName: Stargazer.Star2D.getLocation()
+  nameWithType: Star2D.getLocation()
+- uid: Stargazer.Star2D.getLocation*
+  name: getLocation
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_getLocation_
+  commentId: Overload:Stargazer.Star2D.getLocation
+  isSpec: "True"
+  fullName: Stargazer.Star2D.getLocation
+  nameWithType: Star2D.getLocation
+- uid: Stargazer.Star2D.radians
+  name: radians
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_radians
+  commentId: F:Stargazer.Star2D.radians
+  fullName: Stargazer.Star2D.radians
+  nameWithType: Star2D.radians
+- uid: Stargazer.Star2D.scalestar(Godot.Vector2)
+  name: scalestar(Vector2)
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_scalestar_Godot_Vector2_
+  commentId: M:Stargazer.Star2D.scalestar(Godot.Vector2)
+  fullName: Stargazer.Star2D.scalestar(Godot.Vector2)
+  nameWithType: Star2D.scalestar(Vector2)
+- uid: Stargazer.Star2D.scalestar*
+  name: scalestar
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_scalestar_
+  commentId: Overload:Stargazer.Star2D.scalestar
+  isSpec: "True"
+  fullName: Stargazer.Star2D.scalestar
+  nameWithType: Star2D.scalestar
+- uid: Stargazer.Star2D.star3d
+  name: star3d
+  href: api/Stargazer.Star2D.html#Stargazer_Star2D_star3d
+  commentId: F:Stargazer.Star2D.star3d
+  fullName: Stargazer.Star2D.star3d
+  nameWithType: Star2D.star3d
 - uid: Stargazer.StarMesh
   name: StarMesh
   href: api/Stargazer.StarMesh.html
@@ -3410,19 +5205,6 @@ references:
   commentId: F:Stargazer.Startup.MethodName._Ready
   fullName: Stargazer.Startup.MethodName._Ready
   nameWithType: Startup.MethodName._Ready
-- uid: Stargazer.Startup.OnTimer
-  name: OnTimer()
-  href: api/Stargazer.Startup.html#Stargazer_Startup_OnTimer
-  commentId: M:Stargazer.Startup.OnTimer
-  fullName: Stargazer.Startup.OnTimer()
-  nameWithType: Startup.OnTimer()
-- uid: Stargazer.Startup.OnTimer*
-  name: OnTimer
-  href: api/Stargazer.Startup.html#Stargazer_Startup_OnTimer_
-  commentId: Overload:Stargazer.Startup.OnTimer
-  isSpec: "True"
-  fullName: Stargazer.Startup.OnTimer
-  nameWithType: Startup.OnTimer
 - uid: Stargazer.Startup.PropertyName
   name: Startup.PropertyName
   href: api/Stargazer.Startup.PropertyName.html
@@ -3470,39 +5252,93 @@ references:
   isSpec: "True"
   fullName: Stargazer.Startup._Ready
   nameWithType: Startup._Ready
-- uid: Stargazer.Startup.latitude
-  name: latitude
-  href: api/Stargazer.Startup.html#Stargazer_Startup_latitude
-  commentId: F:Stargazer.Startup.latitude
-  fullName: Stargazer.Startup.latitude
-  nameWithType: Startup.latitude
-- uid: Stargazer.Startup.longitude
-  name: longitude
-  href: api/Stargazer.Startup.html#Stargazer_Startup_longitude
-  commentId: F:Stargazer.Startup.longitude
-  fullName: Stargazer.Startup.longitude
-  nameWithType: Startup.longitude
 - uid: Stargazer.Startup.repositoryService
   name: repositoryService
   href: api/Stargazer.Startup.html#Stargazer_Startup_repositoryService
   commentId: F:Stargazer.Startup.repositoryService
   fullName: Stargazer.Startup.repositoryService
   nameWithType: Startup.repositoryService
-- uid: Stargazer.Startup.timer
-  name: timer
-  href: api/Stargazer.Startup.html#Stargazer_Startup_timer
-  commentId: F:Stargazer.Startup.timer
-  fullName: Stargazer.Startup.timer
-  nameWithType: Startup.timer
-- uid: Stargazer.Startup.userTime
-  name: userTime
-  href: api/Stargazer.Startup.html#Stargazer_Startup_userTime
-  commentId: F:Stargazer.Startup.userTime
-  fullName: Stargazer.Startup.userTime
-  nameWithType: Startup.userTime
 - uid: Stargazer.Startup.viewPortPath
   name: viewPortPath
   href: api/Stargazer.Startup.html#Stargazer_Startup_viewPortPath
   commentId: F:Stargazer.Startup.viewPortPath
   fullName: Stargazer.Startup.viewPortPath
   nameWithType: Startup.viewPortPath
+- uid: Stargazer.TimeLocEntered
+  name: TimeLocEntered
+  href: api/Stargazer.TimeLocEntered.html
+  commentId: T:Stargazer.TimeLocEntered
+  fullName: Stargazer.TimeLocEntered
+  nameWithType: TimeLocEntered
+- uid: Stargazer.TimeLocEntered.AMorPMButton
+  name: AMorPMButton
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_AMorPMButton
+  commentId: F:Stargazer.TimeLocEntered.AMorPMButton
+  fullName: Stargazer.TimeLocEntered.AMorPMButton
+  nameWithType: TimeLocEntered.AMorPMButton
+- uid: Stargazer.TimeLocEntered.ButtonPressed
+  name: ButtonPressed()
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_ButtonPressed
+  commentId: M:Stargazer.TimeLocEntered.ButtonPressed
+  fullName: Stargazer.TimeLocEntered.ButtonPressed()
+  nameWithType: TimeLocEntered.ButtonPressed()
+- uid: Stargazer.TimeLocEntered.ButtonPressed*
+  name: ButtonPressed
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_ButtonPressed_
+  commentId: Overload:Stargazer.TimeLocEntered.ButtonPressed
+  isSpec: "True"
+  fullName: Stargazer.TimeLocEntered.ButtonPressed
+  nameWithType: TimeLocEntered.ButtonPressed
+- uid: Stargazer.TimeLocEntered.OnDateSelected(System.Object)
+  name: OnDateSelected(object)
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_OnDateSelected_System_Object_
+  commentId: M:Stargazer.TimeLocEntered.OnDateSelected(System.Object)
+  name.vb: OnDateSelected(Object)
+  fullName: Stargazer.TimeLocEntered.OnDateSelected(object)
+  fullName.vb: Stargazer.TimeLocEntered.OnDateSelected(Object)
+  nameWithType: TimeLocEntered.OnDateSelected(object)
+  nameWithType.vb: TimeLocEntered.OnDateSelected(Object)
+- uid: Stargazer.TimeLocEntered.OnDateSelected*
+  name: OnDateSelected
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_OnDateSelected_
+  commentId: Overload:Stargazer.TimeLocEntered.OnDateSelected
+  isSpec: "True"
+  fullName: Stargazer.TimeLocEntered.OnDateSelected
+  nameWithType: TimeLocEntered.OnDateSelected
+- uid: Stargazer.TimeLocEntered._Ready
+  name: _Ready()
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered__Ready
+  commentId: M:Stargazer.TimeLocEntered._Ready
+  fullName: Stargazer.TimeLocEntered._Ready()
+  nameWithType: TimeLocEntered._Ready()
+- uid: Stargazer.TimeLocEntered._Ready*
+  name: _Ready
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered__Ready_
+  commentId: Overload:Stargazer.TimeLocEntered._Ready
+  isSpec: "True"
+  fullName: Stargazer.TimeLocEntered._Ready
+  nameWithType: TimeLocEntered._Ready
+- uid: Stargazer.TimeLocEntered.calendarButton
+  name: calendarButton
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_calendarButton
+  commentId: F:Stargazer.TimeLocEntered.calendarButton
+  fullName: Stargazer.TimeLocEntered.calendarButton
+  nameWithType: TimeLocEntered.calendarButton
+- uid: Stargazer.TimeLocEntered.latField
+  name: latField
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_latField
+  commentId: F:Stargazer.TimeLocEntered.latField
+  fullName: Stargazer.TimeLocEntered.latField
+  nameWithType: TimeLocEntered.latField
+- uid: Stargazer.TimeLocEntered.longField
+  name: longField
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_longField
+  commentId: F:Stargazer.TimeLocEntered.longField
+  fullName: Stargazer.TimeLocEntered.longField
+  nameWithType: TimeLocEntered.longField
+- uid: Stargazer.TimeLocEntered.timeField
+  name: timeField
+  href: api/Stargazer.TimeLocEntered.html#Stargazer_TimeLocEntered_timeField
+  commentId: F:Stargazer.TimeLocEntered.timeField
+  fullName: Stargazer.TimeLocEntered.timeField
+  nameWithType: TimeLocEntered.timeField

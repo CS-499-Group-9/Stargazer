@@ -1,0 +1,109 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IPhaseable
+  commentId: T:DataLayer.Interfaces.IPhaseable
+  id: IPhaseable
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IPhaseable.Phase
+  langs:
+  - csharp
+  - vb
+  name: IPhaseable
+  nameWithType: IPhaseable
+  fullName: DataLayer.Interfaces.IPhaseable
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPhaseable.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IPhaseable
+    path: ../DataLayer/Interfaces/IPhaseable.cs
+    startLine: 11
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Provides the ability to calculate a phase between 0° and 360°
+  example: []
+  syntax:
+    content: public interface IPhaseable
+    content.vb: Public Interface IPhaseable
+- uid: DataLayer.Interfaces.IPhaseable.Phase
+  commentId: P:DataLayer.Interfaces.IPhaseable.Phase
+  id: Phase
+  parent: DataLayer.Interfaces.IPhaseable
+  langs:
+  - csharp
+  - vb
+  name: Phase
+  nameWithType: IPhaseable.Phase
+  fullName: DataLayer.Interfaces.IPhaseable.Phase
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IPhaseable.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Phase
+    path: ../DataLayer/Interfaces/IPhaseable.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The phase in degrees (angle formed between the object and the earth and the object and the sun.
+  example: []
+  syntax:
+    content: double Phase { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Property Phase As Double
+  overload: DataLayer.Interfaces.IPhaseable.Phase*
+references:
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IPhaseable.Phase*
+  commentId: Overload:DataLayer.Interfaces.IPhaseable.Phase
+  href: DataLayer.Interfaces.IPhaseable.html#DataLayer_Interfaces_IPhaseable_Phase
+  name: Phase
+  nameWithType: IPhaseable.Phase
+  fullName: DataLayer.Interfaces.IPhaseable.Phase
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

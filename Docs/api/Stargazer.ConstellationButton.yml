@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     id: ConstellationButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ConstellationButton_ScriptSignals.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.ConstellationButton_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -534,8 +534,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLinesToggled
     path: ../Stargazer-Godot/Code/ConstellationButton.cs
     startLine: 13
@@ -563,19 +563,22 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ConstellationButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConst
     path: ../Stargazer-Godot/Code/ConstellationButton.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
     content: private void ToggleConst(bool state)
     parameters:
     - id: state
       type: System.Boolean
+      description: ''
     content.vb: Private Sub ToggleConst(state As Boolean)
   overload: Stargazer.ConstellationButton.ToggleConst*
   nameWithType.vb: ConstellationButton.ToggleConst(Boolean)
@@ -12190,6 +12193,18 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: Godot.Signal
+  commentId: T:Godot.Signal
+  isExternal: true
+  name: Signal
+  nameWithType: Signal
+  fullName: Godot.Signal
+- uid: Godot.CheckBox
+  commentId: T:Godot.CheckBox
+  isExternal: true
+  name: CheckBox
+  nameWithType: CheckBox
+  fullName: Godot.CheckBox
 - uid: Stargazer.ConstellationButton.ToggleConst*
   commentId: Overload:Stargazer.ConstellationButton.ToggleConst
   href: Stargazer.ConstellationButton.html#Stargazer_ConstellationButton_ToggleConst_System_Boolean_

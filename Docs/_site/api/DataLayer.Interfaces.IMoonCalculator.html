@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/animated-orbit/apiSpec/new?filename=DataLayer_Interfaces_IMoonCalculator.md&amp;value=---%0Auid%3A%20DataLayer.Interfaces.IMoonCalculator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/update-docs/apiSpec/new?filename=DataLayer_Interfaces_IMoonCalculator.md&amp;value=---%0Auid%3A%20DataLayer.Interfaces.IMoonCalculator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_Interfaces_IMoonCalculator" data-uid="DataLayer.Interfaces.IMoonCalculator" class="text-break">
-Interface IMoonCalculator  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Interfaces/IMoonCalculator.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Interface IMoonCalculator  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/Interfaces/IMoonCalculator.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Interface IMoonCalculator  <a class="header-action link-secondary" title="View s
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal interface IMoonCalculator</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IMoonCalculator</code></pre>
   </div>
 
 
@@ -121,11 +121,11 @@ Interface IMoonCalculator  <a class="header-action link-secondary" title="View s
 </h2>
 
 
-  <a id="DataLayer_Interfaces_IMoonCalculator_CalculateMoon_" data-uid="DataLayer.Interfaces.IMoonCalculator.CalculateMoon*"></a>
+  <a id="DataLayer_Interfaces_IMoonCalculator_CreateMoon_" data-uid="DataLayer.Interfaces.IMoonCalculator.CreateMoon*"></a>
 
-  <h3 id="DataLayer_Interfaces_IMoonCalculator_CalculateMoon" data-uid="DataLayer.Interfaces.IMoonCalculator.CalculateMoon">
-  CalculateMoon()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Interfaces/IMoonCalculator.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_Interfaces_IMoonCalculator_CreateMoon" data-uid="DataLayer.Interfaces.IMoonCalculator.CreateMoon">
+  CreateMoon()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/Interfaces/IMoonCalculator.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs the moon calculation</p>
@@ -133,7 +133,7 @@ Interface IMoonCalculator  <a class="header-action link-secondary" title="View s
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">HorizontalMoon CalculateMoon()</code></pre>
+    <pre><code class="lang-csharp hljs">HorizontalMoon CreateMoon()</code></pre>
   </div>
 
 
@@ -154,11 +154,73 @@ Interface IMoonCalculator  <a class="header-action link-secondary" title="View s
 
 
 
+  <a id="DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_" data-uid="DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy*"></a>
+
+  <h3 id="DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_" data-uid="DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)">
+  IncrementTimeBy(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/Interfaces/IMoonCalculator.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IncrementTimeBy(double increment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>increment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_" data-uid="DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_" data-uid="DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)">
+  UpdatePositionOf(HorizontalMoon)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/Interfaces/IMoonCalculator.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdatePositionOf(HorizontalMoon moon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moon</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Interfaces/IMoonCalculator.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/update-docs/DataLayer/Interfaces/IMoonCalculator.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

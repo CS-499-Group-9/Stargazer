@@ -20,6 +20,7 @@ namespace Stargazer
   
         private Globals globalVars;
 
+        /// <inheritdoc/>
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
@@ -82,7 +83,7 @@ namespace Stargazer
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
                     IHoverable star = (IHoverable)collider.GetParentNode3D();
-                    globalVars.hoverLabel = star.getHoverText();
+                    globalVars.hoverLabel = star.GetHoverText();
                     
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
@@ -97,12 +98,18 @@ namespace Stargazer
             }
         }
 
+        /// <summary>
+        /// Zooms in the current view
+        /// </summary>
         private void ZoomIn()
         {
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
         
+        /// <summary>
+        /// Zooms out the current view.
+        /// </summary>
         private void ZoomOut()
         {
             // Decrease field of view for zooming in (if using a perspective camera)

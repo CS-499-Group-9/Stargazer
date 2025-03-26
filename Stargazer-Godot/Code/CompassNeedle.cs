@@ -23,6 +23,10 @@ namespace Stargazer
 			camera = (Camera3D)viewNode?.GetNode("Camera3D");
 		}
 
+		/// <summary>
+		/// Used to receive a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
+		/// </summary>
+		/// <param name="camera"></param>
 		public void SetCamera(Camera3D camera) { this.camera = camera; }
 
 		/// <summary>

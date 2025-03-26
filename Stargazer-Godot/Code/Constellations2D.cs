@@ -49,10 +49,11 @@ namespace Stargazer
         }
 
         /// <summary>
-        /// Passed as a <see cref="Delegate"/> to <see cref="Startup.UserPositionUpdated"/> to be notified when a new star scene is ready to be drawn.
-        /// This should be done using the += operator to be notified in addition to other components in the viewport.
+        /// Passed as a <see cref="Delegate"/> to <see cref="SkyView"/> to be notified when a screenshot request has been made.
         /// </summary>
-        /// <param name="dataPackage"></param>
+        /// <param name="constellations"></param>
+        /// <param name="GetConstellationStar"></param>
+        /// <returns></returns>
         public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
         {
             //var constellations = dataPackage.Constellations;
@@ -113,18 +114,23 @@ namespace Stargazer
         /// Receives the notification to toggle the visibility of the constellation lines.
         /// Hiding the lines will also hide the labels.
         /// </summary>
-        /// <param name="showlines">True if the user has requested to show the lines.</param>
-        public void ToggleConstellationLines(bool showlines)
+        /// <param name="showLines">True if the user has requested to show the lines.</param>
+        public void ToggleConstellationLines(bool showLines)
         {
-            constMesh.Visible = showlines;
+            constMesh.Visible = showLines;
         }
 
         /// <summary>
         /// Receives the notification to toggle the visibility of the constellation labels.
         /// </summary>
-        /// <param name="showlabels">True if the user has requested to show the labels.</param>
-        public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
+        /// <param name="showLabels">True if the user has requested to show the labels.</param>
+        public void ToggleConstellationLabels(bool showLabels) { ConstellationLabels.Visible = showLabels; }
 
+        /// <summary>
+        /// Spawns a star in the 2D viewport
+        /// </summary>
+        /// <param name="star3d">The <see cref="Star"/> used to get the positional data.</param>
+        /// <returns>A reference to the <see cref="Star2D"/> that has been drawn.</returns>
         private Star2D Spawn2DStar(Star star3d)
         {
             Star2D outstar = Star2DScene.Instantiate<Star2D>();

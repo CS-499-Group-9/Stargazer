@@ -5,7 +5,9 @@ items:
   id: IEquatorialConverter`1
   parent: DataLayer.Interfaces
   children:
-  - DataLayer.Interfaces.IEquatorialConverter`1.Convert
+  - DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  - DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy(System.Double)
+  - DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf(`0)
   langs:
   - csharp
   - vb
@@ -16,58 +18,121 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: IEquatorialConverter
     path: ../DataLayer/Interfaces/IEquitorialConverter.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
   summary: Converts a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to a {T} object
   example: []
   syntax:
-    content: 'public interface IEquatorialConverter<T> where T : HorizontalBody, new()'
+    content: 'public interface IEquatorialConverter<T> where T : HorizontalBody'
     typeParameters:
     - id: T
       description: The converted value of type {T} (defined by the front end)
-    content.vb: Public Interface IEquatorialConverter(Of T As {HorizontalBody, New})
+    content.vb: Public Interface IEquatorialConverter(Of T As HorizontalBody)
   nameWithType.vb: IEquatorialConverter(Of T)
   fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
   name.vb: IEquatorialConverter(Of T)
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  id: Convert
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  commentId: P:DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  id: CurrentTime
   parent: DataLayer.Interfaces.IEquatorialConverter`1
   langs:
   - csharp
   - vb
-  name: Convert
-  nameWithType: IEquatorialConverter<T>.Convert
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
+  name: CurrentTime
+  nameWithType: IEquatorialConverter<T>.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.CurrentTime
   type: Property
   source:
     remote:
       path: DataLayer/Interfaces/IEquitorialConverter.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
-    id: Convert
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
     path: ../DataLayer/Interfaces/IEquitorialConverter.cs
-    startLine: 16
+    startLine: 14
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: DateTime CurrentTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: ReadOnly Property CurrentTime As Date
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime*
+  nameWithType.vb: IEquatorialConverter(Of T).CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).CurrentTime
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf(`0)
+  commentId: M:DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf(`0)
+  id: UpdatePositionOf(`0)
+  parent: DataLayer.Interfaces.IEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(T)
+  nameWithType: IEquatorialConverter<T>.UpdatePositionOf(T)
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.UpdatePositionOf(T)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
   summary: A function accepting an object of type <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref> to type {T}
   example: []
   syntax:
-    content: Func<EquatorialCelestialBody, T> Convert { get; }
-    parameters: []
-    return:
-      type: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
-    content.vb: ReadOnly Property Convert As Func(Of EquatorialCelestialBody, T)
-  overload: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
-  nameWithType.vb: IEquatorialConverter(Of T).Convert
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
+    content: void UpdatePositionOf(T hoBody)
+    parameters:
+    - id: hoBody
+      type: '{T}'
+    content.vb: Sub UpdatePositionOf(hoBody As T)
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf*
+  nameWithType.vb: IEquatorialConverter(Of T).UpdatePositionOf(T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).UpdatePositionOf(T)
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IEquatorialConverter`1
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: IEquatorialConverter<T>.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    startLine: 20
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  syntax:
+    content: void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+    content.vb: Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy*
+  nameWithType.vb: IEquatorialConverter(Of T).IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
 references:
 - uid: DataLayer.HorizontalObjects.HorizontalBody
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
@@ -120,6 +185,32 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.CurrentTime
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_CurrentTime
+  name: CurrentTime
+  nameWithType: IEquatorialConverter<T>.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.CurrentTime
+  nameWithType.vb: IEquatorialConverter(Of T).CurrentTime
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).CurrentTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
   commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
   parent: DataLayer.EquatorialObjects
@@ -127,53 +218,20 @@ references:
   name: EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
-- uid: DataLayer.Interfaces.IEquatorialConverter`1.Convert*
-  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.Convert
-  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_Convert
-  name: Convert
-  nameWithType: IEquatorialConverter<T>.Convert
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.Convert
-  nameWithType.vb: IEquatorialConverter(Of T).Convert
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).Convert
-- uid: System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,{T}}
-  commentId: T:System.Func{DataLayer.EquatorialObjects.EquatorialCelestialBody,`0}
-  parent: System
-  definition: System.Func`2
-  href: https://learn.microsoft.com/dotnet/api/system.func-2
-  name: Func<EquatorialCelestialBody, T>
-  nameWithType: Func<EquatorialCelestialBody, T>
-  fullName: System.Func<DataLayer.EquatorialObjects.EquatorialCelestialBody, T>
-  nameWithType.vb: Func(Of EquatorialCelestialBody, T)
-  fullName.vb: System.Func(Of DataLayer.EquatorialObjects.EquatorialCelestialBody, T)
-  name.vb: Func(Of EquatorialCelestialBody, T)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
-    name: EquatorialCelestialBody
-    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
-    name: EquatorialCelestialBody
-    href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
-  - name: ','
-  - name: " "
-  - name: T
-  - name: )
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.UpdatePositionOf
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_UpdatePositionOf__0_
+  name: UpdatePositionOf
+  nameWithType: IEquatorialConverter<T>.UpdatePositionOf
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.UpdatePositionOf
+  nameWithType.vb: IEquatorialConverter(Of T).UpdatePositionOf
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).UpdatePositionOf
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: DataLayer.EquatorialObjects
   commentId: N:DataLayer.EquatorialObjects
   href: DataLayer.html
@@ -196,44 +254,26 @@ references:
   - uid: DataLayer.EquatorialObjects
     name: EquatorialObjects
     href: DataLayer.EquatorialObjects.html
-- uid: System.Func`2
-  commentId: T:System.Func`2
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialConverter`1.IncrementTimeBy
+  href: DataLayer.Interfaces.IEquatorialConverter-1.html#DataLayer_Interfaces_IEquatorialConverter_1_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: IEquatorialConverter<T>.IncrementTimeBy
+  fullName: DataLayer.Interfaces.IEquatorialConverter<T>.IncrementTimeBy
+  nameWithType.vb: IEquatorialConverter(Of T).IncrementTimeBy
+  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T).IncrementTimeBy
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.func-2
-  name: Func<T, TResult>
-  nameWithType: Func<T, TResult>
-  fullName: System.Func<T, TResult>
-  nameWithType.vb: Func(Of T, TResult)
-  fullName.vb: System.Func(Of T, TResult)
-  name.vb: Func(Of T, TResult)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - name: T
-  - name: ','
-  - name: " "
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

@@ -2,18 +2,17 @@ using Godot;
 using Stargazer;
 using System;
 
-public partial class MainContainer : VBoxContainer
+namespace Stargazer
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	/// <summary>
+	/// The main container of the entire GUI
+	/// </summary>
+	public partial class MainContainer : VBoxContainer
 	{
-		
+		/// <summary>
+		/// Used to get the <see cref="Startup"/> object
+		/// </summary>
+		/// <returns>The <see cref="Startup"/> class atttached to the interaction container.</returns>
+		public Startup GetStartup() { return GetNode<Startup>("InteractionContainer"); }
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
-	public Startup GetStartup() { return GetNode<Startup>("InteractionContainer"); }
 }

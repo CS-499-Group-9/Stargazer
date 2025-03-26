@@ -10,16 +10,16 @@ namespace Stargazer
 	/// <summary>
 	/// A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
 	/// </summary>
-	public partial class Star : Node3D,IHoverable
+	public partial class Star : Node3D
 	{
-
-		private const float radians = (float)Math.PI / 180f;
+        private Globals globalVars;
+        private const float radians = (float)Math.PI / 180f;
 		private HorizontalStar horizontalStar;
 		private IEquatorialConverter<HorizontalStar> starConverter;
-		// Since these are not being connected to anything in the Godot interface, I'm not sure we need to use the Export attribute.
-		// They are all accessed/set via code.
-		// Not sure what overhead is involved in labeling these as export.
-
+		
+		/// <summary>
+		/// The Hipparcos Id of the star
+		/// </summary>
 		public int HipparcosId { get { return horizontalStar.HipparcosId ?? 0; } }
 
 		/// <summary>
@@ -47,16 +47,22 @@ namespace Stargazer
 		/// Common name of the star
 		/// </summary>
 		public string StarName { get { return horizontalStar.StarName; } }
+
+		/// <summary>
+		/// Used to safely request the position of the star from a thread other than the main thread.
+		/// </summary>
 		public Vector3 Position3D { get; private set; }
+
+		/// <summary>
+		/// Will be used to get the 2D position of the star (maybe... maybe not..)
+		/// </summary>
 		public Vector2 Position2D;
 
-		public Vector3 GetPosition()
-		{
-			return Position;
-		}
 
-		private Globals globalVars;
-		// Gets the Cartesian position of the Celestial Body
+		/// <summary>
+		/// Calculates the position of the object in Godot cartesian coordinates.
+		/// </summary>
+		/// <returns>A <see cref="Vector3"/> for the position.</returns>
 		private Vector3 GetLocation()
 		{
 			var altRad = Altitude * radians;
@@ -70,41 +76,40 @@ namespace Stargazer
 			return pos;
 		}
 
-        // Called when the node enters the scene tree for the first time.
-
-        /// <summary>
-        /// Populates the field according to the field in a <see cref="HorizontalStar"/>
-        /// </summary>
-        /// <param name="star">The <see cref="HorizontalStar"/></param>
+        /// <inheritdoc/>
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals");
 			
         }
+
+		/// <summary>
+		/// Calculates the position of the star each frame.
+		/// </summary>
+		/// <param name="delta">Unused.</param>
+        public override void _Process(double delta)
+        {
+			starConverter.UpdatePositionOf(horizontalStar);
+            Position = GetLocation();
+			Position3D = Position;
+        }
+
+        /// <summary>
+        /// Populates the field according to the field in a <see cref="HorizontalStar"/>
+        /// </summary>
+        /// <param name="star">The <see cref="HorizontalStar"/></param>
         public void FromHorizontal(HorizontalStar star, IEquatorialConverter<HorizontalStar> starConverter)
 		{
 			horizontalStar = star;
 			this.starConverter = starConverter;
-			starConverter.UpdatePosition(horizontalStar);
+			starConverter.UpdatePositionOf(horizontalStar);
 			//GD.Print(star.HipparcosId);
 			//hipID = (int)star.HipparcosId;
 			Position = GetLocation();
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
         }
-        public override void _Process(double delta)
-        {
-			starConverter.UpdatePosition(horizontalStar);
-            Position = GetLocation();
-			Position3D = Position;
-        }
 
-        public string getHoverText()
-        {
-					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+
-                    $"HIP {HipparcosId}\n"+
-                    $"Altitude {Altitude}"+
-                    $"Azimuth {Azimuth}";
-        }
+
     }
 }

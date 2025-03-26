@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 namespace Stargazer
 {
     /// <summary>
-    /// The top level controller for the program. 
-    /// Handles all communication between the GUI and the viewport.
+    /// The controller for all interaction in the program.  
+    /// Handles all communication between the GUI (Control Container) and the viewport (Sky View Container).
     /// </summary>
     public partial class Startup : Control
     {

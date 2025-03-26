@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: LabelButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.LabelButton_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.LabelButton_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -534,8 +534,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabelsToggled
     path: ../Stargazer-Godot/Code/LabelButton.cs
     startLine: 13
@@ -563,19 +563,22 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelButton.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-docs
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleLabel
     path: ../Stargazer-Godot/Code/LabelButton.cs
-    startLine: 15
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the <xref href="Stargazer.LabelButton" data-throw-if-not-resolved="false"></xref>
+  example: []
   syntax:
     content: private void ToggleLabel(bool state)
     parameters:
     - id: state
       type: System.Boolean
+      description: True if the constellation labels should be shown.
     content.vb: Private Sub ToggleLabel(state As Boolean)
   overload: Stargazer.LabelButton.ToggleLabel*
   nameWithType.vb: LabelButton.ToggleLabel(Boolean)
@@ -12190,6 +12193,18 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: Godot.Signal
+  commentId: T:Godot.Signal
+  isExternal: true
+  name: Signal
+  nameWithType: Signal
+  fullName: Godot.Signal
+- uid: Stargazer.LabelButton
+  commentId: T:Stargazer.LabelButton
+  href: Stargazer.LabelButton.html
+  name: LabelButton
+  nameWithType: LabelButton
+  fullName: Stargazer.LabelButton
 - uid: Stargazer.LabelButton.ToggleLabel*
   commentId: Overload:Stargazer.LabelButton.ToggleLabel
   href: Stargazer.LabelButton.html#Stargazer_LabelButton_ToggleLabel_System_Boolean_

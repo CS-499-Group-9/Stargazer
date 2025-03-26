@@ -17,7 +17,7 @@ namespace DataLayer
         /// <summary>
         /// Used to filter the maximum magnitude of stars retrieved from the Yale Star repository
         /// </summary>
-        // const double maxStarMagnitude = 15;
+        const double maxStarMagnitude = 6;
         private const string Value = "Messier Complete";
 
         /// <summary>
@@ -108,6 +108,7 @@ namespace DataLayer
         }
 
         /// <summary>
+        /// NO LONGER USED
         /// Gathers all stars that are a part of constellations into a separate dictionary using the HipparcosId as the key.
         /// This is because the Hip ID is used by the constellations to list the nodes of the constellation graph.
         /// Removes the stars from the master listing.
@@ -180,7 +181,7 @@ namespace DataLayer
         }
 
         /// <summary>
-        /// Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data.
+        /// Initializes all data to be drawn for the current latitude, longitude and user time and returns it to the client.
         /// </summary>
         /// <param name="latitude">The latitude of the observer (-90 &lt;= value &lt;= 90)</param>
         /// <param name="longitude">The longitude of the observer (-90 &lt;= value &lt;= 90)</param>
@@ -197,19 +198,19 @@ namespace DataLayer
             // Calculate the stars
             await Task.Run(() =>
             {
-                CalculateStars(starConverter);
+                CalculateStars();
             });
 
             // Calculate the Messier Objects
             await Task.Run(() =>
             {
-                CalculateMessierObjects(messierConverter);
+                CalculateMessierObjects();
 
             });
             var planetaryCalculator = new CosineKittyPlanetaryCalculator(latitude, longitude, localUserTime);
-            var planets = planetaryCalculator.CalculatePlanets();
+            var planets = planetaryCalculator.CreatePlanets();
             var moonCalculator = new CosineKittyMoonCalculator(latitude, longitude, localUserTime);
-            var moon = moonCalculator.CalculateMoon();
+            var moon = moonCalculator.CreateMoon();
 
             // Pack up the data and ship it back.
             return new CelestialDataPackage<T>(
@@ -222,8 +223,10 @@ namespace DataLayer
             
         }
 
-
-        private void CalculateMessierObjects(IEquatorialConverter<HorizontalMessierObject> converter)
+        /// <summary>
+        /// Initializes all of the messier data.
+        /// </summary>
+        private void CalculateMessierObjects()
         {
             List<HorizontalMessierObject> newMessier = new();
             foreach (var item in equatorialMessierObjects)
@@ -240,7 +243,10 @@ namespace DataLayer
             horizontalMessierObjects = newMessier;
         }
 
-        private void CalculateStars(IEquatorialConverter<HorizontalStar> starConverter)
+        /// <summary>
+        /// Initializes the star data.
+        /// </summary>
+        private void CalculateStars()
         {
             List<HorizontalStar> newStars = new();
             foreach (var item in equatorialStars)
