@@ -21,7 +21,7 @@ items:
   type: Class
   source:
     id: Spawner2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Spawner2D_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Spawner2D_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     id: Startup
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Startup_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Startup_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

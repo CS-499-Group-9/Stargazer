@@ -8,7 +8,7 @@ namespace Stargazer
     /// <summary>
     /// The <see cref="Node3D"/> used to represent a planet.
     /// </summary>
-    public partial class Planet : Node3D
+    public partial class Planet : Node3D, IHoverable
     {
 
         private IPlanetaryCalculator<HorizontalPlanet> calculator;
@@ -53,6 +53,12 @@ namespace Stargazer
         {
             this.horizonalPlanet = horizontalPlanet;
             this.calculator = calculator;
+        }
+        
+        /// <inheritdoc/>
+        public string GetHoverText()
+        {
+            return horizonalPlanet.Name;
         }
     }
 }

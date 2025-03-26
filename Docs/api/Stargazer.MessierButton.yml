@@ -16,8 +16,8 @@ items:
   type: Class
   source:
     id: MessierButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.MessierButton_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.MessierButton_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

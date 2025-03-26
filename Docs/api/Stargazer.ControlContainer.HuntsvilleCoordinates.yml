@@ -22,7 +22,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HuntsvilleCoordinates
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 46
+    startLine: 51
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitude
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 48
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -81,7 +81,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitude
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 49
+    startLine: 54
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -108,7 +108,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 50
+    startLine: 55
   assemblies:
   - New Game Project
   namespace: Stargazer

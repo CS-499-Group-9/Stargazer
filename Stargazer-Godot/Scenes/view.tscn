@@ -90,7 +90,6 @@ script = ExtResource("1_t068r")
 [node name="Stars" type="Node3D" parent="."]
 script = ExtResource("2_dkqjn")
 StarScene = ExtResource("3_54qo3")
-LabelScene = ExtResource("4_hboln")
 
 [node name="Constellations" type="Node3D" parent="."]
 script = ExtResource("6_erqrm")

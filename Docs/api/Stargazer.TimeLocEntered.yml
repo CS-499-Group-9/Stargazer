@@ -22,7 +22,7 @@ items:
   type: Class
   source:
     id: TimeLocEntered
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.TimeLocEntered_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.TimeLocEntered_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

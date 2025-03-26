@@ -18,7 +18,7 @@ items:
   type: Class
   source:
     id: SkyView2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.SkyView2D_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.SkyView2D_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

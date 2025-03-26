@@ -23,7 +23,7 @@ items:
   type: Class
   source:
     id: Star2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Star2D_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Star2D_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

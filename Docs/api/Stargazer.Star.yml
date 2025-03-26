@@ -30,8 +30,8 @@ items:
   type: Class
   source:
     id: Star
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Star_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Star_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
