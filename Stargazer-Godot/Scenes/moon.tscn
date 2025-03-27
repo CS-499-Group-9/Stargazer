@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Moon.cs" id="1_7apsu"]
 [ext_resource type="Shader" path="res://Scenes/planet.gdshader" id="2_hordq"]
-[ext_resource type="Texture2D" uid="uid://c0k2r283muamy" path="res://Textures/moonmap.jpg" id="2_q4njm"]
+[ext_resource type="Texture2D" uid="uid://c0k2r283muamy" path="res://Textures/Images/moonmap.jpg" id="2_q4njm"]
 [ext_resource type="Script" path="res://Code/StarMesh.cs" id="3_vqt4r"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ulwwr"]

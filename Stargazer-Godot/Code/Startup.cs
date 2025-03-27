@@ -34,6 +34,7 @@ namespace Stargazer
             var skyView = skyViewContainer.SkyView;
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;

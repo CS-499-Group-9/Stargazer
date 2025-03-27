@@ -1,4 +1,5 @@
-﻿using DataLayer.HorizontalObjects;
+﻿using CosineKitty;
+using DataLayer.HorizontalObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace DataLayer.Interfaces
         public void IncrementTime(double increment);
 
         public void UpdatePosition(HorizonalPlanet planet);
+        
+        public double GetLST();
     }
 }

@@ -12,11 +12,17 @@ namespace Stargazer
         /// The base sensitivity of the mouse used when panning the view.
         /// </summary>
         [Export] public float MouseSensitivity = 0.002f;
+    
+        [Export] public Vector2 ScreenOffset = new Vector2(500, 50);  // Desired screen space position
 
         private float yaw = 0f;  // Left/Right Rotation
         private float pitch = 0f; // Up/Down Rotation
         private bool rightClickHeld = false;
+        private bool middleMouseClicked = false;
+        private bool tracking = false;
         private string screenshotPath = "user://screenshot.jpeg";
+
+        private IHoverable highlightingStar;
   
         private Globals globalVars;
 
@@ -31,6 +37,7 @@ namespace Stargazer
         /// <param name="event"></param>
         public override void _Input(InputEvent @event)
         {
+            middleMouseClicked = false;
             if(@event.IsAction("forward")){
 
                 GD.Print("go!");
@@ -44,6 +51,10 @@ namespace Stargazer
                     globalVars.isHover = false;
                     rightClickHeld = mouseButton.Pressed;
                     Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
+                }
+                if (mouseButton.ButtonIndex == MouseButton.Middle){
+                    middleMouseClicked = mouseButton.Pressed;
+                    GD.Print("middle click");
                 }
 
                 if (mouseButton.ButtonIndex == MouseButton.WheelUp || mouseButton.ButtonIndex == MouseButton.WheelDown)
@@ -59,7 +70,7 @@ namespace Stargazer
                     }
                 }
             }
-            if (rightClickHeld && @event is InputEventMouseMotion mouseMotion)
+            if (rightClickHeld && @event is InputEventMouseMotion mouseMotion && !tracking)
             {
                 yaw -= (Fov / 75) * mouseMotion.Relative.X * MouseSensitivity;
                 pitch -= (Fov / 75) * mouseMotion.Relative.Y * MouseSensitivity;
@@ -81,8 +92,11 @@ namespace Stargazer
                     GD.Print("colliding!");
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
-                    IHoverable star = (IHoverable)collider.GetParentNode3D();
-                    globalVars.hoverLabel = star.getHoverText();
+                    IHoverable colliderhoverable = (IHoverable)collider.GetParentNode3D();
+                    if(!tracking){
+                        highlightingStar = (IHoverable)collider.GetParentNode3D();
+                    }
+                    globalVars.hoverLabel = colliderhoverable.getHoverText();
                     
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
@@ -93,7 +107,16 @@ namespace Stargazer
                 else
                 {
                     globalVars.isHover = false;
+                    if(!tracking){
+                        highlightingStar = null;
+                    }
                 }
+            }
+            if(middleMouseClicked && globalVars.isHover){
+                GD.Print("I'm tracking you now!");
+                ScreenOffset = UnprojectPosition(highlightingStar.getGlobalTransform().Origin);
+                middleMouseClicked = false;
+                tracking = !tracking;
             }
         }
 
@@ -116,13 +139,35 @@ namespace Stargazer
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
+            float RotationSpeed = 1f;
             // Check if the 'screenshot_key' action is pressed
             if (Input.IsActionJustPressed("screenshot_key"))
             {
                 TakeScreenshot();
             }
-        }
+            if (highlightingStar == null || !tracking)
+                return;
 
+
+            // Compute the direction to the target
+            Vector3 toTarget = (highlightingStar.getGlobalTransform().Origin - GlobalTransform.Origin).Normalized();
+
+            // Construct a rotation basis that maintains a fixed up vector (prevents roll)
+            Basis newBasis = new Basis();
+            newBasis.Z = -toTarget; // Forward vector points towards target
+            newBasis.Y = Vector3.Up; // Fix up vector to avoid roll
+            newBasis.X = newBasis.Y.Cross(newBasis.Z).Normalized(); // Right vector
+            newBasis.Y = newBasis.Z.Cross(newBasis.X).Normalized(); // Ensure orthogonality
+
+            // Apply yaw and pitch separately
+            Transform3D newTransform = GlobalTransform;
+            newTransform.Basis = newBasis;
+
+
+            // Assign the new transform
+            GlobalTransform = newTransform;
+            GD.Print($"{yaw} and {Rotation.X}\n{pitch} and {Rotation.Y}");
+        }
         private void TakeScreenshot()
         {
             // Get the current viewport as an Image

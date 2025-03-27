@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 public partial class ControlContainer : VBoxContainer
 {
 	public Action<bool> AzimuthToggled;
+	public Action<bool> EquatorLinesToggled;
 	public Action<bool> ConstellationsToggled;
 	public Action<bool> ConstellationLabelsToggled;
 	public Action<bool> MessierObjectsTogggled;
@@ -22,6 +23,7 @@ public partial class ControlContainer : VBoxContainer
 	}
 
 	public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
+	public void ToggleEquator(bool value) { EquatorLinesToggled?.Invoke(value); }
 	public void ToggleConstellations(bool value) { ConstellationsToggled?.Invoke(value); }
 	public void ToggleConstellationLabels(bool value) { ConstellationLabelsToggled?.Invoke(value); }
 	public void ToggleMessierObjects(bool value) { MessierObjectsTogggled?.Invoke(value); }

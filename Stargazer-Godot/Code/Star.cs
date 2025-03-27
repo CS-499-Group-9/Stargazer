@@ -106,5 +106,10 @@ namespace Stargazer
                     $"Altitude {Altitude}"+
                     $"Azimuth {Azimuth}";
         }
+
+        public Transform3D getGlobalTransform()
+        {
+            return GlobalTransform;
+        }
     }
 }

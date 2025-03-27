@@ -31,12 +31,13 @@ namespace Stargazer
         /// Relays the user request to toggle the gridlines to the child node that makes the change.
         /// </summary>
         public Action<bool> ToggleGridlines;
+        public Action<bool> ToggleEquatorialGridlines;
         /// <summary>
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
         public Camera3D Camera {  get; set; }
-        
+
 
         private Spawner spawner;
         private Spawner2D spawner2d;
@@ -48,7 +49,7 @@ namespace Stargazer
         private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         private Label datelabel;
-        private double timeMultiplier = 1;
+        private double timeMultiplier = 3600;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -64,6 +65,7 @@ namespace Stargazer
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
+            ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
             datelabel = GetNode<Label>("TimeLabel");
 
             Camera = GetNode<Camera3D>("Camera3D");

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w8bt42rf45qp"
-path="res://.godot/imported/venusmap.jpg-87a96a7a25ffdb51130a17f290139c1e.ctex"
+uid="uid://bnou5a60mft0i"
+path="res://.godot/imported/mercurymap.jpg-649a9c3370d8f96105529126ea29bfe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/venusmap.jpg"
-dest_files=["res://.godot/imported/venusmap.jpg-87a96a7a25ffdb51130a17f290139c1e.ctex"]
+source_file="res://Textures/Images/mercurymap.jpg"
+dest_files=["res://.godot/imported/mercurymap.jpg-649a9c3370d8f96105529126ea29bfe3.ctex"]
 
 [params]
 

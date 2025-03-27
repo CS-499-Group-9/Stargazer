@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn0vdat5dbeuh"
-path.s3tc="res://.godot/imported/saturnmap.jpg-5aa506c5f6f7256851d296894b3dd886.s3tc.ctex"
+uid="uid://xfas01860vmd"
+path="res://.godot/imported/uranusmap.jpg-808d34bd1bba1b78142c793a87657b70.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/saturnmap.jpg"
-dest_files=["res://.godot/imported/saturnmap.jpg-5aa506c5f6f7256851d296894b3dd886.s3tc.ctex"]
+source_file="res://Textures/Images/uranusmap.jpg"
+dest_files=["res://.godot/imported/uranusmap.jpg-808d34bd1bba1b78142c793a87657b70.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

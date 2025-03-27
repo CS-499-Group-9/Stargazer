@@ -19,6 +19,7 @@ public partial class GridLabel : Control
         for (int altitude = 0; altitude < 180; altitude++)
         {
                 Label gridlabel = new Label();
+                gridlabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.5f, 0.4f, 0.8f));
                 gridlabel.Text = $"{-90 + altitude * lineinterval}°";
                 gridlabel.AddThemeFontSizeOverride("font_size", 25);
                 gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);

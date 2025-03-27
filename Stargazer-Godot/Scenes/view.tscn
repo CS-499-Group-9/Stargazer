@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=32 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -14,7 +14,8 @@
 [ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_1t5an"]
 [ext_resource type="Script" path="res://Code/Planets.cs" id="9_0lfhn"]
 [ext_resource type="PackedScene" uid="uid://cvbesqw1kvrp8" path="res://Scenes/planet.tscn" id="10_t7brt"]
-[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="11_eka2m"]
+[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/Images/needle.png" id="11_eka2m"]
+[ext_resource type="Script" path="res://Code/PlanetTextureLoader.cs" id="12_dqnlk"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 
@@ -100,9 +101,13 @@ LabelScene = ExtResource("4_hboln")
 [node name="LineMesh" type="MultiMeshInstance3D" parent="Constellations"]
 script = ExtResource("7_1t5an")
 
-[node name="Planets" type="Node3D" parent="."]
+[node name="Planets" type="Node3D" parent="." node_paths=PackedStringArray("planetTextures")]
 script = ExtResource("9_0lfhn")
+planetTextures = NodePath("PlanetTextureLoader")
 PlanetScene = ExtResource("10_t7brt")
+
+[node name="PlanetTextureLoader" type="ResourcePreloader" parent="Planets"]
+script = ExtResource("12_dqnlk")
 
 [node name="Dome" type="Node3D" parent="."]
 
@@ -110,9 +115,11 @@ PlanetScene = ExtResource("10_t7brt")
 mesh = SubResource("SphereMesh_kgvtr")
 skeleton = NodePath("")
 
-[node name="Azimuth Gridlines" type="MeshInstance3D" parent="Dome"]
+[node name="Dome" type="MeshInstance3D" parent="Dome"]
 mesh = SubResource("SphereMesh_kgvtr")
 skeleton = NodePath("")
+
+[node name="Azimuth Gridlines" type="Node3D" parent="Dome"]
 script = ExtResource("2_mbeb3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0k2r283muamy"
-path.s3tc="res://.godot/imported/moonmap.jpg-f3453b672021862c5d2737982ef237dc.s3tc.ctex"
+uid="uid://djgjpyyv340v"
+path.s3tc="res://.godot/imported/jupitermap.jpg-1886e1ba3755a2a2c246119233ed9bf1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/moonmap.jpg"
-dest_files=["res://.godot/imported/moonmap.jpg-f3453b672021862c5d2737982ef237dc.s3tc.ctex"]
+source_file="res://Textures/Images/jupitermap.jpg"
+dest_files=["res://.godot/imported/jupitermap.jpg-1886e1ba3755a2a2c246119233ed9bf1.s3tc.ctex"]
 
 [params]
 
