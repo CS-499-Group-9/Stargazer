@@ -29,17 +29,17 @@ namespace DataLayer.Implementations
         /// </summary>
         /// <returns>An <see cref="IList{Constellation}"/></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public Task<IList<Constellation>?> GetAllConstellationsAsync()
+        public Task<IList<Constellation>> GetAllConstellationsAsync()
         {
 
             if (File.Exists(filePath))
             {
-                return Task<IList<Constellation>?>.Factory.StartNew(() =>
+                return Task<IList<Constellation>>.Factory.StartNew(() =>
                 {
                     // Null values are not handled because the program SHOULD break if this does not work. 
                     // TODO: May need to consider a more elegant failure for production version.
                     string jsonContent = File.ReadAllText(filePath);
-                    return JsonConvert.DeserializeObject<List<Constellation>>(jsonContent, new JsonConstellationListConverter());
+                    return JsonConvert.DeserializeObject<List<Constellation>>(jsonContent, new JsonConstellationListConverter()) ?? throw new JsonException("Deserialization of the Constellation Repository returned null.") ;
                 });
             }
             throw new FileNotFoundException();

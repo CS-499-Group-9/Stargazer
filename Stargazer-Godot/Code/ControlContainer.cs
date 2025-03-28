@@ -3,7 +3,7 @@ using Stargazer;
 using System;
 using System.Threading.Tasks;
 
-public partial class ControlContainer : VBoxContainer
+public partial class ControlContainer : Control
 {
 	public Action<bool> AzimuthToggled;
 	public Action<bool> ConstellationsToggled;

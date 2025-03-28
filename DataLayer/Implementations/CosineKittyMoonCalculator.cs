@@ -64,5 +64,10 @@ namespace DataLayer.Implementations
             currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime);
         }
+
+        public void SetTime(DateTime currentTime)
+        {
+            this.currentTime = currentTime;
+        }
     }
 }

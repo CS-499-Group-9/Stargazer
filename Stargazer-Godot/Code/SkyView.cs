@@ -90,7 +90,21 @@ namespace Stargazer
             base._Process(delta);
         }
 
+        public void UpdatePlaySpeed(float multiplier)
+        {
+            if (multiplier == 0) timeMultiplier = 1;
+            else timeMultiplier += multiplier;
+        }
 
+        public void SyncronizeTime()
+        {
+            var currentTime = DateTime.UtcNow;
+            starConverter.SetTime(currentTime);
+            planetaryCalculator?.SetTime(currentTime);
+            moonCalculator?.SetTime(currentTime);
+            datelabel.Text = $"{currentTime.ToLocalTime().ToString() ?? ""} Local";
+            timeMultiplier = 1;
+        }
 
 
         /// <summary>

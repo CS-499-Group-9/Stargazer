@@ -28,5 +28,6 @@ namespace DataLayer.Interfaces
         /// </summary>
         /// <param name="seconds"></param>
         void IncrementTimeBy(double seconds);
+        void SetTime(DateTime userTime);
     }
 }

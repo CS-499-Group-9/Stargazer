@@ -5,6 +5,7 @@ using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Stargazer
 
 		private Node3D StarContainer;
 		private IEquatorialCalculator<HorizontalStar> starConverter;
+		private BlockingCollection<ConcurrentBag<HorizontalStar>> starProducer;
 		const float maxStarMagnitude = 6.0f;
         /// <summary>
         /// Receives the notification to update the stars drawn.
@@ -35,6 +37,8 @@ namespace Stargazer
         /// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
         /// <param name="GetStar">Used to retrieve a star from the <see cref="CelestialDataPackage{Star}"/></param>
         /// <param name="starConverter">Used to calculate star data.</param>
+        /// 
+
         public async Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator<HorizontalStar> starConverter)
 		{
 			this.starConverter = starConverter;

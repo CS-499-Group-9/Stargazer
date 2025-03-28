@@ -14,7 +14,7 @@ namespace DataLayer.Implementations
     /// <summary>
     /// Uses the <see cref="CosineKitty.Astronomy"/> library to calculate the position and magnitude of the planets.
     /// </summary>
-    internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizontalPlanet> 
+    internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizontalPlanet>
     {
         private readonly IDictionary<string,Body> _bodies;
         private readonly Observer observer;
@@ -68,6 +68,11 @@ namespace DataLayer.Implementations
         {
             currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime);
+        }
+
+        public void SetTime(DateTime currentTime)
+        {
+            this.currentTime = currentTime;
         }
 
         ///<inheritdoc/>

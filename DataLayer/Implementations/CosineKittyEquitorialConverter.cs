@@ -51,5 +51,10 @@ namespace DataLayer.Implementations
             hoBody.Altitude = hor.altitude;
             hoBody.Azimuth = hor.azimuth;
         }
+
+        public void SetTime(DateTime userTime)
+        {
+            currentTime = userTime;
+        }
     }
 }

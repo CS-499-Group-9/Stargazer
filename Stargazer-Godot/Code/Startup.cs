@@ -29,15 +29,17 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer)+"/VBoxContainer");
+            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
             var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
             var skyView = skyViewContainer.SkyView;
+            var playControl = GetNode<PlayControl>(nameof(PlayControl));
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
-
+            playControl.PlaySpeedUpdated = skyView.UpdatePlaySpeed;
+            playControl.SyncronizeTime = skyView.SyncronizeTime;
 
             //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
 
@@ -57,7 +59,7 @@ namespace Stargazer
         {
             // Uncomment the timers to make it advance.
           
-            var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
+            var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
             await UserPositionUpdated(dataPackage);
 
         }

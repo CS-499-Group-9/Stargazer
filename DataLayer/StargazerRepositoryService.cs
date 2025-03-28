@@ -4,6 +4,7 @@ using DataLayer.Interfaces;
 using DataLayer.EquatorialObjects;
 using DataLayer.Implementations;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace DataLayer
 {
@@ -51,22 +52,17 @@ namespace DataLayer
         /// <summary>
         /// Used by the <see cref="StargazerRepositoryService{T}.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)"/> method to initialize a new service
         /// </summary>
-        /// <param name="equatorialStars">The stars retrieved from the repository</param>
-        /// <param name="equatorialConstellations">The constellations retrieved from the repository</param>
-        /// <param name="equatorialMessierObjects">The Messier Deep Space Objects retrieved from the repository</param>
+        /// <param name="horizontalStars">The stars retrieved from the repository</param>
+        /// <param name="constellations">The constellations retrieved from the repository</param>
+        /// <param name="horizontalMessierObjects">The Messier Deep Space Objects retrieved from the repository</param>
         private StargazerRepositoryService(
-            IEnumerable<EquatorialStar> equatorialStars,
-            IEnumerable<Constellation> equatorialConstellations,
-            IEnumerable<EquatorialMessierObject> equatorialMessierObjects)
+            IEnumerable<HorizontalStar> horizontalStars,
+            IEnumerable<Constellation> constellations,
+            IEnumerable<HorizontalMessierObject> horizontalMessierObjects)
         {
-            this.equatorialStars = equatorialStars;
-            this.constellations = equatorialConstellations;
-            this.equatorialMessierObjects = equatorialMessierObjects;
-
-            // Create new empty concurrent collections
-            horizontalStars = new BlockingCollection<HorizontalStar>(new ConcurrentBag<HorizontalStar>());
-            horizontalMessierObjects = new BlockingCollection<HorizontalMessierObject>(new ConcurrentBag<HorizontalMessierObject>());
-            ConstellationStars = new ConcurrentDictionary<int, HorizontalStar>();
+            this.horizontalStars = horizontalStars;
+            this.constellations = constellations;
+            this.horizontalMessierObjects = horizontalMessierObjects;
         }
 
         /// <summary>
@@ -97,13 +93,14 @@ namespace DataLayer
             var equatorialConstellations = getConstellations.Result;
             var equatorialMessierObjects = getMessierObjects.Result;
 
-            // Get all stars that are a part of constellations and move them into the Constellation stars list
+            var horizontalStars = await CalculateStars(equatorialStars);
+            var horizontalMessierObjects = await CalculateMessierObjects(equatorialMessierObjects);
 
             // Return the fully constructed object
             return new StargazerRepositoryService<T>(
-                equatorialStars,
+                horizontalStars,
                 equatorialConstellations,
-                equatorialMessierObjects
+                horizontalMessierObjects
             );
         }
 
@@ -187,7 +184,7 @@ namespace DataLayer
         /// <param name="longitude">The longitude of the observer (-90 &lt;= value &lt;= 90)</param>
         /// <param name="localUserTime">The observer time in Universal TimeCode <code cref="DateTime.ToUniversalTime()">new DateTime(year, month, day, hour, min, sec).ToUniversalTime()</code></param>
         /// <returns>A package containing all data required for display. (This call should be made in an <c>async</c> method using the <c>await</c> keyword)</returns>
-        public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
+        public CelestialDataPackage<T> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
         {
             // Create a Star converter (created outside of the task because it is used for the stars and constellations
             // I really wish all three of these could happen concurrently instead of waiting for one to complete before staring the other, but it causes MAJOR issues
@@ -196,17 +193,7 @@ namespace DataLayer
             CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);
             CosineKittyEquatorialConverter<HorizontalMessierObject> messierConverter = new(latitude, longitude, localUserTime);
             // Calculate the stars
-            await Task.Run(() =>
-            {
-                CalculateStars(starConverter);
-            });
-
-            // Calculate the Messier Objects
-            await Task.Run(() =>
-            {
-                CalculateMessierObjects(messierConverter);
-
-            });
+           
             var planetaryCalculator = new CosineKittyPlanetaryCalculator(latitude, longitude, localUserTime);
             var planets = planetaryCalculator.CalculatePlanets();
             var moonCalculator = new CosineKittyMoonCalculator(latitude, longitude, localUserTime);
@@ -224,32 +211,38 @@ namespace DataLayer
         }
 
 
-        private void CalculateMessierObjects(IEquatorialCalculator<HorizontalMessierObject> converter)
+        private async static Task<IEnumerable<HorizontalMessierObject>> CalculateMessierObjects(IEnumerable<EquatorialMessierObject> equatorialMessierObjects)
         {
-            List<HorizontalMessierObject> newMessier = new();
-            foreach (var item in equatorialMessierObjects)
+            return await Task<IEnumerable<HorizontalMessierObject>>.Run(() =>
             {
-                var messier = new HorizontalMessierObject(item);
-                messier.MessierId = item.MessierId;
-                messier.Size = item.Size;
-                messier.ViewingDifficulty = item.ViewingDifficulty;
-                messier.Constellation = item.Constellation;
-                messier.NewGeneralCatalog = item.NewGeneralCatalog;
-                messier.ViewingSeason = item.ViewingSeason;
-                newMessier.Add(messier);
-            }
-            horizontalMessierObjects = newMessier;
+                List<HorizontalMessierObject> newMessier = new();
+                foreach (var item in equatorialMessierObjects)
+                {
+                    var messier = new HorizontalMessierObject(item);
+                    messier.MessierId = item.MessierId;
+                    messier.Size = item.Size;
+                    messier.ViewingDifficulty = item.ViewingDifficulty;
+                    messier.Constellation = item.Constellation;
+                    messier.NewGeneralCatalog = item.NewGeneralCatalog;
+                    messier.ViewingSeason = item.ViewingSeason;
+                    newMessier.Add(messier);
+                }
+                return newMessier;
+            });
         }
 
-        private void CalculateStars(IEquatorialCalculator<HorizontalStar> starConverter)
+        private async static Task<IEnumerable<HorizontalStar>> CalculateStars(IEnumerable<EquatorialStar> equatorialStars)
         {
-            List<HorizontalStar> newStars = new();
-            foreach (var item in equatorialStars)
+            return await Task.Run(() =>
             {
-                var star = new HorizontalStar(item);
-                newStars.Add(star);
-            }
-            horizontalStars = newStars;
+                List<HorizontalStar> newStars = new();
+                foreach (var item in equatorialStars)
+                {
+                    var star = new HorizontalStar(item);
+                    newStars.Add(star);
+                }
+                return newStars;
+            });
         }
     }
 }

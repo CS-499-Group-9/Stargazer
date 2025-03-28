@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmonwxoowo044"]
+[gd_scene load_steps=9 format=3 uid="uid://dmonwxoowo044"]
 
 [ext_resource type="PackedScene" uid="uid://cpnjhw02imc4o" path="res://Scenes/banner.tscn" id="1_2aeuw"]
 [ext_resource type="Script" path="res://Code/Startup.cs" id="1_7h08j"]
-[ext_resource type="Script" path="res://Code/Main.cs" id="1_sxr3h"]
 [ext_resource type="PackedScene" uid="uid://ccf161pss0iua" path="res://Scenes/control_container.tscn" id="2_0ds6g"]
-[ext_resource type="Script" path="res://Code/MainContainer.cs" id="2_q8paj"]
 [ext_resource type="PackedScene" uid="uid://qst6jthb1tgv" path="res://Scenes/sky_view_container.tscn" id="4_ch8am"]
+[ext_resource type="PackedScene" uid="uid://dr71brnwp5pdb" path="res://Scenes/play_control.tscn" id="5_6mtib"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="15_gllst"]
 
 [sub_resource type="Theme" id="Theme_g7sve"]
@@ -15,45 +14,31 @@ default_font_size = 20
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[node name="Control" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.997047)
-script = ExtResource("1_sxr3h")
-
-[node name="MainContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-script = ExtResource("2_q8paj")
-
-[node name="Banner" parent="MainContainer" instance=ExtResource("1_2aeuw")]
-layout_mode = 2
-
-[node name="InteractionContainer" type="HBoxContainer" parent="MainContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
 script = ExtResource("1_7h08j")
 
-[node name="ControlContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("2_0ds6g")]
+[node name="SkyViewContainer" parent="." instance=ExtResource("4_ch8am")]
 layout_mode = 2
 
-[node name="SkyViewContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("4_ch8am")]
+[node name="Banner" parent="." instance=ExtResource("1_2aeuw")]
+layout_mode = 2
+
+[node name="ControlContainer" parent="." instance=ExtResource("2_0ds6g")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="PlayControl" parent="." instance=ExtResource("5_6mtib")]
 layout_mode = 2
 
 [node name="HoverLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 37.0
-offset_bottom = 28.0
+layout_mode = 2
 theme = SubResource("Theme_g7sve")
 text = "star"
 label_settings = SubResource("LabelSettings_gdlkl")
