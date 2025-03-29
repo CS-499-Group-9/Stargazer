@@ -1,10 +1,8 @@
-﻿using System.Collections.Concurrent;
+﻿using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
-using DataLayer.Interfaces;
-using DataLayer.EquatorialObjects;
 using DataLayer.Implementations;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+using DataLayer.Interfaces;
+using System.Collections.Concurrent;
 
 namespace DataLayer
 {
@@ -47,7 +45,7 @@ namespace DataLayer
         /// <summary>
         /// Dictionary of <see cref="HorizontalStar"/>s contained in constellations 
         /// </summary>
-        private ConcurrentDictionary<int, HorizontalStar> ConstellationStars { get;  }
+        private ConcurrentDictionary<int, HorizontalStar> ConstellationStars { get; }
 
         /// <summary>
         /// Used by the <see cref="StargazerRepositoryService{T}.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)"/> method to initialize a new service
@@ -193,7 +191,7 @@ namespace DataLayer
             CosineKittyEquatorialConverter<HorizontalStar> starConverter = new(latitude, longitude, localUserTime);
             CosineKittyEquatorialConverter<HorizontalMessierObject> messierConverter = new(latitude, longitude, localUserTime);
             // Calculate the stars
-           
+
             var planetaryCalculator = new CosineKittyPlanetaryCalculator(latitude, longitude, localUserTime);
             var planets = planetaryCalculator.CalculatePlanets();
             var moonCalculator = new CosineKittyMoonCalculator(latitude, longitude, localUserTime);
@@ -201,13 +199,13 @@ namespace DataLayer
 
             // Pack up the data and ship it back.
             return new CelestialDataPackage<T>(
-                horizontalStars,starConverter, 
-                horizontalMessierObjects,messierConverter,
-                constellations, 
-                new ConcurrentDictionary<int, T>(), 
+                horizontalStars, starConverter,
+                horizontalMessierObjects, messierConverter,
+                constellations,
+                new ConcurrentDictionary<int, T>(),
                 planets, planetaryCalculator,
                 moon, moonCalculator);
-            
+
         }
 
 
@@ -246,4 +244,4 @@ namespace DataLayer
         }
     }
 }
-          
+

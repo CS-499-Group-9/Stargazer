@@ -1,8 +1,8 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using DataLayer.Interfaces;
 using DataLayer.EquatorialObjects;
+using DataLayer.Interfaces;
 using System.Globalization;
 
 namespace DataLayer.Implementations
@@ -23,7 +23,7 @@ namespace DataLayer.Implementations
         /// <param name="repositoryPath">The path to the directory containing the file.</param>
         public StarLustMessierCsvRepository(string repositoryPath)
         {
-            filePath = Path.Combine(repositoryPath, "messier-catalog.csv"); 
+            filePath = Path.Combine(repositoryPath, "messier-catalog.csv");
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace DataLayer.Implementations
             {
                 Map(m => m.MessierId).Name("M");
                 Map(m => m.NewGeneralCatalog).Name("NGC");
-                Map(m=> m.Type).Name("TYPE");
+                Map(m => m.Type).Name("TYPE");
                 Map(m => m.Constellation).Name("CONS");
                 Map(m => m.RightAscension).TypeConverter<HmsToDecimalDegreesConverter>().Name("RA");
                 Map(m => m.Declination).TypeConverter<DdmToDecimalDegreesConverter>().Name("DEC");
@@ -86,7 +86,7 @@ namespace DataLayer.Implementations
                     var degDecMin = text.Split(' ');
                     if (
                         !(
-                            double.TryParse(degDecMin[0].Remove(degDecMin[0].Length -1), out double hours) &&
+                            double.TryParse(degDecMin[0].Remove(degDecMin[0].Length - 1), out double hours) &&
                             double.TryParse(degDecMin[1].Remove(degDecMin[1].Length - 1), out double minutes)
                           )
                         )
@@ -105,7 +105,7 @@ namespace DataLayer.Implementations
             {
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
-                    if(text == null) return null;
+                    if (text == null) return null;
                     var degreesMinutes = text.Split('°');
                     if (
                         !(

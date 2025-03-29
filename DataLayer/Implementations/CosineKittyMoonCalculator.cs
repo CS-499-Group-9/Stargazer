@@ -2,11 +2,6 @@
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
@@ -42,8 +37,8 @@ namespace DataLayer.Implementations
             Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
             var illumination = Astronomy.Illumination(Body.Moon, astroTime);
             var phase = Astronomy.MoonPhase(astroTime);
-            var eqBody = new EquatorialStar { Declination = equ.dec, RightAscension = equ.ra, Distance = equ.dist , Magnitude = illumination.mag};
-            return new HorizontalMoon (eqBody);
+            var eqBody = new EquatorialStar { Declination = equ.dec, RightAscension = equ.ra, Distance = equ.dist, Magnitude = illumination.mag };
+            return new HorizontalMoon(eqBody);
         }
 
         /// <inheritdoc/>

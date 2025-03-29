@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-	public Action<bool> AzimuthToggled;
-	public Action<bool> ConstellationsToggled;
-	public Action<bool> ConstellationLabelsToggled;
-	public Action<bool> MessierObjectsTogggled;
-	public Func<double, double, DateTime, Task> UserPositionUpdated;
+    public Action<bool> AzimuthToggled;
+    public Action<bool> ConstellationsToggled;
+    public Action<bool> ConstellationLabelsToggled;
+    public Action<bool> MessierObjectsTogggled;
+    public Func<double, double, DateTime, Task> UserPositionUpdated;
 
     /// <summary>
     /// Receives the <see cref="Signal"/> from the <see cref="AzimuthButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
@@ -28,8 +28,8 @@ public partial class ControlContainer : Control
     /// <summary>
     /// Dummy method to broadcast a hardcoded user request. Will be replaced. 
     /// </summary>
-	public async void UpdateUserPosition() 
-	{
+	public async void UpdateUserPosition()
+    {
         Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         var coords = new HuntsvilleCoordinates();
         globalVars.requestTime = DateTime.UtcNow;

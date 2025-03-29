@@ -1,7 +1,7 @@
 ﻿using CosineKitty;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Implementations
 {
@@ -34,10 +34,10 @@ namespace DataLayer.Implementations
         public DateTime CurrentTime { get { return currentTime; } }
 
         /// <inheritdoc/>
-        public void IncrementTimeBy(double seconds) 
-        { 
+        public void IncrementTimeBy(double seconds)
+        {
             currentTime = currentTime.AddSeconds(seconds);
-            astroTime = new(currentTime); 
+            astroTime = new(currentTime);
         }
 
         /// <inheritdoc/>

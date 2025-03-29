@@ -1,12 +1,9 @@
 using DataLayer;
-using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using Godot;
 using System;
-using System.Collections;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Stargazer
@@ -35,20 +32,25 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
-        public Camera3D Camera {  get; set; }
-        
+        public Camera3D Camera { get; set; }
+
 
         private Spawner spawner;
         private Spawner2D spawner2d;
         private Constellations constellationNode;
         private Constellations2D constellation2dNode;
         private Planets planetNode;
+
+        private Label averageFrameLabel;
+        private Label instantaneousFrameLabel;
+        private Label dateLable;
+
         private Moon moon;
         private IEquatorialCalculator<HorizontalStar> starConverter;
         private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
-        private Label datelabel;
-        private double timeMultiplier = 1;
+        private int timeMultiplier = 1;
+        private double averageFrameTime;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -64,8 +66,9 @@ namespace Stargazer
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
-            datelabel = GetNode<Label>("TimeLabel");
-
+            dateLable = GetNode<Label>("TimeLabel");
+            averageFrameLabel = GetNode<Label>("AverageFrameLabel");
+            instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
             Camera = GetNode<Camera3D>("Camera3D");
             var needle = GetNode<CompassNeedle>("Compass/Needle");
             var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
@@ -75,7 +78,8 @@ namespace Stargazer
             ToggleGridlines += gridLabel.ToggleGridlines;
 
             planetNode = GetNode<Planets>("Planets");
-            
+
+
 
             // TODO: Get a reference to the Messier Objects parent node (should be a child of this node)
             // TODO: Get a reference to the Moon object parent node (should be a child of this node) 
@@ -83,17 +87,23 @@ namespace Stargazer
 
         public override void _Process(double delta)
         {
-            starConverter?.IncrementTimeBy(delta*timeMultiplier);
-            planetaryCalculator?.IncrementTimeBy(delta*timeMultiplier);
-            moonCalculator?.IncrementTimeBy(delta*timeMultiplier);
-            datelabel.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
+            instantaneousFrameLabel.Text = $"Instantaneous: {delta.ToString()}";
+            averageFrameTime += delta;
+            averageFrameTime /= 2;
+            averageFrameLabel.Text = $"Average: {averageFrameTime.ToString()}";
+
+            starConverter?.IncrementTimeBy(delta * timeMultiplier);
+            planetaryCalculator?.IncrementTimeBy(delta * timeMultiplier);
+            moonCalculator?.IncrementTimeBy(delta * timeMultiplier);
+            dateLable.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
 
-        public void UpdatePlaySpeed(float multiplier)
+        public int UpdatePlaySpeed(int multiplier)
         {
             if (multiplier == 0) timeMultiplier = 1;
             else timeMultiplier += multiplier;
+            return timeMultiplier;
         }
 
         public void SyncronizeTime()
@@ -102,7 +112,7 @@ namespace Stargazer
             starConverter.SetTime(currentTime);
             planetaryCalculator?.SetTime(currentTime);
             moonCalculator?.SetTime(currentTime);
-            datelabel.Text = $"{currentTime.ToLocalTime().ToString() ?? ""} Local";
+            dateLable.Text = $"{currentTime.ToLocalTime().ToString() ?? ""} Local";
             timeMultiplier = 1;
         }
 
@@ -118,7 +128,7 @@ namespace Stargazer
             var nonnullcount = 0;
             starConverter = dataPackage.StarCalculator;
             planetaryCalculator = dataPackage.PlanetaryCalculator;
-            datelabel.Text = starConverter.CurrentTime.ToString();
+            dateLable.Text = starConverter.CurrentTime.ToString();
             //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarCalculator);
             //await spawner2d.DrawStars(dataPackage.Stars);

@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr71brnwp5pdb"]
+[gd_scene load_steps=9 format=3 uid="uid://dr71brnwp5pdb"]
 
 [ext_resource type="Script" path="res://Code/PlayControl.cs" id="1_ehmol"]
 [ext_resource type="StyleBox" uid="uid://8uxntfgpvnl2" path="res://Scenes/toggle_light.tres" id="2_2nikd"]
-[ext_resource type="Texture2D" uid="uid://bnb7ob3gkt33c" path="res://Textures/syncTime.png" id="3_cqhkq"]
+[ext_resource type="Texture2D" uid="uid://c6bvmqipx1e2v" path="res://Textures/fast-rewind.svg" id="3_8y8ke"]
+[ext_resource type="Texture2D" uid="uid://dci1e5ehpbkk" path="res://Textures/rewind.svg" id="4_ln7p3"]
+[ext_resource type="Texture2D" uid="uid://d3nqehdkjnkvl" path="res://Textures/history.svg" id="5_kb2v8"]
+[ext_resource type="Texture2D" uid="uid://ceb0gpcj3o74f" path="res://Textures/play.svg" id="6_n1qcv"]
+[ext_resource type="Texture2D" uid="uid://cjyycdtxm6lw4" path="res://Textures/forward.svg" id="7_dpn51"]
+[ext_resource type="Texture2D" uid="uid://p7f5k7i2j4sm" path="res://Textures/fast-forward.svg" id="8_x76jq"]
 
 [node name="PlayControl" type="Control"]
 layout_mode = 3
@@ -23,70 +28,105 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -40.0
-offset_right = 66.0
+offset_left = -105.0
+offset_top = -43.0
+offset_right = 105.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MultiplierLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "THIS IS A TEST"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BackFastButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackFastButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
 theme_override_styles/normal = ExtResource("2_2nikd")
-text = "<<"
-
-[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(30, 20)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
-text = "<"
-
-[node name="CurrentTimeButton" type="Button" parent="MarginContainer/HBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(40, 20)
-layout_mode = 2
-icon = ExtResource("3_cqhkq")
+icon = ExtResource("3_8y8ke")
 icon_alignment = 1
 expand_icon = true
 
-[node name="NormalButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
 theme_override_styles/normal = ExtResource("2_2nikd")
-text = "|>"
+icon = ExtResource("4_ln7p3")
 icon_alignment = 1
+expand_icon = true
 
-[node name="ForwardButon" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="CurrentTimeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/icon_normal_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("5_kb2v8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NormalButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
 theme_override_styles/normal = ExtResource("2_2nikd")
-text = ">"
+icon = ExtResource("6_n1qcv")
+icon_alignment = 1
+expand_icon = true
 
-[node name="ForwardFastButton" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
 theme_override_styles/normal = ExtResource("2_2nikd")
-text = ">>"
+icon = ExtResource("7_dpn51")
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/BackFastButton" to="." method="DecreaseTen"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/BackButton" to="." method="DecreaseOne"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSyncronizeTime"]
-[connection signal="button_up" from="MarginContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ForwardButon" to="." method="IncreaseOne"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ForwardFastButton" to="." method="IncreaseTen"]
+[node name="ForwardFastButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("8_x76jq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackFastButton" to="." method="DecreaseTen"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="DecreaseOne"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSyncronizeTime"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ForwardButon" to="." method="IncreaseOne"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ForwardFastButton" to="." method="IncreaseTen"]

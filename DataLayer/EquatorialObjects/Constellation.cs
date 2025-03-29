@@ -1,9 +1,9 @@
 ﻿
 namespace DataLayer.EquatorialObjects
 {
-   /// <summary>
-   /// Represents a constellation in the sky
-   /// </summary>   
+    /// <summary>
+    /// Represents a constellation in the sky
+    /// </summary>   
     public class Constellation
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace DataLayer.EquatorialObjects
         public Constellation(string Id, string name, string? nativeName)
         {
             ConstellationId = Id;
-            ConstellationName = string.Equals(name,nativeName) ? name : $"{name} ({nativeName})";
+            ConstellationName = string.Equals(name, nativeName) ? name : $"{name} ({nativeName})";
             ConstellationLines = new List<Tuple<int, int>>();
         }
 

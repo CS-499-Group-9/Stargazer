@@ -1,5 +1,5 @@
-﻿using DataLayer.Interfaces;
-using DataLayer.Implementations;
+﻿using DataLayer.Implementations;
+using DataLayer.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataLayer
@@ -32,7 +32,7 @@ namespace DataLayer
             string dataLayer = Path.Combine(dir.Parent.FullName, "DataLayer") ?? throw new DirectoryNotFoundException();
             string repositoryPath = Path.Combine(dataLayer, "Repositories");
 
-            var serviceProvider =  new ServiceCollection()
+            var serviceProvider = new ServiceCollection()
                 .AddSingleton<IStarRepository, HygCsvStarRepository>(provider => new HygCsvStarRepository(repositoryPath))
                 .AddSingleton<IMessierRepository, StarLustMessierCsvRepository>(provider => new StarLustMessierCsvRepository(repositoryPath))
                 .AddSingleton<IConstellationRepository, StellariumJsonConstellationRepository>(provider => new StellariumJsonConstellationRepository(repositoryPath))

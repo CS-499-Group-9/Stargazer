@@ -27,6 +27,7 @@ namespace Stargazer
         /// </summary>
         public async override void _Ready()
         {
+
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
             var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
@@ -58,7 +59,7 @@ namespace Stargazer
         public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
-          
+
             var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
             await UserPositionUpdated(dataPackage);
 

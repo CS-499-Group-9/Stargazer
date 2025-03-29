@@ -1,11 +1,9 @@
 ﻿
 using DataLayer.HorizontalObjects;
-using DataLayer.EquatorialObjects;
-using System.Reflection.Metadata;
 
 namespace DataLayer.Interfaces
 {
- 
+
     /// <summary>
     /// Converts a <see cref="HorizontalBody"/> to a {T} object
     /// </summary>
@@ -15,8 +13,8 @@ namespace DataLayer.Interfaces
         /// <summary>
         /// The current internal universal time used for calculations.
         /// </summary>
-        public DateTime CurrentTime { get;}
-       
+        public DateTime CurrentTime { get; }
+
         /// <summary>
         /// Calculates and updates the position of a <see cref="HorizontalBody"/>
         /// </summary>

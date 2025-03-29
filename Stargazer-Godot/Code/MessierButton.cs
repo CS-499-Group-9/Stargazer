@@ -1,6 +1,4 @@
 using Godot;
-using System;
-using System.Threading.Tasks;
 
 namespace Stargazer
 {
@@ -9,6 +7,6 @@ namespace Stargazer
     /// </summary>
     public partial class MessierButton : Control
     {
-        
+
     }
 }

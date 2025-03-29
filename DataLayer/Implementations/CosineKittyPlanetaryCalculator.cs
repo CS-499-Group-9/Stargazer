@@ -1,13 +1,7 @@
 ﻿using CosineKitty;
-using CsvHelper.Delegates;
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Implementations
 {
@@ -16,7 +10,7 @@ namespace DataLayer.Implementations
     /// </summary>
     internal class CosineKittyPlanetaryCalculator : IPlanetaryCalculator<HorizontalPlanet>
     {
-        private readonly IDictionary<string,Body> _bodies;
+        private readonly IDictionary<string, Body> _bodies;
         private readonly Observer observer;
         private DateTime currentTime;
         private AstroTime astroTime;
@@ -29,13 +23,13 @@ namespace DataLayer.Implementations
         /// <param name="universalTime">The user's time in universtal time code form.</param>
         public CosineKittyPlanetaryCalculator(double latitude, double longitude, DateTime universalTime)
         {
-            _bodies = new Dictionary<string, Body> 
-            { 
-                {Body.Mercury.ToString(), Body.Mercury }, 
-                { Body.Venus.ToString(), Body.Venus }, 
+            _bodies = new Dictionary<string, Body>
+            {
+                {Body.Mercury.ToString(), Body.Mercury },
+                { Body.Venus.ToString(), Body.Venus },
                 { Body.Mars.ToString(), Body.Mars },
-                { Body.Jupiter.ToString(), Body.Jupiter }, 
-                { Body.Saturn.ToString(), Body.Saturn }, 
+                { Body.Jupiter.ToString(), Body.Jupiter },
+                { Body.Saturn.ToString(), Body.Saturn },
                 {Body.Uranus.ToString(), Body.Uranus },
                 {Body.Neptune.ToString(), Body.Neptune },
                 {Body.Sun.ToString(), Body.Sun}
@@ -63,7 +57,7 @@ namespace DataLayer.Implementations
             return planets;
         }
 
-       /// <inheritdoc/>
+        /// <inheritdoc/>
         public void IncrementTimeBy(double seconds)
         {
             currentTime = currentTime.AddSeconds(seconds);
@@ -78,7 +72,7 @@ namespace DataLayer.Implementations
         ///<inheritdoc/>
         public void UpdatePositionOf(HorizontalPlanet planet)
         {
-            if(_bodies.TryGetValue(planet.Name, out var body))
+            if (_bodies.TryGetValue(planet.Name, out var body))
             {
                 Equatorial equ = Astronomy.Equator(body, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
                 //var eqBody = new EquatorialStar { ProperName = body.ToString(), RightAscension = equ.ra, Declination = equ.dec, Distance = equ.dist };

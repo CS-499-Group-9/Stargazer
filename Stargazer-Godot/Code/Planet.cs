@@ -17,7 +17,7 @@ namespace Stargazer
         private const float radians = (float)Math.PI / 180f;
         private Texture2D[] planetTextureArray;
         // Called when the node enters the scene tree for the first time.
-        
+
         /// <summary>
         /// Used to initialize planetary data.
         /// </summary>
