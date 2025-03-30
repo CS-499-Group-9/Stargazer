@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 namespace Stargazer
 {
@@ -74,10 +73,10 @@ namespace Stargazer
 
 		}
 
-		/// <summary>
-		/// Dynamically draws the gridlines based on camera FOV
-		/// </summary>
-		/// <param name="delta"></param>
+        /// <summary>
+        /// Dynamically draws the gridlines based on camera FOV
+        /// </summary>
+        /// <param name="delta"></param>
         public override void _Process(double delta)
         {
 			if (camera == null) return;
@@ -118,15 +117,15 @@ namespace Stargazer
 			equatorialGridlines.Visible = showLines;
 		}
 
-		/// <summary>
-		/// Gets a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
-		/// </summary>
-		/// <param name="camera"></param>
-		public void SetCamera(Camera3D camera)
-		{
-			this.camera = camera;
-			storedfov = camera.Fov;
-		}
+        /// <summary>
+        /// Gets a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
+        /// </summary>
+        /// <param name="camera"></param>
+        public void SetCamera(Camera3D camera)
+        {
+            this.camera = camera;
+            storedfov = camera.Fov;
+        }
 
 
 		// Function to draw longitude lines
@@ -146,10 +145,10 @@ namespace Stargazer
 				float lonAngle = i*Mathf.Pi/180f;
 				//bool isCardinal = i == 0 || i == longitudeSegments / 4 || i == longitudeSegments / 2 || i == 3 * longitudeSegments / 4;
 
-				for (int j = 0; j < latitudeSegments; j++)
-				{
-					float latAngle1 = -Mathf.Pi / 2 + (j * Mathf.Pi / latitudeSegments);  // Latitude angle (bottom to top)
-					float latAngle2 = -Mathf.Pi / 2 + ((j + 1) * Mathf.Pi / latitudeSegments);
+                for (int j = 0; j < latitudeSegments; j++)
+                {
+                    float latAngle1 = -Mathf.Pi / 2 + (j * Mathf.Pi / latitudeSegments);  // Latitude angle (bottom to top)
+                    float latAngle2 = -Mathf.Pi / 2 + ((j + 1) * Mathf.Pi / latitudeSegments);
 
 					if (latAngle2 > cutoffRadians)
 					{
@@ -162,17 +161,17 @@ namespace Stargazer
 						continue;  // Skip this segment to truncate the line
 					}
 
-					Vector3 p1 = new Vector3(
-						Mathf.Cos(lonAngle) * Mathf.Cos(latAngle1) * radius,
-						Mathf.Sin(latAngle1) * radius,
-						Mathf.Sin(lonAngle) * Mathf.Cos(latAngle1) * radius
-					);
+                    Vector3 p1 = new Vector3(
+                        Mathf.Cos(lonAngle) * Mathf.Cos(latAngle1) * radius,
+                        Mathf.Sin(latAngle1) * radius,
+                        Mathf.Sin(lonAngle) * Mathf.Cos(latAngle1) * radius
+                    );
 
-					Vector3 p2 = new Vector3(
-						Mathf.Cos(lonAngle) * Mathf.Cos(latAngle2) * radius,
-						Mathf.Sin(latAngle2) * radius,
-						Mathf.Sin(lonAngle) * Mathf.Cos(latAngle2) * radius
-					);
+                    Vector3 p2 = new Vector3(
+                        Mathf.Cos(lonAngle) * Mathf.Cos(latAngle2) * radius,
+                        Mathf.Sin(latAngle2) * radius,
+                        Mathf.Sin(lonAngle) * Mathf.Cos(latAngle2) * radius
+                    );
 
 					Vector3 p1new = new Vector3(
 						p1.X*costheta - p1.Z*sintheta,
@@ -228,18 +227,19 @@ namespace Stargazer
 				}
 				float latAngle = Mathf.DegToRad(lat);  // Convert to radians
 
-				// Loop through longitude to draw a full circle at this latitude
-				for (int lon = 0; lon < longitudeSegments; lon++)
-				{
-					float lonAngle1 = lon * Mathf.Tau / longitudeSegments;  // Longitude angle (0 to 2π)
+                // Loop through longitude to draw a full circle at this latitude
+                for (int lon = 0; lon < longitudeSegments; lon++)
+                {
+                    float lonAngle1 = lon * Mathf.Tau / longitudeSegments;  // Longitude angle (0 to 2π)
 
-						for(int i = 0; i < 4; i++){
-						// Convert spherical coordinates to Cartesian (x, y, z)
-						Vector3 p1 = new Vector3(
-							Mathf.Cos(lonAngle1 + i*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius,
-							Mathf.Sin(latAngle) * radius,
-							Mathf.Sin(lonAngle1 + i*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius
-						);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        // Convert spherical coordinates to Cartesian (x, y, z)
+                        Vector3 p1 = new Vector3(
+                            Mathf.Cos(lonAngle1 + i * (Mathf.Tau / longitudeSegments) / 4) * Mathf.Cos(latAngle) * radius,
+                            Mathf.Sin(latAngle) * radius,
+                            Mathf.Sin(lonAngle1 + i * (Mathf.Tau / longitudeSegments) / 4) * Mathf.Cos(latAngle) * radius
+                        );
 
 						Vector3 p2 = new Vector3(
 							Mathf.Cos(lonAngle1 + (i+1)*(Mathf.Tau / longitudeSegments)/4) * Mathf.Cos(latAngle) * radius,
@@ -274,9 +274,9 @@ namespace Stargazer
 						imMesh2.SurfaceAddVertex(0.9f*p2newer);
 					}
 
-				}
-				lat = storelat;
-			}
+                }
+                lat = storelat;
+            }
 
 			imMesh.SurfaceEnd();
 			imMesh2.SurfaceEnd();

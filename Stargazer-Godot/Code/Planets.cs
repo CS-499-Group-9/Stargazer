@@ -1,10 +1,7 @@
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
 using Godot;
-using Stargazer;
-using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Stargazer
 {

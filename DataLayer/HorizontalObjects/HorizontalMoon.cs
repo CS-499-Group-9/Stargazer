@@ -1,9 +1,4 @@
 ﻿using DataLayer.EquatorialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.HorizontalObjects
 {
@@ -22,7 +17,7 @@ namespace DataLayer.HorizontalObjects
         /// <summary>
         /// A double representing the moon phase from 0° to 360°
         /// </summary>
-        public double Phase { get; internal set; } 
+        public double Phase { get; internal set; }
 
 
     }

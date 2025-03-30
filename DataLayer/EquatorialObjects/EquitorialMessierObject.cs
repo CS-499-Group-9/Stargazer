@@ -10,11 +10,11 @@ namespace DataLayer.EquatorialObjects
         /// <summary>
         /// The 'M' prefixed identification number of the object
         /// </summary>
-        public string? MessierId { get ; set ; }
+        public string? MessierId { get; set; }
         /// <summary>
         /// The Messier Object identification in the New General Catalog
         /// </summary>
-        public string? NewGeneralCatalog { get ; set ; }
+        public string? NewGeneralCatalog { get; set; }
         /// <summary>
         /// The Messier Object category
         /// </summary>

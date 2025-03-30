@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 namespace Stargazer
 {
@@ -8,6 +7,6 @@ namespace Stargazer
     /// </summary>
     public partial class LabelButton : Control
     {
-       
+
     }
 }

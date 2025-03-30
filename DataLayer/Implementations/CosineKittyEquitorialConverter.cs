@@ -1,7 +1,7 @@
 ﻿using CosineKitty;
+using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
-using DataLayer.EquatorialObjects;
 
 namespace DataLayer.Implementations
 {
@@ -34,10 +34,10 @@ namespace DataLayer.Implementations
         public DateTime CurrentTime { get { return currentTime; } }
 
         /// <inheritdoc/>
-        public void IncrementTimeBy(double seconds) 
-        { 
+        public void IncrementTimeBy(double seconds)
+        {
             currentTime = currentTime.AddSeconds(seconds);
-            astroTime = new(currentTime); 
+            astroTime = new(currentTime);
         }
 
         /// <inheritdoc/>
@@ -50,6 +50,12 @@ namespace DataLayer.Implementations
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
             hoBody.Altitude = hor.altitude;
             hoBody.Azimuth = hor.azimuth;
+        }
+
+        public void SetTime(DateTime userTime)
+        {
+            currentTime = userTime;
+            astroTime = new AstroTime(userTime);
         }
     }
 }

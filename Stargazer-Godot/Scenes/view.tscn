@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=32 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -73,17 +73,11 @@ shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
 
-[sub_resource type="SphereMesh" id="SphereMesh_d5him"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2oe6"]
-albedo_color = Color(1, 0.0823529, 1, 1)
-
-[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode", "datelabel")]
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
 spawner = NodePath("Stars")
 constellationNode = NodePath("Constellations")
-datelabel = NodePath("TimeLabel")
 
 [node name="GridLabel" type="Control" parent="."]
 layout_mode = 3
@@ -176,13 +170,12 @@ position = Vector2(65, 65)
 scale = Vector2(1.76563, 1.76563)
 texture = SubResource("GradientTexture2D_iahmf")
 
-[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle", "camera")]
+[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
 position = Vector2(65, 65)
 scale = Vector2(0.069375, 0.069375)
 texture = ExtResource("11_eka2m")
 script = ExtResource("12_nu1as")
 needle = NodePath(".")
-camera = NodePath("../../Camera3D")
 
 [node name="ColorRect" type="ColorRect" parent="Compass"]
 material = SubResource("ShaderMaterial_vsn0o")
@@ -191,11 +184,24 @@ offset_right = 129.0
 offset_bottom = 129.0
 
 [node name="TimeLabel" type="Label" parent="."]
-offset_right = 158.0
-offset_bottom = 29.0
+offset_left = 32.0
+offset_top = 85.0
+offset_right = 190.0
+offset_bottom = 114.0
 text = "Test"
 
-[node name="AnotherTest" type="MeshInstance3D" parent="."]
+[node name="AverageFrameLabel" type="Label" parent="."]
 visible = false
-mesh = SubResource("SphereMesh_d5him")
-surface_material_override/0 = SubResource("StandardMaterial3D_x2oe6")
+offset_left = 33.0
+offset_top = 110.0
+offset_right = 191.0
+offset_bottom = 139.0
+text = "Average Time"
+
+[node name="InstantaneousFrameLabel" type="Label" parent="."]
+visible = false
+offset_left = 34.0
+offset_top = 133.0
+offset_right = 192.0
+offset_bottom = 162.0
+text = "Instantaeous Time"

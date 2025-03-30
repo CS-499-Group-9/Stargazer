@@ -30,7 +30,7 @@ namespace DataLayer.HorizontalObjects
         /// <summary>
         /// <see cref="EquatorialMessierObject.NewGeneralCatalog"/>
         /// </summary>
-        public string? NewGeneralCatalog { get ; internal set; }
+        public string? NewGeneralCatalog { get; internal set; }
         /// <summary>
         /// <see cref="EquatorialMessierObject.Type"/>
         /// </summary>

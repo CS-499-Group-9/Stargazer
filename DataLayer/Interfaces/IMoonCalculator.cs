@@ -1,9 +1,4 @@
 ﻿using DataLayer.HorizontalObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Interfaces
 {
@@ -24,6 +19,7 @@ namespace DataLayer.Interfaces
         /// </summary>
         /// <param name="seconds"></param>
         public void IncrementTimeBy(double seconds);
+        void SetTime(DateTime currentTime);
 
         /// <summary>
         /// Updates the position of a <see cref="HorizontalMoon"/>

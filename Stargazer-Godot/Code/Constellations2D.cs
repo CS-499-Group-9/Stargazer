@@ -1,6 +1,5 @@
-using DataLayer;
-using DataLayer.HorizontalObjects;
 using DataLayer.EquatorialObjects;
+using DataLayer.HorizontalObjects;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -71,14 +70,15 @@ namespace Stargazer
                 foreach (var lines in constellation.ConstellationLines)
                 {
                     //GD.Print("gonna grab a constellation");
-                    Star s1 = GetConstellationStar(lines.Item1, (S)=>{return null;});
-                    Star s2 = GetConstellationStar(lines.Item2, (S)=>{return null;});
-                    if (s1.Altitude > -45.0 || s2.Altitude > -45.0){
+                    Star s1 = GetConstellationStar(lines.Item1, (S) => { return null; });
+                    Star s2 = GetConstellationStar(lines.Item2, (S) => { return null; });
+                    if (s1.Altitude > -45.0 || s2.Altitude > -45.0)
+                    {
                         Star2D s12d = Spawn2DStar(s1);
                         Star2D s22d = Spawn2DStar(s2);
 
-                        mesh.SurfaceAddVertex(new Vector3(s12d.Position[0],s12d.Position[1],0.0F));
-                        mesh.SurfaceAddVertex(new Vector3(s22d.Position[0],s22d.Position[1],0.0F));
+                        mesh.SurfaceAddVertex(new Vector3(s12d.Position[0], s12d.Position[1], 0.0F));
+                        mesh.SurfaceAddVertex(new Vector3(s22d.Position[0], s22d.Position[1], 0.0F));
 
                         if (totalPos == Vector2.Zero) // solely checked for the first star
                         {
@@ -103,8 +103,9 @@ namespace Stargazer
             }
             mesh.SurfaceEnd();
             var count = constMesh.Mesh.GetSurfaceCount();
-            foreach(Star2D star in StarContainer.GetChildren()){
-                star.Scale = new Vector2(0.6f,0.6f);
+            foreach (Star2D star in StarContainer.GetChildren())
+            {
+                star.Scale = new Vector2(0.6f, 0.6f);
             }
             //GD.Print(count);
         }
@@ -129,7 +130,7 @@ namespace Stargazer
         {
             Star2D outstar = Star2DScene.Instantiate<Star2D>();
             outstar.From3dStar(star3d);
-            outstar.scalestar(new Vector2(0.7f,0.7f));
+            outstar.scalestar(new Vector2(0.7f, 0.7f));
             //outstar.Scale  = new Vector2(1F,1F);
             StarContainer.AddChild(outstar);
             return outstar;

@@ -50,11 +50,11 @@ namespace DataLayer
         /// <summary>
         /// The calculator used to determine planetary data.
         /// </summary>
-        public IPlanetaryCalculator<HorizontalPlanet> PlanetaryCalculator {get;}
+        public IPlanetaryCalculator<HorizontalPlanet> PlanetaryCalculator { get; }
         /// <summary>
         /// The calculator used to determine moon data.
         /// </summary>
-        public IMoonCalculator MoonCalculator {get;}
+        public IMoonCalculator MoonCalculator { get; }
         /// <summary>
         /// The moon in horizontal coordinate form
         /// </summary>
@@ -70,7 +70,7 @@ namespace DataLayer
         /// <exception cref="KeyNotFoundException">If the star was not found.</exception>
         public T GetStar(int hipId, Func<HorizontalStar, T> SpawnStar)
         {
-            if (DrawnStars.TryGetValue(hipId, out var star))  return star;
+            if (DrawnStars.TryGetValue(hipId, out var star)) return star;
             var horizontalStar = horizontalStars.First(s => s.HipparcosId == hipId);
             if (horizontalStar != null)
             {
@@ -100,7 +100,7 @@ namespace DataLayer
             IEquatorialCalculator<HorizontalStar> starCalculator,
             IEnumerable<HorizontalMessierObject> messierObjects,
             IEquatorialCalculator<HorizontalMessierObject> messierCalculator,
-            IEnumerable<Constellation> constellations, 
+            IEnumerable<Constellation> constellations,
             ConcurrentDictionary<int, T> drawnStars,
             IEnumerable<HorizontalPlanet>? planets,
             IPlanetaryCalculator<HorizontalPlanet> planetCalculator,

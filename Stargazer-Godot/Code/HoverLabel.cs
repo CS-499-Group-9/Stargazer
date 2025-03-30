@@ -1,6 +1,4 @@
 using Godot;
-using Stargazer;
-using System;
 
 namespace Stargazer
 {

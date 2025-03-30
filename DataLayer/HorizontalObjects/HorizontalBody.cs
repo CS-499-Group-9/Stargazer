@@ -1,12 +1,11 @@
 ﻿
 using DataLayer.EquatorialObjects;
-using DataLayer.Interfaces;
 
 namespace DataLayer.HorizontalObjects
-{    
+{
     /// <summary>
-     /// Represents an object that can be located in the sky according to horizontal coordinates.
-     /// </summary>
+    /// Represents an object that can be located in the sky according to horizontal coordinates.
+    /// </summary>
     public abstract class HorizontalBody
     {
         /// <summary>

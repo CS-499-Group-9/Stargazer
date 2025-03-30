@@ -1,8 +1,8 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using DataLayer.Interfaces;
 using DataLayer.EquatorialObjects;
+using DataLayer.Interfaces;
 using System.Globalization;
 
 namespace DataLayer.Implementations
@@ -21,7 +21,7 @@ namespace DataLayer.Implementations
         /// Creates a new instance and sets the file path
         /// </summary>
         /// <param name="repositoryPath">The path to the directory containing the file</param>
-        public HygCsvStarRepository(string repositoryPath) 
+        public HygCsvStarRepository(string repositoryPath)
         {
             this.filePath = Path.Combine(repositoryPath, "hyg.csv");
             if (!File.Exists(filePath)) throw new FileNotFoundException($"{filePath} does not exist");
@@ -115,7 +115,7 @@ namespace DataLayer.Implementations
                 private const double conversionFactor = 3.262;
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
-                    return double.TryParse(text, out var value) && value > 0? value * conversionFactor : 1;
+                    return double.TryParse(text, out var value) && value > 0 ? value * conversionFactor : 1;
                 }
             }
         }

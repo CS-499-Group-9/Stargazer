@@ -20,6 +20,10 @@ namespace Stargazer
         private ShaderMaterial planetMaterial;
         private Globals globalVars;
         // Called when the node enters the scene tree for the first time.
+
+        /// <summary>
+        /// Used to initialize planetary data.
+        /// </summary>
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals

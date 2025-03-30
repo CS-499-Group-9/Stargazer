@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 namespace Stargazer
@@ -31,7 +30,7 @@ namespace Stargazer
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         }
-        
+
         /// <summary>
         /// Checks if the right mouse button is being held down to pan the view.
         /// </summary>
@@ -42,7 +41,7 @@ namespace Stargazer
             if(@event.IsAction("forward")){
 
                 GD.Print("go!");
-                Position -= 0.5f*Basis.Z;
+                Position -= 0.5f * Basis.Z;
 
             }
             if (@event is InputEventMouseButton mouseButton)
@@ -128,7 +127,7 @@ namespace Stargazer
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
         }
-        
+
         private void ZoomOut()
         {
             // Decrease field of view for zooming in (if using a perspective camera)

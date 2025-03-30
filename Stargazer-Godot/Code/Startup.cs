@@ -14,6 +14,8 @@ namespace Stargazer
         // Just in case something changes, it's easy to find.
         private const string viewPortPath = "SubViewportContainer/SubViewport/View";
         private StargazerRepositoryService<Star> repositoryService;
+        private PlayControl playControl;
+        private SkyView skyView;
 
         [Export] private Control control;
         [Export] private SkyViewContainer skyViewContainer;
@@ -30,17 +32,21 @@ namespace Stargazer
         /// </summary>
         public async override void _Ready()
         {
+
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var controlContainer = control.GetNode<ControlContainer>("VBoxContainer");
-            var skyView = skyViewContainer.SkyView;
+            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
+            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+            skyView = skyViewContainer.SkyView;
+            playControl = GetNode<PlayControl>(nameof(PlayControl));
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
-
+           
 
 
             UserPositionUpdated = skyView.UpdateUserPosition;
@@ -58,8 +64,10 @@ namespace Stargazer
         public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
-          
-            var dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
+
+            var multiplier = playControl.Activate();
+            skyView.SetTimeMultiplier(multiplier);
+            var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
             await UserPositionUpdated(dataPackage);
 
         }

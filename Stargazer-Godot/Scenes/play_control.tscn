@@ -1,0 +1,188 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr71brnwp5pdb"]
+
+[ext_resource type="Script" path="res://Code/PlayControl.cs" id="1_ehmol"]
+[ext_resource type="StyleBox" uid="uid://8uxntfgpvnl2" path="res://Scenes/toggle_light.tres" id="2_2nikd"]
+[ext_resource type="Texture2D" uid="uid://dci1e5ehpbkk" path="res://Textures/rewind.svg" id="4_ln7p3"]
+[ext_resource type="Texture2D" uid="uid://d3nqehdkjnkvl" path="res://Textures/history.svg" id="5_kb2v8"]
+[ext_resource type="Texture2D" uid="uid://ceb0gpcj3o74f" path="res://Textures/play.svg" id="6_n1qcv"]
+[ext_resource type="Texture2D" uid="uid://cjyycdtxm6lw4" path="res://Textures/forward.svg" id="7_dpn51"]
+
+[node name="PlayControl" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_ehmol")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -43.0
+offset_right = 105.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MultiplierLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "THIS IS A TEST"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CurrentTimeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/icon_normal_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("5_kb2v8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NormalButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("6_n1qcv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("7_dpn51")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sec"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("4_ln7p3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("7_dpn51")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Min"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("4_ln7p3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("7_dpn51")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Hrs"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("4_ln7p3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("7_dpn51")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Days"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_styles/normal = ExtResource("2_2nikd")
+icon = ExtResource("4_ln7p3")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSyncronizeTime"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ForwardButon" to="." method="UpdateSeconds" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="UpdateSeconds" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ForwardButon" to="." method="UpdateMinutes" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BackButton" to="." method="UpdateMinutes" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/ForwardButon" to="." method="UpdateHours" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BackButton" to="." method="UpdateHours" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/ForwardButon" to="." method="UpdateDays" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/BackButton" to="." method="UpdateDays" binds= [-1]]

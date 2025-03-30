@@ -1,5 +1,3 @@
-using DataLayer.HorizontalObjects;
-using DataLayer.Interfaces;
 using Godot;
 using System;
 
@@ -19,7 +17,7 @@ namespace Stargazer
         public bool isLabel { get; set; }
         public bool isHover { get; set; }
         public string hoverLabel { get; set; }
-        public DateTime requestTime {get; set;}
+        public DateTime requestTime { get; set; }
 
         public double LocalSiderealTime{get; set;}
 
