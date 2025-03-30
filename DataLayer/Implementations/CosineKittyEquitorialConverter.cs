@@ -9,7 +9,7 @@ namespace DataLayer.Implementations
     /// Converts an object of type <see cref="EquatorialCelestialBody"/> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library
     /// </summary>
     /// <typeparam name="T">The type of <see cref="HorizontalBody"/> to convert to</typeparam>
-    internal class CosineKittyEquatorialConverter<T> : IEquatorialConverter<T> where T : HorizontalBody
+    internal class CosineKittyEquatorialConverter<T> : IEquatorialCalculator<T> where T : HorizontalBody
     {
         private DateTime currentTime;
         private AstroTime astroTime;
@@ -28,16 +28,20 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
-
+        /// <summary>
+        /// Retrieves the internal universal time used for calculations.
+        /// </summary>
         public DateTime CurrentTime { get { return currentTime; } }
 
-        public void UpdateTime(double increment) 
+        /// <inheritdoc/>
+        public void IncrementTimeBy(double seconds) 
         { 
-            currentTime = currentTime.AddSeconds(increment);
+            currentTime = currentTime.AddSeconds(seconds);
             astroTime = new(currentTime); 
         }
 
-        public void UpdatePosition(T hoBody)
+        /// <inheritdoc/>
+        public void UpdatePositionOf(T hoBody)
         {
             var eqBody = hoBody.EquatorialBody;
             Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance);

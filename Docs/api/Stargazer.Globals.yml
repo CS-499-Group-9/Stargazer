@@ -7,6 +7,12 @@ items:
   children:
   - Stargazer.Globals.Instance
   - Stargazer.Globals._Ready
+  - Stargazer.Globals.hoverLabel
+  - Stargazer.Globals.isAzimuth
+  - Stargazer.Globals.isConstellation
+  - Stargazer.Globals.isHover
+  - Stargazer.Globals.isLabel
+  - Stargazer.Globals.requestTime
   langs:
   - csharp
   - vb
@@ -16,8 +22,8 @@ items:
   type: Class
   source:
     id: Globals
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Globals_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Globals_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -307,14 +313,16 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Instance
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 10
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: The singleton instance
+  example: []
   syntax:
     content: public static Globals Instance { get; private set; }
     parameters: []
@@ -322,6 +330,180 @@ items:
       type: Stargazer.Globals
     content.vb: Public Shared Property Instance As Globals
   overload: Stargazer.Globals.Instance*
+- uid: Stargazer.Globals.isAzimuth
+  commentId: P:Stargazer.Globals.isAzimuth
+  id: isAzimuth
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: isAzimuth
+  nameWithType: Globals.isAzimuth
+  fullName: Stargazer.Globals.isAzimuth
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: isAzimuth
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public bool isAzimuth { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property isAzimuth As Boolean
+  overload: Stargazer.Globals.isAzimuth*
+- uid: Stargazer.Globals.isConstellation
+  commentId: P:Stargazer.Globals.isConstellation
+  id: isConstellation
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: isConstellation
+  nameWithType: Globals.isConstellation
+  fullName: Stargazer.Globals.isConstellation
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: isConstellation
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 17
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public bool isConstellation { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property isConstellation As Boolean
+  overload: Stargazer.Globals.isConstellation*
+- uid: Stargazer.Globals.isLabel
+  commentId: P:Stargazer.Globals.isLabel
+  id: isLabel
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: isLabel
+  nameWithType: Globals.isLabel
+  fullName: Stargazer.Globals.isLabel
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: isLabel
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public bool isLabel { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property isLabel As Boolean
+  overload: Stargazer.Globals.isLabel*
+- uid: Stargazer.Globals.isHover
+  commentId: P:Stargazer.Globals.isHover
+  id: isHover
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: isHover
+  nameWithType: Globals.isHover
+  fullName: Stargazer.Globals.isHover
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: isHover
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 19
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public bool isHover { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property isHover As Boolean
+  overload: Stargazer.Globals.isHover*
+- uid: Stargazer.Globals.hoverLabel
+  commentId: P:Stargazer.Globals.hoverLabel
+  id: hoverLabel
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: hoverLabel
+  nameWithType: Globals.hoverLabel
+  fullName: Stargazer.Globals.hoverLabel
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: hoverLabel
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public string hoverLabel { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property hoverLabel As String
+  overload: Stargazer.Globals.hoverLabel*
+- uid: Stargazer.Globals.requestTime
+  commentId: P:Stargazer.Globals.requestTime
+  id: requestTime
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: requestTime
+  nameWithType: Globals.requestTime
+  fullName: Stargazer.Globals.requestTime
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: requestTime
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public DateTime requestTime { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property requestTime As Date
+  overload: Stargazer.Globals.requestTime*
 - uid: Stargazer.Globals._Ready
   commentId: M:Stargazer.Globals._Ready
   id: _Ready
@@ -336,11 +518,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 12
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -6042,6 +6224,75 @@ references:
   name: Globals
   nameWithType: Globals
   fullName: Stargazer.Globals
+- uid: Stargazer.Globals.isAzimuth*
+  commentId: Overload:Stargazer.Globals.isAzimuth
+  href: Stargazer.Globals.html#Stargazer_Globals_isAzimuth
+  name: isAzimuth
+  nameWithType: Globals.isAzimuth
+  fullName: Stargazer.Globals.isAzimuth
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Stargazer.Globals.isConstellation*
+  commentId: Overload:Stargazer.Globals.isConstellation
+  href: Stargazer.Globals.html#Stargazer_Globals_isConstellation
+  name: isConstellation
+  nameWithType: Globals.isConstellation
+  fullName: Stargazer.Globals.isConstellation
+- uid: Stargazer.Globals.isLabel*
+  commentId: Overload:Stargazer.Globals.isLabel
+  href: Stargazer.Globals.html#Stargazer_Globals_isLabel
+  name: isLabel
+  nameWithType: Globals.isLabel
+  fullName: Stargazer.Globals.isLabel
+- uid: Stargazer.Globals.isHover*
+  commentId: Overload:Stargazer.Globals.isHover
+  href: Stargazer.Globals.html#Stargazer_Globals_isHover
+  name: isHover
+  nameWithType: Globals.isHover
+  fullName: Stargazer.Globals.isHover
+- uid: Stargazer.Globals.hoverLabel*
+  commentId: Overload:Stargazer.Globals.hoverLabel
+  href: Stargazer.Globals.html#Stargazer_Globals_hoverLabel
+  name: hoverLabel
+  nameWithType: Globals.hoverLabel
+  fullName: Stargazer.Globals.hoverLabel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Stargazer.Globals.requestTime*
+  commentId: Overload:Stargazer.Globals.requestTime
+  href: Stargazer.Globals.html#Stargazer_Globals_requestTime
+  name: requestTime
+  nameWithType: Globals.requestTime
+  fullName: Stargazer.Globals.requestTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node

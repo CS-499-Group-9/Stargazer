@@ -6,6 +6,8 @@ items:
   parent: DataLayer.Interfaces
   children:
   - DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+  - DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  - DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
   langs:
   - csharp
   - vb
@@ -16,8 +18,8 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: IMoonCalculator
     path: ../DataLayer/Interfaces/IMoonCalculator.cs
     startLine: 12
@@ -27,8 +29,8 @@ items:
   summary: Calculates the position of the moon in horizontal form and phase as a <xref href="System.Double" data-throw-if-not-resolved="false"></xref> between 0° and 360°
   example: []
   syntax:
-    content: internal interface IMoonCalculator
-    content.vb: Friend Interface IMoonCalculator
+    content: public interface IMoonCalculator
+    content.vb: Public Interface IMoonCalculator
 - uid: DataLayer.Interfaces.IMoonCalculator.CalculateMoon
   commentId: M:DataLayer.Interfaces.IMoonCalculator.CalculateMoon
   id: CalculateMoon
@@ -43,11 +45,11 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateMoon
     path: ../DataLayer/Interfaces/IMoonCalculator.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -60,6 +62,73 @@ items:
       description: A <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref> object.
     content.vb: Function CalculateMoon() As HorizontalMoon
   overload: DataLayer.Interfaces.IMoonCalculator.CalculateMoon*
+- uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: IMoonCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IMoonCalculator.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IMoonCalculator.cs
+    startLine: 25
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Increments the internal universal time used for calculations
+  example: []
+  syntax:
+    content: void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: ''
+    content.vb: Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy*
+  nameWithType.vb: IMoonCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Interfaces.IMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: IMoonCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IMoonCalculator.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IMoonCalculator.cs
+    startLine: 31
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Updates the position of a <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalMoon moon)
+    parameters:
+    - id: moon
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: The moon to update the position of.
+    content.vb: Sub UpdatePositionOf(moon As HorizontalMoon)
+  overload: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf*
 references:
 - uid: System.Double
   commentId: T:System.Double
@@ -136,3 +205,15 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy*
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: IMoonCalculator.IncrementTimeBy
+  fullName: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf*
+  commentId: Overload:DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  name: UpdatePositionOf
+  nameWithType: IMoonCalculator.UpdatePositionOf
+  fullName: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf

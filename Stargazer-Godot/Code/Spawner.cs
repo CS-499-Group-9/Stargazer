@@ -27,13 +27,15 @@ namespace Stargazer
 		[Export] public PackedScene LabelScene { get; set; }
 
 		private Node3D StarContainer;
-		private IEquatorialConverter<HorizontalStar> starConverter;
+		private IEquatorialCalculator<HorizontalStar> starConverter;
 		const float maxStarMagnitude = 6.0f;
-		/// <summary>
-		/// Receives the notification to update the stars drawn.
-		/// </summary>
-		/// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
-		public async Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialConverter<HorizontalStar> starConverter)
+        /// <summary>
+        /// Receives the notification to update the stars drawn.
+        /// </summary>
+        /// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
+        /// <param name="GetStar">Used to retrieve a star from the <see cref="CelestialDataPackage{Star}"/></param>
+        /// <param name="starConverter">Used to calculate star data.</param>
+        public async Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator<HorizontalStar> starConverter)
 		{
 			this.starConverter = starConverter;
 			// Get a reference to the current star container
@@ -56,14 +58,14 @@ namespace Stargazer
 			AddChild(StarContainer);
 		}
 
-		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
-		// Perhaps more to follow.....
-		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
+		/// <summary>
+		/// Used to spawn a new star in the sky view scene.
+		/// I'm rather proud of how this is handled in other classes.
+		/// </summary>
+		/// <param name="horizontalStar">The <see cref="HorizontalStar"/> to base the <see cref="Star"/> on.</param>
+		/// <returns></returns>
 		public Star SpawnStar(HorizontalStar horizontalStar)
 		{
-			// 			GD.Print($@"
-			// Star ID: {horizontalStar.StarId}
-			//  Hip ID: {horizontalStar.HipparcosId}");
 			Star star = StarScene.Instantiate<Star>();
 			star.FromHorizontal(horizontalStar, starConverter);
 			if (StarContainer.IsInsideTree())

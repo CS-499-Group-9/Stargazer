@@ -1,0 +1,522 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  id: HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  children:
+  - DataLayer.HorizontalObjects.HorizontalPlanet.#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  - DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  - DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  langs:
+  - csharp
+  - vb
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
+  type: Class
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: HorizontalPlanet
+    path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: A planet in our solar system in horizontal coordinate form.
+  example: []
+  syntax:
+    content: 'public class HorizontalPlanet : HorizontalBody'
+    content.vb: Public Class HorizontalPlanet Inherits HorizontalBody
+  inheritance:
+  - System.Object
+  - DataLayer.HorizontalObjects.HorizontalBody
+  inheritedMembers:
+  - DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  - DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  - DataLayer.HorizontalObjects.HorizontalBody.Distance
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  commentId: P:DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  id: Name
+  parent: DataLayer.HorizontalObjects.HorizontalPlanet
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: HorizontalPlanet.Name
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  type: Property
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Name
+    path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: The common name of the planet.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: DataLayer.HorizontalObjects.HorizontalPlanet.Name*
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  commentId: P:DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  id: PhaseAngle
+  parent: DataLayer.HorizontalObjects.HorizontalPlanet
+  langs:
+  - csharp
+  - vb
+  name: PhaseAngle
+  nameWithType: HorizontalPlanet.PhaseAngle
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  type: Property
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: PhaseAngle
+    path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  syntax:
+    content: public double PhaseAngle { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property PhaseAngle As Double
+  overload: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle*
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  commentId: M:DataLayer.HorizontalObjects.HorizontalPlanet.#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  id: '#ctor(System.String,System.Double,DataLayer.EquatorialObjects.EquatorialCelestialBody)'
+  parent: DataLayer.HorizontalObjects.HorizontalPlanet
+  langs:
+  - csharp
+  - vb
+  name: HorizontalPlanet(string, double, EquatorialCelestialBody)
+  nameWithType: HorizontalPlanet.HorizontalPlanet(string, double, EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.HorizontalPlanet(string, double, DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
+    startLine: 24
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: Returns a new planet object
+  example: []
+  syntax:
+    content: public HorizontalPlanet(string name, double phaseAngle, EquatorialCelestialBody body)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the planet
+    - id: phaseAngle
+      type: System.Double
+    - id: body
+      type: DataLayer.EquatorialObjects.EquatorialCelestialBody
+    content.vb: Public Sub New(name As String, phaseAngle As Double, body As EquatorialCelestialBody)
+  overload: DataLayer.HorizontalObjects.HorizontalPlanet.#ctor*
+  nameWithType.vb: HorizontalPlanet.New(String, Double, EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalPlanet.New(String, Double, DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(String, Double, EquatorialCelestialBody)
+references:
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Altitude
+  name: Altitude
+  nameWithType: HorizontalBody.Altitude
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Altitude
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Azimuth
+  name: Azimuth
+  nameWithType: HorizontalBody.Azimuth
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Azimuth
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Magnitude
+  name: Magnitude
+  nameWithType: HorizontalBody.Magnitude
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Magnitude
+- uid: DataLayer.HorizontalObjects.HorizontalBody.Distance
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Distance
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_Distance
+  name: Distance
+  nameWithType: HorizontalBody.Distance
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.Distance
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.Name*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.Name
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_Name
+  name: Name
+  nameWithType: HorizontalPlanet.Name
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet_PhaseAngle
+  name: PhaseAngle
+  nameWithType: HorizontalPlanet.PhaseAngle
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.PhaseAngle
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalPlanet.#ctor
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html#DataLayer_HorizontalObjects_HorizontalPlanet__ctor_System_String_System_Double_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet.HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet.HorizontalPlanet
+  nameWithType.vb: HorizontalPlanet.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalPlanet.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html

@@ -7,7 +7,10 @@ items:
   children:
   - DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
   - DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon
+  - DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(System.Double)
+  - DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
   - DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
+  - DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
   - DataLayer.Implementations.CosineKittyMoonCalculator.observer
   langs:
   - csharp
@@ -19,11 +22,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: CosineKittyMoonCalculator
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -58,11 +61,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: observer
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -71,6 +74,33 @@ items:
     return:
       type: CosineKitty.Observer
     content.vb: Private ReadOnly observer As Observer
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  id: currentTime
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: currentTime
+  nameWithType: CosineKittyMoonCalculator.currentTime
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.currentTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: currentTime
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private DateTime currentTime
+    return:
+      type: System.DateTime
+    content.vb: Private currentTime As Date
 - uid: DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
   commentId: F:DataLayer.Implementations.CosineKittyMoonCalculator.astroTime
   id: astroTime
@@ -85,19 +115,19 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
   syntax:
-    content: private readonly AstroTime astroTime
+    content: private AstroTime astroTime
     return:
       type: CosineKitty.AstroTime
-    content.vb: Private ReadOnly astroTime As AstroTime
+    content.vb: Private astroTime As AstroTime
 - uid: DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
   commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.#ctor(System.Double,System.Double,System.DateTime)
   id: '#ctor(System.Double,System.Double,System.DateTime)'
@@ -112,11 +142,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -153,25 +183,96 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateMoon
     path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
-    startLine: 31
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Performs the moon calculation
+  summary: Instantiates a new <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref> object.
   example: []
   syntax:
     content: public HorizontalMoon CalculateMoon()
     return:
       type: DataLayer.HorizontalObjects.HorizontalMoon
-      description: A <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref> object.
+      description: The instantiated moon.
     content.vb: Public Function CalculateMoon() As HorizontalMoon
   overload: DataLayer.Implementations.CosineKittyMoonCalculator.CalculateMoon*
   implements:
   - DataLayer.Interfaces.IMoonCalculator.CalculateMoon
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: CosineKittyMoonCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 49
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Updates the position of a <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalMoon moon)
+    parameters:
+    - id: moon
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: The moon to update the position of.
+    content.vb: Public Sub UpdatePositionOf(moon As HorizontalMoon)
+  overload: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Implementations.CosineKittyMoonCalculator
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: CosineKittyMoonCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyMoonCalculator.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Implementations/CosineKittyMoonCalculator.cs
+    startLine: 61
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Increments the internal universal time used for calculations
+  example: []
+  syntax:
+    content: public void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: ''
+    content.vb: Public Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy*
+  implements:
+  - DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  nameWithType.vb: CosineKittyMoonCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
 references:
 - uid: CosineKitty.Astronomy
   commentId: T:CosineKitty.Astronomy
@@ -480,6 +581,17 @@ references:
   name: CosineKitty
   nameWithType: CosineKitty
   fullName: CosineKitty
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: CosineKitty.AstroTime
   commentId: T:CosineKitty.AstroTime
   parent: CosineKitty
@@ -507,17 +619,6 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
 - uid: DataLayer.HorizontalObjects.HorizontalMoon
   commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
   parent: DataLayer.HorizontalObjects
@@ -572,3 +673,71 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf*
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf
+  href: DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  name: UpdatePositionOf
+  nameWithType: CosineKittyMoonCalculator.UpdatePositionOf
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.UpdatePositionOf
+- uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Interfaces.IMoonCalculator
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: IMoonCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalMoon
+    name: HorizontalMoon
+    href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IMoonCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalMoon
+    name: HorizontalMoon
+    href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy*
+  commentId: Overload:DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy
+  href: DataLayer.Implementations.CosineKittyMoonCalculator.html#DataLayer_Implementations_CosineKittyMoonCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: CosineKittyMoonCalculator.IncrementTimeBy
+  fullName: DataLayer.Implementations.CosineKittyMoonCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IMoonCalculator
+  isExternal: true
+  href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy(double)
+  nameWithType: IMoonCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(double)
+  nameWithType.vb: IMoonCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IMoonCalculator.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IMoonCalculator.html#DataLayer_Interfaces_IMoonCalculator_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )

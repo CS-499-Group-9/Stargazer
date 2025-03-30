@@ -73,6 +73,11 @@ namespace Stargazer
 			equatorialGridlines.Visible = false;
 
 		}
+
+		/// <summary>
+		/// Dynamically draws the gridlines based on camera FOV
+		/// </summary>
+		/// <param name="delta"></param>
         public override void _Process(double delta)
         {
 			if (camera == null) return;
@@ -96,10 +101,12 @@ namespace Stargazer
 			mesh2.ClearSurfaces();
 			DrawLongitudeLines(mesh,mesh2);
 			DrawLatitudeLines(mesh,mesh2);
+
 			storedfov = camera.Fov;
         }
+
         /// <summary>
-        /// The method used receive the <see cref="AzimuthButton.GridlinesToggled"/> notification.
+        /// The method used receive the <see cref="ControlContainer.AzimuthToggled"/> notification.
         /// </summary>
         /// <param name="showLines">True if the user has requested to show the lines.</param>
         public void ToggleGridlines(bool showLines)
@@ -111,6 +118,10 @@ namespace Stargazer
 			equatorialGridlines.Visible = showLines;
 		}
 
+		/// <summary>
+		/// Gets a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
+		/// </summary>
+		/// <param name="camera"></param>
 		public void SetCamera(Camera3D camera)
 		{
 			this.camera = camera;
@@ -120,6 +131,7 @@ namespace Stargazer
 
 		// Function to draw longitude lines
 		private void DrawLongitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)
+
 		{
 			float theta = -(float)(globalVars.LocalSiderealTime*15+longitude);
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,orangeMaterial);

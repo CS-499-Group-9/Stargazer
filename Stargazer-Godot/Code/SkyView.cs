@@ -45,8 +45,8 @@ namespace Stargazer
         [Export] private Constellations2D constellation2dNode;
         private Planets planetNode;
         private Moon moon;
-        private IEquatorialConverter<HorizontalStar> starConverter;
-        private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
+        private IEquatorialCalculator<HorizontalStar> starConverter;
+        private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         [Export] private Label datelabel;
         private double timeMultiplier = 3600;
@@ -79,14 +79,13 @@ namespace Stargazer
 
             // TODO: Get a reference to the Messier Objects parent node (should be a child of this node)
             // TODO: Get a reference to the Moon object parent node (should be a child of this node) 
-            // TODO: Get a reference to the Planets object parent node (should be a child of this node)
         }
 
         public override void _Process(double delta)
         {
-            starConverter?.UpdateTime(delta*timeMultiplier);
-            planetaryCalculator?.IncrementTime(delta*timeMultiplier);
-            moonCalculator?.UpdateTime(delta*timeMultiplier);
+            starConverter?.IncrementTimeBy(delta*timeMultiplier);
+            planetaryCalculator?.IncrementTimeBy(delta*timeMultiplier);
+            moonCalculator?.IncrementTimeBy(delta*timeMultiplier);
             datelabel.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
@@ -103,11 +102,11 @@ namespace Stargazer
         {
             var count = 0;
             var nonnullcount = 0;
-            starConverter = dataPackage.StarConverter;
+            starConverter = dataPackage.StarCalculator;
             planetaryCalculator = dataPackage.PlanetaryCalculator;
             datelabel.Text = starConverter.CurrentTime.ToString();
             //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
-            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarConverter);
+            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarCalculator);
             //await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
             planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
@@ -118,10 +117,6 @@ namespace Stargazer
             AddChild(moon);
             //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
             // TODO: Notify the Messier Objects node to draw the Messier Objects
-            // TODO: Notify the Moon node to draw the moon
-            // TODO: Notify the Planets node to draw the planets
         }
-
-
     }
 }

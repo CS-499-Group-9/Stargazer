@@ -5,14 +5,26 @@ items:
   id: SkyView
   parent: Stargazer
   children:
+  - Stargazer.SkyView.Camera
+  - Stargazer.SkyView.MoonScene
   - Stargazer.SkyView.ToggleConstellationLabels
   - Stargazer.SkyView.ToggleConstellationLines
   - Stargazer.SkyView.ToggleGridlines
   - Stargazer.SkyView.ToggleMessierObjects
   - Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  - Stargazer.SkyView._Process(System.Double)
   - Stargazer.SkyView._Ready
+  - Stargazer.SkyView.constellation2dNode
   - Stargazer.SkyView.constellationNode
+  - Stargazer.SkyView.datelabel
+  - Stargazer.SkyView.moon
+  - Stargazer.SkyView.moonCalculator
+  - Stargazer.SkyView.planetNode
+  - Stargazer.SkyView.planetaryCalculator
   - Stargazer.SkyView.spawner
+  - Stargazer.SkyView.spawner2d
+  - Stargazer.SkyView.starConverter
+  - Stargazer.SkyView.timeMultiplier
   langs:
   - csharp
   - vb
@@ -22,8 +34,8 @@ items:
   type: Class
   source:
     id: SkyView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.SkyView_ScriptSignals.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.SkyView_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -36,11 +48,11 @@ items:
     content: >-
       [ScriptPath("res://Code/SkyView.cs")]
 
-      public class SkyView : Node3D, IDisposable
+      public class SkyView : Node3D, IDisposable, IUserUpdateReceiver
     content.vb: >-
       <ScriptPath("res://Code/SkyView.cs")>
 
-      Public Class SkyView Inherits Node3D Implements IDisposable
+      Public Class SkyView Inherits Node3D Implements IDisposable, IUserUpdateReceiver
   inheritance:
   - System.Object
   - Godot.GodotObject
@@ -48,6 +60,7 @@ items:
   - Godot.Node3D
   implements:
   - System.IDisposable
+  - IUserUpdateReceiver
   inheritedMembers:
   - Godot.Node3D.NotificationTransformChanged
   - Godot.Node3D.NotificationEnterWorld
@@ -167,7 +180,6 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -362,6 +374,49 @@ items:
     arguments:
     - type: System.String
       value: res://Code/SkyView.cs
+- uid: Stargazer.SkyView.MoonScene
+  commentId: P:Stargazer.SkyView.MoonScene
+  id: MoonScene
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: MoonScene
+  nameWithType: SkyView.MoonScene
+  fullName: Stargazer.SkyView.MoonScene
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: MoonScene
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private PackedScene MoonScene { get; set; }
+    parameters: []
+    return:
+      type: Godot.PackedScene
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private Property MoonScene As PackedScene
+  overload: Stargazer.SkyView.MoonScene*
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.SkyView.ToggleConstellationLines
   commentId: F:Stargazer.SkyView.ToggleConstellationLines
   id: ToggleConstellationLines
@@ -376,11 +431,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -405,11 +460,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -434,11 +489,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 30
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -463,11 +518,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleMessierObjects
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -478,6 +533,35 @@ items:
     return:
       type: System.Action{System.Boolean}
     content.vb: Public ToggleMessierObjects As Action(Of Boolean)
+- uid: Stargazer.SkyView.Camera
+  commentId: P:Stargazer.SkyView.Camera
+  id: Camera
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: Camera
+  nameWithType: SkyView.Camera
+  fullName: Stargazer.SkyView.Camera
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Camera
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 37
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public Camera3D Camera { get; set; }
+    parameters: []
+    return:
+      type: Godot.Camera3D
+    content.vb: Public Property Camera As Camera3D
+  overload: Stargazer.SkyView.Camera*
 - uid: Stargazer.SkyView.spawner
   commentId: F:Stargazer.SkyView.spawner
   id: spawner
@@ -492,11 +576,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: spawner
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -505,6 +589,33 @@ items:
     return:
       type: Stargazer.Spawner
     content.vb: Private spawner As Spawner
+- uid: Stargazer.SkyView.spawner2d
+  commentId: F:Stargazer.SkyView.spawner2d
+  id: spawner2d
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: spawner2d
+  nameWithType: SkyView.spawner2d
+  fullName: Stargazer.SkyView.spawner2d
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: spawner2d
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 41
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Spawner2D spawner2d
+    return:
+      type: Stargazer.Spawner2D
+    content.vb: Private spawner2d As Spawner2D
 - uid: Stargazer.SkyView.constellationNode
   commentId: F:Stargazer.SkyView.constellationNode
   id: constellationNode
@@ -519,11 +630,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: constellationNode
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 37
+    startLine: 42
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -532,6 +643,222 @@ items:
     return:
       type: Stargazer.Constellations
     content.vb: Private constellationNode As Constellations
+- uid: Stargazer.SkyView.constellation2dNode
+  commentId: F:Stargazer.SkyView.constellation2dNode
+  id: constellation2dNode
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: constellation2dNode
+  nameWithType: SkyView.constellation2dNode
+  fullName: Stargazer.SkyView.constellation2dNode
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: constellation2dNode
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 43
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Constellations2D constellation2dNode
+    return:
+      type: Stargazer.Constellations2D
+    content.vb: Private constellation2dNode As Constellations2D
+- uid: Stargazer.SkyView.planetNode
+  commentId: F:Stargazer.SkyView.planetNode
+  id: planetNode
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: planetNode
+  nameWithType: SkyView.planetNode
+  fullName: Stargazer.SkyView.planetNode
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: planetNode
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 44
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Planets planetNode
+    return:
+      type: Stargazer.Planets
+    content.vb: Private planetNode As Planets
+- uid: Stargazer.SkyView.moon
+  commentId: F:Stargazer.SkyView.moon
+  id: moon
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: moon
+  nameWithType: SkyView.moon
+  fullName: Stargazer.SkyView.moon
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: moon
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 45
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Moon moon
+    return:
+      type: Stargazer.Moon
+    content.vb: Private moon As Moon
+- uid: Stargazer.SkyView.starConverter
+  commentId: F:Stargazer.SkyView.starConverter
+  id: starConverter
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: starConverter
+  nameWithType: SkyView.starConverter
+  fullName: Stargazer.SkyView.starConverter
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: starConverter
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 46
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IEquatorialCalculator<HorizontalStar> starConverter
+    return:
+      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+    content.vb: Private starConverter As IEquatorialCalculator(Of HorizontalStar)
+- uid: Stargazer.SkyView.planetaryCalculator
+  commentId: F:Stargazer.SkyView.planetaryCalculator
+  id: planetaryCalculator
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: planetaryCalculator
+  nameWithType: SkyView.planetaryCalculator
+  fullName: Stargazer.SkyView.planetaryCalculator
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: planetaryCalculator
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 47
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator
+    return:
+      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+    content.vb: Private planetaryCalculator As IPlanetaryCalculator(Of HorizontalPlanet)
+- uid: Stargazer.SkyView.moonCalculator
+  commentId: F:Stargazer.SkyView.moonCalculator
+  id: moonCalculator
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: moonCalculator
+  nameWithType: SkyView.moonCalculator
+  fullName: Stargazer.SkyView.moonCalculator
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: moonCalculator
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 48
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IMoonCalculator moonCalculator
+    return:
+      type: DataLayer.Interfaces.IMoonCalculator
+    content.vb: Private moonCalculator As IMoonCalculator
+- uid: Stargazer.SkyView.datelabel
+  commentId: F:Stargazer.SkyView.datelabel
+  id: datelabel
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: datelabel
+  nameWithType: SkyView.datelabel
+  fullName: Stargazer.SkyView.datelabel
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: datelabel
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 49
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Label datelabel
+    return:
+      type: Godot.Label
+    content.vb: Private datelabel As Label
+- uid: Stargazer.SkyView.timeMultiplier
+  commentId: F:Stargazer.SkyView.timeMultiplier
+  id: timeMultiplier
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: timeMultiplier
+  nameWithType: SkyView.timeMultiplier
+  fullName: Stargazer.SkyView.timeMultiplier
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: timeMultiplier
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 50
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double timeMultiplier
+    return:
+      type: System.Double
+    content.vb: Private timeMultiplier As Double
 - uid: Stargazer.SkyView._Ready
   commentId: M:Stargazer.SkyView._Ready
   id: _Ready
@@ -546,11 +873,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 42
+    startLine: 55
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -561,6 +888,48 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.SkyView._Ready*
+- uid: Stargazer.SkyView._Process(System.Double)
+  commentId: M:Stargazer.SkyView._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.SkyView
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: SkyView._Process(double)
+  fullName: Stargazer.SkyView._Process(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/SkyView.cs
+    startLine: 83
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
+
+    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.SkyView._Process*
+  nameWithType.vb: SkyView._Process(Double)
+  fullName.vb: Stargazer.SkyView._Process(Double)
+  name.vb: _Process(Double)
 - uid: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   commentId: M:Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
@@ -575,11 +944,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 62
+    startLine: 100
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -596,6 +965,8 @@ items:
       description: <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that can be awaited.
     content.vb: Public Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star)) As Task
   overload: Stargazer.SkyView.UpdateUserPosition*
+  implements:
+  - IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   nameWithType.vb: SkyView.UpdateUserPosition(CelestialDataPackage(Of Star))
   fullName.vb: Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
   name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
@@ -646,6 +1017,12 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
+- uid: IUserUpdateReceiver
+  commentId: T:IUserUpdateReceiver
+  href: IUserUpdateReceiver.html
+  name: IUserUpdateReceiver
+  nameWithType: IUserUpdateReceiver
+  fullName: IUserUpdateReceiver
 - uid: Godot.Node3D.NotificationTransformChanged
   commentId: F:Godot.Node3D.NotificationTransformChanged
   parent: Godot.Node3D
@@ -2612,37 +2989,6 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -7416,6 +7762,19 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
+- uid: Stargazer.SkyView.MoonScene*
+  commentId: Overload:Stargazer.SkyView.MoonScene
+  href: Stargazer.SkyView.html#Stargazer_SkyView_MoonScene
+  name: MoonScene
+  nameWithType: SkyView.MoonScene
+  fullName: Stargazer.SkyView.MoonScene
+- uid: Godot.PackedScene
+  commentId: T:Godot.PackedScene
+  parent: Godot
+  isExternal: true
+  name: PackedScene
+  nameWithType: PackedScene
+  fullName: Godot.PackedScene
 - uid: System.Action{System.Boolean}
   commentId: T:System.Action{System.Boolean}
   parent: System
@@ -7479,6 +7838,19 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: Stargazer.SkyView.Camera*
+  commentId: Overload:Stargazer.SkyView.Camera
+  href: Stargazer.SkyView.html#Stargazer_SkyView_Camera
+  name: Camera
+  nameWithType: SkyView.Camera
+  fullName: Stargazer.SkyView.Camera
+- uid: Godot.Camera3D
+  commentId: T:Godot.Camera3D
+  parent: Godot
+  isExternal: true
+  name: Camera3D
+  nameWithType: Camera3D
+  fullName: Godot.Camera3D
 - uid: Stargazer.Spawner
   commentId: T:Stargazer.Spawner
   parent: Stargazer
@@ -7486,6 +7858,13 @@ references:
   name: Spawner
   nameWithType: Spawner
   fullName: Stargazer.Spawner
+- uid: Stargazer.Spawner2D
+  commentId: T:Stargazer.Spawner2D
+  parent: Stargazer
+  href: Stargazer.Spawner2D.html
+  name: Spawner2D
+  nameWithType: Spawner2D
+  fullName: Stargazer.Spawner2D
 - uid: Stargazer.Constellations
   commentId: T:Stargazer.Constellations
   parent: Stargazer
@@ -7493,6 +7872,186 @@ references:
   name: Constellations
   nameWithType: Constellations
   fullName: Stargazer.Constellations
+- uid: Stargazer.Constellations2D
+  commentId: T:Stargazer.Constellations2D
+  parent: Stargazer
+  href: Stargazer.Constellations2D.html
+  name: Constellations2D
+  nameWithType: Constellations2D
+  fullName: Stargazer.Constellations2D
+- uid: Stargazer.Planets
+  commentId: T:Stargazer.Planets
+  parent: Stargazer
+  href: Stargazer.Planets.html
+  name: Planets
+  nameWithType: Planets
+  fullName: Stargazer.Planets
+- uid: Stargazer.Moon
+  commentId: T:Stargazer.Moon
+  parent: Stargazer
+  href: Stargazer.Moon.html
+  name: Moon
+  nameWithType: Moon
+  fullName: Stargazer.Moon
+- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IEquatorialCalculator`1
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  name: IEquatorialCalculator<HorizontalStar>
+  nameWithType: IEquatorialCalculator<HorizontalStar>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>
+  nameWithType.vb: IEquatorialCalculator(Of HorizontalStar)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar)
+  name.vb: IEquatorialCalculator(Of HorizontalStar)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalStar
+    name: HorizontalStar
+    href: DataLayer.HorizontalObjects.HorizontalStar.html
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  name: IEquatorialCalculator<T>
+  nameWithType: IEquatorialCalculator<T>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
+  nameWithType.vb: IEquatorialCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
+  name.vb: IEquatorialCalculator(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IPlanetaryCalculator`1
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  name: IPlanetaryCalculator<HorizontalPlanet>
+  nameWithType: IPlanetaryCalculator<HorizontalPlanet>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>
+  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet)
+  name.vb: IPlanetaryCalculator(Of HorizontalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
+  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  name: IPlanetaryCalculator<T>
+  nameWithType: IPlanetaryCalculator<T>
+  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
+  nameWithType.vb: IPlanetaryCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
+  name.vb: IPlanetaryCalculator(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
+    name: IPlanetaryCalculator
+    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces.IMoonCalculator
+  commentId: T:DataLayer.Interfaces.IMoonCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IMoonCalculator.html
+  name: IMoonCalculator
+  nameWithType: IMoonCalculator
+  fullName: DataLayer.Interfaces.IMoonCalculator
+- uid: Godot.Label
+  commentId: T:Godot.Label
+  parent: Godot
+  isExternal: true
+  name: Label
+  nameWithType: Label
+  fullName: Godot.Label
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
 - uid: System.Delegate
   commentId: T:System.Delegate
   isExternal: true
@@ -7525,6 +8084,43 @@ references:
   name: _Ready
   nameWithType: SkyView._Ready
   fullName: Stargazer.SkyView._Ready
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Stargazer.SkyView._Process*
+  commentId: Overload:Stargazer.SkyView._Process
+  href: Stargazer.SkyView.html#Stargazer_SkyView__Process_System_Double_
+  name: _Process
+  nameWithType: SkyView._Process
+  fullName: Stargazer.SkyView._Process
 - uid: DataLayer.CelestialDataPackage`1
   commentId: T:DataLayer.CelestialDataPackage`1
   href: DataLayer.CelestialDataPackage-1.html
@@ -7564,6 +8160,46 @@ references:
   name: UpdateUserPosition
   nameWithType: SkyView.UpdateUserPosition
   fullName: Stargazer.SkyView.UpdateUserPosition
+- uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  commentId: M:IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  parent: IUserUpdateReceiver
+  href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  name: UpdateUserPosition(CelestialDataPackage<Star>)
+  nameWithType: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage<Star>)
+  fullName: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  nameWithType.vb: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage(Of Star))
+  fullName.vb: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+  spec.csharp:
+  - uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+    name: UpdateUserPosition
+    href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  - name: (
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+    name: UpdateUserPosition
+    href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  - name: (
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.Star
+    name: Star
+    href: Stargazer.Star.html
+  - name: )
+  - name: )
 - uid: DataLayer.CelestialDataPackage{Stargazer.Star}
   commentId: T:DataLayer.CelestialDataPackage{Stargazer.Star}
   parent: DataLayer

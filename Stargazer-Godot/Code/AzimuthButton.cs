@@ -8,6 +8,7 @@ namespace Stargazer
     /// </summary>
     public partial class AzimuthButton : Control
     {
+
         /// <summary>
         /// The <see cref="Delegate"/> used to notify the viewport to toggle the lines.
         /// </summary>
@@ -21,5 +22,6 @@ namespace Stargazer
         {
             EquatorLinesToggled(state);    
         }
+
     }
 }

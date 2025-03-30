@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/animated-orbit/apiSpec/new?filename=DataLayer_Implementations_CosineKittyEquatorialConverter_1.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.CosineKittyEquatorialConverter%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/update-documentation/apiSpec/new?filename=DataLayer_Implementations_CosineKittyEquatorialConverter_1.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.CosineKittyEquatorialConverter%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1" class="text-break">
-Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">internal class CosineKittyEquatorialConverter&lt;T&gt; : IEquatorialConverter&lt;T&gt; where T : HorizontalBody, new()</code></pre>
+    <pre><code class="lang-csharp hljs">internal class CosineKittyEquatorialConverter&lt;T&gt; : IEquatorialCalculator&lt;T&gt; where T : HorizontalBody</code></pre>
   </div>
 
 
@@ -125,7 +125,7 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="DataLayer.Interfaces.IEquatorialConverter-1.html">IEquatorialConverter</a>&lt;T&gt;</div>
+      <div><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;T&gt;</div>
     </dd>
   </dl>
 
@@ -169,7 +169,7 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 
   <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1__ctor_System_Double_System_Double_System_DateTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.#ctor(System.Double,System.Double,System.DateTime)">
   CosineKittyEquatorialConverter(double, double, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Generates a new converter specific to the observers location and time</p>
@@ -211,14 +211,14 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 
   <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_astroTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.astroTime">
   astroTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private readonly AstroTime astroTime</code></pre>
+    <pre><code class="lang-csharp hljs">private AstroTime astroTime</code></pre>
   </div>
 
 
@@ -239,9 +239,39 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 
 
 
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_currentTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.currentTime">
+  currentTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private DateTime currentTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_observer" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.observer">
   observer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -272,19 +302,19 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 </h2>
 
 
-  <a id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert*"></a>
+  <a id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_CurrentTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime*"></a>
 
-  <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_Convert" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.Convert">
-  Convert
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_CurrentTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.CurrentTime">
+  CurrentTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Performs the conversion and returns the <code>T</code> object of type <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html">HorizontalBody</a></p>
+  <div class="markdown level1 summary"><p>Retrieves the internal universal time used for calculations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Func&lt;EquatorialCelestialBody, T&gt; Convert { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime CurrentTime { get; }</code></pre>
   </div>
 
 
@@ -293,9 +323,78 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialCelestialBody.html">EquatorialCelestialBody</a>, T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_IncrementTimeBy_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_IncrementTimeBy_System_Double_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.IncrementTimeBy(System.Double)">
+  IncrementTimeBy(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Increments the time of the internal universal time used to perform calculations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IncrementTimeBy(double seconds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>seconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_UpdatePositionOf_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialConverter_1_UpdatePositionOf__0_" data-uid="DataLayer.Implementations.CosineKittyEquatorialConverter`1.UpdatePositionOf(`0)">
+  UpdatePositionOf(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates and updates the position of a <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html">HorizontalBody</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePositionOf(T hoBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hoBody</code> <span class="xref">T</span></dt>
+    <dd><p>The body to perform the calculation on.</p>
+</dd>
+  </dl>
+
+
+
+
 
 
 
@@ -308,7 +407,7 @@ Class CosineKittyEquatorialConverter&lt;T&gt;  <a class="header-action link-seco
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/animated-orbit/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/CosineKittyEquitorialConverter.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -5,7 +5,7 @@ items:
   id: DataLayer.Interfaces
   children:
   - DataLayer.Interfaces.IConstellationRepository
-  - DataLayer.Interfaces.IEquatorialConverter`1
+  - DataLayer.Interfaces.IEquatorialCalculator`1
   - DataLayer.Interfaces.IMessierRepository
   - DataLayer.Interfaces.IMoonCalculator
   - DataLayer.Interfaces.IPlanetaryCalculator`1
@@ -27,26 +27,26 @@ references:
   name: IConstellationRepository
   nameWithType: IConstellationRepository
   fullName: DataLayer.Interfaces.IConstellationRepository
-- uid: DataLayer.Interfaces.IEquatorialConverter`1
-  commentId: T:DataLayer.Interfaces.IEquatorialConverter`1
-  href: DataLayer.Interfaces.IEquatorialConverter-1.html
-  name: IEquatorialConverter<T>
-  nameWithType: IEquatorialConverter<T>
-  fullName: DataLayer.Interfaces.IEquatorialConverter<T>
-  nameWithType.vb: IEquatorialConverter(Of T)
-  fullName.vb: DataLayer.Interfaces.IEquatorialConverter(Of T)
-  name.vb: IEquatorialConverter(Of T)
+- uid: DataLayer.Interfaces.IEquatorialCalculator`1
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
+  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
+  name: IEquatorialCalculator<T>
+  nameWithType: IEquatorialCalculator<T>
+  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
+  nameWithType.vb: IEquatorialCalculator(Of T)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
+  name.vb: IEquatorialCalculator(Of T)
   spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialConverter`1
-    name: IEquatorialConverter
-    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialConverter`1
-    name: IEquatorialConverter
-    href: DataLayer.Interfaces.IEquatorialConverter-1.html
+  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
   - name: (
   - name: Of
   - name: " "

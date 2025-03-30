@@ -35,11 +35,6 @@ namespace Stargazer
 		private bool canProcess = false;
 		private IDictionary<string, LabelNode> labelDictionary;
 
-		/// <summary>
-		/// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
-		/// </summary>
-		/// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
-		/// <param name="GetConstellationStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
 		public override void _Process(double delta)
 		{
 			if (!constMesh?.Visible?? true) return;
@@ -84,8 +79,14 @@ namespace Stargazer
 			constMesh.Mesh = mesh;
 		}
 
-		public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetStar, Func<HorizontalStar, Star> SpawnStar)
-		{
+        /// <summary>
+        /// Draws the stars and constellation lines for each of the <see cref="Constellation"/>s
+        /// </summary>
+        /// <param name="constellations">The <see cref="IEnumerable{Constellation}"/> list of constellations</param>
+        /// <param name="GetStar">The method used to retrieve a <see cref="Star"/>From the dictionary of drawn stars.</param>
+        /// <param name="SpawnStar">Used to spawn a new star and draw it in the <see cref="SkyView"/> star container.</param>
+        public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetStar, Func<HorizontalStar, Star> SpawnStar)
+        {
 			canProcess = false;
 			this.GetConstellationStar = GetStar;
 			this.constellations = constellations;
@@ -189,21 +190,21 @@ namespace Stargazer
 		/// Receives the notification to toggle the visibility of the constellation lines.
 		/// Hiding the lines will also hide the labels.
 		/// </summary>
-		/// <param name="showlines">True if the user has requested to show the lines.</param>
-		public void ToggleConstellationLines(bool showlines)
+		/// <param name="showLines">True if the user has requested to show the lines.</param>
+		public void ToggleConstellationLines(bool showLines)
 		{
 			if (constMesh == null) return;
-			constMesh.Visible = showlines;
+			constMesh.Visible = showLines;
 		}
 
 		/// <summary>
 		/// Receives the notification to toggle the visibility of the constellation labels.
 		/// </summary>
-		/// <param name="showlabels">True if the user has requested to show the labels.</param>
-		public void ToggleConstellationLabels(bool showlabels) 
+		/// <param name="showLabels">True if the user has requested to show the labels.</param>
+		public void ToggleConstellationLabels(bool showLabels) 
 		{
 			if (ConstellationLabels == null) return;	
-			ConstellationLabels.Visible = showlabels; 
+			ConstellationLabels.Visible = showLabels; 
 		}
 
 		

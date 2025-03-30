@@ -12,14 +12,23 @@ namespace DataLayer.Interfaces
     /// </summary>
     public interface IMoonCalculator
     {
+
         /// <summary>
         /// Performs the moon calculation
         /// </summary>
         /// <returns>A <see cref="HorizontalMoon"/> object.</returns>
         public HorizontalMoon CalculateMoon();
 
-        public void UpdateTime(double increment);
+        /// <summary>
+        /// Increments the internal universal time used for calculations
+        /// </summary>
+        /// <param name="seconds"></param>
+        public void IncrementTimeBy(double seconds);
 
-        public void UpdatePosition(HorizontalMoon moon);
+        /// <summary>
+        /// Updates the position of a <see cref="HorizontalMoon"/>
+        /// </summary>
+        /// <param name="moon">The moon to update the position of.</param>
+        public void UpdatePositionOf(HorizontalMoon moon);
     }
 }

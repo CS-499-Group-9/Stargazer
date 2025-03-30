@@ -26,6 +26,7 @@ namespace Stargazer
   
         private Globals globalVars;
 
+        /// <inheritdoc/>
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
@@ -34,7 +35,7 @@ namespace Stargazer
         /// <summary>
         /// Checks if the right mouse button is being held down to pan the view.
         /// </summary>
-        /// <param name="event"></param>
+        /// <param name="event">The event data passed in.</param>
         public override void _Input(InputEvent @event)
         {
             middleMouseClicked = false;
@@ -92,11 +93,13 @@ namespace Stargazer
                     GD.Print("colliding!");
                     globalVars.isHover = true;
                     Node3D collider = result["collider"].As<Node3D>();
+
                     IHoverable colliderhoverable = (IHoverable)collider.GetParentNode3D();
                     if(!tracking){
                         highlightingStar = (IHoverable)collider.GetParentNode3D();
                     }
                     globalVars.hoverLabel = colliderhoverable.GetHoverText();
+
                     
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";

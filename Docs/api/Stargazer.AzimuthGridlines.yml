@@ -7,14 +7,19 @@ items:
   children:
   - Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)
   - Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
+  - Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
   - Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
+  - Stargazer.AzimuthGridlines._Process(System.Double)
   - Stargazer.AzimuthGridlines._Ready
+  - Stargazer.AzimuthGridlines.camera
   - Stargazer.AzimuthGridlines.cutoffLatitude
+  - Stargazer.AzimuthGridlines.greenMaterial
   - Stargazer.AzimuthGridlines.latitudeInterval
   - Stargazer.AzimuthGridlines.latitudeSegments
   - Stargazer.AzimuthGridlines.longitudeSegments
   - Stargazer.AzimuthGridlines.mesh
   - Stargazer.AzimuthGridlines.radius
+  - Stargazer.AzimuthGridlines.storedfov
   langs:
   - csharp
   - vb
@@ -24,8 +29,8 @@ items:
   type: Class
   source:
     id: AzimuthGridlines
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.AzimuthGridlines_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.AzimuthGridlines_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -213,7 +218,6 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -422,8 +426,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: radius
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 13
@@ -465,8 +469,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 17
@@ -508,8 +512,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 21
@@ -551,8 +555,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeInterval
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 25
@@ -594,8 +598,8 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: cutoffLatitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 29
@@ -637,11 +641,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -650,6 +654,87 @@ items:
     return:
       type: Godot.ImmediateMesh
     content.vb: Private mesh As ImmediateMesh
+- uid: Stargazer.AzimuthGridlines.storedfov
+  commentId: F:Stargazer.AzimuthGridlines.storedfov
+  id: storedfov
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: storedfov
+  nameWithType: AzimuthGridlines.storedfov
+  fullName: Stargazer.AzimuthGridlines.storedfov
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: storedfov
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 33
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private float storedfov
+    return:
+      type: System.Single
+    content.vb: Private storedfov As Single
+- uid: Stargazer.AzimuthGridlines.camera
+  commentId: F:Stargazer.AzimuthGridlines.camera
+  id: camera
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: camera
+  nameWithType: AzimuthGridlines.camera
+  fullName: Stargazer.AzimuthGridlines.camera
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: camera
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Camera3D camera
+    return:
+      type: Godot.Camera3D
+    content.vb: Private camera As Camera3D
+- uid: Stargazer.AzimuthGridlines.greenMaterial
+  commentId: F:Stargazer.AzimuthGridlines.greenMaterial
+  id: greenMaterial
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: greenMaterial
+  nameWithType: AzimuthGridlines.greenMaterial
+  fullName: Stargazer.AzimuthGridlines.greenMaterial
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: greenMaterial
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 35
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private StandardMaterial3D greenMaterial
+    return:
+      type: Godot.StandardMaterial3D
+    content.vb: Private greenMaterial As StandardMaterial3D
 - uid: Stargazer.AzimuthGridlines._Ready
   commentId: M:Stargazer.AzimuthGridlines._Ready
   id: _Ready
@@ -664,11 +749,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -679,6 +764,42 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.AzimuthGridlines._Ready*
+- uid: Stargazer.AzimuthGridlines._Process(System.Double)
+  commentId: M:Stargazer.AzimuthGridlines._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: AzimuthGridlines._Process(double)
+  fullName: Stargazer.AzimuthGridlines._Process(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 59
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Dynamically draws the gridlines based on camera FOV
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+      description: ''
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.AzimuthGridlines._Process*
+  nameWithType.vb: AzimuthGridlines._Process(Double)
+  fullName.vb: Stargazer.AzimuthGridlines._Process(Double)
+  name.vb: _Process(Double)
 - uid: Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
   commentId: M:Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
   id: ToggleGridlines(System.Boolean)
@@ -693,15 +814,15 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 49
+    startLine: 84
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The method used receive the <xref href="Stargazer.AzimuthButton.GridlinesToggled" data-throw-if-not-resolved="false"></xref> notification.
+  summary: The method used receive the <xref href="ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification.
   example: []
   syntax:
     content: public void ToggleGridlines(bool showLines)
@@ -714,6 +835,38 @@ items:
   nameWithType.vb: AzimuthGridlines.ToggleGridlines(Boolean)
   fullName.vb: Stargazer.AzimuthGridlines.ToggleGridlines(Boolean)
   name.vb: ToggleGridlines(Boolean)
+- uid: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  commentId: M:Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  id: SetCamera(Godot.Camera3D)
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: SetCamera(Camera3D)
+  nameWithType: AzimuthGridlines.SetCamera(Camera3D)
+  fullName: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetCamera
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 93
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Gets a reference to the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref> from the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public void SetCamera(Camera3D camera)
+    parameters:
+    - id: camera
+      type: Godot.Camera3D
+      description: ''
+    content.vb: Public Sub SetCamera(camera As Camera3D)
+  overload: Stargazer.AzimuthGridlines.SetCamera*
 - uid: Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
   commentId: M:Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
   id: DrawLongitudeLines(Godot.ImmediateMesh)
@@ -728,11 +881,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLongitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 56
+    startLine: 100
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -757,11 +910,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLatitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 104
+    startLine: 148
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -3578,37 +3731,6 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -8411,6 +8533,20 @@ references:
   name: ImmediateMesh
   nameWithType: ImmediateMesh
   fullName: Godot.ImmediateMesh
+- uid: Godot.Camera3D
+  commentId: T:Godot.Camera3D
+  parent: Godot
+  isExternal: true
+  name: Camera3D
+  nameWithType: Camera3D
+  fullName: Godot.Camera3D
+- uid: Godot.StandardMaterial3D
+  commentId: T:Godot.StandardMaterial3D
+  parent: Godot
+  isExternal: true
+  name: StandardMaterial3D
+  nameWithType: StandardMaterial3D
+  fullName: Godot.StandardMaterial3D
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -8436,12 +8572,60 @@ references:
   name: _Ready
   nameWithType: AzimuthGridlines._Ready
   fullName: Stargazer.AzimuthGridlines._Ready
-- uid: Stargazer.AzimuthButton.GridlinesToggled
-  commentId: F:Stargazer.AzimuthButton.GridlinesToggled
-  href: Stargazer.AzimuthButton.html#Stargazer_AzimuthButton_GridlinesToggled
-  name: GridlinesToggled
-  nameWithType: AzimuthButton.GridlinesToggled
-  fullName: Stargazer.AzimuthButton.GridlinesToggled
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Stargazer.AzimuthGridlines._Process*
+  commentId: Overload:Stargazer.AzimuthGridlines._Process
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines__Process_System_Double_
+  name: _Process
+  nameWithType: AzimuthGridlines._Process
+  fullName: Stargazer.AzimuthGridlines._Process
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: ControlContainer.AzimuthToggled
+  commentId: F:ControlContainer.AzimuthToggled
+  href: ControlContainer.html#ControlContainer_AzimuthToggled
+  name: AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+  fullName: ControlContainer.AzimuthToggled
 - uid: Stargazer.AzimuthGridlines.ToggleGridlines*
   commentId: Overload:Stargazer.AzimuthGridlines.ToggleGridlines
   href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_ToggleGridlines_System_Boolean_
@@ -8459,6 +8643,19 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Stargazer.SkyView
+  commentId: T:Stargazer.SkyView
+  parent: Stargazer
+  href: Stargazer.SkyView.html
+  name: SkyView
+  nameWithType: SkyView
+  fullName: Stargazer.SkyView
+- uid: Stargazer.AzimuthGridlines.SetCamera*
+  commentId: Overload:Stargazer.AzimuthGridlines.SetCamera
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_SetCamera_Godot_Camera3D_
+  name: SetCamera
+  nameWithType: AzimuthGridlines.SetCamera
+  fullName: Stargazer.AzimuthGridlines.SetCamera
 - uid: Stargazer.AzimuthGridlines.DrawLongitudeLines*
   commentId: Overload:Stargazer.AzimuthGridlines.DrawLongitudeLines
   href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_DrawLongitudeLines_Godot_ImmediateMesh_

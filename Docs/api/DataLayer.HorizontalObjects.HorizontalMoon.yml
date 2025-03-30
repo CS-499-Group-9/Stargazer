@@ -5,6 +5,7 @@ items:
   id: HorizontalMoon
   parent: DataLayer.HorizontalObjects
   children:
+  - DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
   - DataLayer.HorizontalObjects.HorizontalMoon.Phase
   langs:
   - csharp
@@ -16,11 +17,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalMoon
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -33,6 +34,7 @@ items:
   - System.Object
   - DataLayer.HorizontalObjects.HorizontalBody
   inheritedMembers:
+  - DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
   - DataLayer.HorizontalObjects.HorizontalBody.Altitude
   - DataLayer.HorizontalObjects.HorizontalBody.Azimuth
   - DataLayer.HorizontalObjects.HorizontalBody.Magnitude
@@ -44,6 +46,41 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  commentId: M:DataLayer.HorizontalObjects.HorizontalMoon.#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  id: '#ctor(DataLayer.EquatorialObjects.EquatorialCelestialBody)'
+  parent: DataLayer.HorizontalObjects.HorizontalMoon
+  langs:
+  - csharp
+  - vb
+  name: HorizontalMoon(EquatorialCelestialBody)
+  nameWithType: HorizontalMoon.HorizontalMoon(EquatorialCelestialBody)
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon.HorizontalMoon(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/HorizontalObjects/HorizontalMoon.cs
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.HorizontalObjects
+  summary: Creates a new object by wrapping a <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public HorizontalMoon(EquatorialCelestialBody body)
+    parameters:
+    - id: body
+      type: DataLayer.EquatorialObjects.EquatorialCelestialBody
+      description: The <xref href="DataLayer.EquatorialObjects.EquatorialCelestialBody" data-throw-if-not-resolved="false"></xref> to base this object off of.
+    content.vb: Public Sub New(body As EquatorialCelestialBody)
+  overload: DataLayer.HorizontalObjects.HorizontalMoon.#ctor*
+  nameWithType.vb: HorizontalMoon.New(EquatorialCelestialBody)
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMoon.New(DataLayer.EquatorialObjects.EquatorialCelestialBody)
+  name.vb: New(EquatorialCelestialBody)
 - uid: DataLayer.HorizontalObjects.HorizontalMoon.Phase
   commentId: P:DataLayer.HorizontalObjects.HorizontalMoon.Phase
   id: Phase
@@ -58,11 +95,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: animated-orbit
-      repo: https://github.com/CS-499-Group-9/Stargazer.git
+      branch: update-documentation
+      repo: https://github.com/CS-499-Group-9/Stargazer
     id: Phase
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
-    startLine: 16
+    startLine: 24
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -116,6 +153,13 @@ references:
   name: HorizontalBody
   nameWithType: HorizontalBody
   fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  commentId: P:DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
+  parent: DataLayer.HorizontalObjects.HorizontalBody
+  href: DataLayer.HorizontalObjects.HorizontalBody.html#DataLayer_HorizontalObjects_HorizontalBody_EquatorialBody
+  name: EquatorialBody
+  nameWithType: HorizontalBody.EquatorialBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody.EquatorialBody
 - uid: DataLayer.HorizontalObjects.HorizontalBody.Altitude
   commentId: P:DataLayer.HorizontalObjects.HorizontalBody.Altitude
   parent: DataLayer.HorizontalObjects.HorizontalBody
@@ -370,6 +414,44 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  commentId: T:DataLayer.EquatorialObjects.EquatorialCelestialBody
+  parent: DataLayer.EquatorialObjects
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html
+  name: EquatorialCelestialBody
+  nameWithType: EquatorialCelestialBody
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.HorizontalObjects.HorizontalMoon.#ctor*
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMoon.#ctor
+  href: DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon__ctor_DataLayer_EquatorialObjects_EquatorialCelestialBody_
+  name: HorizontalMoon
+  nameWithType: HorizontalMoon.HorizontalMoon
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon.HorizontalMoon
+  nameWithType.vb: HorizontalMoon.New
+  fullName.vb: DataLayer.HorizontalObjects.HorizontalMoon.New
+  name.vb: New
+- uid: DataLayer.EquatorialObjects
+  commentId: N:DataLayer.EquatorialObjects
+  href: DataLayer.html
+  name: DataLayer.EquatorialObjects
+  nameWithType: DataLayer.EquatorialObjects
+  fullName: DataLayer.EquatorialObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.EquatorialObjects
+    name: EquatorialObjects
+    href: DataLayer.EquatorialObjects.html
 - uid: DataLayer.HorizontalObjects.HorizontalMoon.Phase*
   commentId: Overload:DataLayer.HorizontalObjects.HorizontalMoon.Phase
   href: DataLayer.HorizontalObjects.HorizontalMoon.html#DataLayer_HorizontalObjects_HorizontalMoon_Phase

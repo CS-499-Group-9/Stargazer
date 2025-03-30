@@ -4,10 +4,10 @@ items:
   commentId: N:DataLayer.HorizontalObjects
   id: DataLayer.HorizontalObjects
   children:
-  - DataLayer.HorizontalObjects.HorizonalPlanet
   - DataLayer.HorizontalObjects.HorizontalBody
   - DataLayer.HorizontalObjects.HorizontalMessierObject
   - DataLayer.HorizontalObjects.HorizontalMoon
+  - DataLayer.HorizontalObjects.HorizontalPlanet
   - DataLayer.HorizontalObjects.HorizontalStar
   langs:
   - csharp
@@ -19,12 +19,6 @@ items:
   assemblies:
   - DataLayer
 references:
-- uid: DataLayer.HorizontalObjects.HorizonalPlanet
-  commentId: T:DataLayer.HorizontalObjects.HorizonalPlanet
-  href: DataLayer.HorizontalObjects.HorizonalPlanet.html
-  name: HorizonalPlanet
-  nameWithType: HorizonalPlanet
-  fullName: DataLayer.HorizontalObjects.HorizonalPlanet
 - uid: DataLayer.HorizontalObjects.HorizontalBody
   commentId: T:DataLayer.HorizontalObjects.HorizontalBody
   parent: DataLayer.HorizontalObjects
@@ -45,6 +39,13 @@ references:
   name: HorizontalMoon
   nameWithType: HorizontalMoon
   fullName: DataLayer.HorizontalObjects.HorizontalMoon
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
 - uid: DataLayer.HorizontalObjects.HorizontalStar
   commentId: T:DataLayer.HorizontalObjects.HorizontalStar
   parent: DataLayer.HorizontalObjects

@@ -3,3 +3,6 @@ apiRules:
   - exclude:
       uidRegex: "^.*\\.[^.]*Name$"  # Excludes all subclasses ending in 'Name'
       type: "Class"
+  - exclude: 
+      uidRegex: "^GodotPlugins\\..*"
+      type: "Class"

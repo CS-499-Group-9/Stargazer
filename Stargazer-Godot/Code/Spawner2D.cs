@@ -28,9 +28,9 @@ namespace Stargazer
 
 		private Node2D Star2dContainer;
 		/// <summary>
-		/// Receives the notification to update the stars drawn.
+		/// Receives the notification to draw the new star scene.
 		/// </summary>
-		/// <param name="starDictionary">The <see cref="IDictionary{Int32, Star}{Star}"/> that contains the stars to draw.</param>
+		/// <param name="starDictionary">The <see cref="IDictionary{Int32, Star}"/> that contains the stars to draw.</param>
 		public async Task DrawStars(IDictionary<int, Star> starDictionary)
 		{
 			var oldContainer = Star2dContainer;
@@ -49,9 +49,7 @@ namespace Stargazer
 
 		}
 
-		// For the record, I very much dislike repeating this block of code in Constellations.cs, but I haven't figured out how to offload that just yet. 
-		// Perhaps more to follow.....
-		// TODO: Consider moving this up to the parent node. This would have to be handled elegantly so that it can be reused by Spawner, Constellations and MessierObjects
+		
 		private Star2D SpawnStar(Star godotStar)
 		{
 			Star2D outstar = Star2DScene.Instantiate<Star2D>();
