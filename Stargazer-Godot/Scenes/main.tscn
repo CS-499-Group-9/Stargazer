@@ -39,6 +39,7 @@ visible = false
 layout_mode = 2
 
 [node name="HoverLabel" type="Label" parent="."]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_g7sve")
 text = "star"
