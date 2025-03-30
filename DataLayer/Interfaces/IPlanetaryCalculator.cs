@@ -1,4 +1,5 @@
-﻿using DataLayer.HorizontalObjects;
+﻿using CosineKitty;
+using DataLayer.HorizontalObjects;
 
 namespace DataLayer.Interfaces
 {
@@ -21,10 +22,14 @@ namespace DataLayer.Interfaces
         public void IncrementTimeBy(double seconds);
         void SetTime(DateTime currentTime);
 
+        
+        public double GetLST();
+
         /// <summary>
         /// Performs calculations for and updates a planet.
         /// </summary>
         /// <param name="planet">The planet to update.</param>
         public void UpdatePositionOf(HorizontalPlanet planet);
+
     }
 }

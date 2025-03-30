@@ -14,6 +14,7 @@ namespace Stargazer
         private IMoonCalculator calculator;
         private float Distance = 74f;
         private const float radians = (float)Math.PI / 180f;
+    
 
         /// <summary>
         /// Initializes object data when it enters the tree.
@@ -31,7 +32,31 @@ namespace Stargazer
         {
             calculator?.UpdatePositionOf(horizontalMoon);
             Position = GetLocation();
-            LookAt(Vector3.Up);
+            Transform3D rotateTransform = new Transform3D();
+            Vector3 forward = (-Position.Normalized());  
+            Vector3 up = new Vector3(Mathf.Cos(Mathf.DegToRad(34.7304f)),Mathf.Sin(Mathf.DegToRad(34.7304f)),0f);
+            Vector3 left = forward.Cross(up).Normalized();
+            Basis rotateBasis = new Basis(left,up,-forward);
+            rotateTransform.Origin = Position;
+            rotateTransform.Basis = rotateBasis;
+            Transform = rotateTransform;
+            Scale = new Vector3(4, 4, 4);
+            //RotateZ(-90+34.7304f);
+            // RotationDegrees = new Vector3(0,0,-90+34.7304f);
+            //LookAt(Vector3.Up);
+        }
+
+
+        public string GetHoverText()
+        {
+            return $"The Moon\n" +
+            $"Altitude {horizontalMoon.Altitude}\n" +
+            $"Azimuth {horizontalMoon.Azimuth}";
+        }
+
+        public Transform3D getGlobalTransform()
+        {
+            return GlobalTransform;
         }
 
         private Vector3 GetLocation()
@@ -57,13 +82,6 @@ namespace Stargazer
             horizontalMoon = moon;
             calculator = moonCalculator;
         }
-
-        /// <inheritdoc/>
-        public string GetHoverText()
-        {
-            return $"The Moon\n" +
-            $"Altitude {horizontalMoon.Altitude}\n" +
-            $"Azimuth {horizontalMoon.Azimuth}";
-        }
     }
 }
+

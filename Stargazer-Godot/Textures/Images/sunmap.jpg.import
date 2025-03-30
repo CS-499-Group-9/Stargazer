@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1iekx4cdvd6f"
-path="res://.godot/imported/neptunemap.jpg-b7da03cb4cf19cf317966b50114de67c.ctex"
+uid="uid://bjq1x6poxt8sy"
+path="res://.godot/imported/sunmap.jpg-d49d780096c5235ac7da9a44290e9fc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/neptunemap.jpg"
-dest_files=["res://.godot/imported/neptunemap.jpg-b7da03cb4cf19cf317966b50114de67c.ctex"]
+source_file="res://Textures/Images/sunmap.jpg"
+dest_files=["res://.godot/imported/sunmap.jpg-d49d780096c5235ac7da9a44290e9fc5.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

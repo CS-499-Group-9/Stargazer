@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=13 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="1_difw8"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="4_mt1r5"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
-[ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="7_r6oyu"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="8_iply7"]
 
 [node name="Control" type="Control"]
@@ -268,9 +267,6 @@ offset_bottom = 37.345
 toggle_mode = true
 texture_normal = ExtResource("5_g42sv")
 texture_hover = ExtResource("6_6fvns")
-script = ExtResource("7_r6oyu")
-image_normal = ExtResource("5_g42sv")
-image_pressed = ExtResource("6_6fvns")
 
 [node name="EnterButton" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)

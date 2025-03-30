@@ -17,6 +17,9 @@ namespace Stargazer
         private PlayControl playControl;
         private SkyView skyView;
 
+        [Export] private Control control;
+        [Export] private SkyViewContainer skyViewContainer;
+
         /// <summary>
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
         /// </summary>
@@ -38,12 +41,12 @@ namespace Stargazer
             playControl = GetNode<PlayControl>(nameof(PlayControl));
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
            
 
-            //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
 
             UserPositionUpdated = skyView.UpdateUserPosition;
 

@@ -19,6 +19,8 @@ namespace Stargazer
         public string hoverLabel { get; set; }
         public DateTime requestTime { get; set; }
 
+        public double LocalSiderealTime{get; set;}
+
 
         public override void _Ready()
         {
@@ -29,7 +31,6 @@ namespace Stargazer
             isHover = false;
             hoverLabel = "";
 
-            // Huntsville by default
 
         }
     }

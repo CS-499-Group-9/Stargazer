@@ -5,17 +5,19 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-    public Action<bool> AzimuthToggled;
-    public Action<bool> ConstellationsToggled;
-    public Action<bool> ConstellationLabelsToggled;
-    public Action<bool> MessierObjectsTogggled;
-    public Func<double, double, DateTime, Task> UserPositionUpdated;
+	public Action<bool> AzimuthToggled;
+	public Action<bool> EquatorLinesToggled;
+	public Action<bool> ConstellationsToggled;
+	public Action<bool> ConstellationLabelsToggled;
+	public Action<bool> MessierObjectsTogggled;
+	public Func<double, double, DateTime, Task> UserPositionUpdated;
 
     /// <summary>
     /// Receives the <see cref="Signal"/> from the <see cref="AzimuthButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
     /// <param name="value"></param>
 	public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
+
     /// Receives the <see cref="Signal"/> from the <see cref="ConstellationButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationsToggled"/> notification.
     public void ToggleConstellations(bool value) { ConstellationsToggled?.Invoke(value); }
 
@@ -23,6 +25,7 @@ public partial class ControlContainer : Control
     public void ToggleConstellationLabels(bool value) { ConstellationLabelsToggled?.Invoke(value); }
 
     /// Receives the <see cref="Signal"/> from the <see cref="MessierButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="MessierObjectsTogggled"/> notification.
+
 	public void ToggleMessierObjects(bool value) { MessierObjectsTogggled?.Invoke(value); }
 
     /// <summary>

@@ -15,14 +15,16 @@ namespace Stargazer
         // They are all accessed/set via code.
         // Not sure what overhead is involved in labeling these as export.
 
-        private Star? star3d;
-        public float Altitude { get { return (float)star3d?.Altitude; } }
-        public float Azimuth { get { return (float)star3d?.Azimuth; } }
+		private Star? star3d;
+		public float Altitude { get { return (float)star3d?.Altitude; } }
+		public float Azimuth { get { return (float)star3d?.Azimuth; } }
 
-        public string StarName { get { return star3d?.StarName; } }
+		public string StarName { get { return star3d?.StarName; } }
 
-        private Vector2 getLocation()
-        {
+		[Export] private ColorRect colorRect;
+
+		private Vector2 getLocation()
+		{
 
             Vector2 Pos2D = new Vector2(
                 x: (90.0f - Altitude) * Mathf.Cos((-Azimuth - 90) * radians),
@@ -63,10 +65,10 @@ namespace Stargazer
             Scale = scale;
         }
 
-        public void From3dStar(Star star)
-        {
-            star3d = star;
-        }
+		public void From3dStar(Star star)
+		{
+			star3d = star;
+		}
 
     }
 }

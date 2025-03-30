@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dr71brnwp5pdb" path="res://Scenes/play_control.tscn" id="5_6mtib"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="15_gllst"]
 
+[sub_resource type="Theme" id="Theme_meh3r"]
+
 [sub_resource type="Theme" id="Theme_g7sve"]
 default_font_size = 20
 

@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djgjpyyv340v"
-path.s3tc="res://.godot/imported/jupitermap.jpg-7d2be58ae88d92e72d60e8ff9559f26f.s3tc.ctex"
+uid="uid://1iekx4cdvd6f"
+path="res://.godot/imported/neptunemap.jpg-044680448c7c35a2402b72c3c2deadaa.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/jupitermap.jpg"
-dest_files=["res://.godot/imported/jupitermap.jpg-7d2be58ae88d92e72d60e8ff9559f26f.s3tc.ctex"]
+source_file="res://Textures/Images/neptunemap.jpg"
+dest_files=["res://.godot/imported/neptunemap.jpg-044680448c7c35a2402b72c3c2deadaa.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

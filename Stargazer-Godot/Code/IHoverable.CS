@@ -10,5 +10,7 @@ namespace Stargazer
         /// </summary>
         /// <returns>A formatted text string.</returns>
         public string GetHoverText();
+      
+        public Transform3D GetGlobalTransform();
     }
 }

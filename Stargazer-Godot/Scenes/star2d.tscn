@@ -11,11 +11,12 @@ shader_parameter/starColor = Vector3(1, 1, 1)
 shader = ExtResource("1_cjqmj")
 shader_parameter/starColor = Vector3(1, 1, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("colorRect")]
 material = SubResource("ShaderMaterial_6sxhg")
 position = Vector2(-181, -177)
 scale = Vector2(3, 3)
 script = ExtResource("1_e2076")
+colorRect = NodePath("ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_l586q")

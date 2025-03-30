@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=34 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -14,7 +14,8 @@
 [ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_1t5an"]
 [ext_resource type="Script" path="res://Code/Planets.cs" id="9_0lfhn"]
 [ext_resource type="PackedScene" uid="uid://cvbesqw1kvrp8" path="res://Scenes/planet.tscn" id="10_t7brt"]
-[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/needle.png" id="11_eka2m"]
+[ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/Images/needle.png" id="11_eka2m"]
+[ext_resource type="Script" path="res://Code/PlanetTextureLoader.cs" id="12_dqnlk"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 
@@ -72,9 +73,17 @@ shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
 
-[node name="SkyView" type="Node3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_d5him"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2oe6"]
+albedo_color = Color(1, 0.0823529, 1, 1)
+
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode", "datelabel")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
+spawner = NodePath("Stars")
+constellationNode = NodePath("Constellations")
+datelabel = NodePath("TimeLabel")
 
 [node name="GridLabel" type="Control" parent="."]
 layout_mode = 3
@@ -84,7 +93,6 @@ offset_bottom = 40.0
 script = ExtResource("2_oxt5r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_t068r")
 
 [node name="Stars" type="Node3D" parent="."]
@@ -100,9 +108,13 @@ LabelScene = ExtResource("4_hboln")
 [node name="LineMesh" type="MultiMeshInstance3D" parent="Constellations"]
 script = ExtResource("7_1t5an")
 
-[node name="Planets" type="Node3D" parent="."]
+[node name="Planets" type="Node3D" parent="." node_paths=PackedStringArray("planetTextures")]
 script = ExtResource("9_0lfhn")
+planetTextures = NodePath("PlanetTextureLoader")
 PlanetScene = ExtResource("10_t7brt")
+
+[node name="PlanetTextureLoader" type="ResourcePreloader" parent="Planets"]
+script = ExtResource("12_dqnlk")
 
 [node name="Dome" type="Node3D" parent="."]
 
@@ -110,9 +122,11 @@ PlanetScene = ExtResource("10_t7brt")
 mesh = SubResource("SphereMesh_kgvtr")
 skeleton = NodePath("")
 
-[node name="Azimuth Gridlines" type="MeshInstance3D" parent="Dome"]
+[node name="Dome" type="MeshInstance3D" parent="Dome"]
 mesh = SubResource("SphereMesh_kgvtr")
 skeleton = NodePath("")
+
+[node name="Azimuth Gridlines" type="Node3D" parent="Dome"]
 script = ExtResource("2_mbeb3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -162,12 +176,13 @@ position = Vector2(65, 65)
 scale = Vector2(1.76563, 1.76563)
 texture = SubResource("GradientTexture2D_iahmf")
 
-[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
+[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle", "camera")]
 position = Vector2(65, 65)
 scale = Vector2(0.069375, 0.069375)
 texture = ExtResource("11_eka2m")
 script = ExtResource("12_nu1as")
 needle = NodePath(".")
+camera = NodePath("../../Camera3D")
 
 [node name="ColorRect" type="ColorRect" parent="Compass"]
 material = SubResource("ShaderMaterial_vsn0o")
