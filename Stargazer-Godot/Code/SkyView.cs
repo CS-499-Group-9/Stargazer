@@ -64,7 +64,7 @@ namespace Stargazer
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
             ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
-            datelabel = GetNode<Label>("TimeLabel");
+            //datelabel = GetNode<Label>("TimeLabel");
 
             Camera = GetNode<Camera3D>("Camera3D");
             var needle = GetNode<CompassNeedle>("Compass/Needle");

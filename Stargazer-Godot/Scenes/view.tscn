@@ -78,9 +78,12 @@ shader_parameter/feather = 0.01
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2oe6"]
 albedo_color = Color(1, 0.0823529, 1, 1)
 
-[node name="SkyView" type="Node3D"]
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode", "datelabel")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
+spawner = NodePath("Stars")
+constellationNode = NodePath("Constellations")
+datelabel = NodePath("TimeLabel")
 
 [node name="GridLabel" type="Control" parent="."]
 layout_mode = 3
@@ -173,12 +176,13 @@ position = Vector2(65, 65)
 scale = Vector2(1.76563, 1.76563)
 texture = SubResource("GradientTexture2D_iahmf")
 
-[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
+[node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle", "camera")]
 position = Vector2(65, 65)
 scale = Vector2(0.069375, 0.069375)
 texture = ExtResource("11_eka2m")
 script = ExtResource("12_nu1as")
 needle = NodePath(".")
+camera = NodePath("../../Camera3D")
 
 [node name="ColorRect" type="ColorRect" parent="Compass"]
 material = SubResource("ShaderMaterial_vsn0o")

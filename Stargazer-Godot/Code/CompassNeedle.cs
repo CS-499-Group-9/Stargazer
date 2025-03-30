@@ -12,15 +12,15 @@ namespace Stargazer
 		/// The needle to display
 		/// </summary>
 		[Export] public Node2D needle;
-		private Camera3D camera;
+		[Export] private Camera3D camera;
 
 		/// <summary>
 		/// Gets a reference to the <see cref="Camera3D"/> in the <see cref="SkyView"/>
 		/// </summary>
 		public override void _Ready()
 		{
-			Node viewNode = GetTree()?.Root.FindChild("View", true, false);
-			camera = (Camera3D)viewNode?.GetNode("Camera3D");
+			//Node viewNode = GetTree()?.Root.FindChild("View", true, false);
+			//camera = (Camera3D)viewNode?.GetNode("Camera3D");
 		}
 
 		public void SetCamera(Camera3D camera) { this.camera = camera; }
