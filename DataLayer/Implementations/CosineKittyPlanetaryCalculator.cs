@@ -63,6 +63,12 @@ namespace DataLayer.Implementations
             return planets;
         }
 
+
+        public double GetLST(){
+            return Astronomy.SiderealTime(astroTime);
+        }
+
+
        /// <inheritdoc/>
         public void IncrementTimeBy(double seconds)
         {

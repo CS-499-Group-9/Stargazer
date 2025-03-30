@@ -13,12 +13,12 @@ namespace Stargazer
 	/// </summary>
 	public partial class Planets : Node3D
 	{
+		[Export] ResourcePreloader planetTextures;
 		/// <summary>
 		/// Used to instantiate a new planet.
 		/// </summary>
 		[Export] PackedScene PlanetScene { get; set; }
-		// Called when the node enters the scene tree for the first time.
-		
+
 		/// <summary>
 		/// Receives the data from <see cref="SkyView"/> to draw the planets.
 		/// </summary>
@@ -32,6 +32,7 @@ namespace Stargazer
 			{
 				var newPlanet = PlanetScene.Instantiate<Planet>();
 				newPlanet.FromHorizontal(planet, planetaryCalculator);
+				newPlanet.setTexture(GD.Load<Texture2D>($"res://Textures/Resources/{planet.Name.ToLower()}map.tres"));
 				AddChild(newPlanet);
 			}
 		}

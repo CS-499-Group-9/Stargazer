@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=13 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="1_difw8"]
@@ -7,10 +7,14 @@
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="4_mt1r5"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
-[ext_resource type="Script" path="res://addons/calendar_button/scripts/calendar_script.gd" id="7_r6oyu"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="8_iply7"]
 
+[sub_resource type="Theme" id="Theme_a35cu"]
+
+[sub_resource type="Theme" id="Theme_gmd6u"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahyml"]
+resource_name = "lightbox"
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6e37"]
@@ -19,6 +23,7 @@ bg_color = Color(0.329412, 0.329412, 0.329412, 1)
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 200.0
 offset_bottom = 348.0
+theme = SubResource("Theme_a35cu")
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 2
@@ -26,6 +31,7 @@ theme_override_constants/margin_right = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+theme = SubResource("Theme_gmd6u")
 script = ExtResource("1_5vufv")
 
 [node name="AzimuthButton" type="Control" parent="VBoxContainer"]
@@ -41,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahyml")
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer/AzimuthButton"]
@@ -50,7 +57,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Toggle Azimuth"
+text = "Toggle Azimuthal"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Equatorial Button" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("1_difw8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/Equatorial Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/Equatorial Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Toggle Equatorial"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
@@ -237,9 +270,6 @@ offset_bottom = 37.345
 toggle_mode = true
 texture_normal = ExtResource("5_g42sv")
 texture_hover = ExtResource("6_6fvns")
-script = ExtResource("7_r6oyu")
-image_normal = ExtResource("5_g42sv")
-image_pressed = ExtResource("6_6fvns")
 
 [node name="EnterButton" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
@@ -273,6 +303,7 @@ grow_vertical = 2
 text = "Enter Data"
 
 [connection signal="toggled" from="VBoxContainer/AzimuthButton/CheckBox" to="VBoxContainer" method="ToggleAzimuth"]
+[connection signal="toggled" from="VBoxContainer/Equatorial Button/CheckBox" to="VBoxContainer" method="ToggleEquator"]
 [connection signal="toggled" from="VBoxContainer/ConstellationButton/CheckBox" to="VBoxContainer" method="ToggleConstellations"]
 [connection signal="toggled" from="VBoxContainer/LabelButton/CheckBox" to="VBoxContainer" method="ToggleConstellationLabels"]
 [connection signal="toggled" from="VBoxContainer/MessierButton/CheckBox" to="VBoxContainer" method="ToggleMessierObjects"]

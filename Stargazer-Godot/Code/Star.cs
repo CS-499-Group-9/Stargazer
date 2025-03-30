@@ -98,12 +98,18 @@ namespace Stargazer
         }
 
 		/// <inheritdoc/>
+
         public string GetHoverText()
         {
 					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+
                     $"HIP {HipparcosId}\n"+
                     $"Altitude {Altitude}"+
                     $"Azimuth {Azimuth}";
+        }
+
+        public Transform3D getGlobalTransform()
+        {
+            return GlobalTransform;
         }
     }
 }

@@ -31,24 +31,25 @@ namespace Stargazer
         /// Relays the user request to toggle the gridlines to the child node that makes the change.
         /// </summary>
         public Action<bool> ToggleGridlines;
+        public Action<bool> ToggleEquatorialGridlines;
         /// <summary>
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
         public Camera3D Camera {  get; set; }
-        
 
-        private Spawner spawner;
-        private Spawner2D spawner2d;
-        private Constellations constellationNode;
-        private Constellations2D constellation2dNode;
+
+        [Export] private Spawner spawner;
+        [Export] private Spawner2D spawner2d;
+        [Export] private Constellations constellationNode;
+        [Export] private Constellations2D constellation2dNode;
         private Planets planetNode;
         private Moon moon;
         private IEquatorialCalculator<HorizontalStar> starConverter;
         private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
-        private Label datelabel;
-        private double timeMultiplier = 1;
+        [Export] private Label datelabel;
+        private double timeMultiplier = 3600;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -56,15 +57,14 @@ namespace Stargazer
         public override void _Ready()
         {
             base._Ready();
-            spawner = GetNode<Spawner>("Stars");
-            //spawner2d = GetNode<Spawner2D>("/root/Control/SubViewport2/View2d/Stars2D");
-            constellationNode = GetNode<Constellations>("Constellations");
-            //constellation2dNode = GetNode<Constellations2D>("/root/Control/SubViewport2/View2d/Constellations2D");
+            //spawner = GetNode<Spawner>("Stars");
+            //constellationNode = GetNode<Constellations>("Constellations");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
-            datelabel = GetNode<Label>("TimeLabel");
+            ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
+            //datelabel = GetNode<Label>("TimeLabel");
 
             Camera = GetNode<Camera3D>("Camera3D");
             var needle = GetNode<CompassNeedle>("Compass/Needle");

@@ -15,6 +15,9 @@ namespace Stargazer
         private const string viewPortPath = "SubViewportContainer/SubViewport/View";
         private StargazerRepositoryService<Star> repositoryService;
 
+        [Export] private Control control;
+        [Export] private SkyViewContainer skyViewContainer;
+
         /// <summary>
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
         /// </summary>
@@ -29,17 +32,16 @@ namespace Stargazer
         {
             repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer)+"/VBoxContainer");
-            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+            var controlContainer = control.GetNode<ControlContainer>("VBoxContainer");
             var skyView = skyViewContainer.SkyView;
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
 
 
-            //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
 
             UserPositionUpdated = skyView.UpdateUserPosition;
 
