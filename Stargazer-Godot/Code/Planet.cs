@@ -94,7 +94,7 @@ public partial class Planet : Node3D, IHoverable
         this.calculator = calculator;
     }
 
-    public string getHoverText()
+    public string GetHoverText()
     {
         String planetName;
         if (horizonalPlanet.Name.Equals("Sun")){

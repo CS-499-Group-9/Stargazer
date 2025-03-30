@@ -18,55 +18,56 @@ namespace Stargazer
 		// They are all accessed/set via code.
 		// Not sure what overhead is involved in labeling these as export.
 
-        private Star? star3d;
-        public float Altitude { get { return (float)star3d?.Altitude; } }
-        public float Azimuth { get { return (float)star3d?.Azimuth; } }
+		private Star? star3d;
+		public float Altitude { get { return (float)star3d?.Altitude; } }
+		public float Azimuth { get { return (float)star3d?.Azimuth; } }
 
-        public string StarName { get { return star3d?.StarName; } }
+		public string StarName { get { return star3d?.StarName; } }
 
-        private Vector2 getLocation()
-        {
+		[Export] private ColorRect colorRect;
 
-            Vector2 Pos2D = new Vector2(
-                x:(90.0f-Altitude)*Mathf.Cos((-Azimuth-90)*radians),
-                y:(90.0f-Altitude)*Mathf.Sin((-Azimuth-90)*radians)
-            );
-            return Pos2D;
-        }
+		private Vector2 getLocation()
+		{
+
+			Vector2 Pos2D = new Vector2(
+				x:(90.0f-Altitude)*Mathf.Cos((-Azimuth-90)*radians),
+				y:(90.0f-Altitude)*Mathf.Sin((-Azimuth-90)*radians)
+			);
+			return Pos2D;
+		}
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
-            ColorRect colorRect = GetNode<ColorRect>("ColorRect");
-            if (Altitude < 0.5){
-                Visible = true;
-            }
+			if (Altitude < 0.5){
+				Visible = true;
+			}
 			Position = getLocation();
-            ShaderMaterial shaderMaterial = (ShaderMaterial)GetMaterial();
-            if (colorRect != null && colorRect.Material is ShaderMaterial mat){
-                shaderMaterial = (ShaderMaterial)mat.Duplicate();
-                // if(!string.IsNullOrWhiteSpace(starName)){
-                //     //GD.Print($"I found it.\n{starName}");
-                //     shaderMaterial.SetShaderParameter("starColor",new Vector3(1.0F,0.0F,0.0F));
-                // }
-                //shaderMaterial.SetShaderParameter("starColor",new Vector3(Mathf.Floor(altitude/15)/7.0F,Mathf.Floor(altitude/15)/7.0F,0.5F));  
-                colorRect.Material = shaderMaterial;
-            }
+			ShaderMaterial shaderMaterial = (ShaderMaterial)GetMaterial();
+			if (colorRect != null && colorRect.Material is ShaderMaterial mat){
+				shaderMaterial = (ShaderMaterial)mat.Duplicate();
+				// if(!string.IsNullOrWhiteSpace(starName)){
+				//     //GD.Print($"I found it.\n{starName}");
+				//     shaderMaterial.SetShaderParameter("starColor",new Vector3(1.0F,0.0F,0.0F));
+				// }
+				//shaderMaterial.SetShaderParameter("starColor",new Vector3(Mathf.Floor(altitude/15)/7.0F,Mathf.Floor(altitude/15)/7.0F,0.5F));  
+				colorRect.Material = shaderMaterial;
+			}
 
-            //Position = new Vector2(0.0F,0.0F);
+			//Position = new Vector2(0.0F,0.0F);
 			// if (mag > 1) Scale = new Vector2(1 / mag, 1 / mag);
 			// else Scale = new Vector2(0.6F, 0.6F);
-            Scale = new Vector2(0.3F,0.3F);
+			Scale = new Vector2(0.3F,0.3F);
 
 		}
-        public void scalestar(Vector2 scale){
-            Scale = scale;
-        }
+		public void scalestar(Vector2 scale){
+			Scale = scale;
+		}
 
-        public void From3dStar(Star star)
-        {
-            star3d = star;
-        }
+		public void From3dStar(Star star)
+		{
+			star3d = star;
+		}
 
 	}
 }

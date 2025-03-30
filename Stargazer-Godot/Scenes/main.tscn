@@ -40,11 +40,13 @@ script = ExtResource("2_q8paj")
 [node name="Banner" parent="MainContainer" instance=ExtResource("1_2aeuw")]
 layout_mode = 2
 
-[node name="InteractionContainer" type="HBoxContainer" parent="MainContainer"]
+[node name="InteractionContainer" type="HBoxContainer" parent="MainContainer" node_paths=PackedStringArray("control", "skyViewContainer")]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_7h08j")
+control = NodePath("ControlContainer")
+skyViewContainer = NodePath("SkyViewContainer")
 
 [node name="ControlContainer" parent="MainContainer/InteractionContainer" instance=ExtResource("2_0ds6g")]
 layout_mode = 2

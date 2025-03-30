@@ -39,16 +39,16 @@ namespace Stargazer
         public Camera3D Camera {  get; set; }
 
 
-        private Spawner spawner;
-        private Spawner2D spawner2d;
-        private Constellations constellationNode;
-        private Constellations2D constellation2dNode;
+        [Export] private Spawner spawner;
+        [Export] private Spawner2D spawner2d;
+        [Export] private Constellations constellationNode;
+        [Export] private Constellations2D constellation2dNode;
         private Planets planetNode;
         private Moon moon;
         private IEquatorialConverter<HorizontalStar> starConverter;
         private IPlanetaryCalculator<HorizonalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
-        private Label datelabel;
+        [Export] private Label datelabel;
         private double timeMultiplier = 3600;
 
         /// <summary>
@@ -57,10 +57,8 @@ namespace Stargazer
         public override void _Ready()
         {
             base._Ready();
-            spawner = GetNode<Spawner>("Stars");
-            //spawner2d = GetNode<Spawner2D>("/root/Control/SubViewport2/View2d/Stars2D");
-            constellationNode = GetNode<Constellations>("Constellations");
-            //constellation2dNode = GetNode<Constellations2D>("/root/Control/SubViewport2/View2d/Constellations2D");
+            //spawner = GetNode<Spawner>("Stars");
+            //constellationNode = GetNode<Constellations>("Constellations");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;

@@ -76,7 +76,7 @@ namespace Stargazer
                 pitch -= (Fov / 75) * mouseMotion.Relative.Y * MouseSensitivity;
 
                 // Clamp pitch to prevent flipping
-                pitch = Mathf.Clamp(pitch, -Mathf.Pi / 2, Mathf.Pi / 2);
+                pitch = Mathf.Clamp(pitch, -Mathf.Pi / 2, Mathf.Pi / 2-.001f);
 
                 // Apply rotation
                 Rotation = new Vector3(pitch, yaw, 0);
@@ -96,7 +96,7 @@ namespace Stargazer
                     if(!tracking){
                         highlightingStar = (IHoverable)collider.GetParentNode3D();
                     }
-                    globalVars.hoverLabel = colliderhoverable.getHoverText();
+                    globalVars.hoverLabel = colliderhoverable.GetHoverText();
                     
                     // if (!String.IsNullOrWhiteSpace(star.starName)){
                     //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
@@ -114,7 +114,7 @@ namespace Stargazer
             }
             if(middleMouseClicked && globalVars.isHover){
                 GD.Print("I'm tracking you now!");
-                ScreenOffset = UnprojectPosition(highlightingStar.getGlobalTransform().Origin);
+                ScreenOffset = UnprojectPosition(highlightingStar.GetGlobalTransform().Origin);
                 middleMouseClicked = false;
                 tracking = !tracking;
             }
@@ -150,7 +150,7 @@ namespace Stargazer
 
 
             // Compute the direction to the target
-            Vector3 toTarget = (highlightingStar.getGlobalTransform().Origin - GlobalTransform.Origin).Normalized();
+            Vector3 toTarget = (highlightingStar.GetGlobalTransform().Origin - GlobalTransform.Origin).Normalized();
 
             // Construct a rotation basis that maintains a fixed up vector (prevents roll)
             Basis newBasis = new Basis();

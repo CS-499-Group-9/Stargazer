@@ -52,7 +52,7 @@ public partial class Moon : Node3D,IHoverable
 		calculator = moonCalculator;
 	}
 
-    public string getHoverText()
+    public string GetHoverText()
     {
                     return $"The Moon\n"+
                     $"Altitude {horizontalMoon.Altitude}\n"+

@@ -2,6 +2,6 @@ using System;
 using Godot;
 
 public interface IHoverable{
-    public String getHoverText();
-    public Transform3D getGlobalTransform();
+    public String GetHoverText();
+    public Transform3D GetGlobalTransform();
 }

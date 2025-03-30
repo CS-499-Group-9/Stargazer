@@ -99,7 +99,7 @@ namespace Stargazer
 			Position3D = Position;
         }
 
-        public string getHoverText()
+        public string GetHoverText()
         {
 					return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n"+
                     $"HIP {HipparcosId}\n"+

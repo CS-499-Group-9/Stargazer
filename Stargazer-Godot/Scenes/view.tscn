@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=34 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -73,6 +73,11 @@ shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
 
+[sub_resource type="SphereMesh" id="SphereMesh_d5him"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2oe6"]
+albedo_color = Color(1, 0.0823529, 1, 1)
+
 [node name="SkyView" type="Node3D"]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
@@ -85,7 +90,6 @@ offset_bottom = 40.0
 script = ExtResource("2_oxt5r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_t068r")
 
 [node name="Stars" type="Node3D" parent="."]
@@ -186,3 +190,8 @@ offset_bottom = 129.0
 offset_right = 158.0
 offset_bottom = 29.0
 text = "Test"
+
+[node name="AnotherTest" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_d5him")
+surface_material_override/0 = SubResource("StandardMaterial3D_x2oe6")
