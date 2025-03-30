@@ -47,13 +47,6 @@ horizontal_alignment = 1
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-show_behind_parent = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="CurrentTimeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(40, 20)
@@ -183,40 +176,6 @@ icon = ExtResource("4_ln7p3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
-custom_minimum_size = Vector2(30, 20)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
-icon = ExtResource("7_dpn51")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
-layout_mode = 2
-text = "Years"
-
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
-custom_minimum_size = Vector2(30, 20)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
-icon = ExtResource("4_ln7p3")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-show_behind_parent = true
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSyncronizeTime"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ForwardButon" to="." method="UpdateSeconds" binds= [1]]
@@ -227,5 +186,3 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BackButton" to="." method="UpdateHours" binds= [-1]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/ForwardButon" to="." method="UpdateDays" binds= [1]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/BackButton" to="." method="UpdateDays" binds= [-1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/ForwardButon" to="." method="UpdateYears" binds= [1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer5/BackButton" to="." method="UpdateYears" binds= [-1]]

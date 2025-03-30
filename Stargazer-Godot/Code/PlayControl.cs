@@ -33,8 +33,7 @@ public partial class PlayControl : Control
 
     public void OnSyncronizeTime() 
     {
-        multiplier.RealTime();
-        OnSyncronizeTime();
+        multiplier.SyncronizeTime();
         UpdateMultiplierLabel(); 
     }
 
@@ -43,27 +42,19 @@ public partial class PlayControl : Control
         multiplier.RealTime();
         UpdateMultiplierLabel();
     }
-    public void IncreaseSlow() 
-    { 
-        multiplier.IncreaseBySeconds(1);
-        UpdateMultiplierLabel(); 
-    }
-    public void IncreaseFast() 
-    { 
-        multiplier.IncreaseByMinutes(1);
-        UpdateMultiplierLabel(); 
-    }
 
     public override void _Ready()
     {
         base._Ready();
         multiplier = new PlaySpeed();
         multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
+        UpdateMultiplierLabel();
     }
 
     public PlaySpeed Activate()
     {
         Visible = true;
+        UpdateMultiplierLabel();
         return multiplier;
     }
 

@@ -51,6 +51,7 @@ namespace Stargazer
         private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
         private PlaySpeed playSpeed;
+        private ulong previousTicks;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -91,20 +92,25 @@ namespace Stargazer
             averageFrameTime += delta;
             averageFrameTime /= 2;
             averageFrameLabel.Text = $"Average: {averageFrameTime.ToString()}";
+           
             int timeMultiplier = playSpeed?.TotalSeconds ?? 1;
-
-            if (Math.Abs(timeMultiplier) > 1.1)
+            var totalTicks = Time.GetTicksMsec();
+            double secSinceLast = (totalTicks - previousTicks)/1000.0;
+            if (playSpeed?.IsSyncronized ?? false) 
             {
-                starConverter?.IncrementTimeBy(delta * timeMultiplier);
-                moonCalculator?.IncrementTimeBy(delta * timeMultiplier);
-                planetaryCalculator?.IncrementTimeBy(delta * timeMultiplier);
+                var timeNow = DateTime.UtcNow;
+                starConverter?.SetTime(timeNow);
+                moonCalculator?.SetTime(timeNow);
+                planetaryCalculator?.SetTime(timeNow);  
             }
-            else if (timeMultiplier > 0) 
+            else 
             {
-                starConverter?.SetTime(DateTime.UtcNow);
-                moonCalculator?.SetTime(DateTime.UtcNow);
-                planetaryCalculator?.SetTime(DateTime.UtcNow);
+                starConverter?.IncrementTimeBy(secSinceLast * timeMultiplier);
+                moonCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
+                planetaryCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
             }
+            
+            previousTicks = totalTicks;
             dateLable.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
@@ -112,16 +118,6 @@ namespace Stargazer
         public void SetTimeMultiplier(PlaySpeed playSpeed)
         {
             this.playSpeed = playSpeed;
-        }
-
-        public void SyncronizeTime()
-        {
-            var currentTime = DateTime.UtcNow;
-            starConverter.SetTime(currentTime);
-            planetaryCalculator?.SetTime(currentTime);
-            moonCalculator?.SetTime(currentTime);
-            dateLable.Text = $"{currentTime.ToLocalTime().ToString() ?? ""} Local";
-
         }
 
 
@@ -142,6 +138,7 @@ namespace Stargazer
             moonCalculator = dataPackage.MoonCalculator;
             moon = MoonScene.Instantiate<Moon>();
             moon.FromHorizontal(dataPackage.Moon, moonCalculator);
+            previousTicks = Time.GetTicksMsec();
             AddChild(moon);
         }
     }

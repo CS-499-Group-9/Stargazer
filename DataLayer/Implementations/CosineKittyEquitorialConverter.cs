@@ -55,6 +55,7 @@ namespace DataLayer.Implementations
         public void SetTime(DateTime userTime)
         {
             currentTime = userTime;
+            astroTime = new AstroTime(userTime);
         }
     }
 }

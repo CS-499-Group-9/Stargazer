@@ -63,6 +63,7 @@ namespace DataLayer.Implementations
         public void SetTime(DateTime currentTime)
         {
             this.currentTime = currentTime;
+            astroTime = new(currentTime);
         }
     }
 }
