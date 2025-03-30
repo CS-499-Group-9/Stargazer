@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 public partial class ControlContainer : Control
 {
 	public Action<bool> AzimuthToggled;
+    public Action<bool> EquatorialToggled;
 	public Action<bool> EquatorLinesToggled;
 	public Action<bool> ConstellationsToggled;
 	public Action<bool> ConstellationLabelsToggled;
@@ -17,6 +18,8 @@ public partial class ControlContainer : Control
     /// </summary>
     /// <param name="value"></param>
 	public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
+
+    public void ToggleEquatorial(bool value) {EquatorialToggled?.Invoke(value); }
 
     /// Receives the <see cref="Signal"/> from the <see cref="ConstellationButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationsToggled"/> notification.
     public void ToggleConstellations(bool value) { ConstellationsToggled?.Invoke(value); }

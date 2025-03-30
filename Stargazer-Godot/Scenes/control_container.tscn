@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=11 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
 [ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="1_difw8"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="2_aaufq"]
 [ext_resource type="Script" path="res://Code/LabelButton.cs" id="3_1akgr"]
-[ext_resource type="StyleBox" uid="uid://8ncnn3ubak3t" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
-[ext_resource type="StyleBox" uid="uid://8uxntfgpvnl2" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
+[ext_resource type="StyleBox" uid="uid://bqlg72ri6emyf" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
+[ext_resource type="StyleBox" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="4_mt1r5"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
@@ -48,7 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_styles/panel = ExtResource("4_f5vim")
+theme_override_styles/panel = ExtResource("3_bhqqh")
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/AzimuthButton"]
@@ -62,6 +62,38 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 text = "Toggle Azimuth"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="EquatorialToggle" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+script = ExtResource("1_difw8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/EquatorialToggle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = ExtResource("4_f5vim")
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/EquatorialToggle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+text = "Toggle Equatorial
+"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
@@ -304,6 +336,7 @@ theme_override_styles/normal = ExtResource("4_f5vim")
 text = "Enter Data"
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/EquatorialToggle/CheckBox" to="." method="ToggleEquatorial"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ConstellationButton/CheckBox" to="." method="ToggleConstellations"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/LabelButton/CheckBox" to="." method="ToggleConstellationLabels"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MessierButton/CheckBox" to="." method="ToggleMessierObjects"]

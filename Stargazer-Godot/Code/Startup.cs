@@ -41,6 +41,7 @@ namespace Stargazer
             playControl = GetNode<PlayControl>(nameof(PlayControl));
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
+            controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;

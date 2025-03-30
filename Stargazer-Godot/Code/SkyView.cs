@@ -66,6 +66,7 @@ namespace Stargazer
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
+            ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
             dateLable = GetNode<Label>("TimeLabel");
             averageFrameLabel = GetNode<Label>("AverageFrameLabel");
             instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
@@ -76,7 +77,7 @@ namespace Stargazer
             needle.SetCamera(Camera);
             gridLabel.SetCamera(Camera);
             ToggleGridlines += gridLabel.ToggleGridlines;
- 
+            
             planetNode = GetNode<Planets>("Planets");
 
 
