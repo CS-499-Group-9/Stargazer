@@ -30,8 +30,7 @@ namespace Stargazer
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
-            containerize-UI
-            calculator?.UpdatePosition(horizontalMoon);
+            calculator?.UpdatePositionOf(horizontalMoon);
             Position = GetLocation();
             Transform3D rotateTransform = new Transform3D();
             Vector3 forward = (-Position.Normalized());  

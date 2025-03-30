@@ -68,7 +68,6 @@ namespace DataLayer.Implementations
             return Astronomy.SiderealTime(astroTime);
         }
 
-        public void IncrementTime(double increment)
 
        /// <inheritdoc/>
         public void IncrementTimeBy(double seconds)

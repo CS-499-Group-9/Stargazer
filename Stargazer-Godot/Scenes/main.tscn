@@ -17,7 +17,7 @@ default_font_size = 20
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -12,8 +12,8 @@ namespace Stargazer
     public partial class Planet : Node3D, IHoverable
     {
 
-        private IPlanetaryCalculator<HorizonalPlanet> calculator;
-        private HorizonalPlanet horizonalPlanet;
+        private IPlanetaryCalculator<HorizontalPlanet> calculator;
+        private HorizontalPlanet horizontalPlanet;
         private float Distance = 74f;
         private const float radians = (float)Math.PI / 180f;
         private Texture2D planetTexture;
@@ -69,7 +69,7 @@ namespace Stargazer
         // Called every frame. 'delta' is the elapsed time since the previous frame.
         public override void _Process(double delta)
         {
-            calculator?.UpdatePosition(horizonalPlanet);
+            calculator?.UpdatePositionOf(horizontalPlanet);
             globalVars.LocalSiderealTime = (double)(calculator?.GetLST());
             Position = GetLocation();
             Rotate(Vector3.Up,Mathf.Pi);
@@ -87,8 +87,8 @@ namespace Stargazer
 
         private Vector3 GetLocation()
         {
-            var altRad = (float)horizonalPlanet.Altitude * radians;
-            var azRad = (float)horizonalPlanet.Azimuth * radians;
+            var altRad = (float)horizontalPlanet.Altitude * radians;
+            var azRad = (float)horizontalPlanet.Azimuth * radians;
             Vector3 pos = new()
             {
                 X = Distance * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
@@ -99,65 +99,55 @@ namespace Stargazer
         }
 
 
+       
+
+        /// <summary>
+        /// Used to receive the data and methods to perform calculations
+        /// </summary>
+        /// <param name="horizonalPlanet">Contains the data to perform the calculations</param>
+        /// <param name="calculator">The calculator used.</param>
+        public void FromHorizontal(HorizontalPlanet horizonalPlanet, IPlanetaryCalculator<HorizontalPlanet> calculator)
+        {
+            this.horizontalPlanet = horizonalPlanet;
+            this.calculator = calculator;
+        }
+
+        /// <inheritdoc/>
         public string GetHoverText()
         {
             String planetName;
-            if (horizonalPlanet.Name.Equals("Sun")){
+            if (horizontalPlanet.Name.Equals("Sun"))
+            {
                 planetName = "The Sun";
-            }else if(String.IsNullOrWhiteSpace(horizonalPlanet.Name)){
+            }
+            else if (String.IsNullOrWhiteSpace(horizontalPlanet.Name))
+            {
                 planetName = "Unnamed Planet";
-            }else{
-                planetName = horizonalPlanet.Name;
-
-            /// <summary>
-            /// Used to receive the data and methods to perform calculations
-            /// </summary>
-            /// <param name="horizonalPlanet">Contains the data to perform the calculations</param>
-            /// <param name="calculator">The calculator used.</param>
-            public void FromHorizontal(HorizontalPlanet horizonalPlanet, IPlanetaryCalculator<HorizontalPlanet> calculator)
-            {
-                this.horizonalPlanet = horizonalPlanet;
-                this.calculator = calculator;
             }
-
-            /// <inheritdoc/>
-            public string GetHoverText()
+            else
             {
-                String planetName;
-                if (horizonalPlanet.Name.Equals("Sun"))
-                {
-                    planetName = "The Sun";
-                }
-                else if (String.IsNullOrWhiteSpace(horizonalPlanet.Name))
-                {
-                    planetName = "Unnamed Planet";
-                }
-                else
-                {
-                    planetName = horizonalPlanet.Name;
-                }
-                return $"{planetName}\n" +
-                $"Altitude {horizonalPlanet.Altitude}\n" +
-                $"Azimuth {horizonalPlanet.Azimuth}";
+                planetName = horizontalPlanet.Name;
             }
-        
-        
-            private Texture2D LoadTexture(string path)
-            {
-                Image image = new Image();
-                Error err = image.Load(path);
-
-                if (err != Error.Ok)
-                {
-                    GD.PrintErr($"Failed to load image: {path}");
-                    return null;
-                }
-
-                ImageTexture texture = ImageTexture.CreateFromImage(image);
-                return texture;
-            }
+            return $"{planetName}\n" +
+            $"Altitude {horizontalPlanet.Altitude}\n" +
+            $"Azimuth {horizontalPlanet.Azimuth}";
         }
+        
+        
+        private Texture2D LoadTexture(string path)
+        {
+            Image image = new Image();
+            Error err = image.Load(path);
 
+            if (err != Error.Ok)
+            {
+                GD.PrintErr($"Failed to load image: {path}");
+                return null;
+            }
+
+            ImageTexture texture = ImageTexture.CreateFromImage(image);
+            return texture;
+        }
 
         public Transform3D getGlobalTransform()
         {

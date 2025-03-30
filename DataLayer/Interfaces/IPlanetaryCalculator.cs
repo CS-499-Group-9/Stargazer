@@ -26,8 +26,6 @@ namespace DataLayer.Interfaces
         /// <param name="seconds">The number of seconds to increment the time.</param>
         public void IncrementTimeBy(double seconds);
 
-
-        public void UpdatePosition(HorizonalPlanet planet);
         
         public double GetLST();
 
