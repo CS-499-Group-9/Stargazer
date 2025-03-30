@@ -35,6 +35,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="PlayControl" parent="." instance=ExtResource("5_6mtib")]
+visible = false
 layout_mode = 2
 
 [node name="HoverLabel" type="Label" parent="."]

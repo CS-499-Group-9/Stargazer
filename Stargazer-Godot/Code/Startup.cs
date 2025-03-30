@@ -14,6 +14,8 @@ namespace Stargazer
         // Just in case something changes, it's easy to find.
         private const string viewPortPath = "SubViewportContainer/SubViewport/View";
         private StargazerRepositoryService<Star> repositoryService;
+        private PlayControl playControl;
+        private SkyView skyView;
 
         /// <summary>
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
@@ -32,15 +34,14 @@ namespace Stargazer
 
             var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
             var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
-            var skyView = skyViewContainer.SkyView;
-            var playControl = GetNode<PlayControl>(nameof(PlayControl));
+            skyView = skyViewContainer.SkyView;
+            playControl = GetNode<PlayControl>(nameof(PlayControl));
 
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
-            playControl.PlaySpeedUpdated = skyView.UpdatePlaySpeed;
-            playControl.SyncronizeTime = skyView.SyncronizeTime;
+           
 
             //var gridText = GetNode<GridLabel>(viewPortPath + "/GridLabel");
 
@@ -60,6 +61,8 @@ namespace Stargazer
         {
             // Uncomment the timers to make it advance.
 
+            var multiplier = playControl.Activate();
+            skyView.SetTimeMultiplier(multiplier);
             var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
             await UserPositionUpdated(dataPackage);
 

@@ -44,13 +44,13 @@ namespace Stargazer
         private Label averageFrameLabel;
         private Label instantaneousFrameLabel;
         private Label dateLable;
+        private double averageFrameTime;
 
         private Moon moon;
         private IEquatorialCalculator<HorizontalStar> starConverter;
         private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
         private IMoonCalculator moonCalculator;
-        private int timeMultiplier = 1;
-        private double averageFrameTime;
+        private PlaySpeed playSpeed;
 
         /// <summary>
         /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
@@ -76,7 +76,7 @@ namespace Stargazer
             needle.SetCamera(Camera);
             gridLabel.SetCamera(Camera);
             ToggleGridlines += gridLabel.ToggleGridlines;
-
+ 
             planetNode = GetNode<Planets>("Planets");
 
 
@@ -91,19 +91,27 @@ namespace Stargazer
             averageFrameTime += delta;
             averageFrameTime /= 2;
             averageFrameLabel.Text = $"Average: {averageFrameTime.ToString()}";
+            int timeMultiplier = playSpeed?.TotalSeconds ?? 1;
 
-            starConverter?.IncrementTimeBy(delta * timeMultiplier);
-            planetaryCalculator?.IncrementTimeBy(delta * timeMultiplier);
-            moonCalculator?.IncrementTimeBy(delta * timeMultiplier);
+            if (Math.Abs(timeMultiplier) > 1.1)
+            {
+                starConverter?.IncrementTimeBy(delta * timeMultiplier);
+                moonCalculator?.IncrementTimeBy(delta * timeMultiplier);
+                planetaryCalculator?.IncrementTimeBy(delta * timeMultiplier);
+            }
+            else if (timeMultiplier > 0) 
+            {
+                starConverter?.SetTime(DateTime.UtcNow);
+                moonCalculator?.SetTime(DateTime.UtcNow);
+                planetaryCalculator?.SetTime(DateTime.UtcNow);
+            }
             dateLable.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
             base._Process(delta);
         }
 
-        public int UpdatePlaySpeed(int multiplier)
+        public void SetTimeMultiplier(PlaySpeed playSpeed)
         {
-            if (multiplier == 0) timeMultiplier = 1;
-            else timeMultiplier += multiplier;
-            return timeMultiplier;
+            this.playSpeed = playSpeed;
         }
 
         public void SyncronizeTime()
@@ -113,7 +121,7 @@ namespace Stargazer
             planetaryCalculator?.SetTime(currentTime);
             moonCalculator?.SetTime(currentTime);
             dateLable.Text = $"{currentTime.ToLocalTime().ToString() ?? ""} Local";
-            timeMultiplier = 1;
+
         }
 
 
@@ -124,14 +132,10 @@ namespace Stargazer
         /// <returns><see cref="Task"/> that can be awaited.</returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
         {
-            var count = 0;
-            var nonnullcount = 0;
             starConverter = dataPackage.StarCalculator;
             planetaryCalculator = dataPackage.PlanetaryCalculator;
             dateLable.Text = starConverter.CurrentTime.ToString();
-            //GD.Print($"nullcount {count}\nnonnullcount {nonnullcount}");
             await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarCalculator);
-            //await spawner2d.DrawStars(dataPackage.Stars);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
             planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
             moon?.Free();
@@ -139,8 +143,6 @@ namespace Stargazer
             moon = MoonScene.Instantiate<Moon>();
             moon.FromHorizontal(dataPackage.Moon, moonCalculator);
             AddChild(moon);
-            //await constellation2dNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetConstellationStar);
-            // TODO: Notify the Messier Objects node to draw the Messier Objects
         }
     }
 }

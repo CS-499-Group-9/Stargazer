@@ -1,57 +1,75 @@
 using Godot;
+using Stargazer;
 using System;
 
 public partial class PlayControl : Control
 {
-    public Func<int, int> PlaySpeedUpdated;
-    public Action SyncronizeTime;
-    private int multiplier = 1;
     private Label multiplierLabel;
+    private PlaySpeed multiplier;
+    
 
-    private const int secsPerMin = 60;
-    private const int minPerHour = 60;
-    private const int secsPerHour = secsPerMin * minPerHour;
-    private const int hourPerDay = 24;
-    private const int secsPerDay = secsPerHour * hourPerDay;
-    private const int daysPerYear = 365;
-    private const int secsPerYear = secsPerDay * daysPerYear;
-    private const int yearsPerCentury = 100;
+    public void UpdateSeconds(int seconds) 
+    {
+        multiplier.IncreaseBySeconds(seconds);
+        UpdateMultiplierLabel(); 
+    }
+    public void UpdateMinutes(int minutes) 
+    {
+        multiplier.IncreaseByMinutes(minutes);
+        UpdateMultiplierLabel(); 
+    }
 
-    public void DecreaseTen() { UpdateMultiplierLable(PlaySpeedUpdated(-secsPerDay)); }
-    public void DecreaseOne() { UpdateMultiplierLable(PlaySpeedUpdated(-secsPerMin)); }
-    public void OnSyncronizeTime() { SyncronizeTime(); UpdateMultiplierLable(1); }
-    public void PlayNormal() { UpdateMultiplierLable(PlaySpeedUpdated(0)); }
-    public void IncreaseOne() { UpdateMultiplierLable(PlaySpeedUpdated(secsPerMin)); }
-    public void IncreaseTen() { UpdateMultiplierLable(PlaySpeedUpdated(secsPerDay)); }
+    public void UpdateHours(int hours)
+    {
+        multiplier.IncreateByHours(hours);
+        UpdateMultiplierLabel();
+    }
+
+    public void UpdateDays(int days) 
+    {
+        multiplier.IncreaseByDays(days);
+        UpdateMultiplierLabel() ;
+    }
+
+    public void OnSyncronizeTime() 
+    {
+        multiplier.RealTime();
+        OnSyncronizeTime();
+        UpdateMultiplierLabel(); 
+    }
+
+    public void PlayNormal() 
+    { 
+        multiplier.RealTime();
+        UpdateMultiplierLabel();
+    }
+    public void IncreaseSlow() 
+    { 
+        multiplier.IncreaseBySeconds(1);
+        UpdateMultiplierLabel(); 
+    }
+    public void IncreaseFast() 
+    { 
+        multiplier.IncreaseByMinutes(1);
+        UpdateMultiplierLabel(); 
+    }
 
     public override void _Ready()
     {
         base._Ready();
-
+        multiplier = new PlaySpeed();
         multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
     }
 
-    private void UpdateMultiplierLable(int multiplier)
+    public PlaySpeed Activate()
     {
-        int years = multiplier / secsPerYear;
-        multiplier %= secsPerYear;
-        int days = multiplier / secsPerDay;
-        multiplier %= secsPerDay;
-        int hours = multiplier / secsPerHour;
-        multiplier %= secsPerHour;
-        int minutes = multiplier / secsPerMin;
-        multiplier %= secsPerMin;
-        int seconds = multiplier;
+        Visible = true;
+        return multiplier;
+    }
 
-        var yearString = years > 0 ? $"{years} years" : null;
-        var dayString = days > 0 ? $"{days} days" : null;
-        var hourString = hours > 0 ? $"{hours} hours" : null;
-        var minuteString = minutes > 0 ? $"{minutes} minutes" : null;
-        var secondsString = seconds > 0 ? $"{seconds} second" : null;
-
-        var outputString = string.Join(',', yearString, dayString, hourString, minuteString, secondsString);
-        multiplierLabel.Text = outputString ?? "Paused";
-
+    private void UpdateMultiplierLabel()
+    {
+       multiplierLabel.Text = $"{multiplier.ToString()} per second";
     }
 
 }

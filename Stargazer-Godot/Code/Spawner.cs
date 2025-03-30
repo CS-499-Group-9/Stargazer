@@ -58,7 +58,6 @@ namespace Stargazer
             // If the previous container exists, remove it from the tree then add the new container.
             oldContainer?.Free();
             AddChild(StarContainer);
-            stopwatch.Stop();
         }
 
         /// <summary>
