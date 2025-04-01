@@ -48,9 +48,7 @@ namespace Stargazer
         private double averageFrameTime;
 
         private Moon moon;
-        private IEquatorialCalculator<HorizontalStar> starConverter;
-        private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
-        private IMoonCalculator moonCalculator;
+        private IEquatorialCalculator starConverter;
         private PlaySpeed playSpeed;
         private ulong previousTicks;
 
@@ -100,14 +98,10 @@ namespace Stargazer
             {
                 var timeNow = DateTime.UtcNow;
                 starConverter?.SetTime(timeNow);
-                moonCalculator?.SetTime(timeNow);
-                planetaryCalculator?.SetTime(timeNow);  
             }
             else 
             {
                 starConverter?.IncrementTimeBy(secSinceLast * timeMultiplier);
-                moonCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
-                planetaryCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
             }
             
             previousTicks = totalTicks;
@@ -128,16 +122,14 @@ namespace Stargazer
         /// <returns><see cref="Task"/> that can be awaited.</returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
         {
-            starConverter = dataPackage.StarCalculator;
-            planetaryCalculator = dataPackage.PlanetaryCalculator;
+            starConverter = dataPackage.Calculator;
             dateLable.Text = starConverter.CurrentTime.ToString();
-            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarCalculator);
+            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar,starConverter);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
-            planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
+            planetNode.DrawPlanets(dataPackage.Planets, starConverter);
             moon?.Free();
-            moonCalculator = dataPackage.MoonCalculator;
             moon = MoonScene.Instantiate<Moon>();
-            moon.FromHorizontal(dataPackage.Moon, moonCalculator);
+            moon.FromHorizontal(dataPackage.Moon, starConverter);
             previousTicks = Time.GetTicksMsec();
             AddChild(moon);
         }

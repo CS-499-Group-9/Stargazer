@@ -11,7 +11,7 @@ namespace Stargazer
     public partial class Moon : Node3D, IHoverable
     {
         private HorizontalMoon horizontalMoon;
-        private IMoonCalculator calculator;
+        private IEquatorialCalculator calculator;
         private float Distance = 74f;
         private const float radians = (float)Math.PI / 180f;
     
@@ -77,7 +77,7 @@ namespace Stargazer
         /// </summary>
         /// <param name="moon">The object to base the calculations on</param>
         /// <param name="moonCalculator">The calculator used to perform the calculations.</param>
-        public void FromHorizontal(HorizontalMoon moon, IMoonCalculator moonCalculator)
+        public void FromHorizontal(HorizontalMoon moon, IEquatorialCalculator moonCalculator)
         {
             horizontalMoon = moon;
             calculator = moonCalculator;

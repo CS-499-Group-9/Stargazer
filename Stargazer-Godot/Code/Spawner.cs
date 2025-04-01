@@ -26,7 +26,7 @@ namespace Stargazer
         [Export] public PackedScene LabelScene { get; set; }
 
         private Node3D StarContainer;
-        private IEquatorialCalculator<HorizontalStar> starConverter;
+        private IEquatorialCalculator starConverter;
         private BlockingCollection<ConcurrentBag<HorizontalStar>> starProducer;
         const float maxStarMagnitude = 6.0f;
         /// <summary>
@@ -37,7 +37,7 @@ namespace Stargazer
         /// <param name="starConverter">Used to calculate star data.</param>
         /// 
 
-        public async Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator<HorizontalStar> starConverter)
+        public async Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator starConverter)
         {
             this.starConverter = starConverter;
             // Get a reference to the current star container

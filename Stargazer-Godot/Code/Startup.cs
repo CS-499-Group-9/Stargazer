@@ -68,7 +68,7 @@ namespace Stargazer
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
             var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            await UserPositionUpdated(dataPackage);
+            await UserPositionUpdated(await dataPackage);
 
         }
 

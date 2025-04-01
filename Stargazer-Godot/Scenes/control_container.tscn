@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=10 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
-[ext_resource type="Script" path="res://Code/AzimuthButton.cs" id="1_difw8"]
 [ext_resource type="Script" path="res://Code/ConstellationButton.cs" id="2_aaufq"]
 [ext_resource type="Script" path="res://Code/LabelButton.cs" id="3_1akgr"]
 [ext_resource type="StyleBox" uid="uid://bqlg72ri6emyf" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
-[ext_resource type="StyleBox" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
+[ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
 [ext_resource type="Script" path="res://Code/MessierButton.cs" id="4_mt1r5"]
 [ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
 [ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
@@ -37,7 +36,6 @@ mouse_filter = 2
 [node name="AzimuthButton" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-script = ExtResource("1_difw8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/AzimuthButton"]
@@ -68,7 +66,6 @@ metadata/_edit_use_anchors_ = true
 [node name="EquatorialToggle" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-script = ExtResource("1_difw8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/EquatorialToggle"]

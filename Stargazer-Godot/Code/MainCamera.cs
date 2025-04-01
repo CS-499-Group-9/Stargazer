@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 namespace Stargazer
 {
@@ -14,6 +15,9 @@ namespace Stargazer
     
         [Export] public Vector2 ScreenOffset = new Vector2(500, 50);  // Desired screen space position
 
+
+
+
         private float yaw = 0f;  // Left/Right Rotation
         private float pitch = 0f; // Up/Down Rotation
         private bool rightClickHeld = false;
@@ -22,6 +26,7 @@ namespace Stargazer
         private string screenshotPath = "user://screenshot.jpeg";
 
         private IHoverable highlightingStar;
+        private ITrackable trackedObject;
   
         private Globals globalVars;
 
@@ -70,7 +75,7 @@ namespace Stargazer
                     }
                 }
             }
-            if (rightClickHeld && @event is InputEventMouseMotion mouseMotion && !tracking)
+            if (rightClickHeld && trackedObject is null && @event is InputEventMouseMotion mouseMotion)
             {
                 yaw -= (Fov / 75) * mouseMotion.Relative.X * MouseSensitivity;
                 pitch -= (Fov / 75) * mouseMotion.Relative.Y * MouseSensitivity;
@@ -98,13 +103,6 @@ namespace Stargazer
                         highlightingStar = (IHoverable)collider.GetParentNode3D();
                     }
                     globalVars.hoverLabel = colliderhoverable.GetHoverText();
-
-                    
-                    // if (!String.IsNullOrWhiteSpace(star.starName)){
-                    //     globalVars.hoverLabel = $"{star.starName}\nHIP {star.hipID}";
-                    // }else{
-                    //     globalVars.hoverLabel = $"Unnamed Star\nHIP {star.hipID}";
-                    // }
                 }
                 else
                 {
@@ -168,7 +166,6 @@ namespace Stargazer
 
             // Assign the new transform
             GlobalTransform = newTransform;
-            GD.Print($"{yaw} and {Rotation.X}\n{pitch} and {Rotation.Y}");
         }
         private void TakeScreenshot()
         {

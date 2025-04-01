@@ -1,5 +1,10 @@
 ﻿using CosineKitty;
 using DataLayer.HorizontalObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DataLayer.Interfaces
 {
@@ -13,14 +18,13 @@ namespace DataLayer.Interfaces
         /// Initializes the list of planets.
         /// </summary>
         /// <returns>A list of planets</returns>
-        public IEnumerable<T> CalculatePlanets();
+        public IEnumerable<T> CreatePlanets();
 
         /// <summary>
         /// Increments the time of the internal universal time used for calculations
         /// </summary>
         /// <param name="seconds">The number of seconds to increment the time.</param>
         public void IncrementTimeBy(double seconds);
-        void SetTime(DateTime currentTime);
 
         
         public double GetLST();

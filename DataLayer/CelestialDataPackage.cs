@@ -28,11 +28,8 @@ namespace DataLayer
         /// <summary>
         /// The calculator used to determine the position of the stars.
         /// </summary>
-        public IEquatorialCalculator<HorizontalStar> StarCalculator { get; }
-        /// <summary>
-        /// The calculator used to determine the position of the Messier Deep Space Objects
-        /// </summary>
-        public IEquatorialCalculator<HorizontalMessierObject> MessierCalculator { get; }
+        public IEquatorialCalculator Calculator { get; }
+        
 
 
         /// <summary>
@@ -47,17 +44,7 @@ namespace DataLayer
         /// A collection of solar planets in horizontal coordinate form.
         /// </summary>
         public IEnumerable<HorizontalPlanet>? Planets { get; }
-        /// <summary>
-        /// The calculator used to determine planetary data.
-        /// </summary>
-        public IPlanetaryCalculator<HorizontalPlanet> PlanetaryCalculator { get; }
-        /// <summary>
-        /// The calculator used to determine moon data.
-        /// </summary>
-        public IMoonCalculator MoonCalculator { get; }
-        /// <summary>
-        /// The moon in horizontal coordinate form
-        /// </summary>
+        
         public HorizontalMoon Moon { get; }
 
         /// <summary>
@@ -88,35 +75,26 @@ namespace DataLayer
         /// <param name="stars">A <see cref="List{HorizontalStar}"/> to be drawn.</param>
         /// <param name="starCalculator">The star calculator for the current lat/long.</param>
         /// <param name="messierObjects">A <see cref="List{HorizontalMessierObject}"/> to be drawn.</param>
-        /// <param name="messierCalculator">The Messier Object calculator for the current lat/long.</param>
         /// <param name="constellations">A <see cref="List{Constellation}"/>s in Horizontal Coordinate form. </param>
         /// <param name="drawnStars">A <see cref="IDictionary{Int32, T}"/> that have already been drawn in the GUI.</param>
         /// <param name="planets">A <see cref="List{HorizonalPlanet}"/> in the solar system from the users perspective.</param>
-        /// <param name="planetCalculator">The Planet calculator for the current lat/long.</param>
         /// <param name="moon">A <see cref="HorizontalMoon"/>The moon object to draw.</param>
-        /// <param name="moonCalculator">The moon calculator for the current lat/long.</param>
         internal CelestialDataPackage(
             IEnumerable<HorizontalStar> stars,
-            IEquatorialCalculator<HorizontalStar> starCalculator,
+            IEquatorialCalculator starCalculator,
             IEnumerable<HorizontalMessierObject> messierObjects,
-            IEquatorialCalculator<HorizontalMessierObject> messierCalculator,
             IEnumerable<Constellation> constellations,
             ConcurrentDictionary<int, T> drawnStars,
             IEnumerable<HorizontalPlanet>? planets,
-            IPlanetaryCalculator<HorizontalPlanet> planetCalculator,
-            HorizontalMoon moon,
-            IMoonCalculator moonCalculator)
+            HorizontalMoon moon)
         {
             horizontalStars = stars;
-            StarCalculator = starCalculator;
+            Calculator = starCalculator;
             MessierObjects = messierObjects;
-            MessierCalculator = messierCalculator;
             Constellations = constellations;
             this.DrawnStars = drawnStars;
             Planets = planets;
-            this.PlanetaryCalculator = planetCalculator;
             Moon = moon;
-            MoonCalculator = moonCalculator;
         }
     };
 }

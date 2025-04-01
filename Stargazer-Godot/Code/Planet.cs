@@ -9,13 +9,10 @@ namespace Stargazer
     /// <summary>
     /// Used to draw a planet in the <see cref="SkyView"/>
     /// </summary>
-    public partial class Planet : Node3D, IHoverable
+    public partial class Planet : CelestialBody
     {
 
-        private IPlanetaryCalculator<HorizontalPlanet> calculator;
         private HorizontalPlanet horizontalPlanet;
-        private float Distance = 74f;
-        private const float radians = (float)Math.PI / 180f;
         private Texture2D planetTexture;
         private ShaderMaterial planetMaterial;
         private Globals globalVars;
@@ -74,7 +71,7 @@ namespace Stargazer
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalPlanet);
-            globalVars.LocalSiderealTime = (double)(calculator?.GetLST());
+            globalVars.LocalSiderealTime = (double)(calculator?.LST);
             Position = GetLocation();
             Rotate(Vector3.Up,Mathf.Pi);
             RotationDegrees = new Vector3(0,0,-90+34.7304f);
@@ -87,37 +84,21 @@ namespace Stargazer
             planetMesh.SetSurfaceOverrideMaterial(0,planetMaterial);
             planetMaterial.SetShaderParameter("albedo_texture",planettexture);
         }
-        
-
-        private Vector3 GetLocation()
-        {
-            var altRad = (float)horizontalPlanet.Altitude * radians;
-            var azRad = (float)horizontalPlanet.Azimuth * radians;
-            Vector3 pos = new()
-            {
-                X = Distance * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
-                Y = Distance * Mathf.Sin(altRad),
-                Z = Distance * Mathf.Cos(altRad) * Mathf.Sin(azRad)
-            };
-            return pos;
-        }
-
-
-       
 
         /// <summary>
         /// Used to receive the data and methods to perform calculations
         /// </summary>
         /// <param name="horizonalPlanet">Contains the data to perform the calculations</param>
         /// <param name="calculator">The calculator used.</param>
-        public void FromHorizontal(HorizontalPlanet horizonalPlanet, IPlanetaryCalculator<HorizontalPlanet> calculator)
+        public void FromHorizontal(HorizontalPlanet horizonalPlanet, IEquatorialCalculator calculator)
         {
+            base.FromHorizontal(horizonalPlanet, calculator);  
             this.horizontalPlanet = horizonalPlanet;
             this.calculator = calculator;
         }
 
         /// <inheritdoc/>
-        public string GetHoverText()
+        public override string GetHoverText()
         {
             String planetName;
             if (horizontalPlanet.Name.Equals("Sun"))
