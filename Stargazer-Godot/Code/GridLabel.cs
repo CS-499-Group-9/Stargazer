@@ -63,6 +63,7 @@ namespace Stargazer
                     lineInterval = 1.0f;
                     break;
             }
+            updateLabels();
         }
 
         public void HandleCameraRotationChanged(Camera3D camera)
