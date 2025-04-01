@@ -33,22 +33,25 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
-        public Camera3D Camera {  get; set; }
-
+        public ICameraStateNotifier cameraStateNotifier {  get; set; }
+        
 
         [Export] private Spawner spawner;
         [Export] private Spawner2D spawner2d;
         [Export] private Constellations constellationNode;
         [Export] private Constellations2D constellation2dNode;
-        private Planets planetNode;
+
+       
 
         private Label averageFrameLabel;
         private Label instantaneousFrameLabel;
         private Label dateLable;
         private double averageFrameTime;
 
+        private Planets planetNode;
         private Moon moon;
         private IEquatorialCalculator starConverter;
+        
         private PlaySpeed playSpeed;
         private ulong previousTicks;
 
@@ -60,20 +63,29 @@ namespace Stargazer
             base._Ready();
             //spawner = GetNode<Spawner>("Stars");
             //constellationNode = GetNode<Constellations>("Constellations");
+            cameraStateNotifier = GetNode<MainCamera>("Camera3D");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
+            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
+            var needle = GetNode<CompassNeedle>("Compass/Needle");
+            
+            
+            cameraStateNotifier.OnRotation += needle.RotationHandler;
+
+
+            dateLable = GetNode<Label>("TimeLabel");
+            
+            instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
+            averageFrameLabel = GetNode<Label>("AverageFrameLabel");
+            
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
             ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
-            dateLable = GetNode<Label>("TimeLabel");
-            averageFrameLabel = GetNode<Label>("AverageFrameLabel");
-            instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
-            Camera = GetNode<Camera3D>("Camera3D");
-            var needle = GetNode<CompassNeedle>("Compass/Needle");
-            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
-            azimuthGridlines.SetCamera(Camera);
-            needle.SetCamera(Camera);
-            gridLabel.SetCamera(Camera);
+            
+            cameraStateNotifier.OnZoomStateChanged += azimuthGridlines.HandleZoomStateChanged;
+            cameraStateNotifier.OnZoomStateChanged += gridLabel.HandleZoomStateChanged;
+            cameraStateNotifier.OnRotation += gridLabel.HandleCameraRotationChanged;
+            
             ToggleGridlines += gridLabel.ToggleGridlines;
             
             planetNode = GetNode<Planets>("Planets");
