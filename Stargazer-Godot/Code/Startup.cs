@@ -12,10 +12,13 @@ namespace Stargazer
     public partial class Startup : Control
     {
         // Just in case something changes, it's easy to find.
-        private const string viewPortPath = "SubViewportContainer/SubViewport/View";
         private StargazerRepositoryService<Star> repositoryService;
         private PlayControl playControl;
         private SkyView skyView;
+        private CelestialDataPackage<Star> dataPackage;
+        private string screenshotPath = "user://screenshot.jpeg";
+
+        [Export] private PackedScene View2D;
 
         [Export] private Control control;
         [Export] private SkyViewContainer skyViewContainer;
@@ -46,8 +49,7 @@ namespace Stargazer
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
-           
-
+            controlContainer.RequestScreenshot = TakeScreenshot;
 
             UserPositionUpdated = skyView.UpdateUserPosition;
 
@@ -67,11 +69,25 @@ namespace Stargazer
 
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
-            var dataPackage = repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            await UserPositionUpdated(await dataPackage);
+            dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
+            await UserPositionUpdated(dataPackage);
 
         }
 
+        private async void TakeScreenshot()
+        {
+            var view2D = GetNode<SubViewport>(nameof(SubViewport));
+            var skyView2d = view2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage);
+            // Get the current viewport as an Image
+            
+            Image screenshotImage = view2D.GetTexture().GetImage();
+
+            // Save the screenshot as a JPEG
+            screenshotImage.SavePng(screenshotPath);
+            GD.Print($"Screenshot saved to {screenshotPath}");
+            
+        }
 
     }
 }

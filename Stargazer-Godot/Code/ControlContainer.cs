@@ -1,3 +1,4 @@
+using DataLayer;
 using Godot;
 using Stargazer;
 using System;
@@ -5,19 +6,33 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-	public Action<bool> AzimuthToggled;
+    
+    public Action<bool> AzimuthToggled;
     public Action<bool> EquatorialToggled;
 	public Action<bool> EquatorLinesToggled;
 	public Action<bool> ConstellationsToggled;
 	public Action<bool> ConstellationLabelsToggled;
 	public Action<bool> MessierObjectsTogggled;
 	public Func<double, double, DateTime, Task> UserPositionUpdated;
+    public Action RequestScreenshot;
+
+
+
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("screenshot_key"))
+        {
+            RequestScreenshot();
+        }
+    }
+
+
 
     /// <summary>
     /// Receives the <see cref="Signal"/> from the <see cref="AzimuthButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
     /// <param name="value"></param>
-	public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
+    public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
 
     public void ToggleEquatorial(bool value) {EquatorialToggled?.Invoke(value); }
 
@@ -42,6 +57,8 @@ public partial class ControlContainer : Control
         GD.Print("Update");
         await UserPositionUpdated(coords.latitude, coords.longitude, DateTime.UtcNow);
     }
+
+    
 
     private struct HuntsvilleCoordinates
     {

@@ -75,10 +75,10 @@ namespace Stargazer
                         Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
                         break;
                     case MouseButton.Left:
+                        middleMouseClicked = mouseButton.Pressed;
 
                         break;
                     case MouseButton.Middle:
-                        middleMouseClicked = mouseButton.Pressed;
                         break;
                     case MouseButton.WheelUp:
                         ZoomIn();
@@ -147,10 +147,7 @@ namespace Stargazer
         {
             float RotationSpeed = 1f;
             // Check if the 'screenshot_key' action is pressed
-            if (Input.IsActionJustPressed("screenshot_key"))
-            {
-                TakeScreenshot();
-            }
+            
 
             if (TrackedBody is not null)
             {
@@ -197,15 +194,6 @@ namespace Stargazer
             }
             
         }
-        private void TakeScreenshot()
-        {
-            // Get the current viewport as an Image
-            Viewport viewport = GetNode<Viewport>("/root/Control/SubViewport2");
-            Image screenshotImage = viewport.GetTexture().GetImage();
-
-            // Save the screenshot as a JPEG
-            screenshotImage.SavePng(screenshotPath);
-            GD.Print($"Screenshot saved to {screenshotPath}");
-        }
+        
     }
 }

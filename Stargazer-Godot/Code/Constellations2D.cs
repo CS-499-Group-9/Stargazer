@@ -56,8 +56,6 @@ namespace Stargazer
         {
             //var constellations = dataPackage.Constellations;
             mesh.ClearSurfaces();
-            foreach (var star in StarContainer.GetChildren()) { star.Free(); }
-            foreach (var line in ConstellationLabels.GetChildren()) { line.Free(); }
             mesh.SurfaceBegin(Mesh.PrimitiveType.Lines, constMesh.Material);
             Vector2 labelPos = new Vector2();
 
