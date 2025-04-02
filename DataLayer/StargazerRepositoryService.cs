@@ -4,6 +4,7 @@ using DataLayer.Interfaces;
 using DataLayer.EquatorialObjects;
 using DataLayer.Implementations;
 using System.Diagnostics;
+using CosineKitty;
 
 namespace DataLayer
 {
@@ -47,6 +48,7 @@ namespace DataLayer
         /// Dictionary of <see cref="HorizontalStar"/>s contained in constellations 
         /// </summary>
         private ConcurrentDictionary<int, HorizontalStar> ConstellationStars { get;  }
+        private CelestialDataPackage<T> CelestialDataPackage;
 
         /// <summary>
         /// Used by the <see cref="StargazerRepositoryService{T}.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)"/> method to initialize a new service
@@ -194,16 +196,17 @@ namespace DataLayer
             // Doesn't really make sense to me...
 
             CosineKittyEquatorialCalculator starConverter = new(latitude, longitude, localUserTime);
+            CosineKittyEquatorialCalculator equatorialInstant = new();
             // Calculate the stars
             await Task.Run(() =>
             {
-                CalculateStars(starConverter);
+                CalculateStars();
             });
 
             // Calculate the Messier Objects
             await Task.Run(() =>
             {
-                CalculateMessierObjects(starConverter);
+                CalculateMessierObjects();
 
             });
             var planets = starConverter.CreatePlanets();
@@ -220,8 +223,35 @@ namespace DataLayer
             
         }
 
+        public async Task<CelestialDataPackage<T>> InitializeDataPackage()
+        {
+            CosineKittyEquatorialCalculator starConverter = new();
 
-        private void CalculateMessierObjects(IEquatorialCalculator converter)
+            await Task.Run(() =>
+            {
+                CalculateStars();
+            });
+
+            // Calculate the Messier Objects
+            await Task.Run(() =>
+            {
+                CalculateMessierObjects();
+
+            });
+            var planets = starConverter.CreatePlanets();
+            var moon = starConverter.CreateMoon();
+
+            // Pack up the data and ship it back.
+            return new CelestialDataPackage<T>(
+                horizontalStars, starConverter,
+                horizontalMessierObjects,
+                constellations,
+                new ConcurrentDictionary<int, T>(),
+                planets,
+                moon);
+        }
+
+        private void CalculateMessierObjects()
         {
             List<HorizontalMessierObject> newMessier = new();
             foreach (var item in equatorialMessierObjects)
@@ -238,7 +268,7 @@ namespace DataLayer
             horizontalMessierObjects = newMessier;
         }
 
-        private void CalculateStars(IEquatorialCalculator starConverter)
+        private void CalculateStars()
         {
             List<HorizontalStar> newStars = new();
             foreach (var item in equatorialStars)

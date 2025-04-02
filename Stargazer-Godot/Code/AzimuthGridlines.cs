@@ -32,8 +32,6 @@ namespace Stargazer
 		public MeshInstance3D azimuthGridlines;
 		public MeshInstance3D equatorialGridlines;
 		private ImmediateMesh mesh,mesh2;
-		private float storedfov;
-		private Camera3D camera;
 		private StandardMaterial3D orangeMaterial;
 		private StandardMaterial3D blueMaterial;
 		private Globals globalVars;

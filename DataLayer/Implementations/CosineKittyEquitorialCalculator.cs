@@ -2,6 +2,7 @@
 using DataLayer.EquatorialObjects;
 using DataLayer.HorizontalObjects;
 using DataLayer.Interfaces;
+using System.Security;
 
 namespace DataLayer.Implementations
 {
@@ -13,8 +14,8 @@ namespace DataLayer.Implementations
     {
         private DateTime currentTime;
         private AstroTime astroTime;
+        private Observer observer;
         private readonly Dictionary<string, Body> planets;
-        private readonly Observer observer;
 
         public double LST { get { return Astronomy.SiderealTime(astroTime); } }
 
@@ -45,7 +46,9 @@ namespace DataLayer.Implementations
             astroTime = new AstroTime(universalTime);
         }
 
-
+        internal CosineKittyEquatorialCalculator() : this(0, 0, new AstroTime(2000, 1, 1, 12, 0, 0).ToUtcDateTime())
+        {
+        }
 
         /// <summary>
         /// Retrieves the internal universal time used for calculations.
@@ -140,6 +143,11 @@ namespace DataLayer.Implementations
             var phase = Astronomy.MoonPhase(astroTime);
             var eqBody = new EquatorialStar { Declination = equ.dec, RightAscension = equ.ra, Distance = equ.dist, Magnitude = illumination.mag };
             return new HorizontalMoon(eqBody);
+        }
+
+        public void SetLocation(double latitude, double longitude)
+        {
+            observer = new(latitude, longitude, 150);
         }
     }
 }

@@ -36,13 +36,12 @@ namespace Stargazer
         public async override void _Ready()
         {
 
-            repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
+            var injectionRequest =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
             var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
             var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
             skyView = skyViewContainer.SkyView;
             playControl = GetNode<PlayControl>(nameof(PlayControl));
-
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
@@ -53,6 +52,11 @@ namespace Stargazer
 
             UserPositionUpdated = skyView.UpdateUserPosition;
 
+            repositoryService = await injectionRequest;
+            dataPackage = await repositoryService.InitializeDataPackage();
+            await UserPositionUpdated.Invoke(dataPackage);
+            var multiplier = playControl.Activate();
+            skyView.SetTimeMultiplier(multiplier);
         }
 
         /// <summary>
@@ -63,14 +67,12 @@ namespace Stargazer
         /// <param name="longitude"></param>
         /// <param name="dateTime"></param>
         /// <returns>A task that can be awaited until all subscribers have been notified of the request.</returns>
-        public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
+        public void UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
 
-            var multiplier = playControl.Activate();
-            skyView.SetTimeMultiplier(multiplier);
-            dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            await UserPositionUpdated(dataPackage);
+            dataPackage.Calculator.SetLocation(latitude, longitude);
+            dataPackage.Calculator.SetTime(dateTime);
 
         }
 

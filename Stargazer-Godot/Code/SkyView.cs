@@ -67,10 +67,9 @@ namespace Stargazer
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
             var needle = GetNode<CompassNeedle>("Compass/Needle");
-            
-            
-            cameraStateNotifier.OnRotation += needle.RotationHandler;
 
+
+            cameraStateNotifier.OnRotation += needle.RotationHandler;
 
             dateLable = GetNode<Label>("TimeLabel");
             

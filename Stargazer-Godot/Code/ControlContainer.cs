@@ -13,7 +13,7 @@ public partial class ControlContainer : Control
 	public Action<bool> ConstellationsToggled;
 	public Action<bool> ConstellationLabelsToggled;
 	public Action<bool> MessierObjectsTogggled;
-	public Func<double, double, DateTime, Task> UserPositionUpdated;
+	public Action<double, double, DateTime> UserPositionUpdated;
     public Action RequestScreenshot;
 
 
@@ -53,9 +53,7 @@ public partial class ControlContainer : Control
     {
         Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         var coords = new HuntsvilleCoordinates();
-        globalVars.requestTime = DateTime.UtcNow;
-        GD.Print("Update");
-        await UserPositionUpdated(coords.latitude, coords.longitude, DateTime.UtcNow);
+        UserPositionUpdated(coords.latitude, coords.longitude, DateTime.UtcNow);
     }
 
     

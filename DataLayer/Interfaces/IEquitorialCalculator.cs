@@ -30,5 +30,7 @@ namespace DataLayer.Interfaces
         /// <param name="seconds"></param>
         void IncrementTimeBy(double seconds);
         void SetTime(DateTime userTime);
+
+        void SetLocation(double latitude, double longitude);
     }
 }
