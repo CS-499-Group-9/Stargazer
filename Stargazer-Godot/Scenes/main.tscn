@@ -23,7 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.997047)
 script = ExtResource("1_7h08j")
-View2D = ExtResource("2_p7241")
 
 [node name="SkyViewContainer" parent="." instance=ExtResource("4_ch8am")]
 layout_mode = 2

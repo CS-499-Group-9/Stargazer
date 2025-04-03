@@ -1,17 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=6 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
 [ext_resource type="StyleBox" uid="uid://bqlg72ri6emyf" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
 [ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
-[ext_resource type="Texture2D" uid="uid://c1njaripxvhel" path="res://addons/calendar_button/btn_img/btn_32x32_03.png" id="5_g42sv"]
-[ext_resource type="Texture2D" uid="uid://kuiuh5vlocbs" path="res://addons/calendar_button/btn_img/btn_32x32_04.png" id="6_6fvns"]
+[ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
 [ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="8_iply7"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("latField", "longField", "timeField", "AMorPMButton", "calendarButton")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_5vufv")
+latField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LineEdit")
+longField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LineEdit")
+timeField = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeLineEdit")
+AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeHalfSelector")
+calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -219,7 +223,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("3_bhqqh")
-metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/LongitudeButton"]
 layout_mode = 0
@@ -231,12 +234,11 @@ theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_styles/normal = ExtResource("4_f5vim")
 placeholder_text = "   Enter Longitude"
 
-[node name="DateTime" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="Time" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DateTime"]
-z_index = -120
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Time"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.05
@@ -249,20 +251,20 @@ mouse_filter = 2
 theme_override_styles/panel = ExtResource("4_f5vim")
 metadata/_edit_use_anchors_ = true
 
-[node name="Time" type="Control" parent="MarginContainer/VBoxContainer/DateTime"]
+[node name="Time" type="Control" parent="MarginContainer/VBoxContainer/Time"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DateTime/Time"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Time/Time"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 5.0
 anchor_bottom = 1.0
-offset_left = 40.0
+offset_left = 7.0
 offset_right = -6.0
 
-[node name="TimeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/DateTime/Time/HBoxContainer"]
+[node name="TimeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/Time/Time/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -270,7 +272,7 @@ size_flags_stretch_ratio = 3.68
 theme_override_styles/normal = ExtResource("3_bhqqh")
 placeholder_text = "Enter Time"
 
-[node name="TimeHalfSelector" type="OptionButton" parent="MarginContainer/VBoxContainer/DateTime/Time/HBoxContainer"]
+[node name="TimeHalfSelector" type="OptionButton" parent="MarginContainer/VBoxContainer/Time/Time/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
@@ -280,16 +282,25 @@ popup/item_0/text = "AM"
 popup/item_1/text = "PM"
 popup/item_1/id = 1
 
-[node name="CalendarButton" type="TextureButton" parent="MarginContainer/VBoxContainer/DateTime"]
+[node name="DateButton" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DateButton"]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 4.325
-offset_top = 3.345
-offset_right = 36.325
-offset_bottom = 37.345
-toggle_mode = true
-texture_normal = ExtResource("5_g42sv")
-texture_hover = ExtResource("6_6fvns")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_bhqqh")
+
+[node name="CalendarButton" parent="MarginContainer/VBoxContainer/DateButton" instance=ExtResource("6_d06d3")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 2.0
+offset_right = 172.0
+offset_bottom = 38.0
 
 [node name="EnterButton" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
@@ -304,7 +315,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_bhqqh")
+theme_override_styles/panel = ExtResource("4_f5vim")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/EnterButton"]

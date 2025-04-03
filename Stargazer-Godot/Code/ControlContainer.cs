@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-    
+    [Export] private LineEdit latField;
+    [Export] private LineEdit longField;
+    [Export] private LineEdit timeField;
+    [Export] private OptionButton AMorPMButton;
+    [Export] private Button calendarButton;
     public Action<bool> AzimuthToggled;
     public Action<bool> EquatorialToggled;
 	public Action<bool> EquatorLinesToggled;
@@ -52,20 +56,54 @@ public partial class ControlContainer : Control
 	public async void UpdateUserPosition()
     {
         Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-        var coords = new HuntsvilleCoordinates();
-        globalVars.requestTime = DateTime.UtcNow;
-        GD.Print("Update");
-        await UserPositionUpdated(coords.latitude, coords.longitude, DateTime.UtcNow);
-    }
+        string latText = latField.Text;
+        string longText = longField.Text;
 
-    
+        // Huntsville Defaults
+        double latitude = 34.7304;
+        double longitude = -86.5861;
 
-    private struct HuntsvilleCoordinates
-    {
-        public double latitude = 34.7304;
-        public double longitude = -86.5861;
-        public HuntsvilleCoordinates()
+        if (latText != "" || longText != "")
         {
+            latitude = double.Parse(latText);
+            longitude = double.Parse(longText);
         }
+        else
+        {
+            GD.PrintErr("Invalid latitude/longitude input.");
+        }
+
+        string timeText = timeField.Text.Trim();
+        string amPmText = AMorPMButton.GetItemText(AMorPMButton.Selected);
+
+        // Splitting time (HH:mm or H:mm)
+        string[] timesplit = timeText.Split(':');
+        if (timesplit.Length < 2)
+        {
+            GD.PrintErr("Invalid time format: " + timeText);
+            return;
+        }
+
+        int hour = Convert.ToInt32(timesplit[0]);
+        int minute = Convert.ToInt32(timesplit[1]);
+
+        // Convert to 24 hour
+        if (amPmText == "PM" && hour < 12)
+        {
+            hour += 12;
+        }
+        else if (amPmText == "AM" && hour == 12)
+        {
+            hour = 0;
+        }
+
+        string timeString = calendarButton.Text.Trim();
+        GD.Print(timeString);
+        String[] dateVals = timeString.Split('/');
+        var parsedDate = DateTime.Parse($"{timeString} {hour:00}:{minute:00}:00");
+        GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
+        GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
+        
+        await UserPositionUpdated(latitude, longitude, parsedDate);
     }
 }

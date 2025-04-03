@@ -8,6 +8,7 @@ namespace Stargazer
     public partial class HoverLabel : Label
     {
         private Globals globalVars;
+        private Vector2 mousePos;
 
         /// <summary>
         /// Initializes label settings
@@ -28,7 +29,7 @@ namespace Stargazer
         {
             Visible = globalVars.isHover;
             SetText(globalVars.hoverLabel);
-
+            Position = mousePos;
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace Stargazer
             if (@event is InputEventMouseMotion mouseMotion)
             {
                 var shift = new Vector2(15f, 10f);
-                Position = mouseMotion.Position + shift;
+                mousePos = mouseMotion.Position + shift;
             }
         }
     }
