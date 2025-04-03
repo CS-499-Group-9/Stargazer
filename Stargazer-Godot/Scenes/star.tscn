@@ -25,4 +25,5 @@ skeleton = NodePath("")
 script = ExtResource("2_kl77t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StarBody"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_tl7gt")

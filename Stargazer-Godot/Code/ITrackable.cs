@@ -2,7 +2,7 @@
 
 namespace Stargazer
 {
-    public interface ITrackable
+    public interface ITrackable : IHoverable
     {
         float Azimuth { get; }
         float Altitude { get; }

@@ -13,20 +13,20 @@ namespace Stargazer
     {
         // Just in case something changes, it's easy to find.
         private StargazerRepositoryService<Star> repositoryService;
-        private PlayControl playControl;
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
         private string screenshotPath = "user://screenshot.jpeg";
 
         [Export] private PackedScene View2D;
 
-        [Export] private Control control;
+        [Export] private ControlContainer controlContainer;
         [Export] private SkyViewContainer skyViewContainer;
+        [Export] private PlayControl playControl;
 
         /// <summary>
         /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
         /// </summary>
-        public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated;
+        public event Func<CelestialDataPackage<Star>, Task> OnCelestialInitialization;
 
 
         /// <summary>
@@ -38,10 +38,8 @@ namespace Stargazer
 
             var injectionRequest =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
 
-            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
-            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+           
             skyView = skyViewContainer.SkyView;
-            playControl = GetNode<PlayControl>(nameof(PlayControl));
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
             controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
@@ -49,12 +47,11 @@ namespace Stargazer
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
             controlContainer.RequestScreenshot = TakeScreenshot;
-
-            UserPositionUpdated = skyView.UpdateUserPosition;
+            OnCelestialInitialization = skyView.InitializeCelestial;
 
             repositoryService = await injectionRequest;
             dataPackage = await repositoryService.InitializeDataPackage();
-            await UserPositionUpdated.Invoke(dataPackage);
+            await OnCelestialInitialization.Invoke(dataPackage);
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
         }

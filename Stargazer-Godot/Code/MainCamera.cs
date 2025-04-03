@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Stargazer
 {
@@ -28,6 +29,7 @@ namespace Stargazer
         private Vector2 mousePosition;
         private Vector3 rayStart, rayEnd;
 
+
         private ZoomState zoomState;
         private ITrackable trackedObject;
   
@@ -41,6 +43,7 @@ namespace Stargazer
         public IHoverable HoverBody { get; private set; }
         public Action<Camera3D> OnRotation { get ; set; }
         public Action<Godot.Collections.Array<Plane>> OnFustrumChanged { get ; set ; }
+        public Action<IHoverable> OnHoverableChange { get ; set ; }
 
 
         /// <inheritdoc/>
@@ -90,10 +93,6 @@ namespace Stargazer
 
             } else if (@event is InputEventMouseMotion mouseMotion)
             {
-
-                mousePosition = mouseMotion.Position;
-                rayStart = ProjectRayOrigin(mousePosition);
-                rayEnd = ProjectPosition(mousePosition, 1000);
                 if (rightClickHeld && trackedObject is null)
                 {
                     yaw -= (Fov / 75) * mouseMotion.Relative.X * MouseSensitivity;
@@ -105,7 +104,6 @@ namespace Stargazer
                     // Apply rotation
                     Rotation = new Vector3(pitch, yaw, 0);
                     OnRotation?.Invoke(this);
-                    OnFustrumChanged?.Invoke(GetFrustum());
                 }
             }
 
@@ -113,9 +111,9 @@ namespace Stargazer
             if(HoverBody is not null){
                 GD.Print("I'm tracking you now!");
                 TrackedBody = (ITrackable)HoverBody;
-                ScreenOffset = UnprojectPosition(TrackedBody.GlobalTransform.Origin);
+                //ScreenOffset = UnprojectPosition(TrackedBody.GlobalTransform.Origin);
                 middleMouseClicked = false;
-                tracking = !tracking;
+                tracking = true;
             } else { TrackedBody = null; }
             
         }
@@ -176,24 +174,24 @@ namespace Stargazer
             rayEnd = ProjectPosition(mousePosition, 1000);
             if (rightClickHeld) return;
             var result = worldSpace.IntersectRay(PhysicsRayQueryParameters3D.Create(rayStart, rayEnd));
-            if (result.Count > 0)
+            if (result.Count > 0 )
             {
                 globalVars.isHover = true;
                 Node3D collider = result["collider"].As<Node3D>();
 
                 HoverBody = (IHoverable)collider.GetParentNode3D();
-                globalVars.hoverLabel = HoverBody.GetHoverText();
+                OnHoverableChange?.Invoke(HoverBody);
             }
-            else
+            else if (HoverBody is not null) 
             {
-                globalVars.isHover = false;
-                if (!tracking)
-                {
-                    HoverBody = null;
-                }
+                //.globalVars.isHover = false;
+                HoverBody = null;
+                OnHoverableChange?.Invoke(null);
             }
             
         }
+
+
         
     }
 }

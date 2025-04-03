@@ -48,7 +48,7 @@ namespace Stargazer
         }
 
         /// <summary>
-        /// Passed as a <see cref="Delegate"/> to <see cref="Startup.UserPositionUpdated"/> to be notified when a new star scene is ready to be drawn.
+        /// Passed as a <see cref="Delegate"/> to <see cref="Startup.OnCelestialInitialization"/> to be notified when a new star scene is ready to be drawn.
         /// This should be done using the += operator to be notified in addition to other components in the viewport.
         /// </summary>
         /// <param name="dataPackage"></param>

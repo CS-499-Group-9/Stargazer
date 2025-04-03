@@ -13,5 +13,7 @@ namespace Stargazer
         public IHoverable HoverBody { get; }
 
         public Action<Camera3D> OnRotation { get; set; }
+
+        public Action<IHoverable> OnHoverableChange { get; set; }
     }
 }

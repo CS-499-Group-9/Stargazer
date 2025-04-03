@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=35 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Code/PlanetTextureLoader.cs" id="12_dqnlk"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
+[ext_resource type="Script" path="res://Code/HoverLabel.cs" id="19_4oofu"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
@@ -73,11 +74,19 @@ shader_parameter/radius = 0.4
 shader_parameter/thickness = 0.01
 shader_parameter/feather = 0.01
 
-[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode")]
+[sub_resource type="Theme" id="Theme_h54og"]
+default_font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_mo4vo"]
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
+
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode", "HoverLabel")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
 spawner = NodePath("Stars")
 constellationNode = NodePath("Constellations")
+HoverLabel = NodePath("Node3D/HoverLabel")
 
 [node name="GridLabel" type="Control" parent="."]
 visible = false
@@ -206,3 +215,15 @@ offset_top = 133.0
 offset_right = 192.0
 offset_bottom = 162.0
 text = "Instantaeous Time"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="HoverLabel" type="Label" parent="Node3D"]
+offset_right = 31.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = SubResource("Theme_h54og")
+text = "star"
+label_settings = SubResource("LabelSettings_mo4vo")
+script = ExtResource("19_4oofu")

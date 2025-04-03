@@ -8,7 +8,8 @@ namespace Stargazer
     public partial class HoverLabel : Label
     {
         private Globals globalVars;
-
+        private Vector2 shift = new (15f, 10f);
+        IHoverable hoveredBody;
         /// <summary>
         /// Initializes label settings
         /// </summary>
@@ -26,22 +27,15 @@ namespace Stargazer
         /// <param name="delta">Unused</param>
         public override void _Process(double delta)
         {
-            Visible = globalVars.isHover;
-            SetText(globalVars.hoverLabel);
+            Position = GetViewport().GetMousePosition() + shift;
+            SetText(hoveredBody?.GetHoverText() ?? "");
+            Visible = hoveredBody is not null;
 
         }
 
-        /// <summary>
-        /// Detects mouse motion and places the label next to the cursor.
-        /// </summary>
-        /// <param name="event"></param>
-        public override void _Input(InputEvent @event)
+        public void HoverableChangeHandler(IHoverable hoverable)
         {
-            if (@event is InputEventMouseMotion mouseMotion)
-            {
-                var shift = new Vector2(15f, 10f);
-                Position = mouseMotion.Position + shift;
-            }
+            hoveredBody = hoverable;
         }
     }
 }

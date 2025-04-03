@@ -33,14 +33,15 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
-        public ICameraStateNotifier cameraStateNotifier {  get; set; }
+        public ICameraStateNotifier CameraStateNotifier {  get; set; }
+        
         
 
         [Export] private Spawner spawner;
         [Export] private Spawner2D spawner2d;
         [Export] private Constellations constellationNode;
         [Export] private Constellations2D constellation2dNode;
-
+        [Export] private HoverLabel HoverLabel { get; set; }   
        
 
         private Label averageFrameLabel;
@@ -63,14 +64,14 @@ namespace Stargazer
             base._Ready();
             //spawner = GetNode<Spawner>("Stars");
             //constellationNode = GetNode<Constellations>("Constellations");
-            cameraStateNotifier = GetNode<MainCamera>("Camera3D");
+            CameraStateNotifier = GetNode<MainCamera>("Camera3D");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
             var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
             var needle = GetNode<CompassNeedle>("Compass/Needle");
 
 
-            cameraStateNotifier.OnRotation += needle.RotationHandler;
-
+            CameraStateNotifier.OnRotation += needle.RotationHandler;
+            CameraStateNotifier.OnHoverableChange += HoverLabel.HoverableChangeHandler;
             dateLable = GetNode<Label>("TimeLabel");
             
             instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
@@ -81,9 +82,9 @@ namespace Stargazer
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
             ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
             
-            cameraStateNotifier.OnZoomStateChanged += azimuthGridlines.HandleZoomStateChanged;
-            cameraStateNotifier.OnZoomStateChanged += gridLabel.HandleZoomStateChanged;
-            cameraStateNotifier.OnRotation += gridLabel.HandleCameraRotationChanged;
+            CameraStateNotifier.OnZoomStateChanged += azimuthGridlines.HandleZoomStateChanged;
+            CameraStateNotifier.OnZoomStateChanged += gridLabel.HandleZoomStateChanged;
+            CameraStateNotifier.OnRotation += gridLabel.HandleCameraRotationChanged;
             
             ToggleGridlines += gridLabel.ToggleGridlines;
             
@@ -131,7 +132,7 @@ namespace Stargazer
         /// </summary>
         /// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/></param>
         /// <returns><see cref="Task"/> that can be awaited.</returns>
-        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+        public async Task InitializeCelestial(CelestialDataPackage<Star> dataPackage)
         {
             starConverter = dataPackage.Calculator;
             dateLable.Text = starConverter.CurrentTime.ToString();

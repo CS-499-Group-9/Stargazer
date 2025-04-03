@@ -1,4 +1,5 @@
 using Godot;
+using System;
 namespace Stargazer
 {
     /// <summary>
@@ -12,11 +13,14 @@ namespace Stargazer
         public SkyView SkyView { get; private set; }
         // Called when the node enters the scene tree for the first time.
 
+        public Action<IHoverable> OnHoverableChange { get; set; }
+
         /// <inheritdoc/>
         public override void _Ready()
         {
             base._Ready();
             SkyView = GetNode<SkyView>("SubViewport/SkyView");
+            OnHoverableChange = SkyView.CameraStateNotifier.OnHoverableChange;
         }
 
     }

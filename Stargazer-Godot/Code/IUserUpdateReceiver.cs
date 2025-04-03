@@ -4,5 +4,5 @@ using System.Threading.Tasks;
 
 public interface IUserUpdateReceiver
 {
-    public Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage);
+    public Task InitializeCelestial(CelestialDataPackage<Star> dataPackage);
 }
