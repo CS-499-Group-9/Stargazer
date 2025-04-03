@@ -7,6 +7,7 @@ namespace DataLayer.EquatorialObjects
     /// </summary>
     public abstract class EquatorialCelestialBody
     {
+        private double distance;
         /// <summary>
         /// Measured in decimal hours from the point in the sky where the sun crosses the celestial equator during the spring equinox of 2000
         /// </summary>
@@ -22,6 +23,6 @@ namespace DataLayer.EquatorialObjects
         /// <summary>
         /// Distance in light years from the earth.
         /// </summary>
-        public double Distance { get; set; }
+        public double Distance { get { return distance; } set { distance = value < 1 ? 1 : value;  } }
     }
 }

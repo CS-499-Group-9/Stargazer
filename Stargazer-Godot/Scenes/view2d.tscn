@@ -9,6 +9,9 @@
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_p52lc"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncvx4"]
+shader = ExtResource("3_vnxwx")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpq4s"]
 shader = ExtResource("3_x45qy")
 shader_parameter/center = Vector2(0.5, 0.5)
@@ -17,49 +20,47 @@ shader_parameter/angle_spacing = 15.0
 shader_parameter/circle_spacing = 0.08
 shader_parameter/circle_thickness = 0.002
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncvx4"]
-shader = ExtResource("3_vnxwx")
+[node name="SubViewport" type="SubViewport"]
+size = Vector2i(1600, 1600)
 
-[node name="View2d" type="Node2D" node_paths=PackedStringArray("Stars", "Constellations")]
+[node name="View2d" type="Node2D" parent="."]
 scale = Vector2(2, 2)
 script = ExtResource("1_hfig6")
-Stars = NodePath("Stars2D")
-Constellations = NodePath("Constellations2D")
 
-[node name="Stars2D" type="Node2D" parent="."]
+[node name="Stars2D" type="Node2D" parent="View2d"]
 z_index = -1
 position = Vector2(400, 400)
 scale = Vector2(4.265, 4.265)
 script = ExtResource("1_gbvg1")
 Star2DScene = ExtResource("2_u1lwa")
 
-[node name="Constellations2D" type="Node2D" parent="."]
+[node name="Constellations2D" type="Node2D" parent="View2d"]
 position = Vector2(400, 400)
 scale = Vector2(4.265, 4.265)
 script = ExtResource("3_h3n60")
 Star2DScene = ExtResource("2_u1lwa")
 
-[node name="Star2DContainer" type="Node2D" parent="Constellations2D"]
+[node name="Star2DContainer" type="Node2D" parent="View2d/Constellations2D"]
 z_index = -1
 
-[node name="LineMesh" type="MeshInstance2D" parent="Constellations2D"]
+[node name="LineMesh" type="MeshInstance2D" parent="View2d/Constellations2D"]
 mesh = SubResource("ImmediateMesh_p52lc")
 
-[node name="Constellation2DLabels" type="Node2D" parent="Constellations2D/LineMesh"]
+[node name="Constellation2DLabels" type="Node2D" parent="View2d/Constellations2D/LineMesh"]
 
-[node name="Grid Lines" type="ColorRect" parent="."]
-z_index = -3
-material = SubResource("ShaderMaterial_cpq4s")
-offset_right = 800.0
-offset_bottom = 800.0
-
-[node name="Inverted Circle" type="ColorRect" parent="."]
+[node name="Inverted Circle" type="ColorRect" parent="View2d"]
 z_index = 1
 material = SubResource("ShaderMaterial_ncvx4")
 offset_right = 800.0
 offset_bottom = 800.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Grid Lines" type="ColorRect" parent="View2d"]
+z_index = -3
+material = SubResource("ShaderMaterial_cpq4s")
+offset_right = 800.0
+offset_bottom = 800.0
+
+[node name="ColorRect" type="ColorRect" parent="View2d"]
 z_index = -4
 offset_right = 800.0
 offset_bottom = 800.0

@@ -14,9 +14,8 @@ namespace Stargazer
         private Camera3D camera;
         private Dictionary<int, Label> gridlabels = new Dictionary<int, Label>();
         private Dictionary<int, Label> azimuthlabels = new Dictionary<int, Label>();
-        private Plane leftPlane;
-        private float storedfov;
-        private float lineinterval;
+
+        private float lineInterval;
         private bool render;
 
         /// <summary>
@@ -25,13 +24,13 @@ namespace Stargazer
         public override void _Ready()
         {
 
-            lineinterval = 15;
+            lineInterval = 15;
             // Create labels
             for (int altitude = 0; altitude < 180; altitude++)
             {
                 Label gridlabel = new Label();
                 gridlabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.5f, 0.4f, 0.8f));
-                gridlabel.Text = $"{-90 + altitude * lineinterval}°";
+                gridlabel.Text = $"{-90 + altitude * lineInterval}°";
                 gridlabel.AddThemeFontSizeOverride("font_size", 25);
                 gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);
                 AddChild(gridlabel);
@@ -41,7 +40,7 @@ namespace Stargazer
             {
                 Label gridlabel = new Label();
                 gridlabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.5f, 0.4f, 0.8f));
-                gridlabel.Text = $"{azimuth * lineinterval}°";
+                gridlabel.Text = $"{azimuth * lineInterval}°";
                 gridlabel.AddThemeFontSizeOverride("font_size", 25);
                 gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);
                 AddChild(gridlabel);
@@ -49,42 +48,33 @@ namespace Stargazer
             }
         }
 
-        /// <summary>
-        /// Determines how to draw the labels for any given frame.
-        /// </summary>
-        /// <param name="delta">Ununsed.</param>
-        public override void _Process(double delta)
+
+        public void HandleZoomStateChanged(ZoomState zoomState)
         {
-            if (render)
+            switch (zoomState)
             {
-                leftPlane = camera.GetFrustum()[2];
+                case ZoomState.FullOut:
+                    lineInterval = 15.0f;
+                    break;
+                case ZoomState.Middle:
+                    lineInterval = 10.0f;
+                    break;
+                case ZoomState.FullIn:
+                    lineInterval = 1.0f;
+                    break;
+            }
+            updateLabels();
+        }
+
+        public void HandleCameraRotationChanged(Camera3D camera)
+        {
                 const float radians = Mathf.Pi / 180.0f;
+                var leftPlane = camera.GetFrustum()[2];
                 var plane = leftPlane.Normal;
                 var a = plane[0];
                 var b = plane[1];
                 var c = plane[2];
 
-                if (camera.Fov < 15 && storedfov >= 15)
-                {
-                    lineinterval = 1.0f;
-                    updateLabels();
-                }
-                else if (camera.Fov > 15 && storedfov <= 15)
-                {
-                    lineinterval = 10.0f;
-                    updateLabels();
-                }
-                else if (camera.Fov < 35 && storedfov >= 35)
-                {
-                    lineinterval = 10.0f;
-                    updateLabels();
-                }
-                else if (camera.Fov > 35 && storedfov <= 35)
-                {
-                    lineinterval = 15.0f;
-                    updateLabels();
-                }
-                storedfov = camera.Fov;
                 var countdraw = 0;
                 foreach (var kvp in gridlabels)
                 {
@@ -92,7 +82,7 @@ namespace Stargazer
                     int index = kvp.Key;
                     Label label = kvp.Value;
 
-                    float altitude = -90 + index * lineinterval;
+                    float altitude = -90 + index * lineInterval;
                     float maxaltdraw = (camera.Rotation.X) * 180.0f / Mathf.Pi + camera.Fov;
                     float minaltdraw = (camera.Rotation.X) * 180.0f / Mathf.Pi - camera.Fov;
                     if (altitude <= 75 && altitude >= -75 && altitude < maxaltdraw && altitude > minaltdraw)
@@ -128,13 +118,12 @@ namespace Stargazer
 
                 //Draw Azimuth Labels
                 int flip = 1;
-                Plane bottomPlane = camera.GetFrustum()[5]; // Bottom plane
                 Vector3 nearNormal = -camera.Basis.Z;
                 if (nearNormal.Z >= 0)
                 {
                     flip = -1;
                 }
-
+                var bottomPlane = camera.GetFrustum()[5]; // Bottom plane
                 Vector3 bottomNormal = bottomPlane.Normal;
                 // Direction of the intersection line
                 Vector3 direction = nearNormal.Cross(bottomNormal);
@@ -155,7 +144,7 @@ namespace Stargazer
                     int index = kvp.Key;
                     Label label = kvp.Value;
                     label.Visible = false;
-                    float azimuth = index * lineinterval;
+                    float azimuth = index * lineInterval;
                     if (azimuth >= 360) { break; }
                     if (azimuth != 0)
                     {
@@ -196,20 +185,9 @@ namespace Stargazer
                         label.Position = new Vector2(placement2d[0], placement2d[1] - 30);
                     }
                 }
-            }
-            else
-            {
-                foreach (Label label in gridlabels.Values)
-                {
-                    label.Visible = false;
-                }
-                foreach (Label label in azimuthlabels.Values)
-                {
-                    label.Visible = false;
-                }
-            }
-        }
 
+
+        }
 
         private void updateLabels()
         {
@@ -219,27 +197,19 @@ namespace Stargazer
             foreach (Label label in gridlabels.Values)
             {
                 label.Text = $"{altitude}°";
-                altitude += lineinterval;
+                altitude += lineInterval;
                 label.Visible = false;
             }
             foreach (Label label in azimuthlabels.Values)
             {
                 label.Text = $"{azimuth}°";
-                azimuth += lineinterval;
+                azimuth += lineInterval;
                 label.Visible = false;
 
             }
         }
 
-        /// <summary>
-        /// Gets a reference for the <see cref="Camera3D"/> from the <see cref="SkyView"/>
-        /// </summary>
-        /// <param name="camera"></param>
-        public void SetCamera(Camera3D camera)
-        {
-            this.camera = camera;
-            storedfov = camera.Fov;
-        }
+
 
         /// <summary>
         /// Receives the <see cref="ControlContainer.AzimuthToggled"/> notification to show or hide the labels.
@@ -247,7 +217,7 @@ namespace Stargazer
         /// <param name="showLines"></param>
         public void ToggleGridlines(bool showLines)
         {
-            render = showLines;
+            Visible = showLines;
 
         }
     }

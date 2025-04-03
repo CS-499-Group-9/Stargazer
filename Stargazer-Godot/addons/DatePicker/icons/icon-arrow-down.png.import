@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnb7ob3gkt33c"
-path="res://.godot/imported/syncTime.png-602d622395d4040db5ea9128a9affd0a.ctex"
+uid="uid://b2g7u8npvy5gv"
+path="res://.godot/imported/icon-arrow-down.png-2681498495de5e6619b27034a197e979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/syncTime.png"
-dest_files=["res://.godot/imported/syncTime.png-602d622395d4040db5ea9128a9affd0a.ctex"]
+source_file="res://addons/DatePicker/icons/icon-arrow-down.png"
+dest_files=["res://.godot/imported/icon-arrow-down.png-2681498495de5e6619b27034a197e979.ctex"]
 
 [params]
 

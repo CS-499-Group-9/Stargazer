@@ -79,31 +79,29 @@ namespace Stargazer
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
-			if (camera == null) return;
-            if (camera.Fov < 15 && storedfov >= 15){
-				latitudeInterval = 1.0f;
-				longitudeInterval = 1.0f;
-			}
-            else if (camera.Fov > 15 && storedfov <= 15){
-				latitudeInterval = 10.0f;
-				longitudeInterval = 10.0f;
-			}
-            else if (camera.Fov < 35 && storedfov >= 35){
-				latitudeInterval = 10.0f;
-				longitudeInterval = 10.0f;
-			}
-			else if (camera.Fov > 35 && storedfov <= 35){
-				latitudeInterval = 15.0f;
-				longitudeInterval = 15.0f;
-			}
+           
 			mesh.ClearSurfaces();
 			mesh2.ClearSurfaces();
 			DrawLongitudeLines(mesh,mesh2);
 			DrawLatitudeLines(mesh,mesh2);
 
-			storedfov = camera.Fov;
         }
 
+		public void HandleZoomStateChanged(ZoomState zoomState)
+		{
+			switch (zoomState)
+			{
+				case ZoomState.FullOut:
+					latitudeInterval = longitudeInterval = 15.0f;
+					break;
+				case ZoomState.Middle:
+					latitudeInterval = longitudeInterval = 10.0f;
+					break;
+				case ZoomState.FullIn:
+					latitudeInterval = longitudeInterval = 1.0f;
+					break;
+			}
+		}
         /// <summary>
         /// The method used receive the <see cref="ControlContainer.AzimuthToggled"/> notification.
         /// </summary>
@@ -117,15 +115,7 @@ namespace Stargazer
 			equatorialGridlines.Visible = showLines;
 		}
 
-        /// <summary>
-        /// Gets a reference to the <see cref="Camera3D"/> from the <see cref="SkyView"/>
-        /// </summary>
-        /// <param name="camera"></param>
-        public void SetCamera(Camera3D camera)
-        {
-            this.camera = camera;
-            storedfov = camera.Fov;
-        }
+
 
 
 		// Function to draw longitude lines

@@ -11,7 +11,6 @@ namespace Stargazer
         /// The needle to display
         /// </summary>
         [Export] public Node2D needle;
-        private Camera3D camera;
 
         /// <summary>
         /// Gets a reference to the <see cref="Camera3D"/> in the <see cref="SkyView"/>
@@ -19,19 +18,16 @@ namespace Stargazer
         public override void _Ready()
         {
             Node viewNode = GetTree()?.Root.FindChild("View", true, false);
-            camera = (Camera3D)viewNode?.GetNode("Camera3D");
+
         }
 
-        public void SetCamera(Camera3D camera) { this.camera = camera; }
-
-        /// <summary>
-        /// Rotates the compass needle as the user view is rotated.
-        /// </summary>
-        /// <param name="delta"></param>
-        public override void _Process(double delta)
+ 
+        public void RotationHandler(Camera3D camera)
         {
             float yRotationDegrees = Mathf.RadToDeg(camera.Rotation.Y);
             needle.RotationDegrees = yRotationDegrees + 90; // Camera starts West for some reason.
         }
+
+
     }
 }

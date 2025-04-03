@@ -21,7 +21,7 @@ namespace Stargazer
 		/// </summary>
 		/// <param name="planets">The list of planets to draw</param>
 		/// <param name="planetaryCalculator">The calculator used to determine position/phase.</param>
-		public void DrawPlanets(IEnumerable<HorizontalPlanet> planets, IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator)
+		public void DrawPlanets(IEnumerable<HorizontalPlanet> planets, IEquatorialCalculator planetaryCalculator)
 		{
 			foreach (var child in GetChildren()) { child.Free(); }
 

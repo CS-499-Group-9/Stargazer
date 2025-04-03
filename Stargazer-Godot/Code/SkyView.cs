@@ -33,24 +33,25 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
-        public Camera3D Camera {  get; set; }
-
+        public ICameraStateNotifier cameraStateNotifier {  get; set; }
+        
 
         [Export] private Spawner spawner;
         [Export] private Spawner2D spawner2d;
         [Export] private Constellations constellationNode;
         [Export] private Constellations2D constellation2dNode;
-        private Planets planetNode;
+
+       
 
         private Label averageFrameLabel;
         private Label instantaneousFrameLabel;
         private Label dateLable;
         private double averageFrameTime;
 
+        private Planets planetNode;
         private Moon moon;
-        private IEquatorialCalculator<HorizontalStar> starConverter;
-        private IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator;
-        private IMoonCalculator moonCalculator;
+        private IEquatorialCalculator starConverter;
+        
         private PlaySpeed playSpeed;
         private ulong previousTicks;
 
@@ -62,20 +63,29 @@ namespace Stargazer
             base._Ready();
             //spawner = GetNode<Spawner>("Stars");
             //constellationNode = GetNode<Constellations>("Constellations");
+            cameraStateNotifier = GetNode<MainCamera>("Camera3D");
             var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
+            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
+            var needle = GetNode<CompassNeedle>("Compass/Needle");
+            
+            
+            cameraStateNotifier.OnRotation += needle.RotationHandler;
+
+
+            dateLable = GetNode<Label>("TimeLabel");
+            
+            instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
+            averageFrameLabel = GetNode<Label>("AverageFrameLabel");
+            
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
             ToggleGridlines += azimuthGridlines.ToggleGridlines;
             ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
-            dateLable = GetNode<Label>("TimeLabel");
-            averageFrameLabel = GetNode<Label>("AverageFrameLabel");
-            instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
-            Camera = GetNode<Camera3D>("Camera3D");
-            var needle = GetNode<CompassNeedle>("Compass/Needle");
-            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
-            azimuthGridlines.SetCamera(Camera);
-            needle.SetCamera(Camera);
-            gridLabel.SetCamera(Camera);
+            
+            cameraStateNotifier.OnZoomStateChanged += azimuthGridlines.HandleZoomStateChanged;
+            cameraStateNotifier.OnZoomStateChanged += gridLabel.HandleZoomStateChanged;
+            cameraStateNotifier.OnRotation += gridLabel.HandleCameraRotationChanged;
+            
             ToggleGridlines += gridLabel.ToggleGridlines;
             
             planetNode = GetNode<Planets>("Planets");
@@ -100,14 +110,10 @@ namespace Stargazer
             {
                 var timeNow = DateTime.UtcNow;
                 starConverter?.SetTime(timeNow);
-                moonCalculator?.SetTime(timeNow);
-                planetaryCalculator?.SetTime(timeNow);  
             }
             else 
             {
                 starConverter?.IncrementTimeBy(secSinceLast * timeMultiplier);
-                moonCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
-                planetaryCalculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
             }
             
             previousTicks = totalTicks;
@@ -128,16 +134,14 @@ namespace Stargazer
         /// <returns><see cref="Task"/> that can be awaited.</returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
         {
-            starConverter = dataPackage.StarCalculator;
-            planetaryCalculator = dataPackage.PlanetaryCalculator;
+            starConverter = dataPackage.Calculator;
             dateLable.Text = starConverter.CurrentTime.ToString();
-            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar, dataPackage.StarCalculator);
+            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar,starConverter);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
-            planetNode.DrawPlanets(dataPackage.Planets, dataPackage.PlanetaryCalculator);
+            planetNode.DrawPlanets(dataPackage.Planets, starConverter);
             moon?.Free();
-            moonCalculator = dataPackage.MoonCalculator;
             moon = MoonScene.Instantiate<Moon>();
-            moon.FromHorizontal(dataPackage.Moon, moonCalculator);
+            moon.FromHorizontal(dataPackage.Moon, starConverter);
             previousTicks = Time.GetTicksMsec();
             AddChild(moon);
         }

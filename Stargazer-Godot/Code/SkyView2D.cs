@@ -7,7 +7,7 @@ namespace Stargazer
     /// <summary>
     /// Used to create the 2D star scene (for screenshot export). 
     /// </summary>
-    public partial class SkyView2D : Node2D, IUserUpdateReceiver
+    public partial class SkyView2D : Node2D
     {
         private Spawner2D Stars;
         private Constellations2D Constellations;

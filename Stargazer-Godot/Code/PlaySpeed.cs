@@ -22,7 +22,7 @@ namespace Stargazer
             timeSpan = TimeSpan.FromSeconds(1);
         }
 
-        public void SyncronizeTime()
+        public void SynchronizeTime()
         {
             RealTime();
             IsSyncronized = true;

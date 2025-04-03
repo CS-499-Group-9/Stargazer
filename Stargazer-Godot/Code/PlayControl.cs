@@ -31,9 +31,9 @@ public partial class PlayControl : Control
         UpdateMultiplierLabel() ;
     }
 
-    public void OnSyncronizeTime() 
+    public void OnSynchronizeTime() 
     {
-        multiplier.SyncronizeTime();
+        multiplier.SynchronizeTime();
         UpdateMultiplierLabel(); 
     }
 

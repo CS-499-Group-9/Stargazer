@@ -8,10 +8,10 @@ namespace Stargazer
     /// <summary>
     /// A moon object to be drawn.
     /// </summary>
-    public partial class Moon : Node3D, IHoverable
+    public partial class Moon : CelestialBody
     {
         private HorizontalMoon horizontalMoon;
-        private IMoonCalculator calculator;
+        private IEquatorialCalculator calculator;
         private float Distance = 74f;
         private const float radians = (float)Math.PI / 180f;
     
@@ -47,7 +47,7 @@ namespace Stargazer
         }
 
 
-        public string GetHoverText()
+        public override string GetHoverText()
         {
             return $"The Moon\n" +
             $"Altitude {horizontalMoon.Altitude}\n" +
@@ -77,11 +77,12 @@ namespace Stargazer
         /// </summary>
         /// <param name="moon">The object to base the calculations on</param>
         /// <param name="moonCalculator">The calculator used to perform the calculations.</param>
-        public void FromHorizontal(HorizontalMoon moon, IMoonCalculator moonCalculator)
+        public void FromHorizontal(HorizontalMoon moon, IEquatorialCalculator moonCalculator)
         {
             horizontalMoon = moon;
             calculator = moonCalculator;
         }
+
     }
 }
 
