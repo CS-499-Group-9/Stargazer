@@ -12,7 +12,6 @@ namespace Stargazer
     {
         private HorizontalMoon horizontalMoon;
         private IEquatorialCalculator calculator;
-        private float Distance = 74f;
         private const float radians = (float)Math.PI / 180f;
     
 
@@ -21,7 +20,7 @@ namespace Stargazer
         /// </summary>
         public override void _Ready()
         {
-            Scale = new Vector3(4, 4, 4);
+            
         }
 
         /// <summary>
@@ -51,7 +50,8 @@ namespace Stargazer
         {
             return $"The Moon\n" +
             $"Altitude {horizontalMoon.Altitude}\n" +
-            $"Azimuth {horizontalMoon.Azimuth}";
+            $"Azimuth {horizontalMoon.Azimuth}\n" +
+            $"Distance: {horizontalMoon.Distance}";
         }
 
         public Transform3D getGlobalTransform()
@@ -59,18 +59,7 @@ namespace Stargazer
             return GlobalTransform;
         }
 
-        private Vector3 GetLocation()
-        {
-            var altRad = (float)horizontalMoon.Altitude * radians;
-            var azRad = (float)horizontalMoon.Azimuth * radians;
-            Vector3 pos = new()
-            {
-                X = Distance * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
-                Y = Distance * Mathf.Sin(altRad),
-                Z = Distance * Mathf.Cos(altRad) * Mathf.Sin(azRad)
-            };
-            return pos;
-        }
+
 
         /// <summary>
         /// Passes in data necessary to perform calculations.
@@ -79,6 +68,7 @@ namespace Stargazer
         /// <param name="moonCalculator">The calculator used to perform the calculations.</param>
         public void FromHorizontal(HorizontalMoon moon, IEquatorialCalculator moonCalculator)
         {
+            base.FromHorizontal(moon, moonCalculator);
             horizontalMoon = moon;
             calculator = moonCalculator;
         }

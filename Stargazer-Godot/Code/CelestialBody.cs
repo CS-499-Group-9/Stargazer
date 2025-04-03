@@ -30,17 +30,18 @@ namespace Stargazer
         /// <summary>
         /// Distance from (0, 0, 0)
         /// </summary>
-        public float Distance { get { return 74f; } }
+        public float Distance { get { return (float)horizontalBody.Distance; } }
 
         protected Vector3 GetLocation()
         {
+            var dist = (float)(10+20*Math.Log10(5 + horizontalBody.Distance));
             var altRad = Altitude * radians;
             var azRad = Azimuth * radians;
             Vector3 pos = new()
             {
-                X = Distance * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
-                Y = Distance * Mathf.Sin(altRad),
-                Z = Distance * Mathf.Cos(altRad) * Mathf.Sin(azRad)
+                X = dist * (Mathf.Cos(azRad) * Mathf.Cos(altRad)),
+                Y = dist * Mathf.Sin(altRad),
+                Z = dist * Mathf.Cos(altRad) * Mathf.Sin(azRad)
             };
             return pos;
         }

@@ -16,6 +16,7 @@ namespace DataLayer.Implementations
         private AstroTime astroTime;
         private Observer observer;
         private readonly Dictionary<string, Body> planets;
+        private const double AUConversion = 63241.0771;
 
         public double LST { get { return Astronomy.SiderealTime(astroTime); } }
 
@@ -72,12 +73,13 @@ namespace DataLayer.Implementations
         public void UpdatePositionOf(HorizontalBody hoBody)
         {
             var eqBody = hoBody.EquatorialBody;
-            Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance);
+            Astronomy.DefineStar(Body.Star1, eqBody.RightAscension, eqBody.Declination, eqBody.Distance >= 1 ? eqBody.Distance : 1);
             Equatorial eq = Astronomy.Equator(Body.Star1, astroTime, observer, EquatorEpoch.J2000, Aberration.Corrected);
             // Determine that stars horizontal coordinates
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
             hoBody.Altitude = hor.altitude;
             hoBody.Azimuth = hor.azimuth;
+            hoBody.Distance = eq.dist/AUConversion;
         }
 
         ///<inheritdoc/>
@@ -92,6 +94,7 @@ namespace DataLayer.Implementations
                 planet.Azimuth = hor.azimuth;
                 planet.Altitude = hor.altitude;
                 planet.PhaseAngle = illumination.phase_angle;
+                planet.Distance = equ.dist/AUConversion;
             }
         }
 
@@ -105,6 +108,7 @@ namespace DataLayer.Implementations
             moon.Azimuth = hor.azimuth;
             moon.Altitude = hor.altitude;
             moon.Phase = phase;
+            moon.Distance = equ.dist / AUConversion;
         }
 
         /// <summary>

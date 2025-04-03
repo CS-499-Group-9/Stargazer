@@ -24,7 +24,7 @@ namespace Stargazer
         public override void _Ready()
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-            Scale = new Vector3(3,3,3);
+
             // planetTextureArray = new Texture2D[8];
             // // planetTextureArray[0] = LoadTexture("res://Textures/mercurymap.jpg");
             // planetTextureArray[1] = LoadTexture("res://Textures/venusmap.jpg"); 
@@ -114,8 +114,9 @@ namespace Stargazer
                 planetName = horizontalPlanet.Name;
             }
             return $"{planetName}\n" +
-            $"Altitude {horizontalPlanet.Altitude}\n" +
-            $"Azimuth {horizontalPlanet.Azimuth}";
+            $"Altitude: {horizontalPlanet.Altitude}\n" +
+            $"Azimuth: {horizontalPlanet.Azimuth}\n" +
+            $"Distance: {horizontalPlanet.Distance}";
         }
         
         

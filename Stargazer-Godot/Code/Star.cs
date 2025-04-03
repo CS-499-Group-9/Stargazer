@@ -51,6 +51,7 @@ namespace Stargazer
             this.horizontalStar = star;
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
+
         }
 
 
@@ -67,7 +68,8 @@ namespace Stargazer
             return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n" +
             $"HIP {HipparcosId}\n" +
             $"Altitude {Altitude}\n" +
-            $"Azimuth {Azimuth}";
+            $"Azimuth {Azimuth}\n" + 
+            $"Distance: {Distance}";
         }
 
         public Transform3D getGlobalTransform()

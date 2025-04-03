@@ -39,7 +39,7 @@ namespace DataLayer.HorizontalObjects
         /// <summary>
         /// The distance (in lightyears) from the star to earth
         /// </summary>
-        public double Distance { get { return EquatorialBody.Distance; } }
+        public double Distance { get { return EquatorialBody.Distance; } set { EquatorialBody.Distance = value; } }
 
     }
 }

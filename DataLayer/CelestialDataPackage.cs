@@ -47,6 +47,7 @@ namespace DataLayer
         
         public HorizontalMoon Moon { get; }
 
+        public Tuple<double, double> DistanceRange { get; }
         /// <summary>
         /// Searches the dictionary for a <c>HorizontalStar</c> using the Hip ID provided. If found, converts it to a T star, stores it and returns it.
         /// If not found, retrieves it from the dictionary of stars already converted and returns it.
@@ -95,6 +96,9 @@ namespace DataLayer
             this.DrawnStars = drawnStars;
             Planets = planets;
             Moon = moon;
+
+            var min = stars.Min(s => s.Distance);
+            var max = stars.Max(s => s.Distance);
         }
     };
 }
