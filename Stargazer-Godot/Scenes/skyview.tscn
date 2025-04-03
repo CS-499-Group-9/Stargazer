@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dci0aiov00oqt"]
+[gd_scene load_steps=22 format=3 uid="uid://dci0aiov00oqt"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_p4gdt"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="2_ftmjj"]
+[ext_resource type="PackedScene" uid="uid://dq3hej6nwetmm" path="res://Scenes/moon.tscn" id="2_m63i5"]
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="3_f0pv8"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="4_ueuxr"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="5_6m3em"]
@@ -50,8 +51,11 @@ albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
 
-[node name="SkyView" type="Node3D"]
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode")]
 script = ExtResource("1_p4gdt")
+MoonScene = ExtResource("2_m63i5")
+spawner = NodePath("Stars")
+constellationNode = NodePath("Constellations")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

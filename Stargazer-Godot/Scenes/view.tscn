@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="Script" path="res://Code/GridLabel.cs" id="2_oxt5r"]
-[ext_resource type="PackedScene" uid="uid://dq3hej6nwetmm" path="res://Scenes/moon.tscn" id="2_wg1wp"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
