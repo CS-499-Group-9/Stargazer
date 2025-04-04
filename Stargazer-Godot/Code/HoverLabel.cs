@@ -7,7 +7,6 @@ namespace Stargazer
     /// </summary>
     public partial class HoverLabel : Label
     {
-        private Globals globalVars;
         private Vector2 shift = new (15f, 10f);
         private IHoverable hoveredBody;
         /// <summary>
@@ -15,8 +14,6 @@ namespace Stargazer
         /// </summary>
         public override void _Ready()
         {
-            globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-            Visible = globalVars.isHover;
             AddThemeFontSizeOverride("font_size", 25);
             LabelSettings.FontSize = 30;
         }

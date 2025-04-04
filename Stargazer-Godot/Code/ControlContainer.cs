@@ -88,7 +88,6 @@ public partial class ControlContainer : Control
     /// </summary>
 	public async void UpdateUserPosition()
     {
-        Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         string latText = latField.Text;
         string longText = longField.Text;
 

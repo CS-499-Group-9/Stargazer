@@ -37,7 +37,6 @@ namespace Stargazer
 		private StandardMaterial3D orangeMaterial;
 		private StandardMaterial3D blueMaterial;
 		private IEquatorialCalculator calculator;
-		private Globals globalVars;
         float latitude = 90+34.7304f;
         float longitude = -86.5861f;
 		//const float theta = 30;
@@ -46,7 +45,6 @@ namespace Stargazer
 		/// </summary>
 		public override void _Ready()
 		{
-        	globalVars = GetNode<Globals>("/root/Globals"); // Import globals
 			orangeMaterial = new()
 			{
 

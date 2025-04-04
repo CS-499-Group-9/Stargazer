@@ -34,19 +34,6 @@ namespace Stargazer
         public Vector3 Position3D { get; private set; }
         public Vector2 Position2D;
 
-        private Globals globalVars;
-
-        // Called when the node enters the scene tree for the first time.
-
-        /// <summary>
-        /// Populates the field according to the field in a <see cref="HorizontalStar"/>
-        /// </summary>
-        /// <param name="star">The <see cref="HorizontalStar"/></param>
-        public override void _Ready()
-        {
-            globalVars = GetNode<Globals>("/root/Globals");
-
-        }
         public void FromHorizontal(HorizontalStar star, IEquatorialCalculator starConverter) 
         {
             base.FromHorizontal(star, starConverter);
