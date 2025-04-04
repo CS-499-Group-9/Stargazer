@@ -1,0 +1,199 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker.ICalendarView
+  commentId: T:DatePicker.ICalendarView
+  id: ICalendarView
+  parent: DatePicker
+  children:
+  - DatePicker.ICalendarView.Calendar
+  - DatePicker.ICalendarView.Next
+  - DatePicker.ICalendarView.Previous
+  - DatePicker.ICalendarView.Refresh
+  langs:
+  - csharp
+  - vb
+  name: ICalendarView
+  nameWithType: ICalendarView
+  fullName: DatePicker.ICalendarView
+  type: Interface
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ICalendarView
+    path: ../Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+    startLine: 5
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: A view that dictates how a calendar should be displayed (i.e. <xref href="DatePicker.MonthView" data-throw-if-not-resolved="false"></xref> or <xref href="DatePicker.YearView" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public interface ICalendarView
+    content.vb: Public Interface ICalendarView
+- uid: DatePicker.ICalendarView.Calendar
+  commentId: P:DatePicker.ICalendarView.Calendar
+  id: Calendar
+  parent: DatePicker.ICalendarView
+  langs:
+  - csharp
+  - vb
+  name: Calendar
+  nameWithType: ICalendarView.Calendar
+  fullName: DatePicker.ICalendarView.Calendar
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Calendar
+    path: ../Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+    startLine: 11
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: The calendar that this view is a part of.
+  example: []
+  syntax:
+    content: Calendar Calendar { get; set; }
+    parameters: []
+    return:
+      type: DatePicker.Calendar
+    content.vb: Property Calendar As Calendar
+  overload: DatePicker.ICalendarView.Calendar*
+- uid: DatePicker.ICalendarView.Previous
+  commentId: M:DatePicker.ICalendarView.Previous
+  id: Previous
+  parent: DatePicker.ICalendarView
+  langs:
+  - csharp
+  - vb
+  name: Previous()
+  nameWithType: ICalendarView.Previous()
+  fullName: DatePicker.ICalendarView.Previous()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Previous
+    path: ../Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: When the user clicks the previous button (i.e. go to the previous year).
+  example: []
+  syntax:
+    content: void Previous()
+    content.vb: Sub Previous()
+  overload: DatePicker.ICalendarView.Previous*
+- uid: DatePicker.ICalendarView.Next
+  commentId: M:DatePicker.ICalendarView.Next
+  id: Next
+  parent: DatePicker.ICalendarView
+  langs:
+  - csharp
+  - vb
+  name: Next()
+  nameWithType: ICalendarView.Next()
+  fullName: DatePicker.ICalendarView.Next()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Next
+    path: ../Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: When the user clicks the next button (i.e. go to the next year).
+  example: []
+  syntax:
+    content: void Next()
+    content.vb: Sub [Next]()
+  overload: DatePicker.ICalendarView.Next*
+- uid: DatePicker.ICalendarView.Refresh
+  commentId: M:DatePicker.ICalendarView.Refresh
+  id: Refresh
+  parent: DatePicker.ICalendarView
+  langs:
+  - csharp
+  - vb
+  name: Refresh()
+  nameWithType: ICalendarView.Refresh()
+  fullName: DatePicker.ICalendarView.Refresh()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Refresh
+    path: ../Stargazer-Godot/addons/DatePicker/ICalendarView.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: Update the view to reflect the selected date.
+  example: []
+  syntax:
+    content: void Refresh()
+    content.vb: Sub Refresh()
+  overload: DatePicker.ICalendarView.Refresh*
+references:
+- uid: DatePicker.MonthView
+  commentId: T:DatePicker.MonthView
+  href: DatePicker.MonthView.html
+  name: MonthView
+  nameWithType: MonthView
+  fullName: DatePicker.MonthView
+- uid: DatePicker.YearView
+  commentId: T:DatePicker.YearView
+  href: DatePicker.YearView.html
+  name: YearView
+  nameWithType: YearView
+  fullName: DatePicker.YearView
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker
+- uid: DatePicker.ICalendarView.Calendar*
+  commentId: Overload:DatePicker.ICalendarView.Calendar
+  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Calendar
+  name: Calendar
+  nameWithType: ICalendarView.Calendar
+  fullName: DatePicker.ICalendarView.Calendar
+- uid: DatePicker.Calendar
+  commentId: T:DatePicker.Calendar
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar
+  nameWithType: Calendar
+  fullName: DatePicker.Calendar
+- uid: DatePicker.ICalendarView.Previous*
+  commentId: Overload:DatePicker.ICalendarView.Previous
+  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Previous
+  name: Previous
+  nameWithType: ICalendarView.Previous
+  fullName: DatePicker.ICalendarView.Previous
+- uid: DatePicker.ICalendarView.Next*
+  commentId: Overload:DatePicker.ICalendarView.Next
+  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Next
+  name: Next
+  nameWithType: ICalendarView.Next
+  fullName: DatePicker.ICalendarView.Next
+- uid: DatePicker.ICalendarView.Refresh*
+  commentId: Overload:DatePicker.ICalendarView.Refresh
+  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Refresh
+  name: Refresh
+  nameWithType: ICalendarView.Refresh
+  fullName: DatePicker.ICalendarView.Refresh

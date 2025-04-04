@@ -5,18 +5,16 @@ items:
   id: CelestialDataPackage`1
   parent: DataLayer
   children:
-  - DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  - DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator,System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.HorizontalObjects.HorizontalSun)
+  - DataLayer.CelestialDataPackage`1.Calculator
   - DataLayer.CelestialDataPackage`1.Constellations
   - DataLayer.CelestialDataPackage`1.DrawnStars
   - DataLayer.CelestialDataPackage`1.GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
   - DataLayer.CelestialDataPackage`1.HorizontalStars
-  - DataLayer.CelestialDataPackage`1.MessierCalculator
   - DataLayer.CelestialDataPackage`1.MessierObjects
   - DataLayer.CelestialDataPackage`1.Moon
-  - DataLayer.CelestialDataPackage`1.MoonCalculator
-  - DataLayer.CelestialDataPackage`1.PlanetaryCalculator
   - DataLayer.CelestialDataPackage`1.Planets
-  - DataLayer.CelestialDataPackage`1.StarCalculator
+  - DataLayer.CelestialDataPackage`1.Sun
   - DataLayer.CelestialDataPackage`1.horizontalStars
   langs:
   - csharp
@@ -28,7 +26,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CelestialDataPackage
     path: ../DataLayer/CelestialDataPackage.cs
@@ -71,7 +69,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalStars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -80,10 +78,10 @@ items:
   - DataLayer
   namespace: DataLayer
   syntax:
-    content: private IEnumerable<HorizontalStar> horizontalStars
+    content: private readonly IEnumerable<HorizontalStar> horizontalStars
     return:
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
-    content.vb: Private horizontalStars As IEnumerable(Of HorizontalStar)
+    content.vb: Private ReadOnly horizontalStars As IEnumerable(Of HorizontalStar)
   nameWithType.vb: CelestialDataPackage(Of T).horizontalStars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).horizontalStars
 - uid: DataLayer.CelestialDataPackage`1.DrawnStars
@@ -100,7 +98,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawnStars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -133,7 +131,7 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalStars
     path: ../DataLayer/CelestialDataPackage.cs
@@ -152,23 +150,23 @@ items:
   overload: DataLayer.CelestialDataPackage`1.HorizontalStars*
   nameWithType.vb: CelestialDataPackage(Of T).HorizontalStars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).HorizontalStars
-- uid: DataLayer.CelestialDataPackage`1.StarCalculator
-  commentId: P:DataLayer.CelestialDataPackage`1.StarCalculator
-  id: StarCalculator
+- uid: DataLayer.CelestialDataPackage`1.Calculator
+  commentId: P:DataLayer.CelestialDataPackage`1.Calculator
+  id: Calculator
   parent: DataLayer.CelestialDataPackage`1
   langs:
   - csharp
   - vb
-  name: StarCalculator
-  nameWithType: CelestialDataPackage<T>.StarCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.StarCalculator
+  name: Calculator
+  nameWithType: CelestialDataPackage<T>.Calculator
+  fullName: DataLayer.CelestialDataPackage<T>.Calculator
   type: Property
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: StarCalculator
+    id: Calculator
     path: ../DataLayer/CelestialDataPackage.cs
     startLine: 30
   assemblies:
@@ -177,47 +175,14 @@ items:
   summary: The calculator used to determine the position of the stars.
   example: []
   syntax:
-    content: public IEquatorialCalculator<HorizontalStar> StarCalculator { get; }
+    content: public IEquatorialCalculator Calculator { get; }
     parameters: []
     return:
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
-    content.vb: Public ReadOnly Property StarCalculator As IEquatorialCalculator(Of HorizontalStar)
-  overload: DataLayer.CelestialDataPackage`1.StarCalculator*
-  nameWithType.vb: CelestialDataPackage(Of T).StarCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).StarCalculator
-- uid: DataLayer.CelestialDataPackage`1.MessierCalculator
-  commentId: P:DataLayer.CelestialDataPackage`1.MessierCalculator
-  id: MessierCalculator
-  parent: DataLayer.CelestialDataPackage`1
-  langs:
-  - csharp
-  - vb
-  name: MessierCalculator
-  nameWithType: CelestialDataPackage<T>.MessierCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.MessierCalculator
-  type: Property
-  source:
-    remote:
-      path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: MessierCalculator
-    path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 34
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: The calculator used to determine the position of the Messier Deep Space Objects
-  example: []
-  syntax:
-    content: public IEquatorialCalculator<HorizontalMessierObject> MessierCalculator { get; }
-    parameters: []
-    return:
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-    content.vb: Public ReadOnly Property MessierCalculator As IEquatorialCalculator(Of HorizontalMessierObject)
-  overload: DataLayer.CelestialDataPackage`1.MessierCalculator*
-  nameWithType.vb: CelestialDataPackage(Of T).MessierCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierCalculator
+      type: DataLayer.Interfaces.IEquatorialCalculator
+    content.vb: Public ReadOnly Property Calculator As IEquatorialCalculator
+  overload: DataLayer.CelestialDataPackage`1.Calculator*
+  nameWithType.vb: CelestialDataPackage(Of T).Calculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Calculator
 - uid: DataLayer.CelestialDataPackage`1.MessierObjects
   commentId: P:DataLayer.CelestialDataPackage`1.MessierObjects
   id: MessierObjects
@@ -232,11 +197,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierObjects
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 40
+    startLine: 37
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -265,11 +230,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellations
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 44
+    startLine: 41
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -298,11 +263,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Planets
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 48
+    startLine: 45
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -317,72 +282,6 @@ items:
   overload: DataLayer.CelestialDataPackage`1.Planets*
   nameWithType.vb: CelestialDataPackage(Of T).Planets
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Planets
-- uid: DataLayer.CelestialDataPackage`1.PlanetaryCalculator
-  commentId: P:DataLayer.CelestialDataPackage`1.PlanetaryCalculator
-  id: PlanetaryCalculator
-  parent: DataLayer.CelestialDataPackage`1
-  langs:
-  - csharp
-  - vb
-  name: PlanetaryCalculator
-  nameWithType: CelestialDataPackage<T>.PlanetaryCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.PlanetaryCalculator
-  type: Property
-  source:
-    remote:
-      path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: PlanetaryCalculator
-    path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 52
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: The calculator used to determine planetary data.
-  example: []
-  syntax:
-    content: public IPlanetaryCalculator<HorizontalPlanet> PlanetaryCalculator { get; }
-    parameters: []
-    return:
-      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-    content.vb: Public ReadOnly Property PlanetaryCalculator As IPlanetaryCalculator(Of HorizontalPlanet)
-  overload: DataLayer.CelestialDataPackage`1.PlanetaryCalculator*
-  nameWithType.vb: CelestialDataPackage(Of T).PlanetaryCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).PlanetaryCalculator
-- uid: DataLayer.CelestialDataPackage`1.MoonCalculator
-  commentId: P:DataLayer.CelestialDataPackage`1.MoonCalculator
-  id: MoonCalculator
-  parent: DataLayer.CelestialDataPackage`1
-  langs:
-  - csharp
-  - vb
-  name: MoonCalculator
-  nameWithType: CelestialDataPackage<T>.MoonCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.MoonCalculator
-  type: Property
-  source:
-    remote:
-      path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: MoonCalculator
-    path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 56
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: The calculator used to determine moon data.
-  example: []
-  syntax:
-    content: public IMoonCalculator MoonCalculator { get; }
-    parameters: []
-    return:
-      type: DataLayer.Interfaces.IMoonCalculator
-    content.vb: Public ReadOnly Property MoonCalculator As IMoonCalculator
-  overload: DataLayer.CelestialDataPackage`1.MoonCalculator*
-  nameWithType.vb: CelestialDataPackage(Of T).MoonCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).MoonCalculator
 - uid: DataLayer.CelestialDataPackage`1.Moon
   commentId: P:DataLayer.CelestialDataPackage`1.Moon
   id: Moon
@@ -397,16 +296,14 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Moon
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 60
+    startLine: 47
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: The moon in horizontal coordinate form
-  example: []
   syntax:
     content: public HorizontalMoon Moon { get; }
     parameters: []
@@ -416,6 +313,37 @@ items:
   overload: DataLayer.CelestialDataPackage`1.Moon*
   nameWithType.vb: CelestialDataPackage(Of T).Moon
   fullName.vb: DataLayer.CelestialDataPackage(Of T).Moon
+- uid: DataLayer.CelestialDataPackage`1.Sun
+  commentId: P:DataLayer.CelestialDataPackage`1.Sun
+  id: Sun
+  parent: DataLayer.CelestialDataPackage`1
+  langs:
+  - csharp
+  - vb
+  name: Sun
+  nameWithType: CelestialDataPackage<T>.Sun
+  fullName: DataLayer.CelestialDataPackage<T>.Sun
+  type: Property
+  source:
+    remote:
+      path: DataLayer/CelestialDataPackage.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Sun
+    path: ../DataLayer/CelestialDataPackage.cs
+    startLine: 49
+  assemblies:
+  - DataLayer
+  namespace: DataLayer
+  syntax:
+    content: public HorizontalSun Sun { get; }
+    parameters: []
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalSun
+    content.vb: Public ReadOnly Property Sun As HorizontalSun
+  overload: DataLayer.CelestialDataPackage`1.Sun*
+  nameWithType.vb: CelestialDataPackage(Of T).Sun
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Sun
 - uid: DataLayer.CelestialDataPackage`1.GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
   commentId: M:DataLayer.CelestialDataPackage`1.GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
   id: GetStar(System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,`0})
@@ -430,11 +358,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetStar
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 70
+    startLine: 59
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -464,25 +392,25 @@ items:
   nameWithType.vb: CelestialDataPackage(Of T).GetStar(Integer, Func(Of HorizontalStar, T))
   fullName.vb: DataLayer.CelestialDataPackage(Of T).GetStar(Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, T))
   name.vb: GetStar(Integer, Func(Of HorizontalStar, T))
-- uid: DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
-  commentId: M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
-  id: '#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Concurrent.ConcurrentDictionary{System.Int32,`0},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)'
+- uid: DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator,System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.HorizontalObjects.HorizontalSun)
+  commentId: M:DataLayer.CelestialDataPackage`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator,System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.HorizontalObjects.HorizontalSun)
+  id: '#ctor(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},DataLayer.Interfaces.IEquatorialCalculator,System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.HorizontalObjects.HorizontalSun)'
   parent: DataLayer.CelestialDataPackage`1
   langs:
   - csharp
   - vb
-  name: CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialCalculator<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEquatorialCalculator<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, T>, IEnumerable<HorizontalPlanet>?, IPlanetaryCalculator<HorizontalPlanet>, HorizontalMoon, IMoonCalculator)
-  nameWithType: CelestialDataPackage<T>.CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialCalculator<HorizontalStar>, IEnumerable<HorizontalMessierObject>, IEquatorialCalculator<HorizontalMessierObject>, IEnumerable<Constellation>, ConcurrentDictionary<int, T>, IEnumerable<HorizontalPlanet>?, IPlanetaryCalculator<HorizontalPlanet>, HorizontalMoon, IMoonCalculator)
-  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>, DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalMessierObject>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Concurrent.ConcurrentDictionary<int, T>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>?, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>, DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
+  name: CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialCalculator, IEnumerable<HorizontalMessierObject>, IEnumerable<Constellation>, IEnumerable<HorizontalPlanet>?, HorizontalMoon, HorizontalSun)
+  nameWithType: CelestialDataPackage<T>.CelestialDataPackage(IEnumerable<HorizontalStar>, IEquatorialCalculator, IEnumerable<HorizontalMessierObject>, IEnumerable<Constellation>, IEnumerable<HorizontalPlanet>?, HorizontalMoon, HorizontalSun)
+  fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalStar>, DataLayer.Interfaces.IEquatorialCalculator, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>?, DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.HorizontalObjects.HorizontalSun)
   type: Constructor
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 97
+    startLine: 87
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -492,43 +420,34 @@ items:
     All values are from the user's perspective.
   example: []
   syntax:
-    content: internal CelestialDataPackage(IEnumerable<HorizontalStar> stars, IEquatorialCalculator<HorizontalStar> starCalculator, IEnumerable<HorizontalMessierObject> messierObjects, IEquatorialCalculator<HorizontalMessierObject> messierCalculator, IEnumerable<Constellation> constellations, ConcurrentDictionary<int, T> drawnStars, IEnumerable<HorizontalPlanet>? planets, IPlanetaryCalculator<HorizontalPlanet> planetCalculator, HorizontalMoon moon, IMoonCalculator moonCalculator)
+    content: internal CelestialDataPackage(IEnumerable<HorizontalStar> stars, IEquatorialCalculator starCalculator, IEnumerable<HorizontalMessierObject> messierObjects, IEnumerable<Constellation> constellations, IEnumerable<HorizontalPlanet>? planets, HorizontalMoon moon, HorizontalSun sun)
     parameters:
     - id: stars
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
       description: A <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> to be drawn.
     - id: starCalculator
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+      type: DataLayer.Interfaces.IEquatorialCalculator
       description: The star calculator for the current lat/long.
     - id: messierObjects
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
       description: A <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> to be drawn.
-    - id: messierCalculator
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-      description: The Messier Object calculator for the current lat/long.
     - id: constellations
       type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
       description: A <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref>s in Horizontal Coordinate form.
-    - id: drawnStars
-      type: System.Collections.Concurrent.ConcurrentDictionary{System.Int32,{T}}
-      description: A <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> that have already been drawn in the GUI.
     - id: planets
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
-      description: A <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> in the solar system from the users perspective.
-    - id: planetCalculator
-      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-      description: The Planet calculator for the current lat/long.
+      description: A <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> in the solar system from the users perspective.
     - id: moon
       type: DataLayer.HorizontalObjects.HorizontalMoon
       description: A <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref>The moon object to draw.
-    - id: moonCalculator
-      type: DataLayer.Interfaces.IMoonCalculator
-      description: The moon calculator for the current lat/long.
-    content.vb: Friend Sub New(stars As IEnumerable(Of HorizontalStar), starCalculator As IEquatorialCalculator(Of HorizontalStar), messierObjects As IEnumerable(Of HorizontalMessierObject), messierCalculator As IEquatorialCalculator(Of HorizontalMessierObject), constellations As IEnumerable(Of Constellation), drawnStars As ConcurrentDictionary(Of Integer, T), planets As IEnumerable(Of HorizontalPlanet), planetCalculator As IPlanetaryCalculator(Of HorizontalPlanet), moon As HorizontalMoon, moonCalculator As IMoonCalculator)
+    - id: sun
+      type: DataLayer.HorizontalObjects.HorizontalSun
+      description: The <xref href="DataLayer.HorizontalObjects.HorizontalSun" data-throw-if-not-resolved="false"></xref>
+    content.vb: Friend Sub New(stars As IEnumerable(Of HorizontalStar), starCalculator As IEquatorialCalculator, messierObjects As IEnumerable(Of HorizontalMessierObject), constellations As IEnumerable(Of Constellation), planets As IEnumerable(Of HorizontalPlanet), moon As HorizontalMoon, sun As HorizontalSun)
   overload: DataLayer.CelestialDataPackage`1.#ctor*
-  nameWithType.vb: CelestialDataPackage(Of T).New(IEnumerable(Of HorizontalStar), IEquatorialCalculator(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEquatorialCalculator(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet), HorizontalMoon, IMoonCalculator)
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject), DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalMessierObject), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Concurrent.ConcurrentDictionary(Of Integer, T), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
-  name.vb: New(IEnumerable(Of HorizontalStar), IEquatorialCalculator(Of HorizontalStar), IEnumerable(Of HorizontalMessierObject), IEquatorialCalculator(Of HorizontalMessierObject), IEnumerable(Of Constellation), ConcurrentDictionary(Of Integer, T), IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet), HorizontalMoon, IMoonCalculator)
+  nameWithType.vb: CelestialDataPackage(Of T).New(IEnumerable(Of HorizontalStar), IEquatorialCalculator, IEnumerable(Of HorizontalMessierObject), IEnumerable(Of Constellation), IEnumerable(Of HorizontalPlanet), HorizontalMoon, HorizontalSun)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalStar), DataLayer.Interfaces.IEquatorialCalculator, System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.HorizontalObjects.HorizontalSun)
+  name.vb: New(IEnumerable(Of HorizontalStar), IEquatorialCalculator, IEnumerable(Of HorizontalMessierObject), IEnumerable(Of Constellation), IEnumerable(Of HorizontalPlanet), HorizontalMoon, HorizontalSun)
 references:
 - uid: DataLayer
   commentId: N:DataLayer
@@ -999,70 +918,21 @@ references:
   fullName: DataLayer.CelestialDataPackage<T>.HorizontalStars
   nameWithType.vb: CelestialDataPackage(Of T).HorizontalStars
   fullName.vb: DataLayer.CelestialDataPackage(Of T).HorizontalStars
-- uid: DataLayer.CelestialDataPackage`1.StarCalculator*
-  commentId: Overload:DataLayer.CelestialDataPackage`1.StarCalculator
-  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_StarCalculator
-  name: StarCalculator
-  nameWithType: CelestialDataPackage<T>.StarCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.StarCalculator
-  nameWithType.vb: CelestialDataPackage(Of T).StarCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).StarCalculator
-- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
+- uid: DataLayer.CelestialDataPackage`1.Calculator*
+  commentId: Overload:DataLayer.CelestialDataPackage`1.Calculator
+  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Calculator
+  name: Calculator
+  nameWithType: CelestialDataPackage<T>.Calculator
+  fullName: DataLayer.CelestialDataPackage<T>.Calculator
+  nameWithType.vb: CelestialDataPackage(Of T).Calculator
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Calculator
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
   parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<HorizontalStar>
-  nameWithType: IEquatorialCalculator<HorizontalStar>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>
-  nameWithType.vb: IEquatorialCalculator(Of HorizontalStar)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar)
-  name.vb: IEquatorialCalculator(Of HorizontalStar)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: )
-- uid: DataLayer.Interfaces.IEquatorialCalculator`1
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<T>
-  nameWithType: IEquatorialCalculator<T>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
-  nameWithType.vb: IEquatorialCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
-  name.vb: IEquatorialCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
   href: DataLayer.html
@@ -1085,45 +955,6 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: DataLayer.CelestialDataPackage`1.MessierCalculator*
-  commentId: Overload:DataLayer.CelestialDataPackage`1.MessierCalculator
-  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierCalculator
-  name: MessierCalculator
-  nameWithType: CelestialDataPackage<T>.MessierCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.MessierCalculator
-  nameWithType.vb: CelestialDataPackage(Of T).MessierCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).MessierCalculator
-- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<HorizontalMessierObject>
-  nameWithType: IEquatorialCalculator<HorizontalMessierObject>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalMessierObject>
-  nameWithType.vb: IEquatorialCalculator(Of HorizontalMessierObject)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalMessierObject)
-  name.vb: IEquatorialCalculator(Of HorizontalMessierObject)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: )
 - uid: DataLayer.CelestialDataPackage`1.MessierObjects*
   commentId: Overload:DataLayer.CelestialDataPackage`1.MessierObjects
   href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MessierObjects
@@ -1247,85 +1078,6 @@ references:
     name: HorizontalPlanet
     href: DataLayer.HorizontalObjects.HorizontalPlanet.html
   - name: )
-- uid: DataLayer.CelestialDataPackage`1.PlanetaryCalculator*
-  commentId: Overload:DataLayer.CelestialDataPackage`1.PlanetaryCalculator
-  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_PlanetaryCalculator
-  name: PlanetaryCalculator
-  nameWithType: CelestialDataPackage<T>.PlanetaryCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.PlanetaryCalculator
-  nameWithType.vb: CelestialDataPackage(Of T).PlanetaryCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).PlanetaryCalculator
-- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-  parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<HorizontalPlanet>
-  nameWithType: IPlanetaryCalculator<HorizontalPlanet>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>
-  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet)
-  name.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: )
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<T>
-  nameWithType: IPlanetaryCalculator<T>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
-  nameWithType.vb: IPlanetaryCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
-  name.vb: IPlanetaryCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: DataLayer.CelestialDataPackage`1.MoonCalculator*
-  commentId: Overload:DataLayer.CelestialDataPackage`1.MoonCalculator
-  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_MoonCalculator
-  name: MoonCalculator
-  nameWithType: CelestialDataPackage<T>.MoonCalculator
-  fullName: DataLayer.CelestialDataPackage<T>.MoonCalculator
-  nameWithType.vb: CelestialDataPackage(Of T).MoonCalculator
-  fullName.vb: DataLayer.CelestialDataPackage(Of T).MoonCalculator
-- uid: DataLayer.Interfaces.IMoonCalculator
-  commentId: T:DataLayer.Interfaces.IMoonCalculator
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IMoonCalculator.html
-  name: IMoonCalculator
-  nameWithType: IMoonCalculator
-  fullName: DataLayer.Interfaces.IMoonCalculator
 - uid: DataLayer.CelestialDataPackage`1.Moon*
   commentId: Overload:DataLayer.CelestialDataPackage`1.Moon
   href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Moon
@@ -1363,6 +1115,21 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.CelestialDataPackage`1.Sun*
+  commentId: Overload:DataLayer.CelestialDataPackage`1.Sun
+  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1_Sun
+  name: Sun
+  nameWithType: CelestialDataPackage<T>.Sun
+  fullName: DataLayer.CelestialDataPackage<T>.Sun
+  nameWithType.vb: CelestialDataPackage(Of T).Sun
+  fullName.vb: DataLayer.CelestialDataPackage(Of T).Sun
+- uid: DataLayer.HorizontalObjects.HorizontalSun
+  commentId: T:DataLayer.HorizontalObjects.HorizontalSun
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalSun.html
+  name: HorizontalSun
+  nameWithType: HorizontalSun
+  fullName: DataLayer.HorizontalObjects.HorizontalSun
 - uid: System.Collections.Generic.KeyNotFoundException
   commentId: T:System.Collections.Generic.KeyNotFoundException
   isExternal: true
@@ -1469,6 +1236,7 @@ references:
   - name: TResult
   - name: )
 - uid: T
+  commentId: '!:T'
   name: T
   nameWithType: T
   fullName: T
@@ -1525,43 +1293,9 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic.IDictionary`2
-  commentId: T:System.Collections.Generic.IDictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  name: IDictionary<TKey, TValue>
-  nameWithType: IDictionary<TKey, TValue>
-  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
-  nameWithType.vb: IDictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
-  name.vb: IDictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
 - uid: DataLayer.CelestialDataPackage`1.#ctor*
   commentId: Overload:DataLayer.CelestialDataPackage`1.#ctor
-  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalStar__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalMessierObject__DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Concurrent_ConcurrentDictionary_System_Int32__0__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IMoonCalculator_
+  href: DataLayer.CelestialDataPackage-1.html#DataLayer_CelestialDataPackage_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__DataLayer_Interfaces_IEquatorialCalculator_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalMessierObject__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_HorizontalObjects_HorizontalSun_
   name: CelestialDataPackage
   nameWithType: CelestialDataPackage<T>.CelestialDataPackage
   fullName: DataLayer.CelestialDataPackage<T>.CelestialDataPackage

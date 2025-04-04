@@ -1069,7 +1069,7 @@ public class Spawner : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner_StarContainer" data-uid="Stargazer.Spawner.StarContainer">
   StarContainer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1099,7 +1099,7 @@ public class Spawner : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner_maxStarMagnitude" data-uid="Stargazer.Spawner.maxStarMagnitude">
   maxStarMagnitude
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1129,14 +1129,14 @@ public class Spawner : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner_starConverter" data-uid="Stargazer.Spawner.starConverter">
   starConverter
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private IEquatorialCalculator&lt;HorizontalStar&gt; starConverter</code></pre>
+    <pre><code class="lang-csharp hljs">private IEquatorialCalculator starConverter</code></pre>
   </div>
 
 
@@ -1144,7 +1144,37 @@ public class Spawner : Node3D, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Spawner_starProducer" data-uid="Stargazer.Spawner.starProducer">
+  starProducer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private BlockingCollection&lt;ConcurrentBag&lt;HorizontalStar&gt;&gt; starProducer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.blockingcollection-1">BlockingCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentbag-1">ConcurrentBag</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1164,7 +1194,7 @@ public class Spawner : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner_LabelScene" data-uid="Stargazer.Spawner.LabelScene">
   LabelScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the labels for stars</p>
@@ -1197,7 +1227,7 @@ public PackedScene LabelScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Spawner_StarScene" data-uid="Stargazer.Spawner.StarScene">
   StarScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the star objects.</p>
@@ -1232,9 +1262,9 @@ public PackedScene StarScene { get; set; }</code></pre>
 
   <a id="Stargazer_Spawner_DrawStars_" data-uid="Stargazer.Spawner.DrawStars*"></a>
 
-  <h3 id="Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalStar__" data-uid="Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})">
-  DrawStars(IEnumerable&lt;HorizontalStar&gt;, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt;, IEquatorialCalculator&lt;HorizontalStar&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Spawner_DrawStars_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalStar__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.Spawner.DrawStars(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star},DataLayer.Interfaces.IEquatorialCalculator)">
+  DrawStars(IEnumerable&lt;HorizontalStar&gt;, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt;, IEquatorialCalculator)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives the notification to update the stars drawn.</p>
@@ -1242,7 +1272,7 @@ public PackedScene StarScene { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DrawStars(IEnumerable&lt;HorizontalStar&gt; stars, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt; GetStar, IEquatorialCalculator&lt;HorizontalStar&gt; starConverter)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task DrawStars(IEnumerable&lt;HorizontalStar&gt; stars, Func&lt;int, Func&lt;HorizontalStar, Star&gt;, Star&gt; GetStar, IEquatorialCalculator starConverter)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1253,7 +1283,7 @@ public PackedScene StarScene { get; set; }</code></pre>
     <dt><code>GetStar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;, <a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
     <dd><p>Used to retrieve a star from the <a class="xref" href="DataLayer.CelestialDataPackage-1.html">CelestialDataPackage&lt;T&gt;</a></p>
 </dd>
-    <dt><code>starConverter</code> <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
+    <dt><code>starConverter</code> <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></dt>
     <dd><p>Used to calculate star data.</p>
 </dd>
   </dl>
@@ -1278,7 +1308,7 @@ public PackedScene StarScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Spawner_SpawnStar_DataLayer_HorizontalObjects_HorizontalStar_" data-uid="Stargazer.Spawner.SpawnStar(DataLayer.HorizontalObjects.HorizontalStar)">
   SpawnStar(HorizontalStar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/Spawner.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Used to spawn a new star in the sky view scene.

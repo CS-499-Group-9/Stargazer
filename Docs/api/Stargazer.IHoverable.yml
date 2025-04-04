@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/IHoverable.CS
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IHoverable
     path: ../Stargazer-Godot/Code/IHoverable.CS
@@ -27,8 +27,10 @@ items:
   summary: Provides the ability of an object to display a hover label.
   example: []
   syntax:
-    content: public interface IHoverable
-    content.vb: Public Interface IHoverable
+    content: 'public interface IHoverable : ITrackable'
+    content.vb: Public Interface IHoverable Inherits ITrackable
+  inheritedMembers:
+  - Stargazer.ITrackable.GlobalTransform
 - uid: Stargazer.IHoverable.GetHoverText
   commentId: M:Stargazer.IHoverable.GetHoverText
   id: GetHoverText
@@ -43,7 +45,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/IHoverable.CS
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/IHoverable.CS
@@ -67,6 +69,20 @@ references:
   name: Stargazer
   nameWithType: Stargazer
   fullName: Stargazer
+- uid: Stargazer.ITrackable.GlobalTransform
+  commentId: P:Stargazer.ITrackable.GlobalTransform
+  parent: Stargazer.ITrackable
+  href: Stargazer.ITrackable.html#Stargazer_ITrackable_GlobalTransform
+  name: GlobalTransform
+  nameWithType: ITrackable.GlobalTransform
+  fullName: Stargazer.ITrackable.GlobalTransform
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  parent: Stargazer
+  href: Stargazer.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
 - uid: Stargazer.IHoverable.GetHoverText*
   commentId: Overload:Stargazer.IHoverable.GetHoverText
   href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText

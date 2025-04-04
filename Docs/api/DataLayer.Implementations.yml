@@ -4,9 +4,7 @@ items:
   commentId: N:DataLayer.Implementations
   id: DataLayer.Implementations
   children:
-  - DataLayer.Implementations.CosineKittyEquatorialConverter`1
-  - DataLayer.Implementations.CosineKittyMoonCalculator
-  - DataLayer.Implementations.CosineKittyPlanetaryCalculator
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator
   - DataLayer.Implementations.HygCsvStarRepository
   - DataLayer.Implementations.HygCsvStarRepository.StarMap
   - DataLayer.Implementations.HygCsvStarRepository.StarMap.ParsecToLightyearConverter
@@ -28,43 +26,12 @@ items:
   assemblies:
   - DataLayer
 references:
-- uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
-  commentId: T:DataLayer.Implementations.CosineKittyEquatorialConverter`1
-  href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
-  name: CosineKittyEquatorialConverter<T>
-  nameWithType: CosineKittyEquatorialConverter<T>
-  fullName: DataLayer.Implementations.CosineKittyEquatorialConverter<T>
-  nameWithType.vb: CosineKittyEquatorialConverter(Of T)
-  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialConverter(Of T)
-  name.vb: CosineKittyEquatorialConverter(Of T)
-  spec.csharp:
-  - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
-    name: CosineKittyEquatorialConverter
-    href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
-    name: CosineKittyEquatorialConverter
-    href: DataLayer.Implementations.CosineKittyEquatorialConverter-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: DataLayer.Implementations.CosineKittyMoonCalculator
-  commentId: T:DataLayer.Implementations.CosineKittyMoonCalculator
-  href: DataLayer.Implementations.CosineKittyMoonCalculator.html
-  name: CosineKittyMoonCalculator
-  nameWithType: CosineKittyMoonCalculator
-  fullName: DataLayer.Implementations.CosineKittyMoonCalculator
-- uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator
-  commentId: T:DataLayer.Implementations.CosineKittyPlanetaryCalculator
-  href: DataLayer.Implementations.CosineKittyPlanetaryCalculator.html
-  name: CosineKittyPlanetaryCalculator
-  nameWithType: CosineKittyPlanetaryCalculator
-  fullName: DataLayer.Implementations.CosineKittyPlanetaryCalculator
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyEquatorialCalculator
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html
+  name: CosineKittyEquatorialCalculator
+  nameWithType: CosineKittyEquatorialCalculator
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator
 - uid: DataLayer.Implementations.HygCsvStarRepository
   commentId: T:DataLayer.Implementations.HygCsvStarRepository
   href: DataLayer.Implementations.HygCsvStarRepository.html

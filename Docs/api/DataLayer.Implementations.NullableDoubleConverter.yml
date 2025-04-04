@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/NullableDoubleConverter.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NullableDoubleConverter
     path: ../DataLayer/Implementations/NullableDoubleConverter.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/NullableDoubleConverter.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConvertFromString
     path: ../DataLayer/Implementations/NullableDoubleConverter.cs

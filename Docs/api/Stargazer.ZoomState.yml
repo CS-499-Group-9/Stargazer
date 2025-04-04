@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
+  id: ZoomState
+  parent: Stargazer
+  children:
+  - Stargazer.ZoomState.FullIn
+  - Stargazer.ZoomState.FullOut
+  - Stargazer.ZoomState.Middle
+  langs:
+  - csharp
+  - vb
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
+  type: Enum
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ZoomState.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ZoomState
+    path: ../Stargazer-Godot/Code/ZoomState.cs
+    startLine: 5
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Used to implement quantum logic in the view based on Fov thresholds.
+  example: []
+  syntax:
+    content: public enum ZoomState
+    content.vb: Public Enum ZoomState
+- uid: Stargazer.ZoomState.FullOut
+  commentId: F:Stargazer.ZoomState.FullOut
+  id: FullOut
+  parent: Stargazer.ZoomState
+  langs:
+  - csharp
+  - vb
+  name: FullOut
+  nameWithType: ZoomState.FullOut
+  fullName: Stargazer.ZoomState.FullOut
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ZoomState.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: FullOut
+    path: ../Stargazer-Godot/Code/ZoomState.cs
+    startLine: 10
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: The viewport Fov is in the full zoomed out region.
+  example: []
+  syntax:
+    content: FullOut = 0
+    return:
+      type: Stargazer.ZoomState
+- uid: Stargazer.ZoomState.Middle
+  commentId: F:Stargazer.ZoomState.Middle
+  id: Middle
+  parent: Stargazer.ZoomState
+  langs:
+  - csharp
+  - vb
+  name: Middle
+  nameWithType: ZoomState.Middle
+  fullName: Stargazer.ZoomState.Middle
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ZoomState.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Middle
+    path: ../Stargazer-Godot/Code/ZoomState.cs
+    startLine: 14
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: The viewport Fov is in the middle zoom region.
+  example: []
+  syntax:
+    content: Middle = 1
+    return:
+      type: Stargazer.ZoomState
+- uid: Stargazer.ZoomState.FullIn
+  commentId: F:Stargazer.ZoomState.FullIn
+  id: FullIn
+  parent: Stargazer.ZoomState
+  langs:
+  - csharp
+  - vb
+  name: FullIn
+  nameWithType: ZoomState.FullIn
+  fullName: Stargazer.ZoomState.FullIn
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ZoomState.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: FullIn
+    path: ../Stargazer-Godot/Code/ZoomState.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: The viewport Fov is in the fully zoomed in region.
+  example: []
+  syntax:
+    content: FullIn = 2
+    return:
+      type: Stargazer.ZoomState
+references:
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
+  parent: Stargazer
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState

@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalMoon
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
-    startLine: 12
+    startLine: 7
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -60,11 +60,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
-    startLine: 18
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMoon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Phase
     path: ../DataLayer/HorizontalObjects/HorizontalMoon.cs
-    startLine: 24
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

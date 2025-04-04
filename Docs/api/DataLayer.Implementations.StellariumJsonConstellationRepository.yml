@@ -6,7 +6,7 @@ items:
   parent: DataLayer.Implementations
   children:
   - DataLayer.Implementations.StellariumJsonConstellationRepository.#ctor(System.String)
-  - DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
+  - DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations
   - DataLayer.Implementations.StellariumJsonConstellationRepository.filePath
   langs:
   - csharp
@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StellariumJsonConstellationRepository
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
@@ -107,43 +107,39 @@ items:
   nameWithType.vb: StellariumJsonConstellationRepository.New(String)
   fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New(String)
   name.vb: New(String)
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
-  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
-  id: GetAllConstellationsAsync
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations
+  commentId: M:DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations
+  id: GetConstellations
   parent: DataLayer.Implementations.StellariumJsonConstellationRepository
   langs:
   - csharp
   - vb
-  name: GetAllConstellationsAsync()
-  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync()
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync()
+  name: GetConstellations()
+  nameWithType: StellariumJsonConstellationRepository.GetConstellations()
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations()
   type: Method
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetAllConstellationsAsync
+    id: GetConstellations
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 31
+    startLine: 29
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Asynchronously retrieves a <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref> from the Json file.
+  summary: Gets all <xref href="DataLayer.EquatorialObjects.Constellation" data-throw-if-not-resolved="false"></xref>s from the repository
   example: []
   syntax:
-    content: public Task<IList<Constellation>?> GetAllConstellationsAsync()
+    content: public IEnumerable<Constellation> GetConstellations()
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-      description: An <xref href="System.Collections.Generic.IList%601" data-throw-if-not-resolved="false"></xref>
-    content.vb: Public Function GetAllConstellationsAsync() As Task(Of IList(Of Constellation))
-  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync*
-  exceptions:
-  - type: System.IO.FileNotFoundException
-    commentId: T:System.IO.FileNotFoundException
-    description: ''
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+      description: An <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> containing graphs of all the constellations.
+    content.vb: Public Function GetConstellations() As IEnumerable(Of Constellation)
+  overload: DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations*
   implements:
-  - DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+  - DataLayer.Interfaces.IConstellationRepository.GetConstellations
 references:
 - uid: DataLayer.Implementations
   commentId: N:DataLayer.Implementations
@@ -453,105 +449,91 @@ references:
   nameWithType.vb: StellariumJsonConstellationRepository.New
   fullName.vb: DataLayer.Implementations.StellariumJsonConstellationRepository.New
   name.vb: New
-- uid: System.Collections.Generic.IList`1
-  commentId: T:System.Collections.Generic.IList`1
+- uid: DataLayer.EquatorialObjects.Constellation
+  commentId: T:DataLayer.EquatorialObjects.Constellation
+  href: DataLayer.EquatorialObjects.Constellation.html
+  name: Constellation
+  nameWithType: Constellation
+  fullName: DataLayer.EquatorialObjects.Constellation
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  name: IList<T>
-  nameWithType: IList<T>
-  fullName: System.Collections.Generic.IList<T>
-  nameWithType.vb: IList(Of T)
-  fullName.vb: System.Collections.Generic.IList(Of T)
-  name.vb: IList(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IList`1
-    name: IList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IList`1
-    name: IList
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-- uid: System.IO.FileNotFoundException
-  commentId: T:System.IO.FileNotFoundException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception
-  name: FileNotFoundException
-  nameWithType: FileNotFoundException
-  fullName: System.IO.FileNotFoundException
-- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync*
-  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
-  href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_GetAllConstellationsAsync
-  name: GetAllConstellationsAsync
-  nameWithType: StellariumJsonConstellationRepository.GetAllConstellationsAsync
-  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetAllConstellationsAsync
-- uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-  commentId: M:DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
+- uid: DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations*
+  commentId: Overload:DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations
+  href: DataLayer.Implementations.StellariumJsonConstellationRepository.html#DataLayer_Implementations_StellariumJsonConstellationRepository_GetConstellations
+  name: GetConstellations
+  nameWithType: StellariumJsonConstellationRepository.GetConstellations
+  fullName: DataLayer.Implementations.StellariumJsonConstellationRepository.GetConstellations
+- uid: DataLayer.Interfaces.IConstellationRepository.GetConstellations
+  commentId: M:DataLayer.Interfaces.IConstellationRepository.GetConstellations
   parent: DataLayer.Interfaces.IConstellationRepository
-  href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
-  name: GetAllConstellationsAsync()
-  nameWithType: IConstellationRepository.GetAllConstellationsAsync()
-  fullName: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync()
+  href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetConstellations
+  name: GetConstellations()
+  nameWithType: IConstellationRepository.GetConstellations()
+  fullName: DataLayer.Interfaces.IConstellationRepository.GetConstellations()
   spec.csharp:
-  - uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-    name: GetAllConstellationsAsync
-    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  - uid: DataLayer.Interfaces.IConstellationRepository.GetConstellations
+    name: GetConstellations
+    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetConstellations
   - name: (
   - name: )
   spec.vb:
-  - uid: DataLayer.Interfaces.IConstellationRepository.GetAllConstellationsAsync
-    name: GetAllConstellationsAsync
-    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetAllConstellationsAsync
+  - uid: DataLayer.Interfaces.IConstellationRepository.GetConstellations
+    name: GetConstellations
+    href: DataLayer.Interfaces.IConstellationRepository.html#DataLayer_Interfaces_IConstellationRepository_GetConstellations
   - name: (
   - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<Constellation>>
-  nameWithType: Task<IList<Constellation>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>>
-  nameWithType.vb: Task(Of IList(Of Constellation))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation))
-  name.vb: Task(Of IList(Of Constellation))
+- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Constellation>
+  nameWithType: IEnumerable<Constellation>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>
+  nameWithType.vb: IEnumerable(Of Constellation)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation)
+  name.vb: IEnumerable(Of Constellation)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: DataLayer.EquatorialObjects.Constellation
     name: Constellation
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: '>'
-  - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -559,69 +541,40 @@ references:
     name: Constellation
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

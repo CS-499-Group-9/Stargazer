@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarMap
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 57
+    startLine: 55
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -81,11 +81,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 62
+    startLine: 60
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

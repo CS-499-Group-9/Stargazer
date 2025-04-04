@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  id: ITrackable
+  parent: Stargazer
+  children:
+  - Stargazer.ITrackable.GlobalTransform
+  langs:
+  - csharp
+  - vb
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
+  type: Interface
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ITrackable.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ITrackable
+    path: ../Stargazer-Godot/Code/ITrackable.cs
+    startLine: 7
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Provides the ability of an object to be tracked by the camera
+  example: []
+  syntax:
+    content: public interface ITrackable
+    content.vb: Public Interface ITrackable
+- uid: Stargazer.ITrackable.GlobalTransform
+  commentId: P:Stargazer.ITrackable.GlobalTransform
+  id: GlobalTransform
+  parent: Stargazer.ITrackable
+  langs:
+  - csharp
+  - vb
+  name: GlobalTransform
+  nameWithType: ITrackable.GlobalTransform
+  fullName: Stargazer.ITrackable.GlobalTransform
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ITrackable.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GlobalTransform
+    path: ../Stargazer-Godot/Code/ITrackable.cs
+    startLine: 12
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Exposes the objects <xref href="Godot.Node3D.GlobalTransform" data-throw-if-not-resolved="false"></xref> for tracking.
+  example: []
+  syntax:
+    content: Transform3D GlobalTransform { get; }
+    parameters: []
+    return:
+      type: Godot.Transform3D
+    content.vb: ReadOnly Property GlobalTransform As Transform3D
+  overload: Stargazer.ITrackable.GlobalTransform*
+references:
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: Godot.Node3D.GlobalTransform
+  commentId: P:Godot.Node3D.GlobalTransform
+  parent: Godot.Node3D
+  isExternal: true
+  name: GlobalTransform
+  nameWithType: Node3D.GlobalTransform
+  fullName: Godot.Node3D.GlobalTransform
+- uid: Stargazer.ITrackable.GlobalTransform*
+  commentId: Overload:Stargazer.ITrackable.GlobalTransform
+  href: Stargazer.ITrackable.html#Stargazer_ITrackable_GlobalTransform
+  name: GlobalTransform
+  nameWithType: ITrackable.GlobalTransform
+  fullName: Stargazer.ITrackable.GlobalTransform
+- uid: Godot.Transform3D
+  commentId: T:Godot.Transform3D
+  parent: Godot
+  isExternal: true
+  name: Transform3D
+  nameWithType: Transform3D
+  fullName: Godot.Transform3D
+- uid: Godot.Node3D
+  commentId: T:Godot.Node3D
+  parent: Godot
+  isExternal: true
+  name: Node3D
+  nameWithType: Node3D
+  fullName: Godot.Node3D
+- uid: Godot
+  commentId: N:Godot
+  isExternal: true
+  name: Godot
+  nameWithType: Godot
+  fullName: Godot

@@ -1,0 +1,763 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  id: IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  - DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  - DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  - DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  - DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  - DataLayer.Interfaces.IEquatorialCalculator.LST
+  - DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  - DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  - DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  - DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  langs:
+  - csharp
+  - vb
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IEquatorialCalculator
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 10
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Converts a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref> to a {T} object
+  example: []
+  syntax:
+    content: public interface IEquatorialCalculator
+    content.vb: Public Interface IEquatorialCalculator
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  id: CurrentTime
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CurrentTime
+  nameWithType: IEquatorialCalculator.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 15
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The current internal universal time used for calculations.
+  example: []
+  syntax:
+    content: DateTime CurrentTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: ReadOnly Property CurrentTime As Date
+  overload: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.LST
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.LST
+  id: LST
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: LST
+  nameWithType: IEquatorialCalculator.LST
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.LST
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: LST
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 19
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The current local sidereal time of the calculator.
+  example: []
+  syntax:
+    content: double LST { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: ReadOnly Property LST As Double
+  overload: DataLayer.Interfaces.IEquatorialCalculator.LST*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  id: Latitude
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: Latitude
+  nameWithType: IEquatorialCalculator.Latitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Latitude
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 23
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The current latitude of the observer.
+  example: []
+  syntax:
+    content: double Latitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: ReadOnly Property Latitude As Double
+  overload: DataLayer.Interfaces.IEquatorialCalculator.Latitude*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  id: Longitude
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: Longitude
+  nameWithType: IEquatorialCalculator.Longitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Longitude
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 27
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: The current longitude of the observer.
+  example: []
+  syntax:
+    content: double Longitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: ReadOnly Property Longitude As Double
+  overload: DataLayer.Interfaces.IEquatorialCalculator.Longitude*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  id: CreateMoon
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreateMoon()
+  nameWithType: IEquatorialCalculator.CreateMoon()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateMoon
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 32
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Creates a new moon object.
+  example: []
+  syntax:
+    content: HorizontalMoon CreateMoon()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: A new <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref>
+    content.vb: Function CreateMoon() As HorizontalMoon
+  overload: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  id: CreateSun
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreateSun()
+  nameWithType: IEquatorialCalculator.CreateSun()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateSun()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateSun
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 37
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Creates a new sun object.
+  example: []
+  syntax:
+    content: HorizontalSun CreateSun()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalSun
+      description: A new <xref href="DataLayer.HorizontalObjects.HorizontalSun" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Function CreateSun() As HorizontalSun
+  overload: DataLayer.Interfaces.IEquatorialCalculator.CreateSun*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  id: CreatePlanets
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreatePlanets()
+  nameWithType: IEquatorialCalculator.CreatePlanets()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 42
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Creates a collection of planets.
+  example: []
+  syntax:
+    content: IEnumerable<HorizontalPlanet> CreatePlanets()
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+      description: A new <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref>
+    content.vb: Function CreatePlanets() As IEnumerable(Of HorizontalPlanet)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  id: SetTime(System.DateTime)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: SetTime(DateTime)
+  nameWithType: IEquatorialCalculator.SetTime(DateTime)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetTime
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 48
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Sets the internal time of the calculator.
+  example: []
+  syntax:
+    content: void SetTime(DateTime userTime)
+    parameters:
+    - id: userTime
+      type: System.DateTime
+      description: User requested time in UTC.
+    content.vb: Sub SetTime(userTime As Date)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.SetTime*
+  nameWithType.vb: IEquatorialCalculator.SetTime(Date)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.SetTime(Date)
+  name.vb: SetTime(Date)
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  id: SetLocation(System.Double,System.Double)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: SetLocation(double, double)
+  nameWithType: IEquatorialCalculator.SetLocation(double, double)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(double, double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetLocation
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 54
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Updates the position of the observer.
+  example: []
+  syntax:
+    content: void SetLocation(double latitude, double longitude)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The user's latitude.
+    - id: longitude
+      type: System.Double
+      description: The user's longitude.
+    content.vb: Sub SetLocation(latitude As Double, longitude As Double)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.SetLocation*
+  nameWithType.vb: IEquatorialCalculator.SetLocation(Double, Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(Double, Double)
+  name.vb: SetLocation(Double, Double)
+- uid: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: IEquatorialCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 59
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Increments the time of the internal universal time used to perform calculations.
+  example: []
+  syntax:
+    content: void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: ''
+    content.vb: Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy*
+  nameWithType.vb: IEquatorialCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalBody)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalBody)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 64
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Calculates and updates the position of a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalBody hoBody)
+    parameters:
+    - id: hoBody
+      type: DataLayer.HorizontalObjects.HorizontalBody
+      description: The body to perform the calculation on.
+    content.vb: Sub UpdatePositionOf(hoBody As HorizontalBody)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 69
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Overloaded method to calculate the position of the moon
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalMoon moon)
+    parameters:
+    - id: moon
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: The <code>Moon</code> object to perform the calculation on.
+    content.vb: Sub UpdatePositionOf(moon As HorizontalMoon)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 74
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Overloaded method to calculate the position of a planet.
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalPlanet planet)
+    parameters:
+    - id: planet
+      type: DataLayer.HorizontalObjects.HorizontalPlanet
+      description: ''
+    content.vb: Sub UpdatePositionOf(planet As HorizontalPlanet)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf*
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalSun)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalSun)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
+    startLine: 79
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Overloaded method to calculate the position of the Sun.
+  example: []
+  syntax:
+    content: void UpdatePositionOf(HorizontalSun sun)
+    parameters:
+    - id: sun
+      type: DataLayer.HorizontalObjects.HorizontalSun
+      description: ''
+    content.vb: Sub UpdatePositionOf(sun As HorizontalSun)
+  overload: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf*
+references:
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CurrentTime
+  name: CurrentTime
+  nameWithType: IEquatorialCalculator.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces.IEquatorialCalculator.LST*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.LST
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_LST
+  name: LST
+  nameWithType: IEquatorialCalculator.LST
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.LST
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Latitude*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_Latitude
+  name: Latitude
+  nameWithType: IEquatorialCalculator.Latitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Latitude
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Longitude*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_Longitude
+  name: Longitude
+  nameWithType: IEquatorialCalculator.Longitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Longitude
+- uid: DataLayer.HorizontalObjects.HorizontalMoon
+  commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  name: HorizontalMoon
+  nameWithType: HorizontalMoon
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateMoon
+  name: CreateMoon
+  nameWithType: IEquatorialCalculator.CreateMoon
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+- uid: DataLayer.HorizontalObjects.HorizontalSun
+  commentId: T:DataLayer.HorizontalObjects.HorizontalSun
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalSun.html
+  name: HorizontalSun
+  nameWithType: HorizontalSun
+  fullName: DataLayer.HorizontalObjects.HorizontalSun
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateSun*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateSun
+  name: CreateSun
+  nameWithType: IEquatorialCalculator.CreateSun
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreatePlanets
+  name: CreatePlanets
+  nameWithType: IEquatorialCalculator.CreatePlanets
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<HorizontalPlanet>
+  nameWithType: IEnumerable<HorizontalPlanet>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>
+  nameWithType.vb: IEnumerable(Of HorizontalPlanet)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet)
+  name.vb: IEnumerable(Of HorizontalPlanet)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetTime*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.SetTime
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetTime_System_DateTime_
+  name: SetTime
+  nameWithType: IEquatorialCalculator.SetTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetTime
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetLocation*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.SetLocation
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetLocation_System_Double_System_Double_
+  name: SetLocation
+  nameWithType: IEquatorialCalculator.SetLocation
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetLocation
+- uid: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: IEquatorialCalculator.IncrementTimeBy
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf*
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_
+  name: UpdatePositionOf
+  nameWithType: IEquatorialCalculator.UpdatePositionOf
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet

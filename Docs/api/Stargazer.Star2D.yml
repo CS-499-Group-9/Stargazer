@@ -10,6 +10,7 @@ items:
   - Stargazer.Star2D.From3dStar(Stargazer.Star)
   - Stargazer.Star2D.StarName
   - Stargazer.Star2D._Ready
+  - Stargazer.Star2D.colorRect
   - Stargazer.Star2D.getLocation
   - Stargazer.Star2D.radians
   - Stargazer.Star2D.scalestar(Godot.Vector2)
@@ -23,8 +24,8 @@ items:
   type: Class
   source:
     id: Star2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Star2D_ScriptSerialization.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Star2D_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -423,11 +424,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 14
+    startLine: 11
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -450,11 +451,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: star3d
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 20
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -477,11 +478,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 21
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -506,11 +507,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 22
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -535,11 +536,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 24
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -550,6 +551,47 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property StarName As String
   overload: Stargazer.Star2D.StarName*
+- uid: Stargazer.Star2D.colorRect
+  commentId: F:Stargazer.Star2D.colorRect
+  id: colorRect
+  parent: Stargazer.Star2D
+  langs:
+  - csharp
+  - vb
+  name: colorRect
+  nameWithType: Star2D.colorRect
+  fullName: Stargazer.Star2D.colorRect
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Star2D.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: colorRect
+    path: ../Stargazer-Godot/Code/Star2D.cs
+    startLine: 23
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private ColorRect colorRect
+    return:
+      type: Godot.ColorRect
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private colorRect As ColorRect
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.Star2D.getLocation
   commentId: M:Stargazer.Star2D.getLocation
   id: getLocation
@@ -564,11 +606,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: getLocation
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -592,11 +634,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 37
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -628,11 +670,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: scalestar
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 61
+    startLine: 62
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,11 +699,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: From3dStar
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 65
+    startLine: 67
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -9894,6 +9936,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Godot.ColorRect
+  commentId: T:Godot.ColorRect
+  parent: Godot
+  isExternal: true
+  name: ColorRect
+  nameWithType: ColorRect
+  fullName: Godot.ColorRect
 - uid: Stargazer.Star2D.getLocation*
   commentId: Overload:Stargazer.Star2D.getLocation
   href: Stargazer.Star2D.html#Stargazer_Star2D_getLocation

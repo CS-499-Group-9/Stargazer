@@ -5,15 +5,10 @@ items:
   id: Moon
   parent: Stargazer
   children:
-  - Stargazer.Moon.Distance
-  - Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
+  - Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)
   - Stargazer.Moon.GetHoverText
-  - Stargazer.Moon.GetLocation
   - Stargazer.Moon._Process(System.Double)
-  - Stargazer.Moon._Ready
-  - Stargazer.Moon.calculator
   - Stargazer.Moon.horizontalMoon
-  - Stargazer.Moon.radians
   langs:
   - csharp
   - vb
@@ -34,20 +29,30 @@ items:
     content: >-
       [ScriptPath("res://Code/Moon.cs")]
 
-      public class Moon : Node3D, IDisposable, IHoverable
+      public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable
     content.vb: >-
       <ScriptPath("res://Code/Moon.cs")>
 
-      Public Class Moon Inherits Node3D Implements IDisposable, IHoverable
+      Public Class Moon Inherits CelestialBody Implements IDisposable, IHoverable, ITrackable
   inheritance:
   - System.Object
   - Godot.GodotObject
   - Godot.Node
   - Godot.Node3D
+  - Stargazer.CelestialBody
   implements:
   - System.IDisposable
   - Stargazer.IHoverable
+  - Stargazer.ITrackable
   inheritedMembers:
+  - Stargazer.CelestialBody.radians
+  - Stargazer.CelestialBody.horizontalBody
+  - Stargazer.CelestialBody.calculator
+  - Stargazer.CelestialBody.Azimuth
+  - Stargazer.CelestialBody.Altitude
+  - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.GetLocation
+  - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
   - Godot.Node3D.NotificationEnterWorld
   - Godot.Node3D.NotificationExitWorld
@@ -166,6 +171,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -374,7 +380,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalMoon
     path: ../Stargazer-Godot/Code/Moon.cs
@@ -387,116 +393,6 @@ items:
     return:
       type: DataLayer.HorizontalObjects.HorizontalMoon
     content.vb: Private horizontalMoon As HorizontalMoon
-- uid: Stargazer.Moon.calculator
-  commentId: F:Stargazer.Moon.calculator
-  id: calculator
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: calculator
-  nameWithType: Moon.calculator
-  fullName: Stargazer.Moon.calculator
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: calculator
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 13
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private IMoonCalculator calculator
-    return:
-      type: DataLayer.Interfaces.IMoonCalculator
-    content.vb: Private calculator As IMoonCalculator
-- uid: Stargazer.Moon.Distance
-  commentId: F:Stargazer.Moon.Distance
-  id: Distance
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: Distance
-  nameWithType: Moon.Distance
-  fullName: Stargazer.Moon.Distance
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Distance
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 14
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private float Distance
-    return:
-      type: System.Single
-    content.vb: Private Distance As Single
-- uid: Stargazer.Moon.radians
-  commentId: F:Stargazer.Moon.radians
-  id: radians
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: radians
-  nameWithType: Moon.radians
-  fullName: Stargazer.Moon.radians
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: radians
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 15
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private const float radians = 0.017453292
-    return:
-      type: System.Single
-    content.vb: Private Const radians As Single = 0.017453292
-- uid: Stargazer.Moon._Ready
-  commentId: M:Stargazer.Moon._Ready
-  id: _Ready
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: _Ready()
-  nameWithType: Moon._Ready()
-  fullName: Stargazer.Moon._Ready()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Ready
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 20
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Initializes object data when it enters the tree.
-  example: []
-  syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: Stargazer.Moon._Ready*
 - uid: Stargazer.Moon._Process(System.Double)
   commentId: M:Stargazer.Moon._Process(System.Double)
   id: _Process(System.Double)
@@ -511,15 +407,18 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 29
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Calculates phase and positional data every frame.
+  summary: >-
+    Calculates phase and positional data every frame.
+
+    Must override the <xref href="Stargazer.CelestialBody._Process(System.Double)" data-throw-if-not-resolved="false"></xref> method since calculations are moon specific.
   example: []
   syntax:
     content: public override void _Process(double delta)
@@ -528,74 +427,11 @@ items:
       type: System.Double
       description: ''
     content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
+  overridden: Stargazer.CelestialBody._Process(System.Double)
   overload: Stargazer.Moon._Process*
   nameWithType.vb: Moon._Process(Double)
   fullName.vb: Stargazer.Moon._Process(Double)
   name.vb: _Process(Double)
-- uid: Stargazer.Moon.GetLocation
-  commentId: M:Stargazer.Moon.GetLocation
-  id: GetLocation
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: GetLocation()
-  nameWithType: Moon.GetLocation()
-  fullName: Stargazer.Moon.GetLocation()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetLocation
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 36
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Vector3 GetLocation()
-    return:
-      type: Godot.Vector3
-    content.vb: Private Function GetLocation() As Vector3
-  overload: Stargazer.Moon.GetLocation*
-- uid: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
-  commentId: M:Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
-  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IMoonCalculator)
-  parent: Stargazer.Moon
-  langs:
-  - csharp
-  - vb
-  name: FromHorizontal(HorizontalMoon, IMoonCalculator)
-  nameWithType: Moon.FromHorizontal(HorizontalMoon, IMoonCalculator)
-  fullName: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IMoonCalculator)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: FromHorizontal
-    path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 54
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Passes in data necessary to perform calculations.
-  example: []
-  syntax:
-    content: public void FromHorizontal(HorizontalMoon moon, IMoonCalculator moonCalculator)
-    parameters:
-    - id: moon
-      type: DataLayer.HorizontalObjects.HorizontalMoon
-      description: The object to base the calculations on
-    - id: moonCalculator
-      type: DataLayer.Interfaces.IMoonCalculator
-      description: The calculator used to perform the calculations.
-    content.vb: Public Sub FromHorizontal(moon As HorizontalMoon, moonCalculator As IMoonCalculator)
-  overload: Stargazer.Moon.FromHorizontal*
 - uid: Stargazer.Moon.GetHoverText
   commentId: M:Stargazer.Moon.GetHoverText
   id: GetHoverText
@@ -610,25 +446,59 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 61
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Gets the text to display.
   example: []
   syntax:
-    content: public string GetHoverText()
+    content: public override string GetHoverText()
     return:
       type: System.String
       description: A formatted text string.
-    content.vb: Public Function GetHoverText() As String
+    content.vb: Public Overrides Function GetHoverText() As String
+  overridden: Stargazer.CelestialBody.GetHoverText
   overload: Stargazer.Moon.GetHoverText*
-  implements:
-  - Stargazer.IHoverable.GetHoverText
+- uid: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)
+  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: FromHorizontal(HorizontalMoon, IEquatorialCalculator)
+  nameWithType: Moon.FromHorizontal(HorizontalMoon, IEquatorialCalculator)
+  fullName: Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon, DataLayer.Interfaces.IEquatorialCalculator)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: FromHorizontal
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 51
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Passes in data necessary to perform calculations.
+  example: []
+  syntax:
+    content: public void FromHorizontal(HorizontalMoon moon, IEquatorialCalculator moonCalculator)
+    parameters:
+    - id: moon
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: The object to base the calculations on
+    - id: moonCalculator
+      type: DataLayer.Interfaces.IEquatorialCalculator
+      description: The calculator used to perform the calculations.
+    content.vb: Public Sub FromHorizontal(moon As HorizontalMoon, moonCalculator As IEquatorialCalculator)
+  overload: Stargazer.Moon.FromHorizontal*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -668,6 +538,13 @@ references:
   name: Node3D
   nameWithType: Node3D
   fullName: Godot.Node3D
+- uid: Stargazer.CelestialBody
+  commentId: T:Stargazer.CelestialBody
+  parent: Stargazer
+  href: Stargazer.CelestialBody.html
+  name: CelestialBody
+  nameWithType: CelestialBody
+  fullName: Stargazer.CelestialBody
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -683,6 +560,109 @@ references:
   name: IHoverable
   nameWithType: IHoverable
   fullName: Stargazer.IHoverable
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  parent: Stargazer
+  href: Stargazer.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
+- uid: Stargazer.CelestialBody.radians
+  commentId: F:Stargazer.CelestialBody.radians
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_radians
+  name: radians
+  nameWithType: CelestialBody.radians
+  fullName: Stargazer.CelestialBody.radians
+- uid: Stargazer.CelestialBody.horizontalBody
+  commentId: F:Stargazer.CelestialBody.horizontalBody
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_horizontalBody
+  name: horizontalBody
+  nameWithType: CelestialBody.horizontalBody
+  fullName: Stargazer.CelestialBody.horizontalBody
+- uid: Stargazer.CelestialBody.calculator
+  commentId: F:Stargazer.CelestialBody.calculator
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_calculator
+  name: calculator
+  nameWithType: CelestialBody.calculator
+  fullName: Stargazer.CelestialBody.calculator
+- uid: Stargazer.CelestialBody.Azimuth
+  commentId: P:Stargazer.CelestialBody.Azimuth
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Azimuth
+  name: Azimuth
+  nameWithType: CelestialBody.Azimuth
+  fullName: Stargazer.CelestialBody.Azimuth
+- uid: Stargazer.CelestialBody.Altitude
+  commentId: P:Stargazer.CelestialBody.Altitude
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Altitude
+  name: Altitude
+  nameWithType: CelestialBody.Altitude
+  fullName: Stargazer.CelestialBody.Altitude
+- uid: Stargazer.CelestialBody.Distance
+  commentId: P:Stargazer.CelestialBody.Distance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance
+  name: Distance
+  nameWithType: CelestialBody.Distance
+  fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.GetLocation
+  commentId: M:Stargazer.CelestialBody.GetLocation
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  name: GetLocation()
+  nameWithType: CelestialBody.GetLocation()
+  fullName: Stargazer.CelestialBody.GetLocation()
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.GetLocation
+    name: GetLocation
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.GetLocation
+    name: GetLocation
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  - name: (
+  - name: )
+- uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  name: FromHorizontal(HorizontalBody, IEquatorialCalculator)
+  nameWithType: CelestialBody.FromHorizontal(HorizontalBody, IEquatorialCalculator)
+  fullName: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody, DataLayer.Interfaces.IEquatorialCalculator)
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+    name: FromHorizontal
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: ','
+  - name: " "
+  - uid: DataLayer.Interfaces.IEquatorialCalculator
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator.html
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+    name: FromHorizontal
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: ','
+  - name: " "
+  - uid: DataLayer.Interfaces.IEquatorialCalculator
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator.html
+  - name: )
 - uid: Godot.Node3D.NotificationTransformChanged
   commentId: F:Godot.Node3D.NotificationTransformChanged
   parent: Godot.Node3D
@@ -2655,6 +2635,25 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7451,86 +7450,21 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
-- uid: DataLayer.Interfaces.IMoonCalculator
-  commentId: T:DataLayer.Interfaces.IMoonCalculator
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IMoonCalculator.html
-  name: IMoonCalculator
-  nameWithType: IMoonCalculator
-  fullName: DataLayer.Interfaces.IMoonCalculator
-- uid: DataLayer.Interfaces
-  commentId: N:DataLayer.Interfaces
-  href: DataLayer.html
-  name: DataLayer.Interfaces
-  nameWithType: DataLayer.Interfaces
-  fullName: DataLayer.Interfaces
-  spec.csharp:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
-  spec.vb:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
+- uid: Stargazer.CelestialBody._Process(System.Double)
+  commentId: M:Stargazer.CelestialBody._Process(System.Double)
+  parent: Stargazer.CelestialBody
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Stargazer.Moon._Ready*
-  commentId: Overload:Stargazer.Moon._Ready
-  href: Stargazer.Moon.html#Stargazer_Moon__Ready
-  name: _Ready
-  nameWithType: Moon._Ready
-  fullName: Stargazer.Moon._Ready
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
+  nameWithType: CelestialBody._Process(double)
+  fullName: Stargazer.CelestialBody._Process(double)
+  nameWithType.vb: CelestialBody._Process(Double)
+  fullName.vb: Stargazer.CelestialBody._Process(Double)
   name.vb: _Process(Double)
   spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
+  - uid: Stargazer.CelestialBody._Process(System.Double)
     name: _Process
-    isExternal: true
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   - name: (
   - uid: System.Double
     name: double
@@ -7538,9 +7472,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Process(System.Double)
+  - uid: Stargazer.CelestialBody._Process(System.Double)
     name: _Process
-    isExternal: true
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   - name: (
   - uid: System.Double
     name: Double
@@ -7564,50 +7498,31 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: Stargazer.Moon.GetLocation*
-  commentId: Overload:Stargazer.Moon.GetLocation
-  href: Stargazer.Moon.html#Stargazer_Moon_GetLocation
-  name: GetLocation
-  nameWithType: Moon.GetLocation
-  fullName: Stargazer.Moon.GetLocation
-- uid: Godot.Vector3
-  commentId: T:Godot.Vector3
-  parent: Godot
-  isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: Godot.Vector3
-- uid: Stargazer.Moon.FromHorizontal*
-  commentId: Overload:Stargazer.Moon.FromHorizontal
-  href: Stargazer.Moon.html#Stargazer_Moon_FromHorizontal_DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IMoonCalculator_
-  name: FromHorizontal
-  nameWithType: Moon.FromHorizontal
-  fullName: Stargazer.Moon.FromHorizontal
+- uid: Stargazer.CelestialBody.GetHoverText
+  commentId: M:Stargazer.CelestialBody.GetHoverText
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  name: GetHoverText()
+  nameWithType: CelestialBody.GetHoverText()
+  fullName: Stargazer.CelestialBody.GetHoverText()
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.GetHoverText
+    name: GetHoverText
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.GetHoverText
+    name: GetHoverText
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  - name: (
+  - name: )
 - uid: Stargazer.Moon.GetHoverText*
   commentId: Overload:Stargazer.Moon.GetHoverText
   href: Stargazer.Moon.html#Stargazer_Moon_GetHoverText
   name: GetHoverText
   nameWithType: Moon.GetHoverText
   fullName: Stargazer.Moon.GetHoverText
-- uid: Stargazer.IHoverable.GetHoverText
-  commentId: M:Stargazer.IHoverable.GetHoverText
-  parent: Stargazer.IHoverable
-  href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  name: GetHoverText()
-  nameWithType: IHoverable.GetHoverText()
-  fullName: Stargazer.IHoverable.GetHoverText()
-  spec.csharp:
-  - uid: Stargazer.IHoverable.GetHoverText
-    name: GetHoverText
-    href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Stargazer.IHoverable.GetHoverText
-    name: GetHoverText
-    href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  - name: (
-  - name: )
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -7619,3 +7534,38 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Stargazer.Moon.FromHorizontal*
+  commentId: Overload:Stargazer.Moon.FromHorizontal
+  href: Stargazer.Moon.html#Stargazer_Moon_FromHorizontal_DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IEquatorialCalculator_
+  name: FromHorizontal
+  nameWithType: Moon.FromHorizontal
+  fullName: Stargazer.Moon.FromHorizontal
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html

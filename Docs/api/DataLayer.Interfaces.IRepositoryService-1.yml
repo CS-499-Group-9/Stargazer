@@ -1,0 +1,242 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Interfaces.IRepositoryService`1
+  commentId: T:DataLayer.Interfaces.IRepositoryService`1
+  id: IRepositoryService`1
+  parent: DataLayer.Interfaces
+  children:
+  - DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  langs:
+  - csharp
+  - vb
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  type: Interface
+  source:
+    remote:
+      path: DataLayer/Interfaces/IRepositoryService.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IRepositoryService
+    path: ../DataLayer/Interfaces/IRepositoryService.cs
+    startLine: 6
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: Used to retrieve the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public interface IRepositoryService<T>
+    typeParameters:
+    - id: T
+      description: The repository service.
+    content.vb: Public Interface IRepositoryService(Of T)
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
+- uid: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  commentId: M:DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  id: InitializeDataPackage
+  parent: DataLayer.Interfaces.IRepositoryService`1
+  langs:
+  - csharp
+  - vb
+  name: InitializeDataPackage()
+  nameWithType: IRepositoryService<T>.InitializeDataPackage()
+  fullName: DataLayer.Interfaces.IRepositoryService<T>.InitializeDataPackage()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Interfaces/IRepositoryService.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: InitializeDataPackage
+    path: ../DataLayer/Interfaces/IRepositoryService.cs
+    startLine: 13
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Interfaces
+  summary: >-
+    Used to actually pull the data from the repository and build a <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>
+
+    This is only required to be called once. From there, the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref> contains an <xref href="DataLayer.Interfaces.IEquatorialCalculator" data-throw-if-not-resolved="false"></xref> that handles all future modifications of data.
+  example: []
+  syntax:
+    content: Task<CelestialDataPackage<T>> InitializeDataPackage()
+    return:
+      type: System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{{T}}}
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> that can be awaited.
+    content.vb: Function InitializeDataPackage() As Task(Of CelestialDataPackage(Of T))
+  overload: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage*
+  nameWithType.vb: IRepositoryService(Of T).InitializeDataPackage()
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T).InitializeDataPackage()
+references:
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
+  spec.csharp:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage*
+  commentId: Overload:DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  name: InitializeDataPackage
+  nameWithType: IRepositoryService<T>.InitializeDataPackage
+  fullName: DataLayer.Interfaces.IRepositoryService<T>.InitializeDataPackage
+  nameWithType.vb: IRepositoryService(Of T).InitializeDataPackage
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T).InitializeDataPackage
+- uid: System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{{T}}}
+  commentId: T:System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CelestialDataPackage<T>>
+  nameWithType: Task<CelestialDataPackage<T>>
+  fullName: System.Threading.Tasks.Task<DataLayer.CelestialDataPackage<T>>
+  nameWithType.vb: Task(Of CelestialDataPackage(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.CelestialDataPackage(Of T))
+  name.vb: Task(Of CelestialDataPackage(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

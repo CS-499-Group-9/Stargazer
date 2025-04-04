@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CosineKittyEquatorialCalculator | Stargazer Data API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CosineKittyEquatorialCalculator | Stargazer Data API ">
+      
+      <meta name="description" content="Uses the  library to perform calculations on celestial objects.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/state-machines/apiSpec/new?filename=DataLayer_Implementations_CosineKittyEquatorialCalculator.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.CosineKittyEquatorialCalculator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Stargazer Data API">
+            Stargazer Data API
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator">
+
+
+
+  <h1 id="DataLayer_Implementations_CosineKittyEquatorialCalculator" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator" class="text-break">
+Class CosineKittyEquatorialCalculator  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DataLayer.html">DataLayer</a>.<a class="xref" href="DataLayer.Implementations.html">Implementations</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DataLayer.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Uses the <span class="xref">CosineKitty.Astronomy</span> library to perform calculations on celestial objects.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">internal class CosineKittyEquatorialCalculator : IEquatorialCalculator</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CosineKittyEquatorialCalculator</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator__ctor_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator__ctor" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor">
+  CosineKittyEquatorialCalculator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used to create a calculator for an observer located at the intersection of the equator and the prime meridian at the J2000 Epoc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">internal CosineKittyEquatorialCalculator()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator__ctor_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator__ctor_System_Double_System_Double_System_DateTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor(System.Double,System.Double,System.DateTime)">
+  CosineKittyEquatorialCalculator(double, double, DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates a new converter specific to the observers location and time</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">internal CosineKittyEquatorialCalculator(double latitude, double longitude, DateTime universalTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>latitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The latitude of the observer</p>
+</dd>
+    <dt><code>longitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The longitude of the observer</p>
+</dd>
+    <dt><code>universalTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The Universal Coordinated Time</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_AUConversion" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.AUConversion">
+  AUConversion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private const double AUConversion = 63241.0771</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_astroTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.astroTime">
+  astroTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private AstroTime astroTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">AstroTime</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_currentTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.currentTime">
+  currentTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private DateTime currentTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_observer" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.observer">
+  observer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Observer observer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Observer</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_planets" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.planets">
+  planets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private readonly Dictionary&lt;string, Body&gt; planets</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <span class="xref">Body</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CurrentTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CurrentTime" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime">
+  CurrentTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current internal universal time used for calculations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime CurrentTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_LST_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.LST*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_LST" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.LST">
+  LST
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current local sidereal time of the calculator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LST { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_Latitude_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_Latitude" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude">
+  Latitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current latitude of the observer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Latitude { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_Longitude_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_Longitude" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude">
+  Longitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The current longitude of the observer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Longitude { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateMoon_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateMoon" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon">
+  CreateMoon()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new moon object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HorizontalMoon CreateMoon()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></dt>
+    <dd><p>A new <a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreatePlanets_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreatePlanets" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets">
+  CreatePlanets()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a collection of planets.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;HorizontalPlanet&gt; CreatePlanets()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalPlanet.html">HorizontalPlanet</a>&gt;</dt>
+    <dd><p>A new <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateSun_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateSun" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun">
+  CreateSun()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new sun object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HorizontalSun CreateSun()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DataLayer.HorizontalObjects.HorizontalSun.html">HorizontalSun</a></dt>
+    <dd><p>A new <a class="xref" href="DataLayer.HorizontalObjects.HorizontalSun.html">HorizontalSun</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_IncrementTimeBy_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_IncrementTimeBy_System_Double_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(System.Double)">
+  IncrementTimeBy(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Increments the time of the internal universal time used to perform calculations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void IncrementTimeBy(double seconds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>seconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_SetLocation_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_SetLocation_System_Double_System_Double_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(System.Double,System.Double)">
+  SetLocation(double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the position of the observer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLocation(double latitude, double longitude)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>latitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The user's latitude.</p>
+</dd>
+    <dt><code>longitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The user's longitude.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_SetTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_SetTime_System_DateTime_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(System.DateTime)">
+  SetTime(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the internal time of the calculator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTime(DateTime userTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>User requested time in UTC.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)">
+  UpdatePositionOf(HorizontalBody)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates and updates the position of a <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html">HorizontalBody</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePositionOf(HorizontalBody hoBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>hoBody</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalBody.html">HorizontalBody</a></dt>
+    <dd><p>The body to perform the calculation on.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)">
+  UpdatePositionOf(HorizontalMoon)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overloaded method to calculate the position of the moon</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePositionOf(HorizontalMoon moon)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>moon</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalMoon.html">HorizontalMoon</a></dt>
+    <dd><p>The <code>Moon</code> object to perform the calculation on.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)">
+  UpdatePositionOf(HorizontalPlanet)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overloaded method to calculate the position of a planet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePositionOf(HorizontalPlanet planet)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>planet</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalPlanet.html">HorizontalPlanet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*"></a>
+
+  <h3 id="DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalSun_" data-uid="DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)">
+  UpdatePositionOf(HorizontalSun)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overloaded method to calculate the position of the Sun.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePositionOf(HorizontalSun sun)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sun</code> <a class="xref" href="DataLayer.HorizontalObjects.HorizontalSun.html">HorizontalSun</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/CosineKittyEquitorialCalculator.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -27,7 +27,7 @@ items:
   type: Class
   source:
     id: Constellations
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Constellations_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Constellations_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -378,11 +378,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 21
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -423,11 +423,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 25
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -468,11 +468,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 28
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -495,11 +495,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constMesh
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 29
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -522,11 +522,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 30
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -549,11 +549,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 32
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -576,11 +576,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetConstellationStar
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 33
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -603,11 +603,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: canProcess
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 34
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -630,11 +630,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: labelDictionary
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 35
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,28 +657,22 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-
-    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  summary: Redraws the constellation lines as the stars move
   example: []
   syntax:
     content: public override void _Process(double delta)
     parameters:
     - id: delta
       type: System.Double
+      description: Unused
     content.vb: Public Overrides Sub _Process(delta As Double)
   overridden: Godot.Node._Process(System.Double)
   overload: Stargazer.Constellations._Process*
@@ -699,11 +693,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 87
+    startLine: 88
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -742,11 +736,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 193
+    startLine: 195
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -780,11 +774,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 203
+    startLine: 205
   assemblies:
   - New Game Project
   namespace: Stargazer

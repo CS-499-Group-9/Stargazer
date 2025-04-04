@@ -9,6 +9,7 @@ items:
   - DataLayer.HorizontalObjects.HorizontalMoon
   - DataLayer.HorizontalObjects.HorizontalPlanet
   - DataLayer.HorizontalObjects.HorizontalStar
+  - DataLayer.HorizontalObjects.HorizontalSun
   langs:
   - csharp
   - vb
@@ -28,6 +29,7 @@ references:
   fullName: DataLayer.HorizontalObjects.HorizontalBody
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
   commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
+  parent: DataLayer.HorizontalObjects
   href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
   name: HorizontalMessierObject
   nameWithType: HorizontalMessierObject
@@ -53,6 +55,13 @@ references:
   name: HorizontalStar
   nameWithType: HorizontalStar
   fullName: DataLayer.HorizontalObjects.HorizontalStar
+- uid: DataLayer.HorizontalObjects.HorizontalSun
+  commentId: T:DataLayer.HorizontalObjects.HorizontalSun
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalSun.html
+  name: HorizontalSun
+  nameWithType: HorizontalSun
+  fullName: DataLayer.HorizontalObjects.HorizontalSun
 - uid: DataLayer.HorizontalObjects
   commentId: N:DataLayer.HorizontalObjects
   href: DataLayer.html

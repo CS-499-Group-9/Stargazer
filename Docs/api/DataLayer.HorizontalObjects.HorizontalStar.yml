@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -190,7 +190,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AbsoluteMagnitude
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spectrum
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ColorIndex
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs

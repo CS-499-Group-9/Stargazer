@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StarLustMessierCsvRepository | Stargazer Data API ">
       
-      <meta name="description" content="Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from Starlust.org">
+      <meta name="description" content="Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from Starlust.org If a new repository is used, a new converter that implements the  needs to be created for it.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/update-documentation/apiSpec/new?filename=DataLayer_Implementations_StarLustMessierCsvRepository.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.StarLustMessierCsvRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/state-machines/apiSpec/new?filename=DataLayer_Implementations_StarLustMessierCsvRepository.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.StarLustMessierCsvRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_Implementations_StarLustMessierCsvRepository" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository" class="text-break">
-Class StarLustMessierCsvRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class StarLustMessierCsvRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
   <dl><dt>Assembly</dt><dd>DataLayer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href="https://starlust.org/messier-catalog/">Starlust.org</a></p>
+  <div class="markdown summary"><p>Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href="https://starlust.org/messier-catalog/">Starlust.org</a>
+If a new repository is used, a new converter that implements the <a class="xref" href="DataLayer.Interfaces.IMessierRepository.html">IMessierRepository</a> needs to be created for it.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -163,7 +164,7 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
 
   <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository__ctor_System_String_" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)">
   StarLustMessierCsvRepository(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new object.</p>
@@ -199,7 +200,7 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
 
   <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository_filePath" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.filePath">
   filePath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The path to the repository file.</p>
@@ -231,26 +232,26 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
 </h2>
 
 
-  <a id="DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync_" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync*"></a>
+  <a id="DataLayer_Implementations_StarLustMessierCsvRepository_GetMessierObjects_" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.GetMessierObjects*"></a>
 
-  <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository_GetRawMessierObjectsAsync" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.GetRawMessierObjectsAsync">
-  GetRawMessierObjectsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository_GetMessierObjects" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.GetMessierObjects">
+  GetMessierObjects()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Asynchronously retrieves an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList&lt;T&gt;</a> from the repository.</p>
+  <div class="markdown level1 summary"><p>Gets all Messier Objects from the repository</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;EquatorialMessierObject&gt;&gt; GetRawMessierObjectsAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;EquatorialMessierObject&gt; GetMessierObjects()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialMessierObject.html">EquatorialMessierObject</a>&gt;&gt;</dt>
-    <dd><p>A running task that results in</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialMessierObject.html">EquatorialMessierObject</a>&gt;</dt>
+    <dd><p>A <code>yieldable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> that can be lazily loaded when needed.</p>
 </dd>
   </dl>
 
@@ -261,12 +262,6 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
-    <dd><p>If the csv file is not present in the directory</p>
-</dd>
-  </dl>
 
 
 
@@ -274,7 +269,7 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

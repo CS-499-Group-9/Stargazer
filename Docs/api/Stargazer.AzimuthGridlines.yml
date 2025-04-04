@@ -5,21 +5,30 @@ items:
   id: AzimuthGridlines
   parent: Stargazer
   children:
-  - Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)
-  - Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
-  - Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  - Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  - Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  - Stargazer.AzimuthGridlines.HandleZoomStateChanged(Stargazer.ZoomState)
+  - Stargazer.AzimuthGridlines.SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)
+  - Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(System.Boolean)
   - Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
   - Stargazer.AzimuthGridlines._Process(System.Double)
   - Stargazer.AzimuthGridlines._Ready
-  - Stargazer.AzimuthGridlines.camera
+  - Stargazer.AzimuthGridlines.azimuthGridlines
+  - Stargazer.AzimuthGridlines.blueMaterial
+  - Stargazer.AzimuthGridlines.calculator
   - Stargazer.AzimuthGridlines.cutoffLatitude
-  - Stargazer.AzimuthGridlines.greenMaterial
+  - Stargazer.AzimuthGridlines.equatorialGridlines
+  - Stargazer.AzimuthGridlines.globalVars
+  - Stargazer.AzimuthGridlines.latitude
   - Stargazer.AzimuthGridlines.latitudeInterval
   - Stargazer.AzimuthGridlines.latitudeSegments
+  - Stargazer.AzimuthGridlines.longitude
+  - Stargazer.AzimuthGridlines.longitudeInterval
   - Stargazer.AzimuthGridlines.longitudeSegments
   - Stargazer.AzimuthGridlines.mesh
+  - Stargazer.AzimuthGridlines.mesh2
+  - Stargazer.AzimuthGridlines.orangeMaterial
   - Stargazer.AzimuthGridlines.radius
-  - Stargazer.AzimuthGridlines.storedfov
   langs:
   - csharp
   - vb
@@ -29,7 +38,7 @@ items:
   type: Class
   source:
     id: AzimuthGridlines
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.AzimuthGridlines_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.AzimuthGridlines_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -40,69 +49,19 @@ items:
     content: >-
       [ScriptPath("res://Code/AzimuthGridlines.cs")]
 
-      public class AzimuthGridlines : MeshInstance3D, IDisposable
+      public class AzimuthGridlines : Node3D, IDisposable
     content.vb: >-
       <ScriptPath("res://Code/AzimuthGridlines.cs")>
 
-      Public Class AzimuthGridlines Inherits MeshInstance3D Implements IDisposable
+      Public Class AzimuthGridlines Inherits Node3D Implements IDisposable
   inheritance:
   - System.Object
   - Godot.GodotObject
   - Godot.Node
   - Godot.Node3D
-  - Godot.VisualInstance3D
-  - Godot.GeometryInstance3D
-  - Godot.MeshInstance3D
   implements:
   - System.IDisposable
   inheritedMembers:
-  - Godot.MeshInstance3D.GetSkinReference
-  - Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount
-  - Godot.MeshInstance3D.SetSurfaceOverrideMaterial(System.Int32,Godot.Material)
-  - Godot.MeshInstance3D.GetSurfaceOverrideMaterial(System.Int32)
-  - Godot.MeshInstance3D.GetActiveMaterial(System.Int32)
-  - Godot.MeshInstance3D.CreateTrimeshCollision
-  - Godot.MeshInstance3D.CreateConvexCollision(System.Boolean,System.Boolean)
-  - Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-  - Godot.MeshInstance3D.GetBlendShapeCount
-  - Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-  - Godot.MeshInstance3D.GetBlendShapeValue(System.Int32)
-  - Godot.MeshInstance3D.SetBlendShapeValue(System.Int32,System.Single)
-  - Godot.MeshInstance3D.CreateDebugTangents
-  - Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-  - Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  - Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  - Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  - Godot.MeshInstance3D.Mesh
-  - Godot.MeshInstance3D.Skin
-  - Godot.MeshInstance3D.Skeleton
-  - Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName,Godot.Variant)
-  - Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-  - Godot.GeometryInstance3D.MaterialOverride
-  - Godot.GeometryInstance3D.MaterialOverlay
-  - Godot.GeometryInstance3D.Transparency
-  - Godot.GeometryInstance3D.CastShadow
-  - Godot.GeometryInstance3D.ExtraCullMargin
-  - Godot.GeometryInstance3D.CustomAabb
-  - Godot.GeometryInstance3D.LodBias
-  - Godot.GeometryInstance3D.IgnoreOcclusionCulling
-  - Godot.GeometryInstance3D.GIMode
-  - Godot.GeometryInstance3D.GILightmapScale
-  - Godot.GeometryInstance3D.VisibilityRangeBegin
-  - Godot.GeometryInstance3D.VisibilityRangeBeginMargin
-  - Godot.GeometryInstance3D.VisibilityRangeEnd
-  - Godot.GeometryInstance3D.VisibilityRangeEndMargin
-  - Godot.GeometryInstance3D.VisibilityRangeFadeMode
-  - Godot.VisualInstance3D._GetAabb
-  - Godot.VisualInstance3D.SetBase(Godot.Rid)
-  - Godot.VisualInstance3D.GetBase
-  - Godot.VisualInstance3D.GetInstance
-  - Godot.VisualInstance3D.SetLayerMaskValue(System.Int32,System.Boolean)
-  - Godot.VisualInstance3D.GetLayerMaskValue(System.Int32)
-  - Godot.VisualInstance3D.GetAabb
-  - Godot.VisualInstance3D.Layers
-  - Godot.VisualInstance3D.SortingOffset
-  - Godot.VisualInstance3D.SortingUseAabbCenter
   - Godot.Node3D.NotificationTransformChanged
   - Godot.Node3D.NotificationEnterWorld
   - Godot.Node3D.NotificationExitWorld
@@ -144,6 +103,9 @@ items:
   - Godot.Node3D.LookAtFromPosition(Godot.Vector3,Godot.Vector3,System.Nullable{Godot.Vector3},System.Boolean)
   - Godot.Node3D.ToLocal(Godot.Vector3)
   - Godot.Node3D.ToGlobal(Godot.Vector3)
+  - Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  - Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  - Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
   - Godot.Node3D.Transform
   - Godot.Node3D.GlobalTransform
   - Godot.Node3D.Position
@@ -426,11 +388,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radius
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -469,11 +431,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -512,11 +474,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -555,11 +517,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeInterval
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -584,6 +546,47 @@ items:
       value: "0"
     - type: System.String
       value: ''
+- uid: Stargazer.AzimuthGridlines.longitudeInterval
+  commentId: F:Stargazer.AzimuthGridlines.longitudeInterval
+  id: longitudeInterval
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: longitudeInterval
+  nameWithType: AzimuthGridlines.longitudeInterval
+  fullName: Stargazer.AzimuthGridlines.longitudeInterval
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: longitudeInterval
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 27
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      public float longitudeInterval
+    return:
+      type: System.Single
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Public longitudeInterval As Single
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.AzimuthGridlines.cutoffLatitude
   commentId: F:Stargazer.AzimuthGridlines.cutoffLatitude
   id: cutoffLatitude
@@ -598,11 +601,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: cutoffLatitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -627,6 +630,60 @@ items:
       value: "0"
     - type: System.String
       value: ''
+- uid: Stargazer.AzimuthGridlines.azimuthGridlines
+  commentId: F:Stargazer.AzimuthGridlines.azimuthGridlines
+  id: azimuthGridlines
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: azimuthGridlines
+  nameWithType: AzimuthGridlines.azimuthGridlines
+  fullName: Stargazer.AzimuthGridlines.azimuthGridlines
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: azimuthGridlines
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 33
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public MeshInstance3D azimuthGridlines
+    return:
+      type: Godot.MeshInstance3D
+    content.vb: Public azimuthGridlines As MeshInstance3D
+- uid: Stargazer.AzimuthGridlines.equatorialGridlines
+  commentId: F:Stargazer.AzimuthGridlines.equatorialGridlines
+  id: equatorialGridlines
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: equatorialGridlines
+  nameWithType: AzimuthGridlines.equatorialGridlines
+  fullName: Stargazer.AzimuthGridlines.equatorialGridlines
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: equatorialGridlines
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public MeshInstance3D equatorialGridlines
+    return:
+      type: Godot.MeshInstance3D
+    content.vb: Public equatorialGridlines As MeshInstance3D
 - uid: Stargazer.AzimuthGridlines.mesh
   commentId: F:Stargazer.AzimuthGridlines.mesh
   id: mesh
@@ -641,11 +698,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -654,87 +711,195 @@ items:
     return:
       type: Godot.ImmediateMesh
     content.vb: Private mesh As ImmediateMesh
-- uid: Stargazer.AzimuthGridlines.storedfov
-  commentId: F:Stargazer.AzimuthGridlines.storedfov
-  id: storedfov
+- uid: Stargazer.AzimuthGridlines.mesh2
+  commentId: F:Stargazer.AzimuthGridlines.mesh2
+  id: mesh2
   parent: Stargazer.AzimuthGridlines
   langs:
   - csharp
   - vb
-  name: storedfov
-  nameWithType: AzimuthGridlines.storedfov
-  fullName: Stargazer.AzimuthGridlines.storedfov
+  name: mesh2
+  nameWithType: AzimuthGridlines.mesh2
+  fullName: Stargazer.AzimuthGridlines.mesh2
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: storedfov
-    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 33
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private float storedfov
-    return:
-      type: System.Single
-    content.vb: Private storedfov As Single
-- uid: Stargazer.AzimuthGridlines.camera
-  commentId: F:Stargazer.AzimuthGridlines.camera
-  id: camera
-  parent: Stargazer.AzimuthGridlines
-  langs:
-  - csharp
-  - vb
-  name: camera
-  nameWithType: AzimuthGridlines.camera
-  fullName: Stargazer.AzimuthGridlines.camera
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: camera
-    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 34
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Camera3D camera
-    return:
-      type: Godot.Camera3D
-    content.vb: Private camera As Camera3D
-- uid: Stargazer.AzimuthGridlines.greenMaterial
-  commentId: F:Stargazer.AzimuthGridlines.greenMaterial
-  id: greenMaterial
-  parent: Stargazer.AzimuthGridlines
-  langs:
-  - csharp
-  - vb
-  name: greenMaterial
-  nameWithType: AzimuthGridlines.greenMaterial
-  fullName: Stargazer.AzimuthGridlines.greenMaterial
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: greenMaterial
+    id: mesh2
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
     startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private StandardMaterial3D greenMaterial
+    content: private ImmediateMesh mesh2
+    return:
+      type: Godot.ImmediateMesh
+    content.vb: Private mesh2 As ImmediateMesh
+- uid: Stargazer.AzimuthGridlines.orangeMaterial
+  commentId: F:Stargazer.AzimuthGridlines.orangeMaterial
+  id: orangeMaterial
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: orangeMaterial
+  nameWithType: AzimuthGridlines.orangeMaterial
+  fullName: Stargazer.AzimuthGridlines.orangeMaterial
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: orangeMaterial
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private StandardMaterial3D orangeMaterial
     return:
       type: Godot.StandardMaterial3D
-    content.vb: Private greenMaterial As StandardMaterial3D
+    content.vb: Private orangeMaterial As StandardMaterial3D
+- uid: Stargazer.AzimuthGridlines.blueMaterial
+  commentId: F:Stargazer.AzimuthGridlines.blueMaterial
+  id: blueMaterial
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: blueMaterial
+  nameWithType: AzimuthGridlines.blueMaterial
+  fullName: Stargazer.AzimuthGridlines.blueMaterial
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: blueMaterial
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 37
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private StandardMaterial3D blueMaterial
+    return:
+      type: Godot.StandardMaterial3D
+    content.vb: Private blueMaterial As StandardMaterial3D
+- uid: Stargazer.AzimuthGridlines.calculator
+  commentId: F:Stargazer.AzimuthGridlines.calculator
+  id: calculator
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: calculator
+  nameWithType: AzimuthGridlines.calculator
+  fullName: Stargazer.AzimuthGridlines.calculator
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: calculator
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 38
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IEquatorialCalculator calculator
+    return:
+      type: DataLayer.Interfaces.IEquatorialCalculator
+    content.vb: Private calculator As IEquatorialCalculator
+- uid: Stargazer.AzimuthGridlines.globalVars
+  commentId: F:Stargazer.AzimuthGridlines.globalVars
+  id: globalVars
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: globalVars
+  nameWithType: AzimuthGridlines.globalVars
+  fullName: Stargazer.AzimuthGridlines.globalVars
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: globalVars
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 39
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Globals globalVars
+    return:
+      type: Stargazer.Globals
+    content.vb: Private globalVars As Globals
+- uid: Stargazer.AzimuthGridlines.latitude
+  commentId: F:Stargazer.AzimuthGridlines.latitude
+  id: latitude
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: latitude
+  nameWithType: AzimuthGridlines.latitude
+  fullName: Stargazer.AzimuthGridlines.latitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: latitude
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 40
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private float latitude
+    return:
+      type: System.Single
+    content.vb: Private latitude As Single
+- uid: Stargazer.AzimuthGridlines.longitude
+  commentId: F:Stargazer.AzimuthGridlines.longitude
+  id: longitude
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: longitude
+  nameWithType: AzimuthGridlines.longitude
+  fullName: Stargazer.AzimuthGridlines.longitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: longitude
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 41
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private float longitude
+    return:
+      type: System.Single
+    content.vb: Private longitude As Single
 - uid: Stargazer.AzimuthGridlines._Ready
   commentId: M:Stargazer.AzimuthGridlines._Ready
   id: _Ready
@@ -749,11 +914,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 39
+    startLine: 46
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -778,11 +943,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 59
+    startLine: 80
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -800,6 +965,35 @@ items:
   nameWithType.vb: AzimuthGridlines._Process(Double)
   fullName.vb: Stargazer.AzimuthGridlines._Process(Double)
   name.vb: _Process(Double)
+- uid: Stargazer.AzimuthGridlines.HandleZoomStateChanged(Stargazer.ZoomState)
+  commentId: M:Stargazer.AzimuthGridlines.HandleZoomStateChanged(Stargazer.ZoomState)
+  id: HandleZoomStateChanged(Stargazer.ZoomState)
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: HandleZoomStateChanged(ZoomState)
+  nameWithType: AzimuthGridlines.HandleZoomStateChanged(ZoomState)
+  fullName: Stargazer.AzimuthGridlines.HandleZoomStateChanged(Stargazer.ZoomState)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: HandleZoomStateChanged
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 94
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void HandleZoomStateChanged(ZoomState zoomState)
+    parameters:
+    - id: zoomState
+      type: Stargazer.ZoomState
+    content.vb: Public Sub HandleZoomStateChanged(zoomState As ZoomState)
+  overload: Stargazer.AzimuthGridlines.HandleZoomStateChanged*
 - uid: Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
   commentId: M:Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
   id: ToggleGridlines(System.Boolean)
@@ -814,11 +1008,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 84
+    startLine: 113
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -835,95 +1029,134 @@ items:
   nameWithType.vb: AzimuthGridlines.ToggleGridlines(Boolean)
   fullName.vb: Stargazer.AzimuthGridlines.ToggleGridlines(Boolean)
   name.vb: ToggleGridlines(Boolean)
-- uid: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
-  commentId: M:Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
-  id: SetCamera(Godot.Camera3D)
+- uid: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(System.Boolean)
+  commentId: M:Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(System.Boolean)
+  id: ToggleEquatorialGridlines(System.Boolean)
   parent: Stargazer.AzimuthGridlines
   langs:
   - csharp
   - vb
-  name: SetCamera(Camera3D)
-  nameWithType: AzimuthGridlines.SetCamera(Camera3D)
-  fullName: Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)
+  name: ToggleEquatorialGridlines(bool)
+  nameWithType: AzimuthGridlines.ToggleEquatorialGridlines(bool)
+  fullName: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(bool)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: SetCamera
+    id: ToggleEquatorialGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 93
+    startLine: 122
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Gets a reference to the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref> from the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
+  summary: Receives notifications of user request to toggle equatorial gridline visibility.
   example: []
   syntax:
-    content: public void SetCamera(Camera3D camera)
+    content: public void ToggleEquatorialGridlines(bool showLines)
     parameters:
-    - id: camera
-      type: Godot.Camera3D
-      description: ''
-    content.vb: Public Sub SetCamera(camera As Camera3D)
-  overload: Stargazer.AzimuthGridlines.SetCamera*
-- uid: Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
-  commentId: M:Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
-  id: DrawLongitudeLines(Godot.ImmediateMesh)
+    - id: showLines
+      type: System.Boolean
+      description: True to show lines.
+    content.vb: Public Sub ToggleEquatorialGridlines(showLines As Boolean)
+  overload: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines*
+  nameWithType.vb: AzimuthGridlines.ToggleEquatorialGridlines(Boolean)
+  fullName.vb: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(Boolean)
+  name.vb: ToggleEquatorialGridlines(Boolean)
+- uid: Stargazer.AzimuthGridlines.SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.AzimuthGridlines.SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)
+  id: SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)
   parent: Stargazer.AzimuthGridlines
   langs:
   - csharp
   - vb
-  name: DrawLongitudeLines(ImmediateMesh)
-  nameWithType: AzimuthGridlines.DrawLongitudeLines(ImmediateMesh)
-  fullName: Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)
+  name: SetCalculator(IEquatorialCalculator)
+  nameWithType: AzimuthGridlines.SetCalculator(IEquatorialCalculator)
+  fullName: Stargazer.AzimuthGridlines.SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetCalculator
+    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
+    startLine: 131
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Sets the <xref href="DataLayer.Interfaces.IEquatorialCalculator" data-throw-if-not-resolved="false"></xref> used to retrieve the current observers latitude and longitude.
+  example: []
+  syntax:
+    content: public void SetCalculator(IEquatorialCalculator calculator)
+    parameters:
+    - id: calculator
+      type: DataLayer.Interfaces.IEquatorialCalculator
+      description: The calculator
+    content.vb: Public Sub SetCalculator(calculator As IEquatorialCalculator)
+  overload: Stargazer.AzimuthGridlines.SetCalculator*
+- uid: Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  commentId: M:Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  id: DrawLongitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  parent: Stargazer.AzimuthGridlines
+  langs:
+  - csharp
+  - vb
+  name: DrawLongitudeLines(ImmediateMesh, ImmediateMesh)
+  nameWithType: AzimuthGridlines.DrawLongitudeLines(ImmediateMesh, ImmediateMesh)
+  fullName: Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh, Godot.ImmediateMesh)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/AzimuthGridlines.cs
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLongitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 100
+    startLine: 138
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private void DrawLongitudeLines(ImmediateMesh imMesh)
+    content: private void DrawLongitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)
     parameters:
     - id: imMesh
       type: Godot.ImmediateMesh
-    content.vb: Private Sub DrawLongitudeLines(imMesh As ImmediateMesh)
+    - id: imMesh2
+      type: Godot.ImmediateMesh
+    content.vb: Private Sub DrawLongitudeLines(imMesh As ImmediateMesh, imMesh2 As ImmediateMesh)
   overload: Stargazer.AzimuthGridlines.DrawLongitudeLines*
-- uid: Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)
-  commentId: M:Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)
-  id: DrawLatitudeLines(Godot.ImmediateMesh)
+- uid: Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  commentId: M:Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
+  id: DrawLatitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)
   parent: Stargazer.AzimuthGridlines
   langs:
   - csharp
   - vb
-  name: DrawLatitudeLines(ImmediateMesh)
-  nameWithType: AzimuthGridlines.DrawLatitudeLines(ImmediateMesh)
-  fullName: Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)
+  name: DrawLatitudeLines(ImmediateMesh, ImmediateMesh)
+  nameWithType: AzimuthGridlines.DrawLatitudeLines(ImmediateMesh, ImmediateMesh)
+  fullName: Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh, Godot.ImmediateMesh)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLatitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 148
+    startLine: 216
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private void DrawLatitudeLines(ImmediateMesh imMesh)
+    content: private void DrawLatitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)
     parameters:
     - id: imMesh
       type: Godot.ImmediateMesh
-    content.vb: Private Sub DrawLatitudeLines(imMesh As ImmediateMesh)
+    - id: imMesh2
+      type: Godot.ImmediateMesh
+    content.vb: Private Sub DrawLatitudeLines(imMesh As ImmediateMesh, imMesh2 As ImmediateMesh)
   overload: Stargazer.AzimuthGridlines.DrawLatitudeLines*
 references:
 - uid: Stargazer
@@ -964,27 +1197,6 @@ references:
   name: Node3D
   nameWithType: Node3D
   fullName: Godot.Node3D
-- uid: Godot.VisualInstance3D
-  commentId: T:Godot.VisualInstance3D
-  parent: Godot
-  isExternal: true
-  name: VisualInstance3D
-  nameWithType: VisualInstance3D
-  fullName: Godot.VisualInstance3D
-- uid: Godot.GeometryInstance3D
-  commentId: T:Godot.GeometryInstance3D
-  parent: Godot
-  isExternal: true
-  name: GeometryInstance3D
-  nameWithType: GeometryInstance3D
-  fullName: Godot.GeometryInstance3D
-- uid: Godot.MeshInstance3D
-  commentId: T:Godot.MeshInstance3D
-  parent: Godot
-  isExternal: true
-  name: MeshInstance3D
-  nameWithType: MeshInstance3D
-  fullName: Godot.MeshInstance3D
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -993,890 +1205,6 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: Godot.MeshInstance3D.GetSkinReference
-  commentId: M:Godot.MeshInstance3D.GetSkinReference
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: GetSkinReference()
-  nameWithType: MeshInstance3D.GetSkinReference()
-  fullName: Godot.MeshInstance3D.GetSkinReference()
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetSkinReference
-    name: GetSkinReference
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetSkinReference
-    name: GetSkinReference
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount
-  commentId: M:Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: GetSurfaceOverrideMaterialCount()
-  nameWithType: MeshInstance3D.GetSurfaceOverrideMaterialCount()
-  fullName: Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount()
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount
-    name: GetSurfaceOverrideMaterialCount
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterialCount
-    name: GetSurfaceOverrideMaterialCount
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.MeshInstance3D.SetSurfaceOverrideMaterial(System.Int32,Godot.Material)
-  commentId: M:Godot.MeshInstance3D.SetSurfaceOverrideMaterial(System.Int32,Godot.Material)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: SetSurfaceOverrideMaterial(int, Material)
-  nameWithType: MeshInstance3D.SetSurfaceOverrideMaterial(int, Material)
-  fullName: Godot.MeshInstance3D.SetSurfaceOverrideMaterial(int, Godot.Material)
-  nameWithType.vb: MeshInstance3D.SetSurfaceOverrideMaterial(Integer, Material)
-  fullName.vb: Godot.MeshInstance3D.SetSurfaceOverrideMaterial(Integer, Godot.Material)
-  name.vb: SetSurfaceOverrideMaterial(Integer, Material)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.SetSurfaceOverrideMaterial(System.Int32,Godot.Material)
-    name: SetSurfaceOverrideMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Godot.Material
-    name: Material
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.SetSurfaceOverrideMaterial(System.Int32,Godot.Material)
-    name: SetSurfaceOverrideMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Godot.Material
-    name: Material
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterial(System.Int32)
-  commentId: M:Godot.MeshInstance3D.GetSurfaceOverrideMaterial(System.Int32)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: GetSurfaceOverrideMaterial(int)
-  nameWithType: MeshInstance3D.GetSurfaceOverrideMaterial(int)
-  fullName: Godot.MeshInstance3D.GetSurfaceOverrideMaterial(int)
-  nameWithType.vb: MeshInstance3D.GetSurfaceOverrideMaterial(Integer)
-  fullName.vb: Godot.MeshInstance3D.GetSurfaceOverrideMaterial(Integer)
-  name.vb: GetSurfaceOverrideMaterial(Integer)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterial(System.Int32)
-    name: GetSurfaceOverrideMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetSurfaceOverrideMaterial(System.Int32)
-    name: GetSurfaceOverrideMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: Godot.MeshInstance3D.GetActiveMaterial(System.Int32)
-  commentId: M:Godot.MeshInstance3D.GetActiveMaterial(System.Int32)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: GetActiveMaterial(int)
-  nameWithType: MeshInstance3D.GetActiveMaterial(int)
-  fullName: Godot.MeshInstance3D.GetActiveMaterial(int)
-  nameWithType.vb: MeshInstance3D.GetActiveMaterial(Integer)
-  fullName.vb: Godot.MeshInstance3D.GetActiveMaterial(Integer)
-  name.vb: GetActiveMaterial(Integer)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetActiveMaterial(System.Int32)
-    name: GetActiveMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetActiveMaterial(System.Int32)
-    name: GetActiveMaterial
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: Godot.MeshInstance3D.CreateTrimeshCollision
-  commentId: M:Godot.MeshInstance3D.CreateTrimeshCollision
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: CreateTrimeshCollision()
-  nameWithType: MeshInstance3D.CreateTrimeshCollision()
-  fullName: Godot.MeshInstance3D.CreateTrimeshCollision()
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.CreateTrimeshCollision
-    name: CreateTrimeshCollision
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.CreateTrimeshCollision
-    name: CreateTrimeshCollision
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.MeshInstance3D.CreateConvexCollision(System.Boolean,System.Boolean)
-  commentId: M:Godot.MeshInstance3D.CreateConvexCollision(System.Boolean,System.Boolean)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: CreateConvexCollision(bool, bool)
-  nameWithType: MeshInstance3D.CreateConvexCollision(bool, bool)
-  fullName: Godot.MeshInstance3D.CreateConvexCollision(bool, bool)
-  nameWithType.vb: MeshInstance3D.CreateConvexCollision(Boolean, Boolean)
-  fullName.vb: Godot.MeshInstance3D.CreateConvexCollision(Boolean, Boolean)
-  name.vb: CreateConvexCollision(Boolean, Boolean)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.CreateConvexCollision(System.Boolean,System.Boolean)
-    name: CreateConvexCollision
-    isExternal: true
-  - name: (
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.CreateConvexCollision(System.Boolean,System.Boolean)
-    name: CreateConvexCollision
-    isExternal: true
-  - name: (
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-  commentId: M:Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: CreateMultipleConvexCollisions(MeshConvexDecompositionSettings)
-  nameWithType: MeshInstance3D.CreateMultipleConvexCollisions(MeshConvexDecompositionSettings)
-  fullName: Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-    name: CreateMultipleConvexCollisions
-    isExternal: true
-  - name: (
-  - uid: Godot.MeshConvexDecompositionSettings
-    name: MeshConvexDecompositionSettings
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.CreateMultipleConvexCollisions(Godot.MeshConvexDecompositionSettings)
-    name: CreateMultipleConvexCollisions
-    isExternal: true
-  - name: (
-  - uid: Godot.MeshConvexDecompositionSettings
-    name: MeshConvexDecompositionSettings
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.GetBlendShapeCount
-  commentId: M:Godot.MeshInstance3D.GetBlendShapeCount
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: GetBlendShapeCount()
-  nameWithType: MeshInstance3D.GetBlendShapeCount()
-  fullName: Godot.MeshInstance3D.GetBlendShapeCount()
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetBlendShapeCount
-    name: GetBlendShapeCount
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetBlendShapeCount
-    name: GetBlendShapeCount
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-  commentId: M:Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: FindBlendShapeByName(StringName)
-  nameWithType: MeshInstance3D.FindBlendShapeByName(StringName)
-  fullName: Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-    name: FindBlendShapeByName
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.FindBlendShapeByName(Godot.StringName)
-    name: FindBlendShapeByName
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.GetBlendShapeValue(System.Int32)
-  commentId: M:Godot.MeshInstance3D.GetBlendShapeValue(System.Int32)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: GetBlendShapeValue(int)
-  nameWithType: MeshInstance3D.GetBlendShapeValue(int)
-  fullName: Godot.MeshInstance3D.GetBlendShapeValue(int)
-  nameWithType.vb: MeshInstance3D.GetBlendShapeValue(Integer)
-  fullName.vb: Godot.MeshInstance3D.GetBlendShapeValue(Integer)
-  name.vb: GetBlendShapeValue(Integer)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.GetBlendShapeValue(System.Int32)
-    name: GetBlendShapeValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.GetBlendShapeValue(System.Int32)
-    name: GetBlendShapeValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: Godot.MeshInstance3D.SetBlendShapeValue(System.Int32,System.Single)
-  commentId: M:Godot.MeshInstance3D.SetBlendShapeValue(System.Int32,System.Single)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: SetBlendShapeValue(int, float)
-  nameWithType: MeshInstance3D.SetBlendShapeValue(int, float)
-  fullName: Godot.MeshInstance3D.SetBlendShapeValue(int, float)
-  nameWithType.vb: MeshInstance3D.SetBlendShapeValue(Integer, Single)
-  fullName.vb: Godot.MeshInstance3D.SetBlendShapeValue(Integer, Single)
-  name.vb: SetBlendShapeValue(Integer, Single)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.SetBlendShapeValue(System.Int32,System.Single)
-    name: SetBlendShapeValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.SetBlendShapeValue(System.Int32,System.Single)
-    name: SetBlendShapeValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: )
-- uid: Godot.MeshInstance3D.CreateDebugTangents
-  commentId: M:Godot.MeshInstance3D.CreateDebugTangents
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: CreateDebugTangents()
-  nameWithType: MeshInstance3D.CreateDebugTangents()
-  fullName: Godot.MeshInstance3D.CreateDebugTangents()
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.CreateDebugTangents
-    name: CreateDebugTangents
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.CreateDebugTangents
-    name: CreateDebugTangents
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-  commentId: M:Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: BakeMeshFromCurrentBlendShapeMix(ArrayMesh)
-  nameWithType: MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(ArrayMesh)
-  fullName: Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-    name: BakeMeshFromCurrentBlendShapeMix
-    isExternal: true
-  - name: (
-  - uid: Godot.ArrayMesh
-    name: ArrayMesh
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(Godot.ArrayMesh)
-    name: BakeMeshFromCurrentBlendShapeMix
-    isExternal: true
-  - name: (
-  - uid: Godot.ArrayMesh
-    name: ArrayMesh
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  commentId: M:Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  nameWithType: MeshInstance3D.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  fullName: Godot.MeshInstance3D.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
-  nameWithType.vb: MeshInstance3D.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
-  fullName.vb: Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
-  name.vb: InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-    name: InvokeGodotClassMethod
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.NativeVariantPtrArgs
-    name: NativeVariantPtrArgs
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: out
-  - name: " "
-  - uid: Godot.NativeInterop.godot_variant
-    name: godot_variant
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-    name: InvokeGodotClassMethod
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.NativeVariantPtrArgs
-    name: NativeVariantPtrArgs
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.godot_variant
-    name: godot_variant
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: HasGodotClassMethod(in godot_string_name)
-  nameWithType: MeshInstance3D.HasGodotClassMethod(in godot_string_name)
-  fullName: Godot.MeshInstance3D.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: MeshInstance3D.HasGodotClassMethod(godot_string_name)
-  fullName.vb: Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
-  name.vb: HasGodotClassMethod(godot_string_name)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassMethod
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassMethod
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: HasGodotClassSignal(in godot_string_name)
-  nameWithType: MeshInstance3D.HasGodotClassSignal(in godot_string_name)
-  fullName: Godot.MeshInstance3D.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: MeshInstance3D.HasGodotClassSignal(godot_string_name)
-  fullName.vb: Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
-  name.vb: HasGodotClassSignal(godot_string_name)
-  spec.csharp:
-  - uid: Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassSignal
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.MeshInstance3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassSignal
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-- uid: Godot.MeshInstance3D.Mesh
-  commentId: P:Godot.MeshInstance3D.Mesh
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: Mesh
-  nameWithType: MeshInstance3D.Mesh
-  fullName: Godot.MeshInstance3D.Mesh
-- uid: Godot.MeshInstance3D.Skin
-  commentId: P:Godot.MeshInstance3D.Skin
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: Skin
-  nameWithType: MeshInstance3D.Skin
-  fullName: Godot.MeshInstance3D.Skin
-- uid: Godot.MeshInstance3D.Skeleton
-  commentId: P:Godot.MeshInstance3D.Skeleton
-  parent: Godot.MeshInstance3D
-  isExternal: true
-  name: Skeleton
-  nameWithType: MeshInstance3D.Skeleton
-  fullName: Godot.MeshInstance3D.Skeleton
-- uid: Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName,Godot.Variant)
-  commentId: M:Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName,Godot.Variant)
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: SetInstanceShaderParameter(StringName, Variant)
-  nameWithType: GeometryInstance3D.SetInstanceShaderParameter(StringName, Variant)
-  fullName: Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName, Godot.Variant)
-  spec.csharp:
-  - uid: Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName,Godot.Variant)
-    name: SetInstanceShaderParameter
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.Variant
-    name: Variant
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.GeometryInstance3D.SetInstanceShaderParameter(Godot.StringName,Godot.Variant)
-    name: SetInstanceShaderParameter
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.Variant
-    name: Variant
-    isExternal: true
-  - name: )
-- uid: Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-  commentId: M:Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: GetInstanceShaderParameter(StringName)
-  nameWithType: GeometryInstance3D.GetInstanceShaderParameter(StringName)
-  fullName: Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-  spec.csharp:
-  - uid: Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-    name: GetInstanceShaderParameter
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.GeometryInstance3D.GetInstanceShaderParameter(Godot.StringName)
-    name: GetInstanceShaderParameter
-    isExternal: true
-  - name: (
-  - uid: Godot.StringName
-    name: StringName
-    isExternal: true
-  - name: )
-- uid: Godot.GeometryInstance3D.MaterialOverride
-  commentId: P:Godot.GeometryInstance3D.MaterialOverride
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: MaterialOverride
-  nameWithType: GeometryInstance3D.MaterialOverride
-  fullName: Godot.GeometryInstance3D.MaterialOverride
-- uid: Godot.GeometryInstance3D.MaterialOverlay
-  commentId: P:Godot.GeometryInstance3D.MaterialOverlay
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: MaterialOverlay
-  nameWithType: GeometryInstance3D.MaterialOverlay
-  fullName: Godot.GeometryInstance3D.MaterialOverlay
-- uid: Godot.GeometryInstance3D.Transparency
-  commentId: P:Godot.GeometryInstance3D.Transparency
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: Transparency
-  nameWithType: GeometryInstance3D.Transparency
-  fullName: Godot.GeometryInstance3D.Transparency
-- uid: Godot.GeometryInstance3D.CastShadow
-  commentId: P:Godot.GeometryInstance3D.CastShadow
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: CastShadow
-  nameWithType: GeometryInstance3D.CastShadow
-  fullName: Godot.GeometryInstance3D.CastShadow
-- uid: Godot.GeometryInstance3D.ExtraCullMargin
-  commentId: P:Godot.GeometryInstance3D.ExtraCullMargin
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: ExtraCullMargin
-  nameWithType: GeometryInstance3D.ExtraCullMargin
-  fullName: Godot.GeometryInstance3D.ExtraCullMargin
-- uid: Godot.GeometryInstance3D.CustomAabb
-  commentId: P:Godot.GeometryInstance3D.CustomAabb
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: CustomAabb
-  nameWithType: GeometryInstance3D.CustomAabb
-  fullName: Godot.GeometryInstance3D.CustomAabb
-- uid: Godot.GeometryInstance3D.LodBias
-  commentId: P:Godot.GeometryInstance3D.LodBias
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: LodBias
-  nameWithType: GeometryInstance3D.LodBias
-  fullName: Godot.GeometryInstance3D.LodBias
-- uid: Godot.GeometryInstance3D.IgnoreOcclusionCulling
-  commentId: P:Godot.GeometryInstance3D.IgnoreOcclusionCulling
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: IgnoreOcclusionCulling
-  nameWithType: GeometryInstance3D.IgnoreOcclusionCulling
-  fullName: Godot.GeometryInstance3D.IgnoreOcclusionCulling
-- uid: Godot.GeometryInstance3D.GIMode
-  commentId: P:Godot.GeometryInstance3D.GIMode
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: GIMode
-  nameWithType: GeometryInstance3D.GIMode
-  fullName: Godot.GeometryInstance3D.GIMode
-- uid: Godot.GeometryInstance3D.GILightmapScale
-  commentId: P:Godot.GeometryInstance3D.GILightmapScale
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: GILightmapScale
-  nameWithType: GeometryInstance3D.GILightmapScale
-  fullName: Godot.GeometryInstance3D.GILightmapScale
-- uid: Godot.GeometryInstance3D.VisibilityRangeBegin
-  commentId: P:Godot.GeometryInstance3D.VisibilityRangeBegin
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: VisibilityRangeBegin
-  nameWithType: GeometryInstance3D.VisibilityRangeBegin
-  fullName: Godot.GeometryInstance3D.VisibilityRangeBegin
-- uid: Godot.GeometryInstance3D.VisibilityRangeBeginMargin
-  commentId: P:Godot.GeometryInstance3D.VisibilityRangeBeginMargin
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: VisibilityRangeBeginMargin
-  nameWithType: GeometryInstance3D.VisibilityRangeBeginMargin
-  fullName: Godot.GeometryInstance3D.VisibilityRangeBeginMargin
-- uid: Godot.GeometryInstance3D.VisibilityRangeEnd
-  commentId: P:Godot.GeometryInstance3D.VisibilityRangeEnd
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: VisibilityRangeEnd
-  nameWithType: GeometryInstance3D.VisibilityRangeEnd
-  fullName: Godot.GeometryInstance3D.VisibilityRangeEnd
-- uid: Godot.GeometryInstance3D.VisibilityRangeEndMargin
-  commentId: P:Godot.GeometryInstance3D.VisibilityRangeEndMargin
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: VisibilityRangeEndMargin
-  nameWithType: GeometryInstance3D.VisibilityRangeEndMargin
-  fullName: Godot.GeometryInstance3D.VisibilityRangeEndMargin
-- uid: Godot.GeometryInstance3D.VisibilityRangeFadeMode
-  commentId: P:Godot.GeometryInstance3D.VisibilityRangeFadeMode
-  parent: Godot.GeometryInstance3D
-  isExternal: true
-  name: VisibilityRangeFadeMode
-  nameWithType: GeometryInstance3D.VisibilityRangeFadeMode
-  fullName: Godot.GeometryInstance3D.VisibilityRangeFadeMode
-- uid: Godot.VisualInstance3D._GetAabb
-  commentId: M:Godot.VisualInstance3D._GetAabb
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: _GetAabb()
-  nameWithType: VisualInstance3D._GetAabb()
-  fullName: Godot.VisualInstance3D._GetAabb()
-  spec.csharp:
-  - uid: Godot.VisualInstance3D._GetAabb
-    name: _GetAabb
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D._GetAabb
-    name: _GetAabb
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.VisualInstance3D.SetBase(Godot.Rid)
-  commentId: M:Godot.VisualInstance3D.SetBase(Godot.Rid)
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: SetBase(Rid)
-  nameWithType: VisualInstance3D.SetBase(Rid)
-  fullName: Godot.VisualInstance3D.SetBase(Godot.Rid)
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.SetBase(Godot.Rid)
-    name: SetBase
-    isExternal: true
-  - name: (
-  - uid: Godot.Rid
-    name: Rid
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.SetBase(Godot.Rid)
-    name: SetBase
-    isExternal: true
-  - name: (
-  - uid: Godot.Rid
-    name: Rid
-    isExternal: true
-  - name: )
-- uid: Godot.VisualInstance3D.GetBase
-  commentId: M:Godot.VisualInstance3D.GetBase
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: GetBase()
-  nameWithType: VisualInstance3D.GetBase()
-  fullName: Godot.VisualInstance3D.GetBase()
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.GetBase
-    name: GetBase
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.GetBase
-    name: GetBase
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.VisualInstance3D.GetInstance
-  commentId: M:Godot.VisualInstance3D.GetInstance
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: GetInstance()
-  nameWithType: VisualInstance3D.GetInstance()
-  fullName: Godot.VisualInstance3D.GetInstance()
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.GetInstance
-    name: GetInstance
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.GetInstance
-    name: GetInstance
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.VisualInstance3D.SetLayerMaskValue(System.Int32,System.Boolean)
-  commentId: M:Godot.VisualInstance3D.SetLayerMaskValue(System.Int32,System.Boolean)
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: SetLayerMaskValue(int, bool)
-  nameWithType: VisualInstance3D.SetLayerMaskValue(int, bool)
-  fullName: Godot.VisualInstance3D.SetLayerMaskValue(int, bool)
-  nameWithType.vb: VisualInstance3D.SetLayerMaskValue(Integer, Boolean)
-  fullName.vb: Godot.VisualInstance3D.SetLayerMaskValue(Integer, Boolean)
-  name.vb: SetLayerMaskValue(Integer, Boolean)
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.SetLayerMaskValue(System.Int32,System.Boolean)
-    name: SetLayerMaskValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.SetLayerMaskValue(System.Int32,System.Boolean)
-    name: SetLayerMaskValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-- uid: Godot.VisualInstance3D.GetLayerMaskValue(System.Int32)
-  commentId: M:Godot.VisualInstance3D.GetLayerMaskValue(System.Int32)
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: GetLayerMaskValue(int)
-  nameWithType: VisualInstance3D.GetLayerMaskValue(int)
-  fullName: Godot.VisualInstance3D.GetLayerMaskValue(int)
-  nameWithType.vb: VisualInstance3D.GetLayerMaskValue(Integer)
-  fullName.vb: Godot.VisualInstance3D.GetLayerMaskValue(Integer)
-  name.vb: GetLayerMaskValue(Integer)
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.GetLayerMaskValue(System.Int32)
-    name: GetLayerMaskValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.GetLayerMaskValue(System.Int32)
-    name: GetLayerMaskValue
-    isExternal: true
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: Godot.VisualInstance3D.GetAabb
-  commentId: M:Godot.VisualInstance3D.GetAabb
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: GetAabb()
-  nameWithType: VisualInstance3D.GetAabb()
-  fullName: Godot.VisualInstance3D.GetAabb()
-  spec.csharp:
-  - uid: Godot.VisualInstance3D.GetAabb
-    name: GetAabb
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.VisualInstance3D.GetAabb
-    name: GetAabb
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.VisualInstance3D.Layers
-  commentId: P:Godot.VisualInstance3D.Layers
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: Layers
-  nameWithType: VisualInstance3D.Layers
-  fullName: Godot.VisualInstance3D.Layers
-- uid: Godot.VisualInstance3D.SortingOffset
-  commentId: P:Godot.VisualInstance3D.SortingOffset
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: SortingOffset
-  nameWithType: VisualInstance3D.SortingOffset
-  fullName: Godot.VisualInstance3D.SortingOffset
-- uid: Godot.VisualInstance3D.SortingUseAabbCenter
-  commentId: P:Godot.VisualInstance3D.SortingUseAabbCenter
-  parent: Godot.VisualInstance3D
-  isExternal: true
-  name: SortingUseAabbCenter
-  nameWithType: VisualInstance3D.SortingUseAabbCenter
-  fullName: Godot.VisualInstance3D.SortingUseAabbCenter
 - uid: Godot.Node3D.NotificationTransformChanged
   commentId: F:Godot.Node3D.NotificationTransformChanged
   parent: Godot.Node3D
@@ -2902,6 +2230,118 @@ references:
   - name: (
   - uid: Godot.Vector3
     name: Vector3
+    isExternal: true
+  - name: )
+- uid: Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  commentId: M:Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  parent: Godot.Node3D
+  isExternal: true
+  name: InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
+  nameWithType: Node3D.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
+  fullName: Godot.Node3D.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
+  nameWithType.vb: Node3D.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
+  fullName.vb: Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
+  name.vb: InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
+  spec.csharp:
+  - uid: Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+    name: InvokeGodotClassMethod
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.NativeVariantPtrArgs
+    name: NativeVariantPtrArgs
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: Godot.NativeInterop.godot_variant
+    name: godot_variant
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+    name: InvokeGodotClassMethod
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.NativeVariantPtrArgs
+    name: NativeVariantPtrArgs
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.godot_variant
+    name: godot_variant
+    isExternal: true
+  - name: )
+- uid: Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Node3D
+  isExternal: true
+  name: HasGodotClassMethod(in godot_string_name)
+  nameWithType: Node3D.HasGodotClassMethod(in godot_string_name)
+  fullName: Godot.Node3D.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Node3D.HasGodotClassMethod(godot_string_name)
+  fullName.vb: Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
+  name.vb: HasGodotClassMethod(godot_string_name)
+  spec.csharp:
+  - uid: Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassMethod
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Node3D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassMethod
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+- uid: Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Node3D
+  isExternal: true
+  name: HasGodotClassSignal(in godot_string_name)
+  nameWithType: Node3D.HasGodotClassSignal(in godot_string_name)
+  fullName: Godot.Node3D.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Node3D.HasGodotClassSignal(godot_string_name)
+  fullName.vb: Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
+  name.vb: HasGodotClassSignal(godot_string_name)
+  spec.csharp:
+  - uid: Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassSignal
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Node3D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassSignal
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
     isExternal: true
   - name: )
 - uid: Godot.Node3D.Transform
@@ -8526,6 +7966,13 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: Godot.MeshInstance3D
+  commentId: T:Godot.MeshInstance3D
+  parent: Godot
+  isExternal: true
+  name: MeshInstance3D
+  nameWithType: MeshInstance3D
+  fullName: Godot.MeshInstance3D
 - uid: Godot.ImmediateMesh
   commentId: T:Godot.ImmediateMesh
   parent: Godot
@@ -8533,13 +7980,6 @@ references:
   name: ImmediateMesh
   nameWithType: ImmediateMesh
   fullName: Godot.ImmediateMesh
-- uid: Godot.Camera3D
-  commentId: T:Godot.Camera3D
-  parent: Godot
-  isExternal: true
-  name: Camera3D
-  nameWithType: Camera3D
-  fullName: Godot.Camera3D
 - uid: Godot.StandardMaterial3D
   commentId: T:Godot.StandardMaterial3D
   parent: Godot
@@ -8547,6 +7987,42 @@ references:
   name: StandardMaterial3D
   nameWithType: StandardMaterial3D
   fullName: Godot.StandardMaterial3D
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: Stargazer.Globals
+  commentId: T:Stargazer.Globals
+  parent: Stargazer
+  href: Stargazer.Globals.html
+  name: Globals
+  nameWithType: Globals
+  fullName: Stargazer.Globals
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -8620,6 +8096,19 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
+- uid: Stargazer.AzimuthGridlines.HandleZoomStateChanged*
+  commentId: Overload:Stargazer.AzimuthGridlines.HandleZoomStateChanged
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_HandleZoomStateChanged_Stargazer_ZoomState_
+  name: HandleZoomStateChanged
+  nameWithType: AzimuthGridlines.HandleZoomStateChanged
+  fullName: Stargazer.AzimuthGridlines.HandleZoomStateChanged
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
+  parent: Stargazer
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
 - uid: ControlContainer.AzimuthToggled
   commentId: F:ControlContainer.AzimuthToggled
   href: ControlContainer.html#ControlContainer_AzimuthToggled
@@ -8643,28 +8132,27 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: Stargazer.SkyView
-  commentId: T:Stargazer.SkyView
-  parent: Stargazer
-  href: Stargazer.SkyView.html
-  name: SkyView
-  nameWithType: SkyView
-  fullName: Stargazer.SkyView
-- uid: Stargazer.AzimuthGridlines.SetCamera*
-  commentId: Overload:Stargazer.AzimuthGridlines.SetCamera
-  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_SetCamera_Godot_Camera3D_
-  name: SetCamera
-  nameWithType: AzimuthGridlines.SetCamera
-  fullName: Stargazer.AzimuthGridlines.SetCamera
+- uid: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines*
+  commentId: Overload:Stargazer.AzimuthGridlines.ToggleEquatorialGridlines
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_ToggleEquatorialGridlines_System_Boolean_
+  name: ToggleEquatorialGridlines
+  nameWithType: AzimuthGridlines.ToggleEquatorialGridlines
+  fullName: Stargazer.AzimuthGridlines.ToggleEquatorialGridlines
+- uid: Stargazer.AzimuthGridlines.SetCalculator*
+  commentId: Overload:Stargazer.AzimuthGridlines.SetCalculator
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_SetCalculator_DataLayer_Interfaces_IEquatorialCalculator_
+  name: SetCalculator
+  nameWithType: AzimuthGridlines.SetCalculator
+  fullName: Stargazer.AzimuthGridlines.SetCalculator
 - uid: Stargazer.AzimuthGridlines.DrawLongitudeLines*
   commentId: Overload:Stargazer.AzimuthGridlines.DrawLongitudeLines
-  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_DrawLongitudeLines_Godot_ImmediateMesh_
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_DrawLongitudeLines_Godot_ImmediateMesh_Godot_ImmediateMesh_
   name: DrawLongitudeLines
   nameWithType: AzimuthGridlines.DrawLongitudeLines
   fullName: Stargazer.AzimuthGridlines.DrawLongitudeLines
 - uid: Stargazer.AzimuthGridlines.DrawLatitudeLines*
   commentId: Overload:Stargazer.AzimuthGridlines.DrawLatitudeLines
-  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_DrawLatitudeLines_Godot_ImmediateMesh_
+  href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_DrawLatitudeLines_Godot_ImmediateMesh_Godot_ImmediateMesh_
   name: DrawLatitudeLines
   nameWithType: AzimuthGridlines.DrawLatitudeLines
   fullName: Stargazer.AzimuthGridlines.DrawLatitudeLines

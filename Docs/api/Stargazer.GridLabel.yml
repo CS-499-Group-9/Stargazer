@@ -5,16 +5,14 @@ items:
   id: GridLabel
   parent: Stargazer
   children:
-  - Stargazer.GridLabel.SetCamera(Godot.Camera3D)
+  - Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)
+  - Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)
   - Stargazer.GridLabel.ToggleGridlines(System.Boolean)
-  - Stargazer.GridLabel._Process(System.Double)
   - Stargazer.GridLabel._Ready
-  - Stargazer.GridLabel.camera
+  - Stargazer.GridLabel.azimuthlabels
   - Stargazer.GridLabel.gridlabels
-  - Stargazer.GridLabel.leftPlane
-  - Stargazer.GridLabel.lineinterval
+  - Stargazer.GridLabel.lineInterval
   - Stargazer.GridLabel.render
-  - Stargazer.GridLabel.storedfov
   - Stargazer.GridLabel.updateLabels
   langs:
   - csharp
@@ -25,7 +23,7 @@ items:
   type: Class
   source:
     id: GridLabel
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.GridLabel_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.GridLabel_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -333,6 +331,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -527,33 +526,6 @@ items:
     arguments:
     - type: System.String
       value: res://Code/GridLabel.cs
-- uid: Stargazer.GridLabel.camera
-  commentId: F:Stargazer.GridLabel.camera
-  id: camera
-  parent: Stargazer.GridLabel
-  langs:
-  - csharp
-  - vb
-  name: camera
-  nameWithType: GridLabel.camera
-  fullName: Stargazer.GridLabel.camera
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: camera
-    path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 13
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Camera3D camera
-    return:
-      type: Godot.Camera3D
-    content.vb: Private camera As Camera3D
 - uid: Stargazer.GridLabel.gridlabels
   commentId: F:Stargazer.GridLabel.gridlabels
   id: gridlabels
@@ -568,11 +540,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: gridlabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -581,87 +553,60 @@ items:
     return:
       type: System.Collections.Generic.Dictionary{System.Int32,Godot.Label}
     content.vb: Private gridlabels As Dictionary(Of Integer, Label)
-- uid: Stargazer.GridLabel.leftPlane
-  commentId: F:Stargazer.GridLabel.leftPlane
-  id: leftPlane
+- uid: Stargazer.GridLabel.azimuthlabels
+  commentId: F:Stargazer.GridLabel.azimuthlabels
+  id: azimuthlabels
   parent: Stargazer.GridLabel
   langs:
   - csharp
   - vb
-  name: leftPlane
-  nameWithType: GridLabel.leftPlane
-  fullName: Stargazer.GridLabel.leftPlane
+  name: azimuthlabels
+  nameWithType: GridLabel.azimuthlabels
+  fullName: Stargazer.GridLabel.azimuthlabels
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: leftPlane
+    id: azimuthlabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Plane leftPlane
+    content: private Dictionary<int, Label> azimuthlabels
     return:
-      type: Godot.Plane
-    content.vb: Private leftPlane As Plane
-- uid: Stargazer.GridLabel.storedfov
-  commentId: F:Stargazer.GridLabel.storedfov
-  id: storedfov
+      type: System.Collections.Generic.Dictionary{System.Int32,Godot.Label}
+    content.vb: Private azimuthlabels As Dictionary(Of Integer, Label)
+- uid: Stargazer.GridLabel.lineInterval
+  commentId: F:Stargazer.GridLabel.lineInterval
+  id: lineInterval
   parent: Stargazer.GridLabel
   langs:
   - csharp
   - vb
-  name: storedfov
-  nameWithType: GridLabel.storedfov
-  fullName: Stargazer.GridLabel.storedfov
+  name: lineInterval
+  nameWithType: GridLabel.lineInterval
+  fullName: Stargazer.GridLabel.lineInterval
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: storedfov
+    id: lineInterval
     path: ../Stargazer-Godot/Code/GridLabel.cs
     startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private float storedfov
+    content: private float lineInterval
     return:
       type: System.Single
-    content.vb: Private storedfov As Single
-- uid: Stargazer.GridLabel.lineinterval
-  commentId: F:Stargazer.GridLabel.lineinterval
-  id: lineinterval
-  parent: Stargazer.GridLabel
-  langs:
-  - csharp
-  - vb
-  name: lineinterval
-  nameWithType: GridLabel.lineinterval
-  fullName: Stargazer.GridLabel.lineinterval
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: lineinterval
-    path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 17
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private float lineinterval
-    return:
-      type: System.Single
-    content.vb: Private lineinterval As Single
+    content.vb: Private lineInterval As Single
 - uid: Stargazer.GridLabel.render
   commentId: F:Stargazer.GridLabel.render
   id: render
@@ -676,11 +621,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: render
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -703,11 +648,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -718,74 +663,64 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.GridLabel._Ready*
-- uid: Stargazer.GridLabel._Process(System.Double)
-  commentId: M:Stargazer.GridLabel._Process(System.Double)
-  id: _Process(System.Double)
+- uid: Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)
+  commentId: M:Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)
+  id: HandleZoomStateChanged(Stargazer.ZoomState)
   parent: Stargazer.GridLabel
   langs:
   - csharp
   - vb
-  name: _Process(double)
-  nameWithType: GridLabel._Process(double)
-  fullName: Stargazer.GridLabel._Process(double)
+  name: HandleZoomStateChanged(ZoomState)
+  nameWithType: GridLabel.HandleZoomStateChanged(ZoomState)
+  fullName: Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Process
+    id: HandleZoomStateChanged
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 45
+    startLine: 50
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Determines how to draw the labels for any given frame.
-  example: []
   syntax:
-    content: public override void _Process(double delta)
+    content: public void HandleZoomStateChanged(ZoomState zoomState)
     parameters:
-    - id: delta
-      type: System.Double
-      description: Ununsed.
-    content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
-  overload: Stargazer.GridLabel._Process*
-  nameWithType.vb: GridLabel._Process(Double)
-  fullName.vb: Stargazer.GridLabel._Process(Double)
-  name.vb: _Process(Double)
-- uid: Stargazer.GridLabel.SetCamera(Godot.Camera3D)
-  commentId: M:Stargazer.GridLabel.SetCamera(Godot.Camera3D)
-  id: SetCamera(Godot.Camera3D)
+    - id: zoomState
+      type: Stargazer.ZoomState
+    content.vb: Public Sub HandleZoomStateChanged(zoomState As ZoomState)
+  overload: Stargazer.GridLabel.HandleZoomStateChanged*
+- uid: Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)
+  commentId: M:Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)
+  id: HandleCameraRotationChanged(Godot.Camera3D)
   parent: Stargazer.GridLabel
   langs:
   - csharp
   - vb
-  name: SetCamera(Camera3D)
-  nameWithType: GridLabel.SetCamera(Camera3D)
-  fullName: Stargazer.GridLabel.SetCamera(Godot.Camera3D)
+  name: HandleCameraRotationChanged(Camera3D)
+  nameWithType: GridLabel.HandleCameraRotationChanged(Camera3D)
+  fullName: Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: SetCamera
+    id: HandleCameraRotationChanged
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 135
+    startLine: 67
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Gets a reference for the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref> from the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
-  example: []
   syntax:
-    content: public void SetCamera(Camera3D camera)
+    content: public void HandleCameraRotationChanged(Camera3D camera)
     parameters:
     - id: camera
       type: Godot.Camera3D
-      description: ''
-    content.vb: Public Sub SetCamera(camera As Camera3D)
-  overload: Stargazer.GridLabel.SetCamera*
+    content.vb: Public Sub HandleCameraRotationChanged(camera As Camera3D)
+  overload: Stargazer.GridLabel.HandleCameraRotationChanged*
 - uid: Stargazer.GridLabel.updateLabels
   commentId: M:Stargazer.GridLabel.updateLabels
   id: updateLabels
@@ -800,11 +735,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: updateLabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 142
+    startLine: 190
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -826,11 +761,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 157
+    startLine: 216
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -7570,6 +7505,37 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
   parent: Godot.Node
@@ -12336,13 +12302,6 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: Godot.Camera3D
-  commentId: T:Godot.Camera3D
-  parent: Godot
-  isExternal: true
-  name: Camera3D
-  nameWithType: Camera3D
-  fullName: Godot.Camera3D
 - uid: System.Collections.Generic.Dictionary{System.Int32,Godot.Label}
   commentId: T:System.Collections.Generic.Dictionary{System.Int32,Godot.Label}
   parent: System.Collections.Generic
@@ -12459,13 +12418,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: Godot.Plane
-  commentId: T:Godot.Plane
-  parent: Godot
-  isExternal: true
-  name: Plane
-  nameWithType: Plane
-  fullName: Godot.Plane
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -12513,67 +12465,32 @@ references:
   name: _Ready
   nameWithType: GridLabel._Ready
   fullName: Stargazer.GridLabel._Ready
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Stargazer.GridLabel._Process*
-  commentId: Overload:Stargazer.GridLabel._Process
-  href: Stargazer.GridLabel.html#Stargazer_GridLabel__Process_System_Double_
-  name: _Process
-  nameWithType: GridLabel._Process
-  fullName: Stargazer.GridLabel._Process
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
-- uid: Stargazer.SkyView
-  commentId: T:Stargazer.SkyView
+- uid: Stargazer.GridLabel.HandleZoomStateChanged*
+  commentId: Overload:Stargazer.GridLabel.HandleZoomStateChanged
+  href: Stargazer.GridLabel.html#Stargazer_GridLabel_HandleZoomStateChanged_Stargazer_ZoomState_
+  name: HandleZoomStateChanged
+  nameWithType: GridLabel.HandleZoomStateChanged
+  fullName: Stargazer.GridLabel.HandleZoomStateChanged
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
   parent: Stargazer
-  href: Stargazer.SkyView.html
-  name: SkyView
-  nameWithType: SkyView
-  fullName: Stargazer.SkyView
-- uid: Stargazer.GridLabel.SetCamera*
-  commentId: Overload:Stargazer.GridLabel.SetCamera
-  href: Stargazer.GridLabel.html#Stargazer_GridLabel_SetCamera_Godot_Camera3D_
-  name: SetCamera
-  nameWithType: GridLabel.SetCamera
-  fullName: Stargazer.GridLabel.SetCamera
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
+- uid: Stargazer.GridLabel.HandleCameraRotationChanged*
+  commentId: Overload:Stargazer.GridLabel.HandleCameraRotationChanged
+  href: Stargazer.GridLabel.html#Stargazer_GridLabel_HandleCameraRotationChanged_Godot_Camera3D_
+  name: HandleCameraRotationChanged
+  nameWithType: GridLabel.HandleCameraRotationChanged
+  fullName: Stargazer.GridLabel.HandleCameraRotationChanged
+- uid: Godot.Camera3D
+  commentId: T:Godot.Camera3D
+  parent: Godot
+  isExternal: true
+  name: Camera3D
+  nameWithType: Camera3D
+  fullName: Godot.Camera3D
 - uid: Stargazer.GridLabel.updateLabels*
   commentId: Overload:Stargazer.GridLabel.updateLabels
   href: Stargazer.GridLabel.html#Stargazer_GridLabel_updateLabels

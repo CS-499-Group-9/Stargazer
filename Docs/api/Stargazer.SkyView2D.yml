@@ -8,7 +8,6 @@ items:
   - Stargazer.SkyView2D.Constellations
   - Stargazer.SkyView2D.Stars
   - Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  - Stargazer.SkyView2D._Process(System.Double)
   - Stargazer.SkyView2D._Ready
   langs:
   - csharp
@@ -19,7 +18,7 @@ items:
   type: Class
   source:
     id: SkyView2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.SkyView2D_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.SkyView2D_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -30,11 +29,11 @@ items:
     content: >-
       [ScriptPath("res://Code/SkyView2D.cs")]
 
-      public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver
+      public class SkyView2D : Node2D, IDisposable
     content.vb: >-
       <ScriptPath("res://Code/SkyView2D.cs")>
 
-      Public Class SkyView2D Inherits Node2D Implements IDisposable, IUserUpdateReceiver
+      Public Class SkyView2D Inherits Node2D Implements IDisposable
   inheritance:
   - System.Object
   - Godot.GodotObject
@@ -43,7 +42,6 @@ items:
   - Godot.Node2D
   implements:
   - System.IDisposable
-  - IUserUpdateReceiver
   inheritedMembers:
   - Godot.Node2D.Rotate(System.Single)
   - Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
@@ -211,6 +209,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -419,11 +418,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Stars
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 15
+    startLine: 11
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -446,11 +445,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellations
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 16
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -473,11 +472,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 19
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -495,48 +494,6 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.SkyView2D._Ready*
-- uid: Stargazer.SkyView2D._Process(System.Double)
-  commentId: M:Stargazer.SkyView2D._Process(System.Double)
-  id: _Process(System.Double)
-  parent: Stargazer.SkyView2D
-  langs:
-  - csharp
-  - vb
-  name: _Process(double)
-  nameWithType: SkyView2D._Process(double)
-  fullName: Stargazer.SkyView2D._Process(double)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Process
-    path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 27
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: >-
-    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-
-    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
-  example: []
-  syntax:
-    content: public override void _Process(double delta)
-    parameters:
-    - id: delta
-      type: System.Double
-    content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
-  overload: Stargazer.SkyView2D._Process*
-  nameWithType.vb: SkyView2D._Process(Double)
-  fullName.vb: Stargazer.SkyView2D._Process(Double)
-  name.vb: _Process(Double)
 - uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
@@ -551,11 +508,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 37
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -572,8 +529,6 @@ items:
       description: ''
     content.vb: Public Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star)) As Task
   overload: Stargazer.SkyView2D.UpdateUserPosition*
-  implements:
-  - IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
   nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star))
   fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
   name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
@@ -631,12 +586,6 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: IUserUpdateReceiver
-  commentId: T:IUserUpdateReceiver
-  href: IUserUpdateReceiver.html
-  name: IUserUpdateReceiver
-  nameWithType: IUserUpdateReceiver
-  fullName: IUserUpdateReceiver
 - uid: Godot.Node2D.Rotate(System.Single)
   commentId: M:Godot.Node2D.Rotate(System.Single)
   parent: Godot.Node2D
@@ -4954,6 +4903,37 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -9785,100 +9765,12 @@ references:
   name: _Ready
   nameWithType: SkyView2D._Ready
   fullName: Stargazer.SkyView2D._Ready
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Stargazer.SkyView2D._Process*
-  commentId: Overload:Stargazer.SkyView2D._Process
-  href: Stargazer.SkyView2D.html#Stargazer_SkyView2D__Process_System_Double_
-  name: _Process
-  nameWithType: SkyView2D._Process
-  fullName: Stargazer.SkyView2D._Process
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
 - uid: Stargazer.SkyView2D.UpdateUserPosition*
   commentId: Overload:Stargazer.SkyView2D.UpdateUserPosition
   href: Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
   name: UpdateUserPosition
   nameWithType: SkyView2D.UpdateUserPosition
   fullName: Stargazer.SkyView2D.UpdateUserPosition
-- uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  commentId: M:IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  parent: IUserUpdateReceiver
-  href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
-  name: UpdateUserPosition(CelestialDataPackage<Star>)
-  nameWithType: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage<Star>)
-  fullName: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
-  nameWithType.vb: IUserUpdateReceiver.UpdateUserPosition(CelestialDataPackage(Of Star))
-  fullName.vb: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
-  spec.csharp:
-  - uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-    name: UpdateUserPosition
-    href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
-  - name: (
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: <
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: '>'
-  - name: )
-  spec.vb:
-  - uid: IUserUpdateReceiver.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-    name: UpdateUserPosition
-    href: IUserUpdateReceiver.html#IUserUpdateReceiver_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
-  - name: (
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: )
-  - name: )
 - uid: DataLayer.CelestialDataPackage{Stargazer.Star}
   commentId: T:DataLayer.CelestialDataPackage{Stargazer.Star}
   parent: DataLayer

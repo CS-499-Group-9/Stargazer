@@ -6,6 +6,7 @@ items:
   parent: Stargazer
   children:
   - Stargazer.Globals.Instance
+  - Stargazer.Globals.LocalSiderealTime
   - Stargazer.Globals._Ready
   - Stargazer.Globals.hoverLabel
   - Stargazer.Globals.isAzimuth
@@ -22,7 +23,7 @@ items:
   type: Class
   source:
     id: Globals
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Globals_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Globals_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -313,11 +314,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Instance
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 15
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -344,11 +345,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isAzimuth
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -373,11 +374,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isConstellation
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 17
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -402,11 +403,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isLabel
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 18
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -431,11 +432,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isHover
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 19
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -460,11 +461,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: hoverLabel
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 20
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -489,11 +490,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: requestTime
     path: ../Stargazer-Godot/Code/Globals.cs
-    startLine: 21
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -504,6 +505,35 @@ items:
       type: System.DateTime
     content.vb: Public Property requestTime As Date
   overload: Stargazer.Globals.requestTime*
+- uid: Stargazer.Globals.LocalSiderealTime
+  commentId: P:Stargazer.Globals.LocalSiderealTime
+  id: LocalSiderealTime
+  parent: Stargazer.Globals
+  langs:
+  - csharp
+  - vb
+  name: LocalSiderealTime
+  nameWithType: Globals.LocalSiderealTime
+  fullName: Stargazer.Globals.LocalSiderealTime
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Globals.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: LocalSiderealTime
+    path: ../Stargazer-Godot/Code/Globals.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public double LocalSiderealTime { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property LocalSiderealTime As Double
+  overload: Stargazer.Globals.LocalSiderealTime*
 - uid: Stargazer.Globals._Ready
   commentId: M:Stargazer.Globals._Ready
   id: _Ready
@@ -518,7 +548,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -6293,6 +6323,23 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: Stargazer.Globals.LocalSiderealTime*
+  commentId: Overload:Stargazer.Globals.LocalSiderealTime
+  href: Stargazer.Globals.html#Stargazer_Globals_LocalSiderealTime
+  name: LocalSiderealTime
+  nameWithType: Globals.LocalSiderealTime
+  fullName: Stargazer.Globals.LocalSiderealTime
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node

@@ -103,7 +103,7 @@ Class SkyView2D
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/SkyView2D.cs&quot;)]
-public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
+public class SkyView2D : Node2D, IDisposable</code></pre>
   </div>
 
 
@@ -125,7 +125,6 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-      <div><a class="xref" href="IUserUpdateReceiver.html">IUserUpdateReceiver</a></div>
     </dd>
   </dl>
 
@@ -630,6 +629,9 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
     </div>
     <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
@@ -1209,7 +1211,7 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView2D_Constellations" data-uid="Stargazer.SkyView2D.Constellations">
   Constellations
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView2D.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1239,7 +1241,7 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView2D_Stars" data-uid="Stargazer.SkyView2D.Stars">
   Stars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView2D.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1274,7 +1276,7 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__" data-uid="Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})">
   UpdateUserPosition(CelestialDataPackage&lt;Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView2D.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This will need to be changed for the new implementation of containerization.</p>
@@ -1307,46 +1309,11 @@ public class SkyView2D : Node2D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <a id="Stargazer_SkyView2D__Process_" data-uid="Stargazer.SkyView2D._Process*"></a>
-
-  <h3 id="Stargazer_SkyView2D__Process_System_Double_" data-uid="Stargazer.SkyView2D._Process(System.Double)">
-  _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView2D.cs/#L28"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Stargazer_SkyView2D__Ready_" data-uid="Stargazer.SkyView2D._Ready*"></a>
 
   <h3 id="Stargazer_SkyView2D__Ready" data-uid="Stargazer.SkyView2D._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView2D.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>

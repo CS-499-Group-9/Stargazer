@@ -5,18 +5,30 @@ items:
   id: MainCamera
   parent: Stargazer
   children:
+  - Stargazer.MainCamera.HoverBody
   - Stargazer.MainCamera.MouseSensitivity
-  - Stargazer.MainCamera.TakeScreenshot
+  - Stargazer.MainCamera.OnFustrumChanged
+  - Stargazer.MainCamera.OnHoverableChange
+  - Stargazer.MainCamera.OnRotation
+  - Stargazer.MainCamera.OnZoom
+  - Stargazer.MainCamera.OnZoomStateChanged
+  - Stargazer.MainCamera.ScreenOffset
+  - Stargazer.MainCamera.TrackedBody
   - Stargazer.MainCamera.ZoomIn
   - Stargazer.MainCamera.ZoomOut
   - Stargazer.MainCamera._Input(Godot.InputEvent)
   - Stargazer.MainCamera._Process(System.Double)
   - Stargazer.MainCamera._Ready
-  - Stargazer.MainCamera.globalVars
+  - Stargazer.MainCamera.mousePosition
   - Stargazer.MainCamera.pitch
+  - Stargazer.MainCamera.rayEnd
+  - Stargazer.MainCamera.rayStart
   - Stargazer.MainCamera.rightClickHeld
   - Stargazer.MainCamera.screenshotPath
+  - Stargazer.MainCamera.trackObjectRequested
+  - Stargazer.MainCamera.worldSpace
   - Stargazer.MainCamera.yaw
+  - Stargazer.MainCamera.zoomState
   langs:
   - csharp
   - vb
@@ -26,7 +38,7 @@ items:
   type: Class
   source:
     id: MainCamera
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.MainCamera_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.MainCamera_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -37,11 +49,11 @@ items:
     content: >-
       [ScriptPath("res://Code/MainCamera.cs")]
 
-      public class MainCamera : Camera3D, IDisposable
+      public class MainCamera : Camera3D, IDisposable, ICameraStateNotifier
     content.vb: >-
       <ScriptPath("res://Code/MainCamera.cs")>
 
-      Public Class MainCamera Inherits Camera3D Implements IDisposable
+      Public Class MainCamera Inherits Camera3D Implements IDisposable, ICameraStateNotifier
   inheritance:
   - System.Object
   - Godot.GodotObject
@@ -50,6 +62,7 @@ items:
   - Godot.Camera3D
   implements:
   - System.IDisposable
+  - Stargazer.ICameraStateNotifier
   inheritedMembers:
   - Godot.Camera3D.ProjectRayNormal(Godot.Vector2)
   - Godot.Camera3D.ProjectLocalRayNormal(Godot.Vector2)
@@ -410,11 +423,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MouseSensitivity
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -439,6 +452,47 @@ items:
       value: "0"
     - type: System.String
       value: ''
+- uid: Stargazer.MainCamera.ScreenOffset
+  commentId: F:Stargazer.MainCamera.ScreenOffset
+  id: ScreenOffset
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: ScreenOffset
+  nameWithType: MainCamera.ScreenOffset
+  fullName: Stargazer.MainCamera.ScreenOffset
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ScreenOffset
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      public Vector2 ScreenOffset
+    return:
+      type: Godot.Vector2
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Public ScreenOffset As Vector2
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.MainCamera.yaw
   commentId: F:Stargazer.MainCamera.yaw
   id: yaw
@@ -453,11 +507,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: yaw
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -480,11 +534,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: pitch
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -507,11 +561,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: rightClickHeld
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -520,6 +574,33 @@ items:
     return:
       type: System.Boolean
     content.vb: Private rightClickHeld As Boolean
+- uid: Stargazer.MainCamera.trackObjectRequested
+  commentId: F:Stargazer.MainCamera.trackObjectRequested
+  id: trackObjectRequested
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: trackObjectRequested
+  nameWithType: MainCamera.trackObjectRequested
+  fullName: Stargazer.MainCamera.trackObjectRequested
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: trackObjectRequested
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private bool trackObjectRequested
+    return:
+      type: System.Boolean
+    content.vb: Private trackObjectRequested As Boolean
 - uid: Stargazer.MainCamera.screenshotPath
   commentId: F:Stargazer.MainCamera.screenshotPath
   id: screenshotPath
@@ -534,11 +615,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: screenshotPath
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 18
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -547,33 +628,361 @@ items:
     return:
       type: System.String
     content.vb: Private screenshotPath As String
-- uid: Stargazer.MainCamera.globalVars
-  commentId: F:Stargazer.MainCamera.globalVars
-  id: globalVars
+- uid: Stargazer.MainCamera.worldSpace
+  commentId: F:Stargazer.MainCamera.worldSpace
+  id: worldSpace
   parent: Stargazer.MainCamera
   langs:
   - csharp
   - vb
-  name: globalVars
-  nameWithType: MainCamera.globalVars
-  fullName: Stargazer.MainCamera.globalVars
+  name: worldSpace
+  nameWithType: MainCamera.worldSpace
+  fullName: Stargazer.MainCamera.worldSpace
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: globalVars
+    id: worldSpace
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 20
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Globals globalVars
+    content: private PhysicsDirectSpaceState3D worldSpace
     return:
-      type: Stargazer.Globals
-    content.vb: Private globalVars As Globals
+      type: Godot.PhysicsDirectSpaceState3D
+    content.vb: Private worldSpace As PhysicsDirectSpaceState3D
+- uid: Stargazer.MainCamera.mousePosition
+  commentId: F:Stargazer.MainCamera.mousePosition
+  id: mousePosition
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: mousePosition
+  nameWithType: MainCamera.mousePosition
+  fullName: Stargazer.MainCamera.mousePosition
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: mousePosition
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 26
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Vector2 mousePosition
+    return:
+      type: Godot.Vector2
+    content.vb: Private mousePosition As Vector2
+- uid: Stargazer.MainCamera.rayStart
+  commentId: F:Stargazer.MainCamera.rayStart
+  id: rayStart
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: rayStart
+  nameWithType: MainCamera.rayStart
+  fullName: Stargazer.MainCamera.rayStart
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: rayStart
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 27
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Vector3 rayStart
+    return:
+      type: Godot.Vector3
+    content.vb: Private rayStart As Vector3
+- uid: Stargazer.MainCamera.rayEnd
+  commentId: F:Stargazer.MainCamera.rayEnd
+  id: rayEnd
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: rayEnd
+  nameWithType: MainCamera.rayEnd
+  fullName: Stargazer.MainCamera.rayEnd
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: rayEnd
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 27
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Vector3 rayEnd
+    return:
+      type: Godot.Vector3
+    content.vb: Private rayEnd As Vector3
+- uid: Stargazer.MainCamera.zoomState
+  commentId: F:Stargazer.MainCamera.zoomState
+  id: zoomState
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: zoomState
+  nameWithType: MainCamera.zoomState
+  fullName: Stargazer.MainCamera.zoomState
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: zoomState
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 28
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private ZoomState zoomState
+    return:
+      type: Stargazer.ZoomState
+    content.vb: Private zoomState As ZoomState
+- uid: Stargazer.MainCamera.TrackedBody
+  commentId: P:Stargazer.MainCamera.TrackedBody
+  id: TrackedBody
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: TrackedBody
+  nameWithType: MainCamera.TrackedBody
+  fullName: Stargazer.MainCamera.TrackedBody
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TrackedBody
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 29
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private ITrackable TrackedBody { get; set; }
+    parameters: []
+    return:
+      type: Stargazer.ITrackable
+    content.vb: Private Property TrackedBody As ITrackable
+  overload: Stargazer.MainCamera.TrackedBody*
+- uid: Stargazer.MainCamera.HoverBody
+  commentId: P:Stargazer.MainCamera.HoverBody
+  id: HoverBody
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: HoverBody
+  nameWithType: MainCamera.HoverBody
+  fullName: Stargazer.MainCamera.HoverBody
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: HoverBody
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 30
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IHoverable HoverBody { get; set; }
+    parameters: []
+    return:
+      type: Stargazer.IHoverable
+    content.vb: Private Property HoverBody As IHoverable
+  overload: Stargazer.MainCamera.HoverBody*
+- uid: Stargazer.MainCamera.OnZoom
+  commentId: P:Stargazer.MainCamera.OnZoom
+  id: OnZoom
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: OnZoom
+  nameWithType: MainCamera.OnZoom
+  fullName: Stargazer.MainCamera.OnZoom
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnZoom
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the <xref href="Godot.Camera3D.Fov" data-throw-if-not-resolved="false"></xref> has changed.
+  example: []
+  syntax:
+    content: public Action<float> OnZoom { get; set; }
+    parameters: []
+    return:
+      type: System.Action{System.Single}
+    content.vb: Public Property OnZoom As Action(Of Single)
+  overload: Stargazer.MainCamera.OnZoom*
+  implements:
+  - Stargazer.ICameraStateNotifier.OnZoom
+- uid: Stargazer.MainCamera.OnZoomStateChanged
+  commentId: P:Stargazer.MainCamera.OnZoomStateChanged
+  id: OnZoomStateChanged
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: OnZoomStateChanged
+  nameWithType: MainCamera.OnZoomStateChanged
+  fullName: Stargazer.MainCamera.OnZoomStateChanged
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnZoomStateChanged
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the <xref href="Stargazer.ZoomState" data-throw-if-not-resolved="false"></xref> has changed
+  example: []
+  syntax:
+    content: public Action<ZoomState> OnZoomStateChanged { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Stargazer.ZoomState}
+    content.vb: Public Property OnZoomStateChanged As Action(Of ZoomState)
+  overload: Stargazer.MainCamera.OnZoomStateChanged*
+  implements:
+  - Stargazer.ICameraStateNotifier.OnZoomStateChanged
+- uid: Stargazer.MainCamera.OnRotation
+  commentId: P:Stargazer.MainCamera.OnRotation
+  id: OnRotation
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: OnRotation
+  nameWithType: MainCamera.OnRotation
+  fullName: Stargazer.MainCamera.OnRotation
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnRotation
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 38
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the camera has rotated.
+  example: []
+  syntax:
+    content: public Action<Camera3D> OnRotation { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Godot.Camera3D}
+    content.vb: Public Property OnRotation As Action(Of Camera3D)
+  overload: Stargazer.MainCamera.OnRotation*
+  implements:
+  - Stargazer.ICameraStateNotifier.OnRotation
+- uid: Stargazer.MainCamera.OnFustrumChanged
+  commentId: P:Stargazer.MainCamera.OnFustrumChanged
+  id: OnFustrumChanged
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: OnFustrumChanged
+  nameWithType: MainCamera.OnFustrumChanged
+  fullName: Stargazer.MainCamera.OnFustrumChanged
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnFustrumChanged
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 40
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  example: []
+  syntax:
+    content: public Action<Array<Plane>> OnFustrumChanged { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Godot.Collections.Array{Godot.Plane}}
+    content.vb: Public Property OnFustrumChanged As Action(Of Array(Of Plane))
+  overload: Stargazer.MainCamera.OnFustrumChanged*
+- uid: Stargazer.MainCamera.OnHoverableChange
+  commentId: P:Stargazer.MainCamera.OnHoverableChange
+  id: OnHoverableChange
+  parent: Stargazer.MainCamera
+  langs:
+  - csharp
+  - vb
+  name: OnHoverableChange
+  nameWithType: MainCamera.OnHoverableChange
+  fullName: Stargazer.MainCamera.OnHoverableChange
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MainCamera.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnHoverableChange
+    path: ../Stargazer-Godot/Code/MainCamera.cs
+    startLine: 42
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the mouse has entered or exited a hovered body.
+  example: []
+  syntax:
+    content: public Action<IHoverable> OnHoverableChange { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Stargazer.IHoverable}
+    content.vb: Public Property OnHoverableChange As Action(Of IHoverable)
+  overload: Stargazer.MainCamera.OnHoverableChange*
+  implements:
+  - Stargazer.ICameraStateNotifier.OnHoverableChange
 - uid: Stargazer.MainCamera._Ready
   commentId: M:Stargazer.MainCamera._Ready
   id: _Ready
@@ -588,11 +997,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 23
+    startLine: 44
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -624,11 +1033,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Input
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 32
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,11 +1066,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ZoomIn
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 100
+    startLine: 120
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -683,11 +1092,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ZoomOut
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 106
+    startLine: 131
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -709,15 +1118,15 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 117
+    startLine: 147
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Used to check for the input for the screenshot key and take the screenshot.
+  summary: Tracks a body (if armed) and implements ray tracing to hover over bodies.
   example: []
   syntax:
     content: public override void _Process(double delta)
@@ -731,32 +1140,6 @@ items:
   nameWithType.vb: MainCamera._Process(Double)
   fullName.vb: Stargazer.MainCamera._Process(Double)
   name.vb: _Process(Double)
-- uid: Stargazer.MainCamera.TakeScreenshot
-  commentId: M:Stargazer.MainCamera.TakeScreenshot
-  id: TakeScreenshot
-  parent: Stargazer.MainCamera
-  langs:
-  - csharp
-  - vb
-  name: TakeScreenshot()
-  nameWithType: MainCamera.TakeScreenshot()
-  fullName: Stargazer.MainCamera.TakeScreenshot()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/MainCamera.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: TakeScreenshot
-    path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 126
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private void TakeScreenshot()
-    content.vb: Private Sub TakeScreenshot()
-  overload: Stargazer.MainCamera.TakeScreenshot*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -811,6 +1194,13 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  parent: Stargazer
+  href: Stargazer.ICameraStateNotifier.html
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
 - uid: Godot.Camera3D.ProjectRayNormal(Godot.Vector2)
   commentId: M:Godot.Camera3D.ProjectRayNormal(Godot.Vector2)
   parent: Godot.Camera3D
@@ -8226,6 +8616,13 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: Godot.Vector2
+  commentId: T:Godot.Vector2
+  parent: Godot
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Godot.Vector2
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -8248,13 +8645,318 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Stargazer.Globals
-  commentId: T:Stargazer.Globals
+- uid: Godot.PhysicsDirectSpaceState3D
+  commentId: T:Godot.PhysicsDirectSpaceState3D
+  parent: Godot
+  isExternal: true
+  name: PhysicsDirectSpaceState3D
+  nameWithType: PhysicsDirectSpaceState3D
+  fullName: Godot.PhysicsDirectSpaceState3D
+- uid: Godot.Vector3
+  commentId: T:Godot.Vector3
+  parent: Godot
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Godot.Vector3
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
   parent: Stargazer
-  href: Stargazer.Globals.html
-  name: Globals
-  nameWithType: Globals
-  fullName: Stargazer.Globals
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
+- uid: Stargazer.MainCamera.TrackedBody*
+  commentId: Overload:Stargazer.MainCamera.TrackedBody
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_TrackedBody
+  name: TrackedBody
+  nameWithType: MainCamera.TrackedBody
+  fullName: Stargazer.MainCamera.TrackedBody
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  parent: Stargazer
+  href: Stargazer.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
+- uid: Stargazer.MainCamera.HoverBody*
+  commentId: Overload:Stargazer.MainCamera.HoverBody
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_HoverBody
+  name: HoverBody
+  nameWithType: MainCamera.HoverBody
+  fullName: Stargazer.MainCamera.HoverBody
+- uid: Stargazer.IHoverable
+  commentId: T:Stargazer.IHoverable
+  parent: Stargazer
+  href: Stargazer.IHoverable.html
+  name: IHoverable
+  nameWithType: IHoverable
+  fullName: Stargazer.IHoverable
+- uid: Stargazer.MainCamera.OnZoom*
+  commentId: Overload:Stargazer.MainCamera.OnZoom
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_OnZoom
+  name: OnZoom
+  nameWithType: MainCamera.OnZoom
+  fullName: Stargazer.MainCamera.OnZoom
+- uid: Stargazer.ICameraStateNotifier.OnZoom
+  commentId: P:Stargazer.ICameraStateNotifier.OnZoom
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnZoom
+  name: OnZoom
+  nameWithType: ICameraStateNotifier.OnZoom
+  fullName: Stargazer.ICameraStateNotifier.OnZoom
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<float>
+  nameWithType: Action<float>
+  fullName: System.Action<float>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Stargazer.MainCamera.OnZoomStateChanged*
+  commentId: Overload:Stargazer.MainCamera.OnZoomStateChanged
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_OnZoomStateChanged
+  name: OnZoomStateChanged
+  nameWithType: MainCamera.OnZoomStateChanged
+  fullName: Stargazer.MainCamera.OnZoomStateChanged
+- uid: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  commentId: P:Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnZoomStateChanged
+  name: OnZoomStateChanged
+  nameWithType: ICameraStateNotifier.OnZoomStateChanged
+  fullName: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+- uid: System.Action{Stargazer.ZoomState}
+  commentId: T:System.Action{Stargazer.ZoomState}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ZoomState>
+  nameWithType: Action<ZoomState>
+  fullName: System.Action<Stargazer.ZoomState>
+  nameWithType.vb: Action(Of ZoomState)
+  fullName.vb: System.Action(Of Stargazer.ZoomState)
+  name.vb: Action(Of ZoomState)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Stargazer.ZoomState
+    name: ZoomState
+    href: Stargazer.ZoomState.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.ZoomState
+    name: ZoomState
+    href: Stargazer.ZoomState.html
+  - name: )
+- uid: Stargazer.MainCamera.OnRotation*
+  commentId: Overload:Stargazer.MainCamera.OnRotation
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_OnRotation
+  name: OnRotation
+  nameWithType: MainCamera.OnRotation
+  fullName: Stargazer.MainCamera.OnRotation
+- uid: Stargazer.ICameraStateNotifier.OnRotation
+  commentId: P:Stargazer.ICameraStateNotifier.OnRotation
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnRotation
+  name: OnRotation
+  nameWithType: ICameraStateNotifier.OnRotation
+  fullName: Stargazer.ICameraStateNotifier.OnRotation
+- uid: System.Action{Godot.Camera3D}
+  commentId: T:System.Action{Godot.Camera3D}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Camera3D>
+  nameWithType: Action<Camera3D>
+  fullName: System.Action<Godot.Camera3D>
+  nameWithType.vb: Action(Of Camera3D)
+  fullName.vb: System.Action(Of Godot.Camera3D)
+  name.vb: Action(Of Camera3D)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Godot.Camera3D
+    name: Camera3D
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Godot.Camera3D
+    name: Camera3D
+    isExternal: true
+  - name: )
+- uid: Stargazer.MainCamera.OnFustrumChanged*
+  commentId: Overload:Stargazer.MainCamera.OnFustrumChanged
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_OnFustrumChanged
+  name: OnFustrumChanged
+  nameWithType: MainCamera.OnFustrumChanged
+  fullName: Stargazer.MainCamera.OnFustrumChanged
+- uid: System.Action{Godot.Collections.Array{Godot.Plane}}
+  commentId: T:System.Action{Godot.Collections.Array{Godot.Plane}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Array<Plane>>
+  nameWithType: Action<Array<Plane>>
+  fullName: System.Action<Godot.Collections.Array<Godot.Plane>>
+  nameWithType.vb: Action(Of Array(Of Plane))
+  fullName.vb: System.Action(Of Godot.Collections.Array(Of Godot.Plane))
+  name.vb: Action(Of Array(Of Plane))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Godot.Collections.Array`1
+    name: Array
+    isExternal: true
+  - name: <
+  - uid: Godot.Plane
+    name: Plane
+    isExternal: true
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Godot.Collections.Array`1
+    name: Array
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Godot.Plane
+    name: Plane
+    isExternal: true
+  - name: )
+  - name: )
+- uid: Stargazer.MainCamera.OnHoverableChange*
+  commentId: Overload:Stargazer.MainCamera.OnHoverableChange
+  href: Stargazer.MainCamera.html#Stargazer_MainCamera_OnHoverableChange
+  name: OnHoverableChange
+  nameWithType: MainCamera.OnHoverableChange
+  fullName: Stargazer.MainCamera.OnHoverableChange
+- uid: Stargazer.ICameraStateNotifier.OnHoverableChange
+  commentId: P:Stargazer.ICameraStateNotifier.OnHoverableChange
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnHoverableChange
+  name: OnHoverableChange
+  nameWithType: ICameraStateNotifier.OnHoverableChange
+  fullName: Stargazer.ICameraStateNotifier.OnHoverableChange
+- uid: System.Action{Stargazer.IHoverable}
+  commentId: T:System.Action{Stargazer.IHoverable}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<IHoverable>
+  nameWithType: Action<IHoverable>
+  fullName: System.Action<Stargazer.IHoverable>
+  nameWithType.vb: Action(Of IHoverable)
+  fullName.vb: System.Action(Of Stargazer.IHoverable)
+  name.vb: Action(Of IHoverable)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: )
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -8397,9 +9099,3 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: Stargazer.MainCamera.TakeScreenshot*
-  commentId: Overload:Stargazer.MainCamera.TakeScreenshot
-  href: Stargazer.MainCamera.html#Stargazer_MainCamera_TakeScreenshot
-  name: TakeScreenshot
-  nameWithType: MainCamera.TakeScreenshot
-  fullName: Stargazer.MainCamera.TakeScreenshot

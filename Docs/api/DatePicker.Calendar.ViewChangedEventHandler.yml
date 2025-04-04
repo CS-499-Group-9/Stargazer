@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker.Calendar.ViewChangedEventHandler
+  commentId: T:DatePicker.Calendar.ViewChangedEventHandler
+  id: Calendar.ViewChangedEventHandler
+  parent: DatePicker
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Calendar.ViewChangedEventHandler
+  nameWithType: Calendar.ViewChangedEventHandler
+  fullName: DatePicker.Calendar.ViewChangedEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/Calendar.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ViewChangedEventHandler
+    path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
+    startLine: 150
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: The signal emitted when the view changes.
+  example: []
+  syntax:
+    content: >-
+      [Signal]
+
+      public delegate void Calendar.ViewChangedEventHandler(Control view)
+    parameters:
+    - id: view
+      type: Godot.Control
+      description: ''
+    content.vb: >-
+      <Signal>
+
+      Public Delegate Sub Calendar.ViewChangedEventHandler(view As Control)
+  attributes:
+  - type: Godot.SignalAttribute
+    ctor: Godot.SignalAttribute.#ctor
+    arguments: []
+references:
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker
+- uid: Godot.Control
+  commentId: T:Godot.Control
+  parent: Godot
+  isExternal: true
+  name: Control
+  nameWithType: Control
+  fullName: Godot.Control
+- uid: Godot
+  commentId: N:Godot
+  isExternal: true
+  name: Godot
+  nameWithType: Godot
+  fullName: Godot

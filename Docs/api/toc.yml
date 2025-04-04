@@ -48,18 +48,15 @@ items:
   - uid: DataLayer.HorizontalObjects.HorizontalStar
     name: HorizontalStar
     type: Class
+  - uid: DataLayer.HorizontalObjects.HorizontalSun
+    name: HorizontalSun
+    type: Class
 - uid: DataLayer.Implementations
   name: DataLayer.Implementations
   type: Namespace
   items:
-  - uid: DataLayer.Implementations.CosineKittyEquatorialConverter`1
-    name: CosineKittyEquatorialConverter<T>
-    type: Class
-  - uid: DataLayer.Implementations.CosineKittyMoonCalculator
-    name: CosineKittyMoonCalculator
-    type: Class
-  - uid: DataLayer.Implementations.CosineKittyPlanetaryCalculator
-    name: CosineKittyPlanetaryCalculator
+  - uid: DataLayer.Implementations.CosineKittyEquatorialCalculator
+    name: CosineKittyEquatorialCalculator
     type: Class
   - uid: DataLayer.Implementations.HygCsvStarRepository
     name: HygCsvStarRepository
@@ -101,21 +98,49 @@ items:
   - uid: DataLayer.Interfaces.IConstellationRepository
     name: IConstellationRepository
     type: Interface
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator<T>
+  - uid: DataLayer.Interfaces.IEquatorialCalculator
+    name: IEquatorialCalculator
     type: Interface
   - uid: DataLayer.Interfaces.IMessierRepository
     name: IMessierRepository
     type: Interface
-  - uid: DataLayer.Interfaces.IMoonCalculator
-    name: IMoonCalculator
-    type: Interface
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator<T>
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService<T>
     type: Interface
   - uid: DataLayer.Interfaces.IStarRepository
     name: IStarRepository
     type: Interface
+- uid: DatePicker
+  name: DatePicker
+  type: Namespace
+  items:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    type: Class
+  - uid: DatePicker.Calendar.DateChangedEventHandler
+    name: Calendar.DateChangedEventHandler
+    type: Delegate
+  - uid: DatePicker.Calendar.DateSelectedEventHandler
+    name: Calendar.DateSelectedEventHandler
+    type: Delegate
+  - uid: DatePicker.Calendar.FinishedEventHandler
+    name: Calendar.FinishedEventHandler
+    type: Delegate
+  - uid: DatePicker.Calendar.ViewChangedEventHandler
+    name: Calendar.ViewChangedEventHandler
+    type: Delegate
+  - uid: DatePicker.DateButton
+    name: DateButton
+    type: Class
+  - uid: DatePicker.ICalendarView
+    name: ICalendarView
+    type: Interface
+  - uid: DatePicker.MonthView
+    name: MonthView
+    type: Class
+  - uid: DatePicker.YearView
+    name: YearView
+    type: Class
 - uid: Stargazer
   name: Stargazer
   type: Namespace
@@ -123,20 +148,14 @@ items:
   - uid: Stargazer.ASTRALPLANEAlbedo
     name: ASTRALPLANEAlbedo
     type: Class
-  - uid: Stargazer.AzimuthButton
-    name: AzimuthButton
-    type: Class
   - uid: Stargazer.AzimuthGridlines
     name: AzimuthGridlines
     type: Class
+  - uid: Stargazer.CelestialBody
+    name: CelestialBody
+    type: Class
   - uid: Stargazer.CompassNeedle
     name: CompassNeedle
-    type: Class
-  - uid: Stargazer.ConstellationButton
-    name: ConstellationButton
-    type: Class
-  - uid: Stargazer.ConstellationLabel
-    name: ConstellationLabel
     type: Class
   - uid: Stargazer.Constellations
     name: Constellations
@@ -153,23 +172,23 @@ items:
   - uid: Stargazer.HoverLabel
     name: HoverLabel
     type: Class
+  - uid: Stargazer.ICameraStateNotifier
+    name: ICameraStateNotifier
+    type: Interface
   - uid: Stargazer.IHoverable
     name: IHoverable
     type: Interface
-  - uid: Stargazer.LabelButton
-    name: LabelButton
-    type: Class
+  - uid: Stargazer.ITrackable
+    name: ITrackable
+    type: Interface
   - uid: Stargazer.LabelNode
     name: LabelNode
     type: Class
   - uid: Stargazer.MainCamera
     name: MainCamera
     type: Class
-  - uid: Stargazer.MainContainer
-    name: MainContainer
-    type: Class
-  - uid: Stargazer.MessierButton
-    name: MessierButton
+  - uid: Stargazer.MessierObject
+    name: MessierObject
     type: Class
   - uid: Stargazer.Moon
     name: Moon
@@ -179,6 +198,12 @@ items:
     type: Class
   - uid: Stargazer.Planets
     name: Planets
+    type: Class
+  - uid: Stargazer.PlayControl
+    name: PlayControl
+    type: Class
+  - uid: Stargazer.PlaySpeed
+    name: PlaySpeed
     type: Class
   - uid: Stargazer.SkyView
     name: SkyView
@@ -207,7 +232,10 @@ items:
   - uid: Stargazer.Startup
     name: Startup
     type: Class
-  - uid: Stargazer.TimeLocEntered
-    name: TimeLocEntered
+  - uid: Stargazer.Sun
+    name: Sun
     type: Class
+  - uid: Stargazer.ZoomState
+    name: ZoomState
+    type: Enum
 memberLayout: SamePage

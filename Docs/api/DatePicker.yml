@@ -1,0 +1,155 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker
+  commentId: N:DatePicker
+  id: DatePicker
+  children:
+  - DatePicker.Calendar
+  - DatePicker.Calendar.DateChangedEventHandler
+  - DatePicker.Calendar.DateSelectedEventHandler
+  - DatePicker.Calendar.FinishedEventHandler
+  - DatePicker.Calendar.ViewChangedEventHandler
+  - DatePicker.DateButton
+  - DatePicker.ICalendarView
+  - DatePicker.MonthView
+  - DatePicker.YearView
+  langs:
+  - csharp
+  - vb
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker
+  type: Namespace
+  assemblies:
+  - New Game Project
+references:
+- uid: DatePicker.Calendar
+  commentId: T:DatePicker.Calendar
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar
+  nameWithType: Calendar
+  fullName: DatePicker.Calendar
+- uid: DatePicker.Calendar.ViewChangedEventHandler
+  commentId: T:DatePicker.Calendar.ViewChangedEventHandler
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar.ViewChangedEventHandler
+  nameWithType: Calendar.ViewChangedEventHandler
+  fullName: DatePicker.Calendar.ViewChangedEventHandler
+  spec.csharp:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.ViewChangedEventHandler
+    name: ViewChangedEventHandler
+    href: DatePicker.Calendar.ViewChangedEventHandler.html
+  spec.vb:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.ViewChangedEventHandler
+    name: ViewChangedEventHandler
+    href: DatePicker.Calendar.ViewChangedEventHandler.html
+- uid: DatePicker.Calendar.DateChangedEventHandler
+  commentId: T:DatePicker.Calendar.DateChangedEventHandler
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar.DateChangedEventHandler
+  nameWithType: Calendar.DateChangedEventHandler
+  fullName: DatePicker.Calendar.DateChangedEventHandler
+  spec.csharp:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.DateChangedEventHandler
+    name: DateChangedEventHandler
+    href: DatePicker.Calendar.DateChangedEventHandler.html
+  spec.vb:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.DateChangedEventHandler
+    name: DateChangedEventHandler
+    href: DatePicker.Calendar.DateChangedEventHandler.html
+- uid: DatePicker.Calendar.DateSelectedEventHandler
+  commentId: T:DatePicker.Calendar.DateSelectedEventHandler
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar.DateSelectedEventHandler
+  nameWithType: Calendar.DateSelectedEventHandler
+  fullName: DatePicker.Calendar.DateSelectedEventHandler
+  spec.csharp:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.DateSelectedEventHandler
+    name: DateSelectedEventHandler
+    href: DatePicker.Calendar.DateSelectedEventHandler.html
+  spec.vb:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.DateSelectedEventHandler
+    name: DateSelectedEventHandler
+    href: DatePicker.Calendar.DateSelectedEventHandler.html
+- uid: DatePicker.Calendar.FinishedEventHandler
+  commentId: T:DatePicker.Calendar.FinishedEventHandler
+  parent: DatePicker
+  href: DatePicker.Calendar.html
+  name: Calendar.FinishedEventHandler
+  nameWithType: Calendar.FinishedEventHandler
+  fullName: DatePicker.Calendar.FinishedEventHandler
+  spec.csharp:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.FinishedEventHandler
+    name: FinishedEventHandler
+    href: DatePicker.Calendar.FinishedEventHandler.html
+  spec.vb:
+  - uid: DatePicker.Calendar
+    name: Calendar
+    href: DatePicker.Calendar.html
+  - name: .
+  - uid: DatePicker.Calendar.FinishedEventHandler
+    name: FinishedEventHandler
+    href: DatePicker.Calendar.FinishedEventHandler.html
+- uid: DatePicker.DateButton
+  commentId: T:DatePicker.DateButton
+  href: DatePicker.DateButton.html
+  name: DateButton
+  nameWithType: DateButton
+  fullName: DatePicker.DateButton
+- uid: DatePicker.ICalendarView
+  commentId: T:DatePicker.ICalendarView
+  parent: DatePicker
+  href: DatePicker.ICalendarView.html
+  name: ICalendarView
+  nameWithType: ICalendarView
+  fullName: DatePicker.ICalendarView
+- uid: DatePicker.MonthView
+  commentId: T:DatePicker.MonthView
+  href: DatePicker.MonthView.html
+  name: MonthView
+  nameWithType: MonthView
+  fullName: DatePicker.MonthView
+- uid: DatePicker.YearView
+  commentId: T:DatePicker.YearView
+  href: DatePicker.YearView.html
+  name: YearView
+  nameWithType: YearView
+  fullName: DatePicker.YearView
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker
