@@ -109,119 +109,6 @@ namespace DataLayer
             );
         }
 
-        /// <summary>
-        /// NO LONGER USED!
-        /// Gathers all stars that are a part of constellations into a separate dictionary using the HipparcosId as the key.
-        /// This is because the Hip ID is used by the constellations to list the nodes of the constellation graph.
-        /// Removes the stars from the master listing.
-        /// </summary>
-        /// <param name="starTask">The star repository retrieval task</param>
-        /// <param name="constellationTask">The constellation repository retrieval task</param>
-        /// <param name="starRepository">The star repository so that constellation stars that were filtered out can be retrieved by HipparcosId</param>
-        /// <returns>The dictionary of constellation stars</returns>
-        /// <exception cref="InvalidOperationException">If a constellation star cannot be found.</exception>
-        private static async Task<IDictionary<int, EquatorialStar>> GatherConstellationStars(
-            Task<IList<EquatorialStar>> starTask,
-            Task<IList<Constellation>> constellationTask,
-            IStarRepository starRepository)
-        {
-            // Create a new blank dictionary
-            IDictionary<int, EquatorialStar> constellationStars = new Dictionary<int, EquatorialStar>();
-
-            // Release the thread until the star and constellation data retrieval has completed
-            await Task.WhenAll(starTask, constellationTask);
-
-            // Get the results of the tasks
-            IList<EquatorialStar> stars = starTask.Result;
-            IList<Constellation> constellations = constellationTask.Result;
-
-            // Start a new thread to perform the work and release the current thread to await the task completion.
-            await Task.Run(async () =>
-            {
-                // Iterate through the constellations
-                foreach (var constellation in constellations)
-                {
-                    // Iterate through the Tuple<int, int> of constellation graph edges
-                    foreach (var line in constellation.ConstellationLines)
-                    {
-                        // Transform the two vertices of the edge into an array
-                        var endPoints = new int[] { line.Item1, line.Item2 };
-
-                        // Loop through the vertices
-                        foreach (var endPoint in endPoints)
-                        {
-                            // When an exception is thrown inside the task, it does weird things. I will revisit this. Still not sure I solved it, but there are no more exceptions, so I can't fix what isn't broken
-                            try
-                            {
-                                // See if the star is already in the dictionary. If found, do nothing
-                                if (!constellationStars.TryGetValue(endPoint, out EquatorialStar? star))
-                                {
-                                    // The star is not in the dictionary, get it from the list of stars
-                                    star = stars.FirstOrDefault(s => s.HipparcosId == endPoint);
-                                    if (star == null)
-                                    {
-                                        // The star was hopefully filtered out, get it from the repository
-                                        star = await starRepository.GetStarByHipAsync(endPoint);
-                                        // If the star is still null, throw an exception
-                                        if (star == null) throw new InvalidOperationException($"{endPoint} was not found.");
-                                    }
-                                    // By one method or the other, the star was found. Remove it from the master collection and add it to the dictionary
-                                    stars.Remove(star);
-                                    constellationStars.TryAdd(endPoint, star);
-                                }
-                            }
-                            catch (InvalidOperationException)
-                            {
-                                throw new InvalidOperationException($"Test");
-                            }
-                        }
-                    }
-                }
-            });
-
-            return constellationStars;
-        }
-
-        /// <summary>
-        /// Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data.
-        /// </summary>
-        /// <param name="latitude">The latitude of the observer (-90 &lt;= value &lt;= 90)</param>
-        /// <param name="longitude">The longitude of the observer (-90 &lt;= value &lt;= 90)</param>
-        /// <param name="localUserTime">The observer time in Universal TimeCode <code cref="DateTime.ToUniversalTime()">new DateTime(year, month, day, hour, min, sec).ToUniversalTime()</code></param>
-        /// <returns>A package containing all data required for display. (This call should be made in an <c>async</c> method using the <c>await</c> keyword)</returns>
-        public async Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
-        {
-            // Create a Star converter (created outside of the task because it is used for the stars and constellations
-            // I really wish all three of these could happen concurrently instead of waiting for one to complete before staring the other, but it causes MAJOR issues
-            // Doesn't really make sense to me...
-
-            CosineKittyEquatorialCalculator starConverter = new(latitude, longitude, localUserTime);
-            CosineKittyEquatorialCalculator equatorialInstant = new();
-            // Calculate the stars
-            await Task.Run(() =>
-            {
-                CalculateStars();
-            });
-
-            // Calculate the Messier Objects
-            await Task.Run(() =>
-            {
-                CalculateMessierObjects();
-
-            });
-            var planets = starConverter.CreatePlanets();
-            var moon = starConverter.CreateMoon();
-
-            // Pack up the data and ship it back.
-            return new CelestialDataPackage<T>(
-                horizontalStars,starConverter, 
-                horizontalMessierObjects,
-                constellations, 
-                new ConcurrentDictionary<int, T>(), 
-                planets,
-                moon);
-            
-        }
 
         public async Task<CelestialDataPackage<T>> InitializeDataPackage()
         {
@@ -240,6 +127,7 @@ namespace DataLayer
             });
             var planets = starConverter.CreatePlanets();
             var moon = starConverter.CreateMoon();
+            var sun = starConverter.CreateSun();
 
             // Pack up the data and ship it back.
             return new CelestialDataPackage<T>(
@@ -248,7 +136,8 @@ namespace DataLayer
                 constellations,
                 new ConcurrentDictionary<int, T>(),
                 planets,
-                moon);
+                moon, 
+                sun);
         }
 
         private void CalculateMessierObjects()

@@ -6,10 +6,13 @@
 [ext_resource type="Script" path="res://Code/Spawner.cs" id="2_dkqjn"]
 [ext_resource type="Script" path="res://Code/AzimuthGridlines.cs" id="2_mbeb3"]
 [ext_resource type="Script" path="res://Code/GridLabel.cs" id="2_oxt5r"]
+[ext_resource type="PackedScene" uid="uid://dq3hej6nwetmm" path="res://Scenes/moon.tscn" id="2_wg1wp"]
 [ext_resource type="PackedScene" uid="uid://bq4oe468ff0nb" path="res://Scenes/star.tscn" id="3_54qo3"]
+[ext_resource type="PackedScene" uid="uid://dl62xn4awms0a" path="res://Scenes/sun.tscn" id="3_k02si"]
 [ext_resource type="PackedScene" uid="uid://b1hi5ilmif6ac" path="res://Scenes/label.tscn" id="4_hboln"]
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
+[ext_resource type="Script" path="res://Code/MessierSpawner.cs" id="6_sd6fa"]
 [ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_1t5an"]
 [ext_resource type="Script" path="res://Code/Planets.cs" id="9_0lfhn"]
 [ext_resource type="PackedScene" uid="uid://cvbesqw1kvrp8" path="res://Scenes/planet.tscn" id="10_t7brt"]
@@ -17,6 +20,7 @@
 [ext_resource type="Script" path="res://Code/PlanetTextureLoader.cs" id="12_dqnlk"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
+[ext_resource type="PackedScene" uid="uid://755k8nw6wxfm" path="res://Scenes/messier_object.tscn" id="17_yaq6n"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="19_4oofu"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
@@ -51,13 +55,6 @@ glow_enabled = true
 glow_intensity = 3.07
 glow_strength = 1.46
 
-[sub_resource type="BoxMesh" id="BoxMesh_j2p66"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3e2k"]
-albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
-
 [sub_resource type="Gradient" id="Gradient_vpwdv"]
 offsets = PackedFloat32Array(0.609347, 0.609357, 0.645897, 0.661094, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.992157, 0, 0.956863, 0.956863, 0.956863, 0)
@@ -80,12 +77,18 @@ default_font_size = 20
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
-[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "constellationNode", "HoverLabel")]
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "MessierSpawner", "constellationNode", "HoverLabel", "AzimuthGridlines", "GridLabel", "CompassNeedle", "CameraStateNotifier")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
+SunScene = ExtResource("3_k02si")
 spawner = NodePath("Stars")
+MessierSpawner = NodePath("MessierObjects")
 constellationNode = NodePath("Constellations")
 HoverLabel = NodePath("Node3D/HoverLabel")
+AzimuthGridlines = NodePath("Dome/Azimuth Gridlines")
+GridLabel = NodePath("GridLabel")
+CompassNeedle = NodePath("Compass/Needle")
+CameraStateNotifier = NodePath("Camera3D")
 
 [node name="GridLabel" type="Control" parent="."]
 visible = false
@@ -97,6 +100,10 @@ script = ExtResource("2_oxt5r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("1_t068r")
+
+[node name="MessierObjects" type="Node3D" parent="."]
+script = ExtResource("6_sd6fa")
+MessierScene = ExtResource("17_yaq6n")
 
 [node name="Stars" type="Node3D" parent="."]
 script = ExtResource("2_dkqjn")
@@ -147,20 +154,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n6hq7")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aofdk")
 
-[node name="MessierObject" type="Node3D" parent="."]
-transform = Transform3D(3.775, 0, 0, 0, 3.775, 0, 0, 0, 3.775, 10.45, 10.815, 0)
-visible = false
-
-[node name="O1" type="StaticBody3D" parent="MessierObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.93076, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MessierObject/O1"]
-mesh = SubResource("BoxMesh_j2p66")
-surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MessierObject/O1"]
-shape = SubResource("BoxShape3D_5gvf6")
-
 [node name="Compass" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 3
@@ -200,7 +193,6 @@ offset_bottom = 114.0
 text = "Test"
 
 [node name="AverageFrameLabel" type="Label" parent="."]
-visible = false
 offset_left = 33.0
 offset_top = 110.0
 offset_right = 191.0
@@ -208,12 +200,18 @@ offset_bottom = 139.0
 text = "Average Time"
 
 [node name="InstantaneousFrameLabel" type="Label" parent="."]
-visible = false
 offset_left = 34.0
 offset_top = 133.0
 offset_right = 192.0
 offset_bottom = 162.0
 text = "Instantaeous Time"
+
+[node name="LocalSiderealLabel" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 161.0
+offset_right = 196.0
+offset_bottom = 190.0
+text = "Local Sidereal Time"
 
 [node name="Node3D" type="Node3D" parent="."]
 

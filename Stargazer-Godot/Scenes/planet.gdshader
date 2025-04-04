@@ -18,11 +18,11 @@ void fragment() {
     );
 
     float intensity = dot(rotated_normal, view_dir);
-    
+
     // Convert to black-and-white shading
     //float visibility = step(0.0, intensity);
 	vec4 texture_color = texture(albedo_texture, UV);
-	vec3 corrected_color = pow(texture_color.rgb, vec3(2)); 
+	vec3 corrected_color = pow(texture_color.rgb, vec3(2));
     ALBEDO = corrected_color.rgb;
 	ALPHA = texture_color.a;
 }

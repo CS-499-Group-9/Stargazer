@@ -25,47 +25,10 @@ namespace Stargazer
         {
             globalVars = GetNode<Globals>("/root/Globals"); // Import globals
 
-            // planetTextureArray = new Texture2D[8];
-            // // planetTextureArray[0] = LoadTexture("res://Textures/mercurymap.jpg");
-            // planetTextureArray[1] = LoadTexture("res://Textures/venusmap.jpg"); 
-            // planetTextureArray[2] = LoadTexture("res://Textures/marsmap.jpg");
-            // planetTextureArray[3] = LoadTexture("res://Textures/jupitermap.jpg"); 
-            // planetTextureArray[4] = LoadTexture("res://Textures/saturnmap.jpg"); 
-            // planetTextureArray[5] = LoadTexture("res://Textures/uranusmap.jpg");
-            // planetTextureArray[6] = LoadTexture("res://Textures/neptunemap.jpg"); 
-            // planetTextureArray[7] = LoadTexture("res://Textures/sunmap.jpg");
-
-            // Texture planetTexture = (Texture)planetTextures.GetResource("mercury");
-
-            // if (horizonalPlanet.Name.Equals("Mercury")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTexture);
-            // }else if(horizonalPlanet.Name.Equals("Venus")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[1]);
-            // }else if(horizonalPlanet.Name.Equals("Mars")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[2]);
-            // }else if(horizonalPlanet.Name.Equals("Jupiter")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[3]);
-            // }else if(horizonalPlanet.Name.Equals("Saturn")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[4]);
-            // }else if(horizonalPlanet.Name.Equals("Uranus")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[5]);
-            // }else if(horizonalPlanet.Name.Equals("Neptune")){
-            //     Scale = new Vector3(3,3,3);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[6]);
-            // }else if(horizonalPlanet.Name.Equals("Sun")){
-            //     Scale = new Vector3(5,5,5);
-            //     planetMaterial.SetShaderParameter("albedo_texture",planetTextureArray[7]);
-            // }
         }
 
-        
-        
+
+
 
         // Called every frame. 'delta' is the elapsed time since the previous frame.
         public override void _Process(double delta)
@@ -93,7 +56,7 @@ namespace Stargazer
         public void FromHorizontal(HorizontalPlanet horizonalPlanet, IEquatorialCalculator calculator)
         {
             base.FromHorizontal(horizonalPlanet, calculator);  
-            this.horizontalPlanet = horizonalPlanet;
+            horizontalPlanet = horizonalPlanet;
             this.calculator = calculator;
         }
 
@@ -135,10 +98,6 @@ namespace Stargazer
             return texture;
         }
 
-        public Transform3D getGlobalTransform()
-        {
-            return GlobalTransform;
-        }
     }
 
 }

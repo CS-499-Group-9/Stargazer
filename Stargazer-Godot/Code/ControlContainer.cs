@@ -104,6 +104,6 @@ public partial class ControlContainer : Control
         GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
-        await UserPositionUpdated(latitude, longitude, parsedDate);
+        UserPositionUpdated(latitude, longitude, parsedDate);
     }
 }

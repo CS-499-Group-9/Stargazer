@@ -108,7 +108,7 @@ namespace Stargazer
                             );
                         }
                         var unprojected = camera.UnprojectPosition(75f * placement.Normalized());
-                        label.Position = new Vector2(0.0f, unprojected[1] - 30.0f);//new Vector2(0,unprojected[1]);
+                        label.Position = new Vector2(0.0f, unprojected[1] - 30.0f);
                     }
                     else
                     {

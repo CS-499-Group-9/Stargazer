@@ -1,4 +1,6 @@
+using DataLayer.Interfaces;
 using Godot;
+using System.Collections;
 
 namespace Stargazer
 {
@@ -34,9 +36,10 @@ namespace Stargazer
 		private ImmediateMesh mesh,mesh2;
 		private StandardMaterial3D orangeMaterial;
 		private StandardMaterial3D blueMaterial;
+		private IEquatorialCalculator calculator;
 		private Globals globalVars;
-        const float latitude = 90+34.7304f;
-        const float longitude = -86.5861f;
+        float latitude = 90+34.7304f;
+        float longitude = -86.5861f;
 		//const float theta = 30;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
@@ -77,7 +80,11 @@ namespace Stargazer
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
-           
+			if (calculator != null)
+			{
+				latitude = (float)calculator.Latitude + 90;
+				longitude = (float)calculator.Longitude;
+			}
 			mesh.ClearSurfaces();
 			mesh2.ClearSurfaces();
 			DrawLongitudeLines(mesh,mesh2);
@@ -113,14 +120,17 @@ namespace Stargazer
 			equatorialGridlines.Visible = showLines;
 		}
 
-
+		public void SetCalculator(IEquatorialCalculator calculator)
+		{
+			this.calculator = calculator;
+		}
 
 
 		// Function to draw longitude lines
 		private void DrawLongitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)
 
 		{
-			float theta = -(float)(globalVars.LocalSiderealTime*15+longitude);
+			float theta = -(float)((calculator?.LST ?? 0)*15+longitude);
 			imMesh.SurfaceBegin(Mesh.PrimitiveType.Lines,orangeMaterial);
 			imMesh2.SurfaceBegin(Mesh.PrimitiveType.Lines,blueMaterial);
 			float cutoffRadians = Mathf.DegToRad(cutoffLatitude);  // Convert cutoff to radians
@@ -197,7 +207,7 @@ namespace Stargazer
 		// Function to draw latitude lines
 		private void DrawLatitudeLines(ImmediateMesh imMesh,ImmediateMesh imMesh2)
 		{
-			float theta = -(float)globalVars.LocalSiderealTime*15+longitude;
+			float theta = -(float)(calculator?.LST ?? 0)*15+longitude;
 			float sinlat = Mathf.Sin(latitude*Mathf.Pi/180f);
 			float coslat = Mathf.Cos(latitude*Mathf.Pi/180f);
 			float sintheta = Mathf.Sin(theta*Mathf.Pi/180f);

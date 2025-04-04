@@ -57,8 +57,7 @@ namespace Stargazer
 
         public override void _Process(double delta)
         {
-            calculator.UpdatePositionOf(horizontalStar);
-            Position = GetLocation();
+            base._Process(delta);
             Position3D = Position;
         }
 
@@ -72,9 +71,5 @@ namespace Stargazer
             $"Distance: {Distance}";
         }
 
-        public Transform3D getGlobalTransform()
-        {
-            return GlobalTransform;
-        }
     }
 }

@@ -19,6 +19,8 @@ namespace DataLayer.Implementations
         private const double AUConversion = 63241.0771;
 
         public double LST { get { return Astronomy.SiderealTime(astroTime); } }
+        public double Latitude { get { return observer.latitude; } }
+        public double Longitude { get { return observer.longitude; } }
 
         /// <summary>
         /// Generates a new converter specific to the observers location and time
@@ -39,8 +41,7 @@ namespace DataLayer.Implementations
                 { Body.Jupiter.ToString(), Body.Jupiter },
                 { Body.Saturn.ToString(), Body.Saturn },
                 {Body.Uranus.ToString(), Body.Uranus },
-                {Body.Neptune.ToString(), Body.Neptune },
-                {Body.Sun.ToString(), Body.Sun}
+                {Body.Neptune.ToString(), Body.Neptune }
             };
             observer = new Observer(latitude, longitude, 150);
             currentTime = universalTime;
@@ -111,6 +112,17 @@ namespace DataLayer.Implementations
             moon.Distance = equ.dist / AUConversion;
         }
 
+        public void UpdatePositionOf(HorizontalSun sun)
+        {
+            Equatorial equ = Astronomy.Equator(Body.Sun, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+            Topocentric hor = Astronomy.Horizon(astroTime, observer, equ.ra, equ.dec, Refraction.Normal);
+            var illumination = Astronomy.Illumination(Body.Sun, astroTime);
+            sun.Azimuth = hor.azimuth;
+            sun.Altitude = hor.altitude;
+            sun.Distance = equ.dist / AUConversion;
+        }
+
+
         /// <summary>
         /// Performs the calculations for all planets.
         /// </summary>
@@ -153,5 +165,16 @@ namespace DataLayer.Implementations
         {
             observer = new(latitude, longitude, 150);
         }
+
+        internal HorizontalSun CreateSun()
+        {
+            Equatorial equ = Astronomy.Equator(Body.Sun, astroTime, observer, EquatorEpoch.OfDate, Aberration.Corrected);
+            Topocentric hor = Astronomy.Horizon(astroTime,observer,equ.ra, equ.dec,Refraction.Normal);
+            var illumination = Astronomy.Illumination(Body.Sun, astroTime);
+            var eqBody = new EquatorialStar{ Declination = equ.dec, RightAscension= equ.ra, Distance = equ.dist, Magnitude= illumination.mag };
+            return new HorizontalSun(eqBody);
+        }
+
+        
     }
 }

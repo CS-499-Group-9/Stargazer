@@ -32,9 +32,15 @@ namespace Stargazer
         /// </summary>
         public float Distance { get { return (float)horizontalBody.Distance; } }
 
+        public override void _Process(double delta)
+        {
+            calculator.UpdatePositionOf(horizontalBody);
+            Position = GetLocation();
+        }
+
         protected Vector3 GetLocation()
         {
-            var dist = (float)(10+20*Math.Log10(5 + horizontalBody.Distance));
+            var dist = Math.Clamp((float)(10+25*Math.Log10(5 + horizontalBody.Distance)),0,75f);
             var altRad = Altitude * radians;
             var azRad = Azimuth * radians;
             Vector3 pos = new()

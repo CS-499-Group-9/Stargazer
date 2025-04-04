@@ -47,6 +47,8 @@ namespace DataLayer
         
         public HorizontalMoon Moon { get; }
 
+        public HorizontalSun Sun { get; }
+
         public Tuple<double, double> DistanceRange { get; }
         /// <summary>
         /// Searches the dictionary for a <c>HorizontalStar</c> using the Hip ID provided. If found, converts it to a T star, stores it and returns it.
@@ -87,7 +89,8 @@ namespace DataLayer
             IEnumerable<Constellation> constellations,
             ConcurrentDictionary<int, T> drawnStars,
             IEnumerable<HorizontalPlanet>? planets,
-            HorizontalMoon moon)
+            HorizontalMoon moon,
+            HorizontalSun sun)
         {
             horizontalStars = stars;
             Calculator = starCalculator;
@@ -96,6 +99,7 @@ namespace DataLayer
             this.DrawnStars = drawnStars;
             Planets = planets;
             Moon = moon;
+            Sun = sun;
 
             var min = stars.Min(s => s.Distance);
             var max = stars.Max(s => s.Distance);

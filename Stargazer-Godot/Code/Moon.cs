@@ -20,7 +20,6 @@ namespace Stargazer
         /// </summary>
         public override void _Ready()
         {
-            
         }
 
         /// <summary>
@@ -39,7 +38,8 @@ namespace Stargazer
             rotateTransform.Origin = Position;
             rotateTransform.Basis = rotateBasis;
             Transform = rotateTransform;
-            Scale = new Vector3(4, 4, 4);
+            Scale = new Vector3(2,2,2);
+            //Scale = new Vector3(4, 4, 4);
             //RotateZ(-90+34.7304f);
             // RotationDegrees = new Vector3(0,0,-90+34.7304f);
             //LookAt(Vector3.Up);

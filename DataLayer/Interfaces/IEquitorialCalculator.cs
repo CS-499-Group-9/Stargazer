@@ -15,6 +15,8 @@ namespace DataLayer.Interfaces
         /// </summary>
         public DateTime CurrentTime { get; }
         double LST { get; }
+        double Latitude { get; }
+        double Longitude { get; }
 
         /// <summary>
         /// Calculates and updates the position of a <see cref="HorizontalBody"/>
@@ -23,6 +25,7 @@ namespace DataLayer.Interfaces
         void UpdatePositionOf(HorizontalBody hoBody);
         void UpdatePositionOf(HorizontalMoon moon);
         void UpdatePositionOf(HorizontalPlanet planet);
+        void UpdatePositionOf(HorizontalSun sun);
 
         /// <summary>
         /// Increments the time of the internal universal time used to perform calculations.
