@@ -21,7 +21,10 @@ namespace Stargazer
 
         }
 
- 
+        /// <summary>
+        /// Receives notifications when the camera rotation has changed to rotate the needle.
+        /// </summary>
+        /// <param name="camera">A reference to the main camera</param>
         public void RotationHandler(Camera3D camera)
         {
             float yRotationDegrees = Mathf.RadToDeg(camera.Rotation.Y);

@@ -115,11 +115,20 @@ namespace Stargazer
 		{
 			azimuthGridlines.Visible = showLines;
 		}
-        public void ToggleEquatorialGridlines(bool showLines)
+        
+		/// <summary>
+		/// Receives notifications of user request to toggle equatorial gridline visibility.
+		/// </summary>
+		/// <param name="showLines">True to show lines.</param>
+		public void ToggleEquatorialGridlines(bool showLines)
 		{
 			equatorialGridlines.Visible = showLines;
 		}
 
+		/// <summary>
+		/// Sets the <see cref="IEquatorialCalculator"/> used to retrieve the current observers latitude and longitude.
+		/// </summary>
+		/// <param name="calculator">The calculator</param>
 		public void SetCalculator(IEquatorialCalculator calculator)
 		{
 			this.calculator = calculator;

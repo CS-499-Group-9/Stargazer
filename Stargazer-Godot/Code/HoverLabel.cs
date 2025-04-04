@@ -9,7 +9,7 @@ namespace Stargazer
     {
         private Globals globalVars;
         private Vector2 shift = new (15f, 10f);
-        IHoverable hoveredBody;
+        private IHoverable hoveredBody;
         /// <summary>
         /// Initializes label settings
         /// </summary>
@@ -32,7 +32,10 @@ namespace Stargazer
             Visible = hoveredBody is not null;
 
         }
-
+        /// <summary>
+        /// Receives notification of the mouse hovering over a new object.
+        /// </summary>
+        /// <param name="hoverable">The object the mouse is hovering over.</param>
         public void HoverableChangeHandler(IHoverable hoverable)
         {
             hoveredBody = hoverable;

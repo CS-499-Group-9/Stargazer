@@ -2,65 +2,97 @@ using Godot;
 using Stargazer;
 using System;
 
-public partial class PlayControl : Control
+namespace Stargazer
 {
-    private Label multiplierLabel;
-    private PlaySpeed multiplier;
-    
-
-    public void UpdateSeconds(int seconds) 
+    /// <summary>
+    /// Controls the play speed of the 3D simulation.
+    /// </summary>
+    public partial class PlayControl : Control
     {
-        multiplier.IncreaseBySeconds(seconds);
-        UpdateMultiplierLabel(); 
-    }
-    public void UpdateMinutes(int minutes) 
-    {
-        multiplier.IncreaseByMinutes(minutes);
-        UpdateMultiplierLabel(); 
-    }
+        private Label multiplierLabel;
+        private PlaySpeed multiplier;
 
-    public void UpdateHours(int hours)
-    {
-        multiplier.IncreateByHours(hours);
-        UpdateMultiplierLabel();
-    }
+        /// <summary>
+        /// Receives the <see cref="Signal"/> from the <c>Sec</c> buttons
+        /// </summary>
+        /// <param name="seconds">1 or -1</param>
+        public void UpdateSeconds(int seconds)
+        {
+            multiplier.IncreaseBySeconds(seconds);
+            UpdateMultiplierLabel();
+        }
+        /// <summary>
+        /// Receives the <see cref="Signal"/> form the <c>Min</c> buttons
+        /// </summary>
+        /// <param name="minutes">1 or -1</param>
+        public void UpdateMinutes(int minutes)
+        {
+            multiplier.IncreaseByMinutes(minutes);
+            UpdateMultiplierLabel();
+        }
+        /// <summary>
+        /// Receives the <see cref="Signal"/> from the <c>Hrs</c> buttons
+        /// </summary>
+        /// <param name="hours"></param>
+        public void UpdateHours(int hours)
+        {
+            multiplier.IncreateByHours(hours);
+            UpdateMultiplierLabel();
+        }
 
-    public void UpdateDays(int days) 
-    {
-        multiplier.IncreaseByDays(days);
-        UpdateMultiplierLabel() ;
-    }
+        /// <summary>
+        /// Receives the <see cref="Signal"/> from the <c>Days</c> buttons
+        /// </summary>
+        /// <param name="days"></param>
+        public void UpdateDays(int days)
+        {
+            multiplier.IncreaseByDays(days);
+            UpdateMultiplierLabel();
+        }
 
-    public void OnSynchronizeTime() 
-    {
-        multiplier.SynchronizeTime();
-        UpdateMultiplierLabel(); 
-    }
+        /// <summary>
+        /// Syncronized to current time.
+        /// </summary>
+        public void OnSynchronizeTime()
+        {
+            multiplier.SynchronizeTime();
+            UpdateMultiplierLabel();
+        }
 
-    public void PlayNormal() 
-    { 
-        multiplier.RealTime();
-        UpdateMultiplierLabel();
-    }
+        /// <summary>
+        /// Sets the play speed to 1:1
+        /// </summary>
+        public void PlayNormal()
+        {
+            multiplier.RealTime();
+            UpdateMultiplierLabel();
+        }
 
-    public override void _Ready()
-    {
-        base._Ready();
-        multiplier = new PlaySpeed();
-        multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
-        UpdateMultiplierLabel();
-    }
+        /// <summary>
+        /// Initializes the object.
+        /// </summary>
+        public override void _Ready()
+        {
+            multiplier = new PlaySpeed();
+            multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
+            UpdateMultiplierLabel();
+        }
 
-    public PlaySpeed Activate()
-    {
-        Visible = true;
-        UpdateMultiplierLabel();
-        return multiplier;
-    }
+        /// <summary>
+        /// Used to activate the object.
+        /// </summary>
+        /// <returns>The <see cref="PlaySpeed"/> state object.</returns>
+        public PlaySpeed Activate()
+        {
+            Visible = true;
+            UpdateMultiplierLabel();
+            return multiplier;
+        }
 
-    private void UpdateMultiplierLabel()
-    {
-       multiplierLabel.Text = $"{multiplier.ToString()} per second";
-    }
+        private void UpdateMultiplierLabel()
+        {
+            multiplierLabel.Text = $"{multiplier.ToString()} per second";
+        }
 
+    }
 }

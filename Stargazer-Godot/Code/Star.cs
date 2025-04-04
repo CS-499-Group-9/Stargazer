@@ -28,9 +28,11 @@ namespace Stargazer
         /// Common name of the star
         /// </summary>
         public string StarName { get { return horizontalStar.StarName; } }
+        /// <summary>
+        /// Provides asynchronous access to the star's position.
+        /// </summary>
         public Vector3 Position3D { get; private set; }
         public Vector2 Position2D;
-
 
         private Globals globalVars;
 
@@ -49,6 +51,8 @@ namespace Stargazer
         {
             base.FromHorizontal(star, starConverter);
             this.horizontalStar = star;
+
+            // This needs to be changed so that a star's size in the simulation is actually a function of it's magnitude.
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
 

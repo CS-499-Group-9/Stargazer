@@ -32,6 +32,10 @@ namespace Stargazer
         private bool canProcess = false;
         private IDictionary<string, LabelNode> labelDictionary;
 
+        /// <summary>
+        /// Redraws the constellation lines as the stars move
+        /// </summary>
+        /// <param name="delta">Unused</param>
         public override void _Process(double delta)
         {
             if (!constMesh?.Visible ?? true) return;

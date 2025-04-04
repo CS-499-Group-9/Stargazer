@@ -11,6 +11,7 @@ namespace DataLayer.Implementations
     {
         public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
         {
+            // Attempt to parse to an integer. If the parsing fails (usually because of white space or null string), return a null.
             return int.TryParse(text, out int value) ? value : null;
         }
     }

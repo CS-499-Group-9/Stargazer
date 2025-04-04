@@ -8,16 +8,10 @@ namespace DataLayer.Interfaces
     public interface IStarRepository
     {
         /// <summary>
-        /// Gets all stars that are brighter than a certain magnitude.
+        /// Gets all stars from the repository. (Omit the sun, so that it can be created separately).
         /// </summary>
-        /// <returns>A running task that can be awaited to obtain a list of stars</returns>
-        public Task<IList<EquatorialStar>> GetAllStarsAsync();
+        /// <returns>A <c>yieldable</c> <see cref="IEnumerable{EquatorialStar}"/> that can is lazily loaded during read.</returns>
+        public IEnumerable<EquatorialStar> GetAllStars();
 
-        /// <summary>
-        /// Gets a single star from the repository
-        /// </summary>
-        /// <param name="hipparcosId">The Hipparcos ID of the star to find</param>
-        /// <returns>Null if no star is found</returns>
-        public Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId);
     }
 }

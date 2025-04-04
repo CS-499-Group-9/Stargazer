@@ -16,42 +16,35 @@ namespace Stargazer
     
         [Export] public Vector2 ScreenOffset = new Vector2(500, 50);  // Desired screen space position
 
-
-
-
         private float yaw = 0f;  // Left/Right Rotation
         private float pitch = 0f; // Up/Down Rotation
         private bool rightClickHeld = false;
-        private bool middleMouseClicked = false;
-        private bool tracking = false;
+        private bool trackObjectRequested = false;
         private string screenshotPath = "user://screenshot.jpeg";
+
+        // Objects used for ray tracing and hovering/tracking
         private PhysicsDirectSpaceState3D worldSpace;
         private Vector2 mousePosition;
         private Vector3 rayStart, rayEnd;
-
-
         private ZoomState zoomState;
-        private ITrackable trackedObject;
+        private ITrackable TrackedBody { get; set; }
+        private IHoverable HoverBody { get; set; }
   
-        private Globals globalVars;
 
+        /// <inheritdoc/>
         public Action<float> OnZoom { get; set; }
+        ///<inheritdoc/>
         public Action<ZoomState> OnZoomStateChanged { get ; set ; }
-
-        public ITrackable TrackedBody { get; private set; }
-
-        public IHoverable HoverBody { get; private set; }
+        /// <inheritdoc/>
         public Action<Camera3D> OnRotation { get ; set; }
+        ///<inheritdoc/>
         public Action<Godot.Collections.Array<Plane>> OnFustrumChanged { get ; set ; }
+        /// <inheritdoc/>
         public Action<IHoverable> OnHoverableChange { get ; set ; }
-
-
         /// <inheritdoc/>
         public override void _Ready()
         {
-            globalVars = GetNode<Globals>("/root/Globals"); // Import globals
             worldSpace = GetWorld3D().DirectSpaceState;
-            
         }
 
         /// <summary>
@@ -60,12 +53,9 @@ namespace Stargazer
         /// <param name="event">The event data passed in.</param>
         public override void _Input(InputEvent @event)
         {
-            middleMouseClicked = false;
+            trackObjectRequested = false;
             if(@event.IsAction("forward")){
-
-                GD.Print("go!");
                 Position -= 0.5f * Basis.Z;
-
             }
 
 
@@ -74,14 +64,30 @@ namespace Stargazer
                 switch (mouseButton.ButtonIndex)
                 {
                     case MouseButton.Right:
+                        // User has requested to pan/tilt (or is finished requesting a pan/tilt)
                         rightClickHeld = mouseButton.Pressed;
                         Input.MouseMode = rightClickHeld ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
                         break;
                     case MouseButton.Left:
-                        middleMouseClicked = mouseButton.Pressed;
-
+                        if(!mouseButton.Pressed) break;
+                        // User has requested a change to object tracking.
+                        if (HoverBody is not null)
+                        {
+                            // User has clicked on an object and requests to track it.
+                            TrackedBody = HoverBody;
+                            //ScreenOffset = UnprojectPosition(TrackedBody.GlobalTransform.Origin);
+                            trackObjectRequested = false;
+                        }
+                        else if (TrackedBody is not null)
+                        {
+                            // User has clicked away from a body and requests to discontinue tracking
+                            yaw = Rotation.Y;
+                            pitch = Rotation.X;
+                            TrackedBody = null;
+                        }
                         break;
                     case MouseButton.Middle:
+                        // Not currently used.
                         break;
                     case MouseButton.WheelUp:
                         ZoomIn();
@@ -93,8 +99,9 @@ namespace Stargazer
 
             } else if (@event is InputEventMouseMotion mouseMotion)
             {
-                if (rightClickHeld && trackedObject is null)
+                if (rightClickHeld && TrackedBody is null)
                 {
+                    // User is attempting to pan/tilt the view
                     yaw -= (Fov / 75) * mouseMotion.Relative.X * MouseSensitivity;
                     pitch -= (Fov / 75) * mouseMotion.Relative.Y * MouseSensitivity;
 
@@ -103,18 +110,11 @@ namespace Stargazer
 
                     // Apply rotation
                     Rotation = new Vector3(pitch, yaw, 0);
+
+                    // Notify subscribers of the change.
                     OnRotation?.Invoke(this);
                 }
             }
-
-            if (!middleMouseClicked) return;
-            if(HoverBody is not null){
-                GD.Print("I'm tracking you now!");
-                TrackedBody = (ITrackable)HoverBody;
-                //ScreenOffset = UnprojectPosition(TrackedBody.GlobalTransform.Origin);
-                middleMouseClicked = false;
-                tracking = true;
-            } else { TrackedBody = null; }
             
         }
 
@@ -122,6 +122,8 @@ namespace Stargazer
         {
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov - 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
+
+            // Check if Fov has passed through a threshold and update the Zoom State as necessary and notify subscribers of the change
             if (Fov < 15 && zoomState <= ZoomState.FullIn) { OnZoomStateChanged?.Invoke(zoomState = ZoomState.FullIn); }
             if (Fov < 35 && zoomState <= ZoomState.Middle) { OnZoomStateChanged?.Invoke(zoomState = ZoomState.Middle); }
             OnZoom?.Invoke(Fov);
@@ -131,6 +133,8 @@ namespace Stargazer
         {
             // Decrease field of view for zooming in (if using a perspective camera)
             Fov = Mathf.Clamp(Fov + 2, 10, 90); // Example: Adjust sensitivity (2) and clamp the FOV
+
+            // Check if Fov has passed through a threshold and update the Zoom State as necessary and notify subscribers of the change
             if (Fov > 35 && zoomState >= ZoomState.FullOut) { OnZoomStateChanged?.Invoke(zoomState = ZoomState.FullOut); }
             if (Fov > 15 && zoomState >= ZoomState.Middle) { OnZoomStateChanged?.Invoke(zoomState = ZoomState.Middle); }
             OnZoom?.Invoke(Fov);
@@ -138,15 +142,11 @@ namespace Stargazer
 
 
         /// <summary>
-        /// Used to check for the input for the screenshot key and take the screenshot.
+        /// Tracks a body (if armed) and implements ray tracing to hover over bodies.
         /// </summary>
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
-            float RotationSpeed = 1f;
-            // Check if the 'screenshot_key' action is pressed
-            
-
             if (TrackedBody is not null)
             {
                 // Compute the direction to the target
@@ -164,27 +164,40 @@ namespace Stargazer
                 newTransform.Basis = newBasis;
                 GlobalTransform = newTransform;
 
+                // Notify subscribers the rotation has changed.
                 OnRotation?.Invoke(this);
 
 
                 // Assign the new transform
             }
+
+            if (rightClickHeld) return; // Disables ray tracing when pan/tilt is active.
+
+            // Ray tracing to detect when the mouse is pointed at an object.
             mousePosition = GetViewport().GetMousePosition();
             rayStart = ProjectRayOrigin(mousePosition);
             rayEnd = ProjectPosition(mousePosition, 1000);
-            if (rightClickHeld) return;
+
             var result = worldSpace.IntersectRay(PhysicsRayQueryParameters3D.Create(rayStart, rayEnd));
+
             if (result.Count > 0 )
             {
-                globalVars.isHover = true;
-                Node3D collider = result["collider"].As<Node3D>();
 
-                HoverBody = (IHoverable)collider.GetParentNode3D();
-                OnHoverableChange?.Invoke(HoverBody);
+                Node3D collider = result["collider"].As<Node3D>();
+                try
+                {
+                    // Update the hover body reference and notify subscribers of the change.
+                    HoverBody = (IHoverable)collider.GetParentNode3D();
+                    OnHoverableChange?.Invoke(HoverBody);
+                }
+                catch (Exception)
+                {
+                    // Just in case there are other objects added that are not intended to be able to select.
+                }
             }
             else if (HoverBody is not null) 
             {
-                //.globalVars.isHover = false;
+                // Update the hover body reference and notify subscribers of the change.
                 HoverBody = null;
                 OnHoverableChange?.Invoke(null);
             }

@@ -11,7 +11,6 @@ namespace Stargazer
     public partial class GridLabel : Control
 
     {
-        private Camera3D camera;
         private Dictionary<int, Label> gridlabels = new Dictionary<int, Label>();
         private Dictionary<int, Label> azimuthlabels = new Dictionary<int, Label>();
 
@@ -32,7 +31,7 @@ namespace Stargazer
                 gridlabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.5f, 0.4f, 0.8f));
                 gridlabel.Text = $"{-90 + altitude * lineInterval}°";
                 gridlabel.AddThemeFontSizeOverride("font_size", 25);
-                gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);
+                gridlabel.SetAnchorsPreset(LayoutPreset.Center);
                 AddChild(gridlabel);
                 gridlabels[altitude] = gridlabel;
             }
@@ -42,7 +41,7 @@ namespace Stargazer
                 gridlabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.5f, 0.4f, 0.8f));
                 gridlabel.Text = $"{azimuth * lineInterval}°";
                 gridlabel.AddThemeFontSizeOverride("font_size", 25);
-                gridlabel.SetAnchorsPreset(Control.LayoutPreset.Center);
+                gridlabel.SetAnchorsPreset(LayoutPreset.Center);
                 AddChild(gridlabel);
                 azimuthlabels[azimuth] = gridlabel;
             }

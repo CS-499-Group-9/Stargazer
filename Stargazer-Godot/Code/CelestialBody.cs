@@ -3,13 +3,14 @@ using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Stargazer
 {
-    public abstract partial class CelestialBody : Node3D, IHoverable, ITrackable
+    public abstract partial class CelestialBody : Node3D, IHoverable
     {
         private const float radians = (float)Math.PI / 180f;
         private HorizontalBody horizontalBody;
@@ -34,6 +35,7 @@ namespace Stargazer
 
         public override void _Process(double delta)
         {
+
             calculator.UpdatePositionOf(horizontalBody);
             Position = GetLocation();
         }

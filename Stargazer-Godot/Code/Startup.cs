@@ -1,4 +1,5 @@
 using DataLayer;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Threading.Tasks;
@@ -12,9 +13,9 @@ namespace Stargazer
     public partial class Startup : Control
     {
         // Just in case something changes, it's easy to find.
-        private StargazerRepositoryService<Star> repositoryService;
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
+        private IEquatorialCalculator calculator;
         private string screenshotPath = "user://screenshot.jpeg";
 
         [Export] private PackedScene View2D;
@@ -24,34 +25,27 @@ namespace Stargazer
         [Export] private PlayControl playControl;
 
         /// <summary>
-        /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
-        /// </summary>
-        public event Func<CelestialDataPackage<Star>, Task> OnCelestialInitialization;
-
-
-        /// <summary>
         /// Creates the repository service and stores in memory
         /// Gathers references to sender/receiver nodes and connects <see cref="Delegate"/>s for communication.
         /// </summary>
         public async override void _Ready()
         {
-
-            var injectionRequest =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-
-           
+            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
+            dataPackage = await repositoryService.InitializeDataPackage();
+            calculator = dataPackage.Calculator;
             skyView = skyViewContainer.SkyView;
+            await skyView.InitializeCelestial(dataPackage);
+
+            // Set up subscribers to notifications.
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
-            controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
+            controlContainer.MessierObjectsToggled = skyView.ToggleMessierObjects;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
             controlContainer.RequestScreenshot = TakeScreenshot;
-            OnCelestialInitialization = skyView.InitializeCelestial;
 
-            repositoryService = await injectionRequest;
-            dataPackage = await repositoryService.InitializeDataPackage();
-            await OnCelestialInitialization.Invoke(dataPackage);
+            // Activate the Play Controller and notify the SkyView
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
         }
@@ -68,8 +62,8 @@ namespace Stargazer
         {
             // Uncomment the timers to make it advance.
 
-            dataPackage.Calculator.SetLocation(latitude, longitude);
-            dataPackage.Calculator.SetTime(dateTime);
+            calculator.SetLocation(latitude, longitude);
+            calculator.SetTime(dateTime);
 
         }
 
@@ -87,6 +81,5 @@ namespace Stargazer
             GD.Print($"Screenshot saved to {screenshotPath}");
             
         }
-
     }
 }

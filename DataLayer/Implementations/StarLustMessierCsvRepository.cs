@@ -9,6 +9,7 @@ namespace DataLayer.Implementations
 {
     /// <summary>
     /// Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
+    /// If a new repository is used, a new converter that implements the <see cref="IMessierRepository"/> needs to be created for it. 
     /// </summary>
     internal class StarLustMessierCsvRepository : IMessierRepository
     {
@@ -24,32 +25,29 @@ namespace DataLayer.Implementations
         public StarLustMessierCsvRepository(string repositoryPath)
         {
             filePath = Path.Combine(repositoryPath, "messier-catalog.csv");
+            if (!File.Exists(filePath)) throw new FileNotFoundException($"{filePath} does not exist");
+
         }
 
-        /// <summary>
-        /// Asynchronously retrieves an <see cref="IList{EquatorialMessierObject}"/> from the repository.
-        /// </summary>
-        /// <returns>A running task that results in</returns>
-        /// <exception cref="FileNotFoundException">If the csv file is not present in the directory</exception>
-        public Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync()
+        /// <inheritdoc/>
+        public IEnumerable<EquatorialMessierObject> GetMessierObjects()
         {
-            if (File.Exists(filePath))
+            var reader = new StreamReader(filePath);
+            var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+            csv.Context.RegisterClassMap<StarMap>();
+
+            try
             {
-                // Build a task to retrieve the raw messier objects from the repository and return the task to the calling code
-                return Task<IEnumerable<EquatorialMessierObject>>.Factory.StartNew(() =>
+                foreach (var record in csv.GetRecords<EquatorialMessierObject>())
                 {
-                    using var reader = new StreamReader(filePath);
-                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                    csv.Context.RegisterClassMap<StarMap>();
-
-                    // the CsvHelper.GetRecords retrieve a yieldable list. Objects are not read until they are requested
-                    var records = csv.GetRecords<EquatorialMessierObject>();
-
-                    // Create a new thread for each row in the csv and map that row to a new object
-                    return records.ToList();
-                });
+                    yield return record;
+                }
             }
-            throw new FileNotFoundException();
+            finally
+            {
+                csv.Dispose();
+                reader.Dispose();
+            }
         }
 
         /// <summary>
@@ -83,14 +81,19 @@ namespace DataLayer.Implementations
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
                     if (text == null) return null;
+                    // String should come in in ##H ##.##m format, split on the space.
                     var degDecMin = text.Split(' ');
-                    if (
+                    if 
+                    (
+                        // Attempt to parse the values
                         !(
+                            // Remove the letter from the end and attempt to parse the rest of the string to a double.
                             double.TryParse(degDecMin[0].Remove(degDecMin[0].Length - 1), out double hours) &&
                             double.TryParse(degDecMin[1].Remove(degDecMin[1].Length - 1), out double minutes)
                           )
-                        )
+                    )
                     {
+                        // The Right Ascention is crucial data. Any value that can't be parsed should break the program so the converter can be modified to handle it. 
                         throw new InvalidDataException($"{text} could not be converted to decimal degrees.");
                     }
                     minutes /= 60;
@@ -106,14 +109,21 @@ namespace DataLayer.Implementations
                 public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
                 {
                     if (text == null) return null;
+                    // The current repository uses the ° character to denote degrees with no space between the ° character and the decimal degrees. Split on the ° character to get the degrees and minutes 
                     var degreesMinutes = text.Split('°');
-                    if (
+                    if 
+                    (
+                        // Attempt to parse the values
                         !(
                             double.TryParse(degreesMinutes[0], out double degrees) &&
                             double.TryParse(degreesMinutes[1], out double minutes)
-                        )
-                        )
-                    { throw new InvalidDataException($"{text} could not be converted into decimal degrees"); }
+                         )
+                    ) 
+                    {
+                        // The Declincation is crucial data. Any value that can't be parsed shoudl break the program so the converter can be modified to handle it.
+                        throw new InvalidDataException($"{text} could not be converted into decimal degrees"); 
+                    }
+                    // Convert the decimal degrees to decimal hours and add it to the hours to get a total decimal hours.
                     minutes /= 60;
                     return degrees + minutes;
                 }

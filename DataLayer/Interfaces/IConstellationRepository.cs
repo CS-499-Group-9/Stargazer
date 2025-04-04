@@ -10,7 +10,7 @@ namespace DataLayer.Interfaces
         /// <summary>
         /// Gets all <see cref="Constellation"/>s from the repository
         /// </summary>
-        /// <returns>A running task that can be awaited</returns>
-        public Task<IList<Constellation>> GetAllConstellationsAsync();
+        /// <returns>An <see cref="IEnumerable{Constellation}"/> containing graphs of all the constellations.</returns>
+        public IEnumerable<Constellation> GetConstellations();
     }
 }

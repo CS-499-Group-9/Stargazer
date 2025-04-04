@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=33 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -13,11 +13,9 @@
 [ext_resource type="Script" path="res://Code/Constellations.cs" id="6_erqrm"]
 [ext_resource type="Script" path="res://Code/ASTRALPLANEAlbedo.cs" id="6_pddxn"]
 [ext_resource type="Script" path="res://Code/MessierSpawner.cs" id="6_sd6fa"]
-[ext_resource type="Script" path="res://Code/LineMesh.cs" id="7_1t5an"]
 [ext_resource type="Script" path="res://Code/Planets.cs" id="9_0lfhn"]
 [ext_resource type="PackedScene" uid="uid://cvbesqw1kvrp8" path="res://Scenes/planet.tscn" id="10_t7brt"]
 [ext_resource type="Texture2D" uid="uid://dbxjlwaymvx8x" path="res://Textures/Images/needle.png" id="11_eka2m"]
-[ext_resource type="Script" path="res://Code/PlanetTextureLoader.cs" id="12_dqnlk"]
 [ext_resource type="Script" path="res://Code/CompassNeedle.cs" id="12_nu1as"]
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 [ext_resource type="PackedScene" uid="uid://755k8nw6wxfm" path="res://Scenes/messier_object.tscn" id="17_yaq6n"]
@@ -77,18 +75,21 @@ default_font_size = 20
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
-[node name="SkyView" type="Node3D" node_paths=PackedStringArray("spawner", "MessierSpawner", "constellationNode", "HoverLabel", "AzimuthGridlines", "GridLabel", "CompassNeedle", "CameraStateNotifier")]
+[node name="SkyView" type="Node3D" node_paths=PackedStringArray("StarSpawner", "MessierSpawner", "PlanetSpawner", "constellationNode", "HoverLabel", "AzimuthGridlines", "GridLabel", "CompassNeedle", "CameraStateNotifier", "AstralPlane", "dateLabel")]
 script = ExtResource("1_b8fgf")
 MoonScene = ExtResource("2_wg1wp")
 SunScene = ExtResource("3_k02si")
-spawner = NodePath("Stars")
+StarSpawner = NodePath("Stars")
 MessierSpawner = NodePath("MessierObjects")
+PlanetSpawner = NodePath("Planets")
 constellationNode = NodePath("Constellations")
 HoverLabel = NodePath("Node3D/HoverLabel")
 AzimuthGridlines = NodePath("Dome/Azimuth Gridlines")
 GridLabel = NodePath("GridLabel")
 CompassNeedle = NodePath("Compass/Needle")
 CameraStateNotifier = NodePath("Camera3D")
+AstralPlane = NodePath("THE ASTRAL PLANE")
+dateLabel = NodePath("TimeLabel")
 
 [node name="GridLabel" type="Control" parent="."]
 visible = false
@@ -116,7 +117,6 @@ StarScene = ExtResource("3_54qo3")
 LabelScene = ExtResource("4_hboln")
 
 [node name="LineMesh" type="MultiMeshInstance3D" parent="Constellations"]
-script = ExtResource("7_1t5an")
 
 [node name="Planets" type="Node3D" parent="." node_paths=PackedStringArray("planetTextures")]
 script = ExtResource("9_0lfhn")
@@ -124,7 +124,6 @@ planetTextures = NodePath("PlanetTextureLoader")
 PlanetScene = ExtResource("10_t7brt")
 
 [node name="PlanetTextureLoader" type="ResourcePreloader" parent="Planets"]
-script = ExtResource("12_dqnlk")
 
 [node name="Dome" type="Node3D" parent="."]
 
@@ -144,6 +143,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 light_energy = 0.297
 
 [node name="THE ASTRAL PLANE" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("6_pddxn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="THE ASTRAL PLANE"]

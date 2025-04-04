@@ -15,37 +15,31 @@ namespace Stargazer
         private HorizontalPlanet horizontalPlanet;
         private Texture2D planetTexture;
         private ShaderMaterial planetMaterial;
-        private Globals globalVars;
         // Called when the node enters the scene tree for the first time.
 
+
         /// <summary>
-        /// Used to initialize planetary data.
+        /// Overrides the <see cref="CelestialBody._Process(double)"/> method since calculations are planet specific. 
         /// </summary>
-        public override void _Ready()
-        {
-            globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-
-        }
-
-
-
-
-        // Called every frame. 'delta' is the elapsed time since the previous frame.
+        /// <param name="delta"></param>
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalPlanet);
-            globalVars.LocalSiderealTime = (double)(calculator?.LST);
             Position = GetLocation();
             Rotate(Vector3.Up,Mathf.Pi);
             RotationDegrees = new Vector3(0,0,-90+34.7304f);
         }
 
-        public void setTexture(Resource planettexture)
+        /// <summary>
+        /// Sets the texture of the planet
+        /// </summary>
+        /// <param name="planetTexture">The texture to use.</param>
+        public void SetTexture(Resource planetTexture)
         {
             var planetMesh = GetNode<MeshInstance3D>("PlanetBody/PlanetMesh");
             planetMaterial = (ShaderMaterial)planetMesh.GetSurfaceOverrideMaterial(0).Duplicate();
             planetMesh.SetSurfaceOverrideMaterial(0,planetMaterial);
-            planetMaterial.SetShaderParameter("albedo_texture",planettexture);
+            planetMaterial.SetShaderParameter("albedo_texture",planetTexture);
         }
 
         /// <summary>
@@ -82,7 +76,7 @@ namespace Stargazer
             $"Distance: {horizontalPlanet.Distance}";
         }
         
-        
+        // Not used
         private Texture2D LoadTexture(string path)
         {
             Image image = new Image();

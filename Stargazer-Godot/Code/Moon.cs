@@ -11,25 +11,19 @@ namespace Stargazer
     public partial class Moon : CelestialBody
     {
         private HorizontalMoon horizontalMoon;
-        private IEquatorialCalculator calculator;
-        private const float radians = (float)Math.PI / 180f;
     
 
         /// <summary>
-        /// Initializes object data when it enters the tree.
-        /// </summary>
-        public override void _Ready()
-        {
-        }
-
-        /// <summary>
         /// Calculates phase and positional data every frame.
+        /// Must override the <see cref="CelestialBody._Process(double)"/> method since calculations are moon specific.
         /// </summary>
         /// <param name="delta"></param>
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalMoon);
             Position = GetLocation();
+
+            // Rotate the object to always face the earth.
             Transform3D rotateTransform = new Transform3D();
             Vector3 forward = (-Position.Normalized());  
             Vector3 up = new Vector3(Mathf.Cos(Mathf.DegToRad(34.7304f)),Mathf.Sin(Mathf.DegToRad(34.7304f)),0f);
@@ -39,13 +33,9 @@ namespace Stargazer
             rotateTransform.Basis = rotateBasis;
             Transform = rotateTransform;
             Scale = new Vector3(2,2,2);
-            //Scale = new Vector3(4, 4, 4);
-            //RotateZ(-90+34.7304f);
-            // RotationDegrees = new Vector3(0,0,-90+34.7304f);
-            //LookAt(Vector3.Up);
         }
 
-
+        /// <inheritdoc/>
         public override string GetHoverText()
         {
             return $"The Moon\n" +
@@ -53,13 +43,6 @@ namespace Stargazer
             $"Azimuth {horizontalMoon.Azimuth}\n" +
             $"Distance: {horizontalMoon.Distance}";
         }
-
-        public Transform3D getGlobalTransform()
-        {
-            return GlobalTransform;
-        }
-
-
 
         /// <summary>
         /// Passes in data necessary to perform calculations.

@@ -13,12 +13,12 @@ namespace DataLayer
     public static class InjectionService<T>
     {
         /// <summary>
-        /// Used to asynchronously instantiate the repository service. This should be called in an <c>async</c> method using the <c>await</c> keyword.
+        /// Used to instantiate the repository service.
         /// </summary>
         /// <param name="baseDirectoryPath">The base path of the executing application. (Used to find the location of the repositories in DataLayer/Repositories)</param>
         /// <returns>A new <c>StargazerRepositoryService</c> instance.</returns>
         /// <exception cref="DirectoryNotFoundException">If the base directory of the executing program cannot be found.</exception>
-        public static async Task<StargazerRepositoryService<T>> GetRepositoryServiceAsync(string baseDirectoryPath)
+        public static IRepositoryService<T> GetRepositoryServiceAsync(string baseDirectoryPath)
         {
             /*
              * Register all interface implementations here. 
@@ -36,16 +36,11 @@ namespace DataLayer
                 .AddSingleton<IStarRepository, HygCsvStarRepository>(provider => new HygCsvStarRepository(repositoryPath))
                 .AddSingleton<IMessierRepository, StarLustMessierCsvRepository>(provider => new StarLustMessierCsvRepository(repositoryPath))
                 .AddSingleton<IConstellationRepository, StellariumJsonConstellationRepository>(provider => new StellariumJsonConstellationRepository(repositoryPath))
-                .AddSingleton(async provider =>
-                {
-                    var starRepository = provider.GetRequiredService<IStarRepository>();
-                    var constellationRepository = provider.GetRequiredService<IConstellationRepository>();
-                    var messierRepository = provider.GetRequiredService<IMessierRepository>();
-
-                    return await StargazerRepositoryService<T>.CreateAsync(starRepository, constellationRepository, messierRepository);
-                })
+                // Since the type of T is not known at compile time, the injection service must be made aware to evaluate the type when registering.
+                .AddSingleton(typeof(IRepositoryService<>), typeof(StargazerRepositoryService<>))
                 .BuildServiceProvider();
-            return await serviceProvider.GetRequiredService<Task<StargazerRepositoryService<T>>>();
+
+            return serviceProvider.GetRequiredService<IRepositoryService<T>>();
         }
 
     }

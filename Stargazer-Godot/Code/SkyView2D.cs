@@ -17,13 +17,6 @@ namespace Stargazer
         {
             Stars = GetNode<Spawner2D>("Stars2D");
             Constellations = GetNode<Constellations2D>("Constellations2D");
-
-        }
-
-        // Called every frame. 'delta' is the elapsed time since the previous frame.
-        public override void _Process(double delta)
-        {
-
         }
 
         /// <summary>
