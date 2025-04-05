@@ -11,17 +11,40 @@ public partial class ControlContainer : Control
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+
+    /// <summary>
+    /// Notifies the subscribers when the user has toggled the azimuth grid
+    /// </summary>
     public Action<bool> AzimuthToggled;
+    /// <summary>
+    /// Notifies the subscribers when the user has toggled the equatorial grid
+    /// </summary>
     public Action<bool> EquatorialToggled;
-	public Action<bool> EquatorLinesToggled;
+    /// <summary>
+    /// Notifies the subscribers when the user has toggle the visibility of constellations
+    /// </summary>
 	public Action<bool> ConstellationsToggled;
+    /// <summary>
+    /// Notifies the subscribers when the user has toggled the visibility of constellation labels
+    /// </summary>
 	public Action<bool> ConstellationLabelsToggled;
-	public Action<bool> MessierObjectsTogggled;
-	public Func<double, double, DateTime, Task> UserPositionUpdated;
+    /// <summary>
+    /// Notifies the subscribers when the user has toggled the visibility of Messier objects
+    /// </summary>
+	public Action<bool> MessierObjectsToggled;
+    /// <summary>
+    /// Notifies the subscriber (one only) of a request to update to the observers position/time.
+    /// </summary>
+	public Action<double, double, DateTime> UserPositionUpdated;
+    /// <summary>
+    /// Broadcasts a request to take a screenshot
+    /// </summary>
     public Action RequestScreenshot;
 
-
-
+    /// <summary>
+    /// Checks to see if the user has requested a screenshot
+    /// </summary>
+    /// <param name="delta">Unused</param>
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("screenshot_key"))
@@ -30,32 +53,41 @@ public partial class ControlContainer : Control
         }
     }
 
-
-
     /// <summary>
-    /// Receives the <see cref="Signal"/> from the <see cref="AzimuthButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
+    /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
-    /// <param name="value"></param>
+    /// <param name="value">True if the toggle button is checked</param>
     public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
-
+    /// <summary>
+    /// Receives the <see cref="Signal"/> from the <see cref=""/>
+    /// </summary>
+    /// <param name="value">True if the toggle button is checked.</param>
     public void ToggleEquatorial(bool value) {EquatorialToggled?.Invoke(value); }
 
-    /// Receives the <see cref="Signal"/> from the <see cref="ConstellationButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationsToggled"/> notification.
+    /// <summary>
+    /// Receives the <see cref="Signal"/> from the ConstellationButton's <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationsToggled"/> notification.
+    /// </summary>
+    /// <param name="value">True if the toggle button is checked</param>
     public void ToggleConstellations(bool value) { ConstellationsToggled?.Invoke(value); }
 
-    /// Receives the <see cref="Signal"/> from the <see cref="LabelButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationLabelsToggled"/> notification.
+    /// <summary>
+    /// Receives the <see cref="Signal"/> from the LabelButton's <see cref="CheckBox"/> and broadcasts on the <see cref="ConstellationLabelsToggled"/> notification.
+    /// </summary>
+    /// <param name="value">True if the checkbox is checked</param>
     public void ToggleConstellationLabels(bool value) { ConstellationLabelsToggled?.Invoke(value); }
 
-    /// Receives the <see cref="Signal"/> from the <see cref="MessierButton"/>'s <see cref="CheckBox"/> and broadcasts on the <see cref="MessierObjectsTogggled"/> notification.
-
-	public void ToggleMessierObjects(bool value) { MessierObjectsTogggled?.Invoke(value); }
 
     /// <summary>
-    /// Dummy method to broadcast a hardcoded user request. Will be replaced. 
+    /// Receives the <see cref="Signal"/> from the "MessierButton's <see cref="CheckBox"/> and broadcasts on the <see cref="MessierObjectsToggled"/> notification.
+    /// </summary>
+    /// <param name="value">True if the checkbox is checked</param>
+    public void ToggleMessierObjects(bool value) { MessierObjectsToggled?.Invoke(value); }
+
+    /// <summary>
+    /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
     /// </summary>
 	public async void UpdateUserPosition()
     {
-        Globals globalVars = GetNode<Globals>("/root/Globals"); // Import globals
         string latText = latField.Text;
         string longText = longField.Text;
 
@@ -71,6 +103,7 @@ public partial class ControlContainer : Control
         else
         {
             GD.PrintErr("Invalid latitude/longitude input.");
+            return;
         }
 
         string timeText = timeField.Text.Trim();
@@ -104,6 +137,6 @@ public partial class ControlContainer : Control
         GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
-        await UserPositionUpdated(latitude, longitude, parsedDate);
+        UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
     }
 }

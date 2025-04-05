@@ -28,36 +28,27 @@ namespace Stargazer
         /// Common name of the star
         /// </summary>
         public string StarName { get { return horizontalStar.StarName; } }
+        /// <summary>
+        /// Provides asynchronous access to the star's position.
+        /// </summary>
         public Vector3 Position3D { get; private set; }
         public Vector2 Position2D;
 
-
-        private Globals globalVars;
-
-        // Called when the node enters the scene tree for the first time.
-
-        /// <summary>
-        /// Populates the field according to the field in a <see cref="HorizontalStar"/>
-        /// </summary>
-        /// <param name="star">The <see cref="HorizontalStar"/></param>
-        public override void _Ready()
-        {
-            globalVars = GetNode<Globals>("/root/Globals");
-
-        }
         public void FromHorizontal(HorizontalStar star, IEquatorialCalculator starConverter) 
         {
             base.FromHorizontal(star, starConverter);
             this.horizontalStar = star;
+
+            // This needs to be changed so that a star's size in the simulation is actually a function of it's magnitude.
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);
+
         }
 
 
         public override void _Process(double delta)
         {
-            calculator.UpdatePositionOf(horizontalStar);
-            Position = GetLocation();
+            base._Process(delta);
             Position3D = Position;
         }
 
@@ -66,13 +57,10 @@ namespace Stargazer
         {
             return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n" +
             $"HIP {HipparcosId}\n" +
-            $"Altitude {Altitude}" +
-            $"Azimuth {Azimuth}";
+            $"Altitude {Altitude}\n" +
+            $"Azimuth {Azimuth}\n" + 
+            $"Distance: {Distance}";
         }
 
-        public Transform3D getGlobalTransform()
-        {
-            return GlobalTransform;
-        }
     }
 }

@@ -5,17 +5,14 @@ items:
   id: Planet
   parent: Stargazer
   children:
-  - Stargazer.Planet.Distance
-  - Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  - Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IEquatorialCalculator)
   - Stargazer.Planet.GetHoverText
-  - Stargazer.Planet.GetLocation
   - Stargazer.Planet.LoadTexture(System.String)
+  - Stargazer.Planet.SetTexture(Godot.Resource)
   - Stargazer.Planet._Process(System.Double)
-  - Stargazer.Planet._Ready
-  - Stargazer.Planet.calculator
-  - Stargazer.Planet.horizonalPlanet
-  - Stargazer.Planet.planetTextureArray
-  - Stargazer.Planet.radians
+  - Stargazer.Planet.horizontalPlanet
+  - Stargazer.Planet.planetMaterial
+  - Stargazer.Planet.planetTexture
   langs:
   - csharp
   - vb
@@ -25,8 +22,8 @@ items:
   type: Class
   source:
     id: Planet
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Planet_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Planet_ScriptSerialization.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -36,20 +33,30 @@ items:
     content: >-
       [ScriptPath("res://Code/Planet.cs")]
 
-      public class Planet : Node3D, IDisposable, IHoverable
+      public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable
     content.vb: >-
       <ScriptPath("res://Code/Planet.cs")>
 
-      Public Class Planet Inherits Node3D Implements IDisposable, IHoverable
+      Public Class Planet Inherits CelestialBody Implements IDisposable, IHoverable, ITrackable
   inheritance:
   - System.Object
   - Godot.GodotObject
   - Godot.Node
   - Godot.Node3D
+  - Stargazer.CelestialBody
   implements:
   - System.IDisposable
   - Stargazer.IHoverable
+  - Stargazer.ITrackable
   inheritedMembers:
+  - Stargazer.CelestialBody.radians
+  - Stargazer.CelestialBody.horizontalBody
+  - Stargazer.CelestialBody.calculator
+  - Stargazer.CelestialBody.Azimuth
+  - Stargazer.CelestialBody.Altitude
+  - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.GetLocation
+  - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
   - Godot.Node3D.NotificationEnterWorld
   - Godot.Node3D.NotificationExitWorld
@@ -168,6 +175,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -362,170 +370,87 @@ items:
     arguments:
     - type: System.String
       value: res://Code/Planet.cs
-- uid: Stargazer.Planet.calculator
-  commentId: F:Stargazer.Planet.calculator
-  id: calculator
+- uid: Stargazer.Planet.horizontalPlanet
+  commentId: F:Stargazer.Planet.horizontalPlanet
+  id: horizontalPlanet
   parent: Stargazer.Planet
   langs:
   - csharp
   - vb
-  name: calculator
-  nameWithType: Planet.calculator
-  fullName: Stargazer.Planet.calculator
+  name: horizontalPlanet
+  nameWithType: Planet.horizontalPlanet
+  fullName: Stargazer.Planet.horizontalPlanet
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: calculator
-    path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 13
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private IPlanetaryCalculator<HorizontalPlanet> calculator
-    return:
-      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-    content.vb: Private calculator As IPlanetaryCalculator(Of HorizontalPlanet)
-- uid: Stargazer.Planet.horizonalPlanet
-  commentId: F:Stargazer.Planet.horizonalPlanet
-  id: horizonalPlanet
-  parent: Stargazer.Planet
-  langs:
-  - csharp
-  - vb
-  name: horizonalPlanet
-  nameWithType: Planet.horizonalPlanet
-  fullName: Stargazer.Planet.horizonalPlanet
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: horizonalPlanet
+    id: horizontalPlanet
     path: ../Stargazer-Godot/Code/Planet.cs
     startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private HorizontalPlanet horizonalPlanet
+    content: private HorizontalPlanet horizontalPlanet
     return:
       type: DataLayer.HorizontalObjects.HorizontalPlanet
-    content.vb: Private horizonalPlanet As HorizontalPlanet
-- uid: Stargazer.Planet.Distance
-  commentId: F:Stargazer.Planet.Distance
-  id: Distance
+    content.vb: Private horizontalPlanet As HorizontalPlanet
+- uid: Stargazer.Planet.planetTexture
+  commentId: F:Stargazer.Planet.planetTexture
+  id: planetTexture
   parent: Stargazer.Planet
   langs:
   - csharp
   - vb
-  name: Distance
-  nameWithType: Planet.Distance
-  fullName: Stargazer.Planet.Distance
+  name: planetTexture
+  nameWithType: Planet.planetTexture
+  fullName: Stargazer.Planet.planetTexture
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Distance
+    id: planetTexture
     path: ../Stargazer-Godot/Code/Planet.cs
     startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private float Distance
+    content: private Texture2D planetTexture
     return:
-      type: System.Single
-    content.vb: Private Distance As Single
-- uid: Stargazer.Planet.radians
-  commentId: F:Stargazer.Planet.radians
-  id: radians
+      type: Godot.Texture2D
+    content.vb: Private planetTexture As Texture2D
+- uid: Stargazer.Planet.planetMaterial
+  commentId: F:Stargazer.Planet.planetMaterial
+  id: planetMaterial
   parent: Stargazer.Planet
   langs:
   - csharp
   - vb
-  name: radians
-  nameWithType: Planet.radians
-  fullName: Stargazer.Planet.radians
+  name: planetMaterial
+  nameWithType: Planet.planetMaterial
+  fullName: Stargazer.Planet.planetMaterial
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: radians
+    id: planetMaterial
     path: ../Stargazer-Godot/Code/Planet.cs
     startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private const float radians = 0.017453292
+    content: private ShaderMaterial planetMaterial
     return:
-      type: System.Single
-    content.vb: Private Const radians As Single = 0.017453292
-- uid: Stargazer.Planet.planetTextureArray
-  commentId: F:Stargazer.Planet.planetTextureArray
-  id: planetTextureArray
-  parent: Stargazer.Planet
-  langs:
-  - csharp
-  - vb
-  name: planetTextureArray
-  nameWithType: Planet.planetTextureArray
-  fullName: Stargazer.Planet.planetTextureArray
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: planetTextureArray
-    path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 17
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Texture2D[] planetTextureArray
-    return:
-      type: Godot.Texture2D[]
-    content.vb: Private planetTextureArray As Texture2D()
-- uid: Stargazer.Planet._Ready
-  commentId: M:Stargazer.Planet._Ready
-  id: _Ready
-  parent: Stargazer.Planet
-  langs:
-  - csharp
-  - vb
-  name: _Ready()
-  nameWithType: Planet._Ready()
-  fullName: Stargazer.Planet._Ready()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Ready
-    path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 23
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Used to initialize planetary data.
-  example: []
-  syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: Stargazer.Planet._Ready*
+      type: Godot.ShaderMaterial
+    content.vb: Private planetMaterial As ShaderMaterial
 - uid: Stargazer.Planet._Process(System.Double)
   commentId: M:Stargazer.Planet._Process(System.Double)
   id: _Process(System.Double)
@@ -540,94 +465,95 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 84
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Calculates the position and phase of the planet each frame.
+  summary: Overrides the <xref href="Stargazer.CelestialBody._Process(System.Double)" data-throw-if-not-resolved="false"></xref> method since calculations are planet specific.
   example: []
   syntax:
     content: public override void _Process(double delta)
     parameters:
     - id: delta
       type: System.Double
-      description: Unused
+      description: ''
     content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
+  overridden: Stargazer.CelestialBody._Process(System.Double)
   overload: Stargazer.Planet._Process*
   nameWithType.vb: Planet._Process(Double)
   fullName.vb: Stargazer.Planet._Process(Double)
   name.vb: _Process(Double)
-- uid: Stargazer.Planet.GetLocation
-  commentId: M:Stargazer.Planet.GetLocation
-  id: GetLocation
+- uid: Stargazer.Planet.SetTexture(Godot.Resource)
+  commentId: M:Stargazer.Planet.SetTexture(Godot.Resource)
+  id: SetTexture(Godot.Resource)
   parent: Stargazer.Planet
   langs:
   - csharp
   - vb
-  name: GetLocation()
-  nameWithType: Planet.GetLocation()
-  fullName: Stargazer.Planet.GetLocation()
+  name: SetTexture(Resource)
+  nameWithType: Planet.SetTexture(Resource)
+  fullName: Stargazer.Planet.SetTexture(Godot.Resource)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetLocation
+    id: SetTexture
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 90
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Sets the texture of the planet
+  example: []
   syntax:
-    content: private Vector3 GetLocation()
-    return:
-      type: Godot.Vector3
-    content.vb: Private Function GetLocation() As Vector3
-  overload: Stargazer.Planet.GetLocation*
-- uid: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
-  commentId: M:Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
-  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+    content: public void SetTexture(Resource planetTexture)
+    parameters:
+    - id: planetTexture
+      type: Godot.Resource
+      description: The texture to use.
+    content.vb: Public Sub SetTexture(planetTexture As Resource)
+  overload: Stargazer.Planet.SetTexture*
+- uid: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IEquatorialCalculator)
+  id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IEquatorialCalculator)
   parent: Stargazer.Planet
   langs:
   - csharp
   - vb
-  name: FromHorizontal(HorizontalPlanet, IPlanetaryCalculator<HorizontalPlanet>)
-  nameWithType: Planet.FromHorizontal(HorizontalPlanet, IPlanetaryCalculator<HorizontalPlanet>)
-  fullName: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>)
+  name: FromHorizontal(HorizontalPlanet, IEquatorialCalculator)
+  nameWithType: Planet.FromHorizontal(HorizontalPlanet, IEquatorialCalculator)
+  fullName: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet, DataLayer.Interfaces.IEquatorialCalculator)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 108
+    startLine: 49
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Used to receive the data and methods to perform calculations
   example: []
   syntax:
-    content: public void FromHorizontal(HorizontalPlanet horizonalPlanet, IPlanetaryCalculator<HorizontalPlanet> calculator)
+    content: public void FromHorizontal(HorizontalPlanet horizonalPlanet, IEquatorialCalculator calculator)
     parameters:
     - id: horizonalPlanet
       type: DataLayer.HorizontalObjects.HorizontalPlanet
       description: Contains the data to perform the calculations
     - id: calculator
-      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+      type: DataLayer.Interfaces.IEquatorialCalculator
       description: The calculator used.
-    content.vb: Public Sub FromHorizontal(horizonalPlanet As HorizontalPlanet, calculator As IPlanetaryCalculator(Of HorizontalPlanet))
+    content.vb: Public Sub FromHorizontal(horizonalPlanet As HorizontalPlanet, calculator As IEquatorialCalculator)
   overload: Stargazer.Planet.FromHorizontal*
-  nameWithType.vb: Planet.FromHorizontal(HorizontalPlanet, IPlanetaryCalculator(Of HorizontalPlanet))
-  fullName.vb: Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet, DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet))
-  name.vb: FromHorizontal(HorizontalPlanet, IPlanetaryCalculator(Of HorizontalPlanet))
 - uid: Stargazer.Planet.GetHoverText
   commentId: M:Stargazer.Planet.GetHoverText
   id: GetHoverText
@@ -642,25 +568,24 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 115
+    startLine: 57
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Gets the text to display.
   example: []
   syntax:
-    content: public string GetHoverText()
+    content: public override string GetHoverText()
     return:
       type: System.String
       description: A formatted text string.
-    content.vb: Public Function GetHoverText() As String
+    content.vb: Public Overrides Function GetHoverText() As String
+  overridden: Stargazer.CelestialBody.GetHoverText
   overload: Stargazer.Planet.GetHoverText*
-  implements:
-  - Stargazer.IHoverable.GetHoverText
 - uid: Stargazer.Planet.LoadTexture(System.String)
   commentId: M:Stargazer.Planet.LoadTexture(System.String)
   id: LoadTexture(System.String)
@@ -675,11 +600,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LoadTexture
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 134
+    startLine: 79
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -741,6 +666,13 @@ references:
   name: Node3D
   nameWithType: Node3D
   fullName: Godot.Node3D
+- uid: Stargazer.CelestialBody
+  commentId: T:Stargazer.CelestialBody
+  parent: Stargazer
+  href: Stargazer.CelestialBody.html
+  name: CelestialBody
+  nameWithType: CelestialBody
+  fullName: Stargazer.CelestialBody
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -756,6 +688,109 @@ references:
   name: IHoverable
   nameWithType: IHoverable
   fullName: Stargazer.IHoverable
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  parent: Stargazer
+  href: Stargazer.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
+- uid: Stargazer.CelestialBody.radians
+  commentId: F:Stargazer.CelestialBody.radians
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_radians
+  name: radians
+  nameWithType: CelestialBody.radians
+  fullName: Stargazer.CelestialBody.radians
+- uid: Stargazer.CelestialBody.horizontalBody
+  commentId: F:Stargazer.CelestialBody.horizontalBody
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_horizontalBody
+  name: horizontalBody
+  nameWithType: CelestialBody.horizontalBody
+  fullName: Stargazer.CelestialBody.horizontalBody
+- uid: Stargazer.CelestialBody.calculator
+  commentId: F:Stargazer.CelestialBody.calculator
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_calculator
+  name: calculator
+  nameWithType: CelestialBody.calculator
+  fullName: Stargazer.CelestialBody.calculator
+- uid: Stargazer.CelestialBody.Azimuth
+  commentId: P:Stargazer.CelestialBody.Azimuth
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Azimuth
+  name: Azimuth
+  nameWithType: CelestialBody.Azimuth
+  fullName: Stargazer.CelestialBody.Azimuth
+- uid: Stargazer.CelestialBody.Altitude
+  commentId: P:Stargazer.CelestialBody.Altitude
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Altitude
+  name: Altitude
+  nameWithType: CelestialBody.Altitude
+  fullName: Stargazer.CelestialBody.Altitude
+- uid: Stargazer.CelestialBody.Distance
+  commentId: P:Stargazer.CelestialBody.Distance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance
+  name: Distance
+  nameWithType: CelestialBody.Distance
+  fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.GetLocation
+  commentId: M:Stargazer.CelestialBody.GetLocation
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  name: GetLocation()
+  nameWithType: CelestialBody.GetLocation()
+  fullName: Stargazer.CelestialBody.GetLocation()
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.GetLocation
+    name: GetLocation
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.GetLocation
+    name: GetLocation
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation
+  - name: (
+  - name: )
+- uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  name: FromHorizontal(HorizontalBody, IEquatorialCalculator)
+  nameWithType: CelestialBody.FromHorizontal(HorizontalBody, IEquatorialCalculator)
+  fullName: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody, DataLayer.Interfaces.IEquatorialCalculator)
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+    name: FromHorizontal
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: ','
+  - name: " "
+  - uid: DataLayer.Interfaces.IEquatorialCalculator
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator.html
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
+    name: FromHorizontal
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: ','
+  - name: " "
+  - uid: DataLayer.Interfaces.IEquatorialCalculator
+    name: IEquatorialCalculator
+    href: DataLayer.Interfaces.IEquatorialCalculator.html
+  - name: )
 - uid: Godot.Node3D.NotificationTransformChanged
   commentId: F:Godot.Node3D.NotificationTransformChanged
   parent: Godot.Node3D
@@ -2728,6 +2763,25 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7495,84 +7549,6 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-  parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<HorizontalPlanet>
-  nameWithType: IPlanetaryCalculator<HorizontalPlanet>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>
-  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet)
-  name.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: )
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<T>
-  nameWithType: IPlanetaryCalculator<T>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
-  nameWithType.vb: IPlanetaryCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
-  name.vb: IPlanetaryCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: DataLayer.Interfaces
-  commentId: N:DataLayer.Interfaces
-  href: DataLayer.html
-  name: DataLayer.Interfaces
-  nameWithType: DataLayer.Interfaces
-  fullName: DataLayer.Interfaces
-  spec.csharp:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
-  spec.vb:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
 - uid: DataLayer.HorizontalObjects.HorizontalPlanet
   commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
   parent: DataLayer.HorizontalObjects
@@ -7602,77 +7578,35 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
+- uid: Godot.Texture2D
+  commentId: T:Godot.Texture2D
+  parent: Godot
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
-- uid: Godot.Texture2D[]
+  name: Texture2D
+  nameWithType: Texture2D
+  fullName: Godot.Texture2D
+- uid: Godot.ShaderMaterial
+  commentId: T:Godot.ShaderMaterial
+  parent: Godot
   isExternal: true
-  name: Texture2D[]
-  nameWithType: Texture2D[]
-  fullName: Godot.Texture2D[]
-  nameWithType.vb: Texture2D()
-  fullName.vb: Godot.Texture2D()
-  name.vb: Texture2D()
-  spec.csharp:
-  - uid: Godot.Texture2D
-    name: Texture2D
-    isExternal: true
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: Godot.Texture2D
-    name: Texture2D
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
+  name: ShaderMaterial
+  nameWithType: ShaderMaterial
+  fullName: Godot.ShaderMaterial
+- uid: Stargazer.CelestialBody._Process(System.Double)
+  commentId: M:Stargazer.CelestialBody._Process(System.Double)
+  parent: Stargazer.CelestialBody
   isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Stargazer.Planet._Ready*
-  commentId: Overload:Stargazer.Planet._Ready
-  href: Stargazer.Planet.html#Stargazer_Planet__Ready
-  name: _Ready
-  nameWithType: Planet._Ready
-  fullName: Stargazer.Planet._Ready
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
+  nameWithType: CelestialBody._Process(double)
+  fullName: Stargazer.CelestialBody._Process(double)
+  nameWithType.vb: CelestialBody._Process(Double)
+  fullName.vb: Stargazer.CelestialBody._Process(Double)
   name.vb: _Process(Double)
   spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
+  - uid: Stargazer.CelestialBody._Process(System.Double)
     name: _Process
-    isExternal: true
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   - name: (
   - uid: System.Double
     name: double
@@ -7680,9 +7614,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Process(System.Double)
+  - uid: Stargazer.CelestialBody._Process(System.Double)
     name: _Process
-    isExternal: true
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
   - name: (
   - uid: System.Double
     name: Double
@@ -7706,50 +7640,79 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: Stargazer.Planet.GetLocation*
-  commentId: Overload:Stargazer.Planet.GetLocation
-  href: Stargazer.Planet.html#Stargazer_Planet_GetLocation
-  name: GetLocation
-  nameWithType: Planet.GetLocation
-  fullName: Stargazer.Planet.GetLocation
-- uid: Godot.Vector3
-  commentId: T:Godot.Vector3
+- uid: Stargazer.Planet.SetTexture*
+  commentId: Overload:Stargazer.Planet.SetTexture
+  href: Stargazer.Planet.html#Stargazer_Planet_SetTexture_Godot_Resource_
+  name: SetTexture
+  nameWithType: Planet.SetTexture
+  fullName: Stargazer.Planet.SetTexture
+- uid: Godot.Resource
+  commentId: T:Godot.Resource
   parent: Godot
   isExternal: true
-  name: Vector3
-  nameWithType: Vector3
-  fullName: Godot.Vector3
+  name: Resource
+  nameWithType: Resource
+  fullName: Godot.Resource
 - uid: Stargazer.Planet.FromHorizontal*
   commentId: Overload:Stargazer.Planet.FromHorizontal
-  href: Stargazer.Planet.html#Stargazer_Planet_FromHorizontal_DataLayer_HorizontalObjects_HorizontalPlanet_DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__
+  href: Stargazer.Planet.html#Stargazer_Planet_FromHorizontal_DataLayer_HorizontalObjects_HorizontalPlanet_DataLayer_Interfaces_IEquatorialCalculator_
   name: FromHorizontal
   nameWithType: Planet.FromHorizontal
   fullName: Stargazer.Planet.FromHorizontal
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: Stargazer.CelestialBody.GetHoverText
+  commentId: M:Stargazer.CelestialBody.GetHoverText
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  name: GetHoverText()
+  nameWithType: CelestialBody.GetHoverText()
+  fullName: Stargazer.CelestialBody.GetHoverText()
+  spec.csharp:
+  - uid: Stargazer.CelestialBody.GetHoverText
+    name: GetHoverText
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Stargazer.CelestialBody.GetHoverText
+    name: GetHoverText
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetHoverText
+  - name: (
+  - name: )
 - uid: Stargazer.Planet.GetHoverText*
   commentId: Overload:Stargazer.Planet.GetHoverText
   href: Stargazer.Planet.html#Stargazer_Planet_GetHoverText
   name: GetHoverText
   nameWithType: Planet.GetHoverText
   fullName: Stargazer.Planet.GetHoverText
-- uid: Stargazer.IHoverable.GetHoverText
-  commentId: M:Stargazer.IHoverable.GetHoverText
-  parent: Stargazer.IHoverable
-  href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  name: GetHoverText()
-  nameWithType: IHoverable.GetHoverText()
-  fullName: Stargazer.IHoverable.GetHoverText()
-  spec.csharp:
-  - uid: Stargazer.IHoverable.GetHoverText
-    name: GetHoverText
-    href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Stargazer.IHoverable.GetHoverText
-    name: GetHoverText
-    href: Stargazer.IHoverable.html#Stargazer_IHoverable_GetHoverText
-  - name: (
-  - name: )
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -7767,10 +7730,3 @@ references:
   name: LoadTexture
   nameWithType: Planet.LoadTexture
   fullName: Stargazer.Planet.LoadTexture
-- uid: Godot.Texture2D
-  commentId: T:Godot.Texture2D
-  parent: Godot
-  isExternal: true
-  name: Texture2D
-  nameWithType: Texture2D
-  fullName: Godot.Texture2D

@@ -11,6 +11,7 @@ namespace DataLayer.Implementations
     {
         public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
         {
+            // Attempt to parse to a double. If the parsing fails (usually because of white space or no value in the cell), return null.
             return double.TryParse(text, out double value) ? value : null;
         }
     }

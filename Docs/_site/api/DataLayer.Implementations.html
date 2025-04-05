@@ -95,18 +95,8 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="DataLayer.Implementations.CosineKittyEquatorialConverter-1.html">CosineKittyEquatorialConverter&lt;T&gt;</a></dt>
-      <dd><p>Converts an object of type <a class="xref" href="DataLayer.EquatorialObjects.EquatorialCelestialBody.html">EquatorialCelestialBody</a> from the equatorial coordinate system to horizontal coordinates using the CosineKitty.AstronomyEngine library</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="DataLayer.Implementations.CosineKittyMoonCalculator.html">CosineKittyMoonCalculator</a></dt>
-      <dd><p>Uses the <span class="xref">CosineKitty.Astronomy</span> library to calculate the position and phase of the moon.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="DataLayer.Implementations.CosineKittyPlanetaryCalculator.html">CosineKittyPlanetaryCalculator</a></dt>
-      <dd><p>Uses the <span class="xref">CosineKitty.Astronomy</span> library to calculate the position and magnitude of the planets.</p>
+      <dt><a class="xref" href="DataLayer.Implementations.CosineKittyEquatorialCalculator.html">CosineKittyEquatorialCalculator</a></dt>
+      <dd><p>Uses the <span class="xref">CosineKitty.Astronomy</span> library to perform calculations on celestial objects.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -136,7 +126,8 @@ Classes
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="DataLayer.Implementations.StarLustMessierCsvRepository.html">StarLustMessierCsvRepository</a></dt>
-      <dd><p>Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href="https://starlust.org/messier-catalog/">Starlust.org</a></p>
+      <dd><p>Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href="https://starlust.org/messier-catalog/">Starlust.org</a>
+If a new repository is used, a new converter that implements the <a class="xref" href="DataLayer.Interfaces.IMessierRepository.html">IMessierRepository</a> needs to be created for it.</p>
 </dd>
     </dl>
     <dl class="jumplist">

@@ -5,8 +5,7 @@ items:
   id: IStarRepository
   parent: DataLayer.Interfaces
   children:
-  - DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  - DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+  - DataLayer.Interfaces.IStarRepository.GetAllStars
   langs:
   - csharp
   - vb
@@ -17,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IStarRepository
     path: ../DataLayer/Interfaces/IStarRepository.cs
@@ -30,75 +29,37 @@ items:
   syntax:
     content: public interface IStarRepository
     content.vb: Public Interface IStarRepository
-- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  id: GetAllStarsAsync
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStars
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStars
+  id: GetAllStars
   parent: DataLayer.Interfaces.IStarRepository
   langs:
   - csharp
   - vb
-  name: GetAllStarsAsync()
-  nameWithType: IStarRepository.GetAllStarsAsync()
-  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
+  name: GetAllStars()
+  nameWithType: IStarRepository.GetAllStars()
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStars()
   type: Method
   source:
     remote:
       path: DataLayer/Interfaces/IStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetAllStarsAsync
+    id: GetAllStars
     path: ../DataLayer/Interfaces/IStarRepository.cs
     startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
-  summary: Gets all stars that are brighter than a certain magnitude.
+  summary: Gets all stars from the repository. (Omit the sun, so that it can be created separately).
   example: []
   syntax:
-    content: Task<IList<EquatorialStar>> GetAllStarsAsync()
+    content: IEnumerable<EquatorialStar> GetAllStars()
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-      description: A running task that can be awaited to obtain a list of stars
-    content.vb: Function GetAllStarsAsync() As Task(Of IList(Of EquatorialStar))
-  overload: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
-- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-  id: GetStarByHipAsync(System.Int32)
-  parent: DataLayer.Interfaces.IStarRepository
-  langs:
-  - csharp
-  - vb
-  name: GetStarByHipAsync(int)
-  nameWithType: IStarRepository.GetStarByHipAsync(int)
-  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(int)
-  type: Method
-  source:
-    remote:
-      path: DataLayer/Interfaces/IStarRepository.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetStarByHipAsync
-    path: ../DataLayer/Interfaces/IStarRepository.cs
-    startLine: 20
-  assemblies:
-  - DataLayer
-  namespace: DataLayer.Interfaces
-  summary: Gets a single star from the repository
-  example: []
-  syntax:
-    content: Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
-    parameters:
-    - id: hipparcosId
-      type: System.Int32
-      description: The Hipparcos ID of the star to find
-    return:
-      type: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-      description: Null if no star is found
-    content.vb: Function GetStarByHipAsync(hipparcosId As Integer) As Task(Of EquatorialStar)
-  overload: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*
-  nameWithType.vb: IStarRepository.GetStarByHipAsync(Integer)
-  fullName.vb: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(Integer)
-  name.vb: GetStarByHipAsync(Integer)
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+      description: A <code>yieldable</code> <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> that can is lazily loaded during read.
+    content.vb: Function GetAllStars() As IEnumerable(Of EquatorialStar)
+  overload: DataLayer.Interfaces.IStarRepository.GetAllStars*
 references:
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
@@ -122,178 +83,107 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*
-  commentId: Overload:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
-  name: GetAllStarsAsync
-  nameWithType: IStarRepository.GetAllStarsAsync
-  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<EquatorialStar>>
-  nameWithType: Task<IList<EquatorialStar>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>
-  nameWithType.vb: Task(Of IList(Of EquatorialStar))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar))
-  name.vb: Task(Of IList(Of EquatorialStar))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TResult
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
-  - name: TResult
+  - name: T
   - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStars*
+  commentId: Overload:DataLayer.Interfaces.IStarRepository.GetAllStars
+  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStars
+  name: GetAllStars
+  nameWithType: IStarRepository.GetAllStars
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStars
+- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<EquatorialStar>
+  nameWithType: IEnumerable<EquatorialStar>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>
+  nameWithType.vb: IEnumerable(Of EquatorialStar)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar)
+  name.vb: IEnumerable(Of EquatorialStar)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialStar
+    name: EquatorialStar
+    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*
-  commentId: Overload:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
-  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
-  name: GetStarByHipAsync
-  nameWithType: IStarRepository.GetStarByHipAsync
-  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-  commentId: T:System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<EquatorialStar>
-  nameWithType: Task<EquatorialStar>
-  fullName: System.Threading.Tasks.Task<DataLayer.EquatorialObjects.EquatorialStar>
-  nameWithType.vb: Task(Of EquatorialStar)
-  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.EquatorialObjects.EquatorialStar)
-  name.vb: Task(Of EquatorialStar)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

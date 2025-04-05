@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarMap
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 86
+    startLine: 55
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -81,11 +81,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 91
+    startLine: 60
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

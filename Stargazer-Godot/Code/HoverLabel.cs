@@ -7,16 +7,13 @@ namespace Stargazer
     /// </summary>
     public partial class HoverLabel : Label
     {
-        private Globals globalVars;
-        private Vector2 mousePos;
-
+        private Vector2 shift = new (15f, 10f);
+        private IHoverable hoveredBody;
         /// <summary>
         /// Initializes label settings
         /// </summary>
         public override void _Ready()
         {
-            globalVars = GetNode<Globals>("/root/Globals"); // Import globals
-            Visible = globalVars.isHover;
             AddThemeFontSizeOverride("font_size", 25);
             LabelSettings.FontSize = 30;
         }
@@ -27,22 +24,18 @@ namespace Stargazer
         /// <param name="delta">Unused</param>
         public override void _Process(double delta)
         {
-            Visible = globalVars.isHover;
-            SetText(globalVars.hoverLabel);
-            Position = mousePos;
-        }
+            Position = GetViewport().GetMousePosition() + shift;
+            SetText(hoveredBody?.GetHoverText() ?? "");
+            Visible = hoveredBody is not null;
 
+        }
         /// <summary>
-        /// Detects mouse motion and places the label next to the cursor.
+        /// Receives notification of the mouse hovering over a new object.
         /// </summary>
-        /// <param name="event"></param>
-        public override void _Input(InputEvent @event)
+        /// <param name="hoverable">The object the mouse is hovering over.</param>
+        public void HoverableChangeHandler(IHoverable hoverable)
         {
-            if (@event is InputEventMouseMotion mouseMotion)
-            {
-                var shift = new Vector2(15f, 10f);
-                mousePos = mouseMotion.Position + shift;
-            }
+            hoveredBody = hoverable;
         }
     }
 }

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq4oe468ff0nb"]
+[gd_scene load_steps=5 format=3 uid="uid://bq4oe468ff0nb"]
 
 [ext_resource type="Script" path="res://Code/Star.cs" id="1_jyeas"]
-[ext_resource type="Script" path="res://Code/StarMesh.cs" id="2_kl77t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq72g"]
 emission_enabled = true
@@ -22,7 +21,7 @@ script = ExtResource("1_jyeas")
 [node name="StarMesh" type="MeshInstance3D" parent="StarBody"]
 mesh = SubResource("SphereMesh_donor")
 skeleton = NodePath("")
-script = ExtResource("2_kl77t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StarBody"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("SphereShape3D_tl7gt")

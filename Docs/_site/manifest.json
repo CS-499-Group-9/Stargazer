@@ -180,6 +180,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.HorizontalObjects.HorizontalSun.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.HorizontalObjects.HorizontalSun.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.HorizontalObjects.HorizontalSun",
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalSun.yml\" sourcestartlinenumber=\"1\">Represents the Sun in horizontal coordinate form.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.HorizontalObjects.yml",
       "output": {
         ".html": {
@@ -191,6 +205,20 @@
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Implementations.CosineKittyEquatorialCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Implementations.CosineKittyEquatorialCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Implementations.CosineKittyEquatorialCalculator",
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Uses the <xref href=\"CosineKitty.Astronomy\" data-throw-if-not-resolved=\"false\"></xref> library to perform calculations on celestial objects.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,7 +386,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StarLustMessierCsvRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href=\"https://starlust.org/messier-catalog/\" sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Starlust.org</a></p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href=\"https://starlust.org/messier-catalog/\" sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Starlust.org</a>\nIf a new repository is used, a new converter that implements the <xref href=\"DataLayer.Interfaces.IMessierRepository\" data-throw-if-not-resolved=\"false\"></xref> needs to be created for it.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -460,6 +488,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IEquatorialCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IEquatorialCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IEquatorialCalculator",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Converts a <xref href=\"DataLayer.HorizontalObjects.HorizontalBody\" data-throw-if-not-resolved=\"false\"></xref> to a {T} object</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.Interfaces.IEquatorialConverter-1.yml",
       "output": {
         ".html": {
@@ -516,6 +558,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DataLayer.Interfaces.IRepositoryService-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DataLayer.Interfaces.IRepositoryService-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DataLayer.Interfaces.IRepositoryService<T>",
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to retrieve the <xref href=\"DataLayer.CelestialDataPackage%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DataLayer.Interfaces.IStarRepository.yml",
       "output": {
         ".html": {
@@ -568,6 +624,146 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.Calendar.DateChangedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.Calendar.DateChangedEventHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.Calendar.DateChangedEventHandler",
+      "Summary": "<p sourcefile=\"api/DatePicker.Calendar.DateChangedEventHandler.yml\" sourcestartlinenumber=\"1\">The signal emitted when the date changes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.Calendar.DateSelectedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.Calendar.DateSelectedEventHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.Calendar.DateSelectedEventHandler",
+      "Summary": "<p sourcefile=\"api/DatePicker.Calendar.DateSelectedEventHandler.yml\" sourcestartlinenumber=\"1\">The signal emitted when the user selects a date in ANY view. Emitted when selecting\nboth a month and a day.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.Calendar.FinishedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.Calendar.FinishedEventHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.Calendar.FinishedEventHandler",
+      "Summary": "<p sourcefile=\"api/DatePicker.Calendar.FinishedEventHandler.yml\" sourcestartlinenumber=\"1\">The signal emitted when the user is finished selecting a date. Meaning, the user\nhas selected a date in EVERY view (i.e. a month and a day).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.Calendar.ViewChangedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.Calendar.ViewChangedEventHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.Calendar.ViewChangedEventHandler",
+      "Summary": "<p sourcefile=\"api/DatePicker.Calendar.ViewChangedEventHandler.yml\" sourcestartlinenumber=\"1\">The signal emitted when the view changes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.Calendar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.Calendar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.Calendar",
+      "Summary": "<p sourcefile=\"api/DatePicker.Calendar.yml\" sourcestartlinenumber=\"1\">A calendar that can be used to select a date from a set view.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.DateButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.DateButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.DateButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.ICalendarView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.ICalendarView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.ICalendarView",
+      "Summary": "<p sourcefile=\"api/DatePicker.ICalendarView.yml\" sourcestartlinenumber=\"1\">A view that dictates how a calendar should be displayed (i.e. <xref href=\"DatePicker.MonthView\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"DatePicker.YearView\" data-throw-if-not-resolved=\"false\"></xref>).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.MonthView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.MonthView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.MonthView",
+      "Summary": "<p sourcefile=\"api/DatePicker.MonthView.yml\" sourcestartlinenumber=\"1\">Displays the days in a month.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.YearView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.YearView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker.YearView",
+      "Summary": "<p sourcefile=\"api/DatePicker.YearView.yml\" sourcestartlinenumber=\"1\">Displays the months of a year.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DatePicker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DatePicker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DatePicker",
       "Summary": null
     },
     {
@@ -765,6 +961,20 @@
       "IsMRef": true,
       "Title": "Stargazer.AzimuthGridlines",
       "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.yml\" sourcestartlinenumber=\"1\">The graphic object used to draw the lines.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.CelestialBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.CelestialBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.CelestialBody",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1090,6 +1300,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ICameraStateNotifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ICameraStateNotifier.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ICameraStateNotifier",
+      "Summary": "<p sourcefile=\"api/Stargazer.ICameraStateNotifier.yml\" sourcestartlinenumber=\"1\">Notifies subscribers of events related to the <xref href=\"Godot.Camera3D\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.IHoverable.yml",
       "output": {
         ".html": {
@@ -1101,6 +1325,20 @@
       "IsMRef": true,
       "Title": "Stargazer.IHoverable",
       "Summary": "<p sourcefile=\"api/Stargazer.IHoverable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to display a hover label.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ITrackable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ITrackable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ITrackable",
+      "Summary": "<p sourcefile=\"api/Stargazer.ITrackable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to be tracked by the camera</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1370,6 +1608,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.MessierObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.MessierObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.MessierObject",
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object drawn in the sky.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.Moon.yml",
       "output": {
         ".html": {
@@ -1409,6 +1661,34 @@
       "IsMRef": true,
       "Title": "Stargazer.Planets",
       "Summary": "<p sourcefile=\"api/Stargazer.Planets.yml\" sourcestartlinenumber=\"1\">A <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> container for the planets.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.PlayControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.PlayControl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.PlayControl",
+      "Summary": "<p sourcefile=\"api/Stargazer.PlayControl.yml\" sourcestartlinenumber=\"1\">Controls the play speed of the 3D simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.PlaySpeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.PlaySpeed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.PlaySpeed",
+      "Summary": "<p sourcefile=\"api/Stargazer.PlaySpeed.yml\" sourcestartlinenumber=\"1\">A state object to control the play speed of the simulation</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1748,6 +2028,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.Sun.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.Sun.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.Sun",
+      "Summary": "<p sourcefile=\"api/Stargazer.Sun.yml\" sourcestartlinenumber=\"1\">The actual sun.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stargazer.TimeLocEntered.yml",
       "output": {
         ".html": {
@@ -1759,6 +2053,20 @@
       "IsMRef": true,
       "Title": "Stargazer.TimeLocEntered",
       "Summary": "<p sourcefile=\"api/Stargazer.TimeLocEntered.yml\" sourcestartlinenumber=\"1\">Used to gather user input and notify the <xref href=\"Stargazer.Startup\" data-throw-if-not-resolved=\"false\"></xref> object of a new user request.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ZoomState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ZoomState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ZoomState",
+      "Summary": "<p sourcefile=\"api/Stargazer.ZoomState.yml\" sourcestartlinenumber=\"1\">Used to implement quantum logic in the view based on Fov thresholds.</p>\n"
     },
     {
       "type": "ManagedReference",

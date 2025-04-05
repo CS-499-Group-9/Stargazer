@@ -5,10 +5,8 @@ items:
   id: CompassNeedle
   parent: Stargazer
   children:
-  - Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
-  - Stargazer.CompassNeedle._Process(System.Double)
+  - Stargazer.CompassNeedle.RotationHandler(Godot.Camera3D)
   - Stargazer.CompassNeedle._Ready
-  - Stargazer.CompassNeedle.camera
   - Stargazer.CompassNeedle.needle
   langs:
   - csharp
@@ -19,7 +17,7 @@ items:
   type: Class
   source:
     id: CompassNeedle
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.CompassNeedle_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.CompassNeedle_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -227,6 +225,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -435,11 +434,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: needle
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -464,33 +463,6 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: Stargazer.CompassNeedle.camera
-  commentId: F:Stargazer.CompassNeedle.camera
-  id: camera
-  parent: Stargazer.CompassNeedle
-  langs:
-  - csharp
-  - vb
-  name: camera
-  nameWithType: CompassNeedle.camera
-  fullName: Stargazer.CompassNeedle.camera
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: camera
-    path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 14
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Camera3D camera
-    return:
-      type: Godot.Camera3D
-    content.vb: Private camera As Camera3D
 - uid: Stargazer.CompassNeedle._Ready
   commentId: M:Stargazer.CompassNeedle._Ready
   id: _Ready
@@ -505,11 +477,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 19
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -520,71 +492,38 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.CompassNeedle._Ready*
-- uid: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
-  commentId: M:Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
-  id: SetCamera(Godot.Camera3D)
+- uid: Stargazer.CompassNeedle.RotationHandler(Godot.Camera3D)
+  commentId: M:Stargazer.CompassNeedle.RotationHandler(Godot.Camera3D)
+  id: RotationHandler(Godot.Camera3D)
   parent: Stargazer.CompassNeedle
   langs:
   - csharp
   - vb
-  name: SetCamera(Camera3D)
-  nameWithType: CompassNeedle.SetCamera(Camera3D)
-  fullName: Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)
+  name: RotationHandler(Camera3D)
+  nameWithType: CompassNeedle.RotationHandler(Camera3D)
+  fullName: Stargazer.CompassNeedle.RotationHandler(Godot.Camera3D)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: SetCamera
+    id: RotationHandler
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Receives notifications when the camera rotation has changed to rotate the needle.
+  example: []
   syntax:
-    content: public void SetCamera(Camera3D camera)
+    content: public void RotationHandler(Camera3D camera)
     parameters:
     - id: camera
       type: Godot.Camera3D
-    content.vb: Public Sub SetCamera(camera As Camera3D)
-  overload: Stargazer.CompassNeedle.SetCamera*
-- uid: Stargazer.CompassNeedle._Process(System.Double)
-  commentId: M:Stargazer.CompassNeedle._Process(System.Double)
-  id: _Process(System.Double)
-  parent: Stargazer.CompassNeedle
-  langs:
-  - csharp
-  - vb
-  name: _Process(double)
-  nameWithType: CompassNeedle._Process(double)
-  fullName: Stargazer.CompassNeedle._Process(double)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Process
-    path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 31
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Rotates the compass needle as the user view is rotated.
-  example: []
-  syntax:
-    content: public override void _Process(double delta)
-    parameters:
-    - id: delta
-      type: System.Double
-      description: ''
-    content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
-  overload: Stargazer.CompassNeedle._Process*
-  nameWithType.vb: CompassNeedle._Process(Double)
-  fullName.vb: Stargazer.CompassNeedle._Process(Double)
-  name.vb: _Process(Double)
+      description: A reference to the main camera
+    content.vb: Public Sub RotationHandler(camera As Camera3D)
+  overload: Stargazer.CompassNeedle.RotationHandler*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -5105,6 +5044,37 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -9917,57 +9887,9 @@ references:
   name: _Ready
   nameWithType: CompassNeedle._Ready
   fullName: Stargazer.CompassNeedle._Ready
-- uid: Stargazer.CompassNeedle.SetCamera*
-  commentId: Overload:Stargazer.CompassNeedle.SetCamera
-  href: Stargazer.CompassNeedle.html#Stargazer_CompassNeedle_SetCamera_Godot_Camera3D_
-  name: SetCamera
-  nameWithType: CompassNeedle.SetCamera
-  fullName: Stargazer.CompassNeedle.SetCamera
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Stargazer.CompassNeedle._Process*
-  commentId: Overload:Stargazer.CompassNeedle._Process
-  href: Stargazer.CompassNeedle.html#Stargazer_CompassNeedle__Process_System_Double_
-  name: _Process
-  nameWithType: CompassNeedle._Process
-  fullName: Stargazer.CompassNeedle._Process
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
+- uid: Stargazer.CompassNeedle.RotationHandler*
+  commentId: Overload:Stargazer.CompassNeedle.RotationHandler
+  href: Stargazer.CompassNeedle.html#Stargazer_CompassNeedle_RotationHandler_Godot_Camera3D_
+  name: RotationHandler
+  nameWithType: CompassNeedle.RotationHandler
+  fullName: Stargazer.CompassNeedle.RotationHandler

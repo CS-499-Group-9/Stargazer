@@ -1,0 +1,47 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker.Calendar.DateChangedEventHandler
+  commentId: T:DatePicker.Calendar.DateChangedEventHandler
+  id: Calendar.DateChangedEventHandler
+  parent: DatePicker
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Calendar.DateChangedEventHandler
+  nameWithType: Calendar.DateChangedEventHandler
+  fullName: DatePicker.Calendar.DateChangedEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/Calendar.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: DateChangedEventHandler
+    path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
+    startLine: 155
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: The signal emitted when the date changes.
+  example: []
+  syntax:
+    content: >-
+      [Signal]
+
+      public delegate void Calendar.DateChangedEventHandler()
+    content.vb: >-
+      <Signal>
+
+      Public Delegate Sub Calendar.DateChangedEventHandler()
+  attributes:
+  - type: Godot.SignalAttribute
+    ctor: Godot.SignalAttribute.#ctor
+    arguments: []
+references:
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker

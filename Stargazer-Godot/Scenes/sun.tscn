@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl62xn4awms0a"]
+
+[ext_resource type="Script" path="res://Code/Sun.cs" id="1_18oee"]
+[ext_resource type="Texture2D" uid="uid://bjq1x6poxt8sy" path="res://Textures/Images/sunmap.jpg" id="2_5vli4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ulwwr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocf02"]
+albedo_texture = ExtResource("2_5vli4")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]
+
+[node name="CelestialBody" type="Node3D"]
+script = ExtResource("1_18oee")
+
+[node name="PlanetBody" type="StaticBody3D" parent="."]
+
+[node name="PlanetMesh" type="MeshInstance3D" parent="PlanetBody"]
+mesh = SubResource("SphereMesh_ulwwr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ocf02")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlanetBody"]
+shape = SubResource("SphereShape3D_tl7gt")

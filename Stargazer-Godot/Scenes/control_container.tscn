@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccf161pss0iua"]
+[gd_scene load_steps=5 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
 [ext_resource type="StyleBox" uid="uid://bqlg72ri6emyf" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
 [ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
 [ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
-[ext_resource type="Script" path="res://Code/TimeLocEntered.cs" id="8_iply7"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("latField", "longField", "timeField", "AMorPMButton", "calendarButton")]
 layout_mode = 3
@@ -305,7 +304,6 @@ offset_bottom = 38.0
 [node name="EnterButton" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-script = ExtResource("8_iply7")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/EnterButton"]

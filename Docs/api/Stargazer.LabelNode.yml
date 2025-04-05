@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: LabelNode
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.LabelNode_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.LabelNode_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -367,11 +367,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelText
     path: ../Stargazer-Godot/Code/LabelNode.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -412,11 +412,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/LabelNode.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -7263,7 +7263,6 @@ references:
   name.vb: String
 - uid: Godot.Label3D
   commentId: T:Godot.Label3D
-  parent: Godot
   isExternal: true
   name: Label3D
   nameWithType: Label3D

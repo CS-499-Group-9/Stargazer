@@ -21,8 +21,8 @@ items:
   type: Class
   source:
     id: Spawner2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Spawner2D_ScriptSerialization.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Spawner2D_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -422,11 +422,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: count
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 17
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -449,11 +449,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 18
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -476,11 +476,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2DScene
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 22
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -521,11 +521,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Label2DScene
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 26
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -566,11 +566,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2dContainer
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 28
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -593,11 +593,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawStars
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 33
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -630,11 +630,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SpawnStar
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 52
+    startLine: 49
   assemblies:
   - New Game Project
   namespace: Stargazer

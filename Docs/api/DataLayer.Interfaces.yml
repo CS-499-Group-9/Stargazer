@@ -5,10 +5,9 @@ items:
   id: DataLayer.Interfaces
   children:
   - DataLayer.Interfaces.IConstellationRepository
-  - DataLayer.Interfaces.IEquatorialCalculator`1
+  - DataLayer.Interfaces.IEquatorialCalculator
   - DataLayer.Interfaces.IMessierRepository
-  - DataLayer.Interfaces.IMoonCalculator
-  - DataLayer.Interfaces.IPlanetaryCalculator`1
+  - DataLayer.Interfaces.IRepositoryService`1
   - DataLayer.Interfaces.IStarRepository
   langs:
   - csharp
@@ -27,31 +26,13 @@ references:
   name: IConstellationRepository
   nameWithType: IConstellationRepository
   fullName: DataLayer.Interfaces.IConstellationRepository
-- uid: DataLayer.Interfaces.IEquatorialCalculator`1
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<T>
-  nameWithType: IEquatorialCalculator<T>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
-  nameWithType.vb: IEquatorialCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
-  name.vb: IEquatorialCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
 - uid: DataLayer.Interfaces.IMessierRepository
   commentId: T:DataLayer.Interfaces.IMessierRepository
   parent: DataLayer.Interfaces
@@ -59,33 +40,26 @@ references:
   name: IMessierRepository
   nameWithType: IMessierRepository
   fullName: DataLayer.Interfaces.IMessierRepository
-- uid: DataLayer.Interfaces.IMoonCalculator
-  commentId: T:DataLayer.Interfaces.IMoonCalculator
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IMoonCalculator.html
-  name: IMoonCalculator
-  nameWithType: IMoonCalculator
-  fullName: DataLayer.Interfaces.IMoonCalculator
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<T>
-  nameWithType: IPlanetaryCalculator<T>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
-  nameWithType.vb: IPlanetaryCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
-  name.vb: IPlanetaryCalculator(Of T)
+- uid: DataLayer.Interfaces.IRepositoryService`1
+  commentId: T:DataLayer.Interfaces.IRepositoryService`1
+  href: DataLayer.Interfaces.IRepositoryService-1.html
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
   spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: (
   - name: Of
   - name: " "

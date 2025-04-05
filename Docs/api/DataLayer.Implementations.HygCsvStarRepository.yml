@@ -6,8 +6,7 @@ items:
   parent: DataLayer.Implementations
   children:
   - DataLayer.Implementations.HygCsvStarRepository.#ctor(System.String)
-  - DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
-  - DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
+  - DataLayer.Implementations.HygCsvStarRepository.GetAllStars
   - DataLayer.Implementations.HygCsvStarRepository.filePath
   langs:
   - csharp
@@ -19,7 +18,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HygCsvStarRepository
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -58,7 +57,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -87,7 +86,7 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
@@ -108,83 +107,39 @@ items:
   nameWithType.vb: HygCsvStarRepository.New(String)
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New(String)
   name.vb: New(String)
-- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
-  commentId: M:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(System.Int32)
-  id: GetStarByHipAsync(System.Int32)
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetAllStars
+  commentId: M:DataLayer.Implementations.HygCsvStarRepository.GetAllStars
+  id: GetAllStars
   parent: DataLayer.Implementations.HygCsvStarRepository
   langs:
   - csharp
   - vb
-  name: GetStarByHipAsync(int)
-  nameWithType: HygCsvStarRepository.GetStarByHipAsync(int)
-  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(int)
+  name: GetAllStars()
+  nameWithType: HygCsvStarRepository.GetAllStars()
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetAllStars()
   type: Method
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetStarByHipAsync
+    id: GetAllStars
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 34
+    startLine: 30
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Retrieves a single star from the repository
+  summary: Gets all stars from the repository. (Omit the sun, so that it can be created separately).
   example: []
   syntax:
-    content: public Task<EquatorialStar?> GetStarByHipAsync(int hipparcosId)
-    parameters:
-    - id: hipparcosId
-      type: System.Int32
-      description: The Hipparcos ID of the star to find
+    content: public IEnumerable<EquatorialStar> GetAllStars()
     return:
-      type: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-      description: Null if the star is not found, otherwise returns the star in the equatorial coordinate form.
-    content.vb: Public Function GetStarByHipAsync(hipparcosId As Integer) As Task(Of EquatorialStar)
-  overload: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync*
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+      description: A <code>yieldable</code> <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> that can is lazily loaded during read.
+    content.vb: Public Function GetAllStars() As IEnumerable(Of EquatorialStar)
+  overload: DataLayer.Implementations.HygCsvStarRepository.GetAllStars*
   implements:
-  - DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-  nameWithType.vb: HygCsvStarRepository.GetStarByHipAsync(Integer)
-  fullName.vb: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync(Integer)
-  name.vb: GetStarByHipAsync(Integer)
-- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
-  commentId: M:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
-  id: DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
-  isEii: true
-  parent: DataLayer.Implementations.HygCsvStarRepository
-  langs:
-  - csharp
-  - vb
-  name: IStarRepository.GetAllStarsAsync()
-  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync()
-  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
-  type: Method
-  source:
-    remote:
-      path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-    path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 62
-  assemblies:
-  - DataLayer
-  namespace: DataLayer.Implementations
-  summary: Gets all stars that are brighter than a defined brightness.
-  example: []
-  syntax:
-    content: Task<IList<EquatorialStar>> IStarRepository.GetAllStarsAsync()
-    return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-      description: A list of stars in the equatorial coordinate form.
-    content.vb: ''
-  overload: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
-  implements:
-  - DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  nameWithType.vb: ''
-  fullName.vb: ''
-  name.vb: ''
+  - DataLayer.Interfaces.IStarRepository.GetAllStars
 references:
 - uid: DataLayer.Implementations
   commentId: N:DataLayer.Implementations
@@ -494,80 +449,85 @@ references:
   nameWithType.vb: HygCsvStarRepository.New
   fullName.vb: DataLayer.Implementations.HygCsvStarRepository.New
   name.vb: New
-- uid: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync*
-  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
-  href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetStarByHipAsync_System_Int32_
-  name: GetStarByHipAsync
-  nameWithType: HygCsvStarRepository.GetStarByHipAsync
-  fullName: DataLayer.Implementations.HygCsvStarRepository.GetStarByHipAsync
-- uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Implementations.HygCsvStarRepository.GetAllStars*
+  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.GetAllStars
+  href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_GetAllStars
+  name: GetAllStars
+  nameWithType: HygCsvStarRepository.GetAllStars
+  fullName: DataLayer.Implementations.HygCsvStarRepository.GetAllStars
+- uid: DataLayer.Interfaces.IStarRepository.GetAllStars
+  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStars
   parent: DataLayer.Interfaces.IStarRepository
-  isExternal: true
-  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
-  name: GetStarByHipAsync(int)
-  nameWithType: IStarRepository.GetStarByHipAsync(int)
-  fullName: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(int)
-  nameWithType.vb: IStarRepository.GetStarByHipAsync(Integer)
-  fullName.vb: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(Integer)
-  name.vb: GetStarByHipAsync(Integer)
+  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStars
+  name: GetAllStars()
+  nameWithType: IStarRepository.GetAllStars()
+  fullName: DataLayer.Interfaces.IStarRepository.GetAllStars()
   spec.csharp:
-  - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-    name: GetStarByHipAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStars
+    name: GetAllStars
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStars
   - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)
-    name: GetStarByHipAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_
+  - uid: DataLayer.Interfaces.IStarRepository.GetAllStars
+    name: GetAllStars
+    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStars
   - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-  commentId: T:System.Threading.Tasks.Task{DataLayer.EquatorialObjects.EquatorialStar}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<EquatorialStar>
-  nameWithType: Task<EquatorialStar>
-  fullName: System.Threading.Tasks.Task<DataLayer.EquatorialObjects.EquatorialStar>
-  nameWithType.vb: Task(Of EquatorialStar)
-  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.EquatorialObjects.EquatorialStar)
-  name.vb: Task(Of EquatorialStar)
+- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<EquatorialStar>
+  nameWithType: IEnumerable<EquatorialStar>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>
+  nameWithType.vb: IEnumerable(Of EquatorialStar)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar)
+  name.vb: IEnumerable(Of EquatorialStar)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: DataLayer.EquatorialObjects.EquatorialStar
     name: EquatorialStar
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -575,148 +535,40 @@ references:
     name: EquatorialStar
     href: DataLayer.EquatorialObjects.EquatorialStar.html
   - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
-  commentId: Overload:DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync
-  href: DataLayer.Interfaces.IStarRepository.html
-  name: IStarRepository.GetAllStarsAsync
-  nameWithType: HygCsvStarRepository.IStarRepository.GetAllStarsAsync
-  fullName: DataLayer.Implementations.HygCsvStarRepository.DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IStarRepository*
-    name: IStarRepository
-    href: DataLayer.Interfaces.IStarRepository.html
-  - name: .
-  - uid: DataLayer.Implementations.HygCsvStarRepository.DataLayer#Interfaces#IStarRepository#GetAllStarsAsync*
-    name: GetAllStarsAsync
-    href: DataLayer.Implementations.HygCsvStarRepository.html#DataLayer_Implementations_HygCsvStarRepository_DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
-- uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  commentId: M:DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-  parent: DataLayer.Interfaces.IStarRepository
-  href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
-  name: GetAllStarsAsync()
-  nameWithType: IStarRepository.GetAllStarsAsync()
-  fullName: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync()
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-    name: GetAllStarsAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: DataLayer.Interfaces.IStarRepository.GetAllStarsAsync
-    name: GetAllStarsAsync
-    href: DataLayer.Interfaces.IStarRepository.html#DataLayer_Interfaces_IStarRepository_GetAllStarsAsync
-  - name: (
-  - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<EquatorialStar>>
-  nameWithType: Task<IList<EquatorialStar>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>
-  nameWithType.vb: Task(Of IList(Of EquatorialStar))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar))
-  name.vb: Task(Of IList(Of EquatorialStar))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: )
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

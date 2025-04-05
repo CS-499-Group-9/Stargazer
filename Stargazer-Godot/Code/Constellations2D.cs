@@ -48,10 +48,11 @@ namespace Stargazer
         }
 
         /// <summary>
-        /// Passed as a <see cref="Delegate"/> to <see cref="Startup.UserPositionUpdated"/> to be notified when a new star scene is ready to be drawn.
-        /// This should be done using the += operator to be notified in addition to other components in the viewport.
+        /// Initially draws the constellations
         /// </summary>
-        /// <param name="dataPackage"></param>
+        /// <param name="constellations">Contains the constellation graphs to draw.</param>
+        /// <param name="GetConstellationStar">A method to retrieve a star by Hipparcos Id from the dictionary of drawn stars.</param>
+        /// <returns></returns>
         public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
         {
             //var constellations = dataPackage.Constellations;
@@ -63,11 +64,9 @@ namespace Stargazer
             {
                 Vector2 totalPos = new Vector2(0, 0);
                 int c = 0;
-                //GD.Print($"Drawing constellation {constellation.ConstellationName}");
 
                 foreach (var lines in constellation.ConstellationLines)
                 {
-                    //GD.Print("gonna grab a constellation");
                     Star s1 = GetConstellationStar(lines.Item1, (S) => { return null; });
                     Star s2 = GetConstellationStar(lines.Item2, (S) => { return null; });
                     if (s1.Altitude > -45.0 || s2.Altitude > -45.0)
@@ -86,26 +85,13 @@ namespace Stargazer
                         totalPos += s2.Position2D;
                         c++;
                     }
-
                 }
-
-                // Creating labels
-                // labelPos = totalPos / c;
-
-                // LabelNode labelNode = LabelScene.Instantiate<LabelNode>();
-                // labelNode.LabelText = constellation.ConstellationName;
-                // labelNode.Position = new Vector3(labelPos[0],labelPos[1],0.0F);
-                // labelNode.Visible = true;
-                // ConstellationLabels.AddChild(labelNode);
-
             }
             mesh.SurfaceEnd();
-            var count = constMesh.Mesh.GetSurfaceCount();
             foreach (Star2D star in StarContainer.GetChildren())
             {
                 star.Scale = new Vector2(0.6f, 0.6f);
             }
-            //GD.Print(count);
         }
 
         /// <summary>

@@ -1,0 +1,50 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker.Calendar.DateSelectedEventHandler
+  commentId: T:DatePicker.Calendar.DateSelectedEventHandler
+  id: Calendar.DateSelectedEventHandler
+  parent: DatePicker
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Calendar.DateSelectedEventHandler
+  nameWithType: Calendar.DateSelectedEventHandler
+  fullName: DatePicker.Calendar.DateSelectedEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/Calendar.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: DateSelectedEventHandler
+    path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
+    startLine: 161
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: >-
+    The signal emitted when the user selects a date in ANY view. Emitted when selecting
+
+    both a month and a day.
+  example: []
+  syntax:
+    content: >-
+      [Signal]
+
+      public delegate void Calendar.DateSelectedEventHandler()
+    content.vb: >-
+      <Signal>
+
+      Public Delegate Sub Calendar.DateSelectedEventHandler()
+  attributes:
+  - type: Godot.SignalAttribute
+    ctor: Godot.SignalAttribute.#ctor
+    arguments: []
+references:
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker

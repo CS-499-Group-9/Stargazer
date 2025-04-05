@@ -5,11 +5,17 @@ items:
   id: Startup
   parent: Stargazer
   children:
+  - Stargazer.Startup.TakeScreenshot
   - Stargazer.Startup.UpdateUserPosition(System.Double,System.Double,System.DateTime)
-  - Stargazer.Startup.UserPositionUpdated
+  - Stargazer.Startup.View2D
   - Stargazer.Startup._Ready
-  - Stargazer.Startup.repositoryService
-  - Stargazer.Startup.viewPortPath
+  - Stargazer.Startup.calculator
+  - Stargazer.Startup.controlContainer
+  - Stargazer.Startup.dataPackage
+  - Stargazer.Startup.playControl
+  - Stargazer.Startup.screenshotPath
+  - Stargazer.Startup.skyView
+  - Stargazer.Startup.skyViewContainer
   langs:
   - csharp
   - vb
@@ -19,7 +25,7 @@ items:
   type: Class
   source:
     id: Startup
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Startup_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Startup_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -525,89 +531,278 @@ items:
     arguments:
     - type: System.String
       value: res://Code/Startup.cs
-- uid: Stargazer.Startup.viewPortPath
-  commentId: F:Stargazer.Startup.viewPortPath
-  id: viewPortPath
+- uid: Stargazer.Startup.skyView
+  commentId: F:Stargazer.Startup.skyView
+  id: skyView
   parent: Stargazer.Startup
   langs:
   - csharp
   - vb
-  name: viewPortPath
-  nameWithType: Startup.viewPortPath
-  fullName: Stargazer.Startup.viewPortPath
+  name: skyView
+  nameWithType: Startup.skyView
+  fullName: Stargazer.Startup.skyView
   type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: viewPortPath
-    path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 14
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private const string viewPortPath = "SubViewportContainer/SubViewport/View"
-    return:
-      type: System.String
-    content.vb: Private Const viewPortPath As String = "SubViewportContainer/SubViewport/View"
-- uid: Stargazer.Startup.repositoryService
-  commentId: F:Stargazer.Startup.repositoryService
-  id: repositoryService
-  parent: Stargazer.Startup
-  langs:
-  - csharp
-  - vb
-  name: repositoryService
-  nameWithType: Startup.repositoryService
-  fullName: Stargazer.Startup.repositoryService
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Startup.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: repositoryService
+    id: skyView
     path: ../Stargazer-Godot/Code/Startup.cs
     startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private StargazerRepositoryService<Star> repositoryService
+    content: private SkyView skyView
     return:
-      type: DataLayer.StargazerRepositoryService{Stargazer.Star}
-    content.vb: Private repositoryService As StargazerRepositoryService(Of Star)
-- uid: Stargazer.Startup.UserPositionUpdated
-  commentId: E:Stargazer.Startup.UserPositionUpdated
-  id: UserPositionUpdated
+      type: Stargazer.SkyView
+    content.vb: Private skyView As SkyView
+- uid: Stargazer.Startup.dataPackage
+  commentId: F:Stargazer.Startup.dataPackage
+  id: dataPackage
   parent: Stargazer.Startup
   langs:
   - csharp
   - vb
-  name: UserPositionUpdated
-  nameWithType: Startup.UserPositionUpdated
-  fullName: Stargazer.Startup.UserPositionUpdated
-  type: Event
+  name: dataPackage
+  nameWithType: Startup.dataPackage
+  fullName: Stargazer.Startup.dataPackage
+  type: Field
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: UserPositionUpdated
+    id: dataPackage
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private CelestialDataPackage<Star> dataPackage
+    return:
+      type: DataLayer.CelestialDataPackage{Stargazer.Star}
+    content.vb: Private dataPackage As CelestialDataPackage(Of Star)
+- uid: Stargazer.Startup.calculator
+  commentId: F:Stargazer.Startup.calculator
+  id: calculator
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: calculator
+  nameWithType: Startup.calculator
+  fullName: Stargazer.Startup.calculator
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: calculator
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 17
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IEquatorialCalculator calculator
+    return:
+      type: DataLayer.Interfaces.IEquatorialCalculator
+    content.vb: Private calculator As IEquatorialCalculator
+- uid: Stargazer.Startup.screenshotPath
+  commentId: F:Stargazer.Startup.screenshotPath
+  id: screenshotPath
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: screenshotPath
+  nameWithType: Startup.screenshotPath
+  fullName: Stargazer.Startup.screenshotPath
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: screenshotPath
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private string screenshotPath
+    return:
+      type: System.String
+    content.vb: Private screenshotPath As String
+- uid: Stargazer.Startup.View2D
+  commentId: F:Stargazer.Startup.View2D
+  id: View2D
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: View2D
+  nameWithType: Startup.View2D
+  fullName: Stargazer.Startup.View2D
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: View2D
     path: ../Stargazer-Godot/Code/Startup.cs
     startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A <xref href="System.Delegate" data-throw-if-not-resolved="false"></xref> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
-  example: []
   syntax:
-    content: public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private PackedScene View2D
     return:
-      type: System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
-    content.vb: Public Event UserPositionUpdated As Func(Of CelestialDataPackage(Of Star), Task)
+      type: Godot.PackedScene
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private View2D As PackedScene
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.Startup.controlContainer
+  commentId: F:Stargazer.Startup.controlContainer
+  id: controlContainer
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: controlContainer
+  nameWithType: Startup.controlContainer
+  fullName: Stargazer.Startup.controlContainer
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: controlContainer
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 22
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private ControlContainer controlContainer
+    return:
+      type: ControlContainer
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private controlContainer As ControlContainer
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.Startup.skyViewContainer
+  commentId: F:Stargazer.Startup.skyViewContainer
+  id: skyViewContainer
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: skyViewContainer
+  nameWithType: Startup.skyViewContainer
+  fullName: Stargazer.Startup.skyViewContainer
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: skyViewContainer
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 23
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private SkyViewContainer skyViewContainer
+    return:
+      type: Stargazer.SkyViewContainer
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private skyViewContainer As SkyViewContainer
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.Startup.playControl
+  commentId: F:Stargazer.Startup.playControl
+  id: playControl
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: playControl
+  nameWithType: Startup.playControl
+  fullName: Stargazer.Startup.playControl
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: playControl
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private PlayControl playControl
+    return:
+      type: Stargazer.PlayControl
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private playControl As PlayControl
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.Startup._Ready
   commentId: M:Stargazer.Startup._Ready
   id: _Ready
@@ -622,11 +817,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -654,11 +849,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 55
+    startLine: 60
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -668,7 +863,7 @@ items:
     Processes the request asynchronously and passes the result to the viewport
   example: []
   syntax:
-    content: public Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
+    content: public void UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
     parameters:
     - id: latitude
       type: System.Double
@@ -679,14 +874,37 @@ items:
     - id: dateTime
       type: System.DateTime
       description: ''
-    return:
-      type: System.Threading.Tasks.Task
-      description: A task that can be awaited until all subscribers have been notified of the request.
-    content.vb: Public Function UpdateUserPosition(latitude As Double, longitude As Double, dateTime As Date) As Task
+    content.vb: Public Sub UpdateUserPosition(latitude As Double, longitude As Double, dateTime As Date)
   overload: Stargazer.Startup.UpdateUserPosition*
   nameWithType.vb: Startup.UpdateUserPosition(Double, Double, Date)
   fullName.vb: Stargazer.Startup.UpdateUserPosition(Double, Double, Date)
   name.vb: UpdateUserPosition(Double, Double, Date)
+- uid: Stargazer.Startup.TakeScreenshot
+  commentId: M:Stargazer.Startup.TakeScreenshot
+  id: TakeScreenshot
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: TakeScreenshot()
+  nameWithType: Startup.TakeScreenshot()
+  fullName: Stargazer.Startup.TakeScreenshot()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TakeScreenshot
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 69
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private void TakeScreenshot()
+    content.vb: Private Sub TakeScreenshot()
+  overload: Stargazer.Startup.TakeScreenshot*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12207,41 +12425,37 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: DataLayer.StargazerRepositoryService{Stargazer.Star}
-  commentId: T:DataLayer.StargazerRepositoryService{Stargazer.Star}
+- uid: Stargazer.SkyView
+  commentId: T:Stargazer.SkyView
+  parent: Stargazer
+  href: Stargazer.SkyView.html
+  name: SkyView
+  nameWithType: SkyView
+  fullName: Stargazer.SkyView
+- uid: DataLayer.CelestialDataPackage{Stargazer.Star}
+  commentId: T:DataLayer.CelestialDataPackage{Stargazer.Star}
   parent: DataLayer
-  definition: DataLayer.StargazerRepositoryService`1
-  href: DataLayer.StargazerRepositoryService-1.html
-  name: StargazerRepositoryService<Star>
-  nameWithType: StargazerRepositoryService<Star>
-  fullName: DataLayer.StargazerRepositoryService<Stargazer.Star>
-  nameWithType.vb: StargazerRepositoryService(Of Star)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of Stargazer.Star)
-  name.vb: StargazerRepositoryService(Of Star)
+  definition: DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<Star>
+  nameWithType: CelestialDataPackage<Star>
+  fullName: DataLayer.CelestialDataPackage<Stargazer.Star>
+  nameWithType.vb: CelestialDataPackage(Of Star)
+  fullName.vb: DataLayer.CelestialDataPackage(Of Stargazer.Star)
+  name.vb: CelestialDataPackage(Of Star)
   spec.csharp:
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
   - name: <
   - uid: Stargazer.Star
     name: Star
     href: Stargazer.Star.html
   - name: '>'
   spec.vb:
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
   - name: (
   - name: Of
   - name: " "
@@ -12249,26 +12463,26 @@ references:
     name: Star
     href: Stargazer.Star.html
   - name: )
-- uid: DataLayer.StargazerRepositoryService`1
-  commentId: T:DataLayer.StargazerRepositoryService`1
-  href: DataLayer.StargazerRepositoryService-1.html
-  name: StargazerRepositoryService<T>
-  nameWithType: StargazerRepositoryService<T>
-  fullName: DataLayer.StargazerRepositoryService<T>
-  nameWithType.vb: StargazerRepositoryService(Of T)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T)
-  name.vb: StargazerRepositoryService(Of T)
+- uid: DataLayer.CelestialDataPackage`1
+  commentId: T:DataLayer.CelestialDataPackage`1
+  href: DataLayer.CelestialDataPackage-1.html
+  name: CelestialDataPackage<T>
+  nameWithType: CelestialDataPackage<T>
+  fullName: DataLayer.CelestialDataPackage<T>
+  nameWithType.vb: CelestialDataPackage(Of T)
+  fullName.vb: DataLayer.CelestialDataPackage(Of T)
+  name.vb: CelestialDataPackage(Of T)
   spec.csharp:
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
   - name: (
   - name: Of
   - name: " "
@@ -12280,6 +12494,73 @@ references:
   name: DataLayer
   nameWithType: DataLayer
   fullName: DataLayer
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Godot.PackedScene
+  commentId: T:Godot.PackedScene
+  parent: Godot
+  isExternal: true
+  name: PackedScene
+  nameWithType: PackedScene
+  fullName: Godot.PackedScene
+- uid: ControlContainer
+  commentId: T:ControlContainer
+  href: ControlContainer.html
+  name: ControlContainer
+  nameWithType: ControlContainer
+  fullName: ControlContainer
+- uid: Stargazer.SkyViewContainer
+  commentId: T:Stargazer.SkyViewContainer
+  parent: Stargazer
+  href: Stargazer.SkyViewContainer.html
+  name: SkyViewContainer
+  nameWithType: SkyViewContainer
+  fullName: Stargazer.SkyViewContainer
+- uid: Stargazer.PlayControl
+  commentId: T:Stargazer.PlayControl
+  parent: Stargazer
+  href: Stargazer.PlayControl.html
+  name: PlayControl
+  nameWithType: PlayControl
+  fullName: Stargazer.PlayControl
 - uid: System.Delegate
   commentId: T:System.Delegate
   isExternal: true
@@ -12287,97 +12568,6 @@ references:
   name: Delegate
   nameWithType: Delegate
   fullName: System.Delegate
-- uid: System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
-  commentId: T:System.Func{DataLayer.CelestialDataPackage{Stargazer.Star},System.Threading.Tasks.Task}
-  parent: System
-  definition: System.Func`2
-  href: https://learn.microsoft.com/dotnet/api/system.func-2
-  name: Func<CelestialDataPackage<Star>, Task>
-  nameWithType: Func<CelestialDataPackage<Star>, Task>
-  fullName: System.Func<DataLayer.CelestialDataPackage<Stargazer.Star>, System.Threading.Tasks.Task>
-  nameWithType.vb: Func(Of CelestialDataPackage(Of Star), Task)
-  fullName.vb: System.Func(Of DataLayer.CelestialDataPackage(Of Stargazer.Star), System.Threading.Tasks.Task)
-  name.vb: Func(Of CelestialDataPackage(Of Star), Task)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: <
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  - name: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  - name: )
-- uid: System.Func`2
-  commentId: T:System.Func`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.func-2
-  name: Func<T, TResult>
-  nameWithType: Func<T, TResult>
-  fullName: System.Func<T, TResult>
-  nameWithType.vb: Func(Of T, TResult)
-  fullName.vb: System.Func(Of T, TResult)
-  name.vb: Func(Of T, TResult)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - name: T
-  - name: ','
-  - name: " "
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - name: TResult
-  - name: )
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -12431,48 +12621,9 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Stargazer.Startup.TakeScreenshot*
+  commentId: Overload:Stargazer.Startup.TakeScreenshot
+  href: Stargazer.Startup.html#Stargazer_Startup_TakeScreenshot
+  name: TakeScreenshot
+  nameWithType: Startup.TakeScreenshot
+  fullName: Stargazer.Startup.TakeScreenshot

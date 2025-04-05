@@ -982,6 +982,9 @@ public class GridLabel : Control, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
+    </div>
+    <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
     </div>
     <div>
@@ -1557,16 +1560,16 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_camera" data-uid="Stargazer.GridLabel.camera">
-  camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_GridLabel_azimuthlabels" data-uid="Stargazer.GridLabel.azimuthlabels">
+  azimuthlabels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Camera3D camera</code></pre>
+    <pre><code class="lang-csharp hljs">private Dictionary&lt;int, Label&gt; azimuthlabels</code></pre>
   </div>
 
 
@@ -1574,7 +1577,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Camera3D</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <span class="xref">Label</span>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1589,7 +1592,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h3 id="Stargazer_GridLabel_gridlabels" data-uid="Stargazer.GridLabel.gridlabels">
   gridlabels
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1617,46 +1620,16 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_leftPlane" data-uid="Stargazer.GridLabel.leftPlane">
-  leftPlane
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_GridLabel_lineInterval" data-uid="Stargazer.GridLabel.lineInterval">
+  lineInterval
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Plane leftPlane</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Plane</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Stargazer_GridLabel_lineinterval" data-uid="Stargazer.GridLabel.lineinterval">
-  lineinterval
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private float lineinterval</code></pre>
+    <pre><code class="lang-csharp hljs">private float lineInterval</code></pre>
   </div>
 
 
@@ -1679,7 +1652,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h3 id="Stargazer_GridLabel_render" data-uid="Stargazer.GridLabel.render">
   render
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1706,53 +1679,22 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
+  <h2 class="section" id="methods">Methods
+</h2>
 
-  <h3 id="Stargazer_GridLabel_storedfov" data-uid="Stargazer.GridLabel.storedfov">
-  storedfov
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L17"><i class="bi bi-code-slash"></i></a>
+
+  <a id="Stargazer_GridLabel_HandleCameraRotationChanged_" data-uid="Stargazer.GridLabel.HandleCameraRotationChanged*"></a>
+
+  <h3 id="Stargazer_GridLabel_HandleCameraRotationChanged_Godot_Camera3D_" data-uid="Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)">
+  HandleCameraRotationChanged(Camera3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private float storedfov</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="Stargazer_GridLabel_SetCamera_" data-uid="Stargazer.GridLabel.SetCamera*"></a>
-
-  <h3 id="Stargazer_GridLabel_SetCamera_Godot_Camera3D_" data-uid="Stargazer.GridLabel.SetCamera(Godot.Camera3D)">
-  SetCamera(Camera3D)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L136"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets a reference for the <span class="xref">Godot.Camera3D</span> from the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetCamera(Camera3D camera)</code></pre>
+    <pre><code class="lang-csharp hljs">public void HandleCameraRotationChanged(Camera3D camera)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1772,11 +1714,42 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
+  <a id="Stargazer_GridLabel_HandleZoomStateChanged_" data-uid="Stargazer.GridLabel.HandleZoomStateChanged*"></a>
+
+  <h3 id="Stargazer_GridLabel_HandleZoomStateChanged_Stargazer_ZoomState_" data-uid="Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)">
+  HandleZoomStateChanged(ZoomState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void HandleZoomStateChanged(ZoomState zoomState)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>zoomState</code> <a class="xref" href="Stargazer.ZoomState.html">ZoomState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Stargazer_GridLabel_ToggleGridlines_" data-uid="Stargazer.GridLabel.ToggleGridlines*"></a>
 
   <h3 id="Stargazer_GridLabel_ToggleGridlines_System_Boolean_" data-uid="Stargazer.GridLabel.ToggleGridlines(System.Boolean)">
   ToggleGridlines(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives the <a class="xref" href="ControlContainer.html#ControlContainer_AzimuthToggled">AzimuthToggled</a> notification to show or hide the labels.</p>
@@ -1804,44 +1777,11 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <a id="Stargazer_GridLabel__Process_" data-uid="Stargazer.GridLabel._Process*"></a>
-
-  <h3 id="Stargazer_GridLabel__Process_System_Double_" data-uid="Stargazer.GridLabel._Process(System.Double)">
-  _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L46"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Determines how to draw the labels for any given frame.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd><p>Ununsed.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="Stargazer_GridLabel__Ready_" data-uid="Stargazer.GridLabel._Ready*"></a>
 
   <h3 id="Stargazer_GridLabel__Ready" data-uid="Stargazer.GridLabel._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Instantiates all the grid labels that may be needed.</p>
@@ -1868,7 +1808,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h3 id="Stargazer_GridLabel_updateLabels" data-uid="Stargazer.GridLabel.updateLabels">
   updateLabels()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/GridLabel.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/GridLabel.cs/#L191"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

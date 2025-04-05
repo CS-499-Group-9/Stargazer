@@ -29,7 +29,7 @@ namespace Stargazer
 			{
 				var newPlanet = PlanetScene.Instantiate<Planet>();
 				newPlanet.FromHorizontal(planet, planetaryCalculator);
-				newPlanet.setTexture(GD.Load<Texture2D>($"res://Textures/Resources/{planet.Name.ToLower()}map.tres"));
+				newPlanet.SetTexture(GD.Load<Texture2D>($"res://Textures/Resources/{planet.Name.ToLower()}map.tres"));
 				AddChild(newPlanet);
 			}
 		}

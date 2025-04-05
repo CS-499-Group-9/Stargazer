@@ -10,7 +10,7 @@ namespace DataLayer.Interfaces
         /// <summary>
         /// Gets all Messier Objects from the repository
         /// </summary>
-        /// <returns>A running task that can be awaited.</returns>
-        Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync();
+        /// <returns>A <c>yieldable</c> <see cref="IEnumerable{EquatorialMessierObject}"/> that can be lazily loaded when needed.</returns>
+        public IEnumerable<EquatorialMessierObject> GetMessierObjects();
     }
 }

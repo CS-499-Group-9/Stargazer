@@ -1,4 +1,5 @@
 using Godot;
+using System;
 namespace Stargazer
 {
     /// <summary>
@@ -9,15 +10,8 @@ namespace Stargazer
         /// <summary>
         /// Retrieves a reference to the <see cref="Stargazer.SkyView"/>
         /// </summary>
-        public SkyView SkyView { get; private set; }
-        // Called when the node enters the scene tree for the first time.
+        [Export] public SkyView SkyView { get; set; }
 
-        /// <inheritdoc/>
-        public override void _Ready()
-        {
-            base._Ready();
-            SkyView = GetNode<SkyView>("SubViewport/SkyView");
-        }
 
     }
 }

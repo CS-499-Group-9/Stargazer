@@ -1,0 +1,385 @@
+### YamlMime:ManagedReference
+items:
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  id: ICameraStateNotifier
+  parent: Stargazer
+  children:
+  - Stargazer.ICameraStateNotifier.OnHoverableChange
+  - Stargazer.ICameraStateNotifier.OnRotation
+  - Stargazer.ICameraStateNotifier.OnZoom
+  - Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  langs:
+  - csharp
+  - vb
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
+  type: Interface
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ICameraStateNotifier.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ICameraStateNotifier
+    path: ../Stargazer-Godot/Code/ICameraStateNotifier.cs
+    startLine: 7
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers of events related to the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public interface ICameraStateNotifier
+    content.vb: Public Interface ICameraStateNotifier
+- uid: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  commentId: P:Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  id: OnZoomStateChanged
+  parent: Stargazer.ICameraStateNotifier
+  langs:
+  - csharp
+  - vb
+  name: OnZoomStateChanged
+  nameWithType: ICameraStateNotifier.OnZoomStateChanged
+  fullName: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ICameraStateNotifier.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnZoomStateChanged
+    path: ../Stargazer-Godot/Code/ICameraStateNotifier.cs
+    startLine: 12
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the <xref href="Stargazer.ZoomState" data-throw-if-not-resolved="false"></xref> has changed
+  example: []
+  syntax:
+    content: Action<ZoomState> OnZoomStateChanged { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Stargazer.ZoomState}
+    content.vb: Property OnZoomStateChanged As Action(Of ZoomState)
+  overload: Stargazer.ICameraStateNotifier.OnZoomStateChanged*
+- uid: Stargazer.ICameraStateNotifier.OnZoom
+  commentId: P:Stargazer.ICameraStateNotifier.OnZoom
+  id: OnZoom
+  parent: Stargazer.ICameraStateNotifier
+  langs:
+  - csharp
+  - vb
+  name: OnZoom
+  nameWithType: ICameraStateNotifier.OnZoom
+  fullName: Stargazer.ICameraStateNotifier.OnZoom
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ICameraStateNotifier.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnZoom
+    path: ../Stargazer-Godot/Code/ICameraStateNotifier.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the <xref href="Godot.Camera3D.Fov" data-throw-if-not-resolved="false"></xref> has changed.
+  example: []
+  syntax:
+    content: Action<float> OnZoom { get; set; }
+    parameters: []
+    return:
+      type: System.Action{System.Single}
+    content.vb: Property OnZoom As Action(Of Single)
+  overload: Stargazer.ICameraStateNotifier.OnZoom*
+- uid: Stargazer.ICameraStateNotifier.OnRotation
+  commentId: P:Stargazer.ICameraStateNotifier.OnRotation
+  id: OnRotation
+  parent: Stargazer.ICameraStateNotifier
+  langs:
+  - csharp
+  - vb
+  name: OnRotation
+  nameWithType: ICameraStateNotifier.OnRotation
+  fullName: Stargazer.ICameraStateNotifier.OnRotation
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ICameraStateNotifier.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnRotation
+    path: ../Stargazer-Godot/Code/ICameraStateNotifier.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the camera has rotated.
+  example: []
+  syntax:
+    content: Action<Camera3D> OnRotation { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Godot.Camera3D}
+    content.vb: Property OnRotation As Action(Of Camera3D)
+  overload: Stargazer.ICameraStateNotifier.OnRotation*
+- uid: Stargazer.ICameraStateNotifier.OnHoverableChange
+  commentId: P:Stargazer.ICameraStateNotifier.OnHoverableChange
+  id: OnHoverableChange
+  parent: Stargazer.ICameraStateNotifier
+  langs:
+  - csharp
+  - vb
+  name: OnHoverableChange
+  nameWithType: ICameraStateNotifier.OnHoverableChange
+  fullName: Stargazer.ICameraStateNotifier.OnHoverableChange
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ICameraStateNotifier.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnHoverableChange
+    path: ../Stargazer-Godot/Code/ICameraStateNotifier.cs
+    startLine: 25
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies subscribers when the mouse has entered or exited a hovered body.
+  example: []
+  syntax:
+    content: Action<IHoverable> OnHoverableChange { get; set; }
+    parameters: []
+    return:
+      type: System.Action{Stargazer.IHoverable}
+    content.vb: Property OnHoverableChange As Action(Of IHoverable)
+  overload: Stargazer.ICameraStateNotifier.OnHoverableChange*
+references:
+- uid: Godot.Camera3D
+  commentId: T:Godot.Camera3D
+  parent: Godot
+  isExternal: true
+  name: Camera3D
+  nameWithType: Camera3D
+  fullName: Godot.Camera3D
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
+- uid: Godot
+  commentId: N:Godot
+  isExternal: true
+  name: Godot
+  nameWithType: Godot
+  fullName: Godot
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
+  parent: Stargazer
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
+- uid: Stargazer.ICameraStateNotifier.OnZoomStateChanged*
+  commentId: Overload:Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnZoomStateChanged
+  name: OnZoomStateChanged
+  nameWithType: ICameraStateNotifier.OnZoomStateChanged
+  fullName: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+- uid: System.Action{Stargazer.ZoomState}
+  commentId: T:System.Action{Stargazer.ZoomState}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ZoomState>
+  nameWithType: Action<ZoomState>
+  fullName: System.Action<Stargazer.ZoomState>
+  nameWithType.vb: Action(Of ZoomState)
+  fullName.vb: System.Action(Of Stargazer.ZoomState)
+  name.vb: Action(Of ZoomState)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Stargazer.ZoomState
+    name: ZoomState
+    href: Stargazer.ZoomState.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.ZoomState
+    name: ZoomState
+    href: Stargazer.ZoomState.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Godot.Camera3D.Fov
+  commentId: P:Godot.Camera3D.Fov
+  parent: Godot.Camera3D
+  isExternal: true
+  name: Fov
+  nameWithType: Camera3D.Fov
+  fullName: Godot.Camera3D.Fov
+- uid: Stargazer.ICameraStateNotifier.OnZoom*
+  commentId: Overload:Stargazer.ICameraStateNotifier.OnZoom
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnZoom
+  name: OnZoom
+  nameWithType: ICameraStateNotifier.OnZoom
+  fullName: Stargazer.ICameraStateNotifier.OnZoom
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<float>
+  nameWithType: Action<float>
+  fullName: System.Action<float>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Stargazer.ICameraStateNotifier.OnRotation*
+  commentId: Overload:Stargazer.ICameraStateNotifier.OnRotation
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnRotation
+  name: OnRotation
+  nameWithType: ICameraStateNotifier.OnRotation
+  fullName: Stargazer.ICameraStateNotifier.OnRotation
+- uid: System.Action{Godot.Camera3D}
+  commentId: T:System.Action{Godot.Camera3D}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Camera3D>
+  nameWithType: Action<Camera3D>
+  fullName: System.Action<Godot.Camera3D>
+  nameWithType.vb: Action(Of Camera3D)
+  fullName.vb: System.Action(Of Godot.Camera3D)
+  name.vb: Action(Of Camera3D)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Godot.Camera3D
+    name: Camera3D
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Godot.Camera3D
+    name: Camera3D
+    isExternal: true
+  - name: )
+- uid: Stargazer.ICameraStateNotifier.OnHoverableChange*
+  commentId: Overload:Stargazer.ICameraStateNotifier.OnHoverableChange
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnHoverableChange
+  name: OnHoverableChange
+  nameWithType: ICameraStateNotifier.OnHoverableChange
+  fullName: Stargazer.ICameraStateNotifier.OnHoverableChange
+- uid: System.Action{Stargazer.IHoverable}
+  commentId: T:System.Action{Stargazer.IHoverable}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<IHoverable>
+  nameWithType: Action<IHoverable>
+  fullName: System.Action<Stargazer.IHoverable>
+  nameWithType.vb: Action(Of IHoverable)
+  fullName.vb: System.Action(Of Stargazer.IHoverable)
+  name.vb: Action(Of IHoverable)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: )

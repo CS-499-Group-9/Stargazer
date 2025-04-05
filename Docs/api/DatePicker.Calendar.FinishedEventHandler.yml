@@ -1,0 +1,50 @@
+### YamlMime:ManagedReference
+items:
+- uid: DatePicker.Calendar.FinishedEventHandler
+  commentId: T:DatePicker.Calendar.FinishedEventHandler
+  id: Calendar.FinishedEventHandler
+  parent: DatePicker
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Calendar.FinishedEventHandler
+  nameWithType: Calendar.FinishedEventHandler
+  fullName: DatePicker.Calendar.FinishedEventHandler
+  type: Delegate
+  source:
+    remote:
+      path: Stargazer-Godot/addons/DatePicker/Calendar.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: FinishedEventHandler
+    path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
+    startLine: 167
+  assemblies:
+  - New Game Project
+  namespace: DatePicker
+  summary: >-
+    The signal emitted when the user is finished selecting a date. Meaning, the user
+
+    has selected a date in EVERY view (i.e. a month and a day).
+  example: []
+  syntax:
+    content: >-
+      [Signal]
+
+      public delegate void Calendar.FinishedEventHandler()
+    content.vb: >-
+      <Signal>
+
+      Public Delegate Sub Calendar.FinishedEventHandler()
+  attributes:
+  - type: Godot.SignalAttribute
+    ctor: Godot.SignalAttribute.#ctor
+    arguments: []
+references:
+- uid: DatePicker
+  commentId: N:DatePicker
+  href: DatePicker.html
+  name: DatePicker
+  nameWithType: DatePicker
+  fullName: DatePicker

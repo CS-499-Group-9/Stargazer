@@ -1,0 +1,1680 @@
+### YamlMime:ManagedReference
+items:
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  commentId: T:DataLayer.Implementations.CosineKittyEquatorialCalculator
+  id: CosineKittyEquatorialCalculator
+  parent: DataLayer.Implementations
+  children:
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.AUConversion
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(System.Double)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(System.Double,System.Double)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(System.DateTime)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.astroTime
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.currentTime
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.observer
+  - DataLayer.Implementations.CosineKittyEquatorialCalculator.planets
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyEquatorialCalculator
+  nameWithType: CosineKittyEquatorialCalculator
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  type: Class
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CosineKittyEquatorialCalculator
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 12
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Uses the <xref href="CosineKitty.Astronomy" data-throw-if-not-resolved="false"></xref> library to perform calculations on celestial objects.
+  example: []
+  syntax:
+    content: 'internal class CosineKittyEquatorialCalculator : IEquatorialCalculator'
+    content.vb: Friend Class CosineKittyEquatorialCalculator Implements IEquatorialCalculator
+  inheritance:
+  - System.Object
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.currentTime
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialCalculator.currentTime
+  id: currentTime
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: currentTime
+  nameWithType: CosineKittyEquatorialCalculator.currentTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.currentTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: currentTime
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 14
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private DateTime currentTime
+    return:
+      type: System.DateTime
+    content.vb: Private currentTime As Date
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.astroTime
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialCalculator.astroTime
+  id: astroTime
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: astroTime
+  nameWithType: CosineKittyEquatorialCalculator.astroTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.astroTime
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: astroTime
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 15
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private AstroTime astroTime
+    return:
+      type: CosineKitty.AstroTime
+    content.vb: Private astroTime As AstroTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.observer
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialCalculator.observer
+  id: observer
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: observer
+  nameWithType: CosineKittyEquatorialCalculator.observer
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.observer
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: observer
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 16
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private Observer observer
+    return:
+      type: CosineKitty.Observer
+    content.vb: Private observer As Observer
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.planets
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialCalculator.planets
+  id: planets
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: planets
+  nameWithType: CosineKittyEquatorialCalculator.planets
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.planets
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: planets
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 17
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private readonly Dictionary<string, Body> planets
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,CosineKitty.Body}
+    content.vb: Private ReadOnly planets As Dictionary(Of String, Body)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.AUConversion
+  commentId: F:DataLayer.Implementations.CosineKittyEquatorialCalculator.AUConversion
+  id: AUConversion
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: AUConversion
+  nameWithType: CosineKittyEquatorialCalculator.AUConversion
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.AUConversion
+  type: Field
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: AUConversion
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  syntax:
+    content: private const double AUConversion = 63241.0771
+    return:
+      type: System.Double
+    content.vb: Private Const AUConversion As Double = 63241.0771
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+  id: CurrentTime
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CurrentTime
+  nameWithType: CosineKittyEquatorialCalculator.CurrentTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 20
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: The current internal universal time used for calculations.
+  example: []
+  syntax:
+    content: public DateTime CurrentTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public ReadOnly Property CurrentTime As Date
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+  id: LST
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: LST
+  nameWithType: CosineKittyEquatorialCalculator.LST
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: LST
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 22
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: The current local sidereal time of the calculator.
+  example: []
+  syntax:
+    content: public double LST { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property LST As Double
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.LST*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.LST
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+  id: Latitude
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: Latitude
+  nameWithType: CosineKittyEquatorialCalculator.Latitude
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Latitude
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 24
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: The current latitude of the observer.
+  example: []
+  syntax:
+    content: public double Latitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Latitude As Double
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.Latitude
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+  commentId: P:DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+  id: Longitude
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: Longitude
+  nameWithType: CosineKittyEquatorialCalculator.Longitude
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+  type: Property
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Longitude
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 26
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: The current longitude of the observer.
+  example: []
+  syntax:
+    content: public double Longitude { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Longitude As Double
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.Longitude
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor(System.Double,System.Double,System.DateTime)
+  id: '#ctor(System.Double,System.Double,System.DateTime)'
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyEquatorialCalculator(double, double, DateTime)
+  nameWithType: CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator(double, double, DateTime)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator(double, double, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 34
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Generates a new converter specific to the observers location and time
+  example: []
+  syntax:
+    content: internal CosineKittyEquatorialCalculator(double latitude, double longitude, DateTime universalTime)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The latitude of the observer
+    - id: longitude
+      type: System.Double
+      description: The longitude of the observer
+    - id: universalTime
+      type: System.DateTime
+      description: The Universal Coordinated Time
+    content.vb: Friend Sub New(latitude As Double, longitude As Double, universalTime As Date)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor*
+  nameWithType.vb: CosineKittyEquatorialCalculator.New(Double, Double, Date)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.New(Double, Double, Date)
+  name.vb: New(Double, Double, Date)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor
+  id: '#ctor'
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CosineKittyEquatorialCalculator()
+  nameWithType: CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator()
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator()
+  type: Constructor
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 56
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Used to create a calculator for an observer located at the intersection of the equator and the prime meridian at the J2000 Epoc.
+  example: []
+  syntax:
+    content: internal CosineKittyEquatorialCalculator()
+    content.vb: Friend Sub New()
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor*
+  nameWithType.vb: CosineKittyEquatorialCalculator.New()
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.New()
+  name.vb: New()
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon
+  id: CreateMoon
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreateMoon()
+  nameWithType: CosineKittyEquatorialCalculator.CreateMoon()
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateMoon
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 62
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Creates a new moon object.
+  example: []
+  syntax:
+    content: public HorizontalMoon CreateMoon()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: A new <xref href="DataLayer.HorizontalObjects.HorizontalMoon" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function CreateMoon() As HorizontalMoon
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun
+  id: CreateSun
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreateSun()
+  nameWithType: CosineKittyEquatorialCalculator.CreateSun()
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateSun
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 72
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Creates a new sun object.
+  example: []
+  syntax:
+    content: public HorizontalSun CreateSun()
+    return:
+      type: DataLayer.HorizontalObjects.HorizontalSun
+      description: A new <xref href="DataLayer.HorizontalObjects.HorizontalSun" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function CreateSun() As HorizontalSun
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets
+  id: CreatePlanets
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: CreatePlanets()
+  nameWithType: CosineKittyEquatorialCalculator.CreatePlanets()
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets()
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 82
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Creates a collection of planets.
+  example: []
+  syntax:
+    content: public IEnumerable<HorizontalPlanet> CreatePlanets()
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+      description: A new <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function CreatePlanets() As IEnumerable(Of HorizontalPlanet)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(System.DateTime)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(System.DateTime)
+  id: SetTime(System.DateTime)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: SetTime(DateTime)
+  nameWithType: CosineKittyEquatorialCalculator.SetTime(DateTime)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetTime
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 106
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Sets the internal time of the calculator.
+  example: []
+  syntax:
+    content: public void SetTime(DateTime userTime)
+    parameters:
+    - id: userTime
+      type: System.DateTime
+      description: User requested time in UTC.
+    content.vb: Public Sub SetTime(userTime As Date)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  nameWithType.vb: CosineKittyEquatorialCalculator.SetTime(Date)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime(Date)
+  name.vb: SetTime(Date)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(System.Double,System.Double)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(System.Double,System.Double)
+  id: SetLocation(System.Double,System.Double)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: SetLocation(double, double)
+  nameWithType: CosineKittyEquatorialCalculator.SetLocation(double, double)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(double, double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetLocation
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 113
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Updates the position of the observer.
+  example: []
+  syntax:
+    content: public void SetLocation(double latitude, double longitude)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: The user's latitude.
+    - id: longitude
+      type: System.Double
+      description: The user's longitude.
+    content.vb: Public Sub SetLocation(latitude As Double, longitude As Double)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  nameWithType.vb: CosineKittyEquatorialCalculator.SetLocation(Double, Double)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation(Double, Double)
+  name.vb: SetLocation(Double, Double)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(System.Double)
+  id: IncrementTimeBy(System.Double)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: IncrementTimeBy(double)
+  nameWithType: CosineKittyEquatorialCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(double)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 119
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Increments the time of the internal universal time used to perform calculations.
+  example: []
+  syntax:
+    content: public void IncrementTimeBy(double seconds)
+    parameters:
+    - id: seconds
+      type: System.Double
+      description: ''
+    content.vb: Public Sub IncrementTimeBy(seconds As Double)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  nameWithType.vb: CosineKittyEquatorialCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalBody)
+  nameWithType: CosineKittyEquatorialCalculator.UpdatePositionOf(HorizontalBody)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 126
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Calculates and updates the position of a <xref href="DataLayer.HorizontalObjects.HorizontalBody" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalBody hoBody)
+    parameters:
+    - id: hoBody
+      type: DataLayer.HorizontalObjects.HorizontalBody
+      description: The body to perform the calculation on.
+    content.vb: Public Sub UpdatePositionOf(hoBody As HorizontalBody)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: CosineKittyEquatorialCalculator.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 139
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Overloaded method to calculate the position of a planet.
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalPlanet planet)
+    parameters:
+    - id: planet
+      type: DataLayer.HorizontalObjects.HorizontalPlanet
+      description: ''
+    content.vb: Public Sub UpdatePositionOf(planet As HorizontalPlanet)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: CosineKittyEquatorialCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 155
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Overloaded method to calculate the position of the moon
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalMoon moon)
+    parameters:
+    - id: moon
+      type: DataLayer.HorizontalObjects.HorizontalMoon
+      description: The <code>Moon</code> object to perform the calculation on.
+    content.vb: Public Sub UpdatePositionOf(moon As HorizontalMoon)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  commentId: M:DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  id: UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  parent: DataLayer.Implementations.CosineKittyEquatorialCalculator
+  langs:
+  - csharp
+  - vb
+  name: UpdatePositionOf(HorizontalSun)
+  nameWithType: CosineKittyEquatorialCalculator.UpdatePositionOf(HorizontalSun)
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  type: Method
+  source:
+    remote:
+      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    startLine: 167
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.Implementations
+  summary: Overloaded method to calculate the position of the Sun.
+  example: []
+  syntax:
+    content: public void UpdatePositionOf(HorizontalSun sun)
+    parameters:
+    - id: sun
+      type: DataLayer.HorizontalObjects.HorizontalSun
+      description: ''
+    content.vb: Public Sub UpdatePositionOf(sun As HorizontalSun)
+  overload: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*
+  implements:
+  - DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+references:
+- uid: CosineKitty.Astronomy
+  commentId: T:CosineKitty.Astronomy
+  isExternal: true
+  name: Astronomy
+  nameWithType: Astronomy
+  fullName: CosineKitty.Astronomy
+- uid: DataLayer.Implementations
+  commentId: N:DataLayer.Implementations
+  href: DataLayer.html
+  name: DataLayer.Implementations
+  nameWithType: DataLayer.Implementations
+  fullName: DataLayer.Implementations
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Implementations
+    name: Implementations
+    href: DataLayer.Implementations.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CosineKitty.AstroTime
+  commentId: T:CosineKitty.AstroTime
+  parent: CosineKitty
+  isExternal: true
+  name: AstroTime
+  nameWithType: AstroTime
+  fullName: CosineKitty.AstroTime
+- uid: CosineKitty
+  commentId: N:CosineKitty
+  isExternal: true
+  name: CosineKitty
+  nameWithType: CosineKitty
+  fullName: CosineKitty
+- uid: CosineKitty.Observer
+  commentId: T:CosineKitty.Observer
+  parent: CosineKitty
+  isExternal: true
+  name: Observer
+  nameWithType: Observer
+  fullName: CosineKitty.Observer
+- uid: System.Collections.Generic.Dictionary{System.String,CosineKitty.Body}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,CosineKitty.Body}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, Body>
+  nameWithType: Dictionary<string, Body>
+  fullName: System.Collections.Generic.Dictionary<string, CosineKitty.Body>
+  nameWithType.vb: Dictionary(Of String, Body)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, CosineKitty.Body)
+  name.vb: Dictionary(Of String, Body)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.Body
+    name: Body
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: CosineKitty.Body
+    name: Body
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_CurrentTime
+  name: CurrentTime
+  nameWithType: CosineKittyEquatorialCalculator.CurrentTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CurrentTime
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CurrentTime
+  name: CurrentTime
+  nameWithType: IEquatorialCalculator.CurrentTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CurrentTime
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.LST*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_LST
+  name: LST
+  nameWithType: CosineKittyEquatorialCalculator.LST
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.LST
+- uid: DataLayer.Interfaces.IEquatorialCalculator.LST
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.LST
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_LST
+  name: LST
+  nameWithType: IEquatorialCalculator.LST
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.LST
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_Latitude
+  name: Latitude
+  nameWithType: CosineKittyEquatorialCalculator.Latitude
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.Latitude
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.Latitude
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_Latitude
+  name: Latitude
+  nameWithType: IEquatorialCalculator.Latitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Latitude
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_Longitude
+  name: Longitude
+  nameWithType: CosineKittyEquatorialCalculator.Longitude
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.Longitude
+- uid: DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  commentId: P:DataLayer.Interfaces.IEquatorialCalculator.Longitude
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_Longitude
+  name: Longitude
+  nameWithType: IEquatorialCalculator.Longitude
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.Longitude
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.#ctor
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator__ctor_System_Double_System_Double_System_DateTime_
+  name: CosineKittyEquatorialCalculator
+  nameWithType: CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CosineKittyEquatorialCalculator
+  nameWithType.vb: CosineKittyEquatorialCalculator.New
+  fullName.vb: DataLayer.Implementations.CosineKittyEquatorialCalculator.New
+  name.vb: New
+- uid: DataLayer.HorizontalObjects.HorizontalMoon
+  commentId: T:DataLayer.HorizontalObjects.HorizontalMoon
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  name: HorizontalMoon
+  nameWithType: HorizontalMoon
+  fullName: DataLayer.HorizontalObjects.HorizontalMoon
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateMoon
+  name: CreateMoon
+  nameWithType: CosineKittyEquatorialCalculator.CreateMoon
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateMoon
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateMoon
+  name: CreateMoon()
+  nameWithType: IEquatorialCalculator.CreateMoon()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+    name: CreateMoon
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateMoon
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreateMoon
+    name: CreateMoon
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateMoon
+  - name: (
+  - name: )
+- uid: DataLayer.HorizontalObjects
+  commentId: N:DataLayer.HorizontalObjects
+  href: DataLayer.html
+  name: DataLayer.HorizontalObjects
+  nameWithType: DataLayer.HorizontalObjects
+  fullName: DataLayer.HorizontalObjects
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.HorizontalObjects
+    name: HorizontalObjects
+    href: DataLayer.HorizontalObjects.html
+- uid: DataLayer.HorizontalObjects.HorizontalSun
+  commentId: T:DataLayer.HorizontalObjects.HorizontalSun
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalSun.html
+  name: HorizontalSun
+  nameWithType: HorizontalSun
+  fullName: DataLayer.HorizontalObjects.HorizontalSun
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_CreateSun
+  name: CreateSun
+  nameWithType: CosineKittyEquatorialCalculator.CreateSun
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreateSun
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateSun
+  name: CreateSun()
+  nameWithType: IEquatorialCalculator.CreateSun()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreateSun()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+    name: CreateSun
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateSun
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreateSun
+    name: CreateSun
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreateSun
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_CreatePlanets
+  name: CreatePlanets
+  nameWithType: CosineKittyEquatorialCalculator.CreatePlanets
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.CreatePlanets
+- uid: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreatePlanets
+  name: CreatePlanets()
+  nameWithType: IEquatorialCalculator.CreatePlanets()
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreatePlanets
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.CreatePlanets
+    name: CreatePlanets
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_CreatePlanets
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<HorizontalPlanet>
+  nameWithType: IEnumerable<HorizontalPlanet>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>
+  nameWithType.vb: IEnumerable(Of HorizontalPlanet)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet)
+  name.vb: IEnumerable(Of HorizontalPlanet)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_SetTime_System_DateTime_
+  name: SetTime
+  nameWithType: CosineKittyEquatorialCalculator.SetTime
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetTime
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetTime_System_DateTime_
+  name: SetTime(DateTime)
+  nameWithType: IEquatorialCalculator.SetTime(DateTime)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+  nameWithType.vb: IEquatorialCalculator.SetTime(Date)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.SetTime(Date)
+  name.vb: SetTime(Date)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+    name: SetTime
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetTime_System_DateTime_
+  - name: (
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.SetTime(System.DateTime)
+    name: SetTime
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetTime_System_DateTime_
+  - name: (
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_SetLocation_System_Double_System_Double_
+  name: SetLocation
+  nameWithType: CosineKittyEquatorialCalculator.SetLocation
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.SetLocation
+- uid: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetLocation_System_Double_System_Double_
+  name: SetLocation(double, double)
+  nameWithType: IEquatorialCalculator.SetLocation(double, double)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(double, double)
+  nameWithType.vb: IEquatorialCalculator.SetLocation(Double, Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(Double, Double)
+  name.vb: SetLocation(Double, Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+    name: SetLocation
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetLocation_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.SetLocation(System.Double,System.Double)
+    name: SetLocation
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_SetLocation_System_Double_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy
+  nameWithType: CosineKittyEquatorialCalculator.IncrementTimeBy
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.IncrementTimeBy
+- uid: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  isExternal: true
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_IncrementTimeBy_System_Double_
+  name: IncrementTimeBy(double)
+  nameWithType: IEquatorialCalculator.IncrementTimeBy(double)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(double)
+  nameWithType.vb: IEquatorialCalculator.IncrementTimeBy(Double)
+  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(Double)
+  name.vb: IncrementTimeBy(Double)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.IncrementTimeBy(System.Double)
+    name: IncrementTimeBy
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_IncrementTimeBy_System_Double_
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: DataLayer.HorizontalObjects.HorizontalBody
+  commentId: T:DataLayer.HorizontalObjects.HorizontalBody
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalBody.html
+  name: HorizontalBody
+  nameWithType: HorizontalBody
+  fullName: DataLayer.HorizontalObjects.HorizontalBody
+- uid: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf*
+  commentId: Overload:DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf
+  href: DataLayer.Implementations.CosineKittyEquatorialCalculator.html#DataLayer_Implementations_CosineKittyEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_
+  name: UpdatePositionOf
+  nameWithType: CosineKittyEquatorialCalculator.UpdatePositionOf
+  fullName: DataLayer.Implementations.CosineKittyEquatorialCalculator.UpdatePositionOf
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_
+  name: UpdatePositionOf(HorizontalBody)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalBody)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalBody)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalBody_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalBody
+    name: HorizontalBody
+    href: DataLayer.HorizontalObjects.HorizontalBody.html
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  name: UpdatePositionOf(HorizontalPlanet)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalPlanet)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalPlanet)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalPlanet_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
+    name: HorizontalPlanet
+    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  - name: )
+- uid: DataLayer.HorizontalObjects.HorizontalPlanet
+  commentId: T:DataLayer.HorizontalObjects.HorizontalPlanet
+  parent: DataLayer.HorizontalObjects
+  href: DataLayer.HorizontalObjects.HorizontalPlanet.html
+  name: HorizontalPlanet
+  nameWithType: HorizontalPlanet
+  fullName: DataLayer.HorizontalObjects.HorizontalPlanet
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  name: UpdatePositionOf(HorizontalMoon)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalMoon)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalMoon
+    name: HorizontalMoon
+    href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalMoon)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalMoon_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalMoon
+    name: HorizontalMoon
+    href: DataLayer.HorizontalObjects.HorizontalMoon.html
+  - name: )
+- uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  parent: DataLayer.Interfaces.IEquatorialCalculator
+  href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalSun_
+  name: UpdatePositionOf(HorizontalSun)
+  nameWithType: IEquatorialCalculator.UpdatePositionOf(HorizontalSun)
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalSun_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalSun
+    name: HorizontalSun
+    href: DataLayer.HorizontalObjects.HorizontalSun.html
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf(DataLayer.HorizontalObjects.HorizontalSun)
+    name: UpdatePositionOf
+    href: DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_UpdatePositionOf_DataLayer_HorizontalObjects_HorizontalSun_
+  - name: (
+  - uid: DataLayer.HorizontalObjects.HorizontalSun
+    name: HorizontalSun
+    href: DataLayer.HorizontalObjects.HorizontalSun.html
+  - name: )

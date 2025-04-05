@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://755k8nw6wxfm"]
+
+[ext_resource type="Script" path="res://Code/MessierObject.cs" id="1_s4hv4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j2p66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3e2k"]
+albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
+
+[node name="MessierObject" type="Node3D"]
+transform = Transform3D(3.775, 0, 0, 0, 3.775, 0, 0, 0, 3.775, 0, 0, 0)
+script = ExtResource("1_s4hv4")
+
+[node name="O1" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="O1"]
+mesh = SubResource("BoxMesh_j2p66")
+surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="O1"]
+shape = SubResource("BoxShape3D_5gvf6")

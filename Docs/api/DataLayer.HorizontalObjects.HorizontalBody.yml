@@ -21,11 +21,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 9
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -41,6 +41,7 @@ items:
   - DataLayer.HorizontalObjects.HorizontalMoon
   - DataLayer.HorizontalObjects.HorizontalPlanet
   - DataLayer.HorizontalObjects.HorizontalStar
+  - DataLayer.HorizontalObjects.HorizontalSun
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -63,11 +64,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 15
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -98,11 +99,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -129,11 +130,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -160,11 +161,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 32
+    startLine: 31
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -191,11 +192,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 37
+    startLine: 36
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -222,22 +223,22 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 42
+    startLine: 41
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
   summary: The distance (in lightyears) from the star to earth
   example: []
   syntax:
-    content: public double Distance { get; }
+    content: public double Distance { get; set; }
     parameters: []
     return:
       type: System.Double
-    content.vb: Public ReadOnly Property Distance As Double
+    content.vb: Public Property Distance As Double
   overload: DataLayer.HorizontalObjects.HorizontalBody.Distance*
 references:
 - uid: DataLayer.HorizontalObjects

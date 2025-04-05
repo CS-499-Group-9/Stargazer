@@ -104,7 +104,7 @@ Responsible for relaying notifications from senders throughout the program into 
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/SkyView.cs&quot;)]
-public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
+public class SkyView : Node3D, IDisposable</code></pre>
   </div>
 
 
@@ -125,7 +125,6 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-      <div><a class="xref" href="IUserUpdateReceiver.html">IUserUpdateReceiver</a></div>
     </dd>
   </dl>
 
@@ -1063,9 +1062,350 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
+  <h3 id="Stargazer_SkyView_AstralPlane" data-uid="Stargazer.SkyView.AstralPlane">
+  AstralPlane
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private ASTRALPLANEAlbedo AstralPlane</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.ASTRALPLANEAlbedo.html">ASTRALPLANEAlbedo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_AzimuthGridlines" data-uid="Stargazer.SkyView.AzimuthGridlines">
+  AzimuthGridlines
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private AzimuthGridlines AzimuthGridlines</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.AzimuthGridlines.html">AzimuthGridlines</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_CameraStateNotifier" data-uid="Stargazer.SkyView.CameraStateNotifier">
+  CameraStateNotifier
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+public MainCamera CameraStateNotifier</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.MainCamera.html">MainCamera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_CompassNeedle" data-uid="Stargazer.SkyView.CompassNeedle">
+  CompassNeedle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private CompassNeedle CompassNeedle</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.CompassNeedle.html">CompassNeedle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_GridLabel" data-uid="Stargazer.SkyView.GridLabel">
+  GridLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private GridLabel GridLabel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.GridLabel.html">GridLabel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_HoverLabel" data-uid="Stargazer.SkyView.HoverLabel">
+  HoverLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private HoverLabel HoverLabel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.HoverLabel.html">HoverLabel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_MessierSpawner" data-uid="Stargazer.SkyView.MessierSpawner">
+  MessierSpawner
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private MessierSpawner MessierSpawner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="MessierSpawner.html">MessierSpawner</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_MoonScene" data-uid="Stargazer.SkyView.MoonScene">
+  MoonScene
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private PackedScene MoonScene</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PackedScene</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_PlanetSpawner" data-uid="Stargazer.SkyView.PlanetSpawner">
+  PlanetSpawner
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private Planets PlanetSpawner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.Planets.html">Planets</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_StarSpawner" data-uid="Stargazer.SkyView.StarSpawner">
+  StarSpawner
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private Spawner StarSpawner</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.Spawner.html">Spawner</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_SunScene" data-uid="Stargazer.SkyView.SunScene">
+  SunScene
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private PackedScene SunScene</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">PackedScene</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Stargazer_SkyView_ToggleConstellationLabels" data-uid="Stargazer.SkyView.ToggleConstellationLabels">
   ToggleConstellationLabels
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Relays the user request to toggle the constellation labels to the child node that makes the change</p>
@@ -1096,7 +1436,7 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView_ToggleConstellationLines" data-uid="Stargazer.SkyView.ToggleConstellationLines">
   ToggleConstellationLines
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Relays the user request to toggle the constellations lines down to the child node that makes the change</p>
@@ -1125,9 +1465,39 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
+  <h3 id="Stargazer_SkyView_ToggleEquatorialGridlines" data-uid="Stargazer.SkyView.ToggleEquatorialGridlines">
+  ToggleEquatorialGridlines
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; ToggleEquatorialGridlines</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Stargazer_SkyView_ToggleGridlines" data-uid="Stargazer.SkyView.ToggleGridlines">
   ToggleGridlines
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Relays the user request to toggle the gridlines to the child node that makes the change.</p>
@@ -1158,7 +1528,7 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView_ToggleMessierObjects" data-uid="Stargazer.SkyView.ToggleMessierObjects">
   ToggleMessierObjects
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change</p>
@@ -1187,16 +1557,16 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_constellation2dNode" data-uid="Stargazer.SkyView.constellation2dNode">
-  constellation2dNode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_averageFrameLabel" data-uid="Stargazer.SkyView.averageFrameLabel">
+  averageFrameLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Constellations2D constellation2dNode</code></pre>
+    <pre><code class="lang-csharp hljs">private Label averageFrameLabel</code></pre>
   </div>
 
 
@@ -1204,7 +1574,67 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Stargazer.Constellations2D.html">Constellations2D</a></dt>
+    <dt><span class="xref">Label</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_averageFrameTime" data-uid="Stargazer.SkyView.averageFrameTime">
+  averageFrameTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private double averageFrameTime</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_calculator" data-uid="Stargazer.SkyView.calculator">
+  calculator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private IEquatorialCalculator calculator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></dt>
     <dd></dd>
   </dl>
 
@@ -1219,14 +1649,15 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView_constellationNode" data-uid="Stargazer.SkyView.constellationNode">
   constellationNode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Constellations constellationNode</code></pre>
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private Constellations constellationNode</code></pre>
   </div>
 
 
@@ -1247,16 +1678,77 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_datelabel" data-uid="Stargazer.SkyView.datelabel">
-  datelabel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_dateLabel" data-uid="Stargazer.SkyView.dateLabel">
+  dateLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Label datelabel</code></pre>
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private Label dateLabel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Label</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_instantaneousFrameLabel" data-uid="Stargazer.SkyView.instantaneousFrameLabel">
+  instantaneousFrameLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Label instantaneousFrameLabel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Label</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_SkyView_localSiderealLabel" data-uid="Stargazer.SkyView.localSiderealLabel">
+  localSiderealLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Label localSiderealLabel</code></pre>
   </div>
 
 
@@ -1279,7 +1771,7 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h3 id="Stargazer_SkyView_moon" data-uid="Stargazer.SkyView.moon">
   moon
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1307,39 +1799,9 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_moonCalculator" data-uid="Stargazer.SkyView.moonCalculator">
-  moonCalculator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L49"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private IMoonCalculator moonCalculator</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DataLayer.Interfaces.IMoonCalculator.html">IMoonCalculator</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Stargazer_SkyView_planetNode" data-uid="Stargazer.SkyView.planetNode">
   planetNode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1367,16 +1829,16 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_planetaryCalculator" data-uid="Stargazer.SkyView.planetaryCalculator">
-  planetaryCalculator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_playSpeed" data-uid="Stargazer.SkyView.playSpeed">
+  playSpeed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private IPlanetaryCalculator&lt;HorizontalPlanet&gt; planetaryCalculator</code></pre>
+    <pre><code class="lang-csharp hljs">private PlaySpeed playSpeed</code></pre>
   </div>
 
 
@@ -1384,7 +1846,7 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="DataLayer.Interfaces.IPlanetaryCalculator-1.html">IPlanetaryCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalPlanet.html">HorizontalPlanet</a>&gt;</dt>
+    <dt><a class="xref" href="Stargazer.PlaySpeed.html">PlaySpeed</a></dt>
     <dd></dd>
   </dl>
 
@@ -1397,16 +1859,16 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_spawner" data-uid="Stargazer.SkyView.spawner">
-  spawner
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_previousTicks" data-uid="Stargazer.SkyView.previousTicks">
+  previousTicks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Spawner spawner</code></pre>
+    <pre><code class="lang-csharp hljs">private ulong previousTicks</code></pre>
   </div>
 
 
@@ -1414,7 +1876,7 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Stargazer.Spawner.html">Spawner</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
     <dd></dd>
   </dl>
 
@@ -1427,16 +1889,16 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
 
 
-  <h3 id="Stargazer_SkyView_spawner2d" data-uid="Stargazer.SkyView.spawner2d">
-  spawner2d
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_sun" data-uid="Stargazer.SkyView.sun">
+  sun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Spawner2D spawner2d</code></pre>
+    <pre><code class="lang-csharp hljs">private Sun sun</code></pre>
   </div>
 
 
@@ -1444,137 +1906,10 @@ public class SkyView : Node3D, IDisposable, IUserUpdateReceiver</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Stargazer.Spawner2D.html">Spawner2D</a></dt>
+    <dt><a class="xref" href="Stargazer.Sun.html">Sun</a></dt>
     <dd></dd>
   </dl>
 
-
-
-
-
-
-
-
-
-
-  <h3 id="Stargazer_SkyView_starConverter" data-uid="Stargazer.SkyView.starConverter">
-  starConverter
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L47"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private IEquatorialCalculator&lt;HorizontalStar&gt; starConverter</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator-1.html">IEquatorialCalculator</a>&lt;<a class="xref" href="DataLayer.HorizontalObjects.HorizontalStar.html">HorizontalStar</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Stargazer_SkyView_timeMultiplier" data-uid="Stargazer.SkyView.timeMultiplier">
-  timeMultiplier
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L51"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private double timeMultiplier</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="Stargazer_SkyView_Camera_" data-uid="Stargazer.SkyView.Camera*"></a>
-
-  <h3 id="Stargazer_SkyView_Camera" data-uid="Stargazer.SkyView.Camera">
-  Camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L38"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Camera3D Camera { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Camera3D</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Stargazer_SkyView_MoonScene_" data-uid="Stargazer.SkyView.MoonScene*"></a>
-
-  <h3 id="Stargazer_SkyView_MoonScene" data-uid="Stargazer.SkyView.MoonScene">
-  MoonScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-private PackedScene MoonScene { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">PackedScene</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
@@ -1587,11 +1922,11 @@ private PackedScene MoonScene { get; set; }</code></pre>
 </h2>
 
 
-  <a id="Stargazer_SkyView_UpdateUserPosition_" data-uid="Stargazer.SkyView.UpdateUserPosition*"></a>
+  <a id="Stargazer_SkyView_InitializeCelestial_" data-uid="Stargazer.SkyView.InitializeCelestial*"></a>
 
-  <h3 id="Stargazer_SkyView_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__" data-uid="Stargazer.SkyView.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})">
-  UpdateUserPosition(CelestialDataPackage&lt;Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView_InitializeCelestial_DataLayer_CelestialDataPackage_Stargazer_Star__" data-uid="Stargazer.SkyView.InitializeCelestial(DataLayer.CelestialDataPackage{Stargazer.Star})">
+  InitializeCelestial(CelestialDataPackage&lt;Star&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Notifies child notes of a new <a class="xref" href="DataLayer.CelestialDataPackage-1.html">CelestialDataPackage&lt;T&gt;</a> that is ready to be drawn.</p>
@@ -1599,7 +1934,7 @@ private PackedScene MoonScene { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task UpdateUserPosition(CelestialDataPackage&lt;Star&gt; dataPackage)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task InitializeCelestial(CelestialDataPackage&lt;Star&gt; dataPackage)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1626,17 +1961,47 @@ private PackedScene MoonScene { get; set; }</code></pre>
 
 
 
+  <a id="Stargazer_SkyView_SetTimeMultiplier_" data-uid="Stargazer.SkyView.SetTimeMultiplier*"></a>
+
+  <h3 id="Stargazer_SkyView_SetTimeMultiplier_Stargazer_PlaySpeed_" data-uid="Stargazer.SkyView.SetTimeMultiplier(Stargazer.PlaySpeed)">
+  SetTimeMultiplier(PlaySpeed)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stores the <a class="xref" href="Stargazer.PlaySpeed.html">PlaySpeed</a> state object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTimeMultiplier(PlaySpeed playSpeed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playSpeed</code> <a class="xref" href="Stargazer.PlaySpeed.html">PlaySpeed</a></dt>
+    <dd><p>The object</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Stargazer_SkyView__Process_" data-uid="Stargazer.SkyView._Process*"></a>
 
   <h3 id="Stargazer_SkyView__Process_System_Double_" data-uid="Stargazer.SkyView._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
-<p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SetProcess(bool)</a>.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationProcess</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>.</p>
-<p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
+  <div class="markdown level1 summary"><p>Controls the <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a> used by all objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1647,7 +2012,8 @@ private PackedScene MoonScene { get; set; }</code></pre>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>Not used (the value does not account for time taken for calculations during the frame).</p>
+</dd>
   </dl>
 
 
@@ -1665,10 +2031,10 @@ private PackedScene MoonScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_SkyView__Ready" data-uid="Stargazer.SkyView._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyView.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gathers references to child nodes and connects <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a>s to facilitate communication.</p>
+  <div class="markdown level1 summary"><p>Wires up communication between the different objects.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

@@ -5,8 +5,9 @@ items:
   id: Planets
   parent: Stargazer
   children:
-  - Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+  - Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IEquatorialCalculator)
   - Stargazer.Planets.PlanetScene
+  - Stargazer.Planets.planetTextures
   langs:
   - csharp
   - vb
@@ -16,8 +17,8 @@ items:
   type: Class
   source:
     id: Planets
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Planets_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Planets_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -354,6 +355,47 @@ items:
     arguments:
     - type: System.String
       value: res://Code/Planets.cs
+- uid: Stargazer.Planets.planetTextures
+  commentId: F:Stargazer.Planets.planetTextures
+  id: planetTextures
+  parent: Stargazer.Planets
+  langs:
+  - csharp
+  - vb
+  name: planetTextures
+  nameWithType: Planets.planetTextures
+  fullName: Stargazer.Planets.planetTextures
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Planets.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: planetTextures
+    path: ../Stargazer-Godot/Code/Planets.cs
+    startLine: 12
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private ResourcePreloader planetTextures
+    return:
+      type: Godot.ResourcePreloader
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private planetTextures As ResourcePreloader
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.Planets.PlanetScene
   commentId: P:Stargazer.Planets.PlanetScene
   id: PlanetScene
@@ -368,11 +410,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planets.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlanetScene
     path: ../Stargazer-Godot/Code/Planets.cs
-    startLine: 18
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -399,44 +441,44 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
-  commentId: M:Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
-  id: DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet})
+- uid: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IEquatorialCalculator)
+  commentId: M:Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IEquatorialCalculator)
+  id: DrawPlanets(System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet},DataLayer.Interfaces.IEquatorialCalculator)
   parent: Stargazer.Planets
   langs:
   - csharp
   - vb
-  name: DrawPlanets(IEnumerable<HorizontalPlanet>, IPlanetaryCalculator<HorizontalPlanet>)
-  nameWithType: Planets.DrawPlanets(IEnumerable<HorizontalPlanet>, IPlanetaryCalculator<HorizontalPlanet>)
-  fullName: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>, DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>)
+  name: DrawPlanets(IEnumerable<HorizontalPlanet>, IEquatorialCalculator)
+  nameWithType: Planets.DrawPlanets(IEnumerable<HorizontalPlanet>, IEquatorialCalculator)
+  fullName: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalPlanet>, DataLayer.Interfaces.IEquatorialCalculator)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Planets.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawPlanets
     path: ../Stargazer-Godot/Code/Planets.cs
-    startLine: 26
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Receives the data from <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref> to draw the planets.
   example: []
   syntax:
-    content: public void DrawPlanets(IEnumerable<HorizontalPlanet> planets, IPlanetaryCalculator<HorizontalPlanet> planetaryCalculator)
+    content: public void DrawPlanets(IEnumerable<HorizontalPlanet> planets, IEquatorialCalculator planetaryCalculator)
     parameters:
     - id: planets
       type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalPlanet}
       description: The list of planets to draw
     - id: planetaryCalculator
-      type: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+      type: DataLayer.Interfaces.IEquatorialCalculator
       description: The calculator used to determine position/phase.
-    content.vb: Public Sub DrawPlanets(planets As IEnumerable(Of HorizontalPlanet), planetaryCalculator As IPlanetaryCalculator(Of HorizontalPlanet))
+    content.vb: Public Sub DrawPlanets(planets As IEnumerable(Of HorizontalPlanet), planetaryCalculator As IEquatorialCalculator)
   overload: Stargazer.Planets.DrawPlanets*
-  nameWithType.vb: Planets.DrawPlanets(IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet))
-  fullName.vb: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet))
-  name.vb: DrawPlanets(IEnumerable(Of HorizontalPlanet), IPlanetaryCalculator(Of HorizontalPlanet))
+  nameWithType.vb: Planets.DrawPlanets(IEnumerable(Of HorizontalPlanet), IEquatorialCalculator)
+  fullName.vb: Stargazer.Planets.DrawPlanets(System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalPlanet), DataLayer.Interfaces.IEquatorialCalculator)
+  name.vb: DrawPlanets(IEnumerable(Of HorizontalPlanet), IEquatorialCalculator)
 references:
 - uid: Godot.Node3D
   commentId: T:Godot.Node3D
@@ -7273,6 +7315,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Godot.ResourcePreloader
+  commentId: T:Godot.ResourcePreloader
+  parent: Godot
+  isExternal: true
+  name: ResourcePreloader
+  nameWithType: ResourcePreloader
+  fullName: Godot.ResourcePreloader
 - uid: Stargazer.Planets.PlanetScene*
   commentId: Overload:Stargazer.Planets.PlanetScene
   href: Stargazer.Planets.html#Stargazer_Planets_PlanetScene
@@ -7295,7 +7344,7 @@ references:
   fullName: Stargazer.SkyView
 - uid: Stargazer.Planets.DrawPlanets*
   commentId: Overload:Stargazer.Planets.DrawPlanets
-  href: Stargazer.Planets.html#Stargazer_Planets_DrawPlanets_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_Interfaces_IPlanetaryCalculator_DataLayer_HorizontalObjects_HorizontalPlanet__
+  href: Stargazer.Planets.html#Stargazer_Planets_DrawPlanets_System_Collections_Generic_IEnumerable_DataLayer_HorizontalObjects_HorizontalPlanet__DataLayer_Interfaces_IEquatorialCalculator_
   name: DrawPlanets
   nameWithType: Planets.DrawPlanets
   fullName: Stargazer.Planets.DrawPlanets
@@ -7332,37 +7381,13 @@ references:
     name: HorizontalPlanet
     href: DataLayer.HorizontalObjects.HorizontalPlanet.html
   - name: )
-- uid: DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator{DataLayer.HorizontalObjects.HorizontalPlanet}
+- uid: DataLayer.Interfaces.IEquatorialCalculator
+  commentId: T:DataLayer.Interfaces.IEquatorialCalculator
   parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<HorizontalPlanet>
-  nameWithType: IPlanetaryCalculator<HorizontalPlanet>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<DataLayer.HorizontalObjects.HorizontalPlanet>
-  nameWithType.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of DataLayer.HorizontalObjects.HorizontalPlanet)
-  name.vb: IPlanetaryCalculator(Of HorizontalPlanet)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalPlanet
-    name: HorizontalPlanet
-    href: DataLayer.HorizontalObjects.HorizontalPlanet.html
-  - name: )
+  href: DataLayer.Interfaces.IEquatorialCalculator.html
+  name: IEquatorialCalculator
+  nameWithType: IEquatorialCalculator
+  fullName: DataLayer.Interfaces.IEquatorialCalculator
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -7428,31 +7453,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-  commentId: T:DataLayer.Interfaces.IPlanetaryCalculator`1
-  href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  name: IPlanetaryCalculator<T>
-  nameWithType: IPlanetaryCalculator<T>
-  fullName: DataLayer.Interfaces.IPlanetaryCalculator<T>
-  nameWithType.vb: IPlanetaryCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IPlanetaryCalculator(Of T)
-  name.vb: IPlanetaryCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IPlanetaryCalculator`1
-    name: IPlanetaryCalculator
-    href: DataLayer.Interfaces.IPlanetaryCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
   href: DataLayer.html

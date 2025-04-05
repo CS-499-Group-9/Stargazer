@@ -1,4 +1,5 @@
 using DataLayer;
+using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Threading.Tasks;
@@ -12,22 +13,16 @@ namespace Stargazer
     public partial class Startup : Control
     {
         // Just in case something changes, it's easy to find.
-        private StargazerRepositoryService<Star> repositoryService;
-        private PlayControl playControl;
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
+        private IEquatorialCalculator calculator;
         private string screenshotPath = "user://screenshot.jpeg";
 
         [Export] private PackedScene View2D;
 
-        [Export] private Control control;
+        [Export] private ControlContainer controlContainer;
         [Export] private SkyViewContainer skyViewContainer;
-
-        /// <summary>
-        /// A <see cref="Delegate"/> used to notify the viewport that new star data has been requested, calculated and is now ready to render.
-        /// </summary>
-        public event Func<CelestialDataPackage<Star>, Task> UserPositionUpdated;
-
+        [Export] private PlayControl playControl;
 
         /// <summary>
         /// Creates the repository service and stores in memory
@@ -35,24 +30,24 @@ namespace Stargazer
         /// </summary>
         public async override void _Ready()
         {
-
-            repositoryService = await InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
-
-            var controlContainer = GetNode<ControlContainer>(nameof(ControlContainer));
-            var skyViewContainer = GetNode<SkyViewContainer>(nameof(SkyViewContainer));
+            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
+            dataPackage = await repositoryService.InitializeDataPackage();
+            calculator = dataPackage.Calculator;
             skyView = skyViewContainer.SkyView;
-            playControl = GetNode<PlayControl>(nameof(PlayControl));
+            await skyView.InitializeCelestial(dataPackage);
 
+            // Set up subscribers to notifications.
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
-            controlContainer.EquatorLinesToggled = skyView.ToggleEquatorialGridlines;
+            controlContainer.MessierObjectsToggled = skyView.ToggleMessierObjects;
             controlContainer.ConstellationsToggled = skyView.ToggleConstellationLines;
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
             controlContainer.RequestScreenshot = TakeScreenshot;
 
-            UserPositionUpdated = skyView.UpdateUserPosition;
-
+            // Activate the Play Controller and notify the SkyView
+            var multiplier = playControl.Activate();
+            skyView.SetTimeMultiplier(multiplier);
         }
 
         /// <summary>
@@ -63,14 +58,12 @@ namespace Stargazer
         /// <param name="longitude"></param>
         /// <param name="dateTime"></param>
         /// <returns>A task that can be awaited until all subscribers have been notified of the request.</returns>
-        public async Task UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
+        public void UpdateUserPosition(double latitude, double longitude, DateTime dateTime)
         {
             // Uncomment the timers to make it advance.
 
-            var multiplier = playControl.Activate();
-            skyView.SetTimeMultiplier(multiplier);
-            dataPackage = await repositoryService.UpdateUserPosition(latitude, longitude, dateTime);
-            await UserPositionUpdated(dataPackage);
+            calculator.SetLocation(latitude, longitude);
+            calculator.SetTime(dateTime);
 
         }
 
@@ -88,6 +81,5 @@ namespace Stargazer
             GD.Print($"Screenshot saved to {screenshotPath}");
             
         }
-
     }
 }

@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: InjectionService
     path: ../DataLayer/InjectionService.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetRepositoryServiceAsync
     path: ../DataLayer/InjectionService.cs
@@ -70,18 +70,18 @@ items:
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: Used to asynchronously instantiate the repository service. This should be called in an <code>async</code> method using the <code>await</code> keyword.
+  summary: Used to instantiate the repository service.
   example: []
   syntax:
-    content: public static Task<StargazerRepositoryService<T>> GetRepositoryServiceAsync(string baseDirectoryPath)
+    content: public static IRepositoryService<T> GetRepositoryServiceAsync(string baseDirectoryPath)
     parameters:
     - id: baseDirectoryPath
       type: System.String
       description: The base path of the executing application. (Used to find the location of the repositories in DataLayer/Repositories)
     return:
-      type: System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService{{T}}}
+      type: DataLayer.Interfaces.IRepositoryService{{T}}
       description: A new <code>StargazerRepositoryService</code> instance.
-    content.vb: Public Shared Function GetRepositoryServiceAsync(baseDirectoryPath As String) As Task(Of StargazerRepositoryService(Of T))
+    content.vb: Public Shared Function GetRepositoryServiceAsync(baseDirectoryPath As String) As IRepositoryService(Of T)
   overload: DataLayer.InjectionService`1.GetRepositoryServiceAsync*
   exceptions:
   - type: System.IO.DirectoryNotFoundException
@@ -360,109 +360,77 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService{{T}}}
-  commentId: T:System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService{`0}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<StargazerRepositoryService<T>>
-  nameWithType: Task<StargazerRepositoryService<T>>
-  fullName: System.Threading.Tasks.Task<DataLayer.StargazerRepositoryService<T>>
-  nameWithType.vb: Task(Of StargazerRepositoryService(Of T))
-  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.StargazerRepositoryService(Of T))
-  name.vb: Task(Of StargazerRepositoryService(Of T))
+- uid: DataLayer.Interfaces.IRepositoryService{{T}}
+  commentId: T:DataLayer.Interfaces.IRepositoryService{`0}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IRepositoryService`1
+  href: DataLayer.Interfaces.IRepositoryService-1.html
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: <
   - name: T
   - name: '>'
-  - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
+- uid: DataLayer.Interfaces.IRepositoryService`1
+  commentId: T:DataLayer.Interfaces.IRepositoryService`1
+  href: DataLayer.Interfaces.IRepositoryService-1.html
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: <
-  - name: TResult
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
   - name: (
   - name: Of
   - name: " "
-  - name: TResult
+  - name: T
   - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
   spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
   - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
   spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
   - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html

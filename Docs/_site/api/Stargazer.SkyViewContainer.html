@@ -1020,6 +1020,9 @@ public class SkyViewContainer : SubViewportContainer, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
     </div>
     <div>
+      <span class="xref">Node._Ready()</span>
+    </div>
+    <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
     </div>
     <div>
@@ -1598,7 +1601,7 @@ public class SkyViewContainer : SubViewportContainer, IDisposable</code></pre>
 
   <h3 id="Stargazer_SkyViewContainer_SkyView" data-uid="Stargazer.SkyViewContainer.SkyView">
   SkyView
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyViewContainer.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyViewContainer.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves a reference to the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
@@ -1606,7 +1609,8 @@ public class SkyViewContainer : SubViewportContainer, IDisposable</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SkyView SkyView { get; private set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+public SkyView SkyView { get; set; }</code></pre>
   </div>
 
 
@@ -1618,40 +1622,6 @@ public class SkyViewContainer : SubViewportContainer, IDisposable</code></pre>
     <dt><a class="xref" href="Stargazer.SkyView.html">SkyView</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="Stargazer_SkyViewContainer__Ready_" data-uid="Stargazer.SkyViewContainer._Ready*"></a>
-
-  <h3 id="Stargazer_SkyViewContainer__Ready" data-uid="Stargazer.SkyViewContainer._Ready">
-  _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/SkyViewContainer.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
-<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
-<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
-<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Ready()</code></pre>
-  </div>
-
-
-
-
-
 
 
 

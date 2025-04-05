@@ -5,10 +5,12 @@ items:
   id: HoverLabel
   parent: Stargazer
   children:
-  - Stargazer.HoverLabel._Input(Godot.InputEvent)
+  - Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)
   - Stargazer.HoverLabel._Process(System.Double)
   - Stargazer.HoverLabel._Ready
   - Stargazer.HoverLabel.globalVars
+  - Stargazer.HoverLabel.hoveredBody
+  - Stargazer.HoverLabel.shift
   langs:
   - csharp
   - vb
@@ -350,6 +352,7 @@ items:
   - Godot.Node._EnterTree
   - Godot.Node._ExitTree
   - Godot.Node._GetConfigurationWarnings
+  - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
@@ -559,11 +562,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: globalVars
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 11
+    startLine: 9
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -572,6 +575,60 @@ items:
     return:
       type: Stargazer.Globals
     content.vb: Private globalVars As Globals
+- uid: Stargazer.HoverLabel.shift
+  commentId: F:Stargazer.HoverLabel.shift
+  id: shift
+  parent: Stargazer.HoverLabel
+  langs:
+  - csharp
+  - vb
+  name: shift
+  nameWithType: HoverLabel.shift
+  fullName: Stargazer.HoverLabel.shift
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/HoverLabel.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: shift
+    path: ../Stargazer-Godot/Code/HoverLabel.cs
+    startLine: 10
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Vector2 shift
+    return:
+      type: Godot.Vector2
+    content.vb: Private shift As Vector2
+- uid: Stargazer.HoverLabel.hoveredBody
+  commentId: F:Stargazer.HoverLabel.hoveredBody
+  id: hoveredBody
+  parent: Stargazer.HoverLabel
+  langs:
+  - csharp
+  - vb
+  name: hoveredBody
+  nameWithType: HoverLabel.hoveredBody
+  fullName: Stargazer.HoverLabel.hoveredBody
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/HoverLabel.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: hoveredBody
+    path: ../Stargazer-Godot/Code/HoverLabel.cs
+    startLine: 11
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IHoverable hoveredBody
+    return:
+      type: Stargazer.IHoverable
+    content.vb: Private hoveredBody As IHoverable
 - uid: Stargazer.HoverLabel._Ready
   commentId: M:Stargazer.HoverLabel._Ready
   id: _Ready
@@ -586,11 +643,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -615,11 +672,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -637,39 +694,38 @@ items:
   nameWithType.vb: HoverLabel._Process(Double)
   fullName.vb: Stargazer.HoverLabel._Process(Double)
   name.vb: _Process(Double)
-- uid: Stargazer.HoverLabel._Input(Godot.InputEvent)
-  commentId: M:Stargazer.HoverLabel._Input(Godot.InputEvent)
-  id: _Input(Godot.InputEvent)
+- uid: Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)
+  commentId: M:Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)
+  id: HoverableChangeHandler(Stargazer.IHoverable)
   parent: Stargazer.HoverLabel
   langs:
   - csharp
   - vb
-  name: _Input(InputEvent)
-  nameWithType: HoverLabel._Input(InputEvent)
-  fullName: Stargazer.HoverLabel._Input(Godot.InputEvent)
+  name: HoverableChangeHandler(IHoverable)
+  nameWithType: HoverLabel.HoverableChangeHandler(IHoverable)
+  fullName: Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Input
+    id: HoverableChangeHandler
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 39
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Detects mouse motion and places the label next to the cursor.
+  summary: Receives notification of the mouse hovering over a new object.
   example: []
   syntax:
-    content: public override void _Input(InputEvent @event)
+    content: public void HoverableChangeHandler(IHoverable hoverable)
     parameters:
-    - id: event
-      type: Godot.InputEvent
-      description: ''
-    content.vb: Public Overrides Sub _Input([event] As InputEvent)
-  overridden: Godot.Node._Input(Godot.InputEvent)
-  overload: Stargazer.HoverLabel._Input*
+    - id: hoverable
+      type: Stargazer.IHoverable
+      description: The object the mouse is hovering over.
+    content.vb: Public Sub HoverableChangeHandler(hoverable As IHoverable)
+  overload: Stargazer.HoverLabel.HoverableChangeHandler*
 references:
 - uid: Stargazer.IHoverable
   commentId: T:Stargazer.IHoverable
@@ -7610,6 +7666,31 @@ references:
     isExternal: true
   - name: (
   - name: )
+- uid: Godot.Node._Input(Godot.InputEvent)
+  commentId: M:Godot.Node._Input(Godot.InputEvent)
+  parent: Godot.Node
+  isExternal: true
+  name: _Input(InputEvent)
+  nameWithType: Node._Input(InputEvent)
+  fullName: Godot.Node._Input(Godot.InputEvent)
+  spec.csharp:
+  - uid: Godot.Node._Input(Godot.InputEvent)
+    name: _Input
+    isExternal: true
+  - name: (
+  - uid: Godot.InputEvent
+    name: InputEvent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Input(Godot.InputEvent)
+    name: _Input
+    isExternal: true
+  - name: (
+  - uid: Godot.InputEvent
+    name: InputEvent
+    isExternal: true
+  - name: )
 - uid: Godot.Node._PhysicsProcess(System.Double)
   commentId: M:Godot.Node._PhysicsProcess(System.Double)
   parent: Godot.Node
@@ -12414,6 +12495,13 @@ references:
   name: Globals
   nameWithType: Globals
   fullName: Stargazer.Globals
+- uid: Godot.Vector2
+  commentId: T:Godot.Vector2
+  parent: Godot
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Godot.Vector2
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -12487,41 +12575,9 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
-- uid: Godot.Node._Input(Godot.InputEvent)
-  commentId: M:Godot.Node._Input(Godot.InputEvent)
-  parent: Godot.Node
-  isExternal: true
-  name: _Input(InputEvent)
-  nameWithType: Node._Input(InputEvent)
-  fullName: Godot.Node._Input(Godot.InputEvent)
-  spec.csharp:
-  - uid: Godot.Node._Input(Godot.InputEvent)
-    name: _Input
-    isExternal: true
-  - name: (
-  - uid: Godot.InputEvent
-    name: InputEvent
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Input(Godot.InputEvent)
-    name: _Input
-    isExternal: true
-  - name: (
-  - uid: Godot.InputEvent
-    name: InputEvent
-    isExternal: true
-  - name: )
-- uid: Stargazer.HoverLabel._Input*
-  commentId: Overload:Stargazer.HoverLabel._Input
-  href: Stargazer.HoverLabel.html#Stargazer_HoverLabel__Input_Godot_InputEvent_
-  name: _Input
-  nameWithType: HoverLabel._Input
-  fullName: Stargazer.HoverLabel._Input
-- uid: Godot.InputEvent
-  commentId: T:Godot.InputEvent
-  parent: Godot
-  isExternal: true
-  name: InputEvent
-  nameWithType: InputEvent
-  fullName: Godot.InputEvent
+- uid: Stargazer.HoverLabel.HoverableChangeHandler*
+  commentId: Overload:Stargazer.HoverLabel.HoverableChangeHandler
+  href: Stargazer.HoverLabel.html#Stargazer_HoverLabel_HoverableChangeHandler_Stargazer_IHoverable_
+  name: HoverableChangeHandler
+  nameWithType: HoverLabel.HoverableChangeHandler
+  fullName: Stargazer.HoverLabel.HoverableChangeHandler

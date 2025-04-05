@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/Constellation.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationId
     path: ../DataLayer/EquatorialObjects/Constellation.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLines
     path: ../DataLayer/EquatorialObjects/Constellation.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationName
     path: ../DataLayer/EquatorialObjects/Constellation.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/EquatorialObjects/Constellation.cs

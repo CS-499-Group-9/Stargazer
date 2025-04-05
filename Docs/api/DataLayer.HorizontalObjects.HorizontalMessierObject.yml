@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalMessierObject
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -132,7 +132,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -225,7 +225,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -256,7 +256,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs

@@ -486,6 +486,9 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
+    </div>
+    <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
     </div>
     <div>
@@ -1063,7 +1066,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_camera" data-uid="Stargazer.ASTRALPLANEAlbedo.camera">
   camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1093,7 +1096,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_material" data-uid="Stargazer.ASTRALPLANEAlbedo.material">
   material
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1123,7 +1126,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo_mesh" data-uid="Stargazer.ASTRALPLANEAlbedo.mesh">
   mesh
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1154,24 +1157,24 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 </h2>
 
 
-  <a id="Stargazer_ASTRALPLANEAlbedo__Process_" data-uid="Stargazer.ASTRALPLANEAlbedo._Process*"></a>
+  <a id="Stargazer_ASTRALPLANEAlbedo_HandleCameraRotationChanged_" data-uid="Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged*"></a>
 
-  <h3 id="Stargazer_ASTRALPLANEAlbedo__Process_System_Double_" data-uid="Stargazer.ASTRALPLANEAlbedo._Process(System.Double)">
-  _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ASTRALPLANEAlbedo_HandleCameraRotationChanged_Godot_Camera3D_" data-uid="Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged(Godot.Camera3D)">
+  HandleCameraRotationChanged(Camera3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Uses the <span class="xref">Godot.Camera3D</span><code>.Rotation</code> to alter make the floor transparent as the user pans down.</p>
+  <div class="markdown level1 summary"><p>Subscribes to the camera OnRotation notification.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
+    <pre><code class="lang-csharp hljs">public void HandleCameraRotationChanged(Camera3D camera)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dt><code>camera</code> <span class="xref">Camera3D</span></dt>
     <dd></dd>
   </dl>
 
@@ -1190,7 +1193,7 @@ public class ASTRALPLANEAlbedo : Node3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_ASTRALPLANEAlbedo__Ready" data-uid="Stargazer.ASTRALPLANEAlbedo._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets references to the <span class="xref">Godot.Camera3D</span> and <span class="xref">Godot.StandardMaterial3D</span> of the <span class="xref">Godot.MeshInstance3D</span></p>

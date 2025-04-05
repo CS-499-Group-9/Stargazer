@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/update-documentation/apiSpec/new?filename=DataLayer_Interfaces_IStarRepository.md&amp;value=---%0Auid%3A%20DataLayer.Interfaces.IStarRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/state-machines/apiSpec/new?filename=DataLayer_Interfaces_IStarRepository.md&amp;value=---%0Auid%3A%20DataLayer.Interfaces.IStarRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_Interfaces_IStarRepository" data-uid="DataLayer.Interfaces.IStarRepository" class="text-break">
-Interface IStarRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Interfaces/IStarRepository.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Interface IStarRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Interfaces/IStarRepository.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -121,65 +121,26 @@ Interface IStarRepository  <a class="header-action link-secondary" title="View s
 </h2>
 
 
-  <a id="DataLayer_Interfaces_IStarRepository_GetAllStarsAsync_" data-uid="DataLayer.Interfaces.IStarRepository.GetAllStarsAsync*"></a>
+  <a id="DataLayer_Interfaces_IStarRepository_GetAllStars_" data-uid="DataLayer.Interfaces.IStarRepository.GetAllStars*"></a>
 
-  <h3 id="DataLayer_Interfaces_IStarRepository_GetAllStarsAsync" data-uid="DataLayer.Interfaces.IStarRepository.GetAllStarsAsync">
-  GetAllStarsAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Interfaces/IStarRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DataLayer_Interfaces_IStarRepository_GetAllStars" data-uid="DataLayer.Interfaces.IStarRepository.GetAllStars">
+  GetAllStars()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Interfaces/IStarRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets all stars that are brighter than a certain magnitude.</p>
+  <div class="markdown level1 summary"><p>Gets all stars from the repository. (Omit the sun, so that it can be created separately).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;EquatorialStar&gt;&gt; GetAllStarsAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;EquatorialStar&gt; GetAllStars()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialStar.html">EquatorialStar</a>&gt;&gt;</dt>
-    <dd><p>A running task that can be awaited to obtain a list of stars</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_" data-uid="DataLayer.Interfaces.IStarRepository.GetStarByHipAsync*"></a>
-
-  <h3 id="DataLayer_Interfaces_IStarRepository_GetStarByHipAsync_System_Int32_" data-uid="DataLayer.Interfaces.IStarRepository.GetStarByHipAsync(System.Int32)">
-  GetStarByHipAsync(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Interfaces/IStarRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets a single star from the repository</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;EquatorialStar?&gt; GetStarByHipAsync(int hipparcosId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>hipparcosId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The Hipparcos ID of the star to find</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialStar.html">EquatorialStar</a>&gt;</dt>
-    <dd><p>Null if no star is found</p>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DataLayer.EquatorialObjects.EquatorialStar.html">EquatorialStar</a>&gt;</dt>
+    <dd><p>A <code>yieldable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> that can is lazily loaded during read.</p>
 </dd>
   </dl>
 
@@ -197,7 +158,7 @@ Interface IStarRepository  <a class="header-action link-secondary" title="View s
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/DataLayer/Interfaces/IStarRepository.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Interfaces/IStarRepository.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

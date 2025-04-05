@@ -13,9 +13,21 @@ namespace Stargazer
     /// The parent object for all items in the viewport.
     /// Responsible for relaying notifications from senders throughout the program into the view port.
     /// </summary>
-    public partial class SkyView : Node3D, IUserUpdateReceiver
+    public partial class SkyView : Node3D
     {
-        [Export] PackedScene MoonScene { get; set; }
+        [Export] private PackedScene MoonScene;
+        [Export] private PackedScene SunScene;
+        [Export] private Spawner StarSpawner;
+        [Export] private MessierSpawner MessierSpawner;
+        [Export] private Planets PlanetSpawner;
+        [Export] private Constellations constellationNode;
+        [Export] private HoverLabel HoverLabel;
+        [Export] private AzimuthGridlines AzimuthGridlines;
+        [Export] private GridLabel GridLabel;
+        [Export] private CompassNeedle CompassNeedle;
+        [Export] public MainCamera CameraStateNotifier;
+        [Export] private ASTRALPLANEAlbedo AstralPlane;
+        [Export] private Label dateLabel;
         /// <summary>
         /// Relays the user request to toggle the constellations lines down to the child node that makes the change
         /// </summary>
@@ -33,94 +45,87 @@ namespace Stargazer
         /// Relays the user request to toggle the visibility of the Messier Objects to the node that makes the change
         /// </summary>
         public Action<bool> ToggleMessierObjects;
-        public ICameraStateNotifier cameraStateNotifier {  get; set; }
-        
-
-        [Export] private Spawner spawner;
-        [Export] private Spawner2D spawner2d;
-        [Export] private Constellations constellationNode;
-        [Export] private Constellations2D constellation2dNode;
-
-       
-
+   
         private Label averageFrameLabel;
         private Label instantaneousFrameLabel;
-        private Label dateLable;
+        private Label localSiderealLabel;
         private double averageFrameTime;
 
         private Planets planetNode;
         private Moon moon;
-        private IEquatorialCalculator starConverter;
+        private Sun sun;
+        private IEquatorialCalculator calculator;
         
         private PlaySpeed playSpeed;
         private ulong previousTicks;
 
         /// <summary>
-        /// Gathers references to child nodes and connects <see cref="Delegate"/>s to facilitate communication.
+        /// Wires up communication between the different objects.
         /// </summary>
         public override void _Ready()
         {
-            base._Ready();
-            //spawner = GetNode<Spawner>("Stars");
-            //constellationNode = GetNode<Constellations>("Constellations");
-            cameraStateNotifier = GetNode<MainCamera>("Camera3D");
-            var azimuthGridlines = GetNode<AzimuthGridlines>("Dome/Azimuth Gridlines");
-            var gridLabel = GetNode<GridLabel>(nameof(GridLabel));
-            var needle = GetNode<CompassNeedle>("Compass/Needle");
-            
-            
-            cameraStateNotifier.OnRotation += needle.RotationHandler;
-
-
-            dateLable = GetNode<Label>("TimeLabel");
-            
             instantaneousFrameLabel = GetNode<Label>("InstantaneousFrameLabel");
             averageFrameLabel = GetNode<Label>("AverageFrameLabel");
+            localSiderealLabel = GetNode<Label>("LocalSiderealLabel");
+
+            // Subscribe all camera notifications
+            CameraStateNotifier.OnRotation += CompassNeedle.RotationHandler;
+            CameraStateNotifier.OnRotation += GridLabel.HandleCameraRotationChanged;
+            CameraStateNotifier.OnRotation += AstralPlane.HandleCameraRotationChanged;
+            CameraStateNotifier.OnZoomStateChanged += AzimuthGridlines.HandleZoomStateChanged;
+            CameraStateNotifier.OnZoomStateChanged += GridLabel.HandleZoomStateChanged;
+            CameraStateNotifier.OnHoverableChange += HoverLabel.HoverableChangeHandler;
+
+            // Notify objects of the cameras initial position.
+            CameraStateNotifier.OnRotation(CameraStateNotifier);
             
+            // Subscribe all toggle notifications
             ToggleConstellationLines = constellationNode.ToggleConstellationLines;
             ToggleConstellationLabels = constellationNode.ToggleConstellationLabels;
-            ToggleGridlines += azimuthGridlines.ToggleGridlines;
-            ToggleEquatorialGridlines += azimuthGridlines.ToggleEquatorialGridlines;
-            
-            cameraStateNotifier.OnZoomStateChanged += azimuthGridlines.HandleZoomStateChanged;
-            cameraStateNotifier.OnZoomStateChanged += gridLabel.HandleZoomStateChanged;
-            cameraStateNotifier.OnRotation += gridLabel.HandleCameraRotationChanged;
-            
-            ToggleGridlines += gridLabel.ToggleGridlines;
-            
-            planetNode = GetNode<Planets>("Planets");
-
-
-
-            // TODO: Get a reference to the Messier Objects parent node (should be a child of this node)
-            // TODO: Get a reference to the Moon object parent node (should be a child of this node) 
+            ToggleGridlines += AzimuthGridlines.ToggleGridlines;
+            ToggleEquatorialGridlines += AzimuthGridlines.ToggleEquatorialGridlines;
+            ToggleMessierObjects += MessierSpawner.ToggleMessierObjects;
+            ToggleGridlines += GridLabel.ToggleGridlines;            
         }
 
+        /// <summary>
+        /// Controls the <see cref="IEquatorialCalculator"/> used by all objects.
+        /// </summary>
+        /// <param name="delta">Not used (the value does not account for time taken for calculations during the frame).</param>
         public override void _Process(double delta)
         {
             instantaneousFrameLabel.Text = $"Instantaneous: {delta.ToString()}";
             averageFrameTime += delta;
             averageFrameTime /= 2;
             averageFrameLabel.Text = $"Average: {averageFrameTime.ToString()}";
-           
+            localSiderealLabel.Text = calculator?.LST.ToString() ?? "Local Sidereal Time";
+
             int timeMultiplier = playSpeed?.TotalSeconds ?? 1;
+            // Get the total number of seconds since the simulation has started.
             var totalTicks = Time.GetTicksMsec();
+            // Get the total number of seconds that have elapsed since the last iteration
             double secSinceLast = (totalTicks - previousTicks)/1000.0;
+
             if (playSpeed?.IsSyncronized ?? false) 
             {
+                // Update the calcuator using current time
                 var timeNow = DateTime.UtcNow;
-                starConverter?.SetTime(timeNow);
+                calculator?.SetTime(timeNow);
             }
             else 
             {
-                starConverter?.IncrementTimeBy(secSinceLast * timeMultiplier);
+                // Update the calculator using the seconds elapsed since the last iteration
+                calculator?.IncrementTimeBy(secSinceLast * timeMultiplier);
             }
             
             previousTicks = totalTicks;
-            dateLable.Text = $"{starConverter?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
-            base._Process(delta);
+            dateLabel.Text = $"{calculator?.CurrentTime.ToLocalTime().ToString() ?? ""} Local";
         }
 
+        /// <summary>
+        /// Stores the <see cref="PlaySpeed"/> state object
+        /// </summary>
+        /// <param name="playSpeed">The object</param>
         public void SetTimeMultiplier(PlaySpeed playSpeed)
         {
             this.playSpeed = playSpeed;
@@ -132,18 +137,28 @@ namespace Stargazer
         /// </summary>
         /// <param name="dataPackage">The <see cref="CelestialDataPackage{Star}"/></param>
         /// <returns><see cref="Task"/> that can be awaited.</returns>
-        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+        public async Task InitializeCelestial(CelestialDataPackage<Star> dataPackage)
         {
-            starConverter = dataPackage.Calculator;
-            dateLable.Text = starConverter.CurrentTime.ToString();
-            await spawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar,starConverter);
-            await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, spawner.SpawnStar);
-            planetNode.DrawPlanets(dataPackage.Planets, starConverter);
-            moon?.Free();
+            calculator = dataPackage.Calculator;
+            AzimuthGridlines.SetCalculator(calculator);
+            dateLabel.Text = calculator.CurrentTime.ToString();
+         
+            // Draw all the objects
+            await StarSpawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar,calculator);
+            await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, StarSpawner.SpawnStar);
+            await MessierSpawner.DrawMessierObjects(dataPackage.MessierObjects, calculator);
+            
+            PlanetSpawner.DrawPlanets(dataPackage.Planets, calculator);
+            
             moon = MoonScene.Instantiate<Moon>();
-            moon.FromHorizontal(dataPackage.Moon, starConverter);
-            previousTicks = Time.GetTicksMsec();
+            moon.FromHorizontal(dataPackage.Moon, calculator);
             AddChild(moon);
+            
+            sun = SunScene.Instantiate<Sun>();
+            sun.FromHorizontal(dataPackage.Sun, calculator);
+            AddChild(sun);
+
+            previousTicks = Time.GetTicksMsec();
         }
     }
 }

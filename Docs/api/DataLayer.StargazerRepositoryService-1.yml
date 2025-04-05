@@ -5,19 +5,13 @@ items:
   id: StargazerRepositoryService`1
   parent: DataLayer
   children:
-  - DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
-  - DataLayer.StargazerRepositoryService`1.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject})
-  - DataLayer.StargazerRepositoryService`1.CalculateStars(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
-  - DataLayer.StargazerRepositoryService`1.ConstellationStars
-  - DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  - DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
-  - DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)
-  - DataLayer.StargazerRepositoryService`1.Value
-  - DataLayer.StargazerRepositoryService`1.constellations
-  - DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
-  - DataLayer.StargazerRepositoryService`1.equatorialStars
-  - DataLayer.StargazerRepositoryService`1.horizontalMessierObjects
-  - DataLayer.StargazerRepositoryService`1.horizontalStars
+  - DataLayer.StargazerRepositoryService`1.#ctor(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
+  - DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  - DataLayer.StargazerRepositoryService`1.CalculateStars
+  - DataLayer.StargazerRepositoryService`1.InitializeDataPackage
+  - DataLayer.StargazerRepositoryService`1.constellationRepository
+  - DataLayer.StargazerRepositoryService`1.messierRepository
+  - DataLayer.StargazerRepositoryService`1.starRepository
   langs:
   - csharp
   - vb
@@ -28,26 +22,28 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StargazerRepositoryService
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer
   summary: Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
   example: []
   syntax:
-    content: public class StargazerRepositoryService<T>
+    content: 'public class StargazerRepositoryService<T> : IRepositoryService<T>'
     typeParameters:
     - id: T
       description: >-
         The class type of the star to be drawn by the front end. 
             This is needed for the internal logic of the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>
-    content.vb: Public Class StargazerRepositoryService(Of T)
+    content.vb: Public Class StargazerRepositoryService(Of T) Implements IRepositoryService(Of T)
   inheritance:
   - System.Object
+  implements:
+  - DataLayer.Interfaces.IRepositoryService{{T}}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -59,472 +55,232 @@ items:
   nameWithType.vb: StargazerRepositoryService(Of T)
   fullName.vb: DataLayer.StargazerRepositoryService(Of T)
   name.vb: StargazerRepositoryService(Of T)
-- uid: DataLayer.StargazerRepositoryService`1.Value
-  commentId: F:DataLayer.StargazerRepositoryService`1.Value
-  id: Value
+- uid: DataLayer.StargazerRepositoryService`1.starRepository
+  commentId: F:DataLayer.StargazerRepositoryService`1.starRepository
+  id: starRepository
   parent: DataLayer.StargazerRepositoryService`1
   langs:
   - csharp
   - vb
-  name: Value
-  nameWithType: StargazerRepositoryService<T>.Value
-  fullName: DataLayer.StargazerRepositoryService<T>.Value
+  name: starRepository
+  nameWithType: StargazerRepositoryService<T>.starRepository
+  fullName: DataLayer.StargazerRepositoryService<T>.starRepository
   type: Field
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Value
+    id: starRepository
+    path: ../DataLayer/StargazerRepositoryService.cs
+    startLine: 18
+  assemblies:
+  - DataLayer
+  namespace: DataLayer
+  syntax:
+    content: private readonly IStarRepository starRepository
+    return:
+      type: DataLayer.Interfaces.IStarRepository
+    content.vb: Private ReadOnly starRepository As IStarRepository
+  nameWithType.vb: StargazerRepositoryService(Of T).starRepository
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).starRepository
+- uid: DataLayer.StargazerRepositoryService`1.messierRepository
+  commentId: F:DataLayer.StargazerRepositoryService`1.messierRepository
+  id: messierRepository
+  parent: DataLayer.StargazerRepositoryService`1
+  langs:
+  - csharp
+  - vb
+  name: messierRepository
+  nameWithType: StargazerRepositoryService<T>.messierRepository
+  fullName: DataLayer.StargazerRepositoryService<T>.messierRepository
+  type: Field
+  source:
+    remote:
+      path: DataLayer/StargazerRepositoryService.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: messierRepository
+    path: ../DataLayer/StargazerRepositoryService.cs
+    startLine: 19
+  assemblies:
+  - DataLayer
+  namespace: DataLayer
+  syntax:
+    content: private readonly IMessierRepository messierRepository
+    return:
+      type: DataLayer.Interfaces.IMessierRepository
+    content.vb: Private ReadOnly messierRepository As IMessierRepository
+  nameWithType.vb: StargazerRepositoryService(Of T).messierRepository
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).messierRepository
+- uid: DataLayer.StargazerRepositoryService`1.constellationRepository
+  commentId: F:DataLayer.StargazerRepositoryService`1.constellationRepository
+  id: constellationRepository
+  parent: DataLayer.StargazerRepositoryService`1
+  langs:
+  - csharp
+  - vb
+  name: constellationRepository
+  nameWithType: StargazerRepositoryService<T>.constellationRepository
+  fullName: DataLayer.StargazerRepositoryService<T>.constellationRepository
+  type: Field
+  source:
+    remote:
+      path: DataLayer/StargazerRepositoryService.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: constellationRepository
     path: ../DataLayer/StargazerRepositoryService.cs
     startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: Used to filter the maximum magnitude of stars retrieved from the Yale Star repository
-  example: []
   syntax:
-    content: private const string Value = "Messier Complete"
+    content: private readonly IConstellationRepository constellationRepository
     return:
-      type: System.String
-    content.vb: Private Const Value As String = "Messier Complete"
-  nameWithType.vb: StargazerRepositoryService(Of T).Value
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).Value
-- uid: DataLayer.StargazerRepositoryService`1.equatorialStars
-  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialStars
-  id: equatorialStars
+      type: DataLayer.Interfaces.IConstellationRepository
+    content.vb: Private ReadOnly constellationRepository As IConstellationRepository
+  nameWithType.vb: StargazerRepositoryService(Of T).constellationRepository
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellationRepository
+- uid: DataLayer.StargazerRepositoryService`1.#ctor(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
+  commentId: M:DataLayer.StargazerRepositoryService`1.#ctor(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
+  id: '#ctor(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)'
   parent: DataLayer.StargazerRepositoryService`1
   langs:
   - csharp
   - vb
-  name: equatorialStars
-  nameWithType: StargazerRepositoryService<T>.equatorialStars
-  fullName: DataLayer.StargazerRepositoryService<T>.equatorialStars
-  type: Field
+  name: StargazerRepositoryService(IStarRepository, IConstellationRepository, IMessierRepository)
+  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService(IStarRepository, IConstellationRepository, IMessierRepository)
+  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
+  type: Constructor
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: equatorialStars
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 25
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Immutable in-memory collection of all stars that were retrieved during initialization (excluding stars in constellations)
-  example: []
-  syntax:
-    content: private readonly IEnumerable<EquatorialStar> equatorialStars
-    return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
-    content.vb: Private ReadOnly equatorialStars As IEnumerable(Of EquatorialStar)
-  nameWithType.vb: StargazerRepositoryService(Of T).equatorialStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialStars
-- uid: DataLayer.StargazerRepositoryService`1.constellations
-  commentId: F:DataLayer.StargazerRepositoryService`1.constellations
-  id: constellations
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: constellations
-  nameWithType: StargazerRepositoryService<T>.constellations
-  fullName: DataLayer.StargazerRepositoryService<T>.constellations
-  type: Field
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: constellations
+    id: .ctor
     path: ../DataLayer/StargazerRepositoryService.cs
     startLine: 29
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: Immutable collection of all constellations retrieved during initialization.
+  summary: Instantiates a new stargazer repository service.
   example: []
   syntax:
-    content: private readonly IEnumerable<Constellation> constellations
-    return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
-    content.vb: Private ReadOnly constellations As IEnumerable(Of Constellation)
-  nameWithType.vb: StargazerRepositoryService(Of T).constellations
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).constellations
-- uid: DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
-  commentId: F:DataLayer.StargazerRepositoryService`1.equatorialMessierObjects
-  id: equatorialMessierObjects
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: equatorialMessierObjects
-  nameWithType: StargazerRepositoryService<T>.equatorialMessierObjects
-  fullName: DataLayer.StargazerRepositoryService<T>.equatorialMessierObjects
-  type: Field
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: equatorialMessierObjects
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 34
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Immutable collection of all Messier Deep Space Objects retrieved during initialization.
-  example: []
-  syntax:
-    content: private readonly IEnumerable<EquatorialMessierObject> equatorialMessierObjects
-    return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
-    content.vb: Private ReadOnly equatorialMessierObjects As IEnumerable(Of EquatorialMessierObject)
-  nameWithType.vb: StargazerRepositoryService(Of T).equatorialMessierObjects
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).equatorialMessierObjects
-- uid: DataLayer.StargazerRepositoryService`1.horizontalStars
-  commentId: F:DataLayer.StargazerRepositoryService`1.horizontalStars
-  id: horizontalStars
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: horizontalStars
-  nameWithType: StargazerRepositoryService<T>.horizontalStars
-  fullName: DataLayer.StargazerRepositoryService<T>.horizontalStars
-  type: Field
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: horizontalStars
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 39
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Producer-consumer collection of <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>s passed to the graphical layer
-  example: []
-  syntax:
-    content: private IEnumerable<HorizontalStar> horizontalStars
-    return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
-    content.vb: Private horizontalStars As IEnumerable(Of HorizontalStar)
-  nameWithType.vb: StargazerRepositoryService(Of T).horizontalStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).horizontalStars
-- uid: DataLayer.StargazerRepositoryService`1.horizontalMessierObjects
-  commentId: F:DataLayer.StargazerRepositoryService`1.horizontalMessierObjects
-  id: horizontalMessierObjects
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: horizontalMessierObjects
-  nameWithType: StargazerRepositoryService<T>.horizontalMessierObjects
-  fullName: DataLayer.StargazerRepositoryService<T>.horizontalMessierObjects
-  type: Field
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: horizontalMessierObjects
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 43
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Producer-consumer collection of converted <xref href="DataLayer.HorizontalObjects.HorizontalMessierObject" data-throw-if-not-resolved="false"></xref>s passed to the graphical layer
-  example: []
-  syntax:
-    content: private IEnumerable<HorizontalMessierObject> horizontalMessierObjects
-    return:
-      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
-    content.vb: Private horizontalMessierObjects As IEnumerable(Of HorizontalMessierObject)
-  nameWithType.vb: StargazerRepositoryService(Of T).horizontalMessierObjects
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).horizontalMessierObjects
-- uid: DataLayer.StargazerRepositoryService`1.ConstellationStars
-  commentId: P:DataLayer.StargazerRepositoryService`1.ConstellationStars
-  id: ConstellationStars
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: ConstellationStars
-  nameWithType: StargazerRepositoryService<T>.ConstellationStars
-  fullName: DataLayer.StargazerRepositoryService<T>.ConstellationStars
-  type: Property
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: ConstellationStars
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 48
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Dictionary of <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>s contained in constellations
-  example: []
-  syntax:
-    content: private ConcurrentDictionary<int, HorizontalStar> ConstellationStars { get; }
-    parameters: []
-    return:
-      type: System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar}
-    content.vb: Private ReadOnly Property ConstellationStars As ConcurrentDictionary(Of Integer, HorizontalStar)
-  overload: DataLayer.StargazerRepositoryService`1.ConstellationStars*
-  nameWithType.vb: StargazerRepositoryService(Of T).ConstellationStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).ConstellationStars
-- uid: DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
-  commentId: M:DataLayer.StargazerRepositoryService`1.#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})
-  id: '#ctor(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject})'
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IEnumerable<EquatorialMessierObject>)
-  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService(IEnumerable<EquatorialStar>, IEnumerable<Constellation>, IEnumerable<EquatorialMessierObject>)
-  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>)
-  type: Constructor
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: .ctor
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 56
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Used by the <xref href="DataLayer.StargazerRepositoryService%601.CreateAsync(DataLayer.Interfaces.IStarRepository%2cDataLayer.Interfaces.IConstellationRepository%2cDataLayer.Interfaces.IMessierRepository)" data-throw-if-not-resolved="false"></xref> method to initialize a new service
-  example: []
-  syntax:
-    content: private StargazerRepositoryService(IEnumerable<EquatorialStar> equatorialStars, IEnumerable<Constellation> equatorialConstellations, IEnumerable<EquatorialMessierObject> equatorialMessierObjects)
-    parameters:
-    - id: equatorialStars
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
-      description: The stars retrieved from the repository
-    - id: equatorialConstellations
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
-      description: The constellations retrieved from the repository
-    - id: equatorialMessierObjects
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
-      description: The Messier Deep Space Objects retrieved from the repository
-    content.vb: Private Sub New(equatorialStars As IEnumerable(Of EquatorialStar), equatorialConstellations As IEnumerable(Of Constellation), equatorialMessierObjects As IEnumerable(Of EquatorialMessierObject))
-  overload: DataLayer.StargazerRepositoryService`1.#ctor*
-  nameWithType.vb: StargazerRepositoryService(Of T).New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IEnumerable(Of EquatorialMessierObject))
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
-  name.vb: New(IEnumerable(Of EquatorialStar), IEnumerable(Of Constellation), IEnumerable(Of EquatorialMessierObject))
-- uid: DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  commentId: M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  id: CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  nameWithType: StargazerRepositoryService<T>.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
-  type: Method
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: CreateAsync
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 78
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Asynchronously creates a new instance of <code>StargazerRepositoryService</code>
-  example: []
-  syntax:
-    content: public static Task<StargazerRepositoryService<T>> CreateAsync(IStarRepository starRepository, IConstellationRepository constellationRepository, IMessierRepository messierRepository)
+    content: public StargazerRepositoryService(IStarRepository starRepository, IConstellationRepository constellationRepository, IMessierRepository messierRepository)
     parameters:
     - id: starRepository
       type: DataLayer.Interfaces.IStarRepository
-      description: Used to access a repository of Yale Stars
+      description: The repository service for loading stars.
     - id: constellationRepository
       type: DataLayer.Interfaces.IConstellationRepository
-      description: Used to access a repository of constellations identified by the HIP ID
+      description: The repository service for loading constellations.
     - id: messierRepository
       type: DataLayer.Interfaces.IMessierRepository
-      description: Used to access a repository of Messier Deep Space Objects
-    return:
-      type: System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService`1}
-      description: A new <code>StargazerRepositoryService</code> object.
-    content.vb: Public Shared Function CreateAsync(starRepository As IStarRepository, constellationRepository As IConstellationRepository, messierRepository As IMessierRepository) As Task(Of StargazerRepositoryService(Of T))
-  overload: DataLayer.StargazerRepositoryService`1.CreateAsync*
-  nameWithType.vb: StargazerRepositoryService(Of T).CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
-- uid: DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
-  commentId: M:DataLayer.StargazerRepositoryService`1.GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
-  id: GatherConstellationStars(System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}},System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}},DataLayer.Interfaces.IStarRepository)
+      description: The repository service for loading Messier Objects
+    content.vb: Public Sub New(starRepository As IStarRepository, constellationRepository As IConstellationRepository, messierRepository As IMessierRepository)
+  overload: DataLayer.StargazerRepositoryService`1.#ctor*
+  nameWithType.vb: StargazerRepositoryService(Of T).New(IStarRepository, IConstellationRepository, IMessierRepository)
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
+  name.vb: New(IStarRepository, IConstellationRepository, IMessierRepository)
+- uid: DataLayer.StargazerRepositoryService`1.InitializeDataPackage
+  commentId: M:DataLayer.StargazerRepositoryService`1.InitializeDataPackage
+  id: InitializeDataPackage
   parent: DataLayer.StargazerRepositoryService`1
   langs:
   - csharp
   - vb
-  name: GatherConstellationStars(Task<IList<EquatorialStar>>, Task<IList<Constellation>>, IStarRepository)
-  nameWithType: StargazerRepositoryService<T>.GatherConstellationStars(Task<IList<EquatorialStar>>, Task<IList<Constellation>>, IStarRepository)
-  fullName: DataLayer.StargazerRepositoryService<T>.GatherConstellationStars(System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>, System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>>, DataLayer.Interfaces.IStarRepository)
+  name: InitializeDataPackage()
+  nameWithType: StargazerRepositoryService<T>.InitializeDataPackage()
+  fullName: DataLayer.StargazerRepositoryService<T>.InitializeDataPackage()
   type: Method
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GatherConstellationStars
+    id: InitializeDataPackage
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 120
+    startLine: 45
   assemblies:
   - DataLayer
   namespace: DataLayer
   summary: >-
-    NO LONGER USED!
+    Initializes the data package
 
-    Gathers all stars that are a part of constellations into a separate dictionary using the HipparcosId as the key.
-
-    This is because the Hip ID is used by the constellations to list the nodes of the constellation graph.
-
-    Removes the stars from the master listing.
+    Should be awaited.
   example: []
   syntax:
-    content: private static Task<IDictionary<int, EquatorialStar>> GatherConstellationStars(Task<IList<EquatorialStar>> starTask, Task<IList<Constellation>> constellationTask, IStarRepository starRepository)
-    parameters:
-    - id: starTask
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-      description: The star repository retrieval task
-    - id: constellationTask
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-      description: The constellation repository retrieval task
-    - id: starRepository
-      type: DataLayer.Interfaces.IStarRepository
-      description: The star repository so that constellation stars that were filtered out can be retrieved by HipparcosId
-    return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar}}
-      description: The dictionary of constellation stars
-    content.vb: Private Shared Function GatherConstellationStars(starTask As Task(Of IList(Of EquatorialStar)), constellationTask As Task(Of IList(Of Constellation)), starRepository As IStarRepository) As Task(Of IDictionary(Of Integer, EquatorialStar))
-  overload: DataLayer.StargazerRepositoryService`1.GatherConstellationStars*
-  exceptions:
-  - type: System.InvalidOperationException
-    commentId: T:System.InvalidOperationException
-    description: If a constellation star cannot be found.
-  nameWithType.vb: StargazerRepositoryService(Of T).GatherConstellationStars(Task(Of IList(Of EquatorialStar)), Task(Of IList(Of Constellation)), IStarRepository)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).GatherConstellationStars(System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar)), System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation)), DataLayer.Interfaces.IStarRepository)
-  name.vb: GatherConstellationStars(Task(Of IList(Of EquatorialStar)), Task(Of IList(Of Constellation)), IStarRepository)
-- uid: DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)
-  commentId: M:DataLayer.StargazerRepositoryService`1.UpdateUserPosition(System.Double,System.Double,System.DateTime)
-  id: UpdateUserPosition(System.Double,System.Double,System.DateTime)
-  parent: DataLayer.StargazerRepositoryService`1
-  langs:
-  - csharp
-  - vb
-  name: UpdateUserPosition(double, double, DateTime)
-  nameWithType: StargazerRepositoryService<T>.UpdateUserPosition(double, double, DateTime)
-  fullName: DataLayer.StargazerRepositoryService<T>.UpdateUserPosition(double, double, System.DateTime)
-  type: Method
-  source:
-    remote:
-      path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: UpdateUserPosition
-    path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 189
-  assemblies:
-  - DataLayer
-  namespace: DataLayer
-  summary: Makes an async call to convert all data from Equatorial to Horizontal coordinates based on supplied user data.
-  example: []
-  syntax:
-    content: public Task<CelestialDataPackage<T>> UpdateUserPosition(double latitude, double longitude, DateTime localUserTime)
-    parameters:
-    - id: latitude
-      type: System.Double
-      description: The latitude of the observer (-90 &lt;= value &lt;= 90)
-    - id: longitude
-      type: System.Double
-      description: The longitude of the observer (-90 &lt;= value &lt;= 90)
-    - id: localUserTime
-      type: System.DateTime
-      description: The observer time in Universal TimeCode <pre><code class="lang-csharp">new DateTime(year, month, day, hour, min, sec).ToUniversalTime()</code></pre>
+    content: public Task<CelestialDataPackage<T>> InitializeDataPackage()
     return:
       type: System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{{T}}}
-      description: A package containing all data required for display. (This call should be made in an <code>async</code> method using the <code>await</code> keyword)
-    content.vb: Public Function UpdateUserPosition(latitude As Double, longitude As Double, localUserTime As Date) As Task(Of CelestialDataPackage(Of T))
-  overload: DataLayer.StargazerRepositoryService`1.UpdateUserPosition*
-  nameWithType.vb: StargazerRepositoryService(Of T).UpdateUserPosition(Double, Double, Date)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition(Double, Double, Date)
-  name.vb: UpdateUserPosition(Double, Double, Date)
-- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject})
-  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject})
-  id: CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject})
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> of type <code>T</code>
+    content.vb: Public Function InitializeDataPackage() As Task(Of CelestialDataPackage(Of T))
+  overload: DataLayer.StargazerRepositoryService`1.InitializeDataPackage*
+  implements:
+  - DataLayer.Interfaces.IRepositoryService{{T}}.InitializeDataPackage
+  nameWithType.vb: StargazerRepositoryService(Of T).InitializeDataPackage()
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).InitializeDataPackage()
+- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  id: CalculateMessierObjects
   parent: DataLayer.StargazerRepositoryService`1
   langs:
   - csharp
   - vb
-  name: CalculateMessierObjects(IEquatorialCalculator<HorizontalMessierObject>)
-  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects(IEquatorialCalculator<HorizontalMessierObject>)
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalMessierObject>)
+  name: CalculateMessierObjects()
+  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects()
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects()
   type: Method
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateMessierObjects
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 226
+    startLine: 81
   assemblies:
   - DataLayer
   namespace: DataLayer
   syntax:
-    content: private void CalculateMessierObjects(IEquatorialCalculator<HorizontalMessierObject> converter)
-    parameters:
-    - id: converter
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-    content.vb: Private Sub CalculateMessierObjects(converter As IEquatorialCalculator(Of HorizontalMessierObject))
+    content: private IEnumerable<HorizontalMessierObject> CalculateMessierObjects()
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
+    content.vb: Private Function CalculateMessierObjects() As IEnumerable(Of HorizontalMessierObject)
   overload: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects*
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects(IEquatorialCalculator(Of HorizontalMessierObject))
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects(DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalMessierObject))
-  name.vb: CalculateMessierObjects(IEquatorialCalculator(Of HorizontalMessierObject))
-- uid: DataLayer.StargazerRepositoryService`1.CalculateStars(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
-  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateStars(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
-  id: CalculateStars(DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar})
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects()
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects()
+- uid: DataLayer.StargazerRepositoryService`1.CalculateStars
+  commentId: M:DataLayer.StargazerRepositoryService`1.CalculateStars
+  id: CalculateStars
   parent: DataLayer.StargazerRepositoryService`1
   langs:
   - csharp
   - vb
-  name: CalculateStars(IEquatorialCalculator<HorizontalStar>)
-  nameWithType: StargazerRepositoryService<T>.CalculateStars(IEquatorialCalculator<HorizontalStar>)
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars(DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>)
+  name: CalculateStars()
+  nameWithType: StargazerRepositoryService<T>.CalculateStars()
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars()
   type: Method
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateStars
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 243
+    startLine: 98
   assemblies:
   - DataLayer
   namespace: DataLayer
   syntax:
-    content: private void CalculateStars(IEquatorialCalculator<HorizontalStar> starConverter)
-    parameters:
-    - id: starConverter
-      type: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
-    content.vb: Private Sub CalculateStars(starConverter As IEquatorialCalculator(Of HorizontalStar))
+    content: private IEnumerable<HorizontalStar> CalculateStars()
+    return:
+      type: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
+    content.vb: Private Function CalculateStars() As IEnumerable(Of HorizontalStar)
   overload: DataLayer.StargazerRepositoryService`1.CalculateStars*
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars(IEquatorialCalculator(Of HorizontalStar))
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars(DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar))
-  name.vb: CalculateStars(IEquatorialCalculator(Of HorizontalStar))
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars()
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars()
 references:
 - uid: DataLayer.CelestialDataPackage`1
   commentId: T:DataLayer.CelestialDataPackage`1
@@ -568,6 +324,33 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: DataLayer.Interfaces.IRepositoryService{{T}}
+  commentId: T:DataLayer.Interfaces.IRepositoryService{`0}
+  parent: DataLayer.Interfaces
+  definition: DataLayer.Interfaces.IRepositoryService`1
+  href: DataLayer.Interfaces.IRepositoryService-1.html
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -794,37 +577,267 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
+- uid: DataLayer.Interfaces.IRepositoryService`1
+  commentId: T:DataLayer.Interfaces.IRepositoryService`1
+  href: DataLayer.Interfaces.IRepositoryService-1.html
+  name: IRepositoryService<T>
+  nameWithType: IRepositoryService<T>
+  fullName: DataLayer.Interfaces.IRepositoryService<T>
+  nameWithType.vb: IRepositoryService(Of T)
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T)
+  name.vb: IRepositoryService(Of T)
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: DataLayer.Interfaces.IRepositoryService`1
+    name: IRepositoryService
+    href: DataLayer.Interfaces.IRepositoryService-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: DataLayer.Interfaces
+  commentId: N:DataLayer.Interfaces
+  href: DataLayer.html
+  name: DataLayer.Interfaces
+  nameWithType: DataLayer.Interfaces
+  fullName: DataLayer.Interfaces
+  spec.csharp:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+  spec.vb:
+  - uid: DataLayer
+    name: DataLayer
+    href: DataLayer.html
+  - name: .
+  - uid: DataLayer.Interfaces
+    name: Interfaces
+    href: DataLayer.Interfaces.html
+- uid: DataLayer.Interfaces.IStarRepository
+  commentId: T:DataLayer.Interfaces.IStarRepository
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IStarRepository.html
+  name: IStarRepository
+  nameWithType: IStarRepository
+  fullName: DataLayer.Interfaces.IStarRepository
+- uid: DataLayer.Interfaces.IMessierRepository
+  commentId: T:DataLayer.Interfaces.IMessierRepository
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IMessierRepository.html
+  name: IMessierRepository
+  nameWithType: IMessierRepository
+  fullName: DataLayer.Interfaces.IMessierRepository
+- uid: DataLayer.Interfaces.IConstellationRepository
+  commentId: T:DataLayer.Interfaces.IConstellationRepository
+  parent: DataLayer.Interfaces
+  href: DataLayer.Interfaces.IConstellationRepository.html
+  name: IConstellationRepository
+  nameWithType: IConstellationRepository
+  fullName: DataLayer.Interfaces.IConstellationRepository
+- uid: DataLayer.StargazerRepositoryService`1.#ctor*
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.#ctor
+  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
+  name: StargazerRepositoryService
+  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService
+  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService
+  nameWithType.vb: StargazerRepositoryService(Of T).New
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New
+  name.vb: New
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
-  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialStar}
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: DataLayer.StargazerRepositoryService`1.InitializeDataPackage*
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.InitializeDataPackage
+  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_InitializeDataPackage
+  name: InitializeDataPackage
+  nameWithType: StargazerRepositoryService<T>.InitializeDataPackage
+  fullName: DataLayer.StargazerRepositoryService<T>.InitializeDataPackage
+  nameWithType.vb: StargazerRepositoryService(Of T).InitializeDataPackage
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).InitializeDataPackage
+- uid: DataLayer.Interfaces.IRepositoryService{{T}}.InitializeDataPackage
+  commentId: M:DataLayer.Interfaces.IRepositoryService{`0}.InitializeDataPackage
+  parent: DataLayer.Interfaces.IRepositoryService{{T}}
+  definition: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  name: InitializeDataPackage()
+  nameWithType: IRepositoryService<T>.InitializeDataPackage()
+  fullName: DataLayer.Interfaces.IRepositoryService<T>.InitializeDataPackage()
+  nameWithType.vb: IRepositoryService(Of T).InitializeDataPackage()
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T).InitializeDataPackage()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IRepositoryService{`0}.InitializeDataPackage
+    name: InitializeDataPackage
+    href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IRepositoryService{`0}.InitializeDataPackage
+    name: InitializeDataPackage
+    href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{{T}}}
+  commentId: T:System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CelestialDataPackage<T>>
+  nameWithType: Task<CelestialDataPackage<T>>
+  fullName: System.Threading.Tasks.Task<DataLayer.CelestialDataPackage<T>>
+  nameWithType.vb: Task(Of CelestialDataPackage(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.CelestialDataPackage(Of T))
+  name.vb: Task(Of CelestialDataPackage(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.CelestialDataPackage`1
+    name: CelestialDataPackage
+    href: DataLayer.CelestialDataPackage-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  commentId: M:DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+  href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  name: InitializeDataPackage()
+  nameWithType: IRepositoryService<T>.InitializeDataPackage()
+  fullName: DataLayer.Interfaces.IRepositoryService<T>.InitializeDataPackage()
+  nameWithType.vb: IRepositoryService(Of T).InitializeDataPackage()
+  fullName.vb: DataLayer.Interfaces.IRepositoryService(Of T).InitializeDataPackage()
+  spec.csharp:
+  - uid: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+    name: InitializeDataPackage
+    href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: DataLayer.Interfaces.IRepositoryService`1.InitializeDataPackage
+    name: InitializeDataPackage
+    href: DataLayer.Interfaces.IRepositoryService-1.html#DataLayer_Interfaces_IRepositoryService_1_InitializeDataPackage
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects*
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
+  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateMessierObjects
+  name: CalculateMessierObjects
+  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects
+- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<EquatorialStar>
-  nameWithType: IEnumerable<EquatorialStar>
-  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialStar>
-  nameWithType.vb: IEnumerable(Of EquatorialStar)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialStar)
-  name.vb: IEnumerable(Of EquatorialStar)
+  name: IEnumerable<HorizontalMessierObject>
+  nameWithType: IEnumerable<HorizontalMessierObject>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>
+  nameWithType.vb: IEnumerable(Of HorizontalMessierObject)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject)
+  name.vb: IEnumerable(Of HorizontalMessierObject)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
+    name: HorizontalMessierObject
+    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -834,9 +847,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
+  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
+    name: HorizontalMessierObject
+    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -903,79 +916,14 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
-  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Constellation>
-  nameWithType: IEnumerable<Constellation>
-  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>
-  nameWithType.vb: IEnumerable(Of Constellation)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation)
-  name.vb: IEnumerable(Of Constellation)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.Constellation
-    name: Constellation
-    href: DataLayer.EquatorialObjects.Constellation.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.Constellation
-    name: Constellation
-    href: DataLayer.EquatorialObjects.Constellation.html
-  - name: )
-- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
-  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<EquatorialMessierObject>
-  nameWithType: IEnumerable<EquatorialMessierObject>
-  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>
-  nameWithType.vb: IEnumerable(Of EquatorialMessierObject)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject)
-  name.vb: IEnumerable(Of EquatorialMessierObject)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
-    name: EquatorialMessierObject
-    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
-    name: EquatorialMessierObject
-    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
-  - name: )
-- uid: DataLayer.HorizontalObjects.HorizontalStar
-  commentId: T:DataLayer.HorizontalObjects.HorizontalStar
-  parent: DataLayer.HorizontalObjects
-  href: DataLayer.HorizontalObjects.HorizontalStar.html
-  name: HorizontalStar
-  nameWithType: HorizontalStar
-  fullName: DataLayer.HorizontalObjects.HorizontalStar
+- uid: DataLayer.StargazerRepositoryService`1.CalculateStars*
+  commentId: Overload:DataLayer.StargazerRepositoryService`1.CalculateStars
+  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateStars
+  name: CalculateStars
+  nameWithType: StargazerRepositoryService<T>.CalculateStars
+  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars
+  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars
+  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars
 - uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
   commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalStar}
   parent: System.Collections.Generic
@@ -1002,745 +950,6 @@ references:
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: )
-- uid: DataLayer.HorizontalObjects
-  commentId: N:DataLayer.HorizontalObjects
-  href: DataLayer.html
-  name: DataLayer.HorizontalObjects
-  nameWithType: DataLayer.HorizontalObjects
-  fullName: DataLayer.HorizontalObjects
-  spec.csharp:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.HorizontalObjects
-    name: HorizontalObjects
-    href: DataLayer.HorizontalObjects.html
-  spec.vb:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.HorizontalObjects
-    name: HorizontalObjects
-    href: DataLayer.HorizontalObjects.html
-- uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-  commentId: T:DataLayer.HorizontalObjects.HorizontalMessierObject
-  href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  name: HorizontalMessierObject
-  nameWithType: HorizontalMessierObject
-  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject
-- uid: System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<HorizontalMessierObject>
-  nameWithType: IEnumerable<HorizontalMessierObject>
-  fullName: System.Collections.Generic.IEnumerable<DataLayer.HorizontalObjects.HorizontalMessierObject>
-  nameWithType.vb: IEnumerable(Of HorizontalMessierObject)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.HorizontalObjects.HorizontalMessierObject)
-  name.vb: IEnumerable(Of HorizontalMessierObject)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: )
-- uid: DataLayer.StargazerRepositoryService`1.ConstellationStars*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.ConstellationStars
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_ConstellationStars
-  name: ConstellationStars
-  nameWithType: StargazerRepositoryService<T>.ConstellationStars
-  fullName: DataLayer.StargazerRepositoryService<T>.ConstellationStars
-  nameWithType.vb: StargazerRepositoryService(Of T).ConstellationStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).ConstellationStars
-- uid: System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar}
-  commentId: T:System.Collections.Concurrent.ConcurrentDictionary{System.Int32,DataLayer.HorizontalObjects.HorizontalStar}
-  parent: System.Collections.Concurrent
-  definition: System.Collections.Concurrent.ConcurrentDictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  name: ConcurrentDictionary<int, HorizontalStar>
-  nameWithType: ConcurrentDictionary<int, HorizontalStar>
-  fullName: System.Collections.Concurrent.ConcurrentDictionary<int, DataLayer.HorizontalObjects.HorizontalStar>
-  nameWithType.vb: ConcurrentDictionary(Of Integer, HorizontalStar)
-  fullName.vb: System.Collections.Concurrent.ConcurrentDictionary(Of Integer, DataLayer.HorizontalObjects.HorizontalStar)
-  name.vb: ConcurrentDictionary(Of Integer, HorizontalStar)
-  spec.csharp:
-  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
-    name: ConcurrentDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
-    name: ConcurrentDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: )
-- uid: System.Collections.Concurrent.ConcurrentDictionary`2
-  commentId: T:System.Collections.Concurrent.ConcurrentDictionary`2
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  name: ConcurrentDictionary<TKey, TValue>
-  nameWithType: ConcurrentDictionary<TKey, TValue>
-  fullName: System.Collections.Concurrent.ConcurrentDictionary<TKey, TValue>
-  nameWithType.vb: ConcurrentDictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Concurrent.ConcurrentDictionary(Of TKey, TValue)
-  name.vb: ConcurrentDictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
-    name: ConcurrentDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Concurrent.ConcurrentDictionary`2
-    name: ConcurrentDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Concurrent
-  commentId: N:System.Collections.Concurrent
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Concurrent
-  nameWithType: System.Collections.Concurrent
-  fullName: System.Collections.Concurrent
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Concurrent
-    name: Concurrent
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Concurrent
-    name: Concurrent
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.concurrent
-- uid: DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  commentId: M:DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
-  name: CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  nameWithType: StargazerRepositoryService<T>.CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
-  nameWithType.vb: StargazerRepositoryService(Of T).CreateAsync(IStarRepository, IConstellationRepository, IMessierRepository)
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync(DataLayer.Interfaces.IStarRepository, DataLayer.Interfaces.IConstellationRepository, DataLayer.Interfaces.IMessierRepository)
-  spec.csharp:
-  - uid: DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-    name: CreateAsync
-    href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
-  - name: (
-  - uid: DataLayer.Interfaces.IStarRepository
-    name: IStarRepository
-    href: DataLayer.Interfaces.IStarRepository.html
-  - name: ','
-  - name: " "
-  - uid: DataLayer.Interfaces.IConstellationRepository
-    name: IConstellationRepository
-    href: DataLayer.Interfaces.IConstellationRepository.html
-  - name: ','
-  - name: " "
-  - uid: DataLayer.Interfaces.IMessierRepository
-    name: IMessierRepository
-    href: DataLayer.Interfaces.IMessierRepository.html
-  - name: )
-  spec.vb:
-  - uid: DataLayer.StargazerRepositoryService`1.CreateAsync(DataLayer.Interfaces.IStarRepository,DataLayer.Interfaces.IConstellationRepository,DataLayer.Interfaces.IMessierRepository)
-    name: CreateAsync
-    href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
-  - name: (
-  - uid: DataLayer.Interfaces.IStarRepository
-    name: IStarRepository
-    href: DataLayer.Interfaces.IStarRepository.html
-  - name: ','
-  - name: " "
-  - uid: DataLayer.Interfaces.IConstellationRepository
-    name: IConstellationRepository
-    href: DataLayer.Interfaces.IConstellationRepository.html
-  - name: ','
-  - name: " "
-  - uid: DataLayer.Interfaces.IMessierRepository
-    name: IMessierRepository
-    href: DataLayer.Interfaces.IMessierRepository.html
-  - name: )
-- uid: DataLayer.StargazerRepositoryService`1.#ctor*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.#ctor
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1__ctor_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialStar__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_EquatorialMessierObject__
-  name: StargazerRepositoryService
-  nameWithType: StargazerRepositoryService<T>.StargazerRepositoryService
-  fullName: DataLayer.StargazerRepositoryService<T>.StargazerRepositoryService
-  nameWithType.vb: StargazerRepositoryService(Of T).New
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).New
-  name.vb: New
-- uid: DataLayer.StargazerRepositoryService`1.CreateAsync*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.CreateAsync
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CreateAsync_DataLayer_Interfaces_IStarRepository_DataLayer_Interfaces_IConstellationRepository_DataLayer_Interfaces_IMessierRepository_
-  name: CreateAsync
-  nameWithType: StargazerRepositoryService<T>.CreateAsync
-  fullName: DataLayer.StargazerRepositoryService<T>.CreateAsync
-  nameWithType.vb: StargazerRepositoryService(Of T).CreateAsync
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CreateAsync
-- uid: DataLayer.Interfaces.IStarRepository
-  commentId: T:DataLayer.Interfaces.IStarRepository
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IStarRepository.html
-  name: IStarRepository
-  nameWithType: IStarRepository
-  fullName: DataLayer.Interfaces.IStarRepository
-- uid: DataLayer.Interfaces.IConstellationRepository
-  commentId: T:DataLayer.Interfaces.IConstellationRepository
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IConstellationRepository.html
-  name: IConstellationRepository
-  nameWithType: IConstellationRepository
-  fullName: DataLayer.Interfaces.IConstellationRepository
-- uid: DataLayer.Interfaces.IMessierRepository
-  commentId: T:DataLayer.Interfaces.IMessierRepository
-  parent: DataLayer.Interfaces
-  href: DataLayer.Interfaces.IMessierRepository.html
-  name: IMessierRepository
-  nameWithType: IMessierRepository
-  fullName: DataLayer.Interfaces.IMessierRepository
-- uid: System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService`1}
-  commentId: T:System.Threading.Tasks.Task{DataLayer.StargazerRepositoryService`1}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<StargazerRepositoryService<T>>
-  nameWithType: Task<StargazerRepositoryService<T>>
-  fullName: System.Threading.Tasks.Task<DataLayer.StargazerRepositoryService<T>>
-  nameWithType.vb: Task(Of StargazerRepositoryService(Of T))
-  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.StargazerRepositoryService(Of T))
-  name.vb: Task(Of StargazerRepositoryService(Of T))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.StargazerRepositoryService`1
-    name: StargazerRepositoryService
-    href: DataLayer.StargazerRepositoryService-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: DataLayer.Interfaces
-  commentId: N:DataLayer.Interfaces
-  href: DataLayer.html
-  name: DataLayer.Interfaces
-  nameWithType: DataLayer.Interfaces
-  fullName: DataLayer.Interfaces
-  spec.csharp:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
-  spec.vb:
-  - uid: DataLayer
-    name: DataLayer
-    href: DataLayer.html
-  - name: .
-  - uid: DataLayer.Interfaces
-    name: Interfaces
-    href: DataLayer.Interfaces.html
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: System.InvalidOperationException
-  commentId: T:System.InvalidOperationException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
-  name: InvalidOperationException
-  nameWithType: InvalidOperationException
-  fullName: System.InvalidOperationException
-- uid: DataLayer.StargazerRepositoryService`1.GatherConstellationStars*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.GatherConstellationStars
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_GatherConstellationStars_System_Threading_Tasks_Task_System_Collections_Generic_IList_DataLayer_EquatorialObjects_EquatorialStar___System_Threading_Tasks_Task_System_Collections_Generic_IList_DataLayer_EquatorialObjects_Constellation___DataLayer_Interfaces_IStarRepository_
-  name: GatherConstellationStars
-  nameWithType: StargazerRepositoryService<T>.GatherConstellationStars
-  fullName: DataLayer.StargazerRepositoryService<T>.GatherConstellationStars
-  nameWithType.vb: StargazerRepositoryService(Of T).GatherConstellationStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).GatherConstellationStars
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.EquatorialStar}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<EquatorialStar>>
-  nameWithType: Task<IList<EquatorialStar>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.EquatorialStar>>
-  nameWithType.vb: Task(Of IList(Of EquatorialStar))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.EquatorialStar))
-  name.vb: Task(Of IList(Of EquatorialStar))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{DataLayer.EquatorialObjects.Constellation}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IList<Constellation>>
-  nameWithType: Task<IList<Constellation>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<DataLayer.EquatorialObjects.Constellation>>
-  nameWithType.vb: Task(Of IList(Of Constellation))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of DataLayer.EquatorialObjects.Constellation))
-  name.vb: Task(Of IList(Of Constellation))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.Constellation
-    name: Constellation
-    href: DataLayer.EquatorialObjects.Constellation.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IList`1
-    name: IList
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.Constellation
-    name: Constellation
-    href: DataLayer.EquatorialObjects.Constellation.html
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,DataLayer.EquatorialObjects.EquatorialStar}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IDictionary<int, EquatorialStar>>
-  nameWithType: Task<IDictionary<int, EquatorialStar>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<int, DataLayer.EquatorialObjects.EquatorialStar>>
-  nameWithType.vb: Task(Of IDictionary(Of Integer, EquatorialStar))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IDictionary(Of Integer, DataLayer.EquatorialObjects.EquatorialStar))
-  name.vb: Task(Of IDictionary(Of Integer, EquatorialStar))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialStar
-    name: EquatorialStar
-    href: DataLayer.EquatorialObjects.EquatorialStar.html
-  - name: )
-  - name: )
-- uid: DataLayer.StargazerRepositoryService`1.UpdateUserPosition*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.UpdateUserPosition
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_UpdateUserPosition_System_Double_System_Double_System_DateTime_
-  name: UpdateUserPosition
-  nameWithType: StargazerRepositoryService<T>.UpdateUserPosition
-  fullName: DataLayer.StargazerRepositoryService<T>.UpdateUserPosition
-  nameWithType.vb: StargazerRepositoryService(Of T).UpdateUserPosition
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).UpdateUserPosition
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
-- uid: System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{{T}}}
-  commentId: T:System.Threading.Tasks.Task{DataLayer.CelestialDataPackage{`0}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<CelestialDataPackage<T>>
-  nameWithType: Task<CelestialDataPackage<T>>
-  fullName: System.Threading.Tasks.Task<DataLayer.CelestialDataPackage<T>>
-  nameWithType.vb: Task(Of CelestialDataPackage(Of T))
-  fullName.vb: System.Threading.Tasks.Task(Of DataLayer.CelestialDataPackage(Of T))
-  name.vb: Task(Of CelestialDataPackage(Of T))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.CelestialDataPackage`1
-    name: CelestialDataPackage
-    href: DataLayer.CelestialDataPackage-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
-- uid: DataLayer.StargazerRepositoryService`1.CalculateMessierObjects*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.CalculateMessierObjects
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateMessierObjects_DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalMessierObject__
-  name: CalculateMessierObjects
-  nameWithType: StargazerRepositoryService<T>.CalculateMessierObjects
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateMessierObjects
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateMessierObjects
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateMessierObjects
-- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalMessierObject}
-  parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<HorizontalMessierObject>
-  nameWithType: IEquatorialCalculator<HorizontalMessierObject>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalMessierObject>
-  nameWithType.vb: IEquatorialCalculator(Of HorizontalMessierObject)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalMessierObject)
-  name.vb: IEquatorialCalculator(Of HorizontalMessierObject)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalMessierObject
-    name: HorizontalMessierObject
-    href: DataLayer.HorizontalObjects.HorizontalMessierObject.html
-  - name: )
-- uid: DataLayer.Interfaces.IEquatorialCalculator`1
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<T>
-  nameWithType: IEquatorialCalculator<T>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<T>
-  nameWithType.vb: IEquatorialCalculator(Of T)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of T)
-  name.vb: IEquatorialCalculator(Of T)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: DataLayer.StargazerRepositoryService`1.CalculateStars*
-  commentId: Overload:DataLayer.StargazerRepositoryService`1.CalculateStars
-  href: DataLayer.StargazerRepositoryService-1.html#DataLayer_StargazerRepositoryService_1_CalculateStars_DataLayer_Interfaces_IEquatorialCalculator_DataLayer_HorizontalObjects_HorizontalStar__
-  name: CalculateStars
-  nameWithType: StargazerRepositoryService<T>.CalculateStars
-  fullName: DataLayer.StargazerRepositoryService<T>.CalculateStars
-  nameWithType.vb: StargazerRepositoryService(Of T).CalculateStars
-  fullName.vb: DataLayer.StargazerRepositoryService(Of T).CalculateStars
-- uid: DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
-  commentId: T:DataLayer.Interfaces.IEquatorialCalculator{DataLayer.HorizontalObjects.HorizontalStar}
-  parent: DataLayer.Interfaces
-  definition: DataLayer.Interfaces.IEquatorialCalculator`1
-  href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  name: IEquatorialCalculator<HorizontalStar>
-  nameWithType: IEquatorialCalculator<HorizontalStar>
-  fullName: DataLayer.Interfaces.IEquatorialCalculator<DataLayer.HorizontalObjects.HorizontalStar>
-  nameWithType.vb: IEquatorialCalculator(Of HorizontalStar)
-  fullName.vb: DataLayer.Interfaces.IEquatorialCalculator(Of DataLayer.HorizontalObjects.HorizontalStar)
-  name.vb: IEquatorialCalculator(Of HorizontalStar)
-  spec.csharp:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: '>'
-  spec.vb:
-  - uid: DataLayer.Interfaces.IEquatorialCalculator`1
-    name: IEquatorialCalculator
-    href: DataLayer.Interfaces.IEquatorialCalculator-1.html
   - name: (
   - name: Of
   - name: " "

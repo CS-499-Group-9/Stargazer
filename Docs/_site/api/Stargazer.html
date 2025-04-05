@@ -100,28 +100,17 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.AzimuthButton.html">AzimuthButton</a></dt>
-      <dd><p>Contains the button used to toggle the azimuth lines</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.AzimuthGridlines.html">AzimuthGridlines</a></dt>
       <dd><p>The graphic object used to draw the lines.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.CelestialBody.html">CelestialBody</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.CompassNeedle.html">CompassNeedle</a></dt>
       <dd><p>Displays a compass needle to orient the user relative to North.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.ConstellationButton.html">ConstellationButton</a></dt>
-      <dd><p>Contains the button used to toggle the constellations in the viewport.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.ConstellationLabel.html">ConstellationLabel</a></dt>
-      <dd><p>Displays the constellation name.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -150,11 +139,6 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.LabelButton.html">LabelButton</a></dt>
-      <dd><p>Contains the button used to toggle the constellation labels.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.LabelNode.html">LabelNode</a></dt>
       <dd><p>Contains the constellation label.</p>
 </dd>
@@ -165,13 +149,8 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.MainContainer.html">MainContainer</a></dt>
-      <dd><p>The main container of the program.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.MessierButton.html">MessierButton</a></dt>
-      <dd><p>Contains the button used to toggle the visibility of the Messier Deep Space Objects</p>
+      <dt><a class="xref" href="Stargazer.MessierObject.html">MessierObject</a></dt>
+      <dd><p>A Messier Deep Space Object drawn in the sky.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -187,6 +166,16 @@ Classes
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Planets.html">Planets</a></dt>
       <dd><p>A <span class="xref">Godot.Node3D</span> container for the planets.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.PlayControl.html">PlayControl</a></dt>
+      <dd><p>Controls the play speed of the 3D simulation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.PlaySpeed.html">PlaySpeed</a></dt>
+      <dd><p>A state object to control the play speed of the simulation</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -238,16 +227,34 @@ Handles all communication between the GUI and the viewport.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="Stargazer.TimeLocEntered.html">TimeLocEntered</a></dt>
-      <dd><p>Used to gather user input and notify the <a class="xref" href="Stargazer.Startup.html">Startup</a> object of a new user request.</p>
+      <dt><a class="xref" href="Stargazer.Sun.html">Sun</a></dt>
+      <dd><p>The actual sun.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.ICameraStateNotifier.html">ICameraStateNotifier</a></dt>
+      <dd><p>Notifies subscribers of events related to the <span class="xref">Godot.Camera3D</span></p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.IHoverable.html">IHoverable</a></dt>
       <dd><p>Provides the ability of an object to display a hover label.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.ITrackable.html">ITrackable</a></dt>
+      <dd><p>Provides the ability of an object to be tracked by the camera</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.ZoomState.html">ZoomState</a></dt>
+      <dd><p>Used to implement quantum logic in the view based on Fov thresholds.</p>
 </dd>
     </dl>
 

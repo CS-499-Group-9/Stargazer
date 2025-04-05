@@ -5,7 +5,7 @@ items:
   id: ASTRALPLANEAlbedo
   parent: Stargazer
   children:
-  - Stargazer.ASTRALPLANEAlbedo._Process(System.Double)
+  - Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged(Godot.Camera3D)
   - Stargazer.ASTRALPLANEAlbedo._Ready
   - Stargazer.ASTRALPLANEAlbedo.camera
   - Stargazer.ASTRALPLANEAlbedo.material
@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     id: ASTRALPLANEAlbedo
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -161,6 +161,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Process(System.Double)
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -369,11 +370,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: camera
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -396,11 +397,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -423,11 +424,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: material
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -450,11 +451,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -465,42 +466,38 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.ASTRALPLANEAlbedo._Ready*
-- uid: Stargazer.ASTRALPLANEAlbedo._Process(System.Double)
-  commentId: M:Stargazer.ASTRALPLANEAlbedo._Process(System.Double)
-  id: _Process(System.Double)
+- uid: Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged(Godot.Camera3D)
+  commentId: M:Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged(Godot.Camera3D)
+  id: HandleCameraRotationChanged(Godot.Camera3D)
   parent: Stargazer.ASTRALPLANEAlbedo
   langs:
   - csharp
   - vb
-  name: _Process(double)
-  nameWithType: ASTRALPLANEAlbedo._Process(double)
-  fullName: Stargazer.ASTRALPLANEAlbedo._Process(double)
+  name: HandleCameraRotationChanged(Camera3D)
+  nameWithType: ASTRALPLANEAlbedo.HandleCameraRotationChanged(Camera3D)
+  fullName: Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged(Godot.Camera3D)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Process
+    id: HandleCameraRotationChanged
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 49
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Uses the <xref href="Godot.Camera3D" data-throw-if-not-resolved="false"></xref><code>.Rotation</code> to alter make the floor transparent as the user pans down.
+  summary: Subscribes to the camera OnRotation notification.
   example: []
   syntax:
-    content: public override void _Process(double delta)
+    content: public void HandleCameraRotationChanged(Camera3D camera)
     parameters:
-    - id: delta
-      type: System.Double
+    - id: camera
+      type: Godot.Camera3D
       description: ''
-    content.vb: Public Overrides Sub _Process(delta As Double)
-  overridden: Godot.Node._Process(System.Double)
-  overload: Stargazer.ASTRALPLANEAlbedo._Process*
-  nameWithType.vb: ASTRALPLANEAlbedo._Process(Double)
-  fullName.vb: Stargazer.ASTRALPLANEAlbedo._Process(Double)
-  name.vb: _Process(Double)
+    content.vb: Public Sub HandleCameraRotationChanged(camera As Camera3D)
+  overload: Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -2514,6 +2511,37 @@ references:
   spec.vb:
   - uid: Godot.Node._PhysicsProcess(System.Double)
     name: _PhysicsProcess
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
+  parent: Godot.Node
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
+  spec.csharp:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
+    isExternal: true
+  - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
   - uid: System.Double
@@ -7333,51 +7361,9 @@ references:
   name: _Ready
   nameWithType: ASTRALPLANEAlbedo._Ready
   fullName: Stargazer.ASTRALPLANEAlbedo._Ready
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
-  parent: Godot.Node
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
-  spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
-    isExternal: true
-  - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Stargazer.ASTRALPLANEAlbedo._Process*
-  commentId: Overload:Stargazer.ASTRALPLANEAlbedo._Process
-  href: Stargazer.ASTRALPLANEAlbedo.html#Stargazer_ASTRALPLANEAlbedo__Process_System_Double_
-  name: _Process
-  nameWithType: ASTRALPLANEAlbedo._Process
-  fullName: Stargazer.ASTRALPLANEAlbedo._Process
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
+- uid: Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged*
+  commentId: Overload:Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged
+  href: Stargazer.ASTRALPLANEAlbedo.html#Stargazer_ASTRALPLANEAlbedo_HandleCameraRotationChanged_Godot_Camera3D_
+  name: HandleCameraRotationChanged
+  nameWithType: ASTRALPLANEAlbedo.HandleCameraRotationChanged
+  fullName: Stargazer.ASTRALPLANEAlbedo.HandleCameraRotationChanged

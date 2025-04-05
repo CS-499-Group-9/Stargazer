@@ -21,30 +21,16 @@ namespace DataLayer.Implementations
         /// <param name="repositoryPath">The path to the directory containing the Json file.</param>
         public StellariumJsonConstellationRepository(string repositoryPath)
         {
-            this.filePath = Path.Combine(repositoryPath, "constellations.json"); ;
+            this.filePath = Path.Combine(repositoryPath, "constellations.json");
+            if (!File.Exists(filePath)) throw new FileNotFoundException($"{filePath} does not exist");
+
         }
 
-        /// <summary>
-        /// Asynchronously retrieves a <see cref="IList{Constellation}"/> from the Json file.
-        /// </summary>
-        /// <returns>An <see cref="IList{Constellation}"/></returns>
-        /// <exception cref="FileNotFoundException"></exception>
-        public Task<IList<Constellation>> GetAllConstellationsAsync()
+        /// <inheritdoc/>
+        public IEnumerable<Constellation> GetConstellations()
         {
-
-            if (File.Exists(filePath))
-            {
-                return Task<IList<Constellation>>.Factory.StartNew(() =>
-                {
-                    // Null values are not handled because the program SHOULD break if this does not work. 
-                    // TODO: May need to consider a more elegant failure for production version.
-                    string jsonContent = File.ReadAllText(filePath);
-                    return JsonConvert.DeserializeObject<List<Constellation>>(jsonContent, new JsonConstellationListConverter()) ?? throw new JsonException("Deserialization of the Constellation Repository returned null.");
-                });
-            }
-            throw new FileNotFoundException();
-
-
+            string jsonContent = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<List<Constellation>>(jsonContent, new JsonConstellationListConverter()) ?? throw new JsonException("Deserialization of the Constellation Repository returned null.");
         }
 
 

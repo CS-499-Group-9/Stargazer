@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialMessierObject
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -39,6 +39,7 @@ items:
   - System.Object
   - DataLayer.EquatorialObjects.EquatorialCelestialBody
   inheritedMembers:
+  - DataLayer.EquatorialObjects.EquatorialCelestialBody.distance
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.Declination
   - DataLayer.EquatorialObjects.EquatorialCelestialBody.Magnitude
@@ -64,7 +65,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -95,7 +96,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -126,7 +127,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -157,7 +158,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -188,7 +189,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -219,7 +220,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -250,7 +251,7 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
@@ -308,6 +309,13 @@ references:
   name: EquatorialCelestialBody
   nameWithType: EquatorialCelestialBody
   fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody
+- uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.distance
+  commentId: F:DataLayer.EquatorialObjects.EquatorialCelestialBody.distance
+  parent: DataLayer.EquatorialObjects.EquatorialCelestialBody
+  href: DataLayer.EquatorialObjects.EquatorialCelestialBody.html#DataLayer_EquatorialObjects_EquatorialCelestialBody_distance
+  name: distance
+  nameWithType: EquatorialCelestialBody.distance
+  fullName: DataLayer.EquatorialObjects.EquatorialCelestialBody.distance
 - uid: DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   commentId: P:DataLayer.EquatorialObjects.EquatorialCelestialBody.RightAscension
   parent: DataLayer.EquatorialObjects.EquatorialCelestialBody

@@ -425,11 +425,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2DScene
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 19
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -470,11 +470,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Label2DScene
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -515,11 +515,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -542,11 +542,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constMesh
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 26
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -569,11 +569,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -596,11 +596,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 28
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -623,11 +623,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 33
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -652,7 +652,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations2D.cs
@@ -660,20 +660,20 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: >-
-    Passed as a <xref href="System.Delegate" data-throw-if-not-resolved="false"></xref> to <xref href="Stargazer.Startup.UserPositionUpdated" data-throw-if-not-resolved="false"></xref> to be notified when a new star scene is ready to be drawn.
-
-    This should be done using the += operator to be notified in addition to other components in the viewport.
+  summary: Initially draws the constellations
   example: []
   syntax:
     content: public Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
     parameters:
     - id: constellations
       type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+      description: Contains the constellation graphs to draw.
     - id: GetConstellationStar
       type: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
+      description: A method to retrieve a star by Hipparcos Id from the dictionary of drawn stars.
     return:
       type: System.Threading.Tasks.Task
+      description: ''
     content.vb: Public Function DrawConstellations(constellations As IEnumerable(Of Constellation), GetConstellationStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star)) As Task
   overload: Stargazer.Constellations2D.DrawConstellations*
   nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
@@ -693,11 +693,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 116
+    startLine: 101
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -731,11 +731,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 125
+    startLine: 110
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -766,11 +766,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spawn2DStar
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 127
+    startLine: 112
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -10016,19 +10016,6 @@ references:
   name: _Ready
   nameWithType: Constellations2D._Ready
   fullName: Stargazer.Constellations2D._Ready
-- uid: System.Delegate
-  commentId: T:System.Delegate
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.delegate
-  name: Delegate
-  nameWithType: Delegate
-  fullName: System.Delegate
-- uid: Stargazer.Startup.UserPositionUpdated
-  commentId: E:Stargazer.Startup.UserPositionUpdated
-  href: Stargazer.Startup.html#Stargazer_Startup_UserPositionUpdated
-  name: UserPositionUpdated
-  nameWithType: Startup.UserPositionUpdated
-  fullName: Stargazer.Startup.UserPositionUpdated
 - uid: Stargazer.Constellations2D.DrawConstellations*
   commentId: Overload:Stargazer.Constellations2D.DrawConstellations
   href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__

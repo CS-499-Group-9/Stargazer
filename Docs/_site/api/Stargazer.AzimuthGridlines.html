@@ -103,7 +103,7 @@ Class AzimuthGridlines
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/AzimuthGridlines.cs&quot;)]
-public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
+public class AzimuthGridlines : Node3D, IDisposable</code></pre>
   </div>
 
 
@@ -116,9 +116,6 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
       <div><span class="xref">GodotObject</span></div>
       <div><span class="xref">Node</span></div>
       <div><span class="xref">Node3D</span></div>
-      <div><span class="xref">VisualInstance3D</span></div>
-      <div><span class="xref">GeometryInstance3D</span></div>
-      <div><span class="xref">MeshInstance3D</span></div>
       <div><span class="xref">AzimuthGridlines</span></div>
     </dd>
   </dl>
@@ -134,147 +131,6 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <span class="xref">MeshInstance3D.GetSkinReference()</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.GetSurfaceOverrideMaterialCount()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">MeshInstance3D.SetSurfaceOverrideMaterial(int, Material)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">MeshInstance3D.GetSurfaceOverrideMaterial(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">MeshInstance3D.GetActiveMaterial(int)</a>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.CreateTrimeshCollision()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">MeshInstance3D.CreateConvexCollision(bool, bool)</a>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.CreateMultipleConvexCollisions(MeshConvexDecompositionSettings)</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.GetBlendShapeCount()</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.FindBlendShapeByName(StringName)</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">MeshInstance3D.GetBlendShapeValue(int)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">MeshInstance3D.SetBlendShapeValue(int, float)</a>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.CreateDebugTangents()</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.BakeMeshFromCurrentBlendShapeMix(ArrayMesh)</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.HasGodotClassMethod(in godot_string_name)</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.HasGodotClassSignal(in godot_string_name)</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.Mesh</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.Skin</span>
-    </div>
-    <div>
-      <span class="xref">MeshInstance3D.Skeleton</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.SetInstanceShaderParameter(StringName, Variant)</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.GetInstanceShaderParameter(StringName)</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.MaterialOverride</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.MaterialOverlay</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.Transparency</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.CastShadow</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.ExtraCullMargin</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.CustomAabb</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.LodBias</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.IgnoreOcclusionCulling</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.GIMode</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.GILightmapScale</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.VisibilityRangeBegin</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.VisibilityRangeBeginMargin</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.VisibilityRangeEnd</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.VisibilityRangeEndMargin</span>
-    </div>
-    <div>
-      <span class="xref">GeometryInstance3D.VisibilityRangeFadeMode</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D._GetAabb()</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.SetBase(Rid)</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.GetBase()</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.GetInstance()</span>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualInstance3D.SetLayerMaskValue(int, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">VisualInstance3D.GetLayerMaskValue(int)</a>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.GetAabb()</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.Layers</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.SortingOffset</span>
-    </div>
-    <div>
-      <span class="xref">VisualInstance3D.SortingUseAabbCenter</span>
-    </div>
     <div>
       <span class="xref">Node3D.NotificationTransformChanged</span>
     </div>
@@ -397,6 +253,15 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
     </div>
     <div>
       <span class="xref">Node3D.ToGlobal(Vector3)</span>
+    </div>
+    <div>
+      <span class="xref">Node3D.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)</span>
+    </div>
+    <div>
+      <span class="xref">Node3D.HasGodotClassMethod(in godot_string_name)</span>
+    </div>
+    <div>
+      <span class="xref">Node3D.HasGodotClassSignal(in godot_string_name)</span>
     </div>
     <div>
       <span class="xref">Node3D.Transform</span>
@@ -1196,16 +1061,16 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_AzimuthGridlines_camera" data-uid="Stargazer.AzimuthGridlines.camera">
-  camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_AzimuthGridlines_azimuthGridlines" data-uid="Stargazer.AzimuthGridlines.azimuthGridlines">
+  azimuthGridlines
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Camera3D camera</code></pre>
+    <pre><code class="lang-csharp hljs">public MeshInstance3D azimuthGridlines</code></pre>
   </div>
 
 
@@ -1213,7 +1078,67 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Camera3D</span></dt>
+    <dt><span class="xref">MeshInstance3D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_blueMaterial" data-uid="Stargazer.AzimuthGridlines.blueMaterial">
+  blueMaterial
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private StandardMaterial3D blueMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">StandardMaterial3D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_calculator" data-uid="Stargazer.AzimuthGridlines.calculator">
+  calculator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private IEquatorialCalculator calculator</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></dt>
     <dd></dd>
   </dl>
 
@@ -1228,7 +1153,7 @@ public class AzimuthGridlines : MeshInstance3D, IDisposable</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines_cutoffLatitude" data-uid="Stargazer.AzimuthGridlines.cutoffLatitude">
   cutoffLatitude
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculate cutoff latitude to ensure it aligns with the first visible circle</p>
@@ -1258,16 +1183,16 @@ public float cutoffLatitude</code></pre>
 
 
 
-  <h3 id="Stargazer_AzimuthGridlines_greenMaterial" data-uid="Stargazer.AzimuthGridlines.greenMaterial">
-  greenMaterial
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_AzimuthGridlines_equatorialGridlines" data-uid="Stargazer.AzimuthGridlines.equatorialGridlines">
+  equatorialGridlines
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private StandardMaterial3D greenMaterial</code></pre>
+    <pre><code class="lang-csharp hljs">public MeshInstance3D equatorialGridlines</code></pre>
   </div>
 
 
@@ -1275,7 +1200,67 @@ public float cutoffLatitude</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">StandardMaterial3D</span></dt>
+    <dt><span class="xref">MeshInstance3D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_globalVars" data-uid="Stargazer.AzimuthGridlines.globalVars">
+  globalVars
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Globals globalVars</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.Globals.html">Globals</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_latitude" data-uid="Stargazer.AzimuthGridlines.latitude">
+  latitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private float latitude</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -1290,7 +1275,7 @@ public float cutoffLatitude</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines_latitudeInterval" data-uid="Stargazer.AzimuthGridlines.latitudeInterval">
   latitudeInterval
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Latitude interval in degrees</p>
@@ -1322,7 +1307,7 @@ public float latitudeInterval</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines_latitudeSegments" data-uid="Stargazer.AzimuthGridlines.latitudeSegments">
   latitudeSegments
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The smoothness of each curve</p>
@@ -1352,9 +1337,70 @@ public int latitudeSegments</code></pre>
 
 
 
+  <h3 id="Stargazer_AzimuthGridlines_longitude" data-uid="Stargazer.AzimuthGridlines.longitude">
+  longitude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private float longitude</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_longitudeInterval" data-uid="Stargazer.AzimuthGridlines.longitudeInterval">
+  longitudeInterval
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+public float longitudeInterval</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Stargazer_AzimuthGridlines_longitudeSegments" data-uid="Stargazer.AzimuthGridlines.longitudeSegments">
   longitudeSegments
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The number of vertical (longitudinal) lines.</p>
@@ -1386,7 +1432,7 @@ public int longitudeSegments</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines_mesh" data-uid="Stargazer.AzimuthGridlines.mesh">
   mesh
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1414,9 +1460,69 @@ public int longitudeSegments</code></pre>
 
 
 
+  <h3 id="Stargazer_AzimuthGridlines_mesh2" data-uid="Stargazer.AzimuthGridlines.mesh2">
+  mesh2
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private ImmediateMesh mesh2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ImmediateMesh</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_AzimuthGridlines_orangeMaterial" data-uid="Stargazer.AzimuthGridlines.orangeMaterial">
+  orangeMaterial
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private StandardMaterial3D orangeMaterial</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">StandardMaterial3D</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Stargazer_AzimuthGridlines_radius" data-uid="Stargazer.AzimuthGridlines.radius">
   radius
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The radius of the dome.</p>
@@ -1445,57 +1551,29 @@ public float radius</code></pre>
 
 
 
-
-  <h3 id="Stargazer_AzimuthGridlines_storedfov" data-uid="Stargazer.AzimuthGridlines.storedfov">
-  storedfov
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L34"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private float storedfov</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
   <a id="Stargazer_AzimuthGridlines_DrawLatitudeLines_" data-uid="Stargazer.AzimuthGridlines.DrawLatitudeLines*"></a>
 
-  <h3 id="Stargazer_AzimuthGridlines_DrawLatitudeLines_Godot_ImmediateMesh_" data-uid="Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh)">
-  DrawLatitudeLines(ImmediateMesh)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_AzimuthGridlines_DrawLatitudeLines_Godot_ImmediateMesh_Godot_ImmediateMesh_" data-uid="Stargazer.AzimuthGridlines.DrawLatitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)">
+  DrawLatitudeLines(ImmediateMesh, ImmediateMesh)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private void DrawLatitudeLines(ImmediateMesh imMesh)</code></pre>
+    <pre><code class="lang-csharp hljs">private void DrawLatitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>imMesh</code> <span class="xref">ImmediateMesh</span></dt>
+    <dd></dd>
+    <dt><code>imMesh2</code> <span class="xref">ImmediateMesh</span></dt>
     <dd></dd>
   </dl>
 
@@ -1512,21 +1590,23 @@ public float radius</code></pre>
 
   <a id="Stargazer_AzimuthGridlines_DrawLongitudeLines_" data-uid="Stargazer.AzimuthGridlines.DrawLongitudeLines*"></a>
 
-  <h3 id="Stargazer_AzimuthGridlines_DrawLongitudeLines_Godot_ImmediateMesh_" data-uid="Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh)">
-  DrawLongitudeLines(ImmediateMesh)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_AzimuthGridlines_DrawLongitudeLines_Godot_ImmediateMesh_Godot_ImmediateMesh_" data-uid="Stargazer.AzimuthGridlines.DrawLongitudeLines(Godot.ImmediateMesh,Godot.ImmediateMesh)">
+  DrawLongitudeLines(ImmediateMesh, ImmediateMesh)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private void DrawLongitudeLines(ImmediateMesh imMesh)</code></pre>
+    <pre><code class="lang-csharp hljs">private void DrawLongitudeLines(ImmediateMesh imMesh, ImmediateMesh imMesh2)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>imMesh</code> <span class="xref">ImmediateMesh</span></dt>
+    <dd></dd>
+    <dt><code>imMesh2</code> <span class="xref">ImmediateMesh</span></dt>
     <dd></dd>
   </dl>
 
@@ -1541,25 +1621,90 @@ public float radius</code></pre>
 
 
 
-  <a id="Stargazer_AzimuthGridlines_SetCamera_" data-uid="Stargazer.AzimuthGridlines.SetCamera*"></a>
+  <a id="Stargazer_AzimuthGridlines_HandleZoomStateChanged_" data-uid="Stargazer.AzimuthGridlines.HandleZoomStateChanged*"></a>
 
-  <h3 id="Stargazer_AzimuthGridlines_SetCamera_Godot_Camera3D_" data-uid="Stargazer.AzimuthGridlines.SetCamera(Godot.Camera3D)">
-  SetCamera(Camera3D)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_AzimuthGridlines_HandleZoomStateChanged_Stargazer_ZoomState_" data-uid="Stargazer.AzimuthGridlines.HandleZoomStateChanged(Stargazer.ZoomState)">
+  HandleZoomStateChanged(ZoomState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets a reference to the <span class="xref">Godot.Camera3D</span> from the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetCamera(Camera3D camera)</code></pre>
+    <pre><code class="lang-csharp hljs">public void HandleZoomStateChanged(ZoomState zoomState)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>camera</code> <span class="xref">Camera3D</span></dt>
+    <dt><code>zoomState</code> <a class="xref" href="Stargazer.ZoomState.html">ZoomState</a></dt>
     <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_AzimuthGridlines_SetCalculator_" data-uid="Stargazer.AzimuthGridlines.SetCalculator*"></a>
+
+  <h3 id="Stargazer_AzimuthGridlines_SetCalculator_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.AzimuthGridlines.SetCalculator(DataLayer.Interfaces.IEquatorialCalculator)">
+  SetCalculator(IEquatorialCalculator)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a> used to retrieve the current observers latitude and longitude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCalculator(IEquatorialCalculator calculator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>calculator</code> <a class="xref" href="DataLayer.Interfaces.IEquatorialCalculator.html">IEquatorialCalculator</a></dt>
+    <dd><p>The calculator</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_AzimuthGridlines_ToggleEquatorialGridlines_" data-uid="Stargazer.AzimuthGridlines.ToggleEquatorialGridlines*"></a>
+
+  <h3 id="Stargazer_AzimuthGridlines_ToggleEquatorialGridlines_System_Boolean_" data-uid="Stargazer.AzimuthGridlines.ToggleEquatorialGridlines(System.Boolean)">
+  ToggleEquatorialGridlines(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives notifications of user request to toggle equatorial gridline visibility.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleEquatorialGridlines(bool showLines)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>showLines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True to show lines.</p>
+</dd>
   </dl>
 
 
@@ -1577,7 +1722,7 @@ public float radius</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines_ToggleGridlines_System_Boolean_" data-uid="Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)">
   ToggleGridlines(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The method used receive the <a class="xref" href="ControlContainer.html#ControlContainer_AzimuthToggled">AzimuthToggled</a> notification.</p>
@@ -1610,7 +1755,7 @@ public float radius</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines__Process_System_Double_" data-uid="Stargazer.AzimuthGridlines._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Dynamically draws the gridlines based on camera FOV</p>
@@ -1642,7 +1787,7 @@ public float radius</code></pre>
 
   <h3 id="Stargazer_AzimuthGridlines__Ready" data-uid="Stargazer.AzimuthGridlines._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/AzimuthGridlines.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/AzimuthGridlines.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initially draws the azimuth lines and hides them.</p>

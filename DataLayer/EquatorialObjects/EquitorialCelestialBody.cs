@@ -23,6 +23,6 @@ namespace DataLayer.EquatorialObjects
         /// <summary>
         /// Distance in light years from the earth.
         /// </summary>
-        public double Distance { get { return distance; } set { distance = value < 1 ? 1 : value;  } }
+        public double Distance { get; set; } 
     }
 }

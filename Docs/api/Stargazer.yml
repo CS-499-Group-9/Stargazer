@@ -5,25 +5,25 @@ items:
   id: Stargazer
   children:
   - Stargazer.ASTRALPLANEAlbedo
-  - Stargazer.AzimuthButton
   - Stargazer.AzimuthGridlines
+  - Stargazer.CelestialBody
   - Stargazer.CompassNeedle
-  - Stargazer.ConstellationButton
-  - Stargazer.ConstellationLabel
   - Stargazer.Constellations
   - Stargazer.Constellations2D
   - Stargazer.Globals
   - Stargazer.GridLabel
   - Stargazer.HoverLabel
+  - Stargazer.ICameraStateNotifier
   - Stargazer.IHoverable
-  - Stargazer.LabelButton
+  - Stargazer.ITrackable
   - Stargazer.LabelNode
   - Stargazer.MainCamera
-  - Stargazer.MainContainer
-  - Stargazer.MessierButton
+  - Stargazer.MessierObject
   - Stargazer.Moon
   - Stargazer.Planet
   - Stargazer.Planets
+  - Stargazer.PlayControl
+  - Stargazer.PlaySpeed
   - Stargazer.SkyView
   - Stargazer.SkyView2D
   - Stargazer.SkyViewContainer
@@ -33,7 +33,8 @@ items:
   - Stargazer.Star2D
   - Stargazer.StarMesh
   - Stargazer.Startup
-  - Stargazer.TimeLocEntered
+  - Stargazer.Sun
+  - Stargazer.ZoomState
   langs:
   - csharp
   - vb
@@ -46,40 +47,32 @@ items:
 references:
 - uid: Stargazer.ASTRALPLANEAlbedo
   commentId: T:Stargazer.ASTRALPLANEAlbedo
+  parent: Stargazer
   href: Stargazer.ASTRALPLANEAlbedo.html
   name: ASTRALPLANEAlbedo
   nameWithType: ASTRALPLANEAlbedo
   fullName: Stargazer.ASTRALPLANEAlbedo
-- uid: Stargazer.AzimuthButton
-  commentId: T:Stargazer.AzimuthButton
-  href: Stargazer.AzimuthButton.html
-  name: AzimuthButton
-  nameWithType: AzimuthButton
-  fullName: Stargazer.AzimuthButton
 - uid: Stargazer.AzimuthGridlines
   commentId: T:Stargazer.AzimuthGridlines
+  parent: Stargazer
   href: Stargazer.AzimuthGridlines.html
   name: AzimuthGridlines
   nameWithType: AzimuthGridlines
   fullName: Stargazer.AzimuthGridlines
+- uid: Stargazer.CelestialBody
+  commentId: T:Stargazer.CelestialBody
+  parent: Stargazer
+  href: Stargazer.CelestialBody.html
+  name: CelestialBody
+  nameWithType: CelestialBody
+  fullName: Stargazer.CelestialBody
 - uid: Stargazer.CompassNeedle
   commentId: T:Stargazer.CompassNeedle
+  parent: Stargazer
   href: Stargazer.CompassNeedle.html
   name: CompassNeedle
   nameWithType: CompassNeedle
   fullName: Stargazer.CompassNeedle
-- uid: Stargazer.ConstellationButton
-  commentId: T:Stargazer.ConstellationButton
-  href: Stargazer.ConstellationButton.html
-  name: ConstellationButton
-  nameWithType: ConstellationButton
-  fullName: Stargazer.ConstellationButton
-- uid: Stargazer.ConstellationLabel
-  commentId: T:Stargazer.ConstellationLabel
-  href: Stargazer.ConstellationLabel.html
-  name: ConstellationLabel
-  nameWithType: ConstellationLabel
-  fullName: Stargazer.ConstellationLabel
 - uid: Stargazer.Constellations
   commentId: T:Stargazer.Constellations
   parent: Stargazer
@@ -103,16 +96,25 @@ references:
   fullName: Stargazer.Globals
 - uid: Stargazer.GridLabel
   commentId: T:Stargazer.GridLabel
+  parent: Stargazer
   href: Stargazer.GridLabel.html
   name: GridLabel
   nameWithType: GridLabel
   fullName: Stargazer.GridLabel
 - uid: Stargazer.HoverLabel
   commentId: T:Stargazer.HoverLabel
+  parent: Stargazer
   href: Stargazer.HoverLabel.html
   name: HoverLabel
   nameWithType: HoverLabel
   fullName: Stargazer.HoverLabel
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  parent: Stargazer
+  href: Stargazer.ICameraStateNotifier.html
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
 - uid: Stargazer.IHoverable
   commentId: T:Stargazer.IHoverable
   parent: Stargazer
@@ -120,12 +122,13 @@ references:
   name: IHoverable
   nameWithType: IHoverable
   fullName: Stargazer.IHoverable
-- uid: Stargazer.LabelButton
-  commentId: T:Stargazer.LabelButton
-  href: Stargazer.LabelButton.html
-  name: LabelButton
-  nameWithType: LabelButton
-  fullName: Stargazer.LabelButton
+- uid: Stargazer.ITrackable
+  commentId: T:Stargazer.ITrackable
+  parent: Stargazer
+  href: Stargazer.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Stargazer.ITrackable
 - uid: Stargazer.LabelNode
   commentId: T:Stargazer.LabelNode
   href: Stargazer.LabelNode.html
@@ -134,22 +137,17 @@ references:
   fullName: Stargazer.LabelNode
 - uid: Stargazer.MainCamera
   commentId: T:Stargazer.MainCamera
+  parent: Stargazer
   href: Stargazer.MainCamera.html
   name: MainCamera
   nameWithType: MainCamera
   fullName: Stargazer.MainCamera
-- uid: Stargazer.MainContainer
-  commentId: T:Stargazer.MainContainer
-  href: Stargazer.MainContainer.html
-  name: MainContainer
-  nameWithType: MainContainer
-  fullName: Stargazer.MainContainer
-- uid: Stargazer.MessierButton
-  commentId: T:Stargazer.MessierButton
-  href: Stargazer.MessierButton.html
-  name: MessierButton
-  nameWithType: MessierButton
-  fullName: Stargazer.MessierButton
+- uid: Stargazer.MessierObject
+  commentId: T:Stargazer.MessierObject
+  href: Stargazer.MessierObject.html
+  name: MessierObject
+  nameWithType: MessierObject
+  fullName: Stargazer.MessierObject
 - uid: Stargazer.Moon
   commentId: T:Stargazer.Moon
   parent: Stargazer
@@ -170,6 +168,20 @@ references:
   name: Planets
   nameWithType: Planets
   fullName: Stargazer.Planets
+- uid: Stargazer.PlayControl
+  commentId: T:Stargazer.PlayControl
+  parent: Stargazer
+  href: Stargazer.PlayControl.html
+  name: PlayControl
+  nameWithType: PlayControl
+  fullName: Stargazer.PlayControl
+- uid: Stargazer.PlaySpeed
+  commentId: T:Stargazer.PlaySpeed
+  parent: Stargazer
+  href: Stargazer.PlaySpeed.html
+  name: PlaySpeed
+  nameWithType: PlaySpeed
+  fullName: Stargazer.PlaySpeed
 - uid: Stargazer.SkyView
   commentId: T:Stargazer.SkyView
   parent: Stargazer
@@ -185,6 +197,7 @@ references:
   fullName: Stargazer.SkyView2D
 - uid: Stargazer.SkyViewContainer
   commentId: T:Stargazer.SkyViewContainer
+  parent: Stargazer
   href: Stargazer.SkyViewContainer.html
   name: SkyViewContainer
   nameWithType: SkyViewContainer
@@ -225,17 +238,24 @@ references:
   fullName: Stargazer.StarMesh
 - uid: Stargazer.Startup
   commentId: T:Stargazer.Startup
-  parent: Stargazer
   href: Stargazer.Startup.html
   name: Startup
   nameWithType: Startup
   fullName: Stargazer.Startup
-- uid: Stargazer.TimeLocEntered
-  commentId: T:Stargazer.TimeLocEntered
-  href: Stargazer.TimeLocEntered.html
-  name: TimeLocEntered
-  nameWithType: TimeLocEntered
-  fullName: Stargazer.TimeLocEntered
+- uid: Stargazer.Sun
+  commentId: T:Stargazer.Sun
+  parent: Stargazer
+  href: Stargazer.Sun.html
+  name: Sun
+  nameWithType: Sun
+  fullName: Stargazer.Sun
+- uid: Stargazer.ZoomState
+  commentId: T:Stargazer.ZoomState
+  parent: Stargazer
+  href: Stargazer.ZoomState.html
+  name: ZoomState
+  nameWithType: ZoomState
+  fullName: Stargazer.ZoomState
 - uid: Stargazer
   commentId: N:Stargazer
   href: Stargazer.html

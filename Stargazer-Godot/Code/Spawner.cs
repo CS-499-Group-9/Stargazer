@@ -72,6 +72,8 @@ namespace Stargazer
             star.FromHorizontal(horizontalStar, starConverter);
             if (StarContainer.IsInsideTree())
             {
+                // The constellation may need to draw a star to the sky that is not already there (due to the magnitude filter).
+                // Since this happens asynchronously, it cannot interact with the scene tree.
                 StarContainer.CallDeferred("add_child", star);
             }
             else

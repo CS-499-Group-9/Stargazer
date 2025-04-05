@@ -5,7 +5,7 @@ items:
   id: IMessierRepository
   parent: DataLayer.Interfaces
   children:
-  - DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
+  - DataLayer.Interfaces.IMessierRepository.GetMessierObjects
   langs:
   - csharp
   - vb
@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IMessierRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IMessierRepository
     path: ../DataLayer/Interfaces/IMessierRepository.cs
@@ -29,23 +29,23 @@ items:
   syntax:
     content: public interface IMessierRepository
     content.vb: Public Interface IMessierRepository
-- uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
-  commentId: M:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
-  id: GetRawMessierObjectsAsync
+- uid: DataLayer.Interfaces.IMessierRepository.GetMessierObjects
+  commentId: M:DataLayer.Interfaces.IMessierRepository.GetMessierObjects
+  id: GetMessierObjects
   parent: DataLayer.Interfaces.IMessierRepository
   langs:
   - csharp
   - vb
-  name: GetRawMessierObjectsAsync()
-  nameWithType: IMessierRepository.GetRawMessierObjectsAsync()
-  fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync()
+  name: GetMessierObjects()
+  nameWithType: IMessierRepository.GetMessierObjects()
+  fullName: DataLayer.Interfaces.IMessierRepository.GetMessierObjects()
   type: Method
   source:
     remote:
       path: DataLayer/Interfaces/IMessierRepository.cs
-      branch: update-documentation
+      branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GetRawMessierObjectsAsync
+    id: GetMessierObjects
     path: ../DataLayer/Interfaces/IMessierRepository.cs
     startLine: 13
   assemblies:
@@ -54,12 +54,12 @@ items:
   summary: Gets all Messier Objects from the repository
   example: []
   syntax:
-    content: Task<IEnumerable<EquatorialMessierObject>> GetRawMessierObjectsAsync()
+    content: IEnumerable<EquatorialMessierObject> GetMessierObjects()
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
-      description: A running task that can be awaited.
-    content.vb: Function GetRawMessierObjectsAsync() As Task(Of IEnumerable(Of EquatorialMessierObject))
-  overload: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync*
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
+      description: A <code>yieldable</code> <xref href="System.Collections.Generic.IEnumerable%601" data-throw-if-not-resolved="false"></xref> that can be lazily loaded when needed.
+    content.vb: Function GetMessierObjects() As IEnumerable(Of EquatorialMessierObject)
+  overload: DataLayer.Interfaces.IMessierRepository.GetMessierObjects*
 references:
 - uid: DataLayer.Interfaces
   commentId: N:DataLayer.Interfaces
@@ -83,121 +83,107 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync*
-  commentId: Overload:DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
-  href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetRawMessierObjectsAsync
-  name: GetRawMessierObjectsAsync
-  nameWithType: IMessierRepository.GetRawMessierObjectsAsync
-  fullName: DataLayer.Interfaces.IMessierRepository.GetRawMessierObjectsAsync
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IEnumerable<EquatorialMessierObject>>
-  nameWithType: Task<IEnumerable<EquatorialMessierObject>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>>
-  nameWithType.vb: Task(Of IEnumerable(Of EquatorialMessierObject))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject))
-  name.vb: Task(Of IEnumerable(Of EquatorialMessierObject))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
-    name: EquatorialMessierObject
-    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
-    name: EquatorialMessierObject
-    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TResult
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
-  - name: TResult
+  - name: T
   - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+- uid: DataLayer.Interfaces.IMessierRepository.GetMessierObjects*
+  commentId: Overload:DataLayer.Interfaces.IMessierRepository.GetMessierObjects
+  href: DataLayer.Interfaces.IMessierRepository.html#DataLayer_Interfaces_IMessierRepository_GetMessierObjects
+  name: GetMessierObjects
+  nameWithType: IMessierRepository.GetMessierObjects
+  fullName: DataLayer.Interfaces.IMessierRepository.GetMessierObjects
+- uid: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
+  commentId: T:System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.EquatorialMessierObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<EquatorialMessierObject>
+  nameWithType: IEnumerable<EquatorialMessierObject>
+  fullName: System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.EquatorialMessierObject>
+  nameWithType.vb: IEnumerable(Of EquatorialMessierObject)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.EquatorialMessierObject)
+  name.vb: IEnumerable(Of EquatorialMessierObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+    name: EquatorialMessierObject
+    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DataLayer.EquatorialObjects.EquatorialMessierObject
+    name: EquatorialMessierObject
+    href: DataLayer.EquatorialObjects.EquatorialMessierObject.html
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
   spec.csharp:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
   spec.vb:
   - uid: System
     name: System
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system
   - name: .
-  - uid: System.Threading
-    name: Threading
+  - uid: System.Collections
+    name: Collections
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
+    href: https://learn.microsoft.com/dotnet/api/system.collections
   - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
+  - uid: System.Collections.Generic
+    name: Generic
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

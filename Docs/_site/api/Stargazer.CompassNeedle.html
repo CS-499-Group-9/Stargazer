@@ -680,6 +680,9 @@ public class CompassNeedle : Sprite2D, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
+    </div>
+    <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
     </div>
     <div>
@@ -1255,39 +1258,9 @@ public class CompassNeedle : Sprite2D, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_CompassNeedle_camera" data-uid="Stargazer.CompassNeedle.camera">
-  camera
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/CompassNeedle.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Camera3D camera</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Camera3D</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Stargazer_CompassNeedle_needle" data-uid="Stargazer.CompassNeedle.needle">
   needle
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/CompassNeedle.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CompassNeedle.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The needle to display</p>
@@ -1320,56 +1293,26 @@ public Node2D needle</code></pre>
 </h2>
 
 
-  <a id="Stargazer_CompassNeedle_SetCamera_" data-uid="Stargazer.CompassNeedle.SetCamera*"></a>
+  <a id="Stargazer_CompassNeedle_RotationHandler_" data-uid="Stargazer.CompassNeedle.RotationHandler*"></a>
 
-  <h3 id="Stargazer_CompassNeedle_SetCamera_Godot_Camera3D_" data-uid="Stargazer.CompassNeedle.SetCamera(Godot.Camera3D)">
-  SetCamera(Camera3D)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/CompassNeedle.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_CompassNeedle_RotationHandler_Godot_Camera3D_" data-uid="Stargazer.CompassNeedle.RotationHandler(Godot.Camera3D)">
+  RotationHandler(Camera3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CompassNeedle.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Receives notifications when the camera rotation has changed to rotate the needle.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetCamera(Camera3D camera)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RotationHandler(Camera3D camera)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>camera</code> <span class="xref">Camera3D</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Stargazer_CompassNeedle__Process_" data-uid="Stargazer.CompassNeedle._Process*"></a>
-
-  <h3 id="Stargazer_CompassNeedle__Process_System_Double_" data-uid="Stargazer.CompassNeedle._Process(System.Double)">
-  _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/CompassNeedle.cs/#L32"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Rotates the compass needle as the user view is rotated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
-    <dd></dd>
+    <dd><p>A reference to the main camera</p>
+</dd>
   </dl>
 
 
@@ -1387,7 +1330,7 @@ public Node2D needle</code></pre>
 
   <h3 id="Stargazer_CompassNeedle__Ready" data-uid="Stargazer.CompassNeedle._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/update-documentation/Stargazer-Godot/Code/CompassNeedle.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CompassNeedle.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a reference to the <span class="xref">Godot.Camera3D</span> in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
