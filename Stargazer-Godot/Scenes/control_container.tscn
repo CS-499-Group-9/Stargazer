@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccf161pss0iua"]
 
 [ext_resource type="Script" path="res://Code/ControlContainer.cs" id="1_5vufv"]
-[ext_resource type="StyleBox" uid="uid://bqlg72ri6emyf" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
+[ext_resource type="StyleBox" uid="uid://c0a2ssgewroom" path="res://Scenes/toggle_dark.tres" id="3_bhqqh"]
 [ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
 [ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
 
@@ -57,8 +57,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
+theme_override_colors/font_color = Color(0.972744, 0.944528, 0.957681, 0.996078)
 text = "Toggle Azimuth"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
@@ -87,8 +87,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 text = "Toggle Equatorial
 "
 expand_icon = true
@@ -117,8 +117,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 button_pressed = true
 text = "Toggle Constellations
 "
@@ -148,8 +148,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 button_pressed = true
 text = "Toggle Labels"
 expand_icon = true
@@ -178,8 +178,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 text = "Toggle Messier"
 expand_icon = true
 metadata/_edit_use_anchors_ = true
@@ -195,7 +195,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 0.99176)
 theme_override_styles/panel = ExtResource("4_f5vim")
 metadata/_edit_use_anchors_ = true
 
@@ -208,7 +207,7 @@ offset_bottom = 36.0
 theme_override_colors/caret_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_styles/normal = ExtResource("3_bhqqh")
-placeholder_text = "   Enter Latitude"
+placeholder_text = "Enter Latitude"
 
 [node name="LongitudeButton" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
@@ -231,7 +230,7 @@ offset_right = 194.0
 offset_bottom = 36.0
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_styles/normal = ExtResource("4_f5vim")
-placeholder_text = "   Enter Longitude"
+placeholder_text = "Enter Longitude"
 
 [node name="Time" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
@@ -260,14 +259,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 5.0
 anchor_bottom = 1.0
-offset_left = 7.0
+offset_left = 5.0
 offset_right = -6.0
 
 [node name="TimeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/Time/Time/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-size_flags_stretch_ratio = 3.68
+size_flags_stretch_ratio = 3.79
 theme_override_styles/normal = ExtResource("3_bhqqh")
 placeholder_text = "Enter Time"
 
@@ -296,7 +295,7 @@ theme_override_styles/panel = ExtResource("3_bhqqh")
 
 [node name="CalendarButton" parent="MarginContainer/VBoxContainer/DateButton" instance=ExtResource("6_d06d3")]
 layout_mode = 0
-offset_left = 26.0
+offset_left = 7.0
 offset_top = 2.0
 offset_right = 172.0
 offset_bottom = 38.0
