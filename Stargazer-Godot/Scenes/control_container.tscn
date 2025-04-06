@@ -5,7 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="4_f5vim"]
 [ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("latField", "longField", "timeField", "AMorPMButton", "calendarButton")]
+[node name="Control2" type="Control" node_paths=PackedStringArray("latField", "longField", "timeField", "AMorPMButton", "calendarButton")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2

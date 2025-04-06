@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qst6jthb1tgv" path="res://Scenes/sky_view_container.tscn" id="4_ch8am"]
 [ext_resource type="PackedScene" uid="uid://dr71brnwp5pdb" path="res://Scenes/play_control.tscn" id="5_6mtib"]
 
-[node name="Control" type="PanelContainer" node_paths=PackedStringArray("controlContainer", "skyViewContainer", "playControl")]
+[node name="Control3" type="PanelContainer" node_paths=PackedStringArray("controlContainer", "skyViewContainer", "playControl")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

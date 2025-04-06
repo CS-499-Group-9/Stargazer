@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dg2oxoddsxbyv"]
+[gd_scene load_steps=34 format=3 uid="uid://dg2oxoddsxbyv"]
 
 [ext_resource type="Script" path="res://Code/SkyView.cs" id="1_b8fgf"]
 [ext_resource type="Script" path="res://Code/MainCamera.cs" id="1_t068r"]
@@ -20,6 +20,7 @@
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 [ext_resource type="PackedScene" uid="uid://755k8nw6wxfm" path="res://Scenes/messier_object.tscn" id="17_yaq6n"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="19_4oofu"]
+[ext_resource type="FontFile" uid="uid://cp8gpj6c0lugh" path="res://Textures/Resources/JetBrainsMono-Medium.ttf" id="20_npw6d"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
@@ -64,14 +65,16 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vsn0o"]
 shader = ExtResource("13_xn4y0")
-shader_parameter/radius = 0.4
-shader_parameter/thickness = 0.01
+shader_parameter/radius = 0.37
+shader_parameter/thickness = 0.02
 shader_parameter/feather = 0.01
 
 [sub_resource type="Theme" id="Theme_h54og"]
 default_font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4vo"]
+line_spacing = 1.0
+font = ExtResource("20_npw6d")
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
@@ -161,7 +164,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -130.0
+offset_left = -200.0
 offset_top = -130.0
 grow_horizontal = 0
 grow_vertical = 0
