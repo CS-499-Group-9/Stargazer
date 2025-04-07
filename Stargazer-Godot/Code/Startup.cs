@@ -2,6 +2,7 @@ using DataLayer;
 using DataLayer.Interfaces;
 using Godot;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Stargazer
@@ -18,8 +19,7 @@ namespace Stargazer
         private IEquatorialCalculator calculator;
         private string screenshotPath = "user://screenshot.jpeg";
 
-        [Export] private PackedScene View2D;
-
+        [Export] private SubViewport View2D;
         [Export] private ControlContainer controlContainer;
         [Export] private SkyViewContainer skyViewContainer;
         [Export] private PlayControl playControl;
@@ -30,7 +30,17 @@ namespace Stargazer
         /// </summary>
         public async override void _Ready()
         {
-            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
+            var path = "";
+            if (OS.HasFeature("editor"))
+            {
+                path = ProjectSettings.GlobalizePath("res://");
+            }
+            else
+            {
+                path = OS.GetExecutablePath().GetBaseDir();
+
+            }
+            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(path);
             dataPackage = await repositoryService.InitializeDataPackage();
             calculator = dataPackage.Calculator;
             skyView = skyViewContainer.SkyView;
@@ -67,19 +77,27 @@ namespace Stargazer
 
         }
 
-        private async void TakeScreenshot()
+        private  async Task TakeScreenshot()
         {
-            var view2D = GetNode<SubViewport>(nameof(SubViewport));
-            var skyView2d = view2D.GetNode<SkyView2D>("View2d");
+            var skyView2d = View2D.GetNode<SkyView2D>("View2d");
             await skyView2d.UpdateUserPosition(dataPackage);
             // Get the current viewport as an Image
-            
+
+            Timer screenshotTimer = new Timer();
+            screenshotTimer.WaitTime = 1;
+            screenshotTimer.OneShot = true;
+            screenshotTimer.Timeout += () => { ExportScreenshot(View2D); };
+            screenshotTimer.Autostart = true;
+            AddChild(screenshotTimer);
+        }
+
+        private void ExportScreenshot(SubViewport view2D)
+        {
             Image screenshotImage = view2D.GetTexture().GetImage();
 
             // Save the screenshot as a JPEG
             screenshotImage.SavePng(screenshotPath);
             GD.Print($"Screenshot saved to {screenshotPath}");
-            
         }
     }
 }

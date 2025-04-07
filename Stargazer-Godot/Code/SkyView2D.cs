@@ -26,8 +26,8 @@ namespace Stargazer
         /// <returns></returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
         {
-            await Stars.DrawStars(dataPackage.DrawnStars);
-            await Constellations.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar);
+            var drawnStars = await Stars.DrawStars(dataPackage.DrawnStars);
+            Constellations.DrawConstellations(dataPackage.Constellations, drawnStars);
         }
     }
 }
