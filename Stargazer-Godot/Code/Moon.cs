@@ -21,6 +21,7 @@ namespace Stargazer
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalMoon);
+            DrawnDistance = Distance;
             Position = GetLocation();
 
             // Rotate the object to always face the earth.
@@ -41,7 +42,7 @@ namespace Stargazer
             return $"The Moon\n" +
             $"Altitude {horizontalMoon.Altitude}\n" +
             $"Azimuth {horizontalMoon.Azimuth}\n" +
-            $"Distance: {horizontalMoon.Distance}";
+            $"Distance: {horizontalMoon.Distance} AU";
         }
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Stargazer
         {
             base.FromHorizontal(moon, moonCalculator);
             horizontalMoon = moon;
+            DrawnDistance = Distance;
             calculator = moonCalculator;
         }
 

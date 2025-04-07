@@ -42,7 +42,6 @@ namespace Stargazer
             this.starConverter = starConverter;
             // Get a reference to the current star container
             var oldContainer = StarContainer;
-
             // Create a new star container in memory
             StarContainer = new();
 
