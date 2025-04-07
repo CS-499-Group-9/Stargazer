@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ujvt4iftkmki"]
+[gd_scene load_steps=11 format=3 uid="uid://ujvt4iftkmki"]
 
 [ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
 [ext_resource type="Script" path="res://Code/SkyView2D.cs" id="1_hfig6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/Constellations2D.cs" id="3_h3n60"]
 [ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="3_vnxwx"]
 [ext_resource type="Shader" path="res://Scenes/gridlines.gdshader" id="3_x45qy"]
+[ext_resource type="PackedScene" uid="uid://cpnjhw02imc4o" path="res://Scenes/banner.tscn" id="7_qiw5f"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_p52lc"]
 
@@ -62,3 +63,18 @@ z_index = -4
 offset_right = 800.0
 offset_bottom = 800.0
 color = Color(0, 0, 0, 1)
+
+[node name="Banner" parent="." instance=ExtResource("7_qiw5f")]
+z_index = 2
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 330.0
+offset_bottom = 111.0
+scale = Vector2(0.5, 0.5)
+
+[node name="TimeLabel2D" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 12.0
+offset_top = 650.0
+offset_right = 105.0
+offset_bottom = 747.0

@@ -21,6 +21,10 @@ namespace Stargazer
 
         public double LocalSiderealTime{get; set;}
 
+        public double LatitudePass { get; set; }
+        public double LongitudePass { get; set; }
+        public DateTime TimePass { get; set; }
+
 
         public override void _Ready()
         {
@@ -30,10 +34,13 @@ namespace Stargazer
             isLabel = true;
             isHover = false;
             hoverLabel = "";
+        }
 
-
+        public void UpdatePosition(double latitude, double longitude, DateTime time)
+        {
+            LatitudePass = latitude;
+            LongitudePass= longitude;
+            TimePass = time;
         }
     }
-
-
 }

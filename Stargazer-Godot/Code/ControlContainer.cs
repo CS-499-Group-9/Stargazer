@@ -2,7 +2,9 @@ using DataLayer;
 using Godot;
 using Stargazer;
 using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 public partial class ControlContainer : Control
 {
@@ -11,6 +13,9 @@ public partial class ControlContainer : Control
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+    public double LatitudePass { get; set; }
+    public double LongitudePass { get; set; }
+    public DateTime Time { get; set; }
 
     /// <summary>
     /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -45,6 +50,7 @@ public partial class ControlContainer : Control
     /// Checks to see if the user has requested a screenshot
     /// </summary>
     /// <param name="delta">Unused</param>
+
     public async override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("screenshot_key"))
@@ -134,9 +140,12 @@ public partial class ControlContainer : Control
         GD.Print(timeString);
         String[] dateVals = timeString.Split('/');
         var parsedDate = DateTime.Parse($"{timeString} {hour:00}:{minute:00}:00");
+        Time = DateTime.Parse($"{timeString} {hour:00}:{minute:00}:00");
+        LongitudePass = longitude;
+        LatitudePass = latitude;
         GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
-        
-        UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
-    }
+        Globals globalData = (Globals)GetNode("/root/Globals");
+        globalData.UpdatePosition(latitude, longitude, parsedDate);
+}
 }

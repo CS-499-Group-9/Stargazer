@@ -79,5 +79,15 @@ namespace DataLayer.Interfaces
         /// <param name="sun"></param>
         void UpdatePositionOf(HorizontalSun sun);
 
+        DateTime getTime()
+        {
+            return CurrentTime;
+        }
+
+        (double, double) getLongLat()
+        {
+            return (Latitude, Longitude);
+        }
+
     }
 }
