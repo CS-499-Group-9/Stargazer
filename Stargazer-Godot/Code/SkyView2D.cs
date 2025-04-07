@@ -22,13 +22,13 @@ namespace Stargazer
         {
             Stars = GetNode<Spawner2D>("Stars2D");
             Constellations = GetNode<Constellations2D>("Constellations2D");
-            GD.Print("SkyView2D created.");
-            if (Input.IsActionJustPressed("screenshot_key"))
-            {
-                GD.Print("skyview exists");
-                GD.Print("Screenshot time!");
-                TakeScreenshot();
-            }
+            // GD.Print("SkyView2D created.");
+            // if (Input.IsActionJustPressed("screenshot_key"))
+            // {
+            //     GD.Print("skyview exists");
+            //     GD.Print("Screenshot time!");
+            //     TakeScreenshot();
+            // }
         }
 
 
@@ -39,26 +39,12 @@ namespace Stargazer
         /// <returns></returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> inputPackage)
         {
+            GD.Print("updating 2D view");
             dataPackage = inputPackage;
-            
-        }
-        private async Task TakeScreenshot()
-        {
             await Stars.DrawStars(dataPackage.DrawnStars);
             await Constellations.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar);
-            GD.Print("Screenshot time!");
-            // Get the current viewport as an Image
-            Viewport viewport = GetViewport();
-            Image screenshotImage = viewport.GetTexture().GetImage();
-
-            // Save the screenshot as a JPEG
-            screenshotImage.SavePng(screenshotPath);
-            GD.Print($"Screenshot saved to {screenshotPath}");
+            GD.Print("2d view updated");
         }
-        public override void _Input(InputEvent @event)
-        {
 
-
-        }
     }
 }

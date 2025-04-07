@@ -15,11 +15,11 @@ items:
   type: Interface
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: IEquatorialConverter
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 11
   assemblies:
   - DataLayer
@@ -48,11 +48,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: animated-orbit
       repo: https://github.com/CS-499-Group-9/Stargazer.git
     id: Convert
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 16
   assemblies:
   - DataLayer

@@ -21,11 +21,11 @@ items:
   type: Class
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CosineKittyEquatorialConverter
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 11
   assemblies:
   - DataLayer
@@ -66,11 +66,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: currentTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 13
   assemblies:
   - DataLayer
@@ -95,11 +95,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: astroTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 14
   assemblies:
   - DataLayer
@@ -124,11 +124,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: observer
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 15
   assemblies:
   - DataLayer
@@ -153,11 +153,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 23
   assemblies:
   - DataLayer
@@ -194,11 +194,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CurrentTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 33
   assemblies:
   - DataLayer
@@ -229,11 +229,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncrementTimeBy
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 36
   assemblies:
   - DataLayer
@@ -266,11 +266,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Implementations/CosineKittyEquitorialConverter.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialConverter.cs
     startLine: 43
   assemblies:
   - DataLayer

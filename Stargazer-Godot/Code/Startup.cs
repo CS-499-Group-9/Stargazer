@@ -16,7 +16,7 @@ namespace Stargazer
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
         private IEquatorialCalculator calculator;
-        private string screenshotPath = "user://screenshot.jpeg";
+        private string screenshotPath = "user://screenshot.png";
 
         [Export] private PackedScene View2D;
 
@@ -67,19 +67,26 @@ namespace Stargazer
 
         }
 
-        private async void TakeScreenshot()
+        private void TakeScreenshot()
         {
-            var view2D = GetNode<SubViewport>(nameof(SubViewport));
-            var skyView2d = view2D.GetNode<SkyView2D>("View2d");
-            await skyView2d.UpdateUserPosition(dataPackage);
+            var view2D = GetNode<SubViewport>("HBoxContainer/SubViewportContainer/"+nameof(SubViewport));
+            var skyView2d = view2D.GetNode<SkyView2D>("./View2d");
+            skyView2d.UpdateUserPosition(dataPackage);
             // Get the current viewport as an Image
             
+            Timer screenshotTimer = new Timer();
+            screenshotTimer.OneShot = true;
+            screenshotTimer.Timeout += () => {ExportScreenshot(view2D);};
+            screenshotTimer.Autostart = true;
+            AddChild(screenshotTimer);
+            
+        }
+        private void ExportScreenshot(SubViewport view2D){
             Image screenshotImage = view2D.GetTexture().GetImage();
 
             // Save the screenshot as a JPEG
             screenshotImage.SavePng(screenshotPath);
             GD.Print($"Screenshot saved to {screenshotPath}");
-            
         }
     }
 }

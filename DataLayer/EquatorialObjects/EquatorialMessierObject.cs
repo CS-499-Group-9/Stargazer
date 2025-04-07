@@ -35,5 +35,9 @@ namespace DataLayer.EquatorialObjects
         /// The difficulty level of viewing the object
         /// </summary>
         public string? ViewingDifficulty { get; set; }
+        /// <summary>
+        /// The commonly used main of the object
+        /// </summary>
+        public string? CommonName { get; set; }
     }
 }

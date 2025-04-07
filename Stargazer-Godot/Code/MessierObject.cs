@@ -29,11 +29,17 @@ namespace Stargazer
 		/// <inheritdoc/>
 		public override string GetHoverText()
 		{
-			return $"{horizontalMessierObject.MessierId}\n + " +
-				$"Altitude: {horizontalMessierObject.Altitude}\n" +
-				$"Azimuth: {horizontalMessierObject.Azimuth}\n + " +
-				$"Distance: {horizontalMessierObject.Distance}\n" +
-				$"Size: {horizontalMessierObject.Size} lightyears\n" +
+			string CommonName = "";
+			GD.Print($"{horizontalMessierObject.CommonName}");
+			if(horizontalMessierObject.CommonName.Length != 0 ){
+				CommonName = $"{horizontalMessierObject.CommonName}\n";
+			}
+			return $"{horizontalMessierObject.MessierId}\n" +
+				CommonName +
+				$"Altitude: {horizontalMessierObject.Altitude:0.00}\n" +
+				$"Azimuth: {horizontalMessierObject.Azimuth:0.00}\n" +
+				$"Distance: {horizontalMessierObject.Distance:0.00} lightyears\n" +
+				$"Size: {horizontalMessierObject.Size}\n" +
 				$"Viewing Season: {horizontalMessierObject.ViewingSeason}";
 		}
 

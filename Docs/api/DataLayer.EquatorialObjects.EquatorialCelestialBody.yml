@@ -19,11 +19,11 @@ items:
   type: Class
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialCelestialBody
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 7
   assemblies:
   - DataLayer
@@ -59,11 +59,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: distance
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 9
   assemblies:
   - DataLayer
@@ -86,11 +86,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: RightAscension
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 13
   assemblies:
   - DataLayer
@@ -117,11 +117,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Declination
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 17
   assemblies:
   - DataLayer
@@ -148,11 +148,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 21
   assemblies:
   - DataLayer
@@ -179,11 +179,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+      path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
-    path: ../DataLayer/EquatorialObjects/EquitorialCelestialBody.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
     startLine: 25
   assemblies:
   - DataLayer

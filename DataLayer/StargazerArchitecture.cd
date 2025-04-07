@@ -4,35 +4,35 @@
     <Position X="9.75" Y="0.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAEAABAAAAAAAEAAAA=</HashCode>
-      <FileName>EquitorialObjects\EquitorialCelestialBody.cs</FileName>
+      <FileName>EquatorialObjects\EquatorialCelestialBody.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DataLayer.EquatorialObjects.Constellation">
     <Position X="50.25" Y="3.75" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>EquitorialObjects\Constellation.cs</FileName>
+      <FileName>EquatorialObjects\Constellation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.EquatorialObjects.EquitorialMessierObject">
+  <Class Name="DataLayer.EquatorialObjects.EquatorialMessierObject">
     <Position X="23.75" Y="5.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAgAAAIISAACAEgEABAAABAQAAAAABAgA=</HashCode>
-      <FileName>EquitorialObjects\EquitorialMessierObject.cs</FileName>
+      <FileName>EquatorialObjects\EquatorialMessierObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataLayer.EquatorialObjects.EquitorialStar">
+  <Class Name="DataLayer.EquatorialObjects.EquatorialStar">
     <Position X="13.25" Y="0.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>BAAAAAAIAAACCAAAAAAAAAAAQBAQIAAAAAAgAAAAABE=</HashCode>
-      <FileName>EquitorialObjects\EquitorialStar.cs</FileName>
+      <FileName>EquatorialObjects\EquatorialStar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DataLayer.Implementations.CosineKittyEquatorialConverter&lt;T&gt;" BaseTypeListCollapsed="true">
     <Position X="29.25" Y="6.25" Width="5.75" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAQAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Implementations\CosineKittyEquitorialConverter.cs</FileName>
+      <FileName>Implementations\CosineKittyEquatorialConverter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -167,11 +167,11 @@
       <FileName>Interfaces\IConstellationRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="DataLayer.Interfaces.IEquitorialConverter&lt;T&gt;">
+  <Interface Name="DataLayer.Interfaces.IEquatorialConverter&lt;T&gt;">
     <Position X="23" Y="0.75" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IEquitorialConverter.cs</FileName>
+      <FileName>Interfaces\IEquatorialConverter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLayer.Interfaces.IMessierRepository">

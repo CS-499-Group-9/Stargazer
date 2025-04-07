@@ -35,11 +35,11 @@ items:
   type: Class
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CosineKittyEquatorialCalculator
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 12
   assemblies:
   - DataLayer
@@ -74,11 +74,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: currentTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 14
   assemblies:
   - DataLayer
@@ -101,11 +101,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: astroTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 15
   assemblies:
   - DataLayer
@@ -128,11 +128,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: observer
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 16
   assemblies:
   - DataLayer
@@ -155,11 +155,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planets
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 17
   assemblies:
   - DataLayer
@@ -182,11 +182,11 @@ items:
   type: Field
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AUConversion
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 18
   assemblies:
   - DataLayer
@@ -209,11 +209,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CurrentTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 20
   assemblies:
   - DataLayer
@@ -242,11 +242,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LST
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 22
   assemblies:
   - DataLayer
@@ -275,11 +275,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Latitude
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 24
   assemblies:
   - DataLayer
@@ -308,11 +308,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Longitude
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 26
   assemblies:
   - DataLayer
@@ -341,11 +341,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 34
   assemblies:
   - DataLayer
@@ -382,11 +382,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 56
   assemblies:
   - DataLayer
@@ -413,11 +413,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateMoon
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 62
   assemblies:
   - DataLayer
@@ -446,11 +446,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateSun
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 72
   assemblies:
   - DataLayer
@@ -479,11 +479,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreatePlanets
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 82
   assemblies:
   - DataLayer
@@ -512,11 +512,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetTime
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 106
   assemblies:
   - DataLayer
@@ -549,11 +549,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetLocation
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 113
   assemblies:
   - DataLayer
@@ -589,11 +589,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncrementTimeBy
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 119
   assemblies:
   - DataLayer
@@ -626,11 +626,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 126
   assemblies:
   - DataLayer
@@ -660,11 +660,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 139
   assemblies:
   - DataLayer
@@ -694,11 +694,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 155
   assemblies:
   - DataLayer
@@ -728,11 +728,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
     startLine: 167
   assemblies:
   - DataLayer

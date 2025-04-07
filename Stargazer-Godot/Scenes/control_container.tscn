@@ -8,6 +8,8 @@
 [node name="Control2" type="Control" node_paths=PackedStringArray("latField", "longField", "timeField", "AMorPMButton", "calendarButton")]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -2.0
+offset_right = -2.0
 mouse_filter = 2
 script = ExtResource("1_5vufv")
 latField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LineEdit")
@@ -18,14 +20,16 @@ calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButt
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -204.0
-offset_bottom = 353.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -282.0
+offset_right = 2.0
+offset_bottom = 154.0
+grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -205,7 +209,7 @@ offset_top = 5.0
 offset_right = 194.0
 offset_bottom = 36.0
 theme_override_colors/caret_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 theme_override_styles/normal = ExtResource("3_bhqqh")
 placeholder_text = "Enter Latitude"
 
@@ -228,7 +232,7 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 194.0
 offset_bottom = 36.0
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 theme_override_styles/normal = ExtResource("4_f5vim")
 placeholder_text = "Enter Longitude"
 
@@ -295,9 +299,9 @@ theme_override_styles/panel = ExtResource("3_bhqqh")
 
 [node name="CalendarButton" parent="MarginContainer/VBoxContainer/DateButton" instance=ExtResource("6_d06d3")]
 layout_mode = 0
-offset_left = 7.0
+offset_left = 5.0
 offset_top = 2.0
-offset_right = 172.0
+offset_right = 194.0
 offset_bottom = 38.0
 
 [node name="EnterButton" type="Control" parent="MarginContainer/VBoxContainer"]
@@ -322,16 +326,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.5
-offset_top = -15.5
-offset_right = 70.5
-offset_bottom = 15.5
+offset_left = -90.0
+offset_top = -15.0
+offset_right = 88.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
-theme_override_styles/normal = ExtResource("4_f5vim")
+theme_override_colors/font_pressed_color = Color(0.615686, 0.6, 0.615686, 1)
+theme_override_colors/font_color = Color(0.972549, 0.945098, 0.956863, 0.996078)
 text = "Enter Data"
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]

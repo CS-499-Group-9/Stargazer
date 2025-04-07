@@ -24,11 +24,11 @@ items:
   type: Class
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialStar
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 6
   assemblies:
   - DataLayer
@@ -67,11 +67,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 11
   assemblies:
   - DataLayer
@@ -98,11 +98,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 15
   assemblies:
   - DataLayer
@@ -129,11 +129,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HenryDraperId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 19
   assemblies:
   - DataLayer
@@ -160,11 +160,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HarvardRevisedId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 23
   assemblies:
   - DataLayer
@@ -191,11 +191,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GlieseId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 27
   assemblies:
   - DataLayer
@@ -222,11 +222,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: BayerFlamsteedDesignation
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 31
   assemblies:
   - DataLayer
@@ -253,11 +253,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ProperName
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 35
   assemblies:
   - DataLayer
@@ -284,11 +284,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AbsoluteMagnitude
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 39
   assemblies:
   - DataLayer
@@ -315,11 +315,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spectrum
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 43
   assemblies:
   - DataLayer
@@ -346,11 +346,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ColorIndex
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
     startLine: 47
   assemblies:
   - DataLayer

@@ -133,7 +133,7 @@ namespace DataLayer.Implementations
             Topocentric hor = Astronomy.Horizon(astroTime, observer, eq.ra, eq.dec, Refraction.None);
             hoBody.Altitude = hor.altitude;
             hoBody.Azimuth = hor.azimuth;
-            hoBody.Distance = eq.dist / AUConversion;
+
         }
 
         ///<inheritdoc/>
