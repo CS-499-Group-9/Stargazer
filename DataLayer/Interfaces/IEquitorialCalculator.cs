@@ -89,5 +89,9 @@ namespace DataLayer.Interfaces
             return (Latitude, Longitude);
         }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }
 }
