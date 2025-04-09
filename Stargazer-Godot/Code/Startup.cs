@@ -109,7 +109,7 @@ namespace Stargazer
             System.IO.Directory.CreateDirectory(screenshotDir);
 
             // Create the filename using latitude, longitude, and the date
-            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.png");
+            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.jpg");
 
             // Wait for 1 second before taking the screenshot
             Timer screenshotTimer = new Timer();
@@ -123,10 +123,18 @@ namespace Stargazer
 
         private void ExportScreenshot(SubViewport view2D)
         {
-            Image screenshotImage = view2D.GetTexture().GetImage();
+            // Define the required resolution (300 DPI for 8.5x11 inches)
+            int width = 2550;  // 8.5 inches * 300 DPI
+            int height = 3300; // 11 inches * 300 DPI
 
-            // Save the screenshot as a JPEG
-            screenshotImage.SavePng(screenshotPath);
+            // Get the image from the viewport
+            Image screenshotImage = view2D.GetTexture().GetImage();
+    
+            // Resize the image to fit the 8.5x11 dimensions at 300 DPI
+            screenshotImage.Resize(width, height);
+
+            screenshotImage.SaveJpg(screenshotPath, 90);
+
             GD.Print($"Screenshot saved to {screenshotPath}");
             ShowScreenshotSavedNotification();
         }
