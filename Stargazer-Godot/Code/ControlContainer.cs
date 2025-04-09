@@ -38,21 +38,6 @@ public partial class ControlContainer : Control
 	public Action<double, double, DateTime> UserPositionUpdated;
     /// <summary>
     /// Broadcasts a request to take a screenshot
-    /// </summary>
-    public Func<Task> RequestScreenshot;
-
-    /// <summary>
-    /// Checks to see if the user has requested a screenshot
-    /// </summary>
-    /// <param name="delta">Unused</param>
-    public async override void _Process(double delta)
-    {
-        if (Input.IsActionJustPressed("screenshot_key"))
-        {
-            await RequestScreenshot();
-        }
-    }
-
     /// <summary>
     /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
@@ -138,5 +123,11 @@ public partial class ControlContainer : Control
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
+    }
+
+    private void OnButtonPressed()
+    {
+        GD.Print("Button was pressed!");
+        // You can add your logic here, such as taking a screenshot
     }
 }
