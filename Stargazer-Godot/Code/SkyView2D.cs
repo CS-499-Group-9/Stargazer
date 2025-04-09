@@ -29,7 +29,7 @@ namespace Stargazer
         /// <returns></returns>
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (string, string) latLong)
         {
-            timeLabel.Text = currentTime.ToString() + " UTC\n" + latLong;
+            timeLabel.Text = currentTime.ToString("M/d/yyyy\nh:mm:ss tt 'UTC'") + "\n" + latLong;
             var drawnStars = await Stars.DrawStars(dataPackage.DrawnStars);
             Constellations.DrawConstellations(dataPackage.Constellations, drawnStars);
         }

@@ -68,7 +68,7 @@ color = Color(0, 0, 0, 1)
 z_index = 2
 offset_left = 11.0
 offset_top = 706.0
-offset_right = 180.0
+offset_right = 214.0
 offset_bottom = 795.0
 
 [node name="Banner" parent="." instance=ExtResource("7_8esh6")]
