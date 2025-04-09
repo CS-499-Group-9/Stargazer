@@ -11,13 +11,18 @@ namespace Stargazer
     public partial class Moon : CelestialBody
     {
         private HorizontalMoon horizontalMoon;
-    
+        private ShaderMaterial moonMaterial;
+        private Sun theSun;
 
         /// <summary>
         /// Calculates phase and positional data every frame.
         /// Must override the <see cref="CelestialBody._Process(double)"/> method since calculations are moon specific.
         /// </summary>
         /// <param name="delta"></param>
+        public override void _Ready()
+        {
+            moonMaterial = (ShaderMaterial)GetNode<MeshInstance3D>("MoonBody/MoonMesh").GetSurfaceOverrideMaterial(0);
+        }
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalMoon);
@@ -33,15 +38,28 @@ namespace Stargazer
             rotateTransform.Basis = rotateBasis;
             Transform = rotateTransform;
             Scale = new Vector3(2,2,2);
+            //Set the Moon's illumination angle to face that of the Sun.
+            SetShaderUpVector(theSun.Position.Normalized());
         }
 
+        public void SetShaderUpVector(Vector3 position){
+            moonMaterial.SetShaderParameter("target_direction",position);
+        }
         /// <inheritdoc/>
         public override string GetHoverText()
         {
+            string WaxWaneText = "Waxing";
+            float coveragePercent = 100*(float)horizontalMoon.Phase/180;
+            if (horizontalMoon.Phase > 180){
+                WaxWaneText = "Waning";
+                coveragePercent = 200-coveragePercent;
+            }
             return $"The Moon\n" +
             $"Altitude {horizontalMoon.Altitude}\n" +
             $"Azimuth {horizontalMoon.Azimuth}\n" +
-            $"Distance: {horizontalMoon.Distance}";
+            $"Distance: {horizontalMoon.Distance}\n" +
+            $"Coverage: {coveragePercent:0.}% ("+WaxWaneText+")"
+            ;
         }
 
         /// <summary>
@@ -54,6 +72,10 @@ namespace Stargazer
             base.FromHorizontal(moon, moonCalculator);
             horizontalMoon = moon;
             calculator = moonCalculator;
+
+        }
+        public void SetSun(Sun sun){
+            theSun = sun;
         }
 
     }

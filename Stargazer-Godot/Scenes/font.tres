@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://33ynhi38kkrt"]
+
+[ext_resource type="FontFile" uid="uid://cp8gpj6c0lugh" path="res://Textures/Resources/JetBrainsMono-Medium.ttf" id="1_oimaw"]
+
+[resource]
+line_spacing = 1.0
+font = ExtResource("1_oimaw")
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)

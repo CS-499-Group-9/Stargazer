@@ -69,7 +69,7 @@ namespace Stargazer
 
         private void TakeScreenshot()
         {
-            var view2D = GetNode<SubViewport>("HBoxContainer/SubViewportContainer/"+nameof(SubViewport));
+            var view2D = GetNode<SubViewport>(nameof(SubViewport));
             var skyView2d = view2D.GetNode<SkyView2D>("./View2d");
             skyView2d.UpdateUserPosition(dataPackage);
             // Get the current viewport as an Image

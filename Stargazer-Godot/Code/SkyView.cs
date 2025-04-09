@@ -150,13 +150,14 @@ namespace Stargazer
             
             PlanetSpawner.DrawPlanets(dataPackage.Planets, calculator);
             
-            moon = MoonScene.Instantiate<Moon>();
-            moon.FromHorizontal(dataPackage.Moon, calculator);
-            AddChild(moon);
-            
             sun = SunScene.Instantiate<Sun>();
             sun.FromHorizontal(dataPackage.Sun, calculator);
             AddChild(sun);
+
+            moon = MoonScene.Instantiate<Moon>();
+            moon.FromHorizontal(dataPackage.Moon, calculator);
+            moon.SetSun(sun);
+            AddChild(moon);
 
             previousTicks = Time.GetTicksMsec();
         }

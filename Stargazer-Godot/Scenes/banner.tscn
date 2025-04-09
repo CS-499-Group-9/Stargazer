@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpnjhw02imc4o"]
 
-[sub_resource type="SystemFont" id="SystemFont_smpph"]
-font_names = PackedStringArray("Cascadia Mono")
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://cp8gpj6c0lugh" path="res://Textures/Resources/JetBrainsMono-Medium.ttf" id="1_gsqfx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pw72o"]
-font = SubResource("SystemFont_smpph")
-font_size = 66
-outline_size = 15
-outline_color = Color(1, 0.215686, 1, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_kanq7"]
+line_spacing = 1.0
+font = ExtResource("1_gsqfx")
+font_size = 48
+outline_size = 4
+outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
 [node name="Control" type="Control"]
 custom_minimum_size = Vector2(90, 90)
@@ -29,5 +28,5 @@ theme_override_constants/margin_top = 10
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 text = "Stargazer"
-label_settings = SubResource("LabelSettings_pw72o")
+label_settings = SubResource("LabelSettings_kanq7")
 metadata/_edit_use_anchors_ = true
