@@ -80,7 +80,7 @@ namespace Stargazer
         private  async Task TakeScreenshot()
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
-            await skyView2d.UpdateUserPosition(dataPackage);
+            await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
             // Get the current viewport as an Image
 
             Timer screenshotTimer = new Timer();
