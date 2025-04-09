@@ -388,3 +388,4 @@ icon_alignment = 1
 [connection signal="toggled" from="MarginContainer/VBoxContainer/LabelButton/CheckBox" to="." method="ToggleConstellationLabels"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MessierButton/CheckBox" to="." method="ToggleMessierObjects"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterButton/Button" to="." method="UpdateUserPosition"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Button" to="." method="_on_button_pressed"]

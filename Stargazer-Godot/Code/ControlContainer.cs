@@ -11,6 +11,7 @@ public partial class ControlContainer : Control
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+    private Startup _mainControl;
 
     /// <summary>
     /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -39,6 +40,20 @@ public partial class ControlContainer : Control
     /// <summary>
     /// Broadcasts a request to take a screenshot
     /// <summary>
+    public Func<Task> RequestScreenshot;
+
+    /// <summary>
+    /// Checks to see if the user has requested a screenshot
+    /// </summary>
+    /// <param name="delta">Unused</param>
+    public async override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("screenshot_key"))
+        {
+            await RequestScreenshot();
+        }
+    }
+   
     /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
     /// <param name="value">True if the toggle button is checked</param>
@@ -67,6 +82,11 @@ public partial class ControlContainer : Control
     /// </summary>
     /// <param name="value">True if the checkbox is checked</param>
     public void ToggleMessierObjects(bool value) { MessierObjectsToggled?.Invoke(value); }
+
+    public void SetMainController(Startup controller)
+    {
+        _mainControl = controller;
+    }
 
     /// <summary>
     /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
@@ -125,9 +145,15 @@ public partial class ControlContainer : Control
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
     }
 
-    private void OnButtonPressed()
+    private async void _on_button_pressed()
     {
-        GD.Print("Button was pressed!");
-        // You can add your logic here, such as taking a screenshot
+        if (_mainControl != null)
+        {
+            await _mainControl.TakeScreenshot();
+        }
+        else
+        {
+            GD.PrintErr("Main controller reference not set!");
+        }
     }
 }

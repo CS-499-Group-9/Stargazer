@@ -58,6 +58,7 @@ namespace Stargazer
             // Activate the Play Controller and notify the SkyView
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
+            controlContainer.SetMainController(this);
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Stargazer
 
         }
 
-        private  async Task TakeScreenshot()
+        public async Task TakeScreenshot()
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
             await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
