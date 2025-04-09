@@ -41,3 +41,15 @@ render_target_update_mode = 4
 
 [node name="View2d" parent="SubViewport" instance=ExtResource("2_p7241")]
 scale = Vector2(2, 1.99409)
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+initial_position = 2
+size = Vector2i(400, 100)
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 96.0
+horizontal_alignment = 1
+vertical_alignment = 1

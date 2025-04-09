@@ -17,7 +17,7 @@ namespace Stargazer
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
         private IEquatorialCalculator calculator;
-        private string screenshotPath = "user://screenshot.jpeg";
+        private string screenshotPath;
 
         [Export] private SubViewport View2D;
         [Export] private ControlContainer controlContainer;
@@ -59,6 +59,16 @@ namespace Stargazer
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
             controlContainer.SetMainController(this);
+
+            string picturesPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
+            string screenshotDir = System.IO.Path.Combine(picturesPath, "Stargazer Screenshots");
+
+    // Ensure the folder exists
+    System.IO.Directory.CreateDirectory(screenshotDir);
+
+    // Create timestamped filename
+    string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+    screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{timestamp}.png");
         }
 
         /// <summary>
@@ -82,8 +92,26 @@ namespace Stargazer
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
             await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
-            // Get the current viewport as an Image
+    
+            // Get longitude, latitude, and date from the calculator
+            double latitude = calculator.Latitude;
+            double longitude = calculator.Longitude;
+            DateTime skyDate = calculator.getTime();  // Get the current time
 
+            // Get formatted latitude and longitude strings
+            var (latStr, lonStr) = calculator.getLongLat();
+    
+            // Format the date as a string (to use in the filename)
+            string formattedDate = skyDate.ToString("yyyy-MM-dd_HH-mm-ss");
+
+            // Construct the screenshot directory and ensure it exists
+            string screenshotDir = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer Screenshots");
+            System.IO.Directory.CreateDirectory(screenshotDir);
+
+            // Create the filename using latitude, longitude, and the date
+            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.png");
+
+            // Wait for 1 second before taking the screenshot
             Timer screenshotTimer = new Timer();
             screenshotTimer.WaitTime = 1;
             screenshotTimer.OneShot = true;
@@ -92,6 +120,7 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
+
         private void ExportScreenshot(SubViewport view2D)
         {
             Image screenshotImage = view2D.GetTexture().GetImage();
@@ -99,6 +128,28 @@ namespace Stargazer
             // Save the screenshot as a JPEG
             screenshotImage.SavePng(screenshotPath);
             GD.Print($"Screenshot saved to {screenshotPath}");
+            ShowScreenshotSavedNotification();
         }
+
+        private void ShowScreenshotSavedNotification()
+        {
+            // Get a reference to the Popup node (make sure you assign it in the inspector)
+            Popup notificationPopup = GetNode<Popup>("PopupPanel");
+
+            // Set the label text
+            Label notificationLabel = notificationPopup.GetNode<Label>("Label");
+            notificationLabel.Text = "Screenshot saved at " + screenshotPath;
+
+            // Show the popup
+            notificationPopup.Popup();
+
+            // Optionally hide the popup after a few seconds
+            Timer timer = new Timer();
+            timer.WaitTime = 2;  // Time in seconds before hiding the popup
+            timer.OneShot = true;
+            timer.Timeout += () => notificationPopup.Hide();
+            AddChild(timer);
+            timer.Start();
+        }   
     }
 }
