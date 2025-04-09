@@ -2,6 +2,7 @@ using DataLayer;
 using Godot;
 using System;
 using System.Threading.Tasks;
+using System;
 
 namespace Stargazer
 {
@@ -27,9 +28,10 @@ namespace Stargazer
         /// </summary>
         /// <param name="dataPackage"></param>
         /// <returns></returns>
-        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (double, double) latLong)
+
+        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (string, string) latLong)
         {
-            timeLabel.Text = currentTime.ToString() + "\n" + latLong.ToString();
+            timeLabel.Text = currentTime.ToString() + " UTC\n" + latLong;
             var drawnStars = await Stars.DrawStars(dataPackage.DrawnStars);
             Constellations.DrawConstellations(dataPackage.Constellations, drawnStars);
         }

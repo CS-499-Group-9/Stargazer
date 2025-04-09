@@ -79,19 +79,20 @@ namespace DataLayer.Interfaces
         /// <param name="sun"></param>
         void UpdatePositionOf(HorizontalSun sun);
 
-        DateTime getTime()
+         DateTime getTime()
         {
             return CurrentTime;
         }
 
-        (double, double) getLongLat()
+        (string, string) getLongLat()
         {
-            return (Latitude, Longitude);
+            string latDir = Latitude >= 0 ? "N" : "S";
+            string lonDir = Longitude >= 0 ? "E" : "W";
+
+            string latStr = $"{Math.Abs(Math.Round(Latitude, 2))}°{latDir}";
+            string lonStr = $"{Math.Abs(Math.Round(Longitude, 2))}°{lonDir}";
+
+            return (latStr, lonStr);
         }
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     }
 }
