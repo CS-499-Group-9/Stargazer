@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-    [Export] private LineEdit latField;
-    [Export] private LineEdit longField;
+    [Export] private LineEdit latDegField;
+    [Export] private LineEdit latMinField;
+    [Export] private LineEdit lonDegField;
+    [Export] private LineEdit lonMinField;
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
@@ -88,17 +90,24 @@ public partial class ControlContainer : Control
     /// </summary>
 	public async void UpdateUserPosition()
     {
-        string latText = latField.Text;
-        string longText = longField.Text;
+        string latDegText = latDegField.Text;
+        string latMinText = latMinField.Text;
+        string lonDegText = lonDegField.Text;
+        string lonMinText = lonMinField.Text;
 
-        // Huntsville Defaults
-        double latitude = 34.7304;
-        double longitude = -86.5861;
+        // Default to 0s
+        double latitude = 0;
+        double longitude = 0;
 
-        if (latText != "" || longText != "")
+        if (latDegText != "" || lonDegText != "")
         {
-            latitude = double.Parse(latText);
-            longitude = double.Parse(longText);
+            latitude = int.Parse(latDegText);
+            longitude = int.Parse(lonDegText);
+        }
+        else if (latMinText != "" || lonMinText != "")
+        {
+            latitude += double.Parse(latMinText) * 0.016667;
+            longitude += double.Parse(lonMinText) * 0.016667;
         }
         else
         {
