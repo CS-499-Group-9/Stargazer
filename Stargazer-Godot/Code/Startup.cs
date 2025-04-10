@@ -152,6 +152,9 @@ namespace Stargazer
                 case "jpeg":
                     screenshotImage.SaveJpg(screenshotPath, 90);
                     break;
+                case "webp":
+                    screenshotImage.SaveWebp(screenshotPath);
+                    break;
                 case "gif":
                     // Godot doesn't support GIF saving natively
                     GD.PrintErr("GIF export is not supported directly.");

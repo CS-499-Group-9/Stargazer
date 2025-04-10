@@ -370,12 +370,14 @@ text = "Enter Data"
 [node name="FormatSelector" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 1
-item_count = 3
+item_count = 4
 popup/item_0/text = "PNG"
 popup/item_1/text = "JPEG"
 popup/item_1/id = 1
-popup/item_2/text = "GIF"
-popup/item_2/id = 2
+popup/item_2/text = "WEBP"
+popup/item_2/id = 3
+popup/item_3/text = "GIF"
+popup/item_3/id = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
