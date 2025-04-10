@@ -3,6 +3,7 @@ using DataLayer.Interfaces;
 using Godot;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Stargazer
@@ -37,6 +38,8 @@ namespace Stargazer
             if (OS.HasFeature("editor"))
             {
                 path = ProjectSettings.GlobalizePath("res://");
+                DirectoryInfo dir = new DirectoryInfo(path) ?? throw new DirectoryNotFoundException($"{path} is not a valid directory");
+                path = Path.Combine(dir.Parent.FullName, "DataLayer") ?? throw new DirectoryNotFoundException();
             }
             else
             {
