@@ -53,7 +53,7 @@ namespace Stargazer
         /// <param name="constellations">Contains the constellation graphs to draw.</param>
         /// <param name="GetConstellationStar">A method to retrieve a star by Hipparcos Id from the dictionary of drawn stars.</param>
         /// <returns></returns>
-        public async Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
+        public void DrawConstellations(IEnumerable<Constellation> constellations, IDictionary<int, Star2D> DrawnStars)
         {
             //var constellations = dataPackage.Constellations;
             mesh.ClearSurfaces();
@@ -67,57 +67,22 @@ namespace Stargazer
 
                 foreach (var lines in constellation.ConstellationLines)
                 {
-                    Star s1 = GetConstellationStar(lines.Item1, (S) => { return null; });
-                    Star s2 = GetConstellationStar(lines.Item2, (S) => { return null; });
+                    DrawnStars.TryGetValue(lines.Item1, out Star2D s1);
+                    DrawnStars.TryGetValue(lines.Item2, out Star2D s2);
                     if (s1.Altitude > -45.0 || s2.Altitude > -45.0)
                     {
-                        Star2D s12d = Spawn2DStar(s1);
-                        Star2D s22d = Spawn2DStar(s2);
+                        s1.Scale = new Vector2(0.6f, 0.6f); 
+                        s2.Scale = new Vector2(0.6f, 0.6f);
 
-                        mesh.SurfaceAddVertex(new Vector3(s12d.Position[0], s12d.Position[1], 0.0F));
-                        mesh.SurfaceAddVertex(new Vector3(s22d.Position[0], s22d.Position[1], 0.0F));
+                        mesh.SurfaceAddVertex(new Vector3(s1.Position[0], s1.Position[1], 0.0F));
+                        mesh.SurfaceAddVertex(new Vector3(s2.Position[0], s2.Position[1], 0.0F));
 
-                        if (totalPos == Vector2.Zero) // solely checked for the first star
-                        {
-                            totalPos += s1.Position2D;
-                            c++;
-                        }
-                        totalPos += s2.Position2D;
-                        c++;
+
                     }
                 }
             }
             mesh.SurfaceEnd();
-            foreach (Star2D star in StarContainer.GetChildren())
-            {
-                star.Scale = new Vector2(0.6f, 0.6f);
-            }
         }
 
-        /// <summary>
-        /// Receives the notification to toggle the visibility of the constellation lines.
-        /// Hiding the lines will also hide the labels.
-        /// </summary>
-        /// <param name="showlines">True if the user has requested to show the lines.</param>
-        public void ToggleConstellationLines(bool showlines)
-        {
-            constMesh.Visible = showlines;
-        }
-
-        /// <summary>
-        /// Receives the notification to toggle the visibility of the constellation labels.
-        /// </summary>
-        /// <param name="showlabels">True if the user has requested to show the labels.</param>
-        public void ToggleConstellationLabels(bool showlabels) { ConstellationLabels.Visible = showlabels; }
-
-        private Star2D Spawn2DStar(Star star3d)
-        {
-            Star2D outstar = Star2DScene.Instantiate<Star2D>();
-            outstar.From3dStar(star3d);
-            outstar.scalestar(new Vector2(0.7f, 0.7f));
-            //outstar.Scale  = new Vector2(1F,1F);
-            StarContainer.AddChild(outstar);
-            return outstar;
-        }
     }
 }

@@ -41,17 +41,17 @@ public partial class ControlContainer : Control
     /// <summary>
     /// Broadcasts a request to take a screenshot
     /// </summary>
-    public Action RequestScreenshot;
+    public Func<Task> RequestScreenshot;
 
     /// <summary>
     /// Checks to see if the user has requested a screenshot
     /// </summary>
     /// <param name="delta">Unused</param>
-    public override void _Process(double delta)
+    public async override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("screenshot_key"))
         {
-            RequestScreenshot();
+            await RequestScreenshot();
         }
     }
 
