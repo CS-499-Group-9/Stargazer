@@ -13,6 +13,7 @@ public partial class ControlContainer : Control
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+    private Startup _mainControl;
 
     /// <summary>
     /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -40,7 +41,7 @@ public partial class ControlContainer : Control
 	public Action<double, double, DateTime> UserPositionUpdated;
     /// <summary>
     /// Broadcasts a request to take a screenshot
-    /// </summary>
+    /// <summary>
     public Func<Task> RequestScreenshot;
 
     /// <summary>
@@ -54,8 +55,7 @@ public partial class ControlContainer : Control
             await RequestScreenshot();
         }
     }
-
-    /// <summary>
+   
     /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
     /// <param name="value">True if the toggle button is checked</param>
@@ -84,6 +84,11 @@ public partial class ControlContainer : Control
     /// </summary>
     /// <param name="value">True if the checkbox is checked</param>
     public void ToggleMessierObjects(bool value) { MessierObjectsToggled?.Invoke(value); }
+
+    public void SetMainController(Startup controller)
+    {
+        _mainControl = controller;
+    }
 
     /// <summary>
     /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
@@ -147,5 +152,17 @@ public partial class ControlContainer : Control
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
+    }
+
+    private async void _on_button_pressed()
+    {
+        if (_mainControl != null)
+        {
+            await _mainControl.TakeScreenshot();
+        }
+        else
+        {
+            GD.PrintErr("Main controller reference not set!");
+        }
     }
 }

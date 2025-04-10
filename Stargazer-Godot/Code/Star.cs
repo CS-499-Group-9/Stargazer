@@ -59,7 +59,7 @@ namespace Stargazer
             $"HIP {HipparcosId}\n" +
             $"Altitude {Altitude}\n" +
             $"Azimuth {Azimuth}\n" + 
-            $"Distance: {Distance} lighyears";
+            $"Distance: {Distance} lightyears";
         }
 
     }

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qst6jthb1tgv" path="res://Scenes/sky_view_container.tscn" id="4_ch8am"]
 [ext_resource type="PackedScene" uid="uid://dr71brnwp5pdb" path="res://Scenes/play_control.tscn" id="5_6mtib"]
 
-[node name="Control" type="PanelContainer" node_paths=PackedStringArray("View2D", "controlContainer", "skyViewContainer", "playControl")]
+[node name="Control" type="PanelContainer" node_paths=PackedStringArray("View2D", "controlContainer", "skyViewContainer", "playControl", "ScreenshotDialog", "ModalBlocker")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,6 +19,8 @@ View2D = NodePath("SubViewport")
 controlContainer = NodePath("ControlContainer")
 skyViewContainer = NodePath("SkyViewContainer")
 playControl = NodePath("PlayControl")
+ScreenshotDialog = NodePath("ScreenshotDialog")
+ModalBlocker = NodePath("ModalBlocker")
 
 [node name="SkyViewContainer" parent="." instance=ExtResource("4_ch8am")]
 layout_mode = 2
@@ -36,8 +38,19 @@ visible = false
 layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1600, 1600)
+size = Vector2i(1800, 1800)
 render_target_update_mode = 4
 
 [node name="View2d" parent="SubViewport" instance=ExtResource("2_p7241")]
 scale = Vector2(2, 1.99409)
+
+[node name="ModalBlocker" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="ScreenshotDialog" type="AcceptDialog" parent="."]
+position = Vector2i(550, 250)
+
+[connection signal="close_requested" from="ScreenshotDialog" to="." method="_on_screenshot_dialog_close_requested"]
+[connection signal="confirmed" from="ScreenshotDialog" to="." method="_on_screenshot_dialog_confirmed"]

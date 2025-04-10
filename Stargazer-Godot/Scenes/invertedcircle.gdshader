@@ -6,7 +6,7 @@ void vertex() {
 void fragment() {
 	vec2 center = vec2(0.5,0.5);
 	float dist = length(UV-center);
-	COLOR = vec4(0.0,0.0,0.2,smoothstep(0.48,0.481,dist));
+	COLOR = vec4(0.0,0.0,0.2,smoothstep(0.4268,0.4269,dist));
 	// Called for every pixel the material is visible on.
 }
 
