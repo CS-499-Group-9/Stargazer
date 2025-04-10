@@ -23,6 +23,9 @@ namespace Stargazer
         [Export] private ControlContainer controlContainer;
         [Export] private SkyViewContainer skyViewContainer;
         [Export] private PlayControl playControl;
+        [Export] private AcceptDialog ScreenshotDialog;
+        [Export] private ColorRect ModalBlocker;
+
 
         /// <summary>
         /// Creates the repository service and stores in memory
@@ -63,12 +66,12 @@ namespace Stargazer
             string picturesPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
             string screenshotDir = System.IO.Path.Combine(picturesPath, "Stargazer Screenshots");
 
-    // Ensure the folder exists
-    System.IO.Directory.CreateDirectory(screenshotDir);
+             // Ensure the folder exists
+             System.IO.Directory.CreateDirectory(screenshotDir);
 
-    // Create timestamped filename
-    string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-    screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{timestamp}.png");
+             // Create timestamped filename
+             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+             screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{timestamp}.png");
         }
 
         /// <summary>
@@ -141,23 +144,31 @@ namespace Stargazer
 
         private void ShowScreenshotSavedNotification()
         {
-            // Get a reference to the Popup node (make sure you assign it in the inspector)
-            Popup notificationPopup = GetNode<Popup>("PopupPanel");
+            ScreenshotDialog.DialogText = $"Screenshot saved at:\n{screenshotPath}";
 
-            // Set the label text
-            Label notificationLabel = notificationPopup.GetNode<Label>("Label");
-            notificationLabel.Text = "Screenshot saved at " + screenshotPath;
+            // Show the blocker
+            ModalBlocker.Visible = true;
 
-            // Show the popup
-            notificationPopup.Popup();
+            // Connect the OK button press event (no need to check manually if connected)
 
-            // Optionally hide the popup after a few seconds
-            Timer timer = new Timer();
-            timer.WaitTime = 2;  // Time in seconds before hiding the popup
-            timer.OneShot = true;
-            timer.Timeout += () => notificationPopup.Hide();
-            AddChild(timer);
-            timer.Start();
-        }   
+            // Show the dialog
+            ScreenshotDialog.PopupCentered();
+        }
+
+        private void _on_screenshot_dialog_close_requested()
+        {
+            OnScreenshotDialogClosed();
+        }
+
+        private void _on_screenshot_dialog_confirmed()
+        {
+            OnScreenshotDialogClosed();
+        }
+
+        private void OnScreenshotDialogClosed()
+        {
+            GD.Print("User acknowledged screenshot notification.");
+            ModalBlocker.Visible = false; // Allow UI interaction again
+        }
     }
 }
