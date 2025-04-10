@@ -96,11 +96,44 @@ namespace Stargazer
 
         public async Task TakeScreenshot()
         {
-            var view2D = GetNode<SubViewport>(nameof(SubViewport));
-            var skyView2d = view2D.GetNode<SkyView2D>("View2d");
-            await skyView2d.UpdateUserPosition(dataPackage);
-            // Get the current viewport as an Image
-            
+            var skyView2d = View2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
+    
+            // Get longitude, latitude, and date from the calculator
+            double latitude = calculator.Latitude;
+            double longitude = calculator.Longitude;
+            DateTime skyDate = calculator.getTime();  // Get the current time
+
+            // Get formatted latitude and longitude strings
+            var (latStr, lonStr) = calculator.getLongLat();
+    
+            // Format the date as a string (to use in the filename)
+            string formattedDate = skyDate.ToString("yyyy-MM-dd_HH-mm-ss");
+
+            // Construct the screenshot directory and ensure it exists
+            string screenshotDir = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer Screenshots");
+            System.IO.Directory.CreateDirectory(screenshotDir);
+
+            // Create the filename using latitude, longitude, and the date
+            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.jpg");
+
+            // Wait for 1 second before taking the screenshot
+            Timer screenshotTimer = new Timer();
+            screenshotTimer.WaitTime = 1;
+            screenshotTimer.OneShot = true;
+            screenshotTimer.Timeout += () => { ExportScreenshot(View2D); };
+            screenshotTimer.Autostart = true;
+            AddChild(screenshotTimer);
+        }
+
+
+        private void ExportScreenshot(SubViewport view2D)
+        {
+            // Define the required resolution (300 DPI for 8.5x11 inches)
+            int width = 2550;  // 8.5 inches * 300 DPI
+            int height = 3300; // 11 inches * 300 DPI
+
+            // Get the image from the viewport
             Image screenshotImage = view2D.GetTexture().GetImage();
     
             // Resize the image to fit the 8.5x11 dimensions at 300 DPI
@@ -109,7 +142,36 @@ namespace Stargazer
             screenshotImage.SaveJpg(screenshotPath, 90);
 
             GD.Print($"Screenshot saved to {screenshotPath}");
-            
+            ShowScreenshotSavedNotification();
+        }
+
+        private void ShowScreenshotSavedNotification()
+        {
+            ScreenshotDialog.DialogText = $"Screenshot saved at:\n{screenshotPath}";
+
+            // Show the blocker
+            ModalBlocker.Visible = true;
+
+            // Connect the OK button press event (no need to check manually if connected)
+
+            // Show the dialog
+            ScreenshotDialog.PopupCentered();
+        }
+
+        private void _on_screenshot_dialog_close_requested()
+        {
+            OnScreenshotDialogClosed();
+        }
+
+        private void _on_screenshot_dialog_confirmed()
+        {
+            OnScreenshotDialogClosed();
+        }
+
+        private void OnScreenshotDialogClosed()
+        {
+            GD.Print("User acknowledged screenshot notification.");
+            ModalBlocker.Visible = false; // Allow UI interaction again
         }
     }
 }

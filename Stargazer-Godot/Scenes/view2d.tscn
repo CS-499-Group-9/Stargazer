@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ujvt4iftkmki"]
+[gd_scene load_steps=10 format=3 uid="uid://ujvt4iftkmki"]
 
 [ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
 [ext_resource type="PackedScene" uid="uid://baskob1q5tm0q" path="res://Scenes/star2d.tscn" id="2_u1lwa"]

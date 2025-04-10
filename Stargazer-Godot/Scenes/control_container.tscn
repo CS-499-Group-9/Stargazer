@@ -6,24 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://pxesx8jkcatl" path="res://Textures/screenshot.svg" id="5_hdsya"]
 [ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
 
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k74c"]
 bg_color = Color(0.351436, 0.403103, 0.525001, 0.560784)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
-[node name="Control2" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton")]
+
+[node name="Control2" type="Control" node_paths=PackedStringArray("timeField", "AMorPMButton", "calendarButton")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
 offset_right = -2.0
 mouse_filter = 2
 script = ExtResource("1_5vufv")
-latDegField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LatitudeDegrees")
-latMinField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LatitudeMinutes")
-lonDegField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LongitudeDegrees")
-lonMinField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LongitudeMinutes")
 timeField = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeLineEdit")
 AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeHalfSelector")
 calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
@@ -224,6 +220,7 @@ theme_override_styles/normal = ExtResource("3_bhqqh")
 placeholder_text = "Lat Degrees"
 
 [node name="LatitudeMinutes" type="LineEdit" parent="MarginContainer/VBoxContainer/LatitudeButton"]
+layout_mode = 0
 offset_left = 102.0
 offset_top = 5.0
 offset_right = 195.0
@@ -257,6 +254,7 @@ theme_override_styles/normal = ExtResource("4_f5vim")
 placeholder_text = "Lon Degrees"
 
 [node name="LongitudeMinutes" type="LineEdit" parent="MarginContainer/VBoxContainer/LongitudeButton"]
+layout_mode = 0
 offset_left = 101.0
 offset_top = 5.0
 offset_right = 197.0
