@@ -13,6 +13,7 @@ public partial class ControlContainer : Control
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+    [Export] private OptionButton formatSelector;
     private Startup _mainControl;
 
     /// <summary>
@@ -164,5 +165,10 @@ public partial class ControlContainer : Control
         {
             GD.PrintErr("Main controller reference not set!");
         }
+    }
+
+    public string GetSelectedScreenshotFormat()
+    {
+        return formatSelector.GetItemText(formatSelector.Selected);
     }
 }

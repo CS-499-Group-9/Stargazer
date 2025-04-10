@@ -98,7 +98,8 @@ namespace Stargazer
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
             await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
-    
+            string selectedFormat = controlContainer.GetSelectedScreenshotFormat().ToLower();
+
             // Get longitude, latitude, and date from the calculator
             double latitude = calculator.Latitude;
             double longitude = calculator.Longitude;
@@ -114,20 +115,24 @@ namespace Stargazer
             string screenshotDir = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer Screenshots");
             System.IO.Directory.CreateDirectory(screenshotDir);
 
+            string format = controlContainer.GetSelectedScreenshotFormat().ToLower();
+            string extension = format == "jpeg" ? "jpg" : format;
+
             // Create the filename using latitude, longitude, and the date
-            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.jpg");
+            screenshotPath = Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.{extension}");
+
 
             // Wait for 1 second before taking the screenshot
             Timer screenshotTimer = new Timer();
             screenshotTimer.WaitTime = 1;
             screenshotTimer.OneShot = true;
-            screenshotTimer.Timeout += () => { ExportScreenshot(View2D); };
+            screenshotTimer.Timeout += () => { ExportScreenshot(View2D, selectedFormat); };
             screenshotTimer.Autostart = true;
             AddChild(screenshotTimer);
         }
 
 
-        private void ExportScreenshot(SubViewport view2D)
+        private void ExportScreenshot(SubViewport view2D, string format)
         {
             // Define the required resolution (300 DPI for 8.5x11 inches)
             int width = 2550;  // 8.5 inches * 300 DPI
@@ -139,8 +144,19 @@ namespace Stargazer
             // Resize the image to fit the 8.5x11 dimensions at 300 DPI
             screenshotImage.Resize(width, height);
 
-            screenshotImage.SaveJpg(screenshotPath, 90);
-
+            switch (format)
+            {
+                case "png":
+                    screenshotImage.SavePng(screenshotPath);
+                    break;
+                case "jpeg":
+                    screenshotImage.SaveJpg(screenshotPath, 90);
+                    break;
+                case "gif":
+                    // Godot doesn't support GIF saving natively
+                    GD.PrintErr("GIF export is not supported directly.");
+                    return;
+            }
             GD.Print($"Screenshot saved to {screenshotPath}");
             ShowScreenshotSavedNotification();
         }

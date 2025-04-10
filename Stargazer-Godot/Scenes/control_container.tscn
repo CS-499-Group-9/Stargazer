@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://pxesx8jkcatl" path="res://Textures/screenshot.svg" id="5_hdsya"]
 [ext_resource type="PackedScene" uid="uid://b6c1twaog7hui" path="res://addons/DatePicker/DateButton.tscn" id="6_d06d3"]
 
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k74c"]
 bg_color = Color(0.351436, 0.403103, 0.525001, 0.560784)
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
-[node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton")]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
@@ -25,6 +25,7 @@ lonMinField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LongitudeM
 timeField = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeLineEdit")
 AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeHalfSelector")
 calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
+formatSelector = NodePath("MarginContainer/VBoxContainer/FormatSelector")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -221,6 +222,7 @@ theme_override_styles/normal = ExtResource("3_bhqqh")
 placeholder_text = "Lat Degrees"
 
 [node name="LatitudeMinutes" type="LineEdit" parent="MarginContainer/VBoxContainer/LatitudeButton"]
+layout_mode = 0
 offset_left = 102.0
 offset_top = 5.0
 offset_right = 195.0
@@ -254,6 +256,7 @@ theme_override_styles/normal = ExtResource("4_f5vim")
 placeholder_text = "Lon Degrees"
 
 [node name="LongitudeMinutes" type="LineEdit" parent="MarginContainer/VBoxContainer/LongitudeButton"]
+layout_mode = 0
 offset_left = 101.0
 offset_top = 5.0
 offset_right = 197.0
@@ -363,6 +366,16 @@ theme_override_colors/font_hover_color = Color(0.948934, 0.896173, 0.920995, 0.9
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_styles/normal = ExtResource("4_f5vim")
 text = "Enter Data"
+
+[node name="FormatSelector" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "PNG"
+popup/item_1/text = "JPEG"
+popup/item_1/id = 1
+popup/item_2/text = "GIF"
+popup/item_2/id = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
