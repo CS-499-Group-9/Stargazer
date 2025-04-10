@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://755k8nw6wxfm"]
 
 [ext_resource type="Script" path="res://Code/MessierObject.cs" id="1_s4hv4"]
-[ext_resource type="Texture2D" uid="uid://c3k61ccyali17" path="res://Textures/Galaxy PNG Images Transparent Background.png" id="2_bqbvj"]
+[ext_resource type="Texture2D" uid="uid://idq6ppbnqewc" path="res://Textures/Galaxy PNG Images Transparent Background.png" id="2_bqbvj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_668wn"]
 
@@ -17,5 +17,4 @@ shape = SubResource("SphereShape3D_668wn")
 [node name="Sprite3D" type="Sprite3D" parent="MessierBody"]
 transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 0, 0)
 billboard = 1
-no_depth_test = true
 texture = ExtResource("2_bqbvj")

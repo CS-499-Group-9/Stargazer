@@ -13,6 +13,7 @@ namespace Stargazer
 	{
 
 		private HorizontalMessierObject horizontalMessierObject;
+		private int zDepth;
 		
 		/// <summary>
 		/// Sets the initial scale of the object.
@@ -30,15 +31,21 @@ namespace Stargazer
 		public override string GetHoverText()
 		{
 			string CommonName = "";
-			GD.Print($"{horizontalMessierObject.CommonName}");
 			if(horizontalMessierObject.CommonName.Length != 0 ){
 				CommonName = $"{horizontalMessierObject.CommonName}\n";
+			}
+			string distanceText = $"{horizontalMessierObject.Distance:0.00} ly";
+			if(horizontalMessierObject.Distance >= 1000){
+				distanceText = $"{horizontalMessierObject.Distance/1000:0.00} kly";
+			}
+			if(horizontalMessierObject.Distance >= 1000000){
+				distanceText = $"{horizontalMessierObject.Distance/1000000:0.00} Mly";
 			}
 			return $"{horizontalMessierObject.MessierId}\n" +
 				CommonName +
 				$"Altitude: {horizontalMessierObject.Altitude:0.00}\n" +
 				$"Azimuth: {horizontalMessierObject.Azimuth:0.00}\n" +
-				$"Distance: {horizontalMessierObject.Distance:0.00} lightyears\n" +
+				$"Distance: "+distanceText+"\n" +
 				$"Size: {horizontalMessierObject.Size}\n" +
 				$"Viewing Season: {horizontalMessierObject.ViewingSeason}";
 		}
@@ -51,6 +58,7 @@ namespace Stargazer
 		public void FromHorizontal(HorizontalMessierObject messierObject, IEquatorialCalculator calculator)
 		{
 			horizontalMessierObject = messierObject;
+			GetNode<Sprite3D>("MessierBody/Sprite3D").SortingOffset = Int32.Parse(messierObject.MessierId.Trim('M'));
 			base.FromHorizontal(messierObject, calculator);
 		}
 	}

@@ -147,12 +147,14 @@ namespace Stargazer
             await StarSpawner.DrawStars(dataPackage.HorizontalStars, dataPackage.GetStar,calculator);
             await constellationNode.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar, StarSpawner.SpawnStar);
             await MessierSpawner.DrawMessierObjects(dataPackage.MessierObjects, calculator);
-            
-            PlanetSpawner.DrawPlanets(dataPackage.Planets, calculator);
-            
+
             sun = SunScene.Instantiate<Sun>();
             sun.FromHorizontal(dataPackage.Sun, calculator);
             AddChild(sun);
+
+            PlanetSpawner.DrawPlanets(dataPackage.Planets, calculator);
+            
+
 
             moon = MoonScene.Instantiate<Moon>();
             moon.FromHorizontal(dataPackage.Moon, calculator);

@@ -15,7 +15,7 @@ namespace Stargazer
         private HorizontalPlanet horizontalPlanet;
         private Texture2D planetTexture;
         private ShaderMaterial planetMaterial;
-        // Called when the node enters the scene tree for the first time.
+        private Sun theSun;
 
 
         /// <summary>
@@ -71,9 +71,9 @@ namespace Stargazer
                 planetName = horizontalPlanet.Name;
             }
             return $"{planetName}\n" +
-            $"Altitude: {horizontalPlanet.Altitude}\n" +
-            $"Azimuth: {horizontalPlanet.Azimuth}\n" +
-            $"Distance: {horizontalPlanet.Distance}";
+            $"Altitude: {horizontalPlanet.Altitude}°\n" +
+            $"Azimuth: {horizontalPlanet.Azimuth}°\n" +
+            $"Distance: {horizontalPlanet.Distance} AU";
         }
         
         // Not used

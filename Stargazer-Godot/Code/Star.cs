@@ -57,9 +57,9 @@ namespace Stargazer
         {
             return $"{(String.IsNullOrWhiteSpace(StarName) ? "Unnamed Star" : StarName)}\n" +
             $"HIP {HipparcosId}\n" +
-            $"Altitude {Altitude}\n" +
-            $"Azimuth {Azimuth}\n" + 
-            $"Distance: {Distance}";
+            $"Altitude {Altitude}°\n" +
+            $"Azimuth {Azimuth}°\n" + 
+            $"Distance: {Distance} light years";
         }
 
     }
