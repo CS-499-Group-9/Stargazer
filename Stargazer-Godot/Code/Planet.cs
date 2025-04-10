@@ -25,6 +25,7 @@ namespace Stargazer
         public override void _Process(double delta)
         {
             calculator?.UpdatePositionOf(horizontalPlanet);
+            DrawnDistance = Distance;
             Position = GetLocation();
             Rotate(Vector3.Up,Mathf.Pi);
             RotationDegrees = new Vector3(0,0,-90+34.7304f);
@@ -51,6 +52,7 @@ namespace Stargazer
         {
             base.FromHorizontal(horizonalPlanet, calculator);  
             horizontalPlanet = horizonalPlanet;
+            DrawnDistance = Distance;
             this.calculator = calculator;
         }
 
@@ -58,11 +60,7 @@ namespace Stargazer
         public override string GetHoverText()
         {
             String planetName;
-            if (horizontalPlanet.Name.Equals("Sun"))
-            {
-                planetName = "The Sun";
-            }
-            else if (String.IsNullOrWhiteSpace(horizontalPlanet.Name))
+            if (String.IsNullOrWhiteSpace(horizontalPlanet.Name))
             {
                 planetName = "Unnamed Planet";
             }

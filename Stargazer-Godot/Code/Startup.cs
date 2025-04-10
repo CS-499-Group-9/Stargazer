@@ -2,6 +2,8 @@ using DataLayer;
 using DataLayer.Interfaces;
 using Godot;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Stargazer
@@ -16,13 +18,15 @@ namespace Stargazer
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
         private IEquatorialCalculator calculator;
-        private string screenshotPath = "user://screenshot.png";
+        private string screenshotPath = "user://screenshot.jpeg";
 
-        [Export] private PackedScene View2D;
-
+        [Export] private SubViewport View2D;
         [Export] private ControlContainer controlContainer;
         [Export] private SkyViewContainer skyViewContainer;
         [Export] private PlayControl playControl;
+        [Export] private AcceptDialog ScreenshotDialog;
+        [Export] private ColorRect ModalBlocker;
+
 
         /// <summary>
         /// Creates the repository service and stores in memory
@@ -30,7 +34,19 @@ namespace Stargazer
         /// </summary>
         public async override void _Ready()
         {
-            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(ProjectSettings.GlobalizePath("res://"));
+            var path = "";
+            if (OS.HasFeature("editor"))
+            {
+                path = ProjectSettings.GlobalizePath("res://");
+                DirectoryInfo dir = new DirectoryInfo(path) ?? throw new DirectoryNotFoundException($"{path} is not a valid directory");
+                path = Path.Combine(dir.Parent.FullName, "DataLayer") ?? throw new DirectoryNotFoundException();
+            }
+            else
+            {
+                path = OS.GetExecutablePath().GetBaseDir();
+
+            }
+            var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(path);
             dataPackage = await repositoryService.InitializeDataPackage();
             calculator = dataPackage.Calculator;
             skyView = skyViewContainer.SkyView;
@@ -48,6 +64,17 @@ namespace Stargazer
             // Activate the Play Controller and notify the SkyView
             var multiplier = playControl.Activate();
             skyView.SetTimeMultiplier(multiplier);
+            controlContainer.SetMainController(this);
+
+            string picturesPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
+            string screenshotDir = System.IO.Path.Combine(picturesPath, "Stargazer Screenshots");
+
+             // Ensure the folder exists
+             System.IO.Directory.CreateDirectory(screenshotDir);
+
+             // Create timestamped filename
+             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+             screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{timestamp}.png");
         }
 
         /// <summary>
@@ -67,26 +94,22 @@ namespace Stargazer
 
         }
 
-        private void TakeScreenshot()
+        public async Task TakeScreenshot()
         {
             var view2D = GetNode<SubViewport>(nameof(SubViewport));
-            var skyView2d = view2D.GetNode<SkyView2D>("./View2d");
-            skyView2d.UpdateUserPosition(dataPackage);
+            var skyView2d = view2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage);
             // Get the current viewport as an Image
             
-            Timer screenshotTimer = new Timer();
-            screenshotTimer.OneShot = true;
-            screenshotTimer.Timeout += () => {ExportScreenshot(view2D);};
-            screenshotTimer.Autostart = true;
-            AddChild(screenshotTimer);
-            
-        }
-        private void ExportScreenshot(SubViewport view2D){
             Image screenshotImage = view2D.GetTexture().GetImage();
+    
+            // Resize the image to fit the 8.5x11 dimensions at 300 DPI
+            screenshotImage.Resize(width, height);
 
-            // Save the screenshot as a JPEG
-            screenshotImage.SavePng(screenshotPath);
+            screenshotImage.SaveJpg(screenshotPath, 90);
+
             GD.Print($"Screenshot saved to {screenshotPath}");
+            
         }
     }
 }

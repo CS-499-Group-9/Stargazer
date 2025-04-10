@@ -1,6 +1,7 @@
 using DataLayer;
 using Godot;
 using System.Threading.Tasks;
+using System;
 
 namespace Stargazer
 {
@@ -12,6 +13,7 @@ namespace Stargazer
 
         private Spawner2D Stars;
         private Constellations2D Constellations;
+        private RichTextLabel timeLabel;
 
         //private Planets2D Planets;
         private CelestialDataPackage<Star> dataPackage;
@@ -23,6 +25,7 @@ namespace Stargazer
         {
             Stars = GetNode<Spawner2D>("Stars2D");
             Constellations = GetNode<Constellations2D>("Constellations2D");
+            timeLabel = GetNode<RichTextLabel>("TimeLabel2D");
         }
 
 
@@ -31,12 +34,13 @@ namespace Stargazer
         /// </summary>
         /// <param name="dataPackage"></param>
         /// <returns></returns>
-        public async Task UpdateUserPosition(CelestialDataPackage<Star> inputPackage)
+
+        public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (string, string) latLong)
         {
-            GD.Print("updating 2D view");
-            dataPackage = inputPackage;
-            await Stars.DrawStars(dataPackage.DrawnStars);
-            await Constellations.DrawConstellations(dataPackage.Constellations, dataPackage.GetStar);
+            timeLabel.Text = currentTime.ToString("M/d/yyyy\nh:mm:ss tt 'UTC'") + "\n" + latLong;
+            var drawnStars = await Stars.DrawStars(dataPackage.DrawnStars);
+            Constellations.DrawConstellations(dataPackage.Constellations, drawnStars);
+
             GD.Print("2d view updated");
         }
 

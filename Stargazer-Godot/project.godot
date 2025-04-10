@@ -20,6 +20,11 @@ config/icon="res://Textures/icon.svg"
 
 Globals="*res://Code/Globals.cs"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="New Game Project"

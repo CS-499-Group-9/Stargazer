@@ -37,8 +37,8 @@ namespace Stargazer
         public void FromHorizontal(HorizontalStar star, IEquatorialCalculator starConverter) 
         {
             base.FromHorizontal(star, starConverter);
-            this.horizontalStar = star;
-
+            horizontalStar = star;
+            DrawnDistance = 74f;
             // This needs to be changed so that a star's size in the simulation is actually a function of it's magnitude.
             if (Magnitude > 1) Scale = new Vector3(1 / Magnitude, 1 / Magnitude, 1 / Magnitude);
             else Scale = new Vector3(0.6F, 0.6F, 0.6F);

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ujvt4iftkmki"]
+[gd_scene load_steps=11 format=3 uid="uid://ujvt4iftkmki"]
 
 [ext_resource type="Script" path="res://Code/Spawner2D.cs" id="1_gbvg1"]
 [ext_resource type="PackedScene" uid="uid://baskob1q5tm0q" path="res://Scenes/star2d.tscn" id="2_u1lwa"]
 [ext_resource type="Script" path="res://Code/Constellations2D.cs" id="3_h3n60"]
 [ext_resource type="Shader" path="res://Scenes/invertedcircle.gdshader" id="3_vnxwx"]
 [ext_resource type="Shader" path="res://Scenes/gridlines.gdshader" id="3_x45qy"]
+[ext_resource type="PackedScene" uid="uid://cpnjhw02imc4o" path="res://Scenes/banner.tscn" id="7_8esh6"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_p52lc"]
 
@@ -57,10 +58,60 @@ offset_top = 50.0
 offset_right = 850.0
 offset_bottom = 850.0
 
-[node name="Black Background" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 z_index = -4
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 850.0
-offset_bottom = 850.0
+offset_right = 900.0
+offset_bottom = 900.0
 color = Color(0, 0, 0, 1)
+
+[node name="TimeLabel2D" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 11.0
+offset_top = 762.0
+offset_right = 353.0
+offset_bottom = 895.0
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="Banner" parent="." instance=ExtResource("7_8esh6")]
+z_index = 2
+
+[node name="North" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 432.0
+offset_top = -6.0
+offset_right = 566.0
+offset_bottom = 113.0
+pivot_offset = Vector2(-858.5, 541.5)
+theme_override_font_sizes/normal_font_size = 50
+text = "N
+"
+
+[node name="South" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 432.0
+offset_top = 824.0
+offset_right = 539.0
+offset_bottom = 946.0
+pivot_offset = Vector2(-858.5, 541.5)
+theme_override_font_sizes/normal_font_size = 50
+text = "S"
+
+[node name="West" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 846.5
+offset_top = 413.0
+offset_right = 953.5
+offset_bottom = 535.0
+pivot_offset = Vector2(-858.5, 541.5)
+theme_override_font_sizes/normal_font_size = 50
+text = "W"
+
+[node name="East" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 16.5
+offset_top = 413.0
+offset_right = 123.5
+offset_bottom = 535.0
+pivot_offset = Vector2(-858.5, 541.5)
+theme_override_font_sizes/normal_font_size = 50
+text = "E"

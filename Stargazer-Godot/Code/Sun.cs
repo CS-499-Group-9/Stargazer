@@ -28,6 +28,7 @@ namespace Stargazer
 		public override void _Process(double delta)
 		{
 			calculator?.UpdatePositionOf(sun);
+			DrawnDistance = Distance;
 			Position = GetLocation();
 			Rotate(Vector3.Up, Mathf.Pi);
 			RotationDegrees = new Vector3(0, 0, -90 + 34.7304f);
@@ -39,7 +40,7 @@ namespace Stargazer
 			return $"The Sun\n" +
 				$"Altitude: {sun.Altitude}\n" +
 				$"Azimuth: {sun.Azimuth}\n" +
-				$"Distance: {sun.Distance}";
+				$"Distance: {sun.Distance} AU";
 		}
 
 		/// <summary>
@@ -50,6 +51,7 @@ namespace Stargazer
 		public void FromHorizontal(HorizontalSun sun, IEquatorialCalculator calculator)
 		{
 			base.FromHorizontal(sun, calculator);
+			DrawnDistance = Distance;
 			this.sun = sun;
 			this.calculator = calculator;
 		}

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 public partial class ControlContainer : Control
 {
-    [Export] private LineEdit latField;
-    [Export] private LineEdit longField;
+    [Export] private LineEdit latDegField;
+    [Export] private LineEdit latMinField;
+    [Export] private LineEdit lonDegField;
+    [Export] private LineEdit lonMinField;
     [Export] private LineEdit timeField;
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
+    private Startup _mainControl;
 
     /// <summary>
     /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -38,22 +41,21 @@ public partial class ControlContainer : Control
 	public Action<double, double, DateTime> UserPositionUpdated;
     /// <summary>
     /// Broadcasts a request to take a screenshot
-    /// </summary>
-    public Action RequestScreenshot;
+    /// <summary>
+    public Func<Task> RequestScreenshot;
 
     /// <summary>
     /// Checks to see if the user has requested a screenshot
     /// </summary>
     /// <param name="delta">Unused</param>
-    public override void _Process(double delta)
+    public async override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("screenshot_key"))
         {
-            RequestScreenshot();
+            await RequestScreenshot();
         }
     }
-
-    /// <summary>
+   
     /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
     /// </summary>
     /// <param name="value">True if the toggle button is checked</param>
@@ -83,22 +85,34 @@ public partial class ControlContainer : Control
     /// <param name="value">True if the checkbox is checked</param>
     public void ToggleMessierObjects(bool value) { MessierObjectsToggled?.Invoke(value); }
 
+    public void SetMainController(Startup controller)
+    {
+        _mainControl = controller;
+    }
+
     /// <summary>
     /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
     /// </summary>
 	public async void UpdateUserPosition()
     {
-        string latText = latField.Text;
-        string longText = longField.Text;
+        string latDegText = latDegField.Text;
+        string latMinText = latMinField.Text;
+        string lonDegText = lonDegField.Text;
+        string lonMinText = lonMinField.Text;
 
-        // Huntsville Defaults
-        double latitude = 34.7304;
-        double longitude = -86.5861;
+        // Default to 0s
+        double latitude = 0;
+        double longitude = 0;
 
-        if (latText != "" || longText != "")
+        if (latDegText != "" || lonDegText != "")
         {
-            latitude = double.Parse(latText);
-            longitude = double.Parse(longText);
+            latitude = int.Parse(latDegText);
+            longitude = int.Parse(lonDegText);
+        }
+        else if (latMinText != "" || lonMinText != "")
+        {
+            latitude += double.Parse(latMinText) * 0.016667;
+            longitude += double.Parse(lonMinText) * 0.016667;
         }
         else
         {
@@ -138,5 +152,17 @@ public partial class ControlContainer : Control
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
+    }
+
+    private async void _on_button_pressed()
+    {
+        if (_mainControl != null)
+        {
+            await _mainControl.TakeScreenshot();
+        }
+        else
+        {
+            GD.PrintErr("Main controller reference not set!");
+        }
     }
 }

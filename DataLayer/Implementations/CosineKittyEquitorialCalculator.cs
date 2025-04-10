@@ -148,7 +148,7 @@ namespace DataLayer.Implementations
                 planet.Azimuth = hor.azimuth;
                 planet.Altitude = hor.altitude;
                 planet.PhaseAngle = illumination.phase_angle;
-                planet.Distance = equ.dist/AUConversion;        // Cosine Kitty provides planetary distances in Astronomic Units, convert to lightyears to match the stars.
+                planet.Distance = equ.dist;
             }
         }
 
@@ -162,7 +162,7 @@ namespace DataLayer.Implementations
             moon.Azimuth = hor.azimuth;
             moon.Altitude = hor.altitude;
             moon.Phase = phase;
-            moon.Distance = equ.dist / AUConversion;            // Cosine Kitty provides the moon's distance in Astronomical Units, convert to lightyears to match the stars.
+            moon.Distance = equ.dist;
         }
         /// <inheritdoc/>
         public void UpdatePositionOf(HorizontalSun sun)
@@ -172,7 +172,7 @@ namespace DataLayer.Implementations
             var illumination = Astronomy.Illumination(Body.Sun, astroTime);
             sun.Azimuth = hor.azimuth;
             sun.Altitude = hor.altitude;
-            sun.Distance = equ.dist / AUConversion;             // Cosine Kitty Provides the Sun's distance in Astronomical Units, convert to lightyears to match the stars. 
+            sun.Distance = equ.dist; 
         }
 
     }
