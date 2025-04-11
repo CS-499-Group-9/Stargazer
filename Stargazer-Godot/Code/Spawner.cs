@@ -52,7 +52,7 @@ namespace Stargazer
             // Create a new task to calculate the positions of the stars and add them to the container and await completion
             await Task.Run(() =>
             {
-                foreach (var star in stars.Where((s) => s.Magnitude < maxStarMagnitude))
+                foreach (var star in stars)
                 {
                     GetStar(star?.HipparcosId ?? 0, SpawnStar);
                 }
