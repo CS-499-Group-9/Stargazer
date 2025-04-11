@@ -45,6 +45,10 @@ namespace Stargazer
             // Create a new star container in memory
             StarContainer = new();
 
+            // Start timer
+            var stopwatch = new System.Diagnostics.Stopwatch();
+            stopwatch.Start();
+
             // Create a new task to calculate the positions of the stars and add them to the container and await completion
             await Task.Run(() =>
             {
@@ -53,6 +57,10 @@ namespace Stargazer
                     GetStar(star?.HipparcosId ?? 0, SpawnStar);
                 }
             });
+
+            stopwatch.Stop(); // Stop timer
+
+            GD.Print($"Time taken to draw stars: {stopwatch.ElapsedMilliseconds} ms");
 
             // If the previous container exists, remove it from the tree then add the new container.
             oldContainer?.Free();
