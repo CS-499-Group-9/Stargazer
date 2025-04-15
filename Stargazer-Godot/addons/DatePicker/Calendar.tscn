@@ -11,8 +11,8 @@ offset_bottom = 400.0
 theme_type_variation = &"RoundedPanelContainer"
 script = ExtResource("1_heut6")
 Header = NodePath("VboxContainer/PanelContainer/HeaderContainer/HeaderButton")
-Next = NodePath("VboxContainer/PanelContainer/HeaderContainer/Next")
-Previous = NodePath("VboxContainer/PanelContainer/HeaderContainer/Previous")
+Next = NodePath("VboxContainer/PanelContainer/HeaderContainer/Control/Next")
+Previous = NodePath("VboxContainer/PanelContainer/HeaderContainer/Control/Previous")
 ViewParent = NodePath("VboxContainer/View")
 
 [node name="VboxContainer" type="VBoxContainer" parent="."]
@@ -35,14 +35,27 @@ text = "1980"
 flat = true
 alignment = 0
 
-[node name="Previous" type="Button" parent="VboxContainer/PanelContainer/HeaderContainer"]
+[node name="Control" type="Control" parent="VboxContainer/PanelContainer/HeaderContainer"]
 layout_mode = 2
+
+[node name="Previous" type="Button" parent="VboxContainer/PanelContainer/HeaderContainer/Control"]
+layout_mode = 2
+offset_left = -88.0
+offset_top = 36.0
+offset_right = -48.0
+offset_bottom = 76.0
+rotation = -1.5708
 theme_type_variation = &"IconButton"
 icon = ExtResource("2_7qdt0")
 flat = true
 
-[node name="Next" type="Button" parent="VboxContainer/PanelContainer/HeaderContainer"]
+[node name="Next" type="Button" parent="VboxContainer/PanelContainer/HeaderContainer/Control"]
 layout_mode = 2
+offset_left = -44.0
+offset_top = 36.0
+offset_right = -4.0
+offset_bottom = 76.0
+rotation = -1.5708
 theme_type_variation = &"IconButton"
 icon = ExtResource("3_dm0pi")
 flat = true
