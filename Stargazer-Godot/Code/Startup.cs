@@ -5,6 +5,10 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Formats.Gif;
+using ImageSharpImage = SixLabors.ImageSharp.Image;
 
 namespace Stargazer
 {
@@ -94,6 +98,22 @@ namespace Stargazer
 
         }
 
+        private void SaveAsGif(Godot.Image godotImage, int width, int height, string gifPath) // This function takes an image and creates a single frame gif.
+        {
+            godotImage.Convert(Godot.Image.Format.Rgba8); // Converts the Godot image to an RGBA8 format.
+            byte[] rawData = godotImage.GetData(); // Get the raw data of the image.
+
+            using (var image = ImageSharpImage.LoadPixelData<SixLabors.ImageSharp.PixelFormats.Rgba32>(rawData, width, height))
+            {
+                image.Metadata.GetGifMetadata().RepeatCount = 0; // Set the loop behavior (0 = loop forever).
+
+                var encoder = new SixLabors.ImageSharp.Formats.Gif.GifEncoder(); // Encode the image as a gif.
+                image.Save(gifPath, encoder); // Save the image to the path using the gif encoder.
+            }
+        }
+
+
+
         public async Task TakeScreenshot()
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
@@ -139,7 +159,7 @@ namespace Stargazer
             int height = 3300; // 11 inches * 300 DPI
 
             // Get the image from the viewport
-            Image screenshotImage = view2D.GetTexture().GetImage();
+            Godot.Image screenshotImage = view2D.GetTexture().GetImage();
     
             // Resize the image to fit the 8.5x11 dimensions at 300 DPI
             screenshotImage.Resize(width, height);
@@ -156,9 +176,8 @@ namespace Stargazer
                     screenshotImage.SaveWebp(screenshotPath);
                     break;
                 case "gif":
-                    // Godot doesn't support GIF saving natively
-                    GD.PrintErr("GIF export is not supported directly.");
-                    return;
+                    SaveAsGif(screenshotImage, width, height, screenshotPath);
+                    break;
             }
             GD.Print($"Screenshot saved to {screenshotPath}");
             ShowScreenshotSavedNotification();
