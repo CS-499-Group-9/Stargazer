@@ -6,8 +6,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
 using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Formats.Bmp;
 using SixLabors.ImageSharp.Formats.Gif;
+using SixLabors.ImageSharp.Formats.Tiff;
 using ImageSharpImage = SixLabors.ImageSharp.Image;
 
 namespace Stargazer
@@ -112,7 +115,14 @@ namespace Stargazer
             }
         }
 
+        private void SaveWithImageSharp(Godot.Image godotImage, int width, int height, string path, IImageEncoder encoder) // This function helps encode the images properly using ImageSharp.
+        {
+            godotImage.Convert(Godot.Image.Format.Rgba8); // Convert the Godot Image to format RGBA8.
+            byte[] imageBytes = godotImage.GetData(); // Get the data of the image.
 
+            using var image = SixLabors.ImageSharp.Image.LoadPixelData<Rgba32>(imageBytes, width, height); // Load the data of the image.
+            image.Save(path, encoder); // Save the image using the correct encoder.
+        }
 
         public async Task TakeScreenshot()
         {
@@ -172,11 +182,17 @@ namespace Stargazer
                 case "jpeg":
                     screenshotImage.SaveJpg(screenshotPath, 90);
                     break;
+                case "bmp":
+                    SaveWithImageSharp(screenshotImage, width, height, screenshotPath, new BmpEncoder());
+                    break;
                 case "webp":
                     screenshotImage.SaveWebp(screenshotPath);
                     break;
                 case "gif":
                     SaveAsGif(screenshotImage, width, height, screenshotPath);
+                    break;
+                case "tiff":
+                    SaveWithImageSharp(screenshotImage, width, height, screenshotPath, new TiffEncoder());
                     break;
             }
             GD.Print($"Screenshot saved to {screenshotPath}");
