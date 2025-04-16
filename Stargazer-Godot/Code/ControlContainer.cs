@@ -2,7 +2,10 @@ using DataLayer;
 using Godot;
 using Stargazer;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 public partial class ControlContainer : Control
 {
@@ -14,7 +17,16 @@ public partial class ControlContainer : Control
     [Export] private OptionButton AMorPMButton;
     [Export] private Button calendarButton;
     [Export] private OptionButton formatSelector;
+    [Export] private HSlider TimeLapseSlider;
+
     private Startup _mainControl;
+    private DateTime baseDateTime; // start of time-lapse
+    private TimeSpan totalSpan = TimeSpan.FromHours(24); // or a week, a month, etc.
+    private int frameCount = 100;
+    private double _lastLatitude;
+    private double _lastLongitude;
+
+
 
     /// <summary>
     /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -44,6 +56,14 @@ public partial class ControlContainer : Control
     /// Broadcasts a request to take a screenshot
     /// <summary>
     public Func<Task> RequestScreenshot;
+
+    public async override void _Ready()
+    {
+        TimeLapseSlider.MinValue = 0;
+        TimeLapseSlider.MaxValue = frameCount - 1;
+        TimeLapseSlider.Step = 1;
+        TimeLapseSlider.ValueChanged += OnTimeLapseFrameChanged;
+    }
 
     /// <summary>
     /// Checks to see if the user has requested a screenshot
@@ -153,7 +173,27 @@ public partial class ControlContainer : Control
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
+        _lastLatitude = latitude;
+        _lastLongitude = longitude;
     }
+
+
+    public void SetBaseDateTime(DateTime dateTime)
+    {
+        baseDateTime = dateTime;
+    }
+
+    private void OnTimeLapseFrameChanged(double frame)
+{
+    double progress = frame / (frameCount - 1);
+    DateTime targetTime = baseDateTime + TimeSpan.FromTicks((long)(totalSpan.Ticks * progress));
+    GD.Print($"Time-lapse frame: {frame}, datetime: {targetTime}");
+
+    // Use existing broadcast pattern
+    UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
+
+}
+
 
     private async void _on_button_pressed()
     {
