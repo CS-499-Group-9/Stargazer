@@ -18,8 +18,6 @@ public partial class ControlContainer : Control
     [Export] private Button calendarButton;
     [Export] private OptionButton formatSelector;
     [Export] private HSlider TimeLapseSlider;
-    [Export] private PlayControl playControl;
-
 
     private Startup _mainControl;
     private DateTime baseDateTime; // Start time of timelapse.
