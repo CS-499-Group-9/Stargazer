@@ -13,7 +13,9 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+
 [node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector")]
+
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
