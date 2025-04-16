@@ -18,13 +18,15 @@ public partial class ControlContainer : Control
     [Export] private Button calendarButton;
     [Export] private OptionButton formatSelector;
     [Export] private HSlider TimeLapseSlider;
+    [Export] private PlayControl playControl;
+
 
     private Startup _mainControl;
-    private DateTime baseDateTime; // start of time-lapse
-    private TimeSpan totalSpan = TimeSpan.FromHours(24); // or a week, a month, etc.
-    private int frameCount = 100;
-    private double _lastLatitude;
-    private double _lastLongitude;
+    private DateTime baseDateTime; // Start time of timelapse.
+    private TimeSpan totalSpan = TimeSpan.FromHours(24); // Have it timelapse a day.
+    private int frameCount = 100; // Number of frames to use.
+    private double _lastLatitude; // Last latitude position for the timelapse.
+    private double _lastLongitude; // Last longitude position for the timelapse.
 
 
 
@@ -172,27 +174,27 @@ public partial class ControlContainer : Control
         GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
         GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
         
+        SetBaseDateTime(parsedDate);
         UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
-        _lastLatitude = latitude;
-        _lastLongitude = longitude;
+        _lastLatitude = latitude; // Update the latitude.
+        _lastLongitude = longitude; // Update the longitude.
     }
 
 
     public void SetBaseDateTime(DateTime dateTime)
     {
-        baseDateTime = dateTime;
+        baseDateTime = dateTime; // Set the base date and time.
     }
 
     private void OnTimeLapseFrameChanged(double frame)
-{
-    double progress = frame / (frameCount - 1);
-    DateTime targetTime = baseDateTime + TimeSpan.FromTicks((long)(totalSpan.Ticks * progress));
-    GD.Print($"Time-lapse frame: {frame}, datetime: {targetTime}");
+    {
+        double progress = frame / (frameCount - 1);
+        DateTime targetTime = baseDateTime + TimeSpan.FromTicks((long)(totalSpan.Ticks * progress));
+        GD.Print($"Time-lapse frame: {frame}, datetime: {targetTime}");
 
-    // Use existing broadcast pattern
-    UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
-
-}
+        // Use the existing broadcast pattern
+        UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
+    }
 
 
     private async void _on_button_pressed()
