@@ -56,6 +56,9 @@ namespace Stargazer
             var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(path);
             dataPackage = await repositoryService.InitializeDataPackage();
             calculator = dataPackage.Calculator;
+
+            calculator.SetTime(DateTime.UtcNow);
+
             skyView = skyViewContainer.SkyView;
             await skyView.InitializeCelestial(dataPackage);
 

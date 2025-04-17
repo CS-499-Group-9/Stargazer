@@ -13,7 +13,7 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector", "TimeLapseSlider")]
+[node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector", "TimeLapseSlider", "TimeLapseLabel")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
@@ -27,6 +27,7 @@ AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/T
 calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
 formatSelector = NodePath("MarginContainer/VBoxContainer/FormatSelector")
 TimeLapseSlider = NodePath("HSlider")
+TimeLapseLabel = NodePath("HSlider/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -429,6 +430,16 @@ offset_left = -801.0
 offset_top = 22.0
 offset_right = -399.0
 offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 3.0
+offset_right = 398.0
+offset_bottom = 30.0
+text = "Timelapse Slider"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/EquatorialToggle/CheckBox" to="." method="ToggleEquatorial"]
