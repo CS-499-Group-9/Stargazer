@@ -197,6 +197,13 @@ namespace Stargazer
 
             for (int i = 0; i < frameCount; i++)
             {
+                // Pause until window is restored
+                while (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Minimized)
+                {
+                    GD.Print($"Frame {i}: Waiting for window to be restored...");
+                    await ToSignal(GetTree().CreateTimer(0.0f), "timeout");
+                }
+
                 DateTime currentTime = startTime.AddMinutes(i);
                 calculator.SetTime(currentTime);
                 await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
@@ -215,6 +222,7 @@ namespace Stargazer
                 progressBar.Value = i + 1;
                 await ToSignal(GetTree(), "process_frame");
             }
+
 
             string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
             using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
