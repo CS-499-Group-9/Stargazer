@@ -26,7 +26,7 @@ public partial class ControlContainer : Control
     private int frameCount = 100; // Number of frames to use.
     private double _lastLatitude; // Last latitude position for the timelapse.
     private double _lastLongitude; // Last longitude position for the timelapse.
-
+    private bool _exportGifReversed = false; // Reverse gif if true.
 
 
     /// <summary>
@@ -207,6 +207,10 @@ public partial class ControlContainer : Control
     _lastLongitude = longitude;
     }
 
+    public void _on_reverse_gif_toggled(bool toggled)
+    {
+        _exportGifReversed = toggled;
+    }
 
 
     public void SetBaseDateTime(DateTime dateTime)
@@ -248,13 +252,14 @@ public partial class ControlContainer : Control
     {
         if (_mainControl != null)
         {
-            await _mainControl.ExportTimelapseGif(_lastLatitude, _lastLongitude, baseDateTime);
+            await _mainControl.ExportTimelapseGif(_lastLatitude, _lastLongitude, baseDateTime, _exportGifReversed);
         }
         else
         {
             GD.PrintErr("Main control is not assigned.");
         }
     }
+
 
     public string GetSelectedScreenshotFormat()
     {

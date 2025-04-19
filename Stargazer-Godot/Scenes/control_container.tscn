@@ -439,6 +439,21 @@ grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_f5vim")
 metadata/_edit_use_anchors_ = true
 
+[node name="Panel2" type="Panel" parent="MarginContainer/VBoxContainer/GIFTimelapseButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.05
+anchor_bottom = 0.156028
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 30.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_bhqqh")
+metadata/_edit_use_anchors_ = true
+
 [node name="GIFTimelapseButton" type="Button" parent="MarginContainer/VBoxContainer/GIFTimelapseButton"]
 layout_mode = 1
 anchors_preset = 8
@@ -458,6 +473,25 @@ theme_override_colors/font_hover_color = Color(0.948934, 0.896173, 0.920995, 0.9
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_styles/normal = ExtResource("4_f5vim")
 text = "Create GIF Timelapse"
+
+[node name="ReverseGIF" type="CheckBox" parent="MarginContainer/VBoxContainer/GIFTimelapseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = 36.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+tooltip_text = "Reverse the GIF"
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+expand_icon = true
+metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
@@ -484,3 +518,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterButton/Button" to="." method="UpdateUserPosition"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ScreenshotButton/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GIFTimelapseButton/GIFTimelapseButton" to="." method="_on_timelapse_gif_export_button_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GIFTimelapseButton/ReverseGIF" to="." method="_on_reverse_gif_toggled"]

@@ -168,7 +168,7 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
-        public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
+        public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)
         {   
             DateTime originalTime = calculator.getTime();  // Store the original time
             const int frameCount = 60;
@@ -224,7 +224,14 @@ namespace Stargazer
             }
 
 
-            string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
+            string directionSuffix = reverse ? "_reversed" : "";
+            string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}{directionSuffix}.gif");
+
+            if (reverse)
+            {
+                gifFrames.Reverse();
+            }
+
             using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
             {
                 for (int i = 0; i < gifFrames.Count; i++)
@@ -246,7 +253,6 @@ namespace Stargazer
             ShowGifExportedNotification(gifPath);
         }
 
-
         private void ShowGifExportedNotification(string gifPath)
         {
             ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
@@ -257,12 +263,6 @@ namespace Stargazer
             // Show the dialog
             ScreenshotDialog.PopupCentered();
         }
-
-
-
-
-
-
 
         private void ExportScreenshot(SubViewport view2D, string format)
         {
