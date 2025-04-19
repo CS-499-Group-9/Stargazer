@@ -385,23 +385,23 @@ popup/item_4/id = 2
 popup/item_5/text = "TIFF"
 popup/item_5/id = 4
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="ScreenshotButton" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Control"]
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/ScreenshotButton"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.05
 anchor_bottom = 0.156028
 offset_right = -9.99998
-offset_bottom = 33.7589
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("3_bhqqh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/ScreenshotButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -409,9 +409,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -84.0
-offset_top = 2.0
+offset_top = 3.0
 offset_right = 3276.0
-offset_bottom = 579.0
+offset_bottom = 683.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.05, 0.05)
@@ -423,6 +423,41 @@ theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_icons/icon = ExtResource("5_hdsya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8k74c")
 icon_alignment = 1
+
+[node name="GIFTimelapseButton" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GIFTimelapseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_f5vim")
+metadata/_edit_use_anchors_ = true
+
+[node name="GIFTimelapseButton" type="Button" parent="MarginContainer/VBoxContainer/GIFTimelapseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 45.0
+offset_right = 93.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Create a 1 hour 2D timelapse of the sky starting from the given time"
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
+theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
+theme_override_styles/normal = ExtResource("4_f5vim")
+text = "Create GIF Timelapse"
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 0
@@ -441,18 +476,11 @@ text = "Timelapse Slider"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimelapseGifExportButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = -274.0
-offset_top = -26.0
-offset_right = -8.0
-offset_bottom = 40.0
-
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/EquatorialToggle/CheckBox" to="." method="ToggleEquatorial"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ConstellationButton/CheckBox" to="." method="ToggleConstellations"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/LabelButton/CheckBox" to="." method="ToggleConstellationLabels"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MessierButton/CheckBox" to="." method="ToggleMessierObjects"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterButton/Button" to="." method="UpdateUserPosition"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="TimelapseGifExportButton" to="." method="_on_timelapse_gif_export_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScreenshotButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GIFTimelapseButton/GIFTimelapseButton" to="." method="_on_timelapse_gif_export_button_pressed"]
