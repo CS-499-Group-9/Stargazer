@@ -241,6 +241,18 @@ public partial class ControlContainer : Control
         }
     }
 
+   private async void _on_timelapse_gif_export_button_pressed()
+   {
+    if (_mainControl != null)
+    {
+        await _mainControl.ExportTimelapseGif(_lastLatitude, _lastLongitude, baseDateTime);
+    }
+    else
+    {
+        GD.PrintErr("Main control is not assigned.");
+    }
+   }
+
     public string GetSelectedScreenshotFormat()
     {
         return formatSelector.GetItemText(formatSelector.Selected);

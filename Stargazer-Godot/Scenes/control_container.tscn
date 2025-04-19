@@ -441,6 +441,13 @@ text = "Timelapse Slider"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TimelapseGifExportButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -274.0
+offset_top = -26.0
+offset_right = -8.0
+offset_bottom = 40.0
+
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/EquatorialToggle/CheckBox" to="." method="ToggleEquatorial"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ConstellationButton/CheckBox" to="." method="ToggleConstellations"]
@@ -448,3 +455,4 @@ vertical_alignment = 1
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MessierButton/CheckBox" to="." method="ToggleMessierObjects"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterButton/Button" to="." method="UpdateUserPosition"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TimelapseGifExportButton" to="." method="_on_timelapse_gif_export_button_pressed"]

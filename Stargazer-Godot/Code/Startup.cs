@@ -4,6 +4,7 @@ using Godot;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats;
@@ -163,6 +164,72 @@ namespace Stargazer
             screenshotTimer.Autostart = true;
             AddChild(screenshotTimer);
         }
+
+       public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
+{
+    const int frameCount = 60;
+    const int frameIntervalMinutes = 1;
+    int width = 2550;
+    int height = 3300;
+
+    string outputDir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer GIF Frames");
+    Directory.CreateDirectory(outputDir);
+    List<Image<Rgba32>> gifFrames = new();
+
+    // Assuming the ProgressBar is already created in the Godot editor and assigned via export
+    var progressBar = GetNode<ProgressBar>("ProgressBar");
+
+    // Set the maximum value of the progress bar to the frame count
+    progressBar.MaxValue = frameCount;
+
+    for (int i = 0; i < frameCount; i++)
+    {
+        DateTime currentTime = startTime.AddMinutes(i);
+        calculator.SetLocation(latitude, longitude);
+        calculator.SetTime(currentTime);
+
+        var skyView2d = View2D.GetNode<SkyView2D>("View2d");
+        await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
+
+        // Wait for the frame to render
+        await ToSignal(GetTree(), "process_frame");  // Yield control to the main loop for frame processing
+
+        Godot.Image godotImage = View2D.GetTexture().GetImage();
+        godotImage.Resize(width, height);
+        godotImage.Convert(Godot.Image.Format.Rgba8);
+        byte[] raw = godotImage.GetData();
+
+        var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
+        img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5; // ~0.5s per frame
+        gifFrames.Add(img.Clone());
+
+        // Update the progress bar
+        progressBar.Value = i + 1; // Update the progress bar based on the current frame
+
+        // Yield control to allow UI updates
+        await ToSignal(GetTree(), "process_frame");  // This will make sure the UI updates after each frame.
+    }
+
+    string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
+    using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
+    {
+        for (int i = 0; i < gifFrames.Count; i++)
+        {
+            gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
+        }
+
+        gif.Frames.RemoveFrame(0); // Remove placeholder root frame
+        gif.Metadata.GetGifMetadata().RepeatCount = 0;
+        gif.Save(gifPath, new GifEncoder());
+    }
+
+    GD.Print($"GIF saved to: {gifPath}");
+
+    // Optionally reset the progress bar value after the process
+    progressBar.Value = 0;
+}
+
+
 
 
         private void ExportScreenshot(SubViewport view2D, string format)
