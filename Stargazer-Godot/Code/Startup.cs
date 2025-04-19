@@ -63,6 +63,9 @@ namespace Stargazer
             skyView = skyViewContainer.SkyView;
             await skyView.InitializeCelestial(dataPackage);
 
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.Visible = false;
+
             // Set up subscribers to notifications.
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
             controlContainer.EquatorialToggled = skyView.ToggleEquatorialGridlines;
@@ -165,8 +168,9 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
-       public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
+public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
 {
+    DateTime originalTime = calculator.getTime();  // Store the original time
     const int frameCount = 60;
     const int frameIntervalMinutes = 1;
     int width = 2550;
@@ -176,11 +180,15 @@ namespace Stargazer
     Directory.CreateDirectory(outputDir);
     List<Image<Rgba32>> gifFrames = new();
 
-    // Assuming the ProgressBar is already created in the Godot editor and assigned via export
+    // Get the progress bar
     var progressBar = GetNode<ProgressBar>("ProgressBar");
 
-    // Set the maximum value of the progress bar to the frame count
+    // Make sure the progress bar is visible during export
     progressBar.MaxValue = frameCount;
+    progressBar.Visible = true; 
+
+    // Block input with the modal blocker
+    ModalBlocker.Visible = true;
 
     for (int i = 0; i < frameCount; i++)
     {
@@ -191,23 +199,23 @@ namespace Stargazer
         var skyView2d = View2D.GetNode<SkyView2D>("View2d");
         await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
 
-        // Wait for the frame to render
-        await ToSignal(GetTree(), "process_frame");  // Yield control to the main loop for frame processing
+        // Wait for the sky to update before taking the first screenshot
+        await ToSignal(GetTree(), "process_frame");
 
+        // Capture the image only after the sky has been rendered
         Godot.Image godotImage = View2D.GetTexture().GetImage();
         godotImage.Resize(width, height);
         godotImage.Convert(Godot.Image.Format.Rgba8);
         byte[] raw = godotImage.GetData();
 
         var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
-        img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5; // ~0.5s per frame
+        img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5;
         gifFrames.Add(img.Clone());
 
-        // Update the progress bar
-        progressBar.Value = i + 1; // Update the progress bar based on the current frame
+        progressBar.Value = i + 1; // Update progress
 
         // Yield control to allow UI updates
-        await ToSignal(GetTree(), "process_frame");  // This will make sure the UI updates after each frame.
+        await ToSignal(GetTree(), "process_frame");
     }
 
     string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
@@ -218,16 +226,40 @@ namespace Stargazer
             gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
         }
 
-        gif.Frames.RemoveFrame(0); // Remove placeholder root frame
+        gif.Frames.RemoveFrame(0);
         gif.Metadata.GetGifMetadata().RepeatCount = 0;
         gif.Save(gifPath, new GifEncoder());
     }
 
     GD.Print($"GIF saved to: {gifPath}");
 
+    // Restore the original time after export
+    calculator.SetTime(originalTime);
+
+    // Hide the modal blocker to unblock input
+    ModalBlocker.Visible = false;
+
     // Optionally reset the progress bar value after the process
     progressBar.Value = 0;
+    progressBar.Visible = false; // Hide progress bar after export is done
+
+    // Show the "screenshot saved" dialog
+    ShowGifExportedNotification(gifPath);
 }
+
+private void ShowGifExportedNotification(string gifPath)
+{
+    ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
+
+    // Show the blocker
+    ModalBlocker.Visible = true;
+
+    // Show the dialog
+    ScreenshotDialog.PopupCentered();
+}
+
+
+
 
 
 

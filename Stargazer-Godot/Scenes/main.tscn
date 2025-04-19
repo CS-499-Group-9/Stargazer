@@ -53,6 +53,7 @@ color = Color(0, 0, 0, 0.501961)
 position = Vector2i(550, 250)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 layout_mode = 2
 
 [connection signal="close_requested" from="ScreenshotDialog" to="." method="_on_screenshot_dialog_close_requested"]
