@@ -168,95 +168,87 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
-public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
-{
-    DateTime originalTime = calculator.getTime();  // Store the original time
-    const int frameCount = 60;
-    const int frameIntervalMinutes = 1;
-    int width = 2550;
-    int height = 3300;
+        public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime)
+        {   
+            DateTime originalTime = calculator.getTime();  // Store the original time
+            const int frameCount = 60;
+            const int frameIntervalMinutes = 1;
+            int width = 2550;
+            int height = 3300;
 
-    string outputDir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer GIF Frames");
-    Directory.CreateDirectory(outputDir);
-    List<Image<Rgba32>> gifFrames = new();
+            string outputDir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer GIF Timelapses");
+            Directory.CreateDirectory(outputDir);
+            List<Image<Rgba32>> gifFrames = new();
 
-    // Get the progress bar
-    var progressBar = GetNode<ProgressBar>("ProgressBar");
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.MaxValue = frameCount;
+            progressBar.Visible = true;
 
-    // Make sure the progress bar is visible during export
-    progressBar.MaxValue = frameCount;
-    progressBar.Visible = true; 
+            ModalBlocker.Visible = true;
 
-    // Block input with the modal blocker
-    ModalBlocker.Visible = true;
+            // Initial update of time and sky view before loop
+            calculator.SetLocation(latitude, longitude);
+            calculator.SetTime(startTime);
+            var skyView2d = View2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage, startTime, calculator.getLongLat());
 
-    for (int i = 0; i < frameCount; i++)
-    {
-        DateTime currentTime = startTime.AddMinutes(i);
-        calculator.SetLocation(latitude, longitude);
-        calculator.SetTime(currentTime);
+            // Wait a frame to ensure rendering is ready
+            await ToSignal(GetTree(), "process_frame");
 
-        var skyView2d = View2D.GetNode<SkyView2D>("View2d");
-        await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
+            for (int i = 0; i < frameCount; i++)
+            {
+                DateTime currentTime = startTime.AddMinutes(i);
+                calculator.SetTime(currentTime);
+                await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
 
-        // Wait for the sky to update before taking the first screenshot
-        await ToSignal(GetTree(), "process_frame");
+                await ToSignal(GetTree(), "process_frame");
 
-        // Capture the image only after the sky has been rendered
-        Godot.Image godotImage = View2D.GetTexture().GetImage();
-        godotImage.Resize(width, height);
-        godotImage.Convert(Godot.Image.Format.Rgba8);
-        byte[] raw = godotImage.GetData();
+                Godot.Image godotImage = View2D.GetTexture().GetImage();
+                godotImage.Resize(width, height);
+                godotImage.Convert(Godot.Image.Format.Rgba8);
+                byte[] raw = godotImage.GetData();
 
-        var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
-        img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5;
-        gifFrames.Add(img.Clone());
+                var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
+                img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5;
+                gifFrames.Add(img.Clone());
 
-        progressBar.Value = i + 1; // Update progress
+                progressBar.Value = i + 1;
+                await ToSignal(GetTree(), "process_frame");
+            }
 
-        // Yield control to allow UI updates
-        await ToSignal(GetTree(), "process_frame");
-    }
+            string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
+            using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
+            {
+                for (int i = 0; i < gifFrames.Count; i++)
+                {
+                    gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
+                }
 
-    string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}.gif");
-    using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
-    {
-        for (int i = 0; i < gifFrames.Count; i++)
-        {
-            gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
+                gif.Frames.RemoveFrame(0);
+                gif.Metadata.GetGifMetadata().RepeatCount = 0;
+                gif.Save(gifPath, new GifEncoder());
+            }
+
+            GD.Print($"GIF saved to: {gifPath}");
+
+            calculator.SetTime(originalTime);
+            ModalBlocker.Visible = false;
+            progressBar.Value = 0;
+            progressBar.Visible = false;
+            ShowGifExportedNotification(gifPath);
         }
 
-        gif.Frames.RemoveFrame(0);
-        gif.Metadata.GetGifMetadata().RepeatCount = 0;
-        gif.Save(gifPath, new GifEncoder());
-    }
 
-    GD.Print($"GIF saved to: {gifPath}");
+        private void ShowGifExportedNotification(string gifPath)
+        {
+            ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
 
-    // Restore the original time after export
-    calculator.SetTime(originalTime);
+            // Show the blocker
+            ModalBlocker.Visible = true;
 
-    // Hide the modal blocker to unblock input
-    ModalBlocker.Visible = false;
-
-    // Optionally reset the progress bar value after the process
-    progressBar.Value = 0;
-    progressBar.Visible = false; // Hide progress bar after export is done
-
-    // Show the "screenshot saved" dialog
-    ShowGifExportedNotification(gifPath);
-}
-
-private void ShowGifExportedNotification(string gifPath)
-{
-    ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
-
-    // Show the blocker
-    ModalBlocker.Visible = true;
-
-    // Show the dialog
-    ScreenshotDialog.PopupCentered();
-}
+            // Show the dialog
+            ScreenshotDialog.PopupCentered();
+        }
 
 
 
