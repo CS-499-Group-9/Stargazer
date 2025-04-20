@@ -26,7 +26,7 @@ public partial class ControlContainer : Control
     private int frameCount = 100; // Number of frames to use.
     private double _lastLatitude; // Last latitude position for the timelapse.
     private double _lastLongitude; // Last longitude position for the timelapse.
-
+    private bool _exportGifReversed = false; // Reverse gif if true.
 
 
     /// <summary>
@@ -189,21 +189,28 @@ public partial class ControlContainer : Control
     if (amPmText == "PM" && hour < 12) hour += 12;
     if (amPmText == "AM" && hour == 12) hour = 0;
 
-    if (!DateTime.TryParse($"{dateText} {hour:00}:{minute:00}:00", out DateTime parsedDate))
+    if (!DateTime.TryParse($"{dateText} {hour:00}:{minute:00}:00", out DateTime localDateTime))
     {
         GD.PrintErr("Invalid date format.");
         return;
     }
 
+    // Treat the user input as local time, then convert to UTC
+    DateTime utcDateTime = DateTime.SpecifyKind(localDateTime, DateTimeKind.Local).ToUniversalTime();
+
     // All checks passed
-    SetBaseDateTime(parsedDate);
+    SetBaseDateTime(utcDateTime);
     TimeLapseSlider.Value = 0;
-    UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
+    UserPositionUpdated(latitude, longitude, utcDateTime);
 
     _lastLatitude = latitude;
     _lastLongitude = longitude;
-}
+    }
 
+    public void _on_reverse_gif_toggled(bool toggled)
+    {
+        _exportGifReversed = toggled;
+    }
 
 
     public void SetBaseDateTime(DateTime dateTime)
@@ -240,6 +247,19 @@ public partial class ControlContainer : Control
             GD.PrintErr("Main controller reference not set!");
         }
     }
+    
+    private async void _on_timelapse_gif_export_button_pressed()
+    {
+        if (_mainControl != null)
+        {
+            await _mainControl.ExportTimelapseGif(_lastLatitude, _lastLongitude, baseDateTime, _exportGifReversed);
+        }
+        else
+        {
+            GD.PrintErr("Main control is not assigned.");
+        }
+    }
+
 
     public string GetSelectedScreenshotFormat()
     {

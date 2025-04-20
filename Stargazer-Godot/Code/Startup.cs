@@ -4,6 +4,7 @@ using Godot;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats;
@@ -61,6 +62,9 @@ namespace Stargazer
 
             skyView = skyViewContainer.SkyView;
             await skyView.InitializeCelestial(dataPackage);
+
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.Visible = false;
 
             // Set up subscribers to notifications.
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
@@ -164,6 +168,101 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
+        public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)
+        {   
+            DateTime originalTime = calculator.getTime();  // Store the original time
+            const int frameCount = 60;
+            const int frameIntervalMinutes = 1;
+            int width = 2550;
+            int height = 3300;
+
+            string outputDir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer GIF Timelapses");
+            Directory.CreateDirectory(outputDir);
+            List<Image<Rgba32>> gifFrames = new();
+
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.MaxValue = frameCount;
+            progressBar.Visible = true;
+
+            ModalBlocker.Visible = true;
+
+            // Initial update of time and sky view before loop
+            calculator.SetLocation(latitude, longitude);
+            calculator.SetTime(startTime);
+            var skyView2d = View2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage, startTime, calculator.getLongLat());
+
+            // Wait a frame to ensure rendering is ready
+            await ToSignal(GetTree(), "process_frame");
+
+            for (int i = 0; i < frameCount; i++)
+            {
+                // Pause until window is restored
+                while (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Minimized)
+                {
+                    GD.Print($"Frame {i}: Waiting for window to be restored...");
+                    await ToSignal(GetTree().CreateTimer(0.0f), "timeout");
+                }
+
+                DateTime currentTime = startTime.AddMinutes(i);
+                calculator.SetTime(currentTime);
+                await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
+
+                await ToSignal(GetTree(), "process_frame");
+
+                Godot.Image godotImage = View2D.GetTexture().GetImage();
+                godotImage.Resize(width, height);
+                godotImage.Convert(Godot.Image.Format.Rgba8);
+                byte[] raw = godotImage.GetData();
+
+                var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
+                img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5;
+                gifFrames.Add(img.Clone());
+
+                progressBar.Value = i + 1;
+                await ToSignal(GetTree(), "process_frame");
+            }
+
+
+            string directionSuffix = reverse ? "_reversed" : "";
+            string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}{directionSuffix}.gif");
+
+            if (reverse)
+            {
+                gifFrames.Reverse();
+            }
+
+            using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
+            {
+                for (int i = 0; i < gifFrames.Count; i++)
+                {
+                    gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
+                }
+
+                gif.Frames.RemoveFrame(0);
+                gif.Metadata.GetGifMetadata().RepeatCount = 0;
+                gif.Save(gifPath, new GifEncoder());
+            }
+
+            GD.Print($"GIF saved to: {gifPath}");
+
+            calculator.SetTime(originalTime);
+            ModalBlocker.Visible = false;
+            progressBar.Value = 0;
+            progressBar.Visible = false;
+            ShowGifExportedNotification(gifPath);
+        }
+
+        private void ShowGifExportedNotification(string gifPath)
+        {
+            ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
+
+            // Show the blocker
+            ModalBlocker.Visible = true;
+
+            // Show the dialog
+            ScreenshotDialog.PopupCentered();
+        }
 
         private void ExportScreenshot(SubViewport view2D, string format)
         {
