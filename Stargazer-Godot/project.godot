@@ -21,11 +21,6 @@ disable_pause_on_focus_lost=true
 
 Globals="*res://Code/Globals.cs"
 
-[display]
-
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
-
 [dotnet]
 
 project/assembly_name="New Game Project"
