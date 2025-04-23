@@ -20,6 +20,8 @@
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 [ext_resource type="PackedScene" uid="uid://755k8nw6wxfm" path="res://Scenes/messier_object.tscn" id="17_yaq6n"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="19_4oofu"]
+[ext_resource type="LabelSettings" uid="uid://33ynhi38kkrt" path="res://Scenes/font.tres" id="20_g6rsx"]
+[ext_resource type="FontFile" uid="uid://cp8gpj6c0lugh" path="res://Textures/Resources/JetBrainsMono-Medium.ttf" id="20_npw6d"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]
 offsets = PackedFloat32Array(0.191052, 0.580411, 0.998791, 1)
@@ -53,25 +55,18 @@ glow_enabled = true
 glow_intensity = 3.07
 glow_strength = 1.46
 
-[sub_resource type="Gradient" id="Gradient_vpwdv"]
-offsets = PackedFloat32Array(0.609347, 0.609357, 0.645897, 0.661094, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.992157, 0.992157, 0.992157, 0, 0.956863, 0.956863, 0.956863, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iahmf"]
-gradient = SubResource("Gradient_vpwdv")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vsn0o"]
 shader = ExtResource("13_xn4y0")
-shader_parameter/radius = 0.4
-shader_parameter/thickness = 0.01
+shader_parameter/radius = 0.37
+shader_parameter/thickness = 0.02
 shader_parameter/feather = 0.01
 
 [sub_resource type="Theme" id="Theme_h54og"]
 default_font_size = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_mo4vo"]
+[sub_resource type="LabelSettings" id="LabelSettings_rmgfm"]
+line_spacing = 1.0
+font = ExtResource("20_npw6d")
 outline_size = 4
 outline_color = Color(0.651164, 1.88673e-05, 0.472085, 1)
 
@@ -167,12 +162,6 @@ offset_right = -1012.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Outline" type="Sprite2D" parent="Compass"]
-visible = false
-position = Vector2(65, 65)
-scale = Vector2(1.76563, 1.76563)
-texture = SubResource("GradientTexture2D_iahmf")
-
 [node name="Needle" type="Sprite2D" parent="Compass" node_paths=PackedStringArray("needle")]
 position = Vector2(65, 65)
 scale = Vector2(0.069375, 0.069375)
@@ -192,6 +181,7 @@ offset_top = 85.0
 offset_right = 190.0
 offset_bottom = 114.0
 text = "Test"
+label_settings = ExtResource("20_g6rsx")
 
 [node name="AverageFrameLabel" type="Label" parent="."]
 visible = false
@@ -200,6 +190,7 @@ offset_top = 110.0
 offset_right = 191.0
 offset_bottom = 139.0
 text = "Average Time"
+label_settings = ExtResource("20_g6rsx")
 
 [node name="InstantaneousFrameLabel" type="Label" parent="."]
 visible = false
@@ -208,6 +199,7 @@ offset_top = 133.0
 offset_right = 192.0
 offset_bottom = 162.0
 text = "Instantaeous Time"
+label_settings = ExtResource("20_g6rsx")
 
 [node name="LocalSiderealLabel" type="Label" parent="."]
 visible = false
@@ -216,6 +208,7 @@ offset_top = 161.0
 offset_right = 196.0
 offset_bottom = 190.0
 text = "Local Sidereal Time"
+label_settings = ExtResource("20_g6rsx")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -226,5 +219,5 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = SubResource("Theme_h54og")
 text = "star"
-label_settings = SubResource("LabelSettings_mo4vo")
+label_settings = SubResource("LabelSettings_rmgfm")
 script = ExtResource("19_4oofu")

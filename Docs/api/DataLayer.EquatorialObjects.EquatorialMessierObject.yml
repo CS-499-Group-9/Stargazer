@@ -21,11 +21,11 @@ items:
   type: Class
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialMessierObject
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 6
   assemblies:
   - DataLayer
@@ -64,11 +64,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 12
   assemblies:
   - DataLayer
@@ -95,11 +95,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 16
   assemblies:
   - DataLayer
@@ -126,11 +126,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 20
   assemblies:
   - DataLayer
@@ -157,11 +157,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 24
   assemblies:
   - DataLayer
@@ -188,11 +188,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 28
   assemblies:
   - DataLayer
@@ -219,11 +219,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 32
   assemblies:
   - DataLayer
@@ -250,11 +250,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
       branch: state-machines
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
-    path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
     startLine: 36
   assemblies:
   - DataLayer

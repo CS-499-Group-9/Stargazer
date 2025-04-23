@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dq3hej6nwetmm"]
 
 [ext_resource type="Script" path="res://Code/Moon.cs" id="1_7apsu"]
-[ext_resource type="Shader" path="res://Scenes/planet.gdshader" id="2_hordq"]
+[ext_resource type="Shader" path="res://Scenes/moon.gdshader" id="2_4tvst"]
 [ext_resource type="Texture2D" uid="uid://c0k2r283muamy" path="res://Textures/Images/moonmap.jpg" id="2_q4njm"]
 [ext_resource type="Script" path="res://Code/StarMesh.cs" id="3_vqt4r"]
 
@@ -9,7 +9,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hdwt7"]
 render_priority = 0
-shader = ExtResource("2_hordq")
+shader = ExtResource("2_4tvst")
+shader_parameter/target_direction = Vector3(0, 1, 0)
+shader_parameter/threshold = 0.9
 shader_parameter/albedo_texture = ExtResource("2_q4njm")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]

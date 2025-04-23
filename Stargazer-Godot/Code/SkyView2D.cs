@@ -10,9 +10,15 @@ namespace Stargazer
     /// </summary>
     public partial class SkyView2D : Node2D
     {
+
         private Spawner2D Stars;
         private Constellations2D Constellations;
         private RichTextLabel timeLabel;
+
+        //private Planets2D Planets;
+        private CelestialDataPackage<Star> dataPackage;
+
+        private string screenshotPath = "user://screenshot.jpeg";
 
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
@@ -22,16 +28,21 @@ namespace Stargazer
             timeLabel = GetNode<RichTextLabel>("TimeLabel2D");
         }
 
+
         /// <summary>
         /// This will need to be changed for the new implementation of containerization.
         /// </summary>
         /// <param name="dataPackage"></param>
         /// <returns></returns>
+
         public async Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (string, string) latLong)
         {
             timeLabel.Text = currentTime.ToString("M/d/yyyy\nh:mm:ss tt 'UTC'") + "\n" + latLong;
             var drawnStars = await Stars.DrawStars(dataPackage.DrawnStars);
             Constellations.DrawConstellations(dataPackage.Constellations, drawnStars);
+
+            GD.Print("2d view updated");
         }
+
     }
 }
