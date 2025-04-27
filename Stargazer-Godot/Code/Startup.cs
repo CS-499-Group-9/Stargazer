@@ -11,6 +11,9 @@ namespace Stargazer
     /// <summary>
     /// The top level controller for the program. 
     /// Handles all communication between the GUI and the viewport.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
+    /// Refactored by Alex Lake (SPR 2025) to implement screenshot.
     /// </summary>
     public partial class Startup : Control
     {

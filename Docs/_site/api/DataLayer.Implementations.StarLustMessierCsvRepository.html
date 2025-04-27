@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StarLustMessierCsvRepository | Stargazer Data API ">
       
-      <meta name="description" content="Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from Starlust.org If a new repository is used, a new converter that implements the  needs to be created for it.">
+      <meta name="description" content="Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from Starlust.org If a new repository is used, a new converter that implements the  needs to be created for it. Author: Josh Johner Created: SPR 2025">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/state-machines/apiSpec/new?filename=DataLayer_Implementations_StarLustMessierCsvRepository.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.StarLustMessierCsvRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/fix-messier-visibility/apiSpec/new?filename=DataLayer_Implementations_StarLustMessierCsvRepository.md&amp;value=---%0Auid%3A%20DataLayer.Implementations.StarLustMessierCsvRepository%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_Implementations_StarLustMessierCsvRepository" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository" class="text-break">
-Class StarLustMessierCsvRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class StarLustMessierCsvRepository  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,9 @@ Class StarLustMessierCsvRepository  <a class="header-action link-secondary" titl
   </div>
 
   <div class="markdown summary"><p>Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href="https://starlust.org/messier-catalog/">Starlust.org</a>
-If a new repository is used, a new converter that implements the <a class="xref" href="DataLayer.Interfaces.IMessierRepository.html">IMessierRepository</a> needs to be created for it.</p>
+If a new repository is used, a new converter that implements the <a class="xref" href="DataLayer.Interfaces.IMessierRepository.html">IMessierRepository</a> needs to be created for it.
+Author: Josh Johner
+Created: SPR 2025</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -164,7 +166,7 @@ If a new repository is used, a new converter that implements the <a class="xref"
 
   <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository__ctor_System_String_" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.#ctor(System.String)">
   StarLustMessierCsvRepository(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new object.</p>
@@ -200,7 +202,7 @@ If a new repository is used, a new converter that implements the <a class="xref"
 
   <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository_filePath" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.filePath">
   filePath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The path to the repository file.</p>
@@ -236,7 +238,7 @@ If a new repository is used, a new converter that implements the <a class="xref"
 
   <h3 id="DataLayer_Implementations_StarLustMessierCsvRepository_GetMessierObjects" data-uid="DataLayer.Implementations.StarLustMessierCsvRepository.GetMessierObjects">
   GetMessierObjects()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets all Messier Objects from the repository</p>
@@ -269,7 +271,7 @@ If a new repository is used, a new converter that implements the <a class="xref"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/Implementations/StarLustMessierCsvRepository.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

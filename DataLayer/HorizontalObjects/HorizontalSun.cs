@@ -9,6 +9,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// Represents the Sun in horizontal coordinate form.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class HorizontalSun : HorizontalBody
     {

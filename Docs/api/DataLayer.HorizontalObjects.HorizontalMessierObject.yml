@@ -23,15 +23,20 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalMessierObject
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
-  summary: A Messier Deep Space Object located in Horizontal coordinates
+  summary: >-
+    A Messier Deep Space Object located in Horizontal coordinates
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class HorizontalMessierObject : HorizontalBody'
@@ -66,11 +71,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -101,11 +106,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -132,11 +137,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -163,11 +168,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -194,11 +199,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -225,11 +230,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -256,11 +261,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 48
+    startLine: 50
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -287,11 +292,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/HorizontalObjects/HorizontalMessierObject.cs
-    startLine: 52
+    startLine: 54
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

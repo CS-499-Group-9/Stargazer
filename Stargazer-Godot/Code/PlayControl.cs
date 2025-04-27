@@ -6,6 +6,8 @@ namespace Stargazer
 {
     /// <summary>
     /// Controls the play speed of the 3D simulation.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public partial class PlayControl : Control
     {

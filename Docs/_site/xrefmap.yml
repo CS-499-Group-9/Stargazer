@@ -2169,6 +2169,32 @@ references:
   isSpec: "True"
   fullName: DataLayer.Interfaces.IEquatorialCalculator.UpdatePositionOf
   nameWithType: IEquatorialCalculator.UpdatePositionOf
+- uid: DataLayer.Interfaces.IEquatorialCalculator.getLongLat
+  name: getLongLat()
+  href: api/DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_getLongLat
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.getLongLat
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.getLongLat()
+  nameWithType: IEquatorialCalculator.getLongLat()
+- uid: DataLayer.Interfaces.IEquatorialCalculator.getLongLat*
+  name: getLongLat
+  href: api/DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_getLongLat_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.getLongLat
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.getLongLat
+  nameWithType: IEquatorialCalculator.getLongLat
+- uid: DataLayer.Interfaces.IEquatorialCalculator.getTime
+  name: getTime()
+  href: api/DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_getTime
+  commentId: M:DataLayer.Interfaces.IEquatorialCalculator.getTime
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.getTime()
+  nameWithType: IEquatorialCalculator.getTime()
+- uid: DataLayer.Interfaces.IEquatorialCalculator.getTime*
+  name: getTime
+  href: api/DataLayer.Interfaces.IEquatorialCalculator.html#DataLayer_Interfaces_IEquatorialCalculator_getTime_
+  commentId: Overload:DataLayer.Interfaces.IEquatorialCalculator.getTime
+  isSpec: "True"
+  fullName: DataLayer.Interfaces.IEquatorialCalculator.getTime
+  nameWithType: IEquatorialCalculator.getTime
 - uid: DataLayer.Interfaces.IEquatorialCalculator`1
   name: IEquatorialCalculator<T>
   href: api/DataLayer.Interfaces.IEquatorialCalculator-1.html
@@ -3505,12 +3531,6 @@ references:
   commentId: F:Stargazer.AzimuthGridlines.equatorialGridlines
   fullName: Stargazer.AzimuthGridlines.equatorialGridlines
   nameWithType: AzimuthGridlines.equatorialGridlines
-- uid: Stargazer.AzimuthGridlines.globalVars
-  name: globalVars
-  href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_globalVars
-  commentId: F:Stargazer.AzimuthGridlines.globalVars
-  fullName: Stargazer.AzimuthGridlines.globalVars
-  nameWithType: AzimuthGridlines.globalVars
 - uid: Stargazer.AzimuthGridlines.latitude
   name: latitude
   href: api/Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_latitude
@@ -3616,6 +3636,19 @@ references:
   isSpec: "True"
   fullName: Stargazer.CelestialBody.Distance
   nameWithType: CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  name: DrawnDistance
+  href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.DrawnDistance*
+  name: DrawnDistance
+  href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance_
+  commentId: Overload:Stargazer.CelestialBody.DrawnDistance
+  isSpec: "True"
+  fullName: Stargazer.CelestialBody.DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
 - uid: Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   name: FromHorizontal(HorizontalBody, IEquatorialCalculator)
   href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_
@@ -3655,6 +3688,23 @@ references:
   isSpec: "True"
   fullName: Stargazer.CelestialBody.GetLocation
   nameWithType: CelestialBody.GetLocation
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  name: IHoverable.IsVisible
+  href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible*
+  name: IHoverable.IsVisible
+  href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible_
+  commentId: Overload:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  isSpec: "True"
+  name.vb: Stargazer.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
 - uid: Stargazer.CelestialBody._Process(System.Double)
   name: _Process(double)
   href: api/Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_
@@ -4045,15 +4095,15 @@ references:
   commentId: F:Stargazer.Constellations2D.ConstellationLabels
   fullName: Stargazer.Constellations2D.ConstellationLabels
   nameWithType: Constellations2D.ConstellationLabels
-- uid: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
-  commentId: M:Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
-  fullName: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
-  fullName.vb: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
-  nameWithType: Constellations2D.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
+- uid: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
+  name: DrawConstellations(IEnumerable<Constellation>, IDictionary<int, Star2D>)
+  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star2D__
+  commentId: M:Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), IDictionary(Of Integer, Star2D))
+  fullName: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IDictionary<int, Stargazer.Star2D>)
+  fullName.vb: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D))
+  nameWithType: Constellations2D.DrawConstellations(IEnumerable<Constellation>, IDictionary<int, Star2D>)
+  nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), IDictionary(Of Integer, Star2D))
 - uid: Stargazer.Constellations2D.DrawConstellations*
   name: DrawConstellations
   href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_
@@ -4074,19 +4124,6 @@ references:
   isSpec: "True"
   fullName: Stargazer.Constellations2D.Label2DScene
   nameWithType: Constellations2D.Label2DScene
-- uid: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  name: Spawn2DStar(Star)
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Spawn2DStar_Stargazer_Star_
-  commentId: M:Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  fullName: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  nameWithType: Constellations2D.Spawn2DStar(Star)
-- uid: Stargazer.Constellations2D.Spawn2DStar*
-  name: Spawn2DStar
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Spawn2DStar_
-  commentId: Overload:Stargazer.Constellations2D.Spawn2DStar
-  isSpec: "True"
-  fullName: Stargazer.Constellations2D.Spawn2DStar
-  nameWithType: Constellations2D.Spawn2DStar
 - uid: Stargazer.Constellations2D.Star2DScene
   name: Star2DScene
   href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_Star2DScene
@@ -4106,38 +4143,6 @@ references:
   commentId: F:Stargazer.Constellations2D.StarContainer
   fullName: Stargazer.Constellations2D.StarContainer
   nameWithType: Constellations2D.StarContainer
-- uid: Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
-  name: ToggleConstellationLabels(bool)
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLabels_System_Boolean_
-  commentId: M:Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
-  name.vb: ToggleConstellationLabels(Boolean)
-  fullName: Stargazer.Constellations2D.ToggleConstellationLabels(bool)
-  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLabels(Boolean)
-  nameWithType: Constellations2D.ToggleConstellationLabels(bool)
-  nameWithType.vb: Constellations2D.ToggleConstellationLabels(Boolean)
-- uid: Stargazer.Constellations2D.ToggleConstellationLabels*
-  name: ToggleConstellationLabels
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLabels_
-  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLabels
-  isSpec: "True"
-  fullName: Stargazer.Constellations2D.ToggleConstellationLabels
-  nameWithType: Constellations2D.ToggleConstellationLabels
-- uid: Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
-  name: ToggleConstellationLines(bool)
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLines_System_Boolean_
-  commentId: M:Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
-  name.vb: ToggleConstellationLines(Boolean)
-  fullName: Stargazer.Constellations2D.ToggleConstellationLines(bool)
-  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLines(Boolean)
-  nameWithType: Constellations2D.ToggleConstellationLines(bool)
-  nameWithType.vb: Constellations2D.ToggleConstellationLines(Boolean)
-- uid: Stargazer.Constellations2D.ToggleConstellationLines*
-  name: ToggleConstellationLines
-  href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLines_
-  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLines
-  isSpec: "True"
-  fullName: Stargazer.Constellations2D.ToggleConstellationLines
-  nameWithType: Constellations2D.ToggleConstellationLines
 - uid: Stargazer.Constellations2D._Ready
   name: _Ready()
   href: api/Stargazer.Constellations2D.html#Stargazer_Constellations2D__Ready
@@ -4163,6 +4168,237 @@ references:
   commentId: F:Stargazer.Constellations2D.mesh
   fullName: Stargazer.Constellations2D.mesh
   nameWithType: Constellations2D.mesh
+- uid: Stargazer.ControlContainer
+  name: ControlContainer
+  href: api/Stargazer.ControlContainer.html
+  commentId: T:Stargazer.ControlContainer
+  fullName: Stargazer.ControlContainer
+  nameWithType: ControlContainer
+- uid: Stargazer.ControlContainer.AMorPMButton
+  name: AMorPMButton
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_AMorPMButton
+  commentId: F:Stargazer.ControlContainer.AMorPMButton
+  fullName: Stargazer.ControlContainer.AMorPMButton
+  nameWithType: ControlContainer.AMorPMButton
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  name: AzimuthToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  name: ConstellationLabelsToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  name: ConstellationsToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+- uid: Stargazer.ControlContainer.EquatorialToggled
+  name: EquatorialToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_EquatorialToggled
+  commentId: F:Stargazer.ControlContainer.EquatorialToggled
+  fullName: Stargazer.ControlContainer.EquatorialToggled
+  nameWithType: ControlContainer.EquatorialToggled
+- uid: Stargazer.ControlContainer.MessierObjectsToggled
+  name: MessierObjectsToggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsToggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
+  fullName: Stargazer.ControlContainer.MessierObjectsToggled
+  nameWithType: ControlContainer.MessierObjectsToggled
+- uid: Stargazer.ControlContainer.RequestScreenshot
+  name: RequestScreenshot
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_RequestScreenshot
+  commentId: F:Stargazer.ControlContainer.RequestScreenshot
+  fullName: Stargazer.ControlContainer.RequestScreenshot
+  nameWithType: ControlContainer.RequestScreenshot
+- uid: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  name: SetMainController(Startup)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetMainController_Stargazer_Startup_
+  commentId: M:Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  fullName: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  nameWithType: ControlContainer.SetMainController(Startup)
+- uid: Stargazer.ControlContainer.SetMainController*
+  name: SetMainController
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetMainController_
+  commentId: Overload:Stargazer.ControlContainer.SetMainController
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.SetMainController
+  nameWithType: ControlContainer.SetMainController
+- uid: Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  name: ToggleAzimuth(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
+  commentId: M:Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  name.vb: ToggleAzimuth(Boolean)
+  fullName: Stargazer.ControlContainer.ToggleAzimuth(bool)
+  fullName.vb: Stargazer.ControlContainer.ToggleAzimuth(Boolean)
+  nameWithType: ControlContainer.ToggleAzimuth(bool)
+  nameWithType.vb: ControlContainer.ToggleAzimuth(Boolean)
+- uid: Stargazer.ControlContainer.ToggleAzimuth*
+  name: ToggleAzimuth
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_
+  commentId: Overload:Stargazer.ControlContainer.ToggleAzimuth
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.ToggleAzimuth
+  nameWithType: ControlContainer.ToggleAzimuth
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  name: ToggleConstellationLabels(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellationLabels_System_Boolean_
+  commentId: M:Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  name.vb: ToggleConstellationLabels(Boolean)
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels(bool)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellationLabels(Boolean)
+  nameWithType: ControlContainer.ToggleConstellationLabels(bool)
+  nameWithType.vb: ControlContainer.ToggleConstellationLabels(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels*
+  name: ToggleConstellationLabels
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellationLabels_
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellationLabels
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels
+  nameWithType: ControlContainer.ToggleConstellationLabels
+- uid: Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  name: ToggleConstellations(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellations_System_Boolean_
+  commentId: M:Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  name.vb: ToggleConstellations(Boolean)
+  fullName: Stargazer.ControlContainer.ToggleConstellations(bool)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellations(Boolean)
+  nameWithType: ControlContainer.ToggleConstellations(bool)
+  nameWithType.vb: ControlContainer.ToggleConstellations(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellations*
+  name: ToggleConstellations
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellations_
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellations
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.ToggleConstellations
+  nameWithType: ControlContainer.ToggleConstellations
+- uid: Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  name: ToggleEquatorial(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_
+  commentId: M:Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  name.vb: ToggleEquatorial(Boolean)
+  fullName: Stargazer.ControlContainer.ToggleEquatorial(bool)
+  fullName.vb: Stargazer.ControlContainer.ToggleEquatorial(Boolean)
+  nameWithType: ControlContainer.ToggleEquatorial(bool)
+  nameWithType.vb: ControlContainer.ToggleEquatorial(Boolean)
+- uid: Stargazer.ControlContainer.ToggleEquatorial*
+  name: ToggleEquatorial
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_
+  commentId: Overload:Stargazer.ControlContainer.ToggleEquatorial
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.ToggleEquatorial
+  nameWithType: ControlContainer.ToggleEquatorial
+- uid: Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  name: ToggleMessierObjects(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleMessierObjects_System_Boolean_
+  commentId: M:Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  name.vb: ToggleMessierObjects(Boolean)
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects(bool)
+  fullName.vb: Stargazer.ControlContainer.ToggleMessierObjects(Boolean)
+  nameWithType: ControlContainer.ToggleMessierObjects(bool)
+  nameWithType.vb: ControlContainer.ToggleMessierObjects(Boolean)
+- uid: Stargazer.ControlContainer.ToggleMessierObjects*
+  name: ToggleMessierObjects
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleMessierObjects_
+  commentId: Overload:Stargazer.ControlContainer.ToggleMessierObjects
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects
+  nameWithType: ControlContainer.ToggleMessierObjects
+- uid: Stargazer.ControlContainer.UpdateUserPosition
+  name: UpdateUserPosition()
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition
+  commentId: M:Stargazer.ControlContainer.UpdateUserPosition
+  fullName: Stargazer.ControlContainer.UpdateUserPosition()
+  nameWithType: ControlContainer.UpdateUserPosition()
+- uid: Stargazer.ControlContainer.UpdateUserPosition*
+  name: UpdateUserPosition
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition_
+  commentId: Overload:Stargazer.ControlContainer.UpdateUserPosition
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.UpdateUserPosition
+  nameWithType: ControlContainer.UpdateUserPosition
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  name: UserPositionUpdated
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
+- uid: Stargazer.ControlContainer._Process(System.Double)
+  name: _Process(double)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__Process_System_Double_
+  commentId: M:Stargazer.ControlContainer._Process(System.Double)
+  name.vb: _Process(Double)
+  fullName: Stargazer.ControlContainer._Process(double)
+  fullName.vb: Stargazer.ControlContainer._Process(Double)
+  nameWithType: ControlContainer._Process(double)
+  nameWithType.vb: ControlContainer._Process(Double)
+- uid: Stargazer.ControlContainer._Process*
+  name: _Process
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__Process_
+  commentId: Overload:Stargazer.ControlContainer._Process
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer._Process
+  nameWithType: ControlContainer._Process
+- uid: Stargazer.ControlContainer._mainControl
+  name: _mainControl
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__mainControl
+  commentId: F:Stargazer.ControlContainer._mainControl
+  fullName: Stargazer.ControlContainer._mainControl
+  nameWithType: ControlContainer._mainControl
+- uid: Stargazer.ControlContainer._on_button_pressed
+  name: _on_button_pressed()
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_button_pressed
+  fullName: Stargazer.ControlContainer._on_button_pressed()
+  nameWithType: ControlContainer._on_button_pressed()
+- uid: Stargazer.ControlContainer._on_button_pressed*
+  name: _on_button_pressed
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_button_pressed_
+  commentId: Overload:Stargazer.ControlContainer._on_button_pressed
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer._on_button_pressed
+  nameWithType: ControlContainer._on_button_pressed
+- uid: Stargazer.ControlContainer.calendarButton
+  name: calendarButton
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_calendarButton
+  commentId: F:Stargazer.ControlContainer.calendarButton
+  fullName: Stargazer.ControlContainer.calendarButton
+  nameWithType: ControlContainer.calendarButton
+- uid: Stargazer.ControlContainer.latDegField
+  name: latDegField
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_latDegField
+  commentId: F:Stargazer.ControlContainer.latDegField
+  fullName: Stargazer.ControlContainer.latDegField
+  nameWithType: ControlContainer.latDegField
+- uid: Stargazer.ControlContainer.latMinField
+  name: latMinField
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_latMinField
+  commentId: F:Stargazer.ControlContainer.latMinField
+  fullName: Stargazer.ControlContainer.latMinField
+  nameWithType: ControlContainer.latMinField
+- uid: Stargazer.ControlContainer.lonDegField
+  name: lonDegField
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_lonDegField
+  commentId: F:Stargazer.ControlContainer.lonDegField
+  fullName: Stargazer.ControlContainer.lonDegField
+  nameWithType: ControlContainer.lonDegField
+- uid: Stargazer.ControlContainer.lonMinField
+  name: lonMinField
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_lonMinField
+  commentId: F:Stargazer.ControlContainer.lonMinField
+  fullName: Stargazer.ControlContainer.lonMinField
+  nameWithType: ControlContainer.lonMinField
+- uid: Stargazer.ControlContainer.timeField
+  name: timeField
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_timeField
+  commentId: F:Stargazer.ControlContainer.timeField
+  fullName: Stargazer.ControlContainer.timeField
+  nameWithType: ControlContainer.timeField
 - uid: Stargazer.Globals
   name: Globals
   href: api/Stargazer.Globals.html
@@ -4456,12 +4692,6 @@ references:
   isSpec: "True"
   fullName: Stargazer.HoverLabel._Ready
   nameWithType: HoverLabel._Ready
-- uid: Stargazer.HoverLabel.globalVars
-  name: globalVars
-  href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel_globalVars
-  commentId: F:Stargazer.HoverLabel.globalVars
-  fullName: Stargazer.HoverLabel.globalVars
-  nameWithType: HoverLabel.globalVars
 - uid: Stargazer.HoverLabel.hoveredBody
   name: hoveredBody
   href: api/Stargazer.HoverLabel.html#Stargazer_HoverLabel_hoveredBody
@@ -4551,6 +4781,19 @@ references:
   isSpec: "True"
   fullName: Stargazer.IHoverable.GetHoverText
   nameWithType: IHoverable.GetHoverText
+- uid: Stargazer.IHoverable.IsVisible
+  name: IsVisible
+  href: api/Stargazer.IHoverable.html#Stargazer_IHoverable_IsVisible
+  commentId: P:Stargazer.IHoverable.IsVisible
+  fullName: Stargazer.IHoverable.IsVisible
+  nameWithType: IHoverable.IsVisible
+- uid: Stargazer.IHoverable.IsVisible*
+  name: IsVisible
+  href: api/Stargazer.IHoverable.html#Stargazer_IHoverable_IsVisible_
+  commentId: Overload:Stargazer.IHoverable.IsVisible
+  isSpec: "True"
+  fullName: Stargazer.IHoverable.IsVisible
+  nameWithType: IHoverable.IsVisible
 - uid: Stargazer.ITrackable
   name: ITrackable
   href: api/Stargazer.ITrackable.html
@@ -6020,15 +6263,15 @@ references:
   commentId: F:Stargazer.SkyView2D.Stars
   fullName: Stargazer.SkyView2D.Stars
   nameWithType: SkyView2D.Stars
-- uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name: UpdateUserPosition(CelestialDataPackage<Star>)
-  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
-  commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
-  fullName: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
-  fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  nameWithType: SkyView2D.UpdateUserPosition(CelestialDataPackage<Star>)
-  nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star))
+- uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
+  name: UpdateUserPosition(CelestialDataPackage<Star>, DateTime, (string, string))
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__System_DateTime_System_ValueTuple_System_String_System_String__
+  commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star), Date, (String, String))
+  fullName: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>, System.DateTime, (string, string))
+  fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star), Date, (String, String))
+  nameWithType: SkyView2D.UpdateUserPosition(CelestialDataPackage<Star>, DateTime, (string, string))
+  nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star), Date, (String, String))
 - uid: Stargazer.SkyView2D.UpdateUserPosition*
   name: UpdateUserPosition
   href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_
@@ -6049,6 +6292,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.SkyView2D._Ready
   nameWithType: SkyView2D._Ready
+- uid: Stargazer.SkyView2D.timeLabel
+  name: timeLabel
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_timeLabel
+  commentId: F:Stargazer.SkyView2D.timeLabel
+  fullName: Stargazer.SkyView2D.timeLabel
+  nameWithType: SkyView2D.timeLabel
 - uid: Stargazer.SkyViewContainer
   name: SkyViewContainer
   href: api/Stargazer.SkyViewContainer.html
@@ -6205,6 +6454,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.Spawner2D.DrawStars
   nameWithType: Spawner2D.DrawStars
+- uid: Stargazer.Spawner2D.DrawnStars
+  name: DrawnStars
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_DrawnStars
+  commentId: F:Stargazer.Spawner2D.DrawnStars
+  fullName: Stargazer.Spawner2D.DrawnStars
+  nameWithType: Spawner2D.DrawnStars
 - uid: Stargazer.Spawner2D.Label2DScene
   name: Label2DScene
   href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_Label2DScene
@@ -6250,6 +6505,19 @@ references:
   commentId: F:Stargazer.Spawner2D.Star2dContainer
   fullName: Stargazer.Spawner2D.Star2dContainer
   nameWithType: Spawner2D.Star2dContainer
+- uid: Stargazer.Spawner2D._Ready
+  name: _Ready()
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D__Ready
+  commentId: M:Stargazer.Spawner2D._Ready
+  fullName: Stargazer.Spawner2D._Ready()
+  nameWithType: Spawner2D._Ready()
+- uid: Stargazer.Spawner2D._Ready*
+  name: _Ready
+  href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D__Ready_
+  commentId: Overload:Stargazer.Spawner2D._Ready
+  isSpec: "True"
+  fullName: Stargazer.Spawner2D._Ready
+  nameWithType: Spawner2D._Ready
 - uid: Stargazer.Spawner2D.count
   name: count
   href: api/Stargazer.Spawner2D.html#Stargazer_Spawner2D_count
@@ -6428,25 +6696,6 @@ references:
   isSpec: "True"
   fullName: Stargazer.Star._Process
   nameWithType: Star._Process
-- uid: Stargazer.Star._Ready
-  name: _Ready()
-  href: api/Stargazer.Star.html#Stargazer_Star__Ready
-  commentId: M:Stargazer.Star._Ready
-  fullName: Stargazer.Star._Ready()
-  nameWithType: Star._Ready()
-- uid: Stargazer.Star._Ready*
-  name: _Ready
-  href: api/Stargazer.Star.html#Stargazer_Star__Ready_
-  commentId: Overload:Stargazer.Star._Ready
-  isSpec: "True"
-  fullName: Stargazer.Star._Ready
-  nameWithType: Star._Ready
-- uid: Stargazer.Star.globalVars
-  name: globalVars
-  href: api/Stargazer.Star.html#Stargazer_Star_globalVars
-  commentId: F:Stargazer.Star.globalVars
-  fullName: Stargazer.Star.globalVars
-  nameWithType: Star.globalVars
 - uid: Stargazer.Star.horizontalStar
   name: horizontalStar
   href: api/Stargazer.Star.html#Stargazer_Star_horizontalStar
@@ -6667,6 +6916,19 @@ references:
   commentId: T:Stargazer.Startup
   fullName: Stargazer.Startup
   nameWithType: Startup
+- uid: Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
+  name: ExportScreenshot(SubViewport)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_Godot_SubViewport_
+  commentId: M:Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
+  fullName: Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
+  nameWithType: Startup.ExportScreenshot(SubViewport)
+- uid: Stargazer.Startup.ExportScreenshot*
+  name: ExportScreenshot
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_
+  commentId: Overload:Stargazer.Startup.ExportScreenshot
+  isSpec: "True"
+  fullName: Stargazer.Startup.ExportScreenshot
+  nameWithType: Startup.ExportScreenshot
 - uid: Stargazer.Startup.MethodName
   name: Startup.MethodName
   href: api/Stargazer.Startup.MethodName.html
@@ -6679,12 +6941,50 @@ references:
   commentId: F:Stargazer.Startup.MethodName._Ready
   fullName: Stargazer.Startup.MethodName._Ready
   nameWithType: Startup.MethodName._Ready
+- uid: Stargazer.Startup.ModalBlocker
+  name: ModalBlocker
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ModalBlocker
+  commentId: F:Stargazer.Startup.ModalBlocker
+  fullName: Stargazer.Startup.ModalBlocker
+  nameWithType: Startup.ModalBlocker
+- uid: Stargazer.Startup.OnScreenshotDialogClosed
+  name: OnScreenshotDialogClosed()
+  href: api/Stargazer.Startup.html#Stargazer_Startup_OnScreenshotDialogClosed
+  commentId: M:Stargazer.Startup.OnScreenshotDialogClosed
+  fullName: Stargazer.Startup.OnScreenshotDialogClosed()
+  nameWithType: Startup.OnScreenshotDialogClosed()
+- uid: Stargazer.Startup.OnScreenshotDialogClosed*
+  name: OnScreenshotDialogClosed
+  href: api/Stargazer.Startup.html#Stargazer_Startup_OnScreenshotDialogClosed_
+  commentId: Overload:Stargazer.Startup.OnScreenshotDialogClosed
+  isSpec: "True"
+  fullName: Stargazer.Startup.OnScreenshotDialogClosed
+  nameWithType: Startup.OnScreenshotDialogClosed
 - uid: Stargazer.Startup.PropertyName
   name: Startup.PropertyName
   href: api/Stargazer.Startup.PropertyName.html
   commentId: T:Stargazer.Startup.PropertyName
   fullName: Stargazer.Startup.PropertyName
   nameWithType: Startup.PropertyName
+- uid: Stargazer.Startup.ScreenshotDialog
+  name: ScreenshotDialog
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ScreenshotDialog
+  commentId: F:Stargazer.Startup.ScreenshotDialog
+  fullName: Stargazer.Startup.ScreenshotDialog
+  nameWithType: Startup.ScreenshotDialog
+- uid: Stargazer.Startup.ShowScreenshotSavedNotification
+  name: ShowScreenshotSavedNotification()
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ShowScreenshotSavedNotification
+  commentId: M:Stargazer.Startup.ShowScreenshotSavedNotification
+  fullName: Stargazer.Startup.ShowScreenshotSavedNotification()
+  nameWithType: Startup.ShowScreenshotSavedNotification()
+- uid: Stargazer.Startup.ShowScreenshotSavedNotification*
+  name: ShowScreenshotSavedNotification
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ShowScreenshotSavedNotification_
+  commentId: Overload:Stargazer.Startup.ShowScreenshotSavedNotification
+  isSpec: "True"
+  fullName: Stargazer.Startup.ShowScreenshotSavedNotification
+  nameWithType: Startup.ShowScreenshotSavedNotification
 - uid: Stargazer.Startup.SignalName
   name: Startup.SignalName
   href: api/Stargazer.Startup.SignalName.html
@@ -6739,6 +7039,32 @@ references:
   isSpec: "True"
   fullName: Stargazer.Startup._Ready
   nameWithType: Startup._Ready
+- uid: Stargazer.Startup._on_screenshot_dialog_close_requested
+  name: _on_screenshot_dialog_close_requested()
+  href: api/Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_close_requested
+  commentId: M:Stargazer.Startup._on_screenshot_dialog_close_requested
+  fullName: Stargazer.Startup._on_screenshot_dialog_close_requested()
+  nameWithType: Startup._on_screenshot_dialog_close_requested()
+- uid: Stargazer.Startup._on_screenshot_dialog_close_requested*
+  name: _on_screenshot_dialog_close_requested
+  href: api/Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_close_requested_
+  commentId: Overload:Stargazer.Startup._on_screenshot_dialog_close_requested
+  isSpec: "True"
+  fullName: Stargazer.Startup._on_screenshot_dialog_close_requested
+  nameWithType: Startup._on_screenshot_dialog_close_requested
+- uid: Stargazer.Startup._on_screenshot_dialog_confirmed
+  name: _on_screenshot_dialog_confirmed()
+  href: api/Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_confirmed
+  commentId: M:Stargazer.Startup._on_screenshot_dialog_confirmed
+  fullName: Stargazer.Startup._on_screenshot_dialog_confirmed()
+  nameWithType: Startup._on_screenshot_dialog_confirmed()
+- uid: Stargazer.Startup._on_screenshot_dialog_confirmed*
+  name: _on_screenshot_dialog_confirmed
+  href: api/Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_confirmed_
+  commentId: Overload:Stargazer.Startup._on_screenshot_dialog_confirmed
+  isSpec: "True"
+  fullName: Stargazer.Startup._on_screenshot_dialog_confirmed
+  nameWithType: Startup._on_screenshot_dialog_confirmed
 - uid: Stargazer.Startup.calculator
   name: calculator
   href: api/Stargazer.Startup.html#Stargazer_Startup_calculator

@@ -19,12 +19,17 @@ items:
   type: Class
   source:
     id: ASTRALPLANEAlbedo
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptSerialization.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Handles the transparency of the floor.
+  summary: >-
+    Handles the transparency of the floor.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -370,11 +375,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: camera
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -397,11 +402,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -424,11 +429,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: material
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -451,11 +456,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -480,15 +485,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HandleCameraRotationChanged
     path: ../Stargazer-Godot/Code/ASTRALPLANEAlbedo.cs
-    startLine: 27
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Subscribes to the camera OnRotation notification.
+  summary: >-
+    Subscribes to the camera OnRotation notification. 
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public void HandleCameraRotationChanged(Camera3D camera)

@@ -10,6 +10,8 @@ namespace DataLayer
 {
     /// <summary>
     /// Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     /// <typeparam name="T">The class type of the star to be drawn by the front end. 
     /// This is needed for the internal logic of the <see cref="CelestialDataPackage{T}"/></typeparam>

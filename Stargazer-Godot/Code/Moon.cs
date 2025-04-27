@@ -7,6 +7,9 @@ namespace Stargazer
 {
     /// <summary>
     /// A moon object to be drawn.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
+    /// Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.
     /// </summary>
     public partial class Moon : CelestialBody
     {

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MessierObject | Stargazer Data API ">
       
-      <meta name="description" content="A Messier Deep Space Object drawn in the sky.">
+      <meta name="description" content="A Messier Deep Space Object drawn in the sky. Author: Josh Johner Created: SPR 2025 Refactored by William Arnett (SPR 2025) to implement hover text.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class MessierObject
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A Messier Deep Space Object drawn in the sky.</p>
+  <div class="markdown summary"><p>A Messier Deep Space Object drawn in the sky.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to implement hover text.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -151,6 +154,12 @@ public class MessierObject : CelestialBody, IDisposable, IHoverable, ITrackable<
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance">CelestialBody.Distance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance">CelestialBody.DrawnDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible">CelestialBody.IHoverable.IsVisible</a>
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_">CelestialBody._Process(double)</a>
@@ -1093,7 +1102,7 @@ public class MessierObject : CelestialBody, IDisposable, IHoverable, ITrackable<
 
   <h3 id="Stargazer_MessierObject_horizontalMessierObject" data-uid="Stargazer.MessierObject.horizontalMessierObject">
   horizontalMessierObject
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MessierObject.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MessierObject.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1128,7 +1137,7 @@ public class MessierObject : CelestialBody, IDisposable, IHoverable, ITrackable<
 
   <h3 id="Stargazer_MessierObject_FromHorizontal_DataLayer_HorizontalObjects_HorizontalMessierObject_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.MessierObject.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMessierObject,DataLayer.Interfaces.IEquatorialCalculator)">
   FromHorizontal(HorizontalMessierObject, IEquatorialCalculator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MessierObject.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MessierObject.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Overrides the <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_">FromHorizontal(HorizontalBody, IEquatorialCalculator)</a></p>
@@ -1164,7 +1173,7 @@ public class MessierObject : CelestialBody, IDisposable, IHoverable, ITrackable<
 
   <h3 id="Stargazer_MessierObject_GetHoverText" data-uid="Stargazer.MessierObject.GetHoverText">
   GetHoverText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MessierObject.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MessierObject.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text to display.</p>
@@ -1197,7 +1206,7 @@ public class MessierObject : CelestialBody, IDisposable, IHoverable, ITrackable<
 
   <h3 id="Stargazer_MessierObject__Ready" data-uid="Stargazer.MessierObject._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MessierObject.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MessierObject.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the initial scale of the object.</p>

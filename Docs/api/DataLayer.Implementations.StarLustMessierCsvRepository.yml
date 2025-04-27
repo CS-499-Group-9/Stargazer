@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarLustMessierCsvRepository
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -30,6 +30,10 @@ items:
     Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from [Starlust.org](https://starlust.org/messier-catalog/)
 
     If a new repository is used, a new converter that implements the <xref href="DataLayer.Interfaces.IMessierRepository" data-throw-if-not-resolved="false"></xref> needs to be created for it.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'internal class StarLustMessierCsvRepository : IMessierRepository'
@@ -60,11 +64,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -89,11 +93,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -124,11 +128,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetMessierObjects
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

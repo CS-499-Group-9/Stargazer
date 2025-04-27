@@ -4,6 +4,8 @@ namespace DataLayer.Interfaces
 {
     /// <summary>
     /// Retrieves a list of Messier Deep Space Objects from a repository
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public interface IMessierRepository
     {

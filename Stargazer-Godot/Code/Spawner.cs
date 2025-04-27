@@ -13,6 +13,9 @@ namespace Stargazer
 
     /// <summary>
     /// Draws all stars that are not a part of constellations
+    /// Author: Logan Parker
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) for concurrency and single responsibility.
     /// </summary>
     public partial class Spawner : Node3D
     {
@@ -31,6 +34,8 @@ namespace Stargazer
         const float maxStarMagnitude = 6.0f;
         /// <summary>
         /// Receives the notification to update the stars drawn.
+        /// Original Author: Logan Parker (SPR 2025)
+        /// Refactored by Josh Johner (SPR 2025) for asynchronization. Func{HorizontalStar,Star} for single responsibility (pass method by reference).
         /// </summary>
         /// <param name="stars">The <see cref="IEnumerable{HorizontalStar}"/> that contains the stars to draw.</param>
         /// <param name="GetStar">Used to retrieve a star from the <see cref="CelestialDataPackage{Star}"/></param>
@@ -62,6 +67,8 @@ namespace Stargazer
         /// <summary>
         /// Used to spawn a new star in the sky view scene.
         /// I'm rather proud of how this is handled in other classes.
+        /// Original Author: Logan Parker (SPR 2025)
+        /// Refactored by Josh Johner (SPR 2025) to be passed by reference to other methods to hand concurrent drawing (competing spawners). 
         /// </summary>
         /// <param name="horizontalStar">The <see cref="HorizontalStar"/> to base the <see cref="Star"/> on.</param>
         /// <returns></returns>

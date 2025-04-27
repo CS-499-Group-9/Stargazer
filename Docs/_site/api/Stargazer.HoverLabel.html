@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class HoverLabel | Stargazer Data API ">
       
-      <meta name="description" content="The label that is displayed when hovering over an  object.">
+      <meta name="description" content="The label that is displayed when hovering over an  object. Author: Logan Parker Created: SPR 2025 Refactored by Josh Johner (SPR 2025) to use observer pattern.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class HoverLabel
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The label that is displayed when hovering over an <a class="xref" href="Stargazer.IHoverable.html">IHoverable</a> object.</p>
+  <div class="markdown summary"><p>The label that is displayed when hovering over an <a class="xref" href="Stargazer.IHoverable.html">IHoverable</a> object.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use observer pattern.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -1633,39 +1636,9 @@ public class HoverLabel : Label, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_HoverLabel_globalVars" data-uid="Stargazer.HoverLabel.globalVars">
-  globalVars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L10"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Globals globalVars</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Stargazer.Globals.html">Globals</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="Stargazer_HoverLabel_hoveredBody" data-uid="Stargazer.HoverLabel.hoveredBody">
   hoveredBody
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/HoverLabel.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1695,7 +1668,7 @@ public class HoverLabel : Label, IDisposable</code></pre>
 
   <h3 id="Stargazer_HoverLabel_shift" data-uid="Stargazer.HoverLabel.shift">
   shift
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/HoverLabel.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1730,7 +1703,7 @@ public class HoverLabel : Label, IDisposable</code></pre>
 
   <h3 id="Stargazer_HoverLabel_HoverableChangeHandler_Stargazer_IHoverable_" data-uid="Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)">
   HoverableChangeHandler(IHoverable)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/HoverLabel.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives notification of the mouse hovering over a new object.</p>
@@ -1763,7 +1736,7 @@ public class HoverLabel : Label, IDisposable</code></pre>
 
   <h3 id="Stargazer_HoverLabel__Process_System_Double_" data-uid="Stargazer.HoverLabel._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/HoverLabel.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines how and when to display a label for each frame.</p>
@@ -1796,7 +1769,7 @@ public class HoverLabel : Label, IDisposable</code></pre>
 
   <h3 id="Stargazer_HoverLabel__Ready" data-uid="Stargazer.HoverLabel._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/HoverLabel.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/HoverLabel.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes label settings</p>

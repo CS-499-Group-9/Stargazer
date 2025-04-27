@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: DateButton
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\DatePicker.DateButton_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\DatePicker.DateButton_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -564,7 +564,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/DateButton.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Calendar
     path: ../Stargazer-Godot/addons/DatePicker/DateButton.cs
@@ -609,7 +609,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/DateButton.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/addons/DatePicker/DateButton.cs

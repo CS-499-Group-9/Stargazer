@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class SkyView2D | Stargazer Data API ">
       
-      <meta name="description" content="Used to create the 2D star scene (for screenshot export).">
+      <meta name="description" content="Used to create the 2D star scene (for screenshot export). Author: William Arnett Created: SPR 2025 Refactored by Josh Johner (SPR 2025) for containerization improvement.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class SkyView2D
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Used to create the 2D star scene (for screenshot export).</p>
+  <div class="markdown summary"><p>Used to create the 2D star scene (for screenshot export).
+Author: William Arnett
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) for containerization improvement.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -1211,7 +1214,7 @@ public class SkyView2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_SkyView2D_Constellations" data-uid="Stargazer.SkyView2D.Constellations">
   Constellations
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/SkyView2D.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1241,7 +1244,7 @@ public class SkyView2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_SkyView2D_Stars" data-uid="Stargazer.SkyView2D.Stars">
   Stars
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/SkyView2D.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1268,28 +1271,62 @@ public class SkyView2D : Node2D, IDisposable</code></pre>
 
 
 
+
+  <h3 id="Stargazer_SkyView2D_timeLabel" data-uid="Stargazer.SkyView2D.timeLabel">
+  timeLabel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/SkyView2D.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private RichTextLabel timeLabel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">RichTextLabel</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
 
   <a id="Stargazer_SkyView2D_UpdateUserPosition_" data-uid="Stargazer.SkyView2D.UpdateUserPosition*"></a>
 
-  <h3 id="Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__" data-uid="Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})">
-  UpdateUserPosition(CelestialDataPackage&lt;Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__System_DateTime_System_ValueTuple_System_String_System_String__" data-uid="Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})">
+  UpdateUserPosition(CelestialDataPackage&lt;Star&gt;, DateTime, (string, string))
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/SkyView2D.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>This will need to be changed for the new implementation of containerization.</p>
+  <div class="markdown level1 summary"><p>Receives the current data package on screenshot request.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task UpdateUserPosition(CelestialDataPackage&lt;Star&gt; dataPackage)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task UpdateUserPosition(CelestialDataPackage&lt;Star&gt; dataPackage, DateTime currentTime, (string, string) latLong)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>dataPackage</code> <a class="xref" href="DataLayer.CelestialDataPackage-1.html">CelestialDataPackage</a>&lt;<a class="xref" href="Stargazer.Star.html">Star</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>currentTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+    <dt><code>latLong</code> (<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)</dt>
     <dd></dd>
   </dl>
 
@@ -1313,7 +1350,7 @@ public class SkyView2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_SkyView2D__Ready" data-uid="Stargazer.SkyView2D._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/SkyView2D.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/SkyView2D.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>

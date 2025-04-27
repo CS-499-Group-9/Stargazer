@@ -7,8 +7,9 @@ items:
   children:
   - Stargazer.SkyView2D.Constellations
   - Stargazer.SkyView2D.Stars
-  - Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+  - Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
   - Stargazer.SkyView2D._Ready
+  - Stargazer.SkyView2D.timeLabel
   langs:
   - csharp
   - vb
@@ -23,7 +24,14 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Used to create the 2D star scene (for screenshot export).
+  summary: >-
+    Used to create the 2D star scene (for screenshot export). 
+
+    Author: William Arnett
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) for containerization improvement.
   example: []
   syntax:
     content: >-
@@ -418,11 +426,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Stars
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -445,11 +453,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellations
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 12
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -458,6 +466,33 @@ items:
     return:
       type: Stargazer.Constellations2D
     content.vb: Private Constellations As Constellations2D
+- uid: Stargazer.SkyView2D.timeLabel
+  commentId: F:Stargazer.SkyView2D.timeLabel
+  id: timeLabel
+  parent: Stargazer.SkyView2D
+  langs:
+  - csharp
+  - vb
+  name: timeLabel
+  nameWithType: SkyView2D.timeLabel
+  fullName: Stargazer.SkyView2D.timeLabel
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/SkyView2D.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: timeLabel
+    path: ../Stargazer-Godot/Code/SkyView2D.cs
+    startLine: 17
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private RichTextLabel timeLabel
+    return:
+      type: Godot.RichTextLabel
+    content.vb: Private timeLabel As RichTextLabel
 - uid: Stargazer.SkyView2D._Ready
   commentId: M:Stargazer.SkyView2D._Ready
   id: _Ready
@@ -472,11 +507,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 15
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -494,44 +529,48 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.SkyView2D._Ready*
-- uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
-  id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star})
+- uid: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
+  commentId: M:Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
+  id: UpdateUserPosition(DataLayer.CelestialDataPackage{Stargazer.Star},System.DateTime,System.ValueTuple{System.String,System.String})
   parent: Stargazer.SkyView2D
   langs:
   - csharp
   - vb
-  name: UpdateUserPosition(CelestialDataPackage<Star>)
-  nameWithType: SkyView2D.UpdateUserPosition(CelestialDataPackage<Star>)
-  fullName: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>)
+  name: UpdateUserPosition(CelestialDataPackage<Star>, DateTime, (string, string))
+  nameWithType: SkyView2D.UpdateUserPosition(CelestialDataPackage<Star>, DateTime, (string, string))
+  fullName: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage<Stargazer.Star>, System.DateTime, (string, string))
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/SkyView2D.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: This will need to be changed for the new implementation of containerization.
+  summary: Receives the current data package on screenshot request.
   example: []
   syntax:
-    content: public Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage)
+    content: public Task UpdateUserPosition(CelestialDataPackage<Star> dataPackage, DateTime currentTime, (string, string) latLong)
     parameters:
     - id: dataPackage
       type: DataLayer.CelestialDataPackage{Stargazer.Star}
       description: ''
+    - id: currentTime
+      type: System.DateTime
+    - id: latLong
+      type: System.ValueTuple{System.String,System.String}
     return:
       type: System.Threading.Tasks.Task
       description: ''
-    content.vb: Public Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star)) As Task
+    content.vb: Public Function UpdateUserPosition(dataPackage As CelestialDataPackage(Of Star), currentTime As Date, latLong As (String, String)) As Task
   overload: Stargazer.SkyView2D.UpdateUserPosition*
-  nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star))
-  fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star))
-  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star))
+  nameWithType.vb: SkyView2D.UpdateUserPosition(CelestialDataPackage(Of Star), Date, (String, String))
+  fullName.vb: Stargazer.SkyView2D.UpdateUserPosition(DataLayer.CelestialDataPackage(Of Stargazer.Star), Date, (String, String))
+  name.vb: UpdateUserPosition(CelestialDataPackage(Of Star), Date, (String, String))
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -9721,6 +9760,13 @@ references:
   name: Constellations2D
   nameWithType: Constellations2D
   fullName: Stargazer.Constellations2D
+- uid: Godot.RichTextLabel
+  commentId: T:Godot.RichTextLabel
+  parent: Godot
+  isExternal: true
+  name: RichTextLabel
+  nameWithType: RichTextLabel
+  fullName: Godot.RichTextLabel
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -9767,7 +9813,7 @@ references:
   fullName: Stargazer.SkyView2D._Ready
 - uid: Stargazer.SkyView2D.UpdateUserPosition*
   commentId: Overload:Stargazer.SkyView2D.UpdateUserPosition
-  href: Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__
+  href: Stargazer.SkyView2D.html#Stargazer_SkyView2D_UpdateUserPosition_DataLayer_CelestialDataPackage_Stargazer_Star__System_DateTime_System_ValueTuple_System_String_System_String__
   name: UpdateUserPosition
   nameWithType: SkyView2D.UpdateUserPosition
   fullName: Stargazer.SkyView2D.UpdateUserPosition
@@ -9801,6 +9847,54 @@ references:
   - uid: Stargazer.Star
     name: Star
     href: Stargazer.Star.html
+  - name: )
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.ValueTuple{System.String,System.String}
+  commentId: T:System.ValueTuple{System.String,System.String}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: (string, string)
+  nameWithType: (string, string)
+  fullName: (string, string)
+  nameWithType.vb: (String, String)
+  fullName.vb: (String, String)
+  name.vb: (String, String)
+  spec.csharp:
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
@@ -9841,6 +9935,25 @@ references:
   name: DataLayer
   nameWithType: DataLayer
   fullName: DataLayer
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true

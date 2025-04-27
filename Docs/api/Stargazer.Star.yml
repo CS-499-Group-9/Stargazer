@@ -13,8 +13,6 @@ items:
   - Stargazer.Star.Position3D
   - Stargazer.Star.StarName
   - Stargazer.Star._Process(System.Double)
-  - Stargazer.Star._Ready
-  - Stargazer.Star.globalVars
   - Stargazer.Star.horizontalStar
   - Stargazer.Star.radians
   langs:
@@ -26,12 +24,19 @@ items:
   type: Class
   source:
     id: Star
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Star_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Star_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+  summary: >-
+    A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) to implement CelestialBody
   example: []
   syntax:
     content: >-
@@ -58,6 +63,8 @@ items:
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody.GetLocation
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
@@ -178,6 +185,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -386,11 +394,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -413,11 +421,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalStar
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -440,11 +448,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -469,11 +477,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -500,11 +508,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -531,11 +539,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Position3D
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 33
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -562,11 +570,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Position2D
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -575,62 +583,6 @@ items:
     return:
       type: Godot.Vector2
     content.vb: Public Position2D As Vector2
-- uid: Stargazer.Star.globalVars
-  commentId: F:Stargazer.Star.globalVars
-  id: globalVars
-  parent: Stargazer.Star
-  langs:
-  - csharp
-  - vb
-  name: globalVars
-  nameWithType: Star.globalVars
-  fullName: Stargazer.Star.globalVars
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: globalVars
-    path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 36
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Globals globalVars
-    return:
-      type: Stargazer.Globals
-    content.vb: Private globalVars As Globals
-- uid: Stargazer.Star._Ready
-  commentId: M:Stargazer.Star._Ready
-  id: _Ready
-  parent: Stargazer.Star
-  langs:
-  - csharp
-  - vb
-  name: _Ready()
-  nameWithType: Star._Ready()
-  fullName: Stargazer.Star._Ready()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Ready
-    path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 44
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Populates the field according to the field in a <xref href="DataLayer.HorizontalObjects.HorizontalStar" data-throw-if-not-resolved="false"></xref>
-  example: []
-  syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: Stargazer.Star._Ready*
 - uid: Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialCalculator)
   commentId: M:Stargazer.Star.FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialCalculator)
   id: FromHorizontal(DataLayer.HorizontalObjects.HorizontalStar,DataLayer.Interfaces.IEquatorialCalculator)
@@ -645,11 +597,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 49
+    startLine: 39
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -676,11 +628,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 61
+    startLine: 51
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -718,11 +670,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Star.cs
-    startLine: 68
+    startLine: 58
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -839,6 +791,30 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  parent: Stargazer.CelestialBody
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
 - uid: Stargazer.CelestialBody.GetLocation
   commentId: M:Stargazer.CelestialBody.GetLocation
   parent: Stargazer.CelestialBody
@@ -2865,6 +2841,25 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7732,38 +7727,6 @@ references:
   name: Vector2
   nameWithType: Vector2
   fullName: Godot.Vector2
-- uid: Stargazer.Globals
-  commentId: T:Stargazer.Globals
-  parent: Stargazer
-  href: Stargazer.Globals.html
-  name: Globals
-  nameWithType: Globals
-  fullName: Stargazer.Globals
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Stargazer.Star._Ready*
-  commentId: Overload:Stargazer.Star._Ready
-  href: Stargazer.Star.html#Stargazer_Star__Ready
-  name: _Ready
-  nameWithType: Star._Ready
-  fullName: Stargazer.Star._Ready
 - uid: Stargazer.Star.FromHorizontal*
   commentId: Overload:Stargazer.Star.FromHorizontal
   href: Stargazer.Star.html#Stargazer_Star_FromHorizontal_DataLayer_HorizontalObjects_HorizontalStar_DataLayer_Interfaces_IEquatorialCalculator_

@@ -6,10 +6,12 @@ items:
   parent: Stargazer
   children:
   - Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
+  - Stargazer.Spawner2D.DrawnStars
   - Stargazer.Spawner2D.Label2DScene
   - Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
   - Stargazer.Spawner2D.Star2DScene
   - Stargazer.Spawner2D.Star2dContainer
+  - Stargazer.Spawner2D._Ready
   - Stargazer.Spawner2D.count
   - Stargazer.Spawner2D.radians
   langs:
@@ -21,12 +23,19 @@ items:
   type: Class
   source:
     id: Spawner2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Spawner2D_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Spawner2D_ScriptSerialization.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Draws all stars that are not a part of constellations
+  summary: >-
+    Draws all stars that are not a part of constellations
+
+    Author: William Arnett
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) to use IDictionary.
   example: []
   syntax:
     content: >-
@@ -213,7 +222,6 @@ items:
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
   - Godot.Node._Process(System.Double)
-  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -422,11 +430,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: count
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -449,11 +457,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -476,11 +484,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2DScene
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -521,11 +529,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Label2DScene
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -566,11 +574,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2dContainer
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -579,6 +587,69 @@ items:
     return:
       type: Godot.Node2D
     content.vb: Private Star2dContainer As Node2D
+- uid: Stargazer.Spawner2D.DrawnStars
+  commentId: F:Stargazer.Spawner2D.DrawnStars
+  id: DrawnStars
+  parent: Stargazer.Spawner2D
+  langs:
+  - csharp
+  - vb
+  name: DrawnStars
+  nameWithType: Spawner2D.DrawnStars
+  fullName: Stargazer.Spawner2D.DrawnStars
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Spawner2D.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: DrawnStars
+    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    startLine: 29
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private IDictionary<int, Star2D> DrawnStars
+    return:
+      type: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+    content.vb: Private DrawnStars As IDictionary(Of Integer, Star2D)
+- uid: Stargazer.Spawner2D._Ready
+  commentId: M:Stargazer.Spawner2D._Ready
+  id: _Ready
+  parent: Stargazer.Spawner2D
+  langs:
+  - csharp
+  - vb
+  name: _Ready()
+  nameWithType: Spawner2D._Ready()
+  fullName: Stargazer.Spawner2D._Ready()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Spawner2D.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Ready
+    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    startLine: 31
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+
+    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
+
+    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+  example: []
+  syntax:
+    content: public override void _Ready()
+    content.vb: Public Overrides Sub _Ready()
+  overridden: Godot.Node._Ready
+  overload: Stargazer.Spawner2D._Ready*
 - uid: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
   commentId: M:Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
   id: DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
@@ -593,25 +664,25 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawStars
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 30
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: Receives the notification to draw the new star scene.
   example: []
   syntax:
-    content: public Task DrawStars(IDictionary<int, Star> starDictionary)
+    content: public Task<IDictionary<int, Star2D>> DrawStars(IDictionary<int, Star> starDictionary)
     parameters:
     - id: starDictionary
       type: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star}
       description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> that contains the stars to draw.
     return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Function DrawStars(starDictionary As IDictionary(Of Integer, Star)) As Task
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
+    content.vb: Public Function DrawStars(starDictionary As IDictionary(Of Integer, Star)) As Task(Of IDictionary(Of Integer, Star2D))
   overload: Stargazer.Spawner2D.DrawStars*
   nameWithType.vb: Spawner2D.DrawStars(IDictionary(Of Integer, Star))
   fullName.vb: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star))
@@ -630,11 +701,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SpawnStar
     path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 49
+    startLine: 60
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -5055,25 +5126,6 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -9882,6 +9934,51 @@ references:
   name: Label2DScene
   nameWithType: Spawner2D.Label2DScene
   fullName: Stargazer.Spawner2D.Label2DScene
+- uid: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+  commentId: T:System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<int, Star2D>
+  nameWithType: IDictionary<int, Star2D>
+  fullName: System.Collections.Generic.IDictionary<int, Stargazer.Star2D>
+  nameWithType.vb: IDictionary(Of Integer, Star2D)
+  fullName.vb: System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D)
+  name.vb: IDictionary(Of Integer, Star2D)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
+  - name: )
 - uid: System.Collections.Generic.IDictionary`2
   commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
@@ -9916,6 +10013,87 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.GodotObject.#ctor
+  commentId: M:Godot.GodotObject.#ctor
+  isExternal: true
+  name: GodotObject()
+  nameWithType: GodotObject.GodotObject()
+  fullName: Godot.GodotObject.GodotObject()
+  nameWithType.vb: GodotObject.New()
+  fullName.vb: Godot.GodotObject.New()
+  name.vb: New()
+  spec.csharp:
+  - uid: Godot.GodotObject.#ctor
+    name: GodotObject
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - name: New
+  - name: (
+  - name: )
+- uid: Stargazer.Spawner2D._Ready*
+  commentId: Overload:Stargazer.Spawner2D._Ready
+  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D__Ready
+  name: _Ready
+  nameWithType: Spawner2D._Ready
+  fullName: Stargazer.Spawner2D._Ready
 - uid: Stargazer.Spawner2D.DrawStars*
   commentId: Overload:Stargazer.Spawner2D.DrawStars
   href: Stargazer.Spawner2D.html#Stargazer_Spawner2D_DrawStars_System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star__
@@ -9967,51 +10145,93 @@ references:
     name: Star
     href: Stargazer.Star.html
   - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
   parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IDictionary<int, Star2D>>
+  nameWithType: Task<IDictionary<int, Star2D>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<int, Stargazer.Star2D>>
+  nameWithType.vb: Task(Of IDictionary(Of Integer, Star2D))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D))
+  name.vb: Task(Of IDictionary(Of Integer, Star2D))
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
+  - name: '>'
+  - name: '>'
   spec.vb:
-  - uid: System
-    name: System
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true

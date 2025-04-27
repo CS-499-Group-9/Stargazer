@@ -4,6 +4,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// A planet in our solar system in horizontal coordinate form.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class HorizontalPlanet : HorizontalBody
     {

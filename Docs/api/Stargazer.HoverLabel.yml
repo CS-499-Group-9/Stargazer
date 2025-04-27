@@ -8,7 +8,6 @@ items:
   - Stargazer.HoverLabel.HoverableChangeHandler(Stargazer.IHoverable)
   - Stargazer.HoverLabel._Process(System.Double)
   - Stargazer.HoverLabel._Ready
-  - Stargazer.HoverLabel.globalVars
   - Stargazer.HoverLabel.hoveredBody
   - Stargazer.HoverLabel.shift
   langs:
@@ -25,7 +24,14 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The label that is displayed when hovering over an <xref href="Stargazer.IHoverable" data-throw-if-not-resolved="false"></xref> object.
+  summary: >-
+    The label that is displayed when hovering over an <xref href="Stargazer.IHoverable" data-throw-if-not-resolved="false"></xref> object.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) to use observer pattern.
   example: []
   syntax:
     content: >-
@@ -548,33 +554,6 @@ items:
     arguments:
     - type: System.String
       value: res://Code/HoverLabel.cs
-- uid: Stargazer.HoverLabel.globalVars
-  commentId: F:Stargazer.HoverLabel.globalVars
-  id: globalVars
-  parent: Stargazer.HoverLabel
-  langs:
-  - csharp
-  - vb
-  name: globalVars
-  nameWithType: HoverLabel.globalVars
-  fullName: Stargazer.HoverLabel.globalVars
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: globalVars
-    path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 9
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Globals globalVars
-    return:
-      type: Stargazer.Globals
-    content.vb: Private globalVars As Globals
 - uid: Stargazer.HoverLabel.shift
   commentId: F:Stargazer.HoverLabel.shift
   id: shift
@@ -589,11 +568,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: shift
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -616,11 +595,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: hoveredBody
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -643,11 +622,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/HoverLabel.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -672,7 +651,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/HoverLabel.cs
@@ -708,7 +687,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/HoverLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HoverableChangeHandler
     path: ../Stargazer-Godot/Code/HoverLabel.cs
@@ -12488,13 +12467,6 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: Stargazer.Globals
-  commentId: T:Stargazer.Globals
-  parent: Stargazer
-  href: Stargazer.Globals.html
-  name: Globals
-  nameWithType: Globals
-  fullName: Stargazer.Globals
 - uid: Godot.Vector2
   commentId: T:Godot.Vector2
   parent: Godot

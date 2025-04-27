@@ -4,6 +4,8 @@ namespace Stargazer
 {
     /// <summary>
     /// Contains the constellation label.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
     /// </summary>
     public partial class LabelNode : Node3D
     {

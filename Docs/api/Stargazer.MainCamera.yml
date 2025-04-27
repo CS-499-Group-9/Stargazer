@@ -38,12 +38,19 @@ items:
   type: Class
   source:
     id: MainCamera
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.MainCamera_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.MainCamera_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Contains the main camera used to create the user view.
+  summary: >-
+    Contains the main camera used to create the user view.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) to use <xref href="Stargazer.ICameraStateNotifier" data-throw-if-not-resolved="false"></xref> to implement observer pattern.
   example: []
   syntax:
     content: >-
@@ -423,11 +430,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MouseSensitivity
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -466,11 +473,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ScreenOffset
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -507,11 +514,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: yaw
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -534,11 +541,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: pitch
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -561,11 +568,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: rightClickHeld
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -588,11 +595,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: trackObjectRequested
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -615,11 +622,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: screenshotPath
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -642,11 +649,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: worldSpace
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -669,11 +676,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mousePosition
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -696,11 +703,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: rayStart
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -723,11 +730,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: rayEnd
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -750,11 +757,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: zoomState
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -777,11 +784,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: TrackedBody
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -806,11 +813,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HoverBody
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -835,11 +842,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnZoom
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 34
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -868,11 +875,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnZoomStateChanged
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 36
+    startLine: 39
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -901,11 +908,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnRotation
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 38
+    startLine: 41
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -934,11 +941,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnFustrumChanged
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -964,11 +971,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnHoverableChange
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 42
+    startLine: 45
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -997,11 +1004,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1033,11 +1040,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Input
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 53
+    startLine: 56
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1066,11 +1073,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ZoomIn
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 120
+    startLine: 123
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1092,11 +1099,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ZoomOut
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 131
+    startLine: 134
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1118,11 +1125,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/MainCamera.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/MainCamera.cs
-    startLine: 147
+    startLine: 150
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1141,6 +1148,13 @@ items:
   fullName.vb: Stargazer.MainCamera._Process(Double)
   name.vb: _Process(Double)
 references:
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  parent: Stargazer
+  href: Stargazer.ICameraStateNotifier.html
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
 - uid: Stargazer
   commentId: N:Stargazer
   href: Stargazer.html
@@ -1194,13 +1208,6 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: Stargazer.ICameraStateNotifier
-  commentId: T:Stargazer.ICameraStateNotifier
-  parent: Stargazer
-  href: Stargazer.ICameraStateNotifier.html
-  name: ICameraStateNotifier
-  nameWithType: ICameraStateNotifier
-  fullName: Stargazer.ICameraStateNotifier
 - uid: Godot.Camera3D.ProjectRayNormal(Godot.Vector2)
   commentId: M:Godot.Camera3D.ProjectRayNormal(Godot.Vector2)
   parent: Godot.Camera3D

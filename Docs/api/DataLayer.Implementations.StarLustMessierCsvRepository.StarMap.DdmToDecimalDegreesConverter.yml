@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DdmToDecimalDegreesConverter
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 106
+    startLine: 108
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StarLustMessierCsvRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConvertFromString
     path: ../DataLayer/Implementations/StarLustMessierCsvRepository.cs
-    startLine: 108
+    startLine: 110
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

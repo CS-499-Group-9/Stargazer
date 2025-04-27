@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace Stargazer
 {
+    /// <summary>
+    /// Represents a body drawn in 3D space that can be viewed, hovered and targeted.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
+    /// </summary>
     public abstract partial class CelestialBody : Node3D, IHoverable
     {
         private const float radians = (float)Math.PI / 180f;
@@ -33,6 +38,8 @@ namespace Stargazer
         /// </summary>
         public float Distance { get { return (float)horizontalBody.Distance; } }
         public float DrawnDistance { get; set; }
+
+        bool IHoverable.IsVisible { get { var parent = GetParent<Node3D>();  return parent.Visible; } }
 
         public override void _Process(double delta)
         {

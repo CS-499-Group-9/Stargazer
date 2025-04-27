@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: JsonConstellationListConverter
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 39
+    startLine: 41
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ReadJson
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -113,11 +113,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: BuildLines
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 76
+    startLine: 78
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -154,11 +154,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: WriteJson
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 106
+    startLine: 108
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

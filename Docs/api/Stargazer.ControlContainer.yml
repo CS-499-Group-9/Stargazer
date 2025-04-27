@@ -1,64 +1,73 @@
 ### YamlMime:ManagedReference
 items:
-- uid: DatePicker.YearView
-  commentId: T:DatePicker.YearView
-  id: YearView
-  parent: DatePicker
+- uid: Stargazer.ControlContainer
+  commentId: T:Stargazer.ControlContainer
+  id: ControlContainer
+  parent: Stargazer
   children:
-  - DatePicker.YearView.Calendar
-  - DatePicker.YearView.Next
-  - DatePicker.YearView.Previous
-  - DatePicker.YearView.Refresh
-  - DatePicker.YearView._Ready
+  - Stargazer.ControlContainer.AMorPMButton
+  - Stargazer.ControlContainer.AzimuthToggled
+  - Stargazer.ControlContainer.ConstellationLabelsToggled
+  - Stargazer.ControlContainer.ConstellationsToggled
+  - Stargazer.ControlContainer.EquatorialToggled
+  - Stargazer.ControlContainer.MessierObjectsToggled
+  - Stargazer.ControlContainer.RequestScreenshot
+  - Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  - Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  - Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  - Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  - Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  - Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  - Stargazer.ControlContainer.UpdateUserPosition
+  - Stargazer.ControlContainer.UserPositionUpdated
+  - Stargazer.ControlContainer._Process(System.Double)
+  - Stargazer.ControlContainer._mainControl
+  - Stargazer.ControlContainer._on_button_pressed
+  - Stargazer.ControlContainer.calendarButton
+  - Stargazer.ControlContainer.latDegField
+  - Stargazer.ControlContainer.latMinField
+  - Stargazer.ControlContainer.lonDegField
+  - Stargazer.ControlContainer.lonMinField
+  - Stargazer.ControlContainer.timeField
   langs:
   - csharp
   - vb
-  name: YearView
-  nameWithType: YearView
-  fullName: DatePicker.YearView
+  name: ControlContainer
+  nameWithType: ControlContainer
+  fullName: Stargazer.ControlContainer
   type: Class
   source:
-    id: YearView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\DatePicker.YearView_ScriptPath.generated.cs
-    startLine: 3
+    id: ControlContainer
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ControlContainer_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
-  namespace: DatePicker
-  summary: Displays the months of a year.
+  namespace: Stargazer
+  summary: >-
+    Contains all user controls for the program and notifies subscribers of user interaction. 
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
-      [ScriptPath("res://addons/DatePicker/YearView.cs")]
+      [ScriptPath("res://Code/ControlContainer.cs")]
 
-      public class YearView : GridContainer, IDisposable, ICalendarView
+      public class ControlContainer : Control, IDisposable
     content.vb: >-
-      <ScriptPath("res://addons/DatePicker/YearView.cs")>
+      <ScriptPath("res://Code/ControlContainer.cs")>
 
-      Public Class YearView Inherits GridContainer Implements IDisposable, ICalendarView
+      Public Class ControlContainer Inherits Control Implements IDisposable
   inheritance:
   - System.Object
   - Godot.GodotObject
   - Godot.Node
   - Godot.CanvasItem
   - Godot.Control
-  - Godot.Container
-  - Godot.GridContainer
   implements:
   - System.IDisposable
-  - DatePicker.ICalendarView
   inheritedMembers:
-  - Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  - Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  - Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  - Godot.GridContainer.Columns
-  - Godot.Container.NotificationPreSortChildren
-  - Godot.Container.NotificationSortChildren
-  - Godot.Container._GetAllowedSizeFlagsHorizontal
-  - Godot.Container._GetAllowedSizeFlagsVertical
-  - Godot.Container.QueueSort
-  - Godot.Container.FitChildInRect(Godot.Control,Godot.Rect2)
-  - Godot.Container.PreSortChildren
-  - Godot.Container.SortChildren
   - Godot.Control.NotificationResized
   - Godot.Control.NotificationMouseEnter
   - Godot.Control.NotificationMouseExit
@@ -151,6 +160,9 @@ items:
   - Godot.Control.WarpMouse(Godot.Vector2)
   - Godot.Control.UpdateMinimumSize
   - Godot.Control.IsLayoutRtl
+  - Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  - Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  - Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
   - Godot.Control.ClipContents
   - Godot.Control.CustomMinimumSize
   - Godot.Control.LayoutDirection
@@ -339,7 +351,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -533,46 +545,40 @@ items:
     ctor: Godot.ScriptPathAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: res://addons/DatePicker/YearView.cs
-- uid: DatePicker.YearView.Calendar
-  commentId: P:DatePicker.YearView.Calendar
-  id: Calendar
-  parent: DatePicker.YearView
+      value: res://Code/ControlContainer.cs
+- uid: Stargazer.ControlContainer.latDegField
+  commentId: F:Stargazer.ControlContainer.latDegField
+  id: latDegField
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: Calendar
-  nameWithType: YearView.Calendar
-  fullName: DatePicker.YearView.Calendar
-  type: Property
+  name: latDegField
+  nameWithType: ControlContainer.latDegField
+  fullName: Stargazer.ControlContainer.latDegField
+  type: Field
   source:
     remote:
-      path: Stargazer-Godot/addons/DatePicker/YearView.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Calendar
-    path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 14
+    id: latDegField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 15
   assemblies:
   - New Game Project
-  namespace: DatePicker
-  summary: The calendar that this view is a part of.
-  example: []
+  namespace: Stargazer
   syntax:
     content: >-
       [Export(PropertyHint.None, "")]
 
-      public Calendar Calendar { get; set; }
-    parameters: []
+      private LineEdit latDegField
     return:
-      type: DatePicker.Calendar
+      type: Godot.LineEdit
     content.vb: >-
       <Export(PropertyHint.None, "")>
 
-      Public Property Calendar As Calendar
-  overload: DatePicker.YearView.Calendar*
-  implements:
-  - DatePicker.ICalendarView.Calendar
+      Private latDegField As LineEdit
   attributes:
   - type: Godot.ExportAttribute
     ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
@@ -581,139 +587,790 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: DatePicker.YearView._Ready
-  commentId: M:DatePicker.YearView._Ready
-  id: _Ready
-  parent: DatePicker.YearView
+- uid: Stargazer.ControlContainer.latMinField
+  commentId: F:Stargazer.ControlContainer.latMinField
+  id: latMinField
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: _Ready()
-  nameWithType: YearView._Ready()
-  fullName: DatePicker.YearView._Ready()
-  type: Method
+  name: latMinField
+  nameWithType: ControlContainer.latMinField
+  fullName: Stargazer.ControlContainer.latMinField
+  type: Field
   source:
     remote:
-      path: Stargazer-Godot/addons/DatePicker/YearView.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Ready
-    path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
+    id: latMinField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit latMinField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private latMinField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.lonDegField
+  commentId: F:Stargazer.ControlContainer.lonDegField
+  id: lonDegField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: lonDegField
+  nameWithType: ControlContainer.lonDegField
+  fullName: Stargazer.ControlContainer.lonDegField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: lonDegField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
     startLine: 17
   assemblies:
   - New Game Project
-  namespace: DatePicker
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit lonDegField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private lonDegField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.lonMinField
+  commentId: F:Stargazer.ControlContainer.lonMinField
+  id: lonMinField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: lonMinField
+  nameWithType: ControlContainer.lonMinField
+  fullName: Stargazer.ControlContainer.lonMinField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: lonMinField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit lonMinField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private lonMinField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.timeField
+  commentId: F:Stargazer.ControlContainer.timeField
+  id: timeField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: timeField
+  nameWithType: ControlContainer.timeField
+  fullName: Stargazer.ControlContainer.timeField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: timeField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 19
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit timeField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private timeField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.AMorPMButton
+  commentId: F:Stargazer.ControlContainer.AMorPMButton
+  id: AMorPMButton
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: AMorPMButton
+  nameWithType: ControlContainer.AMorPMButton
+  fullName: Stargazer.ControlContainer.AMorPMButton
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: AMorPMButton
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private OptionButton AMorPMButton
+    return:
+      type: Godot.OptionButton
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private AMorPMButton As OptionButton
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.calendarButton
+  commentId: F:Stargazer.ControlContainer.calendarButton
+  id: calendarButton
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: calendarButton
+  nameWithType: ControlContainer.calendarButton
+  fullName: Stargazer.ControlContainer.calendarButton
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: calendarButton
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private Button calendarButton
+    return:
+      type: Godot.Button
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private calendarButton As Button
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer._mainControl
+  commentId: F:Stargazer.ControlContainer._mainControl
+  id: _mainControl
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _mainControl
+  nameWithType: ControlContainer._mainControl
+  fullName: Stargazer.ControlContainer._mainControl
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _mainControl
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 22
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Startup _mainControl
+    return:
+      type: Stargazer.Startup
+    content.vb: Private _mainControl As Startup
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  id: AzimuthToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: AzimuthToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 27
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the azimuth grid
+  example: []
+  syntax:
+    content: public Action<bool> AzimuthToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public AzimuthToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.EquatorialToggled
+  commentId: F:Stargazer.ControlContainer.EquatorialToggled
+  id: EquatorialToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: EquatorialToggled
+  nameWithType: ControlContainer.EquatorialToggled
+  fullName: Stargazer.ControlContainer.EquatorialToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: EquatorialToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 31
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the equatorial grid
+  example: []
+  syntax:
+    content: public Action<bool> EquatorialToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public EquatorialToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  id: ConstellationsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ConstellationsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 35
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggle the visibility of constellations
+  example: []
+  syntax:
+    content: public Action<bool> ConstellationsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public ConstellationsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  id: ConstellationLabelsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ConstellationLabelsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 39
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the visibility of constellation labels
+  example: []
+  syntax:
+    content: public Action<bool> ConstellationLabelsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public ConstellationLabelsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.MessierObjectsToggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
+  id: MessierObjectsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: MessierObjectsToggled
+  nameWithType: ControlContainer.MessierObjectsToggled
+  fullName: Stargazer.ControlContainer.MessierObjectsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: MessierObjectsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 43
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the visibility of Messier objects
+  example: []
+  syntax:
+    content: public Action<bool> MessierObjectsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public MessierObjectsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  id: UserPositionUpdated
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UserPositionUpdated
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 47
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscriber (one only) of a request to update to the observers position/time.
+  example: []
+  syntax:
+    content: public Action<double, double, DateTime> UserPositionUpdated
+    return:
+      type: System.Action{System.Double,System.Double,System.DateTime}
+    content.vb: Public UserPositionUpdated As Action(Of Double, Double, Date)
+- uid: Stargazer.ControlContainer.RequestScreenshot
+  commentId: F:Stargazer.ControlContainer.RequestScreenshot
+  id: RequestScreenshot
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: RequestScreenshot
+  nameWithType: ControlContainer.RequestScreenshot
+  fullName: Stargazer.ControlContainer.RequestScreenshot
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: RequestScreenshot
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 51
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public Func<Task> RequestScreenshot
+    return:
+      type: System.Func{System.Threading.Tasks.Task}
+    content.vb: Public RequestScreenshot As Func(Of Task)
+- uid: Stargazer.ControlContainer._Process(System.Double)
+  commentId: M:Stargazer.ControlContainer._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: ControlContainer._Process(double)
+  fullName: Stargazer.ControlContainer._Process(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 57
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Checks to see if the user has requested a screenshot
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+      description: Unused
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.ControlContainer._Process*
+  nameWithType.vb: ControlContainer._Process(Double)
+  fullName.vb: Stargazer.ControlContainer._Process(Double)
+  name.vb: _Process(Double)
+- uid: Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  id: ToggleAzimuth(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleAzimuth(bool)
+  nameWithType: ControlContainer.ToggleAzimuth(bool)
+  fullName: Stargazer.ControlContainer.ToggleAzimuth(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleAzimuth
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 68
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void ToggleAzimuth(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+    content.vb: Public Sub ToggleAzimuth(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleAzimuth*
+  nameWithType.vb: ControlContainer.ToggleAzimuth(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleAzimuth(Boolean)
+  name.vb: ToggleAzimuth(Boolean)
+- uid: Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  id: ToggleEquatorial(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleEquatorial(bool)
+  nameWithType: ControlContainer.ToggleEquatorial(bool)
+  fullName: Stargazer.ControlContainer.ToggleEquatorial(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleEquatorial
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 73
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the
+  example: []
+  syntax:
+    content: public void ToggleEquatorial(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the toggle button is checked.
+    content.vb: Public Sub ToggleEquatorial(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleEquatorial*
+  nameWithType.vb: ControlContainer.ToggleEquatorial(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleEquatorial(Boolean)
+  name.vb: ToggleEquatorial(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  id: ToggleConstellations(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleConstellations(bool)
+  nameWithType: ControlContainer.ToggleConstellations(bool)
+  fullName: Stargazer.ControlContainer.ToggleConstellations(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleConstellations
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 79
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the ConstellationButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.ConstellationsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleConstellations(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the toggle button is checked
+    content.vb: Public Sub ToggleConstellations(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleConstellations*
+  nameWithType.vb: ControlContainer.ToggleConstellations(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellations(Boolean)
+  name.vb: ToggleConstellations(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  id: ToggleConstellationLabels(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleConstellationLabels(bool)
+  nameWithType: ControlContainer.ToggleConstellationLabels(bool)
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleConstellationLabels
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 85
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the LabelButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.ConstellationLabelsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleConstellationLabels(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the checkbox is checked
+    content.vb: Public Sub ToggleConstellationLabels(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleConstellationLabels*
+  nameWithType.vb: ControlContainer.ToggleConstellationLabels(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellationLabels(Boolean)
+  name.vb: ToggleConstellationLabels(Boolean)
+- uid: Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  id: ToggleMessierObjects(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleMessierObjects(bool)
+  nameWithType: ControlContainer.ToggleMessierObjects(bool)
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleMessierObjects
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 92
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the "MessierButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.MessierObjectsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleMessierObjects(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the checkbox is checked
+    content.vb: Public Sub ToggleMessierObjects(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleMessierObjects*
+  nameWithType.vb: ControlContainer.ToggleMessierObjects(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleMessierObjects(Boolean)
+  name.vb: ToggleMessierObjects(Boolean)
+- uid: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  commentId: M:Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  id: SetMainController(Stargazer.Startup)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: SetMainController(Startup)
+  nameWithType: ControlContainer.SetMainController(Startup)
+  fullName: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetMainController
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 94
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void SetMainController(Startup controller)
+    parameters:
+    - id: controller
+      type: Stargazer.Startup
+    content.vb: Public Sub SetMainController(controller As Startup)
+  overload: Stargazer.ControlContainer.SetMainController*
+- uid: Stargazer.ControlContainer.UpdateUserPosition
+  commentId: M:Stargazer.ControlContainer.UpdateUserPosition
+  id: UpdateUserPosition
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserPosition()
+  nameWithType: ControlContainer.UpdateUserPosition()
+  fullName: Stargazer.ControlContainer.UpdateUserPosition()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdateUserPosition
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 104
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
   summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+    Receives the <code>Enter</code> button's <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref>, gathers user input and broadcasts <xref href="Stargazer.ControlContainer.UserPositionUpdated" data-throw-if-not-resolved="false"></xref>
 
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
+    Author: Logan Parker
 
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
-
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+    Created: SPR 2025
   example: []
   syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: DatePicker.YearView._Ready*
-- uid: DatePicker.YearView.Previous
-  commentId: M:DatePicker.YearView.Previous
-  id: Previous
-  parent: DatePicker.YearView
+    content: public void UpdateUserPosition()
+    content.vb: Public Sub UpdateUserPosition()
+  overload: Stargazer.ControlContainer.UpdateUserPosition*
+- uid: Stargazer.ControlContainer._on_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_button_pressed
+  id: _on_button_pressed
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: Previous()
-  nameWithType: YearView.Previous()
-  fullName: DatePicker.YearView.Previous()
+  name: _on_button_pressed()
+  nameWithType: ControlContainer._on_button_pressed()
+  fullName: Stargazer.ControlContainer._on_button_pressed()
   type: Method
   source:
     remote:
-      path: Stargazer-Godot/addons/DatePicker/YearView.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Previous
-    path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 36
+    id: _on_button_pressed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 169
   assemblies:
   - New Game Project
-  namespace: DatePicker
-  summary: When the user clicks the previous button (i.e. go to the previous year).
+  namespace: Stargazer
+  summary: >-
+    Allows the user to use a button to initiate a screenshot.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
   example: []
   syntax:
-    content: public void Previous()
-    content.vb: Public Sub Previous()
-  overload: DatePicker.YearView.Previous*
-  implements:
-  - DatePicker.ICalendarView.Previous
-- uid: DatePicker.YearView.Next
-  commentId: M:DatePicker.YearView.Next
-  id: Next
-  parent: DatePicker.YearView
-  langs:
-  - csharp
-  - vb
-  name: Next()
-  nameWithType: YearView.Next()
-  fullName: DatePicker.YearView.Next()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/addons/DatePicker/YearView.cs
-      branch: fix-messier-visibility
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Next
-    path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 42
-  assemblies:
-  - New Game Project
-  namespace: DatePicker
-  summary: When the user clicks the next button (i.e. go to the next year).
-  example: []
-  syntax:
-    content: public void Next()
-    content.vb: Public Sub [Next]()
-  overload: DatePicker.YearView.Next*
-  implements:
-  - DatePicker.ICalendarView.Next
-- uid: DatePicker.YearView.Refresh
-  commentId: M:DatePicker.YearView.Refresh
-  id: Refresh
-  parent: DatePicker.YearView
-  langs:
-  - csharp
-  - vb
-  name: Refresh()
-  nameWithType: YearView.Refresh()
-  fullName: DatePicker.YearView.Refresh()
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/addons/DatePicker/YearView.cs
-      branch: fix-messier-visibility
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Refresh
-    path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 48
-  assemblies:
-  - New Game Project
-  namespace: DatePicker
-  summary: Update the view to reflect the selected date.
-  example: []
-  syntax:
-    content: public void Refresh()
-    content.vb: Public Sub Refresh()
-  overload: DatePicker.YearView.Refresh*
-  implements:
-  - DatePicker.ICalendarView.Refresh
+    content: private void _on_button_pressed()
+    content.vb: Private Sub _on_button_pressed()
+  overload: Stargazer.ControlContainer._on_button_pressed*
 references:
-- uid: DatePicker
-  commentId: N:DatePicker
-  href: DatePicker.html
-  name: DatePicker
-  nameWithType: DatePicker
-  fullName: DatePicker
+- uid: Stargazer
+  commentId: N:Stargazer
+  href: Stargazer.html
+  name: Stargazer
+  nameWithType: Stargazer
+  fullName: Stargazer
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -753,20 +1410,6 @@ references:
   name: Control
   nameWithType: Control
   fullName: Godot.Control
-- uid: Godot.Container
-  commentId: T:Godot.Container
-  parent: Godot
-  isExternal: true
-  name: Container
-  nameWithType: Container
-  fullName: Godot.Container
-- uid: Godot.GridContainer
-  commentId: T:Godot.GridContainer
-  parent: Godot
-  isExternal: true
-  name: GridContainer
-  nameWithType: GridContainer
-  fullName: Godot.GridContainer
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -775,252 +1418,6 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: DatePicker.ICalendarView
-  commentId: T:DatePicker.ICalendarView
-  parent: DatePicker
-  href: DatePicker.ICalendarView.html
-  name: ICalendarView
-  nameWithType: ICalendarView
-  fullName: DatePicker.ICalendarView
-- uid: Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  commentId: M:Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  parent: Godot.GridContainer
-  isExternal: true
-  name: InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  nameWithType: GridContainer.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  fullName: Godot.GridContainer.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
-  nameWithType.vb: GridContainer.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
-  fullName.vb: Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
-  name.vb: InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
-  spec.csharp:
-  - uid: Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-    name: InvokeGodotClassMethod
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.NativeVariantPtrArgs
-    name: NativeVariantPtrArgs
-    isExternal: true
-  - name: ','
-  - name: " "
-  - name: out
-  - name: " "
-  - uid: Godot.NativeInterop.godot_variant
-    name: godot_variant
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.GridContainer.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-    name: InvokeGodotClassMethod
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.NativeVariantPtrArgs
-    name: NativeVariantPtrArgs
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.NativeInterop.godot_variant
-    name: godot_variant
-    isExternal: true
-  - name: )
-- uid: Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.GridContainer
-  isExternal: true
-  name: HasGodotClassMethod(in godot_string_name)
-  nameWithType: GridContainer.HasGodotClassMethod(in godot_string_name)
-  fullName: Godot.GridContainer.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: GridContainer.HasGodotClassMethod(godot_string_name)
-  fullName.vb: Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
-  name.vb: HasGodotClassMethod(godot_string_name)
-  spec.csharp:
-  - uid: Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassMethod
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.GridContainer.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassMethod
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-- uid: Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.GridContainer
-  isExternal: true
-  name: HasGodotClassSignal(in godot_string_name)
-  nameWithType: GridContainer.HasGodotClassSignal(in godot_string_name)
-  fullName: Godot.GridContainer.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: GridContainer.HasGodotClassSignal(godot_string_name)
-  fullName.vb: Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
-  name.vb: HasGodotClassSignal(godot_string_name)
-  spec.csharp:
-  - uid: Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassSignal
-    isExternal: true
-  - name: (
-  - name: in
-  - name: " "
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.GridContainer.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-    name: HasGodotClassSignal
-    isExternal: true
-  - name: (
-  - uid: Godot.NativeInterop.godot_string_name
-    name: godot_string_name
-    isExternal: true
-  - name: )
-- uid: Godot.GridContainer.Columns
-  commentId: P:Godot.GridContainer.Columns
-  parent: Godot.GridContainer
-  isExternal: true
-  name: Columns
-  nameWithType: GridContainer.Columns
-  fullName: Godot.GridContainer.Columns
-- uid: Godot.Container.NotificationPreSortChildren
-  commentId: F:Godot.Container.NotificationPreSortChildren
-  parent: Godot.Container
-  isExternal: true
-  name: NotificationPreSortChildren
-  nameWithType: Container.NotificationPreSortChildren
-  fullName: Godot.Container.NotificationPreSortChildren
-- uid: Godot.Container.NotificationSortChildren
-  commentId: F:Godot.Container.NotificationSortChildren
-  parent: Godot.Container
-  isExternal: true
-  name: NotificationSortChildren
-  nameWithType: Container.NotificationSortChildren
-  fullName: Godot.Container.NotificationSortChildren
-- uid: Godot.Container._GetAllowedSizeFlagsHorizontal
-  commentId: M:Godot.Container._GetAllowedSizeFlagsHorizontal
-  parent: Godot.Container
-  isExternal: true
-  name: _GetAllowedSizeFlagsHorizontal()
-  nameWithType: Container._GetAllowedSizeFlagsHorizontal()
-  fullName: Godot.Container._GetAllowedSizeFlagsHorizontal()
-  spec.csharp:
-  - uid: Godot.Container._GetAllowedSizeFlagsHorizontal
-    name: _GetAllowedSizeFlagsHorizontal
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Container._GetAllowedSizeFlagsHorizontal
-    name: _GetAllowedSizeFlagsHorizontal
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.Container._GetAllowedSizeFlagsVertical
-  commentId: M:Godot.Container._GetAllowedSizeFlagsVertical
-  parent: Godot.Container
-  isExternal: true
-  name: _GetAllowedSizeFlagsVertical()
-  nameWithType: Container._GetAllowedSizeFlagsVertical()
-  fullName: Godot.Container._GetAllowedSizeFlagsVertical()
-  spec.csharp:
-  - uid: Godot.Container._GetAllowedSizeFlagsVertical
-    name: _GetAllowedSizeFlagsVertical
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Container._GetAllowedSizeFlagsVertical
-    name: _GetAllowedSizeFlagsVertical
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.Container.QueueSort
-  commentId: M:Godot.Container.QueueSort
-  parent: Godot.Container
-  isExternal: true
-  name: QueueSort()
-  nameWithType: Container.QueueSort()
-  fullName: Godot.Container.QueueSort()
-  spec.csharp:
-  - uid: Godot.Container.QueueSort
-    name: QueueSort
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Container.QueueSort
-    name: QueueSort
-    isExternal: true
-  - name: (
-  - name: )
-- uid: Godot.Container.FitChildInRect(Godot.Control,Godot.Rect2)
-  commentId: M:Godot.Container.FitChildInRect(Godot.Control,Godot.Rect2)
-  parent: Godot.Container
-  isExternal: true
-  name: FitChildInRect(Control, Rect2)
-  nameWithType: Container.FitChildInRect(Control, Rect2)
-  fullName: Godot.Container.FitChildInRect(Godot.Control, Godot.Rect2)
-  spec.csharp:
-  - uid: Godot.Container.FitChildInRect(Godot.Control,Godot.Rect2)
-    name: FitChildInRect
-    isExternal: true
-  - name: (
-  - uid: Godot.Control
-    name: Control
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.Rect2
-    name: Rect2
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Container.FitChildInRect(Godot.Control,Godot.Rect2)
-    name: FitChildInRect
-    isExternal: true
-  - name: (
-  - uid: Godot.Control
-    name: Control
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Godot.Rect2
-    name: Rect2
-    isExternal: true
-  - name: )
-- uid: Godot.Container.PreSortChildren
-  commentId: E:Godot.Container.PreSortChildren
-  parent: Godot.Container
-  isExternal: true
-  name: PreSortChildren
-  nameWithType: Container.PreSortChildren
-  fullName: Godot.Container.PreSortChildren
-- uid: Godot.Container.SortChildren
-  commentId: E:Godot.Container.SortChildren
-  parent: Godot.Container
-  isExternal: true
-  name: SortChildren
-  nameWithType: Container.SortChildren
-  fullName: Godot.Container.SortChildren
 - uid: Godot.Control.NotificationResized
   commentId: F:Godot.Control.NotificationResized
   parent: Godot.Control
@@ -3430,6 +3827,118 @@ references:
     name: IsLayoutRtl
     isExternal: true
   - name: (
+  - name: )
+- uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  commentId: M:Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  parent: Godot.Control
+  isExternal: true
+  name: InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
+  nameWithType: Control.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
+  fullName: Godot.Control.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
+  nameWithType.vb: Control.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
+  fullName.vb: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
+  name.vb: InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
+  spec.csharp:
+  - uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+    name: InvokeGodotClassMethod
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.NativeVariantPtrArgs
+    name: NativeVariantPtrArgs
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: Godot.NativeInterop.godot_variant
+    name: godot_variant
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+    name: InvokeGodotClassMethod
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.NativeVariantPtrArgs
+    name: NativeVariantPtrArgs
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.NativeInterop.godot_variant
+    name: godot_variant
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Control
+  isExternal: true
+  name: HasGodotClassMethod(in godot_string_name)
+  nameWithType: Control.HasGodotClassMethod(in godot_string_name)
+  fullName: Godot.Control.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Control.HasGodotClassMethod(godot_string_name)
+  fullName.vb: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
+  name.vb: HasGodotClassMethod(godot_string_name)
+  spec.csharp:
+  - uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassMethod
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassMethod
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Control
+  isExternal: true
+  name: HasGodotClassSignal(in godot_string_name)
+  nameWithType: Control.HasGodotClassSignal(in godot_string_name)
+  fullName: Godot.Control.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Control.HasGodotClassSignal(godot_string_name)
+  fullName.vb: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
+  name.vb: HasGodotClassSignal(godot_string_name)
+  spec.csharp:
+  - uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassSignal
+    isExternal: true
+  - name: (
+  - name: in
+  - name: " "
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+    name: HasGodotClassSignal
+    isExternal: true
+  - name: (
+  - uid: Godot.NativeInterop.godot_string_name
+    name: godot_string_name
+    isExternal: true
   - name: )
 - uid: Godot.Control.ClipContents
   commentId: P:Godot.Control.ClipContents
@@ -7578,36 +8087,24 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
   parent: Godot.Node
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
   spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
+  - uid: Godot.Node._Ready
+    name: _Ready
     isExternal: true
   - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
+  - uid: Godot.Node._Ready
+    name: _Ready
     isExternal: true
   - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -12375,142 +12872,399 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
-- uid: DatePicker.YearView.Calendar*
-  commentId: Overload:DatePicker.YearView.Calendar
-  href: DatePicker.YearView.html#DatePicker_YearView_Calendar
-  name: Calendar
-  nameWithType: YearView.Calendar
-  fullName: DatePicker.YearView.Calendar
-- uid: DatePicker.ICalendarView.Calendar
-  commentId: P:DatePicker.ICalendarView.Calendar
-  parent: DatePicker.ICalendarView
-  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Calendar
-  name: Calendar
-  nameWithType: ICalendarView.Calendar
-  fullName: DatePicker.ICalendarView.Calendar
-- uid: DatePicker.Calendar
-  commentId: T:DatePicker.Calendar
-  parent: DatePicker
-  href: DatePicker.Calendar.html
-  name: Calendar
-  nameWithType: Calendar
-  fullName: DatePicker.Calendar
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
+- uid: Godot.LineEdit
+  commentId: T:Godot.LineEdit
+  parent: Godot
+  isExternal: true
+  name: LineEdit
+  nameWithType: LineEdit
+  fullName: Godot.LineEdit
+- uid: Godot.OptionButton
+  commentId: T:Godot.OptionButton
+  parent: Godot
+  isExternal: true
+  name: OptionButton
+  nameWithType: OptionButton
+  fullName: Godot.OptionButton
+- uid: Godot.Button
+  commentId: T:Godot.Button
+  parent: Godot
+  isExternal: true
+  name: Button
+  nameWithType: Button
+  fullName: Godot.Button
+- uid: Stargazer.Startup
+  commentId: T:Stargazer.Startup
+  parent: Stargazer
+  href: Stargazer.Startup.html
+  name: Startup
+  nameWithType: Startup
+  fullName: Stargazer.Startup
+- uid: System.Action{System.Boolean}
+  commentId: T:System.Action{System.Boolean}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<bool>
+  nameWithType: Action<bool>
+  fullName: System.Action<bool>
+  nameWithType.vb: Action(Of Boolean)
+  fullName.vb: System.Action(Of Boolean)
+  name.vb: Action(Of Boolean)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{System.Double,System.Double,System.DateTime}
+  commentId: T:System.Action{System.Double,System.Double,System.DateTime}
+  parent: System
+  definition: System.Action`3
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<double, double, DateTime>
+  nameWithType: Action<double, double, DateTime>
+  fullName: System.Action<double, double, System.DateTime>
+  nameWithType.vb: Action(Of Double, Double, Date)
+  fullName.vb: System.Action(Of Double, Double, Date)
+  name.vb: Action(Of Double, Double, Date)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
   parent: Godot.Node
   isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
   spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
+- uid: Stargazer.ControlContainer._Process*
+  commentId: Overload:Stargazer.ControlContainer._Process
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__Process_System_Double_
+  name: _Process
+  nameWithType: ControlContainer._Process
+  fullName: Stargazer.ControlContainer._Process
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
   isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
-  - name: (
-  - name: )
-- uid: DatePicker.YearView._Ready*
-  commentId: Overload:DatePicker.YearView._Ready
-  href: DatePicker.YearView.html#DatePicker_YearView__Ready
-  name: _Ready
-  nameWithType: YearView._Ready
-  fullName: DatePicker.YearView._Ready
-- uid: DatePicker.YearView.Previous*
-  commentId: Overload:DatePicker.YearView.Previous
-  href: DatePicker.YearView.html#DatePicker_YearView_Previous
-  name: Previous
-  nameWithType: YearView.Previous
-  fullName: DatePicker.YearView.Previous
-- uid: DatePicker.ICalendarView.Previous
-  commentId: M:DatePicker.ICalendarView.Previous
-  parent: DatePicker.ICalendarView
-  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Previous
-  name: Previous()
-  nameWithType: ICalendarView.Previous()
-  fullName: DatePicker.ICalendarView.Previous()
-  spec.csharp:
-  - uid: DatePicker.ICalendarView.Previous
-    name: Previous
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Previous
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: DatePicker.ICalendarView.Previous
-    name: Previous
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Previous
-  - name: (
-  - name: )
-- uid: DatePicker.YearView.Next*
-  commentId: Overload:DatePicker.YearView.Next
-  href: DatePicker.YearView.html#DatePicker_YearView_Next
-  name: Next
-  nameWithType: YearView.Next
-  fullName: DatePicker.YearView.Next
-- uid: DatePicker.ICalendarView.Next
-  commentId: M:DatePicker.ICalendarView.Next
-  parent: DatePicker.ICalendarView
-  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Next
-  name: Next()
-  nameWithType: ICalendarView.Next()
-  fullName: DatePicker.ICalendarView.Next()
-  spec.csharp:
-  - uid: DatePicker.ICalendarView.Next
-    name: Next
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Next
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: DatePicker.ICalendarView.Next
-    name: Next
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Next
-  - name: (
-  - name: )
-- uid: DatePicker.YearView.Refresh*
-  commentId: Overload:DatePicker.YearView.Refresh
-  href: DatePicker.YearView.html#DatePicker_YearView_Refresh
-  name: Refresh
-  nameWithType: YearView.Refresh
-  fullName: DatePicker.YearView.Refresh
-- uid: DatePicker.ICalendarView.Refresh
-  commentId: M:DatePicker.ICalendarView.Refresh
-  parent: DatePicker.ICalendarView
-  href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Refresh
-  name: Refresh()
-  nameWithType: ICalendarView.Refresh()
-  fullName: DatePicker.ICalendarView.Refresh()
-  spec.csharp:
-  - uid: DatePicker.ICalendarView.Refresh
-    name: Refresh
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Refresh
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: DatePicker.ICalendarView.Refresh
-    name: Refresh
-    href: DatePicker.ICalendarView.html#DatePicker_ICalendarView_Refresh
-  - name: (
-  - name: )
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Stargazer.ControlContainer.ToggleAzimuth*
+  commentId: Overload:Stargazer.ControlContainer.ToggleAzimuth
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
+  name: ToggleAzimuth
+  nameWithType: ControlContainer.ToggleAzimuth
+  fullName: Stargazer.ControlContainer.ToggleAzimuth
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Godot.Signal
+  commentId: T:Godot.Signal
+  isExternal: true
+  name: Signal
+  nameWithType: Signal
+  fullName: Godot.Signal
+- uid: Stargazer.ControlContainer.ToggleEquatorial*
+  commentId: Overload:Stargazer.ControlContainer.ToggleEquatorial
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_
+  name: ToggleEquatorial
+  nameWithType: ControlContainer.ToggleEquatorial
+  fullName: Stargazer.ControlContainer.ToggleEquatorial
+- uid: Godot.CheckBox
+  commentId: T:Godot.CheckBox
+  isExternal: true
+  name: CheckBox
+  nameWithType: CheckBox
+  fullName: Godot.CheckBox
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled
+  name: ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+- uid: Stargazer.ControlContainer.ToggleConstellations*
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellations
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellations_System_Boolean_
+  name: ToggleConstellations
+  nameWithType: ControlContainer.ToggleConstellations
+  fullName: Stargazer.ControlContainer.ToggleConstellations
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationLabelsToggled
+  name: ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels*
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellationLabels
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellationLabels_System_Boolean_
+  name: ToggleConstellationLabels
+  nameWithType: ControlContainer.ToggleConstellationLabels
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels
+- uid: Stargazer.ControlContainer.MessierObjectsToggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsToggled
+  name: MessierObjectsToggled
+  nameWithType: ControlContainer.MessierObjectsToggled
+  fullName: Stargazer.ControlContainer.MessierObjectsToggled
+- uid: Stargazer.ControlContainer.ToggleMessierObjects*
+  commentId: Overload:Stargazer.ControlContainer.ToggleMessierObjects
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleMessierObjects_System_Boolean_
+  name: ToggleMessierObjects
+  nameWithType: ControlContainer.ToggleMessierObjects
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects
+- uid: Stargazer.ControlContainer.SetMainController*
+  commentId: Overload:Stargazer.ControlContainer.SetMainController
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetMainController_Stargazer_Startup_
+  name: SetMainController
+  nameWithType: ControlContainer.SetMainController
+  fullName: Stargazer.ControlContainer.SetMainController
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated
+  name: UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+- uid: Stargazer.ControlContainer.UpdateUserPosition*
+  commentId: Overload:Stargazer.ControlContainer.UpdateUserPosition
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition
+  name: UpdateUserPosition
+  nameWithType: ControlContainer.UpdateUserPosition
+  fullName: Stargazer.ControlContainer.UpdateUserPosition
+- uid: Stargazer.ControlContainer._on_button_pressed*
+  commentId: Overload:Stargazer.ControlContainer._on_button_pressed
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_button_pressed
+  name: _on_button_pressed
+  nameWithType: ControlContainer._on_button_pressed
+  fullName: Stargazer.ControlContainer._on_button_pressed

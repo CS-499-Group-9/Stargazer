@@ -25,12 +25,17 @@ items:
   type: Class
   source:
     id: PlayControl
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.PlayControl_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.PlayControl_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Controls the play speed of the 3D simulation.
+  summary: >-
+    Controls the play speed of the 3D simulation.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -542,11 +547,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: multiplierLabel
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -569,11 +574,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: multiplier
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -596,11 +601,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateSeconds
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -631,11 +636,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateMinutes
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -666,11 +671,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateHours
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -701,11 +706,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateDays
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 46
+    startLine: 48
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -736,11 +741,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnSynchronizeTime
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -764,11 +769,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlayNormal
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 64
+    startLine: 66
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -792,11 +797,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 73
+    startLine: 75
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -821,11 +826,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Activate
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 84
+    startLine: 86
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -852,11 +857,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlayControl.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateMultiplierLabel
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 91
+    startLine: 93
   assemblies:
   - New Game Project
   namespace: Stargazer

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Moon | Stargazer Data API ">
       
-      <meta name="description" content="A moon object to be drawn.">
+      <meta name="description" content="A moon object to be drawn. Author: Josh Johner Created: SPR 2025 Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class Moon
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A moon object to be drawn.</p>
+  <div class="markdown summary"><p>A moon object to be drawn.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -151,6 +154,12 @@ public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable</code></p
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance">CelestialBody.Distance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance">CelestialBody.DrawnDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible">CelestialBody.IHoverable.IsVisible</a>
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation">CelestialBody.GetLocation()</a>
@@ -1093,7 +1102,7 @@ public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable</code></p
 
   <h3 id="Stargazer_Moon_horizontalMoon" data-uid="Stargazer.Moon.horizontalMoon">
   horizontalMoon
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Moon.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Moon.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1128,7 +1137,7 @@ public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable</code></p
 
   <h3 id="Stargazer_Moon_FromHorizontal_DataLayer_HorizontalObjects_HorizontalMoon_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)">
   FromHorizontal(HorizontalMoon, IEquatorialCalculator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Moon.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Moon.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Passes in data necessary to perform calculations.</p>
@@ -1164,7 +1173,7 @@ public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable</code></p
 
   <h3 id="Stargazer_Moon_GetHoverText" data-uid="Stargazer.Moon.GetHoverText">
   GetHoverText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Moon.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Moon.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text to display.</p>
@@ -1197,7 +1206,7 @@ public class Moon : CelestialBody, IDisposable, IHoverable, ITrackable</code></p
 
   <h3 id="Stargazer_Moon__Process_System_Double_" data-uid="Stargazer.Moon._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Moon.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Moon.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates phase and positional data every frame.

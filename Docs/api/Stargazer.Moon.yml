@@ -18,12 +18,19 @@ items:
   type: Class
   source:
     id: Moon
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Moon_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Moon_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A moon object to be drawn.
+  summary: >-
+    A moon object to be drawn.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.
   example: []
   syntax:
     content: >-
@@ -51,6 +58,8 @@ items:
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody.GetLocation
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
@@ -380,11 +389,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalMoon
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -407,11 +416,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -446,11 +455,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 38
+    startLine: 42
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -478,11 +487,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 51
+    startLine: 55
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -609,6 +618,30 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  parent: Stargazer.CelestialBody
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
 - uid: Stargazer.CelestialBody.GetLocation
   commentId: M:Stargazer.CelestialBody.GetLocation
   parent: Stargazer.CelestialBody

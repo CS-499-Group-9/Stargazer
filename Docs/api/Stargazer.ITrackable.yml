@@ -16,15 +16,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ITrackable.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ITrackable
     path: ../Stargazer-Godot/Code/ITrackable.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Provides the ability of an object to be tracked by the camera
+  summary: >-
+    Provides the ability of an object to be tracked by the camera
+
+    Author: Josh Johenr
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public interface ITrackable
@@ -43,11 +48,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ITrackable.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GlobalTransform
     path: ../Stargazer-Godot/Code/ITrackable.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer

@@ -23,15 +23,20 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
-  summary: A star located by the Horizontal Coordinate method
+  summary: >-
+    A star located by the Horizontal Coordinate method
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class HorizontalStar : HorizontalBody'
@@ -66,11 +71,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialStar
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -93,11 +98,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -128,11 +133,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -159,11 +164,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -190,11 +195,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -221,11 +226,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AbsoluteMagnitude
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -252,11 +257,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spectrum
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -283,11 +288,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalStar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ColorIndex
     path: ../DataLayer/HorizontalObjects/HorizontalStar.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

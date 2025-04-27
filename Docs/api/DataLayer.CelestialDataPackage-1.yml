@@ -26,15 +26,20 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CelestialDataPackage
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects.
+  summary: >-
+    Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects
+
+    Author: Josh Johner
+
+    Created: SPR 2025.
   example: []
   syntax:
     content: public class CelestialDataPackage<T>
@@ -69,11 +74,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalStars
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -98,11 +103,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawnStars
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -131,11 +136,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalStars
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -164,11 +169,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Calculator
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 30
+    startLine: 32
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -197,11 +202,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierObjects
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 37
+    startLine: 39
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -230,11 +235,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellations
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -263,11 +268,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Planets
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -296,11 +301,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Moon
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -327,11 +332,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Sun
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 49
+    startLine: 51
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -358,11 +363,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetStar
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 59
+    startLine: 61
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -406,11 +411,11 @@ items:
   source:
     remote:
       path: DataLayer/CelestialDataPackage.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/CelestialDataPackage.cs
-    startLine: 87
+    startLine: 89
   assemblies:
   - DataLayer
   namespace: DataLayer

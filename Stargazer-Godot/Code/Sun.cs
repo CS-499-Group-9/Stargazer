@@ -8,6 +8,9 @@ namespace Stargazer
 {
 	/// <summary>
 	/// The actual sun.
+	/// Author: Josh Johner
+	/// Created: SPR 2025
+	/// Refactored by William Arnett (SPR 2025) to handle rotation, and hover text. 
 	/// </summary>
 	public partial class Sun : CelestialBody
 	{

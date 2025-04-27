@@ -5,6 +5,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// A star located by the Horizontal Coordinate method
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class HorizontalStar : HorizontalBody
     {

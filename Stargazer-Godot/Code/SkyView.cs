@@ -12,6 +12,8 @@ namespace Stargazer
     /// <summary>
     /// The parent object for all items in the viewport.
     /// Responsible for relaying notifications from senders throughout the program into the view port.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public partial class SkyView : Node3D
     {

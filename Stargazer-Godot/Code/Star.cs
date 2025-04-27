@@ -7,6 +7,9 @@ namespace Stargazer
 {
     /// <summary>
     /// A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) to implement CelestialBody
     /// </summary>
     public partial class Star : CelestialBody
     {

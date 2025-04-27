@@ -16,15 +16,20 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IRepositoryService
     path: ../DataLayer/Interfaces/IRepositoryService.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
-  summary: Used to retrieve the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>.
+  summary: >-
+    Used to retrieve the <xref href="DataLayer.CelestialDataPackage%601" data-throw-if-not-resolved="false"></xref>.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public interface IRepositoryService<T>
@@ -49,11 +54,11 @@ items:
   source:
     remote:
       path: DataLayer/Interfaces/IRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: InitializeDataPackage
     path: ../DataLayer/Interfaces/IRepositoryService.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces

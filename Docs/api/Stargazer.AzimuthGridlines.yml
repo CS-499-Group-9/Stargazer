@@ -18,7 +18,6 @@ items:
   - Stargazer.AzimuthGridlines.calculator
   - Stargazer.AzimuthGridlines.cutoffLatitude
   - Stargazer.AzimuthGridlines.equatorialGridlines
-  - Stargazer.AzimuthGridlines.globalVars
   - Stargazer.AzimuthGridlines.latitude
   - Stargazer.AzimuthGridlines.latitudeInterval
   - Stargazer.AzimuthGridlines.latitudeSegments
@@ -43,7 +42,12 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The graphic object used to draw the lines.
+  summary: >-
+    The graphic object used to draw the lines.
+
+    Author: William Arnett
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -388,11 +392,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radius
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -431,11 +435,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -474,11 +478,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeSegments
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -517,11 +521,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitudeInterval
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -560,11 +564,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitudeInterval
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -601,11 +605,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: cutoffLatitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -644,11 +648,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: azimuthGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -671,11 +675,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: equatorialGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -698,11 +702,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -725,11 +729,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh2
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -752,11 +756,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: orangeMaterial
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -779,11 +783,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: blueMaterial
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 37
+    startLine: 39
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -806,11 +810,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: calculator
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 38
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -819,33 +823,6 @@ items:
     return:
       type: DataLayer.Interfaces.IEquatorialCalculator
     content.vb: Private calculator As IEquatorialCalculator
-- uid: Stargazer.AzimuthGridlines.globalVars
-  commentId: F:Stargazer.AzimuthGridlines.globalVars
-  id: globalVars
-  parent: Stargazer.AzimuthGridlines
-  langs:
-  - csharp
-  - vb
-  name: globalVars
-  nameWithType: AzimuthGridlines.globalVars
-  fullName: Stargazer.AzimuthGridlines.globalVars
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: globalVars
-    path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 39
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Globals globalVars
-    return:
-      type: Stargazer.Globals
-    content.vb: Private globalVars As Globals
 - uid: Stargazer.AzimuthGridlines.latitude
   commentId: F:Stargazer.AzimuthGridlines.latitude
   id: latitude
@@ -860,11 +837,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 40
+    startLine: 41
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -887,11 +864,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: longitude
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -914,15 +891,18 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 46
+    startLine: 48
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Initially draws the azimuth lines and hides them.
+  summary: >-
+    Initially draws the azimuth lines and hides them.
+
+    Refactored by: Josh Johner SPR 2025
   example: []
   syntax:
     content: public override void _Ready()
@@ -943,11 +923,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -979,19 +959,27 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HandleZoomStateChanged
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 94
+    startLine: 101
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Called by <xref href="Stargazer.ICameraStateNotifier.OnZoomStateChanged" data-throw-if-not-resolved="false"></xref>
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+  example: []
   syntax:
     content: public void HandleZoomStateChanged(ZoomState zoomState)
     parameters:
     - id: zoomState
       type: Stargazer.ZoomState
+      description: ''
     content.vb: Public Sub HandleZoomStateChanged(zoomState As ZoomState)
   overload: Stargazer.AzimuthGridlines.HandleZoomStateChanged*
 - uid: Stargazer.AzimuthGridlines.ToggleGridlines(System.Boolean)
@@ -1008,15 +996,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 113
+    startLine: 122
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The method used receive the <xref href="ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification.
+  summary: >-
+    The method used receive the <xref href="Stargazer.ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public void ToggleGridlines(bool showLines)
@@ -1043,11 +1036,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleEquatorialGridlines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 122
+    startLine: 131
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1078,15 +1071,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetCalculator
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 131
+    startLine: 142
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Sets the <xref href="DataLayer.Interfaces.IEquatorialCalculator" data-throw-if-not-resolved="false"></xref> used to retrieve the current observers latitude and longitude.
+  summary: >-
+    Sets the <xref href="DataLayer.Interfaces.IEquatorialCalculator" data-throw-if-not-resolved="false"></xref> used to retrieve the current observers latitude and longitude.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public void SetCalculator(IEquatorialCalculator calculator)
@@ -1110,11 +1108,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLongitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 138
+    startLine: 149
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1141,11 +1139,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/AzimuthGridlines.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawLatitudeLines
     path: ../Stargazer-Godot/Code/AzimuthGridlines.cs
-    startLine: 216
+    startLine: 227
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -8016,13 +8014,6 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
-- uid: Stargazer.Globals
-  commentId: T:Stargazer.Globals
-  parent: Stargazer
-  href: Stargazer.Globals.html
-  name: Globals
-  nameWithType: Globals
-  fullName: Stargazer.Globals
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node
@@ -8096,6 +8087,13 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
+- uid: Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  commentId: P:Stargazer.ICameraStateNotifier.OnZoomStateChanged
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnZoomStateChanged
+  name: OnZoomStateChanged
+  nameWithType: ICameraStateNotifier.OnZoomStateChanged
+  fullName: Stargazer.ICameraStateNotifier.OnZoomStateChanged
 - uid: Stargazer.AzimuthGridlines.HandleZoomStateChanged*
   commentId: Overload:Stargazer.AzimuthGridlines.HandleZoomStateChanged
   href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_HandleZoomStateChanged_Stargazer_ZoomState_
@@ -8109,12 +8107,19 @@ references:
   name: ZoomState
   nameWithType: ZoomState
   fullName: Stargazer.ZoomState
-- uid: ControlContainer.AzimuthToggled
-  commentId: F:ControlContainer.AzimuthToggled
-  href: ControlContainer.html#ControlContainer_AzimuthToggled
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  parent: Stargazer
+  href: Stargazer.ICameraStateNotifier.html
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
   name: AzimuthToggled
   nameWithType: ControlContainer.AzimuthToggled
-  fullName: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
 - uid: Stargazer.AzimuthGridlines.ToggleGridlines*
   commentId: Overload:Stargazer.AzimuthGridlines.ToggleGridlines
   href: Stargazer.AzimuthGridlines.html#Stargazer_AzimuthGridlines_ToggleGridlines_System_Boolean_

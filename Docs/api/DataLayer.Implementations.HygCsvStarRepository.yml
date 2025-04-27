@@ -18,15 +18,20 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HygCsvStarRepository
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Retrieves raw star data from the HYG.csv repository
+  summary: >-
+    Retrieves raw star data from the HYG.csv repository
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'internal class HygCsvStarRepository : IStarRepository'
@@ -57,11 +62,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -86,11 +91,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -121,11 +126,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetAllStars
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 30
+    startLine: 32
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

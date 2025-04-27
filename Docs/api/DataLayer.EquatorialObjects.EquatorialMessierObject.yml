@@ -22,15 +22,20 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialMessierObject
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
-  summary: Represents a Messier Deep Space Object located in equatorial coordinates
+  summary: >-
+    Represents a Messier Deep Space Object located in equatorial coordinates
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class EquatorialMessierObject : EquatorialCelestialBody'
@@ -65,11 +70,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -96,11 +101,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -127,11 +132,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -158,11 +163,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -189,11 +194,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -220,11 +225,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -251,11 +256,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/EquatorialObjects/EquitorialMessierObject.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects

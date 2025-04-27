@@ -7,6 +7,9 @@ namespace Stargazer
 {
 	/// <summary>
 	/// A <see cref="Node3D"/> container for the planets.
+	/// Author: Josh Johner
+	/// Created: SPR 2025
+	/// Refactored by William Arnett (SPR 2025) to use custom shader.
 	/// </summary>
 	public partial class Planets : Node3D
 	{

@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarMap
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -81,11 +81,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

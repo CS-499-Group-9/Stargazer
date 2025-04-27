@@ -4,6 +4,8 @@ namespace DataLayer.EquatorialObjects
 {
     /// <summary>
     /// Represents an object that can be located in the sky according to equatorial coordinates.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public abstract class EquatorialCelestialBody
     {

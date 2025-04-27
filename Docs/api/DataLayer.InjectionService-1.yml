@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: InjectionService
     path: ../DataLayer/InjectionService.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -28,6 +28,10 @@ items:
     Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.
 
     Registers all classes to be injected into constructors to avoid hard coding into descendant classes.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public static class InjectionService<T>
@@ -62,11 +66,11 @@ items:
   source:
     remote:
       path: DataLayer/InjectionService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetRepositoryServiceAsync
     path: ../DataLayer/InjectionService.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer

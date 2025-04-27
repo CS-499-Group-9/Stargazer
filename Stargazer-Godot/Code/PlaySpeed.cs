@@ -9,6 +9,8 @@ namespace Stargazer
 {
     /// <summary>
     /// A state object to control the play speed of the simulation
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class PlaySpeed
     {

@@ -4,6 +4,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// Represents the moon in horizontal coordinate form.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class HorizontalMoon : HorizontalBody
     {

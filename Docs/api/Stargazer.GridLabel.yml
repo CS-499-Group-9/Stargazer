@@ -23,12 +23,19 @@ items:
   type: Class
   source:
     id: GridLabel
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.GridLabel_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.GridLabel_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Displays the latitude value on the grid.
+  summary: >-
+    Displays the latitude value on the grid.
+
+    Author: William Arnett
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) to use observer pattern.
   example: []
   syntax:
     content: >-
@@ -540,11 +547,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: gridlabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -567,11 +574,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: azimuthlabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -594,11 +601,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: lineInterval
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -621,11 +628,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: render
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -648,11 +655,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -677,11 +684,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HandleZoomStateChanged
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -706,19 +713,27 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HandleCameraRotationChanged
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 67
+    startLine: 76
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Notified by <xref href="Stargazer.ICameraStateNotifier.OnRotation" data-throw-if-not-resolved="false"></xref> of camera rotations.
+
+    All inner logic created by William Arnett (SPR 2025)
+
+    Refactored by Josh Johner to use observer instead of querying camera in _Process()
+  example: []
   syntax:
     content: public void HandleCameraRotationChanged(Camera3D camera)
     parameters:
     - id: camera
       type: Godot.Camera3D
+      description: ''
     content.vb: Public Sub HandleCameraRotationChanged(camera As Camera3D)
   overload: Stargazer.GridLabel.HandleCameraRotationChanged*
 - uid: Stargazer.GridLabel.updateLabels
@@ -735,11 +750,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: updateLabels
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 190
+    startLine: 199
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -761,15 +776,15 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/GridLabel.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/GridLabel.cs
-    startLine: 216
+    startLine: 225
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Receives the <xref href="ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification to show or hide the labels.
+  summary: Receives the <xref href="Stargazer.ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification to show or hide the labels.
   example: []
   syntax:
     content: public void ToggleGridlines(bool showLines)
@@ -12478,6 +12493,13 @@ references:
   name: ZoomState
   nameWithType: ZoomState
   fullName: Stargazer.ZoomState
+- uid: Stargazer.ICameraStateNotifier.OnRotation
+  commentId: P:Stargazer.ICameraStateNotifier.OnRotation
+  parent: Stargazer.ICameraStateNotifier
+  href: Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnRotation
+  name: OnRotation
+  nameWithType: ICameraStateNotifier.OnRotation
+  fullName: Stargazer.ICameraStateNotifier.OnRotation
 - uid: Stargazer.GridLabel.HandleCameraRotationChanged*
   commentId: Overload:Stargazer.GridLabel.HandleCameraRotationChanged
   href: Stargazer.GridLabel.html#Stargazer_GridLabel_HandleCameraRotationChanged_Godot_Camera3D_
@@ -12491,18 +12513,25 @@ references:
   name: Camera3D
   nameWithType: Camera3D
   fullName: Godot.Camera3D
+- uid: Stargazer.ICameraStateNotifier
+  commentId: T:Stargazer.ICameraStateNotifier
+  parent: Stargazer
+  href: Stargazer.ICameraStateNotifier.html
+  name: ICameraStateNotifier
+  nameWithType: ICameraStateNotifier
+  fullName: Stargazer.ICameraStateNotifier
 - uid: Stargazer.GridLabel.updateLabels*
   commentId: Overload:Stargazer.GridLabel.updateLabels
   href: Stargazer.GridLabel.html#Stargazer_GridLabel_updateLabels
   name: updateLabels
   nameWithType: GridLabel.updateLabels
   fullName: Stargazer.GridLabel.updateLabels
-- uid: ControlContainer.AzimuthToggled
-  commentId: F:ControlContainer.AzimuthToggled
-  href: ControlContainer.html#ControlContainer_AzimuthToggled
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
   name: AzimuthToggled
   nameWithType: ControlContainer.AzimuthToggled
-  fullName: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
 - uid: Stargazer.GridLabel.ToggleGridlines*
   commentId: Overload:Stargazer.GridLabel.ToggleGridlines
   href: Stargazer.GridLabel.html#Stargazer_GridLabel_ToggleGridlines_System_Boolean_

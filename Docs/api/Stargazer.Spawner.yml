@@ -27,7 +27,14 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Draws all stars that are not a part of constellations
+  summary: >-
+    Draws all stars that are not a part of constellations
+
+    Author: Logan Parker
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) for concurrency and single responsibility.
   example: []
   syntax:
     content: >-
@@ -374,11 +381,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarScene
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -419,11 +426,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelScene
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -464,11 +471,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -491,11 +498,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: starConverter
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -518,11 +525,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: starProducer
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -545,11 +552,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: maxStarMagnitude
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -572,15 +579,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawStars
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 39
+    startLine: 44
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Receives the notification to update the stars drawn.
+  summary: >-
+    Receives the notification to update the stars drawn.
+
+    Original Author: Logan Parker (SPR 2025)
+
+    Refactored by Josh Johner (SPR 2025) for asynchronization. Func{HorizontalStar,Star} for single responsibility (pass method by reference).
   example: []
   syntax:
     content: public Task DrawStars(IEnumerable<HorizontalStar> stars, Func<int, Func<HorizontalStar, Star>, Star> GetStar, IEquatorialCalculator starConverter)
@@ -615,11 +627,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Spawner.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SpawnStar
     path: ../Stargazer-Godot/Code/Spawner.cs
-    startLine: 68
+    startLine: 74
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -627,6 +639,10 @@ items:
     Used to spawn a new star in the sky view scene.
 
     I'm rather proud of how this is handled in other classes.
+
+    Original Author: Logan Parker (SPR 2025)
+
+    Refactored by Josh Johner (SPR 2025) to be passed by reference to other methods to hand concurrent drawing (competing spawners).
   example: []
   syntax:
     content: public Star SpawnStar(HorizontalStar horizontalStar)

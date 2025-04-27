@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Spawner2D | Stargazer Data API ">
       
-      <meta name="description" content="Draws all stars that are not a part of constellations">
+      <meta name="description" content="Draws all stars that are not a part of constellations Author: William Arnett Created: SPR 2025 Refactored by Josh Johner (SPR 2025) to use IDictionary.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class Spawner2D
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Draws all stars that are not a part of constellations</p>
+  <div class="markdown summary"><p>Draws all stars that are not a part of constellations
+Author: William Arnett
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use IDictionary.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -632,9 +635,6 @@ public class Spawner2D : Node2D, IDisposable</code></pre>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
-    </div>
-    <div>
-      <span class="xref">Node._Ready()</span>
     </div>
     <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
@@ -1212,9 +1212,39 @@ public class Spawner2D : Node2D, IDisposable</code></pre>
 
 
 
+  <h3 id="Stargazer_Spawner2D_DrawnStars" data-uid="Stargazer.Spawner2D.DrawnStars">
+  DrawnStars
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private IDictionary&lt;int, Star2D&gt; DrawnStars</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="Stargazer.Star2D.html">Star2D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="Stargazer_Spawner2D_Star2dContainer" data-uid="Stargazer.Spawner2D.Star2dContainer">
   Star2dContainer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1244,7 +1274,7 @@ public class Spawner2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner2D_count" data-uid="Stargazer.Spawner2D.count">
   count
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1274,7 +1304,7 @@ public class Spawner2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner2D_radians" data-uid="Stargazer.Spawner2D.radians">
   radians
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1309,7 +1339,7 @@ public class Spawner2D : Node2D, IDisposable</code></pre>
 
   <h3 id="Stargazer_Spawner2D_Label2DScene" data-uid="Stargazer.Spawner2D.Label2DScene">
   Label2DScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the labels for stars</p>
@@ -1342,7 +1372,7 @@ public PackedScene Label2DScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Spawner2D_Star2DScene" data-uid="Stargazer.Spawner2D.Star2DScene">
   Star2DScene
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The scene used to instantiate the star objects.</p>
@@ -1379,7 +1409,7 @@ public PackedScene Star2DScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Spawner2D_DrawStars_System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star__" data-uid="Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})">
   DrawStars(IDictionary&lt;int, Star&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Receives the notification to draw the new star scene.</p>
@@ -1387,7 +1417,7 @@ public PackedScene Star2DScene { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DrawStars(IDictionary&lt;int, Star&gt; starDictionary)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IDictionary&lt;int, Star2D&gt;&gt; DrawStars(IDictionary&lt;int, Star&gt; starDictionary)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1399,7 +1429,7 @@ public PackedScene Star2DScene { get; set; }</code></pre>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="Stargazer.Star2D.html">Star2D</a>&gt;&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1417,7 +1447,7 @@ public PackedScene Star2DScene { get; set; }</code></pre>
 
   <h3 id="Stargazer_Spawner2D_SpawnStar_Stargazer_Star_" data-uid="Stargazer.Spawner2D.SpawnStar(Stargazer.Star)">
   SpawnStar(Star)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Spawner2D.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1438,6 +1468,36 @@ public PackedScene Star2DScene { get; set; }</code></pre>
     <dt><a class="xref" href="Stargazer.Star2D.html">Star2D</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Spawner2D__Ready_" data-uid="Stargazer.Spawner2D._Ready*"></a>
+
+  <h3 id="Stargazer_Spawner2D__Ready" data-uid="Stargazer.Spawner2D._Ready">
+  _Ready()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Spawner2D.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+<p>Corresponds to the <span class="xref">Godot.Node.NotificationReady</span> notification in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">_Notification(int)</a>. See also the <code>@onready</code> annotation for variables.</p>
+<p>Usually used for initialization. For even earlier initialization, <span class="xref">Godot.GodotObject.GodotObject()</span> may be used. See also <span class="xref">Godot.Node._EnterTree()</span>.</p>
+<p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <span class="xref">Godot.Node._Ready()</span> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <span class="xref">Godot.Node.RequestReady()</span>, which may be called anywhere before adding the node again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void _Ready()</code></pre>
+  </div>
+
+
 
 
 

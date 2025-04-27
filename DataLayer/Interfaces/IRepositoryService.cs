@@ -2,6 +2,8 @@
 {
     /// <summary>
     /// Used to retrieve the <see cref="CelestialDataPackage{T}"/>.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     /// <typeparam name="T">The repository service.</typeparam>
     public interface IRepositoryService<T>

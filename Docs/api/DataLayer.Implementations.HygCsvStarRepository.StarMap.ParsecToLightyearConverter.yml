@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ParsecToLightyearConverter
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -58,11 +58,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: conversionFactor
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 83
+    startLine: 85
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -85,11 +85,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/HygCsvStarRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConvertFromString
     path: ../DataLayer/Implementations/HygCsvStarRepository.cs
-    startLine: 84
+    startLine: 86
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

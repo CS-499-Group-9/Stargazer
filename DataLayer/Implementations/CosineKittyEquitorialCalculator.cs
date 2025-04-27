@@ -9,6 +9,8 @@ namespace DataLayer.Implementations
 {
     /// <summary>
     /// Uses the <see cref="CosineKitty.Astronomy"/> library to perform calculations on celestial objects.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     internal class CosineKittyEquatorialCalculator : IEquatorialCalculator
     {

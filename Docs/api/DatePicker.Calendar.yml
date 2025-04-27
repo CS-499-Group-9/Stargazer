@@ -42,8 +42,8 @@ items:
   type: Class
   source:
     id: Calendar
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\DatePicker.Calendar_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\DatePicker.Calendar_ScriptSignals.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: DatePicker
@@ -555,7 +555,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Header
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -600,7 +600,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Next
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -645,7 +645,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Previous
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -690,7 +690,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewParent
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -735,7 +735,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Margin
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -766,7 +766,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: View
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -797,7 +797,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: dateTime
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -824,7 +824,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DateTime
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -855,7 +855,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: selected
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -882,7 +882,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Selected
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -913,7 +913,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LowerLimit
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -947,7 +947,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpperLimit
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -981,7 +981,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalendarButton
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1012,7 +1012,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1048,7 +1048,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _EnterTree
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1080,7 +1080,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _ExitTree
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1112,7 +1112,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnGuiFocusChanged
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1144,7 +1144,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1186,7 +1186,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetView
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs
@@ -1218,7 +1218,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _GuiInput
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs

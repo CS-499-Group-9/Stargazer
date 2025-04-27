@@ -55,6 +55,10 @@ items:
     The parent object for all items in the viewport.
 
     Responsible for relaying notifications from senders throughout the program into the view port.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -399,11 +403,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MoonScene
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -440,11 +444,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SunScene
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -481,11 +485,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarSpawner
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -522,11 +526,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierSpawner
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -563,11 +567,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlanetSpawner
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -604,11 +608,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constellationNode
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -645,11 +649,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HoverLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -686,11 +690,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AzimuthGridlines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -727,11 +731,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GridLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -768,11 +772,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CompassNeedle
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -809,11 +813,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CameraStateNotifier
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -850,11 +854,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AstralPlane
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -891,11 +895,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: dateLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -932,11 +936,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 33
+    startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -961,11 +965,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 37
+    startLine: 39
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -990,11 +994,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleGridlines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1019,11 +1023,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleEquatorialGridlines
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 42
+    startLine: 44
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1046,11 +1050,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleMessierObjects
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 46
+    startLine: 48
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1075,11 +1079,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: averageFrameLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 48
+    startLine: 50
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1102,11 +1106,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: instantaneousFrameLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 49
+    startLine: 51
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1129,11 +1133,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: localSiderealLabel
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 50
+    startLine: 52
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1156,11 +1160,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: averageFrameTime
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 51
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1183,11 +1187,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planetNode
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 53
+    startLine: 55
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1210,11 +1214,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: moon
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 54
+    startLine: 56
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1237,11 +1241,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: sun
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1264,11 +1268,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: calculator
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 56
+    startLine: 58
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1291,11 +1295,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: playSpeed
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 58
+    startLine: 60
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1318,11 +1322,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: previousTicks
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 59
+    startLine: 61
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1345,11 +1349,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 64
+    startLine: 66
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1374,11 +1378,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 94
+    startLine: 96
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1410,11 +1414,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetTimeMultiplier
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 128
+    startLine: 130
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1442,11 +1446,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyView.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: InitializeCelestial
     path: ../Stargazer-Godot/Code/SkyView.cs
-    startLine: 139
+    startLine: 141
   assemblies:
   - New Game Project
   namespace: Stargazer

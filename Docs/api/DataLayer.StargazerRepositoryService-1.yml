@@ -22,15 +22,20 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StargazerRepositoryService
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - DataLayer
   namespace: DataLayer
-  summary: Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
+  summary: >-
+    Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class StargazerRepositoryService<T> : IRepositoryService<T>'
@@ -69,11 +74,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: starRepository
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -98,11 +103,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: messierRepository
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -127,11 +132,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constellationRepository
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -156,11 +161,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -197,11 +202,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: InitializeDataPackage
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -235,11 +240,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateMessierObjects
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - DataLayer
   namespace: DataLayer
@@ -265,11 +270,11 @@ items:
   source:
     remote:
       path: DataLayer/StargazerRepositoryService.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateStars
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 98
+    startLine: 100
   assemblies:
   - DataLayer
   namespace: DataLayer

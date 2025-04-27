@@ -7,6 +7,9 @@ namespace Stargazer
 
     /// <summary>
     /// Displays the latitude value on the grid.
+    /// Author: William Arnett
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) to use observer pattern.
     /// </summary>
     public partial class GridLabel : Control
 
@@ -65,6 +68,12 @@ namespace Stargazer
             updateLabels();
         }
 
+        /// <summary>
+        /// Notified by <see cref="ICameraStateNotifier.OnRotation"/> of camera rotations.
+        /// All inner logic created by William Arnett (SPR 2025)
+        /// Refactored by Josh Johner to use observer instead of querying camera in _Process()
+        /// </summary>
+        /// <param name="camera"></param>
         public void HandleCameraRotationChanged(Camera3D camera)
         {
                 const float radians = Mathf.Pi / 180.0f;

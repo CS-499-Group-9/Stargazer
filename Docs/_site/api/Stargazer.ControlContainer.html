@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class GridLabel | Stargazer Data API </title>
+      <title>Class ControlContainer | Stargazer Data API </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class GridLabel | Stargazer Data API ">
+      <meta name="title" content="Class ControlContainer | Stargazer Data API ">
       
-      <meta name="description" content="Displays the latitude value on the grid. Author: William Arnett Created: SPR 2025 Refactored by Josh Johner (SPR 2025) to use observer pattern.">
+      <meta name="description" content="Contains all user controls for the program and notifies subscribers of user interaction. Author: Josh Johner Created: SPR 2025">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Stargazer.GridLabel">
+        <article data-uid="Stargazer.ControlContainer">
 
 
 
-  <h1 id="Stargazer_GridLabel" data-uid="Stargazer.GridLabel" class="text-break">
-Class GridLabel  
+  <h1 id="Stargazer_ControlContainer" data-uid="Stargazer.ControlContainer" class="text-break">
+Class ControlContainer  
   </h1>
 
   <div class="facts text-secondary">
@@ -97,16 +97,15 @@ Class GridLabel
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Displays the latitude value on the grid.
-Author: William Arnett
-Created: SPR 2025
-Refactored by Josh Johner (SPR 2025) to use observer pattern.</p>
+  <div class="markdown summary"><p>Contains all user controls for the program and notifies subscribers of user interaction.
+Author: Josh Johner
+Created: SPR 2025</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/GridLabel.cs&quot;)]
-public class GridLabel : Control, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">[ScriptPath(&quot;res://Code/ControlContainer.cs&quot;)]
+public class ControlContainer : Control, IDisposable</code></pre>
   </div>
 
 
@@ -120,7 +119,7 @@ public class GridLabel : Control, IDisposable</code></pre>
       <div><span class="xref">Node</span></div>
       <div><span class="xref">CanvasItem</span></div>
       <div><span class="xref">Control</span></div>
-      <div><span class="xref">GridLabel</span></div>
+      <div><span class="xref">ControlContainer</span></div>
     </dd>
   </dl>
 
@@ -985,7 +984,7 @@ public class GridLabel : Control, IDisposable</code></pre>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._PhysicsProcess(double)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">Node._Process(double)</a>
+      <span class="xref">Node._Ready()</span>
     </div>
     <div>
       <span class="xref">Node._ShortcutInput(InputEvent)</span>
@@ -1563,16 +1562,17 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_azimuthlabels" data-uid="Stargazer.GridLabel.azimuthlabels">
-  azimuthlabels
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_AMorPMButton" data-uid="Stargazer.ControlContainer.AMorPMButton">
+  AMorPMButton
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Dictionary&lt;int, Label&gt; azimuthlabels</code></pre>
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private OptionButton AMorPMButton</code></pre>
   </div>
 
 
@@ -1580,7 +1580,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <span class="xref">Label</span>&gt;</dt>
+    <dt><span class="xref">OptionButton</span></dt>
     <dd></dd>
   </dl>
 
@@ -1593,16 +1593,17 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_gridlabels" data-uid="Stargazer.GridLabel.gridlabels">
-  gridlabels
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_AzimuthToggled" data-uid="Stargazer.ControlContainer.AzimuthToggled">
+  AzimuthToggled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Notifies the subscribers when the user has toggled the azimuth grid</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private Dictionary&lt;int, Label&gt; gridlabels</code></pre>
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; AzimuthToggled</code></pre>
   </div>
 
 
@@ -1610,7 +1611,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <span class="xref">Label</span>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1623,16 +1624,17 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_lineInterval" data-uid="Stargazer.GridLabel.lineInterval">
-  lineInterval
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_ConstellationLabelsToggled" data-uid="Stargazer.ControlContainer.ConstellationLabelsToggled">
+  ConstellationLabelsToggled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Notifies the subscribers when the user has toggled the visibility of constellation labels</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private float lineInterval</code></pre>
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; ConstellationLabelsToggled</code></pre>
   </div>
 
 
@@ -1640,7 +1642,7 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -1653,16 +1655,17 @@ public class GridLabel : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_GridLabel_render" data-uid="Stargazer.GridLabel.render">
-  render
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_ConstellationsToggled" data-uid="Stargazer.ControlContainer.ConstellationsToggled">
+  ConstellationsToggled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Notifies the subscribers when the user has toggle the visibility of constellations</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private bool render</code></pre>
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; ConstellationsToggled</code></pre>
   </div>
 
 
@@ -1670,7 +1673,346 @@ public class GridLabel : Control, IDisposable</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_EquatorialToggled" data-uid="Stargazer.ControlContainer.EquatorialToggled">
+  EquatorialToggled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Notifies the subscribers when the user has toggled the equatorial grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; EquatorialToggled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_MessierObjectsToggled" data-uid="Stargazer.ControlContainer.MessierObjectsToggled">
+  MessierObjectsToggled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Notifies the subscribers when the user has toggled the visibility of Messier objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;bool&gt; MessierObjectsToggled</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_RequestScreenshot" data-uid="Stargazer.ControlContainer.RequestScreenshot">
+  RequestScreenshot
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;Task&gt; RequestScreenshot</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_UserPositionUpdated" data-uid="Stargazer.ControlContainer.UserPositionUpdated">
+  UserPositionUpdated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Notifies the subscriber (one only) of a request to update to the observers position/time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;double, double, DateTime&gt; UserPositionUpdated</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer__mainControl" data-uid="Stargazer.ControlContainer._mainControl">
+  _mainControl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Startup _mainControl</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.Startup.html">Startup</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_calendarButton" data-uid="Stargazer.ControlContainer.calendarButton">
+  calendarButton
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private Button calendarButton</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Button</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_latDegField" data-uid="Stargazer.ControlContainer.latDegField">
+  latDegField
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private LineEdit latDegField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LineEdit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_latMinField" data-uid="Stargazer.ControlContainer.latMinField">
+  latMinField
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private LineEdit latMinField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LineEdit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_lonDegField" data-uid="Stargazer.ControlContainer.lonDegField">
+  lonDegField
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private LineEdit lonDegField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LineEdit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_lonMinField" data-uid="Stargazer.ControlContainer.lonMinField">
+  lonMinField
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private LineEdit lonMinField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LineEdit</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_ControlContainer_timeField" data-uid="Stargazer.ControlContainer.timeField">
+  timeField
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private LineEdit timeField</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">LineEdit</span></dt>
     <dd></dd>
   </dl>
 
@@ -1686,57 +2028,23 @@ public class GridLabel : Control, IDisposable</code></pre>
 </h2>
 
 
-  <a id="Stargazer_GridLabel_HandleCameraRotationChanged_" data-uid="Stargazer.GridLabel.HandleCameraRotationChanged*"></a>
+  <a id="Stargazer_ControlContainer_SetMainController_" data-uid="Stargazer.ControlContainer.SetMainController*"></a>
 
-  <h3 id="Stargazer_GridLabel_HandleCameraRotationChanged_Godot_Camera3D_" data-uid="Stargazer.GridLabel.HandleCameraRotationChanged(Godot.Camera3D)">
-  HandleCameraRotationChanged(Camera3D)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L77"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Notified by <a class="xref" href="Stargazer.ICameraStateNotifier.html#Stargazer_ICameraStateNotifier_OnRotation">OnRotation</a> of camera rotations.
-All inner logic created by William Arnett (SPR 2025)
-Refactored by Josh Johner to use observer instead of querying camera in _Process()</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void HandleCameraRotationChanged(Camera3D camera)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>camera</code> <span class="xref">Camera3D</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Stargazer_GridLabel_HandleZoomStateChanged_" data-uid="Stargazer.GridLabel.HandleZoomStateChanged*"></a>
-
-  <h3 id="Stargazer_GridLabel_HandleZoomStateChanged_Stargazer_ZoomState_" data-uid="Stargazer.GridLabel.HandleZoomStateChanged(Stargazer.ZoomState)">
-  HandleZoomStateChanged(ZoomState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_SetMainController_Stargazer_Startup_" data-uid="Stargazer.ControlContainer.SetMainController(Stargazer.Startup)">
+  SetMainController(Startup)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void HandleZoomStateChanged(ZoomState zoomState)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SetMainController(Startup controller)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>zoomState</code> <a class="xref" href="Stargazer.ZoomState.html">ZoomState</a></dt>
+    <dt><code>controller</code> <a class="xref" href="Stargazer.Startup.html">Startup</a></dt>
     <dd></dd>
   </dl>
 
@@ -1751,77 +2059,246 @@ Refactored by Josh Johner to use observer instead of querying camera in _Process
 
 
 
-  <a id="Stargazer_GridLabel_ToggleGridlines_" data-uid="Stargazer.GridLabel.ToggleGridlines*"></a>
+  <a id="Stargazer_ControlContainer_ToggleAzimuth_" data-uid="Stargazer.ControlContainer.ToggleAzimuth*"></a>
 
-  <h3 id="Stargazer_GridLabel_ToggleGridlines_System_Boolean_" data-uid="Stargazer.GridLabel.ToggleGridlines(System.Boolean)">
-  ToggleGridlines(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L226"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Receives the <a class="xref" href="Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled">AzimuthToggled</a> notification to show or hide the labels.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ToggleGridlines(bool showLines)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>showLines</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Stargazer_GridLabel__Ready_" data-uid="Stargazer.GridLabel._Ready*"></a>
-
-  <h3 id="Stargazer_GridLabel__Ready" data-uid="Stargazer.GridLabel._Ready">
-  _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Instantiates all the grid labels that may be needed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void _Ready()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Stargazer_GridLabel_updateLabels_" data-uid="Stargazer.GridLabel.updateLabels*"></a>
-
-  <h3 id="Stargazer_GridLabel_updateLabels" data-uid="Stargazer.GridLabel.updateLabels">
-  updateLabels()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/GridLabel.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_" data-uid="Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)">
+  ToggleAzimuth(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private void updateLabels()</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToggleAzimuth(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer_ToggleConstellationLabels_" data-uid="Stargazer.ControlContainer.ToggleConstellationLabels*"></a>
+
+  <h3 id="Stargazer_ControlContainer_ToggleConstellationLabels_System_Boolean_" data-uid="Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)">
+  ToggleConstellationLabels(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives the <span class="xref">Godot.Signal</span> from the LabelButton's <span class="xref">Godot.CheckBox</span> and broadcasts on the <a class="xref" href="Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationLabelsToggled">ConstellationLabelsToggled</a> notification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleConstellationLabels(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the checkbox is checked</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer_ToggleConstellations_" data-uid="Stargazer.ControlContainer.ToggleConstellations*"></a>
+
+  <h3 id="Stargazer_ControlContainer_ToggleConstellations_System_Boolean_" data-uid="Stargazer.ControlContainer.ToggleConstellations(System.Boolean)">
+  ToggleConstellations(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives the <span class="xref">Godot.Signal</span> from the ConstellationButton's <span class="xref">Godot.CheckBox</span> and broadcasts on the <a class="xref" href="Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled">ConstellationsToggled</a> notification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleConstellations(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the toggle button is checked</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer_ToggleEquatorial_" data-uid="Stargazer.ControlContainer.ToggleEquatorial*"></a>
+
+  <h3 id="Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_" data-uid="Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)">
+  ToggleEquatorial(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives the <span class="xref">Godot.Signal</span> from the</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleEquatorial(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the toggle button is checked.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer_ToggleMessierObjects_" data-uid="Stargazer.ControlContainer.ToggleMessierObjects*"></a>
+
+  <h3 id="Stargazer_ControlContainer_ToggleMessierObjects_System_Boolean_" data-uid="Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)">
+  ToggleMessierObjects(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives the <span class="xref">Godot.Signal</span> from the &quot;MessierButton's <span class="xref">Godot.CheckBox</span> and broadcasts on the <a class="xref" href="Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsToggled">MessierObjectsToggled</a> notification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ToggleMessierObjects(bool value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the checkbox is checked</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer_UpdateUserPosition_" data-uid="Stargazer.ControlContainer.UpdateUserPosition*"></a>
+
+  <h3 id="Stargazer_ControlContainer_UpdateUserPosition" data-uid="Stargazer.ControlContainer.UpdateUserPosition">
+  UpdateUserPosition()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Receives the <code>Enter</code> button's <span class="xref">Godot.Signal</span>, gathers user input and broadcasts <a class="xref" href="Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated">UserPositionUpdated</a>
+Author: Logan Parker
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateUserPosition()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer__Process_" data-uid="Stargazer.ControlContainer._Process*"></a>
+
+  <h3 id="Stargazer_ControlContainer__Process_System_Double_" data-uid="Stargazer.ControlContainer._Process(System.Double)">
+  _Process(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks to see if the user has requested a screenshot</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void _Process(double delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Unused</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_ControlContainer__on_button_pressed_" data-uid="Stargazer.ControlContainer._on_button_pressed*"></a>
+
+  <h3 id="Stargazer_ControlContainer__on_button_pressed" data-uid="Stargazer.ControlContainer._on_button_pressed">
+  _on_button_pressed()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/ControlContainer.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the user to use a button to initiate a screenshot.
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void _on_button_pressed()</code></pre>
   </div>
 
 

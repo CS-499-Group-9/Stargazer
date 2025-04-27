@@ -24,12 +24,17 @@ items:
   type: Class
   source:
     id: Star2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Star2D_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Star2D_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+  summary: >-
+    A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+
+    Author: William Arnett
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -424,11 +429,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -451,11 +456,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: star3d
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -478,11 +483,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -507,11 +512,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -536,11 +541,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarName
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -565,11 +570,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: colorRect
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 23
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -606,11 +611,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: getLocation
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -634,11 +639,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -670,11 +675,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: scalestar
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 62
+    startLine: 64
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -699,11 +704,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Star2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: From3dStar
     path: ../Stargazer-Godot/Code/Star2D.cs
-    startLine: 67
+    startLine: 69
   assemblies:
   - New Game Project
   namespace: Stargazer

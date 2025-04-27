@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MainCamera | Stargazer Data API ">
       
-      <meta name="description" content="Contains the main camera used to create the user view.">
+      <meta name="description" content="Contains the main camera used to create the user view. Author: Logan Parker Created: SPR 2025 Refactored by Josh Johner (SPR 2025) to use  to implement observer pattern.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class MainCamera
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Contains the main camera used to create the user view.</p>
+  <div class="markdown summary"><p>Contains the main camera used to create the user view.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use <a class="xref" href="Stargazer.ICameraStateNotifier.html">ICameraStateNotifier</a> to implement observer pattern.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -1164,7 +1167,7 @@ public class MainCamera : Camera3D, IDisposable, ICameraStateNotifier</code></pr
 
   <h3 id="Stargazer_MainCamera_MouseSensitivity" data-uid="Stargazer.MainCamera.MouseSensitivity">
   MouseSensitivity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The base sensitivity of the mouse used when panning the view.</p>
@@ -1196,7 +1199,7 @@ public float MouseSensitivity</code></pre>
 
   <h3 id="Stargazer_MainCamera_ScreenOffset" data-uid="Stargazer.MainCamera.ScreenOffset">
   ScreenOffset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1227,7 +1230,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_mousePosition" data-uid="Stargazer.MainCamera.mousePosition">
   mousePosition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1257,7 +1260,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_pitch" data-uid="Stargazer.MainCamera.pitch">
   pitch
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1287,7 +1290,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_rayEnd" data-uid="Stargazer.MainCamera.rayEnd">
   rayEnd
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1317,7 +1320,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_rayStart" data-uid="Stargazer.MainCamera.rayStart">
   rayStart
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1347,7 +1350,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_rightClickHeld" data-uid="Stargazer.MainCamera.rightClickHeld">
   rightClickHeld
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1377,7 +1380,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_screenshotPath" data-uid="Stargazer.MainCamera.screenshotPath">
   screenshotPath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1407,7 +1410,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_trackObjectRequested" data-uid="Stargazer.MainCamera.trackObjectRequested">
   trackObjectRequested
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1437,7 +1440,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_worldSpace" data-uid="Stargazer.MainCamera.worldSpace">
   worldSpace
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1467,7 +1470,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_yaw" data-uid="Stargazer.MainCamera.yaw">
   yaw
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1497,7 +1500,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_zoomState" data-uid="Stargazer.MainCamera.zoomState">
   zoomState
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1532,7 +1535,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_HoverBody" data-uid="Stargazer.MainCamera.HoverBody">
   HoverBody
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1563,7 +1566,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_OnFustrumChanged" data-uid="Stargazer.MainCamera.OnFustrumChanged">
   OnFustrumChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1594,7 +1597,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_OnHoverableChange" data-uid="Stargazer.MainCamera.OnHoverableChange">
   OnHoverableChange
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Notifies subscribers when the mouse has entered or exited a hovered body.</p>
@@ -1626,7 +1629,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_OnRotation" data-uid="Stargazer.MainCamera.OnRotation">
   OnRotation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Notifies subscribers when the camera has rotated.</p>
@@ -1658,7 +1661,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_OnZoom" data-uid="Stargazer.MainCamera.OnZoom">
   OnZoom
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Notifies subscribers when the <span class="xref">Godot.Camera3D.Fov</span> has changed.</p>
@@ -1690,7 +1693,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_OnZoomStateChanged" data-uid="Stargazer.MainCamera.OnZoomStateChanged">
   OnZoomStateChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Notifies subscribers when the <a class="xref" href="Stargazer.ZoomState.html">ZoomState</a> has changed</p>
@@ -1722,7 +1725,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_TrackedBody" data-uid="Stargazer.MainCamera.TrackedBody">
   TrackedBody
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1757,7 +1760,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_ZoomIn" data-uid="Stargazer.MainCamera.ZoomIn">
   ZoomIn()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1783,7 +1786,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera_ZoomOut" data-uid="Stargazer.MainCamera.ZoomOut">
   ZoomOut()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1809,7 +1812,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera__Input_Godot_InputEvent_" data-uid="Stargazer.MainCamera._Input(Godot.InputEvent)">
   _Input(InputEvent)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Checks if the right mouse button is being held down to pan the view.</p>
@@ -1842,7 +1845,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera__Process_System_Double_" data-uid="Stargazer.MainCamera._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tracks a body (if armed) and implements ray tracing to hover over bodies.</p>
@@ -1874,7 +1877,7 @@ public Vector2 ScreenOffset</code></pre>
 
   <h3 id="Stargazer_MainCamera__Ready" data-uid="Stargazer.MainCamera._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/MainCamera.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/MainCamera.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <span class="xref">Godot.Node._Ready()</span> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>

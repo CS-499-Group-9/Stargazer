@@ -17,12 +17,19 @@ items:
   type: Class
   source:
     id: Planets
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Planets_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Planets_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A <xref href="Godot.Node3D" data-throw-if-not-resolved="false"></xref> container for the planets.
+  summary: >-
+    A <xref href="Godot.Node3D" data-throw-if-not-resolved="false"></xref> container for the planets.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by William Arnett (SPR 2025) to use custom shader.
   example: []
   syntax:
     content: >-
@@ -369,11 +376,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planets.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planetTextures
     path: ../Stargazer-Godot/Code/Planets.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -410,11 +417,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planets.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlanetScene
     path: ../Stargazer-Godot/Code/Planets.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -455,11 +462,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planets.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawPlanets
     path: ../Stargazer-Godot/Code/Planets.cs
-    startLine: 23
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer

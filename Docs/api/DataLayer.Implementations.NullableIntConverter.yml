@@ -16,15 +16,20 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/NullableIntConverter.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NullableIntConverter
     path: ../DataLayer/Implementations/NullableIntConverter.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: A custom type converter to handle blank space in the repository
+  summary: >-
+    A custom type converter to handle blank space in the repository
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'internal class NullableIntConverter : DefaultTypeConverter, ITypeConverter'
@@ -57,11 +62,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/NullableIntConverter.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConvertFromString
     path: ../DataLayer/Implementations/NullableIntConverter.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

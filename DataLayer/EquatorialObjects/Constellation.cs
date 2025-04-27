@@ -3,6 +3,8 @@ namespace DataLayer.EquatorialObjects
 {
     /// <summary>
     /// Represents a constellation in the sky
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>   
     public class Constellation
     {
