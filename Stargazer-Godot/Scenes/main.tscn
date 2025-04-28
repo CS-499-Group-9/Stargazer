@@ -55,5 +55,20 @@ position = Vector2i(550, 250)
 visible = false
 layout_mode = 2
 
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Credits"
+initial_position = 1
+size = Vector2i(600, 400)
+visible = true
+ok_button_text = "Close"
+dialog_text = "Stargazer was developed by:
+
+William Arnett - Team Lead, General Programmer
+Joshua Johner - Architecture Design and Progammer
+Jason Lake - Export and Timelapse Developer
+Logan Parker - UI Design and Godot Developer
+
+"
+
 [connection signal="close_requested" from="ScreenshotDialog" to="." method="_on_screenshot_dialog_close_requested"]
 [connection signal="confirmed" from="ScreenshotDialog" to="." method="_on_screenshot_dialog_confirmed"]

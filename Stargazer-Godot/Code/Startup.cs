@@ -74,6 +74,8 @@ namespace Stargazer
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
             controlContainer.RequestScreenshot = TakeScreenshot;
+            playControl.UserPositionUpdated = UpdateUserPosition;
+
 
             // Activate the Play Controller and notify the SkyView
             var multiplier = playControl.Activate();

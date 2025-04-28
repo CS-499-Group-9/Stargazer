@@ -60,24 +60,7 @@ public partial class ControlContainer : Control
 
     public async override void _Ready()
     {
-        TimeLapseSlider.MinValue = 0;
-        TimeLapseSlider.MaxValue = frameCount - 1;
-        TimeLapseSlider.Step = 1;
-        TimeLapseSlider.ValueChanged += OnTimeLapseFrameChanged;
 
-        // Hide the label
-        if (TimeLapseLabel != null)
-        {
-            TimeLapseLabel.Text = "Timelapse Slider"; // Default text
-            TimeLapseLabel.Visible = true;
-        }
-
-        TimeLapseSlider.GuiInput += OnSliderGuiInput;
-
-        // Set the initial timelapse slider time to clock time
-        SetBaseDateTime(DateTime.UtcNow);
-        _lastLatitude = 0;
-        _lastLongitude = 0;
     }
 
     /// <summary>

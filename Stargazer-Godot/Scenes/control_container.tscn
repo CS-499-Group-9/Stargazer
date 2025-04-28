@@ -13,7 +13,7 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[node name="Control" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector", "TimeLapseSlider", "TimeLapseLabel")]
+[node name="Control2" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector")]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
@@ -26,16 +26,14 @@ timeField = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/Time
 AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeHalfSelector")
 calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
 formatSelector = NodePath("MarginContainer/VBoxContainer/FormatSelector")
-TimeLapseSlider = NodePath("HSlider")
-TimeLapseLabel = NodePath("HSlider/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -204.0
-offset_bottom = 353.0
+offset_left = -240.0
+offset_bottom = 519.0
 grow_horizontal = 0
 mouse_filter = 2
 theme_override_constants/margin_top = 40
@@ -492,23 +490,6 @@ theme_override_colors/font_pressed_color = Color(0.948934, 0.896173, 0.920995, 0
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 expand_icon = true
 metadata/_edit_use_anchors_ = true
-
-[node name="HSlider" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = -801.0
-offset_top = 22.0
-offset_right = -399.0
-offset_bottom = 112.0
-
-[node name="Label" type="Label" parent="HSlider"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 3.0
-offset_right = 398.0
-offset_bottom = 30.0
-text = "Timelapse Slider"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/AzimuthButton/CheckBox" to="." method="ToggleAzimuth"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/EquatorialToggle/CheckBox" to="." method="ToggleEquatorial"]
