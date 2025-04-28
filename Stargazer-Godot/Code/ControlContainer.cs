@@ -183,7 +183,7 @@ public partial class ControlContainer : Control
 
     // All checks passed
     SetBaseDateTime(utcDateTime);
-    TimeLapseSlider.Value = 0;
+    //TimeLapseSlider.Value = 0;
     UserPositionUpdated(latitude, longitude, utcDateTime);
 
     _lastLatitude = latitude;

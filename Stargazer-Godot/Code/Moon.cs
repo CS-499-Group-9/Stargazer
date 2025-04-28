@@ -56,8 +56,8 @@ namespace Stargazer
                 coveragePercent = 200-coveragePercent;
             }
             return $"The Moon\n" +
-            $"Altitude {horizontalMoon.Altitude:0.00}°\n" +
-            $"Azimuth {horizontalMoon.Azimuth:0.00}°\n" +
+            $"Altitude: {horizontalMoon.Altitude:0.00}°\n" +
+            $"Azimuth: {horizontalMoon.Azimuth:0.00}°\n" +
             $"Distance: {horizontalMoon.Distance:0.00}\n" +
             $"Coverage: {coveragePercent:0.}% ("+WaxWaneText+")"
             ;

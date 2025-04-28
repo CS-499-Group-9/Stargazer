@@ -43,8 +43,8 @@ namespace Stargazer
 			}
 			return $"{horizontalMessierObject.MessierId}\n" +
 				CommonName +
-				$"Altitude: {horizontalMessierObject.Altitude:0.00}\n" +
-				$"Azimuth: {horizontalMessierObject.Azimuth:0.00}\n" +
+				$"Altitude: {horizontalMessierObject.Altitude:0.00}°\n" +
+				$"Azimuth: {horizontalMessierObject.Azimuth:0.00}°\n" +
 				$"Distance: "+distanceText+"\n" +
 				$"Size: {horizontalMessierObject.Size}\n" +
 				$"Viewing Season: {horizontalMessierObject.ViewingSeason}";

@@ -15,11 +15,18 @@ corner_radius_bottom_left = 100
 
 [node name="Control2" type="Control" node_paths=PackedStringArray("latDegField", "latMinField", "lonDegField", "lonMinField", "timeField", "AMorPMButton", "calendarButton", "formatSelector")]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -2.0
-offset_right = -2.0
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+grow_horizontal = 0
 mouse_filter = 2
 script = ExtResource("1_5vufv")
+latDegField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LatitudeDegrees")
+latMinField = NodePath("MarginContainer/VBoxContainer/LatitudeButton/LatitudeMinutes")
+lonDegField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LongitudeDegrees")
+lonMinField = NodePath("MarginContainer/VBoxContainer/LongitudeButton/LongitudeMinutes")
 timeField = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeLineEdit")
 AMorPMButton = NodePath("MarginContainer/VBoxContainer/Time/Time/HBoxContainer/TimeHalfSelector")
 calendarButton = NodePath("MarginContainer/VBoxContainer/DateButton/CalendarButton")
@@ -27,14 +34,17 @@ formatSelector = NodePath("MarginContainer/VBoxContainer/FormatSelector")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -240.0
-offset_bottom = 519.0
+offset_left = -320.0
+offset_bottom = 600.0
 grow_horizontal = 0
 mouse_filter = 2
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(200, 200)

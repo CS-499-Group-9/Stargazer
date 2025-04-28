@@ -16,8 +16,8 @@ void fragment() {
 	vec3 corrected_color = pow(texture_color.rgb, vec3(2));
 	float intensity = smoothstep(0.0, 0.1, alignment);
 	ALBEDO = mix(vec3(0.0),corrected_color.rgb,alignment);
-	ALPHA = mix(0.1,1.0,intensity);
-
+	//ALPHA = mix(0.6,1.0,intensity);
+	ALPHA = 1.0;
 
 
     //ALBEDO = corrected_color.rgb;

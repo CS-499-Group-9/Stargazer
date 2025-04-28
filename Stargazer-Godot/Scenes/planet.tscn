@@ -11,8 +11,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t5s6q"]
 render_priority = 0
 shader = ExtResource("2_gv85t")
-shader_parameter/target_direction = Vector3(0, 1, 0)
-shader_parameter/threshold = 0.2
 shader_parameter/albedo_texture = SubResource("PlaceholderTexture2D_sqvk1")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tl7gt"]

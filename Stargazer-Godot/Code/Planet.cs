@@ -69,8 +69,8 @@ namespace Stargazer
                 planetName = horizontalPlanet.Name;
             }
             return $"{planetName}\n" +
-            $"Altitude: {horizontalPlanet.Altitude}°\n" +
-            $"Azimuth: {horizontalPlanet.Azimuth}°\n" +
+            $"Altitude: {horizontalPlanet.Altitude:0.00}°\n" +
+            $"Azimuth: {horizontalPlanet.Azimuth:0.00}°\n" +
             $"Distance: {horizontalPlanet.Distance} AU";
         }
         
