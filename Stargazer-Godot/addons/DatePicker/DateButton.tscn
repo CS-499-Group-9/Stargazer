@@ -8,5 +8,4 @@ offset_bottom = 45.0
 theme_type_variation = &"DateButton"
 action_mode = 0
 text = "3/13/2025"
-alignment = 2
 script = ExtResource("1_sskq5")

@@ -17,11 +17,11 @@ items:
   type: Interface
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IEquatorialCalculator
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 12
   assemblies:
   - DataLayer
@@ -50,11 +50,11 @@ items:
   type: Property
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CurrentTime
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 17
   assemblies:
   - DataLayer
@@ -83,11 +83,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 23
   assemblies:
   - DataLayer
@@ -117,11 +117,11 @@ items:
   type: Method
   source:
     remote:
-      path: DataLayer/Interfaces/IEquitorialConverter.cs
+      path: DataLayer/Interfaces/IEquatorialConverter.cs
       branch: update-documentation
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncrementTimeBy
-    path: ../DataLayer/Interfaces/IEquitorialConverter.cs
+    path: ../DataLayer/Interfaces/IEquatorialConverter.cs
     startLine: 29
   assemblies:
   - DataLayer

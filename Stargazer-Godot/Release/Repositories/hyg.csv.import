@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ndfqdrwmsxiv"
+
+[deps]
+
+files=["res://Release/Repositories/hyg.Hip.translation", "res://Release/Repositories/hyg.HD.translation", "res://Release/Repositories/hyg.HR.translation", "res://Release/Repositories/hyg.Gliese.translation", "res://Release/Repositories/hyg.BayerFlamsteed.translation", "res://Release/Repositories/hyg.ProperName.translation", "res://Release/Repositories/hyg.RA.translation", "res://Release/Repositories/hyg.Dec.translation", "res://Release/Repositories/hyg.Distance.translation", "res://Release/Repositories/hyg.Mag.translation", "res://Release/Repositories/hyg.AbsMag.translation", "res://Release/Repositories/hyg.Spectrum.translation", "res://Release/Repositories/hyg.ColorIndex.translation"]
+
+source_file="res://Release/Repositories/hyg.csv"
+dest_files=["res://Release/Repositories/hyg.Hip.translation", "res://Release/Repositories/hyg.HD.translation", "res://Release/Repositories/hyg.HR.translation", "res://Release/Repositories/hyg.Gliese.translation", "res://Release/Repositories/hyg.BayerFlamsteed.translation", "res://Release/Repositories/hyg.ProperName.translation", "res://Release/Repositories/hyg.RA.translation", "res://Release/Repositories/hyg.Dec.translation", "res://Release/Repositories/hyg.Distance.translation", "res://Release/Repositories/hyg.Mag.translation", "res://Release/Repositories/hyg.AbsMag.translation", "res://Release/Repositories/hyg.Spectrum.translation", "res://Release/Repositories/hyg.ColorIndex.translation"]
+
+[params]
+
+compress=true
+delimiter=0
