@@ -20,3 +20,7 @@ mono_crash.*.json
 /DataLayer/obj
 launch.json
 tasks.json
+
+# macOS system files
+.DS_Store
+**/.DS_Store

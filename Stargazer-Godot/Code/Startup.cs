@@ -4,7 +4,15 @@ using Godot;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Formats.Bmp;
+using SixLabors.ImageSharp.Formats.Gif;
+using SixLabors.ImageSharp.Formats.Tiff;
+using ImageSharpImage = SixLabors.ImageSharp.Image;
 
 namespace Stargazer
 {
@@ -52,8 +60,14 @@ namespace Stargazer
             var repositoryService =  InjectionService<Star>.GetRepositoryServiceAsync(path);
             dataPackage = await repositoryService.InitializeDataPackage();
             calculator = dataPackage.Calculator;
+
+            calculator.SetTime(DateTime.UtcNow);
+
             skyView = skyViewContainer.SkyView;
             await skyView.InitializeCelestial(dataPackage);
+
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.Visible = false;
 
             // Set up subscribers to notifications.
             controlContainer.AzimuthToggled = skyView.ToggleGridlines;
@@ -63,6 +77,8 @@ namespace Stargazer
             controlContainer.ConstellationLabelsToggled = skyView.ToggleConstellationLabels;
             controlContainer.UserPositionUpdated = UpdateUserPosition;
             controlContainer.RequestScreenshot = TakeScreenshot;
+            playControl.UserPositionUpdated = UpdateUserPosition;
+
 
             // Activate the Play Controller and notify the SkyView
             var multiplier = playControl.Activate();
@@ -97,11 +113,35 @@ namespace Stargazer
 
         }
 
+        private void SaveAsGif(Godot.Image godotImage, int width, int height, string gifPath) // This function takes an image and creates a single frame gif.
+        {
+            godotImage.Convert(Godot.Image.Format.Rgba8); // Converts the Godot image to an RGBA8 format.
+            byte[] rawData = godotImage.GetData(); // Get the raw data of the image.
+
+            using (var image = ImageSharpImage.LoadPixelData<SixLabors.ImageSharp.PixelFormats.Rgba32>(rawData, width, height))
+            {
+                image.Metadata.GetGifMetadata().RepeatCount = 0; // Set the loop behavior (0 = loop forever).
+
+                var encoder = new SixLabors.ImageSharp.Formats.Gif.GifEncoder(); // Encode the image as a gif.
+                image.Save(gifPath, encoder); // Save the image to the path using the gif encoder.
+            }
+        }
+
+        private void SaveWithImageSharp(Godot.Image godotImage, int width, int height, string path, IImageEncoder encoder) // This function helps encode the images properly using ImageSharp.
+        {
+            godotImage.Convert(Godot.Image.Format.Rgba8); // Convert the Godot Image to format RGBA8.
+            byte[] imageBytes = godotImage.GetData(); // Get the data of the image.
+
+            using var image = SixLabors.ImageSharp.Image.LoadPixelData<Rgba32>(imageBytes, width, height); // Load the data of the image.
+            image.Save(path, encoder); // Save the image using the correct encoder.
+        }
+
         public async Task TakeScreenshot()
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
             await skyView2d.UpdateUserPosition(dataPackage, calculator.getTime(), calculator.getLongLat());
-    
+            string selectedFormat = controlContainer.GetSelectedScreenshotFormat().ToLower();
+
             // Get longitude, latitude, and date from the calculator
             double latitude = calculator.Latitude;
             double longitude = calculator.Longitude;
@@ -117,33 +157,151 @@ namespace Stargazer
             string screenshotDir = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer Screenshots");
             System.IO.Directory.CreateDirectory(screenshotDir);
 
+            string format = controlContainer.GetSelectedScreenshotFormat().ToLower();
+            string extension = format == "jpeg" ? "jpg" : format;
+
             // Create the filename using latitude, longitude, and the date
-            screenshotPath = System.IO.Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.jpg");
+            screenshotPath = Path.Combine(screenshotDir, $"Screenshot_{latStr}_{lonStr}_{formattedDate}.{extension}");
+
 
             // Wait for 1 second before taking the screenshot
             Timer screenshotTimer = new Timer();
             screenshotTimer.WaitTime = 1;
             screenshotTimer.OneShot = true;
-            screenshotTimer.Timeout += () => { ExportScreenshot(View2D); };
+            screenshotTimer.Timeout += () => { ExportScreenshot(View2D, selectedFormat); };
             screenshotTimer.Autostart = true;
             AddChild(screenshotTimer);
         }
 
+        public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)
+        {   
+            DateTime originalTime = calculator.getTime();  // Store the original time
+            const int frameCount = 60;
+            const int frameIntervalMinutes = 1;
+            int width = 2550;
+            int height = 3300;
 
-        private void ExportScreenshot(SubViewport view2D)
+            string outputDir = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures), "Stargazer GIF Timelapses");
+            Directory.CreateDirectory(outputDir);
+            List<Image<Rgba32>> gifFrames = new();
+
+            var progressBar = GetNode<ProgressBar>("ProgressBar");
+            progressBar.MaxValue = frameCount;
+            progressBar.Visible = true;
+
+            ModalBlocker.Visible = true;
+
+            // Initial update of time and sky view before loop
+            calculator.SetLocation(latitude, longitude);
+            calculator.SetTime(startTime);
+            var skyView2d = View2D.GetNode<SkyView2D>("View2d");
+            await skyView2d.UpdateUserPosition(dataPackage, startTime, calculator.getLongLat());
+
+            // Wait a frame to ensure rendering is ready
+            await ToSignal(GetTree(), "process_frame");
+
+            for (int i = 0; i < frameCount; i++)
+            {
+                // Pause until window is restored
+                while (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Minimized)
+                {
+                    GD.Print($"Frame {i}: Waiting for window to be restored...");
+                    await ToSignal(GetTree().CreateTimer(0.0f), "timeout");
+                }
+
+                DateTime currentTime = startTime.AddMinutes(i);
+                calculator.SetTime(currentTime);
+                await skyView2d.UpdateUserPosition(dataPackage, currentTime, calculator.getLongLat());
+
+                await ToSignal(GetTree(), "process_frame");
+
+                Godot.Image godotImage = View2D.GetTexture().GetImage();
+                godotImage.Resize(width, height);
+                godotImage.Convert(Godot.Image.Format.Rgba8);
+                byte[] raw = godotImage.GetData();
+
+                var img = ImageSharpImage.LoadPixelData<Rgba32>(raw, width, height);
+                img.Frames.RootFrame.Metadata.GetGifMetadata().FrameDelay = 5;
+                gifFrames.Add(img.Clone());
+
+                progressBar.Value = i + 1;
+                await ToSignal(GetTree(), "process_frame");
+            }
+
+
+            string directionSuffix = reverse ? "_reversed" : "";
+            string gifPath = Path.Combine(outputDir, $"Timelapse_{startTime:yyyyMMdd_HHmmss}{directionSuffix}.gif");
+
+            if (reverse)
+            {
+                gifFrames.Reverse();
+            }
+
+            using (var gif = new Image<Rgba32>(gifFrames[0].Width, gifFrames[0].Height))
+            {
+                for (int i = 0; i < gifFrames.Count; i++)
+                {
+                    gif.Frames.AddFrame(gifFrames[i].Frames.RootFrame);
+                }
+
+                gif.Frames.RemoveFrame(0);
+                gif.Metadata.GetGifMetadata().RepeatCount = 0;
+                gif.Save(gifPath, new GifEncoder());
+            }
+
+            GD.Print($"GIF saved to: {gifPath}");
+
+            calculator.SetTime(originalTime);
+            ModalBlocker.Visible = false;
+            progressBar.Value = 0;
+            progressBar.Visible = false;
+            ShowGifExportedNotification(gifPath);
+        }
+
+        private void ShowGifExportedNotification(string gifPath)
+        {
+            ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
+
+            // Show the blocker
+            ModalBlocker.Visible = true;
+
+            // Show the dialog
+            ScreenshotDialog.PopupCentered();
+        }
+
+        private void ExportScreenshot(SubViewport view2D, string format)
         {
             // Define the required resolution (300 DPI for 8.5x11 inches)
             int width = 2550;  // 8.5 inches * 300 DPI
             int height = 3300; // 11 inches * 300 DPI
 
             // Get the image from the viewport
-            Image screenshotImage = view2D.GetTexture().GetImage();
+            Godot.Image screenshotImage = view2D.GetTexture().GetImage();
     
             // Resize the image to fit the 8.5x11 dimensions at 300 DPI
             screenshotImage.Resize(width, height);
 
-            screenshotImage.SaveJpg(screenshotPath, 90);
-
+            switch (format)
+            {
+                case "png":
+                    screenshotImage.SavePng(screenshotPath);
+                    break;
+                case "jpeg":
+                    screenshotImage.SaveJpg(screenshotPath, 90);
+                    break;
+                case "bmp":
+                    SaveWithImageSharp(screenshotImage, width, height, screenshotPath, new BmpEncoder());
+                    break;
+                case "webp":
+                    screenshotImage.SaveWebp(screenshotPath);
+                    break;
+                case "gif":
+                    SaveAsGif(screenshotImage, width, height, screenshotPath);
+                    break;
+                case "tiff":
+                    SaveWithImageSharp(screenshotImage, width, height, screenshotPath, new TiffEncoder());
+                    break;
+            }
             GD.Print($"Screenshot saved to {screenshotPath}");
             ShowScreenshotSavedNotification();
         }

@@ -2,7 +2,10 @@ using DataLayer;
 using Godot;
 using Stargazer;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Stargazer
 {
@@ -21,6 +24,12 @@ namespace Stargazer
         [Export] private OptionButton AMorPMButton;
         [Export] private Button calendarButton;
         private Startup _mainControl;
+        private DateTime baseDateTime; // Start time of timelapse.
+        private TimeSpan totalSpan = TimeSpan.FromHours(24); // Have it timelapse a day.
+        private int frameCount = 100; // Number of frames to use.
+        private double _lastLatitude; // Last latitude position for the timelapse.
+        private double _lastLongitude; // Last longitude position for the timelapse.
+        private bool _exportGifReversed = false; // Reverse gif if true.
 
         /// <summary>
         /// Notifies the subscribers when the user has toggled the azimuth grid
@@ -97,86 +106,143 @@ namespace Stargazer
             _mainControl = controller;
         }
 
-        /// <summary>
-        /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
-        /// Author: Logan Parker
-        /// Created: SPR 2025
-        /// </summary>
-        public async void UpdateUserPosition()
+    private void OnSliderGuiInput(InputEvent @event)
+    {
+        if (TimeLapseLabel == null)
+            return;
+
+        if (@event is InputEventMouseButton mouseEvent)
         {
-            string latDegText = latDegField.Text;
-            string latMinText = latMinField.Text;
-            string lonDegText = lonDegField.Text;
-            string lonMinText = lonMinField.Text;
-
-            // Default to 0s
-            double latitude = 0;
-            double longitude = 0;
-
-            if (latDegText != "" || lonDegText != "")
+            if (!mouseEvent.Pressed)
             {
-                latitude = int.Parse(latDegText);
-                longitude = int.Parse(lonDegText);
-            }
-            else if (latMinText != "" || lonMinText != "")
-            {
-                latitude += double.Parse(latMinText) * 0.016667;
-                longitude += double.Parse(lonMinText) * 0.016667;
-            }
-            else
-            {
-                GD.PrintErr("Invalid latitude/longitude input.");
-                return;
-            }
-
-            string timeText = timeField.Text.Trim();
-            string amPmText = AMorPMButton.GetItemText(AMorPMButton.Selected);
-
-            // Splitting time (HH:mm or H:mm)
-            string[] timesplit = timeText.Split(':');
-            if (timesplit.Length < 2)
-            {
-                GD.PrintErr("Invalid time format: " + timeText);
-                return;
-            }
-
-            int hour = Convert.ToInt32(timesplit[0]);
-            int minute = Convert.ToInt32(timesplit[1]);
-
-            // Convert to 24 hour
-            if (amPmText == "PM" && hour < 12)
-            {
-                hour += 12;
-            }
-            else if (amPmText == "AM" && hour == 12)
-            {
-                hour = 0;
-            }
-
-            string timeString = calendarButton.Text.Trim();
-            GD.Print(timeString);
-            String[] dateVals = timeString.Split('/');
-            var parsedDate = DateTime.Parse($"{timeString} {hour:00}:{minute:00}:00");
-            GD.Print($"Parsed Time: {parsedDate:yyyy-MM-dd HH:mm:ss}");
-            GD.Print($"Latitude: {latitude}, Longitude: {longitude}");
-
-            UserPositionUpdated(latitude, longitude, parsedDate.ToUniversalTime());
-        }
-        /// <summary>
-        /// Allows the user to use a button to initiate a screenshot.
-        /// Author: Alex Lake
-        /// Created: SPR 2025
-        /// </summary>
-        private async void _on_button_pressed()
-        {
-            if (_mainControl != null)
-            {
-                await _mainControl.TakeScreenshot();
-            }
-            else
-            {
-                GD.PrintErr("Main controller reference not set!");
+                // Reset to the default label when you're done using the slider
+                TimeLapseLabel.Text = "Timelapse Slider";
             }
         }
+    }
+
+    /// <summary>
+    /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
+    /// </summary>
+	public async void UpdateUserPosition()
+{
+    string latDegText = latDegField.Text.Trim();
+    string latMinText = latMinField.Text.Trim();
+    string lonDegText = lonDegField.Text.Trim();
+    string lonMinText = lonMinField.Text.Trim();
+    string timeText = timeField.Text.Trim();
+    string dateText = calendarButton.Text.Trim();
+    string amPmText = AMorPMButton.GetItemText(AMorPMButton.Selected);
+
+    // Check if any field is empty
+    if (string.IsNullOrEmpty(latDegText) || string.IsNullOrEmpty(latMinText) ||
+        string.IsNullOrEmpty(lonDegText) || string.IsNullOrEmpty(lonMinText) ||
+        string.IsNullOrEmpty(timeText) || string.IsNullOrEmpty(dateText))
+    {
+        GD.PrintErr("Please fill out all fields before submitting.");
+        return;
+    }
+
+    // Try parsing values
+    if (!double.TryParse(latDegText, out double latDeg) ||
+        !double.TryParse(latMinText, out double latMin) ||
+        !double.TryParse(lonDegText, out double lonDeg) ||
+        !double.TryParse(lonMinText, out double lonMin))
+    {
+        GD.PrintErr("Invalid number entered in latitude/longitude.");
+        return;
+    }
+
+    double latitude = latDeg + latMin * 0.016667;
+    double longitude = lonDeg + lonMin * 0.016667;
+
+    // Parse time
+    string[] timeSplit = timeText.Split(':');
+    if (timeSplit.Length != 2 ||
+        !int.TryParse(timeSplit[0], out int hour) ||
+        !int.TryParse(timeSplit[1], out int minute))
+    {
+        GD.PrintErr("Invalid time format.");
+        return;
+    }
+
+    if (amPmText == "PM" && hour < 12) hour += 12;
+    if (amPmText == "AM" && hour == 12) hour = 0;
+
+    if (!DateTime.TryParse($"{dateText} {hour:00}:{minute:00}:00", out DateTime localDateTime))
+    {
+        GD.PrintErr("Invalid date format.");
+        return;
+    }
+
+    // Treat the user input as local time, then convert to UTC
+    DateTime utcDateTime = DateTime.SpecifyKind(localDateTime, DateTimeKind.Local).ToUniversalTime();
+
+    // All checks passed
+    SetBaseDateTime(utcDateTime);
+    TimeLapseSlider.Value = 0;
+    UserPositionUpdated(latitude, longitude, utcDateTime);
+
+    _lastLatitude = latitude;
+    _lastLongitude = longitude;
+    }
+
+    public void _on_reverse_gif_toggled(bool toggled)
+    {
+        _exportGifReversed = toggled;
+    }
+
+
+    public void SetBaseDateTime(DateTime dateTime)
+    {
+        baseDateTime = dateTime; // Set the base date and time.
+    }
+
+    private void OnTimeLapseFrameChanged(double frame)
+    {
+        double progress = frame / (frameCount - 1);
+        DateTime targetTime = baseDateTime + TimeSpan.FromTicks((long)(totalSpan.Ticks * progress));
+        GD.Print($"Time-lapse frame: {frame}, datetime: {targetTime}");
+
+        // Label Update
+        if (TimeLapseLabel != null)
+        {
+            var localTime = targetTime.ToLocalTime();
+            TimeLapseLabel.Text = $"Selected Time: {localTime:hh:mm:ss tt}";
+        }
+
+        // Use the existing broadcast pattern
+        UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
+    }
+
+
+    private async void _on_button_pressed()
+    {
+        if (_mainControl != null)
+        {
+            await _mainControl.TakeScreenshot();
+        }
+        else
+        {
+            GD.PrintErr("Main controller reference not set!");
+        }
+    }
+    
+    private async void _on_timelapse_gif_export_button_pressed()
+    {
+        if (_mainControl != null)
+        {
+            await _mainControl.ExportTimelapseGif(_lastLatitude, _lastLongitude, baseDateTime, _exportGifReversed);
+        }
+        else
+        {
+            GD.PrintErr("Main control is not assigned.");
+        }
+    }
+
+
+    public string GetSelectedScreenshotFormat()
+    {
+        return formatSelector.GetItemText(formatSelector.Selected);
     }
 }

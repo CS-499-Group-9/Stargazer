@@ -4,6 +4,7 @@ using System;
 
 namespace Stargazer
 {
+    
     /// <summary>
     /// Controls the play speed of the 3D simulation.
     /// Author: Josh Johner
@@ -13,6 +14,19 @@ namespace Stargazer
     {
         private Label multiplierLabel;
         private PlaySpeed multiplier;
+
+        private DateTime baseDateTime; // Start time of timelapse.
+
+        private int frameCount = 100; // Number of frames to use.
+        private double _lastLatitude; // Last latitude position for the timelapse.
+        private double _lastLongitude; // Last longitude position for the timelapse.
+
+	    public Action<double, double, DateTime> UserPositionUpdated;
+
+        private TimeSpan totalSpan = TimeSpan.FromHours(24); // Have it timelapse a day.
+
+        [Export] private HSlider TimeLapseSlider;
+        [Export] private Label TimeLapseLabel;
 
         /// <summary>
         /// Receives the <see cref="Signal"/> from the <c>Sec</c> buttons
@@ -78,6 +92,26 @@ namespace Stargazer
             multiplier = new PlaySpeed();
             multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
             UpdateMultiplierLabel();
+
+            TimeLapseSlider.MinValue = 0;
+            TimeLapseSlider.MaxValue = frameCount - 1;
+            TimeLapseSlider.Step = 1;
+            TimeLapseSlider.ValueChanged += OnTimeLapseFrameChanged;
+
+            // Hide the label
+            if (TimeLapseLabel != null)
+            {
+                TimeLapseLabel.Text = "Timelapse Slider"; // Default text
+                TimeLapseLabel.Visible = true;
+            }
+
+            TimeLapseSlider.GuiInput += OnSliderGuiInput;
+
+            // Set the initial timelapse slider time to clock time
+            SetBaseDateTime(DateTime.UtcNow);
+            _lastLatitude = 0;
+            _lastLongitude = 0;
+
         }
 
         /// <summary>
@@ -95,6 +129,41 @@ namespace Stargazer
         {
             multiplierLabel.Text = $"{multiplier.ToString()} per second";
         }
+        public void SetBaseDateTime(DateTime dateTime)
+        {
+            baseDateTime = dateTime; // Set the base date and time.
+        }
+        private void OnSliderGuiInput(InputEvent @event)
+        {
+            if (TimeLapseLabel == null)
+                return;
+
+            if (@event is InputEventMouseButton mouseEvent)
+            {
+                if (!mouseEvent.Pressed)
+                {
+                    // Reset to the default label when you're done using the slider
+                    TimeLapseLabel.Text = "Timelapse Slider";
+                }
+            }
+        }
+        private void OnTimeLapseFrameChanged(double frame)
+        {
+            double progress = frame / (frameCount - 1);
+            DateTime targetTime = baseDateTime + TimeSpan.FromTicks((long)(totalSpan.Ticks * progress));
+            GD.Print($"Time-lapse frame: {frame}, datetime: {targetTime}");
+
+            // Label Update
+            if (TimeLapseLabel != null)
+            {
+                var localTime = targetTime.ToLocalTime();
+                TimeLapseLabel.Text = $"Selected Time: {localTime:hh:mm:ss tt}";
+            }
+
+            // Use the existing broadcast pattern
+            UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
+        }
+
 
     }
 }

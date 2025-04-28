@@ -25,6 +25,7 @@ public partial class YearView : GridContainer, ICalendarView
 				continue;
 			int month = i + 1;
 			Button button = GetChild<Button>(i);
+			button.AddThemeColorOverride("font_color", new("a8a8a8"));
 			button.Text = name;
 			button.Pressed += () => {
 				Calendar.Selected = Calendar.DateTime = new(Calendar.DateTime.Year, month, Calendar.DateTime.Day);
