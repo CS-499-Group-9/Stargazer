@@ -20,7 +20,7 @@
 [ext_resource type="Shader" path="res://Scenes/CompassOutline.gdshader" id="13_xn4y0"]
 [ext_resource type="PackedScene" uid="uid://755k8nw6wxfm" path="res://Scenes/messier_object.tscn" id="17_yaq6n"]
 [ext_resource type="Script" path="res://Code/HoverLabel.cs" id="19_4oofu"]
-[ext_resource type="LabelSettings" uid="uid://33ynhi38kkrt" path="res://Scenes/font.tres" id="20_g6rsx"]
+[ext_resource type="LabelSettings" uid="uid://ct21yncdps6xy" path="res://Scenes/font.tres" id="20_g6rsx"]
 [ext_resource type="FontFile" uid="uid://cp8gpj6c0lugh" path="res://Textures/Resources/JetBrainsMono-Medium.ttf" id="20_npw6d"]
 
 [sub_resource type="Gradient" id="Gradient_wy82o"]

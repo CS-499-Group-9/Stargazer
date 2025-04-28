@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr71brnwp5pdb"]
 
 [ext_resource type="Script" path="res://Code/PlayControl.cs" id="1_ehmol"]
-[ext_resource type="StyleBox" uid="uid://c72172ttlhope" path="res://Scenes/toggle_light_play_control.tres" id="2_p228k"]
+[ext_resource type="StyleBox" uid="uid://ymajvcvfo4jm" path="res://Scenes/toggle_light_play_control.tres" id="2_p228k"]
 [ext_resource type="Texture2D" uid="uid://dci1e5ehpbkk" path="res://Textures/rewind.svg" id="4_ln7p3"]
 [ext_resource type="Texture2D" uid="uid://d3nqehdkjnkvl" path="res://Textures/history.svg" id="5_kb2v8"]
 [ext_resource type="Texture2D" uid="uid://ceb0gpcj3o74f" path="res://Textures/play.svg" id="6_n1qcv"]
