@@ -7,7 +7,7 @@ Under the resources tab, select "Export all resources in the project" under Expo
 Click 'Export Project' and select a file location.
 In the data folder installed along side the executable, move the 'Resources' folder up along side the excutable. 
 
-View the project documentation at https://dashboard.render.com/static/srv-cv123qlds78s73877ni0
+View the documentation at https://stargazer-lcz8.onrender.com
 
 
 
