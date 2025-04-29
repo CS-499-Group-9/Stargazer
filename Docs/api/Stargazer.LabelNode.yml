@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     id: LabelNode
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.LabelNode_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.LabelNode_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

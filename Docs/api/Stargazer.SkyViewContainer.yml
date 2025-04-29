@@ -15,8 +15,8 @@ items:
   type: Class
   source:
     id: SkyViewContainer
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.SkyViewContainer_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.SkyViewContainer_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer

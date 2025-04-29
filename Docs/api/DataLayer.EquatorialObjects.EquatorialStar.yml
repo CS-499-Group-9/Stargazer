@@ -24,21 +24,12 @@ items:
   type: Class
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialStar
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 8
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: EquatorialStar
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 6
->>>>>>> main
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -81,21 +72,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 13
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: StarId
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 11
->>>>>>> main
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -121,21 +103,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HipparcosId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 17
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: HipparcosId
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 15
->>>>>>> main
+    startLine: 17
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -161,21 +134,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HenryDraperId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 21
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: HenryDraperId
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 19
->>>>>>> main
+    startLine: 21
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -201,21 +165,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HarvardRevisedId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 25
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: HarvardRevisedId
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 23
->>>>>>> main
+    startLine: 25
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -241,21 +196,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GlieseId
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 29
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: GlieseId
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 27
->>>>>>> main
+    startLine: 29
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -281,21 +227,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: BayerFlamsteedDesignation
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 33
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: BayerFlamsteedDesignation
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 31
->>>>>>> main
+    startLine: 33
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -321,21 +258,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ProperName
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 37
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: ProperName
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 35
->>>>>>> main
+    startLine: 37
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -361,21 +289,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AbsoluteMagnitude
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 41
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: AbsoluteMagnitude
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 39
->>>>>>> main
+    startLine: 41
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -401,21 +320,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Spectrum
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 45
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Spectrum
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 43
->>>>>>> main
+    startLine: 45
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -441,21 +351,12 @@ items:
   type: Property
   source:
     remote:
-<<<<<<< HEAD
-      path: DataLayer/EquatorialObjects/EquitorialStar.cs
+      path: DataLayer/EquatorialObjects/EquatorialStar.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ColorIndex
-    path: ../DataLayer/EquatorialObjects/EquitorialStar.cs
-    startLine: 49
-=======
-      path: DataLayer/EquatorialObjects/EquatorialStar.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: ColorIndex
     path: ../DataLayer/EquatorialObjects/EquatorialStar.cs
-    startLine: 47
->>>>>>> main
+    startLine: 49
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects

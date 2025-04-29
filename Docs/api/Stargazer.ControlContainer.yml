@@ -10,9 +10,15 @@ items:
   - Stargazer.ControlContainer.ConstellationLabelsToggled
   - Stargazer.ControlContainer.ConstellationsToggled
   - Stargazer.ControlContainer.EquatorialToggled
+  - Stargazer.ControlContainer.GetSelectedScreenshotFormat
   - Stargazer.ControlContainer.MessierObjectsToggled
+  - Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  - Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
   - Stargazer.ControlContainer.RequestScreenshot
+  - Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
   - Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  - Stargazer.ControlContainer.TimeLapseLabel
+  - Stargazer.ControlContainer.TimeLapseSlider
   - Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
   - Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
   - Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
@@ -21,14 +27,23 @@ items:
   - Stargazer.ControlContainer.UpdateUserPosition
   - Stargazer.ControlContainer.UserPositionUpdated
   - Stargazer.ControlContainer._Process(System.Double)
+  - Stargazer.ControlContainer._exportGifReversed
+  - Stargazer.ControlContainer._lastLatitude
+  - Stargazer.ControlContainer._lastLongitude
   - Stargazer.ControlContainer._mainControl
   - Stargazer.ControlContainer._on_button_pressed
+  - Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  - Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  - Stargazer.ControlContainer.baseDateTime
   - Stargazer.ControlContainer.calendarButton
+  - Stargazer.ControlContainer.formatSelector
+  - Stargazer.ControlContainer.frameCount
   - Stargazer.ControlContainer.latDegField
   - Stargazer.ControlContainer.latMinField
   - Stargazer.ControlContainer.lonDegField
   - Stargazer.ControlContainer.lonMinField
   - Stargazer.ControlContainer.timeField
+  - Stargazer.ControlContainer.totalSpan
   langs:
   - csharp
   - vb
@@ -38,7 +53,7 @@ items:
   type: Class
   source:
     id: ControlContainer
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.ControlContainer_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.ControlContainer_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -564,7 +579,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latDegField
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -605,7 +620,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: latMinField
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -646,7 +661,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: lonDegField
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -687,7 +702,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: lonMinField
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -728,7 +743,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: timeField
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 19
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -769,7 +784,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AMorPMButton
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 20
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -810,7 +825,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: calendarButton
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -825,6 +840,129 @@ items:
       <Export(PropertyHint.None, "")>
 
       Private calendarButton As Button
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.formatSelector
+  commentId: F:Stargazer.ControlContainer.formatSelector
+  id: formatSelector
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: formatSelector
+  nameWithType: ControlContainer.formatSelector
+  fullName: Stargazer.ControlContainer.formatSelector
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: formatSelector
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 25
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private OptionButton formatSelector
+    return:
+      type: Godot.OptionButton
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private formatSelector As OptionButton
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.TimeLapseSlider
+  commentId: F:Stargazer.ControlContainer.TimeLapseSlider
+  id: TimeLapseSlider
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: TimeLapseSlider
+  nameWithType: ControlContainer.TimeLapseSlider
+  fullName: Stargazer.ControlContainer.TimeLapseSlider
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TimeLapseSlider
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 26
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private HSlider TimeLapseSlider
+    return:
+      type: Godot.HSlider
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private TimeLapseSlider As HSlider
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.TimeLapseLabel
+  commentId: F:Stargazer.ControlContainer.TimeLapseLabel
+  id: TimeLapseLabel
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: TimeLapseLabel
+  nameWithType: ControlContainer.TimeLapseLabel
+  fullName: Stargazer.ControlContainer.TimeLapseLabel
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TimeLapseLabel
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 27
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private Label TimeLapseLabel
+    return:
+      type: Godot.Label
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private TimeLapseLabel As Label
   attributes:
   - type: Godot.ExportAttribute
     ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
@@ -851,7 +989,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _mainControl
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 22
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -860,6 +998,168 @@ items:
     return:
       type: Stargazer.Startup
     content.vb: Private _mainControl As Startup
+- uid: Stargazer.ControlContainer.baseDateTime
+  commentId: F:Stargazer.ControlContainer.baseDateTime
+  id: baseDateTime
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: baseDateTime
+  nameWithType: ControlContainer.baseDateTime
+  fullName: Stargazer.ControlContainer.baseDateTime
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: baseDateTime
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 31
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private DateTime baseDateTime
+    return:
+      type: System.DateTime
+    content.vb: Private baseDateTime As Date
+- uid: Stargazer.ControlContainer.totalSpan
+  commentId: F:Stargazer.ControlContainer.totalSpan
+  id: totalSpan
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: totalSpan
+  nameWithType: ControlContainer.totalSpan
+  fullName: Stargazer.ControlContainer.totalSpan
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: totalSpan
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 32
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private TimeSpan totalSpan
+    return:
+      type: System.TimeSpan
+    content.vb: Private totalSpan As TimeSpan
+- uid: Stargazer.ControlContainer.frameCount
+  commentId: F:Stargazer.ControlContainer.frameCount
+  id: frameCount
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: frameCount
+  nameWithType: ControlContainer.frameCount
+  fullName: Stargazer.ControlContainer.frameCount
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: frameCount
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 33
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private int frameCount
+    return:
+      type: System.Int32
+    content.vb: Private frameCount As Integer
+- uid: Stargazer.ControlContainer._lastLatitude
+  commentId: F:Stargazer.ControlContainer._lastLatitude
+  id: _lastLatitude
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _lastLatitude
+  nameWithType: ControlContainer._lastLatitude
+  fullName: Stargazer.ControlContainer._lastLatitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLatitude
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLatitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLatitude As Double
+- uid: Stargazer.ControlContainer._lastLongitude
+  commentId: F:Stargazer.ControlContainer._lastLongitude
+  id: _lastLongitude
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _lastLongitude
+  nameWithType: ControlContainer._lastLongitude
+  fullName: Stargazer.ControlContainer._lastLongitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLongitude
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 35
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLongitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLongitude As Double
+- uid: Stargazer.ControlContainer._exportGifReversed
+  commentId: F:Stargazer.ControlContainer._exportGifReversed
+  id: _exportGifReversed
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _exportGifReversed
+  nameWithType: ControlContainer._exportGifReversed
+  fullName: Stargazer.ControlContainer._exportGifReversed
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _exportGifReversed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private bool _exportGifReversed
+    return:
+      type: System.Boolean
+    content.vb: Private _exportGifReversed As Boolean
 - uid: Stargazer.ControlContainer.AzimuthToggled
   commentId: F:Stargazer.ControlContainer.AzimuthToggled
   id: AzimuthToggled
@@ -878,7 +1178,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AzimuthToggled
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 27
+    startLine: 41
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -907,7 +1207,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialToggled
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 31
+    startLine: 45
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -936,7 +1236,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationsToggled
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 35
+    startLine: 49
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -965,7 +1265,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabelsToggled
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 39
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -994,7 +1294,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierObjectsToggled
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 43
+    startLine: 57
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1023,7 +1323,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UserPositionUpdated
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 47
+    startLine: 61
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1052,10 +1352,12 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: RequestScreenshot
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 51
+    startLine: 65
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Broadcasts a request to take a screenshot
+  example: []
   syntax:
     content: public Func<Task> RequestScreenshot
     return:
@@ -1079,7 +1381,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 57
+    startLine: 71
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1115,15 +1417,18 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleAzimuth
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 68
+    startLine: 83
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the AzimuthButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
   syntax:
     content: public void ToggleAzimuth(bool value)
     parameters:
     - id: value
       type: System.Boolean
+      description: True if the toggle button is checked
     content.vb: Public Sub ToggleAzimuth(value As Boolean)
   overload: Stargazer.ControlContainer.ToggleAzimuth*
   nameWithType.vb: ControlContainer.ToggleAzimuth(Boolean)
@@ -1147,11 +1452,11 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleEquatorial
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 73
+    startLine: 89
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the <code>Toggle Equatorial</code>
   example: []
   syntax:
     content: public void ToggleEquatorial(bool value)
@@ -1182,7 +1487,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellations
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 79
+    startLine: 95
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1217,7 +1522,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 85
+    startLine: 101
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1252,7 +1557,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleMessierObjects
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 92
+    startLine: 108
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1287,17 +1592,49 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetMainController
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 94
+    startLine: 114
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: Sets a reference to the main controller in the control container.
+  example: []
   syntax:
     content: public void SetMainController(Startup controller)
     parameters:
     - id: controller
       type: Stargazer.Startup
+      description: The main controller
     content.vb: Public Sub SetMainController(controller As Startup)
   overload: Stargazer.ControlContainer.SetMainController*
+- uid: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  commentId: M:Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  id: OnSliderGuiInput(Godot.InputEvent)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: OnSliderGuiInput(InputEvent)
+  nameWithType: ControlContainer.OnSliderGuiInput(InputEvent)
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnSliderGuiInput
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 119
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private void OnSliderGuiInput(InputEvent @event)
+    parameters:
+    - id: event
+      type: Godot.InputEvent
+    content.vb: Private Sub OnSliderGuiInput([event] As InputEvent)
+  overload: Stargazer.ControlContainer.OnSliderGuiInput*
 - uid: Stargazer.ControlContainer.UpdateUserPosition
   commentId: M:Stargazer.ControlContainer.UpdateUserPosition
   id: UpdateUserPosition
@@ -1316,7 +1653,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 104
+    startLine: 140
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -1326,11 +1663,133 @@ items:
     Author: Logan Parker
 
     Created: SPR 2025
+
+    Modified: Alex Lake SPR 2025 (added time lapse slider)
   example: []
   syntax:
     content: public void UpdateUserPosition()
     content.vb: Public Sub UpdateUserPosition()
   overload: Stargazer.ControlContainer.UpdateUserPosition*
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  commentId: M:Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  id: _on_reverse_gif_toggled(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _on_reverse_gif_toggled(bool)
+  nameWithType: ControlContainer._on_reverse_gif_toggled(bool)
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_reverse_gif_toggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 216
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Toggles a flag when the user selects/deselects the reverse gif checkbox.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public void _on_reverse_gif_toggled(bool toggled)
+    parameters:
+    - id: toggled
+      type: System.Boolean
+      description: ''
+    content.vb: Public Sub _on_reverse_gif_toggled(toggled As Boolean)
+  overload: Stargazer.ControlContainer._on_reverse_gif_toggled*
+  nameWithType.vb: ControlContainer._on_reverse_gif_toggled(Boolean)
+  fullName.vb: Stargazer.ControlContainer._on_reverse_gif_toggled(Boolean)
+  name.vb: _on_reverse_gif_toggled(Boolean)
+- uid: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  commentId: M:Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  id: SetBaseDateTime(System.DateTime)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: SetBaseDateTime(DateTime)
+  nameWithType: ControlContainer.SetBaseDateTime(DateTime)
+  fullName: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetBaseDateTime
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 227
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Sets the base date time for the time lapse.
+
+    Author Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public void SetBaseDateTime(DateTime dateTime)
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+      description: The time to set.
+    content.vb: Public Sub SetBaseDateTime(dateTime As Date)
+  overload: Stargazer.ControlContainer.SetBaseDateTime*
+  nameWithType.vb: ControlContainer.SetBaseDateTime(Date)
+  fullName.vb: Stargazer.ControlContainer.SetBaseDateTime(Date)
+  name.vb: SetBaseDateTime(Date)
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  commentId: M:Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  id: OnTimeLapseFrameChanged(System.Double)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: OnTimeLapseFrameChanged(double)
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged(double)
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnTimeLapseFrameChanged
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 238
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Called each time the time lapse advances one frame.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void OnTimeLapseFrameChanged(double frame)
+    parameters:
+    - id: frame
+      type: System.Double
+      description: The amount of time passed since the last frame
+    content.vb: Private Sub OnTimeLapseFrameChanged(frame As Double)
+  overload: Stargazer.ControlContainer.OnTimeLapseFrameChanged*
+  nameWithType.vb: ControlContainer.OnTimeLapseFrameChanged(Double)
+  fullName.vb: Stargazer.ControlContainer.OnTimeLapseFrameChanged(Double)
+  name.vb: OnTimeLapseFrameChanged(Double)
 - uid: Stargazer.ControlContainer._on_button_pressed
   commentId: M:Stargazer.ControlContainer._on_button_pressed
   id: _on_button_pressed
@@ -1349,12 +1808,12 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _on_button_pressed
     path: ../Stargazer-Godot/Code/ControlContainer.cs
-    startLine: 169
+    startLine: 260
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: >-
-    Allows the user to use a button to initiate a screenshot.
+    Screenshot button
 
     Author: Alex Lake
 
@@ -1364,6 +1823,75 @@ items:
     content: private void _on_button_pressed()
     content.vb: Private Sub _on_button_pressed()
   overload: Stargazer.ControlContainer._on_button_pressed*
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  id: _on_timelapse_gif_export_button_pressed
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _on_timelapse_gif_export_button_pressed()
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed()
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_timelapse_gif_export_button_pressed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 278
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Notifies the main controller of a user request to export a time lapse
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void _on_timelapse_gif_export_button_pressed()
+    content.vb: Private Sub _on_timelapse_gif_export_button_pressed()
+  overload: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed*
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  commentId: M:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  id: GetSelectedScreenshotFormat
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: GetSelectedScreenshotFormat()
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat()
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetSelectedScreenshotFormat
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 297
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Returns the screenshot format that is currently selected
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public string GetSelectedScreenshotFormat()
+    return:
+      type: System.String
+      description: The currently selected format
+    content.vb: Public Function GetSelectedScreenshotFormat() As String
+  overload: Stargazer.ControlContainer.GetSelectedScreenshotFormat*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12893,6 +13421,20 @@ references:
   name: Button
   nameWithType: Button
   fullName: Godot.Button
+- uid: Godot.HSlider
+  commentId: T:Godot.HSlider
+  parent: Godot
+  isExternal: true
+  name: HSlider
+  nameWithType: HSlider
+  fullName: Godot.HSlider
+- uid: Godot.Label
+  commentId: T:Godot.Label
+  parent: Godot
+  isExternal: true
+  name: Label
+  nameWithType: Label
+  fullName: Godot.Label
 - uid: Stargazer.Startup
   commentId: T:Stargazer.Startup
   parent: Stargazer
@@ -12900,6 +13442,58 @@ references:
   name: Startup
   nameWithType: Startup
   fullName: Stargazer.Startup
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.Action{System.Boolean}
   commentId: T:System.Action{System.Boolean}
   parent: System
@@ -13162,52 +13756,36 @@ references:
   name: _Process
   nameWithType: ControlContainer._Process
   fullName: Stargazer.ControlContainer._Process
-- uid: System.Double
-  commentId: T:System.Double
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: double
-  nameWithType: double
-  fullName: double
-  nameWithType.vb: Double
-  fullName.vb: Double
-  name.vb: Double
-- uid: Stargazer.ControlContainer.ToggleAzimuth*
-  commentId: Overload:Stargazer.ControlContainer.ToggleAzimuth
-  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
-  name: ToggleAzimuth
-  nameWithType: ControlContainer.ToggleAzimuth
-  fullName: Stargazer.ControlContainer.ToggleAzimuth
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Godot.Signal
   commentId: T:Godot.Signal
   isExternal: true
   name: Signal
   nameWithType: Signal
   fullName: Godot.Signal
-- uid: Stargazer.ControlContainer.ToggleEquatorial*
-  commentId: Overload:Stargazer.ControlContainer.ToggleEquatorial
-  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_
-  name: ToggleEquatorial
-  nameWithType: ControlContainer.ToggleEquatorial
-  fullName: Stargazer.ControlContainer.ToggleEquatorial
 - uid: Godot.CheckBox
   commentId: T:Godot.CheckBox
   isExternal: true
   name: CheckBox
   nameWithType: CheckBox
   fullName: Godot.CheckBox
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
+  name: AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+- uid: Stargazer.ControlContainer.ToggleAzimuth*
+  commentId: Overload:Stargazer.ControlContainer.ToggleAzimuth
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
+  name: ToggleAzimuth
+  nameWithType: ControlContainer.ToggleAzimuth
+  fullName: Stargazer.ControlContainer.ToggleAzimuth
+- uid: Stargazer.ControlContainer.ToggleEquatorial*
+  commentId: Overload:Stargazer.ControlContainer.ToggleEquatorial
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_
+  name: ToggleEquatorial
+  nameWithType: ControlContainer.ToggleEquatorial
+  fullName: Stargazer.ControlContainer.ToggleEquatorial
 - uid: Stargazer.ControlContainer.ConstellationsToggled
   commentId: F:Stargazer.ControlContainer.ConstellationsToggled
   href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled
@@ -13250,6 +13828,19 @@ references:
   name: SetMainController
   nameWithType: ControlContainer.SetMainController
   fullName: Stargazer.ControlContainer.SetMainController
+- uid: Stargazer.ControlContainer.OnSliderGuiInput*
+  commentId: Overload:Stargazer.ControlContainer.OnSliderGuiInput
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnSliderGuiInput_Godot_InputEvent_
+  name: OnSliderGuiInput
+  nameWithType: ControlContainer.OnSliderGuiInput
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput
+- uid: Godot.InputEvent
+  commentId: T:Godot.InputEvent
+  parent: Godot
+  isExternal: true
+  name: InputEvent
+  nameWithType: InputEvent
+  fullName: Godot.InputEvent
 - uid: Stargazer.ControlContainer.UserPositionUpdated
   commentId: F:Stargazer.ControlContainer.UserPositionUpdated
   href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated
@@ -13262,9 +13853,50 @@ references:
   name: UpdateUserPosition
   nameWithType: ControlContainer.UpdateUserPosition
   fullName: Stargazer.ControlContainer.UpdateUserPosition
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled*
+  commentId: Overload:Stargazer.ControlContainer._on_reverse_gif_toggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_reverse_gif_toggled_System_Boolean_
+  name: _on_reverse_gif_toggled
+  nameWithType: ControlContainer._on_reverse_gif_toggled
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled
+- uid: Stargazer.ControlContainer.SetBaseDateTime*
+  commentId: Overload:Stargazer.ControlContainer.SetBaseDateTime
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetBaseDateTime_System_DateTime_
+  name: SetBaseDateTime
+  nameWithType: ControlContainer.SetBaseDateTime
+  fullName: Stargazer.ControlContainer.SetBaseDateTime
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged*
+  commentId: Overload:Stargazer.ControlContainer.OnTimeLapseFrameChanged
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnTimeLapseFrameChanged_System_Double_
+  name: OnTimeLapseFrameChanged
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged
 - uid: Stargazer.ControlContainer._on_button_pressed*
   commentId: Overload:Stargazer.ControlContainer._on_button_pressed
   href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_button_pressed
   name: _on_button_pressed
   nameWithType: ControlContainer._on_button_pressed
   fullName: Stargazer.ControlContainer._on_button_pressed
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed*
+  commentId: Overload:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_timelapse_gif_export_button_pressed
+  name: _on_timelapse_gif_export_button_pressed
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat*
+  commentId: Overload:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_GetSelectedScreenshotFormat
+  name: GetSelectedScreenshotFormat
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

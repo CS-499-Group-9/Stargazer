@@ -19,8 +19,8 @@ items:
   type: Class
   source:
     id: YearView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\DatePicker.YearView_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\DatePicker.YearView_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: DatePicker
@@ -635,7 +635,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Previous
     path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - New Game Project
   namespace: DatePicker
@@ -665,7 +665,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Next
     path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - New Game Project
   namespace: DatePicker
@@ -695,7 +695,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Refresh
     path: ../Stargazer-Godot/addons/DatePicker/YearView.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - New Game Project
   namespace: DatePicker

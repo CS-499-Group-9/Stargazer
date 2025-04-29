@@ -42,7 +42,7 @@ items:
   type: Class
   source:
     id: Calendar
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\DatePicker.Calendar_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\DatePicker.Calendar_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

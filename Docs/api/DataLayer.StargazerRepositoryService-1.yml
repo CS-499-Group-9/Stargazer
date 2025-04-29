@@ -274,7 +274,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CalculateStars
     path: ../DataLayer/StargazerRepositoryService.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - DataLayer
   namespace: DataLayer

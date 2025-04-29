@@ -113,7 +113,16 @@ namespace Stargazer
 
         }
 
-        private void SaveAsGif(Godot.Image godotImage, int width, int height, string gifPath) // This function takes an image and creates a single frame gif.
+        /// <summary>
+        /// Takes an image and creates a single frame gif
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="godotImage">The image to use</param>
+        /// <param name="width">Image width</param>
+        /// <param name="height">Image height</param>
+        /// <param name="gifPath">The path save the gif</param>
+        private void SaveAsGif(Godot.Image godotImage, int width, int height, string gifPath) 
         {
             godotImage.Convert(Godot.Image.Format.Rgba8); // Converts the Godot image to an RGBA8 format.
             byte[] rawData = godotImage.GetData(); // Get the raw data of the image.
@@ -127,6 +136,14 @@ namespace Stargazer
             }
         }
 
+        /// <summary>
+        /// Encodes the images properly using <see cref="ImageSharpImage"/>
+        /// </summary>
+        /// <param name="godotImage">The image to encode</param>
+        /// <param name="width">Image width</param>
+        /// <param name="height">Image height</param>
+        /// <param name="path">The path to save the image</param>
+        /// <param name="encoder">The encoder to use</param>
         private void SaveWithImageSharp(Godot.Image godotImage, int width, int height, string path, IImageEncoder encoder) // This function helps encode the images properly using ImageSharp.
         {
             godotImage.Convert(Godot.Image.Format.Rgba8); // Convert the Godot Image to format RGBA8.
@@ -136,6 +153,12 @@ namespace Stargazer
             image.Save(path, encoder); // Save the image using the correct encoder.
         }
 
+        /// <summary>
+        /// Responds to notifications to initiate a screenshot.
+        /// Author: Mutiple
+        /// Created: SPR 2025
+        /// </summary>
+        /// <returns>A running task that is exporting the screenshot</returns>
         public async Task TakeScreenshot()
         {
             var skyView2d = View2D.GetNode<SkyView2D>("View2d");
@@ -173,6 +196,16 @@ namespace Stargazer
             AddChild(screenshotTimer);
         }
 
+        /// <summary>
+        /// Responds to notifications to initiate a GIF timelapse
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="latitude">User latitude</param>
+        /// <param name="longitude">User longitude</param>
+        /// <param name="startTime">The starting date/time of the GIF</param>
+        /// <param name="reverse">True if the user has selected reverse GIF</param>
+        /// <returns>An awaitable task</returns>
         public async Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)
         {   
             DateTime originalTime = calculator.getTime();  // Store the original time
@@ -258,6 +291,12 @@ namespace Stargazer
             ShowGifExportedNotification(gifPath);
         }
 
+        /// <summary>
+        /// Displays the path to the exported gif to the user.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="gifPath">The path to the saved GIF</param>
         private void ShowGifExportedNotification(string gifPath)
         {
             ScreenshotDialog.DialogText = $"GIF saved at:\n{gifPath}";
@@ -269,6 +308,13 @@ namespace Stargazer
             ScreenshotDialog.PopupCentered();
         }
 
+        /// <summary>
+        /// Exports a screenshot of the 2D viewport for the current date/time lat/long
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="view2D">A reference to the viewport</param>
+        /// <param name="format">The user selected format.</param>
         private void ExportScreenshot(SubViewport view2D, string format)
         {
             // Define the required resolution (300 DPI for 8.5x11 inches)
@@ -306,6 +352,11 @@ namespace Stargazer
             ShowScreenshotSavedNotification();
         }
 
+        /// <summary>
+        /// Displays a notification to the user with the path to the saved file.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
         private void ShowScreenshotSavedNotification()
         {
             ScreenshotDialog.DialogText = $"Screenshot saved at:\n{screenshotPath}";
@@ -319,16 +370,29 @@ namespace Stargazer
             ScreenshotDialog.PopupCentered();
         }
 
+        /// <summary>
+        /// Closes the screenshot dialog
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
         private void _on_screenshot_dialog_close_requested()
         {
             OnScreenshotDialogClosed();
         }
 
+        /// <summary>
+        /// ?
+        /// </summary>
         private void _on_screenshot_dialog_confirmed()
         {
             OnScreenshotDialogClosed();
         }
 
+        /// <summary>
+        /// Removes the dialog
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
         private void OnScreenshotDialogClosed()
         {
             GD.Print("User acknowledged screenshot notification.");

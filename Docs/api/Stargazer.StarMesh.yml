@@ -17,7 +17,7 @@ items:
   type: Class
   source:
     id: StarMesh
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.StarMesh_ScriptMethods.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.StarMesh_ScriptSignals.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

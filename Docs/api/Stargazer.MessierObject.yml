@@ -9,6 +9,7 @@ items:
   - Stargazer.MessierObject.GetHoverText
   - Stargazer.MessierObject._Ready
   - Stargazer.MessierObject.horizontalMessierObject
+  - Stargazer.MessierObject.zDepth
   langs:
   - csharp
   - vb
@@ -18,8 +19,8 @@ items:
   type: Class
   source:
     id: MessierObject
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.MessierObject_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.MessierObject_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -402,6 +403,33 @@ items:
     return:
       type: DataLayer.HorizontalObjects.HorizontalMessierObject
     content.vb: Private horizontalMessierObject As HorizontalMessierObject
+- uid: Stargazer.MessierObject.zDepth
+  commentId: F:Stargazer.MessierObject.zDepth
+  id: zDepth
+  parent: Stargazer.MessierObject
+  langs:
+  - csharp
+  - vb
+  name: zDepth
+  nameWithType: MessierObject.zDepth
+  fullName: Stargazer.MessierObject.zDepth
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/MessierObject.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: zDepth
+    path: ../Stargazer-Godot/Code/MessierObject.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private int zDepth
+    return:
+      type: System.Int32
+    content.vb: Private zDepth As Integer
 - uid: Stargazer.MessierObject._Ready
   commentId: M:Stargazer.MessierObject._Ready
   id: _Ready
@@ -420,7 +448,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/MessierObject.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -449,7 +477,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/MessierObject.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -481,7 +509,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/MessierObject.cs
-    startLine: 47
+    startLine: 60
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -7485,6 +7513,17 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Godot.Node._Ready
   commentId: M:Godot.Node._Ready
   parent: Godot.Node

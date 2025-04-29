@@ -17,8 +17,8 @@ items:
   type: Class
   source:
     id: Planets
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Planets_ScriptPath.generated.cs
-    startLine: 3
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Planets_ScriptProperties.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer

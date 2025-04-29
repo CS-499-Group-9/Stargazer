@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/joshj/source/repos/CS-499-Group-9/Stargazer/docs",
+  "source_base_path": "C:/Users/joshj/source/repos/CS-499-Group-9/Stargazer/Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1688,7 +1688,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.PlayControl",
-      "Summary": "<p sourcefile=\"api/Stargazer.PlayControl.yml\" sourcestartlinenumber=\"1\">Controls the play speed of the 3D simulation.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.PlayControl.yml\" sourcestartlinenumber=\"1\">Controls the play speed of the 3D simulation.\nAuthor: Josh Johner\nCreated: SPR 2025\nModified: SPR 2025 by Alex Lake to implement time lapse.</p>\n"
     },
     {
       "type": "ManagedReference",

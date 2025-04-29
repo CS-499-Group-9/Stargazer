@@ -337,6 +337,19 @@ references:
   commentId: T:DataLayer.EquatorialObjects.EquatorialMessierObject
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject
   nameWithType: EquatorialMessierObject
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  name: CommonName
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_CommonName
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  nameWithType: EquatorialMessierObject.CommonName
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName*
+  name: CommonName
+  href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_CommonName_
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  isSpec: "True"
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  nameWithType: EquatorialMessierObject.CommonName
 - uid: DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   name: Constellation
   href: api/DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation
@@ -723,6 +736,19 @@ references:
   fullName.vb: DataLayer.HorizontalObjects.HorizontalMessierObject.New
   nameWithType: HorizontalMessierObject.HorizontalMessierObject
   nameWithType.vb: HorizontalMessierObject.New
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName
+  name: CommonName
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_CommonName
+  commentId: P:DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName
+  nameWithType: HorizontalMessierObject.CommonName
+- uid: DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName*
+  name: CommonName
+  href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_CommonName_
+  commentId: Overload:DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName
+  isSpec: "True"
+  fullName: DataLayer.HorizontalObjects.HorizontalMessierObject.CommonName
+  nameWithType: HorizontalMessierObject.CommonName
 - uid: DataLayer.HorizontalObjects.HorizontalMessierObject.Constellation
   name: Constellation
   href: api/DataLayer.HorizontalObjects.HorizontalMessierObject.html#DataLayer_HorizontalObjects_HorizontalMessierObject_Constellation
@@ -4204,18 +4230,76 @@ references:
   commentId: F:Stargazer.ControlContainer.EquatorialToggled
   fullName: Stargazer.ControlContainer.EquatorialToggled
   nameWithType: ControlContainer.EquatorialToggled
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  name: GetSelectedScreenshotFormat()
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_GetSelectedScreenshotFormat
+  commentId: M:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat()
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat()
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat*
+  name: GetSelectedScreenshotFormat
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_GetSelectedScreenshotFormat_
+  commentId: Overload:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat
 - uid: Stargazer.ControlContainer.MessierObjectsToggled
   name: MessierObjectsToggled
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsToggled
   commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
   fullName: Stargazer.ControlContainer.MessierObjectsToggled
   nameWithType: ControlContainer.MessierObjectsToggled
+- uid: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  name: OnSliderGuiInput(InputEvent)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnSliderGuiInput_Godot_InputEvent_
+  commentId: M:Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  nameWithType: ControlContainer.OnSliderGuiInput(InputEvent)
+- uid: Stargazer.ControlContainer.OnSliderGuiInput*
+  name: OnSliderGuiInput
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnSliderGuiInput_
+  commentId: Overload:Stargazer.ControlContainer.OnSliderGuiInput
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput
+  nameWithType: ControlContainer.OnSliderGuiInput
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  name: OnTimeLapseFrameChanged(double)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnTimeLapseFrameChanged_System_Double_
+  commentId: M:Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  name.vb: OnTimeLapseFrameChanged(Double)
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged(double)
+  fullName.vb: Stargazer.ControlContainer.OnTimeLapseFrameChanged(Double)
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged(double)
+  nameWithType.vb: ControlContainer.OnTimeLapseFrameChanged(Double)
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged*
+  name: OnTimeLapseFrameChanged
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnTimeLapseFrameChanged_
+  commentId: Overload:Stargazer.ControlContainer.OnTimeLapseFrameChanged
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged
 - uid: Stargazer.ControlContainer.RequestScreenshot
   name: RequestScreenshot
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_RequestScreenshot
   commentId: F:Stargazer.ControlContainer.RequestScreenshot
   fullName: Stargazer.ControlContainer.RequestScreenshot
   nameWithType: ControlContainer.RequestScreenshot
+- uid: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  name: SetBaseDateTime(DateTime)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetBaseDateTime_System_DateTime_
+  commentId: M:Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  name.vb: SetBaseDateTime(Date)
+  fullName: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  fullName.vb: Stargazer.ControlContainer.SetBaseDateTime(Date)
+  nameWithType: ControlContainer.SetBaseDateTime(DateTime)
+  nameWithType.vb: ControlContainer.SetBaseDateTime(Date)
+- uid: Stargazer.ControlContainer.SetBaseDateTime*
+  name: SetBaseDateTime
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetBaseDateTime_
+  commentId: Overload:Stargazer.ControlContainer.SetBaseDateTime
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer.SetBaseDateTime
+  nameWithType: ControlContainer.SetBaseDateTime
 - uid: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
   name: SetMainController(Startup)
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetMainController_Stargazer_Startup_
@@ -4229,6 +4313,18 @@ references:
   isSpec: "True"
   fullName: Stargazer.ControlContainer.SetMainController
   nameWithType: ControlContainer.SetMainController
+- uid: Stargazer.ControlContainer.TimeLapseLabel
+  name: TimeLapseLabel
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_TimeLapseLabel
+  commentId: F:Stargazer.ControlContainer.TimeLapseLabel
+  fullName: Stargazer.ControlContainer.TimeLapseLabel
+  nameWithType: ControlContainer.TimeLapseLabel
+- uid: Stargazer.ControlContainer.TimeLapseSlider
+  name: TimeLapseSlider
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_TimeLapseSlider
+  commentId: F:Stargazer.ControlContainer.TimeLapseSlider
+  fullName: Stargazer.ControlContainer.TimeLapseSlider
+  nameWithType: ControlContainer.TimeLapseSlider
 - uid: Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
   name: ToggleAzimuth(bool)
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
@@ -4344,6 +4440,24 @@ references:
   isSpec: "True"
   fullName: Stargazer.ControlContainer._Process
   nameWithType: ControlContainer._Process
+- uid: Stargazer.ControlContainer._exportGifReversed
+  name: _exportGifReversed
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__exportGifReversed
+  commentId: F:Stargazer.ControlContainer._exportGifReversed
+  fullName: Stargazer.ControlContainer._exportGifReversed
+  nameWithType: ControlContainer._exportGifReversed
+- uid: Stargazer.ControlContainer._lastLatitude
+  name: _lastLatitude
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__lastLatitude
+  commentId: F:Stargazer.ControlContainer._lastLatitude
+  fullName: Stargazer.ControlContainer._lastLatitude
+  nameWithType: ControlContainer._lastLatitude
+- uid: Stargazer.ControlContainer._lastLongitude
+  name: _lastLongitude
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__lastLongitude
+  commentId: F:Stargazer.ControlContainer._lastLongitude
+  fullName: Stargazer.ControlContainer._lastLongitude
+  nameWithType: ControlContainer._lastLongitude
 - uid: Stargazer.ControlContainer._mainControl
   name: _mainControl
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__mainControl
@@ -4363,12 +4477,59 @@ references:
   isSpec: "True"
   fullName: Stargazer.ControlContainer._on_button_pressed
   nameWithType: ControlContainer._on_button_pressed
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  name: _on_reverse_gif_toggled(bool)
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_reverse_gif_toggled_System_Boolean_
+  commentId: M:Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  name.vb: _on_reverse_gif_toggled(Boolean)
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled(bool)
+  fullName.vb: Stargazer.ControlContainer._on_reverse_gif_toggled(Boolean)
+  nameWithType: ControlContainer._on_reverse_gif_toggled(bool)
+  nameWithType.vb: ControlContainer._on_reverse_gif_toggled(Boolean)
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled*
+  name: _on_reverse_gif_toggled
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_reverse_gif_toggled_
+  commentId: Overload:Stargazer.ControlContainer._on_reverse_gif_toggled
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled
+  nameWithType: ControlContainer._on_reverse_gif_toggled
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  name: _on_timelapse_gif_export_button_pressed()
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_timelapse_gif_export_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed()
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed()
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed*
+  name: _on_timelapse_gif_export_button_pressed
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_timelapse_gif_export_button_pressed_
+  commentId: Overload:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  isSpec: "True"
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed
+- uid: Stargazer.ControlContainer.baseDateTime
+  name: baseDateTime
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_baseDateTime
+  commentId: F:Stargazer.ControlContainer.baseDateTime
+  fullName: Stargazer.ControlContainer.baseDateTime
+  nameWithType: ControlContainer.baseDateTime
 - uid: Stargazer.ControlContainer.calendarButton
   name: calendarButton
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_calendarButton
   commentId: F:Stargazer.ControlContainer.calendarButton
   fullName: Stargazer.ControlContainer.calendarButton
   nameWithType: ControlContainer.calendarButton
+- uid: Stargazer.ControlContainer.formatSelector
+  name: formatSelector
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_formatSelector
+  commentId: F:Stargazer.ControlContainer.formatSelector
+  fullName: Stargazer.ControlContainer.formatSelector
+  nameWithType: ControlContainer.formatSelector
+- uid: Stargazer.ControlContainer.frameCount
+  name: frameCount
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_frameCount
+  commentId: F:Stargazer.ControlContainer.frameCount
+  fullName: Stargazer.ControlContainer.frameCount
+  nameWithType: ControlContainer.frameCount
 - uid: Stargazer.ControlContainer.latDegField
   name: latDegField
   href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_latDegField
@@ -4399,6 +4560,12 @@ references:
   commentId: F:Stargazer.ControlContainer.timeField
   fullName: Stargazer.ControlContainer.timeField
   nameWithType: ControlContainer.timeField
+- uid: Stargazer.ControlContainer.totalSpan
+  name: totalSpan
+  href: api/Stargazer.ControlContainer.html#Stargazer_ControlContainer_totalSpan
+  commentId: F:Stargazer.ControlContainer.totalSpan
+  fullName: Stargazer.ControlContainer.totalSpan
+  nameWithType: ControlContainer.totalSpan
 - uid: Stargazer.Globals
   name: Globals
   href: api/Stargazer.Globals.html
@@ -5467,6 +5634,12 @@ references:
   commentId: F:Stargazer.MessierObject.horizontalMessierObject
   fullName: Stargazer.MessierObject.horizontalMessierObject
   nameWithType: MessierObject.horizontalMessierObject
+- uid: Stargazer.MessierObject.zDepth
+  name: zDepth
+  href: api/Stargazer.MessierObject.html#Stargazer_MessierObject_zDepth
+  commentId: F:Stargazer.MessierObject.zDepth
+  fullName: Stargazer.MessierObject.zDepth
+  nameWithType: MessierObject.zDepth
 - uid: Stargazer.Moon
   name: Moon
   href: api/Stargazer.Moon.html
@@ -5499,6 +5672,32 @@ references:
   isSpec: "True"
   fullName: Stargazer.Moon.GetHoverText
   nameWithType: Moon.GetHoverText
+- uid: Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  name: SetShaderUpVector(Vector3)
+  href: api/Stargazer.Moon.html#Stargazer_Moon_SetShaderUpVector_Godot_Vector3_
+  commentId: M:Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  fullName: Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  nameWithType: Moon.SetShaderUpVector(Vector3)
+- uid: Stargazer.Moon.SetShaderUpVector*
+  name: SetShaderUpVector
+  href: api/Stargazer.Moon.html#Stargazer_Moon_SetShaderUpVector_
+  commentId: Overload:Stargazer.Moon.SetShaderUpVector
+  isSpec: "True"
+  fullName: Stargazer.Moon.SetShaderUpVector
+  nameWithType: Moon.SetShaderUpVector
+- uid: Stargazer.Moon.SetSun(Stargazer.Sun)
+  name: SetSun(Sun)
+  href: api/Stargazer.Moon.html#Stargazer_Moon_SetSun_Stargazer_Sun_
+  commentId: M:Stargazer.Moon.SetSun(Stargazer.Sun)
+  fullName: Stargazer.Moon.SetSun(Stargazer.Sun)
+  nameWithType: Moon.SetSun(Sun)
+- uid: Stargazer.Moon.SetSun*
+  name: SetSun
+  href: api/Stargazer.Moon.html#Stargazer_Moon_SetSun_
+  commentId: Overload:Stargazer.Moon.SetSun
+  isSpec: "True"
+  fullName: Stargazer.Moon.SetSun
+  nameWithType: Moon.SetSun
 - uid: Stargazer.Moon._Process(System.Double)
   name: _Process(double)
   href: api/Stargazer.Moon.html#Stargazer_Moon__Process_System_Double_
@@ -5515,12 +5714,37 @@ references:
   isSpec: "True"
   fullName: Stargazer.Moon._Process
   nameWithType: Moon._Process
+- uid: Stargazer.Moon._Ready
+  name: _Ready()
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Ready
+  commentId: M:Stargazer.Moon._Ready
+  fullName: Stargazer.Moon._Ready()
+  nameWithType: Moon._Ready()
+- uid: Stargazer.Moon._Ready*
+  name: _Ready
+  href: api/Stargazer.Moon.html#Stargazer_Moon__Ready_
+  commentId: Overload:Stargazer.Moon._Ready
+  isSpec: "True"
+  fullName: Stargazer.Moon._Ready
+  nameWithType: Moon._Ready
 - uid: Stargazer.Moon.horizontalMoon
   name: horizontalMoon
   href: api/Stargazer.Moon.html#Stargazer_Moon_horizontalMoon
   commentId: F:Stargazer.Moon.horizontalMoon
   fullName: Stargazer.Moon.horizontalMoon
   nameWithType: Moon.horizontalMoon
+- uid: Stargazer.Moon.moonMaterial
+  name: moonMaterial
+  href: api/Stargazer.Moon.html#Stargazer_Moon_moonMaterial
+  commentId: F:Stargazer.Moon.moonMaterial
+  fullName: Stargazer.Moon.moonMaterial
+  nameWithType: Moon.moonMaterial
+- uid: Stargazer.Moon.theSun
+  name: theSun
+  href: api/Stargazer.Moon.html#Stargazer_Moon_theSun
+  commentId: F:Stargazer.Moon.theSun
+  fullName: Stargazer.Moon.theSun
+  nameWithType: Moon.theSun
 - uid: Stargazer.Planet
   name: Planet
   href: api/Stargazer.Planet.html
@@ -5616,6 +5840,12 @@ references:
   commentId: F:Stargazer.Planet.planetTexture
   fullName: Stargazer.Planet.planetTexture
   nameWithType: Planet.planetTexture
+- uid: Stargazer.Planet.theSun
+  name: theSun
+  href: api/Stargazer.Planet.html#Stargazer_Planet_theSun
+  commentId: F:Stargazer.Planet.theSun
+  fullName: Stargazer.Planet.theSun
+  nameWithType: Planet.theSun
 - uid: Stargazer.Planets
   name: Planets
   href: api/Stargazer.Planets.html
@@ -5676,6 +5906,19 @@ references:
   isSpec: "True"
   fullName: Stargazer.PlayControl.Activate
   nameWithType: PlayControl.Activate
+- uid: Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  name: OnSliderGuiInput(InputEvent)
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_OnSliderGuiInput_Godot_InputEvent_
+  commentId: M:Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  fullName: Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  nameWithType: PlayControl.OnSliderGuiInput(InputEvent)
+- uid: Stargazer.PlayControl.OnSliderGuiInput*
+  name: OnSliderGuiInput
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_OnSliderGuiInput_
+  commentId: Overload:Stargazer.PlayControl.OnSliderGuiInput
+  isSpec: "True"
+  fullName: Stargazer.PlayControl.OnSliderGuiInput
+  nameWithType: PlayControl.OnSliderGuiInput
 - uid: Stargazer.PlayControl.OnSynchronizeTime
   name: OnSynchronizeTime()
   href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_OnSynchronizeTime
@@ -5689,6 +5932,22 @@ references:
   isSpec: "True"
   fullName: Stargazer.PlayControl.OnSynchronizeTime
   nameWithType: PlayControl.OnSynchronizeTime
+- uid: Stargazer.PlayControl.OnTimeLapseFrameChanged(System.Double)
+  name: OnTimeLapseFrameChanged(double)
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_OnTimeLapseFrameChanged_System_Double_
+  commentId: M:Stargazer.PlayControl.OnTimeLapseFrameChanged(System.Double)
+  name.vb: OnTimeLapseFrameChanged(Double)
+  fullName: Stargazer.PlayControl.OnTimeLapseFrameChanged(double)
+  fullName.vb: Stargazer.PlayControl.OnTimeLapseFrameChanged(Double)
+  nameWithType: PlayControl.OnTimeLapseFrameChanged(double)
+  nameWithType.vb: PlayControl.OnTimeLapseFrameChanged(Double)
+- uid: Stargazer.PlayControl.OnTimeLapseFrameChanged*
+  name: OnTimeLapseFrameChanged
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_OnTimeLapseFrameChanged_
+  commentId: Overload:Stargazer.PlayControl.OnTimeLapseFrameChanged
+  isSpec: "True"
+  fullName: Stargazer.PlayControl.OnTimeLapseFrameChanged
+  nameWithType: PlayControl.OnTimeLapseFrameChanged
 - uid: Stargazer.PlayControl.PlayNormal
   name: PlayNormal()
   href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_PlayNormal
@@ -5702,6 +5961,34 @@ references:
   isSpec: "True"
   fullName: Stargazer.PlayControl.PlayNormal
   nameWithType: PlayControl.PlayNormal
+- uid: Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  name: SetBaseDateTime(DateTime)
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_SetBaseDateTime_System_DateTime_
+  commentId: M:Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  name.vb: SetBaseDateTime(Date)
+  fullName: Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  fullName.vb: Stargazer.PlayControl.SetBaseDateTime(Date)
+  nameWithType: PlayControl.SetBaseDateTime(DateTime)
+  nameWithType.vb: PlayControl.SetBaseDateTime(Date)
+- uid: Stargazer.PlayControl.SetBaseDateTime*
+  name: SetBaseDateTime
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_SetBaseDateTime_
+  commentId: Overload:Stargazer.PlayControl.SetBaseDateTime
+  isSpec: "True"
+  fullName: Stargazer.PlayControl.SetBaseDateTime
+  nameWithType: PlayControl.SetBaseDateTime
+- uid: Stargazer.PlayControl.TimeLapseLabel
+  name: TimeLapseLabel
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_TimeLapseLabel
+  commentId: F:Stargazer.PlayControl.TimeLapseLabel
+  fullName: Stargazer.PlayControl.TimeLapseLabel
+  nameWithType: PlayControl.TimeLapseLabel
+- uid: Stargazer.PlayControl.TimeLapseSlider
+  name: TimeLapseSlider
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_TimeLapseSlider
+  commentId: F:Stargazer.PlayControl.TimeLapseSlider
+  fullName: Stargazer.PlayControl.TimeLapseSlider
+  nameWithType: PlayControl.TimeLapseSlider
 - uid: Stargazer.PlayControl.UpdateDays(System.Int32)
   name: UpdateDays(int)
   href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_UpdateDays_System_Int32_
@@ -5779,6 +6066,12 @@ references:
   isSpec: "True"
   fullName: Stargazer.PlayControl.UpdateSeconds
   nameWithType: PlayControl.UpdateSeconds
+- uid: Stargazer.PlayControl.UserPositionUpdated
+  name: UserPositionUpdated
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_UserPositionUpdated
+  commentId: F:Stargazer.PlayControl.UserPositionUpdated
+  fullName: Stargazer.PlayControl.UserPositionUpdated
+  nameWithType: PlayControl.UserPositionUpdated
 - uid: Stargazer.PlayControl._Ready
   name: _Ready()
   href: api/Stargazer.PlayControl.html#Stargazer_PlayControl__Ready
@@ -5792,6 +6085,30 @@ references:
   isSpec: "True"
   fullName: Stargazer.PlayControl._Ready
   nameWithType: PlayControl._Ready
+- uid: Stargazer.PlayControl._lastLatitude
+  name: _lastLatitude
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl__lastLatitude
+  commentId: F:Stargazer.PlayControl._lastLatitude
+  fullName: Stargazer.PlayControl._lastLatitude
+  nameWithType: PlayControl._lastLatitude
+- uid: Stargazer.PlayControl._lastLongitude
+  name: _lastLongitude
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl__lastLongitude
+  commentId: F:Stargazer.PlayControl._lastLongitude
+  fullName: Stargazer.PlayControl._lastLongitude
+  nameWithType: PlayControl._lastLongitude
+- uid: Stargazer.PlayControl.baseDateTime
+  name: baseDateTime
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_baseDateTime
+  commentId: F:Stargazer.PlayControl.baseDateTime
+  fullName: Stargazer.PlayControl.baseDateTime
+  nameWithType: PlayControl.baseDateTime
+- uid: Stargazer.PlayControl.frameCount
+  name: frameCount
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_frameCount
+  commentId: F:Stargazer.PlayControl.frameCount
+  fullName: Stargazer.PlayControl.frameCount
+  nameWithType: PlayControl.frameCount
 - uid: Stargazer.PlayControl.multiplier
   name: multiplier
   href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_multiplier
@@ -5804,6 +6121,12 @@ references:
   commentId: F:Stargazer.PlayControl.multiplierLabel
   fullName: Stargazer.PlayControl.multiplierLabel
   nameWithType: PlayControl.multiplierLabel
+- uid: Stargazer.PlayControl.totalSpan
+  name: totalSpan
+  href: api/Stargazer.PlayControl.html#Stargazer_PlayControl_totalSpan
+  commentId: F:Stargazer.PlayControl.totalSpan
+  fullName: Stargazer.PlayControl.totalSpan
+  nameWithType: PlayControl.totalSpan
 - uid: Stargazer.PlaySpeed
   name: PlaySpeed
   href: api/Stargazer.PlaySpeed.html
@@ -6292,6 +6615,18 @@ references:
   isSpec: "True"
   fullName: Stargazer.SkyView2D._Ready
   nameWithType: SkyView2D._Ready
+- uid: Stargazer.SkyView2D.dataPackage
+  name: dataPackage
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_dataPackage
+  commentId: F:Stargazer.SkyView2D.dataPackage
+  fullName: Stargazer.SkyView2D.dataPackage
+  nameWithType: SkyView2D.dataPackage
+- uid: Stargazer.SkyView2D.screenshotPath
+  name: screenshotPath
+  href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_screenshotPath
+  commentId: F:Stargazer.SkyView2D.screenshotPath
+  fullName: Stargazer.SkyView2D.screenshotPath
+  nameWithType: SkyView2D.screenshotPath
 - uid: Stargazer.SkyView2D.timeLabel
   name: timeLabel
   href: api/Stargazer.SkyView2D.html#Stargazer_SkyView2D_timeLabel
@@ -6916,12 +7251,15 @@ references:
   commentId: T:Stargazer.Startup
   fullName: Stargazer.Startup
   nameWithType: Startup
-- uid: Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
-  name: ExportScreenshot(SubViewport)
-  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_Godot_SubViewport_
-  commentId: M:Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
-  fullName: Stargazer.Startup.ExportScreenshot(Godot.SubViewport)
-  nameWithType: Startup.ExportScreenshot(SubViewport)
+- uid: Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)
+  name: ExportScreenshot(SubViewport, string)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_Godot_SubViewport_System_String_
+  commentId: M:Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)
+  name.vb: ExportScreenshot(SubViewport, String)
+  fullName: Stargazer.Startup.ExportScreenshot(Godot.SubViewport, string)
+  fullName.vb: Stargazer.Startup.ExportScreenshot(Godot.SubViewport, String)
+  nameWithType: Startup.ExportScreenshot(SubViewport, string)
+  nameWithType.vb: Startup.ExportScreenshot(SubViewport, String)
 - uid: Stargazer.Startup.ExportScreenshot*
   name: ExportScreenshot
   href: api/Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_
@@ -6929,6 +7267,22 @@ references:
   isSpec: "True"
   fullName: Stargazer.Startup.ExportScreenshot
   nameWithType: Startup.ExportScreenshot
+- uid: Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  name: ExportTimelapseGif(double, double, DateTime, bool)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportTimelapseGif_System_Double_System_Double_System_DateTime_System_Boolean_
+  commentId: M:Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  name.vb: ExportTimelapseGif(Double, Double, Date, Boolean)
+  fullName: Stargazer.Startup.ExportTimelapseGif(double, double, System.DateTime, bool)
+  fullName.vb: Stargazer.Startup.ExportTimelapseGif(Double, Double, Date, Boolean)
+  nameWithType: Startup.ExportTimelapseGif(double, double, DateTime, bool)
+  nameWithType.vb: Startup.ExportTimelapseGif(Double, Double, Date, Boolean)
+- uid: Stargazer.Startup.ExportTimelapseGif*
+  name: ExportTimelapseGif
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ExportTimelapseGif_
+  commentId: Overload:Stargazer.Startup.ExportTimelapseGif
+  isSpec: "True"
+  fullName: Stargazer.Startup.ExportTimelapseGif
+  nameWithType: Startup.ExportTimelapseGif
 - uid: Stargazer.Startup.MethodName
   name: Startup.MethodName
   href: api/Stargazer.Startup.MethodName.html
@@ -6966,12 +7320,60 @@ references:
   commentId: T:Stargazer.Startup.PropertyName
   fullName: Stargazer.Startup.PropertyName
   nameWithType: Startup.PropertyName
+- uid: Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  name: SaveAsGif(Image, int, int, string)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_SaveAsGif_Godot_Image_System_Int32_System_Int32_System_String_
+  commentId: M:Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  name.vb: SaveAsGif(Image, Integer, Integer, String)
+  fullName: Stargazer.Startup.SaveAsGif(Godot.Image, int, int, string)
+  fullName.vb: Stargazer.Startup.SaveAsGif(Godot.Image, Integer, Integer, String)
+  nameWithType: Startup.SaveAsGif(Image, int, int, string)
+  nameWithType.vb: Startup.SaveAsGif(Image, Integer, Integer, String)
+- uid: Stargazer.Startup.SaveAsGif*
+  name: SaveAsGif
+  href: api/Stargazer.Startup.html#Stargazer_Startup_SaveAsGif_
+  commentId: Overload:Stargazer.Startup.SaveAsGif
+  isSpec: "True"
+  fullName: Stargazer.Startup.SaveAsGif
+  nameWithType: Startup.SaveAsGif
+- uid: Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  name: SaveWithImageSharp(Image, int, int, string, IImageEncoder)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_SaveWithImageSharp_Godot_Image_System_Int32_System_Int32_System_String_SixLabors_ImageSharp_Formats_IImageEncoder_
+  commentId: M:Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  name.vb: SaveWithImageSharp(Image, Integer, Integer, String, IImageEncoder)
+  fullName: Stargazer.Startup.SaveWithImageSharp(Godot.Image, int, int, string, SixLabors.ImageSharp.Formats.IImageEncoder)
+  fullName.vb: Stargazer.Startup.SaveWithImageSharp(Godot.Image, Integer, Integer, String, SixLabors.ImageSharp.Formats.IImageEncoder)
+  nameWithType: Startup.SaveWithImageSharp(Image, int, int, string, IImageEncoder)
+  nameWithType.vb: Startup.SaveWithImageSharp(Image, Integer, Integer, String, IImageEncoder)
+- uid: Stargazer.Startup.SaveWithImageSharp*
+  name: SaveWithImageSharp
+  href: api/Stargazer.Startup.html#Stargazer_Startup_SaveWithImageSharp_
+  commentId: Overload:Stargazer.Startup.SaveWithImageSharp
+  isSpec: "True"
+  fullName: Stargazer.Startup.SaveWithImageSharp
+  nameWithType: Startup.SaveWithImageSharp
 - uid: Stargazer.Startup.ScreenshotDialog
   name: ScreenshotDialog
   href: api/Stargazer.Startup.html#Stargazer_Startup_ScreenshotDialog
   commentId: F:Stargazer.Startup.ScreenshotDialog
   fullName: Stargazer.Startup.ScreenshotDialog
   nameWithType: Startup.ScreenshotDialog
+- uid: Stargazer.Startup.ShowGifExportedNotification(System.String)
+  name: ShowGifExportedNotification(string)
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ShowGifExportedNotification_System_String_
+  commentId: M:Stargazer.Startup.ShowGifExportedNotification(System.String)
+  name.vb: ShowGifExportedNotification(String)
+  fullName: Stargazer.Startup.ShowGifExportedNotification(string)
+  fullName.vb: Stargazer.Startup.ShowGifExportedNotification(String)
+  nameWithType: Startup.ShowGifExportedNotification(string)
+  nameWithType.vb: Startup.ShowGifExportedNotification(String)
+- uid: Stargazer.Startup.ShowGifExportedNotification*
+  name: ShowGifExportedNotification
+  href: api/Stargazer.Startup.html#Stargazer_Startup_ShowGifExportedNotification_
+  commentId: Overload:Stargazer.Startup.ShowGifExportedNotification
+  isSpec: "True"
+  fullName: Stargazer.Startup.ShowGifExportedNotification
+  nameWithType: Startup.ShowGifExportedNotification
 - uid: Stargazer.Startup.ShowScreenshotSavedNotification
   name: ShowScreenshotSavedNotification()
   href: api/Stargazer.Startup.html#Stargazer_Startup_ShowScreenshotSavedNotification

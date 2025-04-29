@@ -6,16 +6,27 @@ items:
   parent: Stargazer
   children:
   - Stargazer.PlayControl.Activate
+  - Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
   - Stargazer.PlayControl.OnSynchronizeTime
+  - Stargazer.PlayControl.OnTimeLapseFrameChanged(System.Double)
   - Stargazer.PlayControl.PlayNormal
+  - Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  - Stargazer.PlayControl.TimeLapseLabel
+  - Stargazer.PlayControl.TimeLapseSlider
   - Stargazer.PlayControl.UpdateDays(System.Int32)
   - Stargazer.PlayControl.UpdateHours(System.Int32)
   - Stargazer.PlayControl.UpdateMinutes(System.Int32)
   - Stargazer.PlayControl.UpdateMultiplierLabel
   - Stargazer.PlayControl.UpdateSeconds(System.Int32)
+  - Stargazer.PlayControl.UserPositionUpdated
   - Stargazer.PlayControl._Ready
+  - Stargazer.PlayControl._lastLatitude
+  - Stargazer.PlayControl._lastLongitude
+  - Stargazer.PlayControl.baseDateTime
+  - Stargazer.PlayControl.frameCount
   - Stargazer.PlayControl.multiplier
   - Stargazer.PlayControl.multiplierLabel
+  - Stargazer.PlayControl.totalSpan
   langs:
   - csharp
   - vb
@@ -25,7 +36,7 @@ items:
   type: Class
   source:
     id: PlayControl
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.PlayControl_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.PlayControl_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -36,6 +47,8 @@ items:
     Author: Josh Johner
 
     Created: SPR 2025
+
+    Modified: SPR 2025 by Alex Lake to implement time lapse.
   example: []
   syntax:
     content: >-
@@ -551,7 +564,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: multiplierLabel
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -578,7 +591,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: multiplier
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -587,6 +600,252 @@ items:
     return:
       type: Stargazer.PlaySpeed
     content.vb: Private multiplier As PlaySpeed
+- uid: Stargazer.PlayControl.baseDateTime
+  commentId: F:Stargazer.PlayControl.baseDateTime
+  id: baseDateTime
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: baseDateTime
+  nameWithType: PlayControl.baseDateTime
+  fullName: Stargazer.PlayControl.baseDateTime
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: baseDateTime
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 17
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private DateTime baseDateTime
+    return:
+      type: System.DateTime
+    content.vb: Private baseDateTime As Date
+- uid: Stargazer.PlayControl.frameCount
+  commentId: F:Stargazer.PlayControl.frameCount
+  id: frameCount
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: frameCount
+  nameWithType: PlayControl.frameCount
+  fullName: Stargazer.PlayControl.frameCount
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: frameCount
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 18
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private int frameCount
+    return:
+      type: System.Int32
+    content.vb: Private frameCount As Integer
+- uid: Stargazer.PlayControl._lastLatitude
+  commentId: F:Stargazer.PlayControl._lastLatitude
+  id: _lastLatitude
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: _lastLatitude
+  nameWithType: PlayControl._lastLatitude
+  fullName: Stargazer.PlayControl._lastLatitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLatitude
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 19
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLatitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLatitude As Double
+- uid: Stargazer.PlayControl._lastLongitude
+  commentId: F:Stargazer.PlayControl._lastLongitude
+  id: _lastLongitude
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: _lastLongitude
+  nameWithType: PlayControl._lastLongitude
+  fullName: Stargazer.PlayControl._lastLongitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLongitude
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLongitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLongitude As Double
+- uid: Stargazer.PlayControl.totalSpan
+  commentId: F:Stargazer.PlayControl.totalSpan
+  id: totalSpan
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: totalSpan
+  nameWithType: PlayControl.totalSpan
+  fullName: Stargazer.PlayControl.totalSpan
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: totalSpan
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private TimeSpan totalSpan
+    return:
+      type: System.TimeSpan
+    content.vb: Private totalSpan As TimeSpan
+- uid: Stargazer.PlayControl.TimeLapseSlider
+  commentId: F:Stargazer.PlayControl.TimeLapseSlider
+  id: TimeLapseSlider
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: TimeLapseSlider
+  nameWithType: PlayControl.TimeLapseSlider
+  fullName: Stargazer.PlayControl.TimeLapseSlider
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TimeLapseSlider
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 22
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private HSlider TimeLapseSlider
+    return:
+      type: Godot.HSlider
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private TimeLapseSlider As HSlider
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.PlayControl.TimeLapseLabel
+  commentId: F:Stargazer.PlayControl.TimeLapseLabel
+  id: TimeLapseLabel
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: TimeLapseLabel
+  nameWithType: PlayControl.TimeLapseLabel
+  fullName: Stargazer.PlayControl.TimeLapseLabel
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TimeLapseLabel
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 23
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private Label TimeLapseLabel
+    return:
+      type: Godot.Label
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private TimeLapseLabel As Label
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.PlayControl.UserPositionUpdated
+  commentId: F:Stargazer.PlayControl.UserPositionUpdated
+  id: UserPositionUpdated
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: UserPositionUpdated
+  nameWithType: PlayControl.UserPositionUpdated
+  fullName: Stargazer.PlayControl.UserPositionUpdated
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UserPositionUpdated
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 28
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Used to notify subscribers when the user position has been updated.
+  example: []
+  syntax:
+    content: public Action<double, double, DateTime> UserPositionUpdated
+    return:
+      type: System.Action{System.Double,System.Double,System.DateTime}
+    content.vb: Public UserPositionUpdated As Action(Of Double, Double, Date)
 - uid: Stargazer.PlayControl.UpdateSeconds(System.Int32)
   commentId: M:Stargazer.PlayControl.UpdateSeconds(System.Int32)
   id: UpdateSeconds(System.Int32)
@@ -605,7 +864,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateSeconds
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 20
+    startLine: 34
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -640,7 +899,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateMinutes
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 29
+    startLine: 43
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -675,7 +934,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateHours
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 38
+    startLine: 52
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -710,7 +969,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateDays
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 48
+    startLine: 62
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -745,7 +1004,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: OnSynchronizeTime
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 57
+    startLine: 71
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -773,7 +1032,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlayNormal
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 66
+    startLine: 80
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -801,7 +1060,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 75
+    startLine: 89
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -830,7 +1089,7 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Activate
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 86
+    startLine: 122
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -861,14 +1120,132 @@ items:
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateMultiplierLabel
     path: ../Stargazer-Godot/Code/PlayControl.cs
-    startLine: 93
+    startLine: 135
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Updates the current time multiplier display label
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Modified by William Arnett (SPR 2025)
+  example: []
   syntax:
     content: private void UpdateMultiplierLabel()
     content.vb: Private Sub UpdateMultiplierLabel()
   overload: Stargazer.PlayControl.UpdateMultiplierLabel*
+- uid: Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  commentId: M:Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  id: SetBaseDateTime(System.DateTime)
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: SetBaseDateTime(DateTime)
+  nameWithType: PlayControl.SetBaseDateTime(DateTime)
+  fullName: Stargazer.PlayControl.SetBaseDateTime(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetBaseDateTime
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 146
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Sets the base time for the slider.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public void SetBaseDateTime(DateTime dateTime)
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+      description: The time to set.
+    content.vb: Public Sub SetBaseDateTime(dateTime As Date)
+  overload: Stargazer.PlayControl.SetBaseDateTime*
+  nameWithType.vb: PlayControl.SetBaseDateTime(Date)
+  fullName.vb: Stargazer.PlayControl.SetBaseDateTime(Date)
+  name.vb: SetBaseDateTime(Date)
+- uid: Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  commentId: M:Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  id: OnSliderGuiInput(Godot.InputEvent)
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: OnSliderGuiInput(InputEvent)
+  nameWithType: PlayControl.OnSliderGuiInput(InputEvent)
+  fullName: Stargazer.PlayControl.OnSliderGuiInput(Godot.InputEvent)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnSliderGuiInput
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 150
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private void OnSliderGuiInput(InputEvent @event)
+    parameters:
+    - id: event
+      type: Godot.InputEvent
+    content.vb: Private Sub OnSliderGuiInput([event] As InputEvent)
+  overload: Stargazer.PlayControl.OnSliderGuiInput*
+- uid: Stargazer.PlayControl.OnTimeLapseFrameChanged(System.Double)
+  commentId: M:Stargazer.PlayControl.OnTimeLapseFrameChanged(System.Double)
+  id: OnTimeLapseFrameChanged(System.Double)
+  parent: Stargazer.PlayControl
+  langs:
+  - csharp
+  - vb
+  name: OnTimeLapseFrameChanged(double)
+  nameWithType: PlayControl.OnTimeLapseFrameChanged(double)
+  fullName: Stargazer.PlayControl.OnTimeLapseFrameChanged(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/PlayControl.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnTimeLapseFrameChanged
+    path: ../Stargazer-Godot/Code/PlayControl.cs
+    startLine: 171
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Called when the time lapse slider is moved.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void OnTimeLapseFrameChanged(double frame)
+    parameters:
+    - id: frame
+      type: System.Double
+      description: The current frame after movement
+    content.vb: Private Sub OnTimeLapseFrameChanged(frame As Double)
+  overload: Stargazer.PlayControl.OnTimeLapseFrameChanged*
+  nameWithType.vb: PlayControl.OnTimeLapseFrameChanged(Double)
+  fullName.vb: Stargazer.PlayControl.OnTimeLapseFrameChanged(Double)
+  name.vb: OnTimeLapseFrameChanged(Double)
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12403,6 +12780,153 @@ references:
   name: PlaySpeed
   nameWithType: PlaySpeed
   fullName: Stargazer.PlaySpeed
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Godot.HSlider
+  commentId: T:Godot.HSlider
+  parent: Godot
+  isExternal: true
+  name: HSlider
+  nameWithType: HSlider
+  fullName: Godot.HSlider
+- uid: System.Action{System.Double,System.Double,System.DateTime}
+  commentId: T:System.Action{System.Double,System.Double,System.DateTime}
+  parent: System
+  definition: System.Action`3
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<double, double, DateTime>
+  nameWithType: Action<double, double, DateTime>
+  fullName: System.Action<double, double, System.DateTime>
+  nameWithType.vb: Action(Of Double, Double, Date)
+  fullName.vb: System.Action(Of Double, Double, Date)
+  name.vb: Action(Of Double, Double, Date)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
 - uid: Godot.Signal
   commentId: T:Godot.Signal
   isExternal: true
@@ -12415,17 +12939,6 @@ references:
   name: UpdateSeconds
   nameWithType: PlayControl.UpdateSeconds
   fullName: Stargazer.PlayControl.UpdateSeconds
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: Stargazer.PlayControl.UpdateMinutes*
   commentId: Overload:Stargazer.PlayControl.UpdateMinutes
   href: Stargazer.PlayControl.html#Stargazer_PlayControl_UpdateMinutes_System_Int32_
@@ -12493,3 +13006,28 @@ references:
   name: UpdateMultiplierLabel
   nameWithType: PlayControl.UpdateMultiplierLabel
   fullName: Stargazer.PlayControl.UpdateMultiplierLabel
+- uid: Stargazer.PlayControl.SetBaseDateTime*
+  commentId: Overload:Stargazer.PlayControl.SetBaseDateTime
+  href: Stargazer.PlayControl.html#Stargazer_PlayControl_SetBaseDateTime_System_DateTime_
+  name: SetBaseDateTime
+  nameWithType: PlayControl.SetBaseDateTime
+  fullName: Stargazer.PlayControl.SetBaseDateTime
+- uid: Stargazer.PlayControl.OnSliderGuiInput*
+  commentId: Overload:Stargazer.PlayControl.OnSliderGuiInput
+  href: Stargazer.PlayControl.html#Stargazer_PlayControl_OnSliderGuiInput_Godot_InputEvent_
+  name: OnSliderGuiInput
+  nameWithType: PlayControl.OnSliderGuiInput
+  fullName: Stargazer.PlayControl.OnSliderGuiInput
+- uid: Godot.InputEvent
+  commentId: T:Godot.InputEvent
+  parent: Godot
+  isExternal: true
+  name: InputEvent
+  nameWithType: InputEvent
+  fullName: Godot.InputEvent
+- uid: Stargazer.PlayControl.OnTimeLapseFrameChanged*
+  commentId: Overload:Stargazer.PlayControl.OnTimeLapseFrameChanged
+  href: Stargazer.PlayControl.html#Stargazer_PlayControl_OnTimeLapseFrameChanged_System_Double_
+  name: OnTimeLapseFrameChanged
+  nameWithType: PlayControl.OnTimeLapseFrameChanged
+  fullName: Stargazer.PlayControl.OnTimeLapseFrameChanged

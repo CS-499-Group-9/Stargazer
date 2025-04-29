@@ -19,7 +19,7 @@ items:
   type: Class
   source:
     id: ASTRALPLANEAlbedo
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.ASTRALPLANEAlbedo_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

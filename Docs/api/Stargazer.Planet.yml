@@ -13,6 +13,7 @@ items:
   - Stargazer.Planet.horizontalPlanet
   - Stargazer.Planet.planetMaterial
   - Stargazer.Planet.planetTexture
+  - Stargazer.Planet.theSun
   langs:
   - csharp
   - vb
@@ -22,8 +23,8 @@ items:
   type: Class
   source:
     id: Planet
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Planet_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Planet_ScriptProperties.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -460,6 +461,33 @@ items:
     return:
       type: Godot.ShaderMaterial
     content.vb: Private planetMaterial As ShaderMaterial
+- uid: Stargazer.Planet.theSun
+  commentId: F:Stargazer.Planet.theSun
+  id: theSun
+  parent: Stargazer.Planet
+  langs:
+  - csharp
+  - vb
+  name: theSun
+  nameWithType: Planet.theSun
+  fullName: Stargazer.Planet.theSun
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Planet.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: theSun
+    path: ../Stargazer-Godot/Code/Planet.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Sun theSun
+    return:
+      type: Stargazer.Sun
+    content.vb: Private theSun As Sun
 - uid: Stargazer.Planet._Process(System.Double)
   commentId: M:Stargazer.Planet._Process(System.Double)
   id: _Process(System.Double)
@@ -7625,6 +7653,13 @@ references:
   name: ShaderMaterial
   nameWithType: ShaderMaterial
   fullName: Godot.ShaderMaterial
+- uid: Stargazer.Sun
+  commentId: T:Stargazer.Sun
+  parent: Stargazer
+  href: Stargazer.Sun.html
+  name: Sun
+  nameWithType: Sun
+  fullName: Stargazer.Sun
 - uid: Stargazer.CelestialBody._Process(System.Double)
   commentId: M:Stargazer.CelestialBody._Process(System.Double)
   parent: Stargazer.CelestialBody

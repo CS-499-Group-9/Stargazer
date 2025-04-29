@@ -21,7 +21,7 @@ items:
   type: Class
   source:
     id: MonthView
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\DatePicker.MonthView_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\DatePicker.MonthView_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

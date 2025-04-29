@@ -38,7 +38,7 @@ items:
   type: Class
   source:
     id: MainCamera
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.MainCamera_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.MainCamera_ScriptMethods.generated.cs
     startLine: 5
   assemblies:
   - New Game Project

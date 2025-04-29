@@ -62,7 +62,7 @@ namespace Stargazer
         public Action<double, double, DateTime> UserPositionUpdated;
         /// <summary>
         /// Broadcasts a request to take a screenshot
-        /// <summary>
+        /// </summary>
         public Func<Task> RequestScreenshot;
 
         /// <summary>
@@ -77,12 +77,14 @@ namespace Stargazer
             }
         }
 
+        /// <summary>
         /// Receives the <see cref="Signal"/> from the AzimuthButton's <see cref="CheckBox"/> and broadcasts on the <see cref="AzimuthToggled"/> notification.
         /// </summary>
         /// <param name="value">True if the toggle button is checked</param>
         public void ToggleAzimuth(bool value) { AzimuthToggled?.Invoke(value); }
+
         /// <summary>
-        /// Receives the <see cref="Signal"/> from the <see cref=""/>
+        /// Receives the <see cref="Signal"/> from the <c>Toggle Equatorial</c>
         /// </summary>
         /// <param name="value">True if the toggle button is checked.</param>
         public void ToggleEquatorial(bool value) { EquatorialToggled?.Invoke(value); }
@@ -106,6 +108,10 @@ namespace Stargazer
         /// <param name="value">True if the checkbox is checked</param>
         public void ToggleMessierObjects(bool value) { MessierObjectsToggled?.Invoke(value); }
 
+        /// <summary>
+        /// Sets a reference to the main controller in the control container.
+        /// </summary>
+        /// <param name="controller">The main controller</param>
         public void SetMainController(Startup controller)
         {
             _mainControl = controller;
@@ -128,9 +134,13 @@ namespace Stargazer
 
         /// <summary>
         /// Receives the <c>Enter</c> button's <see cref="Signal"/>, gathers user input and broadcasts <see cref="UserPositionUpdated"/>
+        /// Author: Logan Parker
+        /// Created: SPR 2025
+        /// Modified: Alex Lake SPR 2025 (added time lapse slider)
         /// </summary>
-	    public async void UpdateUserPosition()
+	    public void UpdateUserPosition()
         {
+            // Get the raw values from the text boxes
             string latDegText = latDegField.Text.Trim();
             string latMinText = latMinField.Text.Trim();
             string lonDegText = lonDegField.Text.Trim();
@@ -139,11 +149,13 @@ namespace Stargazer
             string dateText = calendarButton.Text.Trim();
             string amPmText = AMorPMButton.GetItemText(AMorPMButton.Selected);
 
+
             // Check if any field is empty
             if (string.IsNullOrEmpty(latDegText) || string.IsNullOrEmpty(latMinText) ||
                 string.IsNullOrEmpty(lonDegText) || string.IsNullOrEmpty(lonMinText) ||
                 string.IsNullOrEmpty(timeText) || string.IsNullOrEmpty(dateText))
             {
+                // TODO: This should display something useful to the user.
                 GD.PrintErr("Please fill out all fields before submitting.");
                 return;
             }
@@ -154,10 +166,12 @@ namespace Stargazer
                 !double.TryParse(lonDegText, out double lonDeg) ||
                 !double.TryParse(lonMinText, out double lonMin))
             {
+                // TODO: This should display something useful to the user.
                 GD.PrintErr("Invalid number entered in latitude/longitude.");
                 return;
             }
 
+            // Convert the minutes to decimal degrees and add to the whole values.
             double latitude = latDeg + latMin * 0.016667;
             double longitude = lonDeg + lonMin * 0.016667;
 
@@ -167,6 +181,7 @@ namespace Stargazer
                 !int.TryParse(timeSplit[0], out int hour) ||
                 !int.TryParse(timeSplit[1], out int minute))
             {
+                // TODO: This should display something useful to the user. 
                 GD.PrintErr("Invalid time format.");
                 return;
             }
@@ -176,6 +191,7 @@ namespace Stargazer
 
             if (!DateTime.TryParse($"{dateText} {hour:00}:{minute:00}:00", out DateTime localDateTime))
             {
+                // TODO: This should display something useful to the user.
                 GD.PrintErr("Invalid date format.");
                 return;
             }
@@ -192,17 +208,34 @@ namespace Stargazer
             _lastLongitude = longitude;
         }
 
+        /// <summary>
+        /// Toggles a flag when the user selects/deselects the reverse gif checkbox.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="toggled"></param>
         public void _on_reverse_gif_toggled(bool toggled)
         {
             _exportGifReversed = toggled;
         }
 
-
+        /// <summary>
+        /// Sets the base date time for the time lapse.
+        /// Author Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="dateTime">The time to set.</param>
         public void SetBaseDateTime(DateTime dateTime)
         {
             baseDateTime = dateTime; // Set the base date and time.
         }
 
+        /// <summary>
+        /// Called each time the time lapse advances one frame.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="frame">The amount of time passed since the last frame</param>
         private void OnTimeLapseFrameChanged(double frame)
         {
             double progress = frame / (frameCount - 1);
@@ -220,7 +253,11 @@ namespace Stargazer
             UserPositionUpdated?.Invoke(_lastLatitude, _lastLongitude, targetTime.ToUniversalTime());
         }
 
-
+        /// <summary>
+        /// Screenshot button
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
         private async void _on_button_pressed()
         {
             if (_mainControl != null)
@@ -229,10 +266,16 @@ namespace Stargazer
             }
             else
             {
+                // TODO: Refactor using C# Action
                 GD.PrintErr("Main controller reference not set!");
             }
         }
 
+        /// <summary>
+        /// Notifies the main controller of a user request to export a time lapse
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
         private async void _on_timelapse_gif_export_button_pressed()
         {
             if (_mainControl != null)
@@ -241,11 +284,17 @@ namespace Stargazer
             }
             else
             {
+                // TODO: Refactor using C# Action
                 GD.PrintErr("Main control is not assigned.");
             }
         }
 
-
+        /// <summary>
+        /// Returns the screenshot format that is currently selected
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <returns>The currently selected format</returns>
         public string GetSelectedScreenshotFormat()
         {
             return formatSelector.GetItemText(formatSelector.Selected);
