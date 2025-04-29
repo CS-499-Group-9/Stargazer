@@ -1,7 +1,10 @@
 # Introduction
 
-This API describes how to use the DataLayer of the Stargazer application.
+This API discribes how the internal logic of how Stargazer works.
 
-Initially, all methods required to use the service will be provided.
+The project is separated into 2 layers
 
-Eventually, all internal logic will be documented as well.
+1. Stargazer - This is the front end of the program
+2. DataLayer - This handles communicating with the repository and calculating the locations of the objects
+
+All data is loaded into the DataLayer asynchronously on startup. The front end requests incremental calculations of all objects each frame. By this method, the use is not required to wait when updating the position or time. 

@@ -16,15 +16,20 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalSun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalSun
     path: ../DataLayer/HorizontalObjects/HorizontalSun.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
-  summary: Represents the Sun in horizontal coordinate form.
+  summary: >-
+    Represents the Sun in horizontal coordinate form.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class HorizontalSun : HorizontalBody'
@@ -59,11 +64,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalSun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalSun.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

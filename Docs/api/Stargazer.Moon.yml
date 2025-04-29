@@ -7,8 +7,13 @@ items:
   children:
   - Stargazer.Moon.FromHorizontal(DataLayer.HorizontalObjects.HorizontalMoon,DataLayer.Interfaces.IEquatorialCalculator)
   - Stargazer.Moon.GetHoverText
+  - Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  - Stargazer.Moon.SetSun(Stargazer.Sun)
   - Stargazer.Moon._Process(System.Double)
+  - Stargazer.Moon._Ready
   - Stargazer.Moon.horizontalMoon
+  - Stargazer.Moon.moonMaterial
+  - Stargazer.Moon.theSun
   langs:
   - csharp
   - vb
@@ -18,12 +23,19 @@ items:
   type: Class
   source:
     id: Moon
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Moon_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Moon_ScriptPath.generated.cs
+    startLine: 3
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A moon object to be drawn.
+  summary: >-
+    A moon object to be drawn.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.
   example: []
   syntax:
     content: >-
@@ -51,6 +63,8 @@ items:
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody.GetLocation
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
@@ -171,7 +185,6 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -380,11 +393,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalMoon
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -393,6 +406,92 @@ items:
     return:
       type: DataLayer.HorizontalObjects.HorizontalMoon
     content.vb: Private horizontalMoon As HorizontalMoon
+- uid: Stargazer.Moon.moonMaterial
+  commentId: F:Stargazer.Moon.moonMaterial
+  id: moonMaterial
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: moonMaterial
+  nameWithType: Moon.moonMaterial
+  fullName: Stargazer.Moon.moonMaterial
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: moonMaterial
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private ShaderMaterial moonMaterial
+    return:
+      type: Godot.ShaderMaterial
+    content.vb: Private moonMaterial As ShaderMaterial
+- uid: Stargazer.Moon.theSun
+  commentId: F:Stargazer.Moon.theSun
+  id: theSun
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: theSun
+  nameWithType: Moon.theSun
+  fullName: Stargazer.Moon.theSun
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: theSun
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 17
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Sun theSun
+    return:
+      type: Stargazer.Sun
+    content.vb: Private theSun As Sun
+- uid: Stargazer.Moon._Ready
+  commentId: M:Stargazer.Moon._Ready
+  id: _Ready
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: _Ready()
+  nameWithType: Moon._Ready()
+  fullName: Stargazer.Moon._Ready()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Ready
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Calculates phase and positional data every frame.
+
+    Must override the <xref href="Stargazer.CelestialBody._Process(System.Double)" data-throw-if-not-resolved="false"></xref> method since calculations are moon specific.
+  example: []
+  syntax:
+    content: public override void _Ready()
+    content.vb: Public Overrides Sub _Ready()
+  overridden: Godot.Node._Ready
+  overload: Stargazer.Moon._Ready*
 - uid: Stargazer.Moon._Process(System.Double)
   commentId: M:Stargazer.Moon._Process(System.Double)
   id: _Process(System.Double)
@@ -407,31 +506,63 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 20
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: >-
-    Calculates phase and positional data every frame.
+    <p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
 
-    Must override the <xref href="Stargazer.CelestialBody._Process(System.Double)" data-throw-if-not-resolved="false"></xref> method since calculations are moon specific.
+    <p>It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with <xref href="Godot.Node.SetProcess(System.Boolean)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p>Corresponds to the <xref href="Godot.Node.NotificationProcess" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>.</p>
+
+    <p><b>Note:</b> This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).</p>
   example: []
   syntax:
     content: public override void _Process(double delta)
     parameters:
     - id: delta
       type: System.Double
-      description: ''
     content.vb: Public Overrides Sub _Process(delta As Double)
   overridden: Stargazer.CelestialBody._Process(System.Double)
   overload: Stargazer.Moon._Process*
   nameWithType.vb: Moon._Process(Double)
   fullName.vb: Stargazer.Moon._Process(Double)
   name.vb: _Process(Double)
+- uid: Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  commentId: M:Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  id: SetShaderUpVector(Godot.Vector3)
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: SetShaderUpVector(Vector3)
+  nameWithType: Moon.SetShaderUpVector(Vector3)
+  fullName: Stargazer.Moon.SetShaderUpVector(Godot.Vector3)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetShaderUpVector
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 48
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void SetShaderUpVector(Vector3 position)
+    parameters:
+    - id: position
+      type: Godot.Vector3
+    content.vb: Public Sub SetShaderUpVector(position As Vector3)
+  overload: Stargazer.Moon.SetShaderUpVector*
 - uid: Stargazer.Moon.GetHoverText
   commentId: M:Stargazer.Moon.GetHoverText
   id: GetHoverText
@@ -446,11 +577,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 38
+    startLine: 52
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -478,11 +609,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Moon.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Moon.cs
-    startLine: 51
+    startLine: 73
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -499,6 +630,35 @@ items:
       description: The calculator used to perform the calculations.
     content.vb: Public Sub FromHorizontal(moon As HorizontalMoon, moonCalculator As IEquatorialCalculator)
   overload: Stargazer.Moon.FromHorizontal*
+- uid: Stargazer.Moon.SetSun(Stargazer.Sun)
+  commentId: M:Stargazer.Moon.SetSun(Stargazer.Sun)
+  id: SetSun(Stargazer.Sun)
+  parent: Stargazer.Moon
+  langs:
+  - csharp
+  - vb
+  name: SetSun(Sun)
+  nameWithType: Moon.SetSun(Sun)
+  fullName: Stargazer.Moon.SetSun(Stargazer.Sun)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Moon.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetSun
+    path: ../Stargazer-Godot/Code/Moon.cs
+    startLine: 81
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public void SetSun(Sun sun)
+    parameters:
+    - id: sun
+      type: Stargazer.Sun
+    content.vb: Public Sub SetSun(sun As Sun)
+  overload: Stargazer.Moon.SetSun*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -609,6 +769,30 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  parent: Stargazer.CelestialBody
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
 - uid: Stargazer.CelestialBody.GetLocation
   commentId: M:Stargazer.CelestialBody.GetLocation
   parent: Stargazer.CelestialBody
@@ -2635,25 +2819,6 @@ references:
     name: Double
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
-  - name: )
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
-  parent: Godot.Node
-  isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
-  spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
-    isExternal: true
-  - name: (
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -7450,6 +7615,20 @@ references:
   - uid: DataLayer.HorizontalObjects
     name: HorizontalObjects
     href: DataLayer.HorizontalObjects.html
+- uid: Godot.ShaderMaterial
+  commentId: T:Godot.ShaderMaterial
+  parent: Godot
+  isExternal: true
+  name: ShaderMaterial
+  nameWithType: ShaderMaterial
+  fullName: Godot.ShaderMaterial
+- uid: Stargazer.Sun
+  commentId: T:Stargazer.Sun
+  parent: Stargazer
+  href: Stargazer.Sun.html
+  name: Sun
+  nameWithType: Sun
+  fullName: Stargazer.Sun
 - uid: Stargazer.CelestialBody._Process(System.Double)
   commentId: M:Stargazer.CelestialBody._Process(System.Double)
   parent: Stargazer.CelestialBody
@@ -7481,6 +7660,31 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
+  parent: Godot.Node
+  isExternal: true
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
+  spec.csharp:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Node._Ready
+    name: _Ready
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Stargazer.Moon._Ready*
+  commentId: Overload:Stargazer.Moon._Ready
+  href: Stargazer.Moon.html#Stargazer_Moon__Ready
+  name: _Ready
+  nameWithType: Moon._Ready
+  fullName: Stargazer.Moon._Ready
 - uid: Stargazer.Moon._Process*
   commentId: Overload:Stargazer.Moon._Process
   href: Stargazer.Moon.html#Stargazer_Moon__Process_System_Double_
@@ -7498,6 +7702,19 @@ references:
   nameWithType.vb: Double
   fullName.vb: Double
   name.vb: Double
+- uid: Stargazer.Moon.SetShaderUpVector*
+  commentId: Overload:Stargazer.Moon.SetShaderUpVector
+  href: Stargazer.Moon.html#Stargazer_Moon_SetShaderUpVector_Godot_Vector3_
+  name: SetShaderUpVector
+  nameWithType: Moon.SetShaderUpVector
+  fullName: Stargazer.Moon.SetShaderUpVector
+- uid: Godot.Vector3
+  commentId: T:Godot.Vector3
+  parent: Godot
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Godot.Vector3
 - uid: Stargazer.CelestialBody.GetHoverText
   commentId: M:Stargazer.CelestialBody.GetHoverText
   parent: Stargazer.CelestialBody
@@ -7569,3 +7786,9 @@ references:
   - uid: DataLayer.Interfaces
     name: Interfaces
     href: DataLayer.Interfaces.html
+- uid: Stargazer.Moon.SetSun*
+  commentId: Overload:Stargazer.Moon.SetSun
+  href: Stargazer.Moon.html#Stargazer_Moon_SetSun_Stargazer_Sun_
+  name: SetSun
+  nameWithType: Moon.SetSun
+  fullName: Stargazer.Moon.SetSun

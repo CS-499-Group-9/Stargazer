@@ -5,10 +5,21 @@ items:
   id: Startup
   parent: Stargazer
   children:
+  - Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)
+  - Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  - Stargazer.Startup.ModalBlocker
+  - Stargazer.Startup.OnScreenshotDialogClosed
+  - Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  - Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  - Stargazer.Startup.ScreenshotDialog
+  - Stargazer.Startup.ShowGifExportedNotification(System.String)
+  - Stargazer.Startup.ShowScreenshotSavedNotification
   - Stargazer.Startup.TakeScreenshot
   - Stargazer.Startup.UpdateUserPosition(System.Double,System.Double,System.DateTime)
   - Stargazer.Startup.View2D
   - Stargazer.Startup._Ready
+  - Stargazer.Startup._on_screenshot_dialog_close_requested
+  - Stargazer.Startup._on_screenshot_dialog_confirmed
   - Stargazer.Startup.calculator
   - Stargazer.Startup.controlContainer
   - Stargazer.Startup.dataPackage
@@ -25,7 +36,7 @@ items:
   type: Class
   source:
     id: Startup
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Startup_ScriptSignals.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Startup_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
@@ -34,6 +45,12 @@ items:
     The top level controller for the program. 
 
     Handles all communication between the GUI and the viewport.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by Alex Lake (SPR 2025) to implement screenshot.
   example: []
   syntax:
     content: >-
@@ -545,11 +562,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: skyView
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 15
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -572,11 +589,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: dataPackage
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 16
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -599,11 +616,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: calculator
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 17
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -626,11 +643,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: screenshotPath
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 18
+    startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -653,11 +670,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: View2D
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 20
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -665,13 +682,13 @@ items:
     content: >-
       [Export(PropertyHint.None, "")]
 
-      private PackedScene View2D
+      private SubViewport View2D
     return:
-      type: Godot.PackedScene
+      type: Godot.SubViewport
     content.vb: >-
       <Export(PropertyHint.None, "")>
 
-      Private View2D As PackedScene
+      Private View2D As SubViewport
   attributes:
   - type: Godot.ExportAttribute
     ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
@@ -694,11 +711,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: controlContainer
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 22
+    startLine: 34
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -708,7 +725,7 @@ items:
 
       private ControlContainer controlContainer
     return:
-      type: ControlContainer
+      type: Stargazer.ControlContainer
     content.vb: >-
       <Export(PropertyHint.None, "")>
 
@@ -735,11 +752,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: skyViewContainer
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 23
+    startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -776,11 +793,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: playControl
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 24
+    startLine: 36
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -803,6 +820,88 @@ items:
       value: "0"
     - type: System.String
       value: ''
+- uid: Stargazer.Startup.ScreenshotDialog
+  commentId: F:Stargazer.Startup.ScreenshotDialog
+  id: ScreenshotDialog
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ScreenshotDialog
+  nameWithType: Startup.ScreenshotDialog
+  fullName: Stargazer.Startup.ScreenshotDialog
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ScreenshotDialog
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 37
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private AcceptDialog ScreenshotDialog
+    return:
+      type: Godot.AcceptDialog
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private ScreenshotDialog As AcceptDialog
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.Startup.ModalBlocker
+  commentId: F:Stargazer.Startup.ModalBlocker
+  id: ModalBlocker
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ModalBlocker
+  nameWithType: Startup.ModalBlocker
+  fullName: Stargazer.Startup.ModalBlocker
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ModalBlocker
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 38
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private ColorRect ModalBlocker
+    return:
+      type: Godot.ColorRect
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private ModalBlocker As ColorRect
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
 - uid: Stargazer.Startup._Ready
   commentId: M:Stargazer.Startup._Ready
   id: _Ready
@@ -817,11 +916,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 30
+    startLine: 45
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -849,11 +948,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdateUserPosition
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 60
+    startLine: 106
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -879,6 +978,102 @@ items:
   nameWithType.vb: Startup.UpdateUserPosition(Double, Double, Date)
   fullName.vb: Stargazer.Startup.UpdateUserPosition(Double, Double, Date)
   name.vb: UpdateUserPosition(Double, Double, Date)
+- uid: Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  commentId: M:Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  id: SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: SaveAsGif(Image, int, int, string)
+  nameWithType: Startup.SaveAsGif(Image, int, int, string)
+  fullName: Stargazer.Startup.SaveAsGif(Godot.Image, int, int, string)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SaveAsGif
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 124
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Takes an image and creates a single frame gif
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void SaveAsGif(Image godotImage, int width, int height, string gifPath)
+    parameters:
+    - id: godotImage
+      type: Godot.Image
+      description: The image to use
+    - id: width
+      type: System.Int32
+      description: Image width
+    - id: height
+      type: System.Int32
+      description: Image height
+    - id: gifPath
+      type: System.String
+      description: The path save the gif
+    content.vb: Private Sub SaveAsGif(godotImage As Image, width As Integer, height As Integer, gifPath As String)
+  overload: Stargazer.Startup.SaveAsGif*
+  nameWithType.vb: Startup.SaveAsGif(Image, Integer, Integer, String)
+  fullName.vb: Stargazer.Startup.SaveAsGif(Godot.Image, Integer, Integer, String)
+  name.vb: SaveAsGif(Image, Integer, Integer, String)
+- uid: Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  commentId: M:Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  id: SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: SaveWithImageSharp(Image, int, int, string, IImageEncoder)
+  nameWithType: Startup.SaveWithImageSharp(Image, int, int, string, IImageEncoder)
+  fullName: Stargazer.Startup.SaveWithImageSharp(Godot.Image, int, int, string, SixLabors.ImageSharp.Formats.IImageEncoder)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SaveWithImageSharp
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 146
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Encodes the images properly using <xref href="SixLabors.ImageSharp.Image" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: private void SaveWithImageSharp(Image godotImage, int width, int height, string path, IImageEncoder encoder)
+    parameters:
+    - id: godotImage
+      type: Godot.Image
+      description: The image to encode
+    - id: width
+      type: System.Int32
+      description: Image width
+    - id: height
+      type: System.Int32
+      description: Image height
+    - id: path
+      type: System.String
+      description: The path to save the image
+    - id: encoder
+      type: SixLabors.ImageSharp.Formats.IImageEncoder
+      description: The encoder to use
+    content.vb: Private Sub SaveWithImageSharp(godotImage As Image, width As Integer, height As Integer, path As String, encoder As IImageEncoder)
+  overload: Stargazer.Startup.SaveWithImageSharp*
+  nameWithType.vb: Startup.SaveWithImageSharp(Image, Integer, Integer, String, IImageEncoder)
+  fullName.vb: Stargazer.Startup.SaveWithImageSharp(Godot.Image, Integer, Integer, String, SixLabors.ImageSharp.Formats.IImageEncoder)
+  name.vb: SaveWithImageSharp(Image, Integer, Integer, String, IImageEncoder)
 - uid: Stargazer.Startup.TakeScreenshot
   commentId: M:Stargazer.Startup.TakeScreenshot
   id: TakeScreenshot
@@ -893,18 +1088,290 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Startup.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: TakeScreenshot
     path: ../Stargazer-Godot/Code/Startup.cs
-    startLine: 69
+    startLine: 161
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Responds to notifications to initiate a screenshot.
+
+    Author: Mutiple
+
+    Created: SPR 2025
+  example: []
   syntax:
-    content: private void TakeScreenshot()
-    content.vb: Private Sub TakeScreenshot()
+    content: public Task TakeScreenshot()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A running task that is exporting the screenshot
+    content.vb: Public Function TakeScreenshot() As Task
   overload: Stargazer.Startup.TakeScreenshot*
+- uid: Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  commentId: M:Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  id: ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ExportTimelapseGif(double, double, DateTime, bool)
+  nameWithType: Startup.ExportTimelapseGif(double, double, DateTime, bool)
+  fullName: Stargazer.Startup.ExportTimelapseGif(double, double, System.DateTime, bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ExportTimelapseGif
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 208
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Responds to notifications to initiate a GIF timelapse
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)
+    parameters:
+    - id: latitude
+      type: System.Double
+      description: User latitude
+    - id: longitude
+      type: System.Double
+      description: User longitude
+    - id: startTime
+      type: System.DateTime
+      description: The starting date/time of the GIF
+    - id: reverse
+      type: System.Boolean
+      description: True if the user has selected reverse GIF
+    return:
+      type: System.Threading.Tasks.Task
+      description: An awaitable task
+    content.vb: Public Function ExportTimelapseGif(latitude As Double, longitude As Double, startTime As Date, reverse As Boolean = False) As Task
+  overload: Stargazer.Startup.ExportTimelapseGif*
+  nameWithType.vb: Startup.ExportTimelapseGif(Double, Double, Date, Boolean)
+  fullName.vb: Stargazer.Startup.ExportTimelapseGif(Double, Double, Date, Boolean)
+  name.vb: ExportTimelapseGif(Double, Double, Date, Boolean)
+- uid: Stargazer.Startup.ShowGifExportedNotification(System.String)
+  commentId: M:Stargazer.Startup.ShowGifExportedNotification(System.String)
+  id: ShowGifExportedNotification(System.String)
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ShowGifExportedNotification(string)
+  nameWithType: Startup.ShowGifExportedNotification(string)
+  fullName: Stargazer.Startup.ShowGifExportedNotification(string)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ShowGifExportedNotification
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 299
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Displays the path to the exported gif to the user.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void ShowGifExportedNotification(string gifPath)
+    parameters:
+    - id: gifPath
+      type: System.String
+      description: The path to the saved GIF
+    content.vb: Private Sub ShowGifExportedNotification(gifPath As String)
+  overload: Stargazer.Startup.ShowGifExportedNotification*
+  nameWithType.vb: Startup.ShowGifExportedNotification(String)
+  fullName.vb: Stargazer.Startup.ShowGifExportedNotification(String)
+  name.vb: ShowGifExportedNotification(String)
+- uid: Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)
+  commentId: M:Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)
+  id: ExportScreenshot(Godot.SubViewport,System.String)
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ExportScreenshot(SubViewport, string)
+  nameWithType: Startup.ExportScreenshot(SubViewport, string)
+  fullName: Stargazer.Startup.ExportScreenshot(Godot.SubViewport, string)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ExportScreenshot
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 317
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Exports a screenshot of the 2D viewport for the current date/time lat/long
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void ExportScreenshot(SubViewport view2D, string format)
+    parameters:
+    - id: view2D
+      type: Godot.SubViewport
+      description: A reference to the viewport
+    - id: format
+      type: System.String
+      description: The user selected format.
+    content.vb: Private Sub ExportScreenshot(view2D As SubViewport, format As String)
+  overload: Stargazer.Startup.ExportScreenshot*
+  nameWithType.vb: Startup.ExportScreenshot(SubViewport, String)
+  fullName.vb: Stargazer.Startup.ExportScreenshot(Godot.SubViewport, String)
+  name.vb: ExportScreenshot(SubViewport, String)
+- uid: Stargazer.Startup.ShowScreenshotSavedNotification
+  commentId: M:Stargazer.Startup.ShowScreenshotSavedNotification
+  id: ShowScreenshotSavedNotification
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: ShowScreenshotSavedNotification()
+  nameWithType: Startup.ShowScreenshotSavedNotification()
+  fullName: Stargazer.Startup.ShowScreenshotSavedNotification()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ShowScreenshotSavedNotification
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 359
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Displays a notification to the user with the path to the saved file.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void ShowScreenshotSavedNotification()
+    content.vb: Private Sub ShowScreenshotSavedNotification()
+  overload: Stargazer.Startup.ShowScreenshotSavedNotification*
+- uid: Stargazer.Startup._on_screenshot_dialog_close_requested
+  commentId: M:Stargazer.Startup._on_screenshot_dialog_close_requested
+  id: _on_screenshot_dialog_close_requested
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: _on_screenshot_dialog_close_requested()
+  nameWithType: Startup._on_screenshot_dialog_close_requested()
+  fullName: Stargazer.Startup._on_screenshot_dialog_close_requested()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_screenshot_dialog_close_requested
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 377
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Closes the screenshot dialog
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void _on_screenshot_dialog_close_requested()
+    content.vb: Private Sub _on_screenshot_dialog_close_requested()
+  overload: Stargazer.Startup._on_screenshot_dialog_close_requested*
+- uid: Stargazer.Startup._on_screenshot_dialog_confirmed
+  commentId: M:Stargazer.Startup._on_screenshot_dialog_confirmed
+  id: _on_screenshot_dialog_confirmed
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: _on_screenshot_dialog_confirmed()
+  nameWithType: Startup._on_screenshot_dialog_confirmed()
+  fullName: Stargazer.Startup._on_screenshot_dialog_confirmed()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_screenshot_dialog_confirmed
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 385
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: '?'
+  example: []
+  syntax:
+    content: private void _on_screenshot_dialog_confirmed()
+    content.vb: Private Sub _on_screenshot_dialog_confirmed()
+  overload: Stargazer.Startup._on_screenshot_dialog_confirmed*
+- uid: Stargazer.Startup.OnScreenshotDialogClosed
+  commentId: M:Stargazer.Startup.OnScreenshotDialogClosed
+  id: OnScreenshotDialogClosed
+  parent: Stargazer.Startup
+  langs:
+  - csharp
+  - vb
+  name: OnScreenshotDialogClosed()
+  nameWithType: Startup.OnScreenshotDialogClosed()
+  fullName: Stargazer.Startup.OnScreenshotDialogClosed()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Startup.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnScreenshotDialogClosed
+    path: ../Stargazer-Godot/Code/Startup.cs
+    startLine: 395
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Removes the dialog
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void OnScreenshotDialogClosed()
+    content.vb: Private Sub OnScreenshotDialogClosed()
+  overload: Stargazer.Startup.OnScreenshotDialogClosed*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -12534,19 +13001,20 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Godot.PackedScene
-  commentId: T:Godot.PackedScene
+- uid: Godot.SubViewport
+  commentId: T:Godot.SubViewport
   parent: Godot
   isExternal: true
-  name: PackedScene
-  nameWithType: PackedScene
-  fullName: Godot.PackedScene
-- uid: ControlContainer
-  commentId: T:ControlContainer
-  href: ControlContainer.html
+  name: SubViewport
+  nameWithType: SubViewport
+  fullName: Godot.SubViewport
+- uid: Stargazer.ControlContainer
+  commentId: T:Stargazer.ControlContainer
+  parent: Stargazer
+  href: Stargazer.ControlContainer.html
   name: ControlContainer
   nameWithType: ControlContainer
-  fullName: ControlContainer
+  fullName: Stargazer.ControlContainer
 - uid: Stargazer.SkyViewContainer
   commentId: T:Stargazer.SkyViewContainer
   parent: Stargazer
@@ -12561,6 +13029,20 @@ references:
   name: PlayControl
   nameWithType: PlayControl
   fullName: Stargazer.PlayControl
+- uid: Godot.AcceptDialog
+  commentId: T:Godot.AcceptDialog
+  parent: Godot
+  isExternal: true
+  name: AcceptDialog
+  nameWithType: AcceptDialog
+  fullName: Godot.AcceptDialog
+- uid: Godot.ColorRect
+  commentId: T:Godot.ColorRect
+  parent: Godot
+  isExternal: true
+  name: ColorRect
+  nameWithType: ColorRect
+  fullName: Godot.ColorRect
 - uid: System.Delegate
   commentId: T:System.Delegate
   isExternal: true
@@ -12621,9 +13103,180 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: Stargazer.Startup.SaveAsGif*
+  commentId: Overload:Stargazer.Startup.SaveAsGif
+  href: Stargazer.Startup.html#Stargazer_Startup_SaveAsGif_Godot_Image_System_Int32_System_Int32_System_String_
+  name: SaveAsGif
+  nameWithType: Startup.SaveAsGif
+  fullName: Stargazer.Startup.SaveAsGif
+- uid: Godot.Image
+  commentId: T:Godot.Image
+  parent: Godot
+  isExternal: true
+  name: Image
+  nameWithType: Image
+  fullName: Godot.Image
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SixLabors.ImageSharp.Image
+  commentId: T:SixLabors.ImageSharp.Image
+  isExternal: true
+  name: Image
+  nameWithType: Image
+  fullName: SixLabors.ImageSharp.Image
+- uid: Stargazer.Startup.SaveWithImageSharp*
+  commentId: Overload:Stargazer.Startup.SaveWithImageSharp
+  href: Stargazer.Startup.html#Stargazer_Startup_SaveWithImageSharp_Godot_Image_System_Int32_System_Int32_System_String_SixLabors_ImageSharp_Formats_IImageEncoder_
+  name: SaveWithImageSharp
+  nameWithType: Startup.SaveWithImageSharp
+  fullName: Stargazer.Startup.SaveWithImageSharp
+- uid: SixLabors.ImageSharp.Formats.IImageEncoder
+  commentId: T:SixLabors.ImageSharp.Formats.IImageEncoder
+  parent: SixLabors.ImageSharp.Formats
+  isExternal: true
+  name: IImageEncoder
+  nameWithType: IImageEncoder
+  fullName: SixLabors.ImageSharp.Formats.IImageEncoder
+- uid: SixLabors.ImageSharp.Formats
+  commentId: N:SixLabors.ImageSharp.Formats
+  isExternal: true
+  name: SixLabors.ImageSharp.Formats
+  nameWithType: SixLabors.ImageSharp.Formats
+  fullName: SixLabors.ImageSharp.Formats
+  spec.csharp:
+  - uid: SixLabors
+    name: SixLabors
+    isExternal: true
+  - name: .
+  - uid: SixLabors.ImageSharp
+    name: ImageSharp
+    isExternal: true
+  - name: .
+  - uid: SixLabors.ImageSharp.Formats
+    name: Formats
+    isExternal: true
+  spec.vb:
+  - uid: SixLabors
+    name: SixLabors
+    isExternal: true
+  - name: .
+  - uid: SixLabors.ImageSharp
+    name: ImageSharp
+    isExternal: true
+  - name: .
+  - uid: SixLabors.ImageSharp.Formats
+    name: Formats
+    isExternal: true
 - uid: Stargazer.Startup.TakeScreenshot*
   commentId: Overload:Stargazer.Startup.TakeScreenshot
   href: Stargazer.Startup.html#Stargazer_Startup_TakeScreenshot
   name: TakeScreenshot
   nameWithType: Startup.TakeScreenshot
   fullName: Stargazer.Startup.TakeScreenshot
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Stargazer.Startup.ExportTimelapseGif*
+  commentId: Overload:Stargazer.Startup.ExportTimelapseGif
+  href: Stargazer.Startup.html#Stargazer_Startup_ExportTimelapseGif_System_Double_System_Double_System_DateTime_System_Boolean_
+  name: ExportTimelapseGif
+  nameWithType: Startup.ExportTimelapseGif
+  fullName: Stargazer.Startup.ExportTimelapseGif
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Stargazer.Startup.ShowGifExportedNotification*
+  commentId: Overload:Stargazer.Startup.ShowGifExportedNotification
+  href: Stargazer.Startup.html#Stargazer_Startup_ShowGifExportedNotification_System_String_
+  name: ShowGifExportedNotification
+  nameWithType: Startup.ShowGifExportedNotification
+  fullName: Stargazer.Startup.ShowGifExportedNotification
+- uid: Stargazer.Startup.ExportScreenshot*
+  commentId: Overload:Stargazer.Startup.ExportScreenshot
+  href: Stargazer.Startup.html#Stargazer_Startup_ExportScreenshot_Godot_SubViewport_System_String_
+  name: ExportScreenshot
+  nameWithType: Startup.ExportScreenshot
+  fullName: Stargazer.Startup.ExportScreenshot
+- uid: Stargazer.Startup.ShowScreenshotSavedNotification*
+  commentId: Overload:Stargazer.Startup.ShowScreenshotSavedNotification
+  href: Stargazer.Startup.html#Stargazer_Startup_ShowScreenshotSavedNotification
+  name: ShowScreenshotSavedNotification
+  nameWithType: Startup.ShowScreenshotSavedNotification
+  fullName: Stargazer.Startup.ShowScreenshotSavedNotification
+- uid: Stargazer.Startup._on_screenshot_dialog_close_requested*
+  commentId: Overload:Stargazer.Startup._on_screenshot_dialog_close_requested
+  href: Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_close_requested
+  name: _on_screenshot_dialog_close_requested
+  nameWithType: Startup._on_screenshot_dialog_close_requested
+  fullName: Stargazer.Startup._on_screenshot_dialog_close_requested
+- uid: Stargazer.Startup._on_screenshot_dialog_confirmed*
+  commentId: Overload:Stargazer.Startup._on_screenshot_dialog_confirmed
+  href: Stargazer.Startup.html#Stargazer_Startup__on_screenshot_dialog_confirmed
+  name: _on_screenshot_dialog_confirmed
+  nameWithType: Startup._on_screenshot_dialog_confirmed
+  fullName: Stargazer.Startup._on_screenshot_dialog_confirmed
+- uid: Stargazer.Startup.OnScreenshotDialogClosed*
+  commentId: Overload:Stargazer.Startup.OnScreenshotDialogClosed
+  href: Stargazer.Startup.html#Stargazer_Startup_OnScreenshotDialogClosed
+  name: OnScreenshotDialogClosed
+  nameWithType: Startup.OnScreenshotDialogClosed
+  fullName: Stargazer.Startup.OnScreenshotDialogClosed

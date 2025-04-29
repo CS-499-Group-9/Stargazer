@@ -8,6 +8,9 @@ namespace Stargazer
 {
 	/// <summary>
 	/// A Messier Deep Space Object drawn in the sky.
+	/// Author: Josh Johner
+	/// Created: SPR 2025
+	/// Refactored by William Arnett (SPR 2025) to implement hover text.
 	/// </summary>
 	public partial class MessierObject : CelestialBody
 	{

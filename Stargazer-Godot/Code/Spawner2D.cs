@@ -9,6 +9,9 @@ namespace Stargazer
 
     /// <summary>
     /// Draws all stars that are not a part of constellations
+    /// Author: William Arnett
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) to use IDictionary.
     /// </summary>
     public partial class Spawner2D : Node2D
     {

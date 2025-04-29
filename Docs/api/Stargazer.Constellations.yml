@@ -27,12 +27,19 @@ items:
   type: Class
   source:
     id: Constellations
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSignalsGenerator\Stargazer.Constellations_ScriptSignals.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Constellations_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The <xref href="Godot.Node3D" data-throw-if-not-resolved="false"></xref> used to contain the constellation stars and lines in the viewport.
+  summary: >-
+    The <xref href="Godot.Node3D" data-throw-if-not-resolved="false"></xref> used to contain the constellation stars and lines in the viewport.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
+
+    Refactored by Josh Johner (SPR 2025) for concurrency and observer patterns.
   example: []
   syntax:
     content: >-
@@ -378,11 +385,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -423,11 +430,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelScene
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 22
+    startLine: 25
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -468,11 +475,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -495,11 +502,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constMesh
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 26
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -522,11 +529,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -549,11 +556,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -576,11 +583,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetConstellationStar
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 30
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -603,11 +610,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: canProcess
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -630,11 +637,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: labelDictionary
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 32
+    startLine: 35
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -657,11 +664,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 38
+    startLine: 41
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -693,11 +700,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 88
+    startLine: 91
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -736,11 +743,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLines
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 195
+    startLine: 198
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -774,11 +781,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToggleConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations.cs
-    startLine: 205
+    startLine: 208
   assemblies:
   - New Game Project
   namespace: Stargazer

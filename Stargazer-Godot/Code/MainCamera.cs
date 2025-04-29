@@ -6,6 +6,9 @@ namespace Stargazer
 {
     /// <summary>
     /// Contains the main camera used to create the user view.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) to use <see cref="ICameraStateNotifier"/> to implement observer pattern.
     /// </summary>
     public partial class MainCamera : Camera3D, ICameraStateNotifier
     {

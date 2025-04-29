@@ -4,6 +4,8 @@ namespace Stargazer
 {
     /// <summary>
     /// Provides the ability of an object to be tracked by the camera
+    /// Author: Josh Johenr
+    /// Created: SPR 2025
     /// </summary>
     public interface ITrackable
     {

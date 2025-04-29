@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Sun | Stargazer Data API ">
       
-      <meta name="description" content="The actual sun.">
+      <meta name="description" content="The actual sun. Author: Josh Johner Created: SPR 2025 Refactored by William Arnett (SPR 2025) to handle rotation, and hover text.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class Sun
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The actual sun.</p>
+  <div class="markdown summary"><p>The actual sun.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to handle rotation, and hover text.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -151,6 +154,12 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance">CelestialBody.Distance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance">CelestialBody.DrawnDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible">CelestialBody.IHoverable.IsVisible</a>
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation">CelestialBody.GetLocation()</a>
@@ -1090,7 +1099,7 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
 
   <h3 id="Stargazer_Sun_sun" data-uid="Stargazer.Sun.sun">
   sun
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Sun.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Sun.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1125,7 +1134,7 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
 
   <h3 id="Stargazer_Sun_FromHorizontal_DataLayer_HorizontalObjects_HorizontalSun_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.Sun.FromHorizontal(DataLayer.HorizontalObjects.HorizontalSun,DataLayer.Interfaces.IEquatorialCalculator)">
   FromHorizontal(HorizontalSun, IEquatorialCalculator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Sun.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Sun.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Overload the <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_">FromHorizontal(HorizontalBody, IEquatorialCalculator)</a> method to get a reference to the <a class="xref" href="DataLayer.HorizontalObjects.HorizontalSun.html">HorizontalSun</a> object.</p>
@@ -1161,7 +1170,7 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
 
   <h3 id="Stargazer_Sun_GetHoverText" data-uid="Stargazer.Sun.GetHoverText">
   GetHoverText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Sun.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Sun.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text to display.</p>
@@ -1194,7 +1203,7 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
 
   <h3 id="Stargazer_Sun__Process_System_Double_" data-uid="Stargazer.Sun._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Sun.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Sun.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Overrides the <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_">_Process(double)</a> method since the sun requires specific calculations.</p>
@@ -1226,7 +1235,7 @@ public class Sun : CelestialBody, IDisposable, IHoverable, ITrackable</code></pr
 
   <h3 id="Stargazer_Sun__Ready" data-uid="Stargazer.Sun._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Sun.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Sun.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Set's the scale (size) of the sun.</p>

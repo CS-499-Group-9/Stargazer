@@ -5,6 +5,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// Represents an object that can be located in the sky according to horizontal coordinates.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public abstract class HorizontalBody
     {

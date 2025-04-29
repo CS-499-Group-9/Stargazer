@@ -4,6 +4,8 @@ namespace DataLayer.Interfaces
 {
     /// <summary>
     /// Communicates with a repository of Yale Stars (in the equatorial coordinate form).
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public interface IStarRepository
     {

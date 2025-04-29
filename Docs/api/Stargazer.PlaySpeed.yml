@@ -29,15 +29,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PlaySpeed
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: A state object to control the play speed of the simulation
+  summary: >-
+    A state object to control the play speed of the simulation
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public class PlaySpeed
@@ -65,11 +70,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: slowJump
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -92,11 +97,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: fastJump
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -119,11 +124,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: timeSpan
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -146,11 +151,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: TotalSeconds
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -177,11 +182,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IsSyncronized
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -208,11 +213,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 30
+    startLine: 32
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -239,11 +244,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SynchronizeTime
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 38
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -267,11 +272,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncreaseBySeconds
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 48
+    startLine: 50
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -305,11 +310,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncreaseByMinutes
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -343,11 +348,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: RealTime
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 71
+    startLine: 73
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -374,11 +379,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ToString
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -406,11 +411,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: validateTimeSpan
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 87
+    startLine: 89
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -432,11 +437,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncreateByHours
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 97
+    startLine: 99
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -470,11 +475,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/PlaySpeed.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncreaseByDays
     path: ../Stargazer-Godot/Code/PlaySpeed.cs
-    startLine: 110
+    startLine: 112
   assemblies:
   - New Game Project
   namespace: Stargazer

@@ -4,10 +4,12 @@ using System.Collections;
 
 namespace Stargazer
 {
-	/// <summary>
-	/// The graphic object used to draw the lines.
-	/// </summary>
-	public partial class AzimuthGridlines : Node3D
+    /// <summary>
+    /// The graphic object used to draw the lines.
+    /// Author: William Arnett
+    /// Created: SPR 2025
+    /// </summary>
+    public partial class AzimuthGridlines : Node3D
 	{
 		/// <summary>
 		/// The radius of the dome.
@@ -42,6 +44,7 @@ namespace Stargazer
 		//const float theta = 30;
 		/// <summary>
 		/// Initially draws the azimuth lines and hides them.
+		/// Refactored by: Josh Johner SPR 2025
 		/// </summary>
 		public override void _Ready()
 		{
@@ -90,7 +93,13 @@ namespace Stargazer
 
         }
 
-		public void HandleZoomStateChanged(ZoomState zoomState)
+        /// <summary>
+        /// Called by <see cref="ICameraStateNotifier.OnZoomStateChanged"/>
+        /// Author: Josh Johner
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="zoomState"></param>
+        public void HandleZoomStateChanged(ZoomState zoomState)
 		{
 			switch (zoomState)
 			{
@@ -107,6 +116,8 @@ namespace Stargazer
 		}
         /// <summary>
         /// The method used receive the <see cref="ControlContainer.AzimuthToggled"/> notification.
+        /// Author: Josh Johner
+        /// Created: SPR 2025
         /// </summary>
         /// <param name="showLines">True if the user has requested to show the lines.</param>
         public void ToggleGridlines(bool showLines)
@@ -123,11 +134,13 @@ namespace Stargazer
 			equatorialGridlines.Visible = showLines;
 		}
 
-		/// <summary>
-		/// Sets the <see cref="IEquatorialCalculator"/> used to retrieve the current observers latitude and longitude.
-		/// </summary>
-		/// <param name="calculator">The calculator</param>
-		public void SetCalculator(IEquatorialCalculator calculator)
+        /// <summary>
+        /// Sets the <see cref="IEquatorialCalculator"/> used to retrieve the current observers latitude and longitude.
+        /// Author: Josh Johner
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="calculator">The calculator</param>
+        public void SetCalculator(IEquatorialCalculator calculator)
 		{
 			this.calculator = calculator;
 		}

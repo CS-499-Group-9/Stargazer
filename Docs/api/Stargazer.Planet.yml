@@ -13,6 +13,7 @@ items:
   - Stargazer.Planet.horizontalPlanet
   - Stargazer.Planet.planetMaterial
   - Stargazer.Planet.planetTexture
+  - Stargazer.Planet.theSun
   langs:
   - csharp
   - vb
@@ -22,12 +23,19 @@ items:
   type: Class
   source:
     id: Planet
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Planet_ScriptSerialization.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.Planet_ScriptProperties.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Used to draw a planet in the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
+  summary: >-
+    Used to draw a planet in the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref>
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by William Arnett (SPR 2025) to use custom shader material.
   example: []
   syntax:
     content: >-
@@ -55,6 +63,8 @@ items:
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody.GetLocation
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
@@ -384,11 +394,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalPlanet
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -411,11 +421,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planetTexture
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -438,11 +448,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planetMaterial
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 16
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -451,6 +461,33 @@ items:
     return:
       type: Godot.ShaderMaterial
     content.vb: Private planetMaterial As ShaderMaterial
+- uid: Stargazer.Planet.theSun
+  commentId: F:Stargazer.Planet.theSun
+  id: theSun
+  parent: Stargazer.Planet
+  langs:
+  - csharp
+  - vb
+  name: theSun
+  nameWithType: Planet.theSun
+  fullName: Stargazer.Planet.theSun
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/Planet.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: theSun
+    path: ../Stargazer-Godot/Code/Planet.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private Sun theSun
+    return:
+      type: Stargazer.Sun
+    content.vb: Private theSun As Sun
 - uid: Stargazer.Planet._Process(System.Double)
   commentId: M:Stargazer.Planet._Process(System.Double)
   id: _Process(System.Double)
@@ -465,11 +502,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -501,11 +538,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetTexture
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -533,11 +570,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 49
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -568,11 +605,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 57
+    startLine: 62
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -600,11 +637,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Planet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LoadTexture
     path: ../Stargazer-Godot/Code/Planet.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -737,6 +774,30 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  parent: Stargazer.CelestialBody
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
 - uid: Stargazer.CelestialBody.GetLocation
   commentId: M:Stargazer.CelestialBody.GetLocation
   parent: Stargazer.CelestialBody
@@ -7592,6 +7653,13 @@ references:
   name: ShaderMaterial
   nameWithType: ShaderMaterial
   fullName: Godot.ShaderMaterial
+- uid: Stargazer.Sun
+  commentId: T:Stargazer.Sun
+  parent: Stargazer
+  href: Stargazer.Sun.html
+  name: Sun
+  nameWithType: Sun
+  fullName: Stargazer.Sun
 - uid: Stargazer.CelestialBody._Process(System.Double)
   commentId: M:Stargazer.CelestialBody._Process(System.Double)
   parent: Stargazer.CelestialBody

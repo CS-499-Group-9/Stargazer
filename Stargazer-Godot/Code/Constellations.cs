@@ -10,6 +10,9 @@ namespace Stargazer
 
     /// <summary>
     /// The <see cref="Node3D"/> used to contain the constellation stars and lines in the viewport.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) for concurrency and observer patterns.
     /// </summary>
     public partial class Constellations : Node3D
     {

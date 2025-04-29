@@ -20,7 +20,12 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The parent container of the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref> object (used for anchoring).
+  summary: >-
+    The parent container of the <xref href="Stargazer.SkyView" data-throw-if-not-resolved="false"></xref> object (used for anchoring).
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -546,11 +551,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/SkyViewContainer.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SkyView
     path: ../Stargazer-Godot/Code/SkyViewContainer.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer

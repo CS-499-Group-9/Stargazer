@@ -5,6 +5,8 @@ namespace Stargazer
 {
     /// <summary>
     /// A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+    /// Author: William Arnett
+    /// Created: SPR 2025
     /// </summary>
     public partial class Star2D : Node2D
     {

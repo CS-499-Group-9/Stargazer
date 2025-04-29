@@ -7,24 +7,26 @@ namespace Stargazer
     
     /// <summary>
     /// Controls the play speed of the 3D simulation.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
+    /// Modified: SPR 2025 by Alex Lake to implement time lapse.
     /// </summary>
     public partial class PlayControl : Control
     {
         private Label multiplierLabel;
         private PlaySpeed multiplier;
-
         private DateTime baseDateTime; // Start time of timelapse.
-
         private int frameCount = 100; // Number of frames to use.
         private double _lastLatitude; // Last latitude position for the timelapse.
         private double _lastLongitude; // Last longitude position for the timelapse.
-
-	    public Action<double, double, DateTime> UserPositionUpdated;
-
         private TimeSpan totalSpan = TimeSpan.FromHours(24); // Have it timelapse a day.
-
         [Export] private HSlider TimeLapseSlider;
         [Export] private Label TimeLapseLabel;
+
+        /// <summary>
+        /// Used to notify subscribers when the user position has been updated. 
+        /// </summary>
+	    public Action<double, double, DateTime> UserPositionUpdated;
 
         /// <summary>
         /// Receives the <see cref="Signal"/> from the <c>Sec</c> buttons
@@ -88,6 +90,8 @@ namespace Stargazer
         public override void _Ready()
         {
             multiplier = new PlaySpeed();
+
+            // TODO: Make this an Export
             multiplierLabel = GetNode<Label>("MarginContainer/VBoxContainer/MultiplierLabel");
             UpdateMultiplierLabel();
 
@@ -123,11 +127,23 @@ namespace Stargazer
             return multiplier;
         }
 
+        /// <summary>
+        /// Updates the current time multiplier display label
+        /// Author: Josh Johner
+        /// Created: SPR 2025
+        /// Modified by William Arnett (SPR 2025) 
+        /// </summary>
         private void UpdateMultiplierLabel()
         {
-        multiplierLabel.Text = $"x{multiplier.TotalSeconds:0} Speed ({multiplier.ToString()} per second)";
-
+            multiplierLabel.Text = $"x{multiplier.TotalSeconds:0} Speed ({multiplier.ToString()} per second)";
         }
+
+        /// <summary>
+        /// Sets the base time for the slider.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="dateTime">The time to set.</param>
         public void SetBaseDateTime(DateTime dateTime)
         {
             baseDateTime = dateTime; // Set the base date and time.
@@ -146,6 +162,13 @@ namespace Stargazer
                 }
             }
         }
+
+        /// <summary>
+        /// Called when the time lapse slider is moved.
+        /// Author: Alex Lake
+        /// Created: SPR 2025
+        /// </summary>
+        /// <param name="frame">The current frame after movement</param>
         private void OnTimeLapseFrameChanged(double frame)
         {
             double progress = frame / (frameCount - 1);

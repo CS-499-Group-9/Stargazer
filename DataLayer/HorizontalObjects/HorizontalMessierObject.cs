@@ -5,6 +5,8 @@ namespace DataLayer.HorizontalObjects
 {
     /// <summary>
     /// A Messier Deep Space Object located in Horizontal coordinates
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class HorizontalMessierObject : HorizontalBody
     {

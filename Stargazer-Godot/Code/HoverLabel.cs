@@ -4,6 +4,9 @@ namespace Stargazer
 {
     /// <summary>
     /// The label that is displayed when hovering over an <see cref="IHoverable"/> object.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) to use observer pattern.
     /// </summary>
     public partial class HoverLabel : Label
     {
@@ -26,7 +29,7 @@ namespace Stargazer
         {
             Position = GetViewport().GetMousePosition() + shift;
             SetText(hoveredBody?.GetHoverText() ?? "");
-            Visible = hoveredBody is not null;
+            Visible = hoveredBody?.IsVisible ?? false;
 
         }
         /// <summary>

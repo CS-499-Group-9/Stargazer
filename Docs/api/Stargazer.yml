@@ -10,6 +10,7 @@ items:
   - Stargazer.CompassNeedle
   - Stargazer.Constellations
   - Stargazer.Constellations2D
+  - Stargazer.ControlContainer
   - Stargazer.Globals
   - Stargazer.GridLabel
   - Stargazer.HoverLabel
@@ -87,6 +88,13 @@ references:
   name: Constellations2D
   nameWithType: Constellations2D
   fullName: Stargazer.Constellations2D
+- uid: Stargazer.ControlContainer
+  commentId: T:Stargazer.ControlContainer
+  parent: Stargazer
+  href: Stargazer.ControlContainer.html
+  name: ControlContainer
+  nameWithType: ControlContainer
+  fullName: Stargazer.ControlContainer
 - uid: Stargazer.Globals
   commentId: T:Stargazer.Globals
   parent: Stargazer
@@ -238,6 +246,7 @@ references:
   fullName: Stargazer.StarMesh
 - uid: Stargazer.Startup
   commentId: T:Stargazer.Startup
+  parent: Stargazer
   href: Stargazer.Startup.html
   name: Startup
   nameWithType: Startup

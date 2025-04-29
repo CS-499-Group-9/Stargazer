@@ -7,6 +7,8 @@ namespace DataLayer.Implementations
 {
     /// <summary>
     /// Used to retrieve constellation data from the Stellarium Json file.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     internal class StellariumJsonConstellationRepository : IConstellationRepository
     {

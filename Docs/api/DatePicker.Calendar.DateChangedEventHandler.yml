@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/addons/DatePicker/Calendar.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DateChangedEventHandler
     path: ../Stargazer-Godot/addons/DatePicker/Calendar.cs

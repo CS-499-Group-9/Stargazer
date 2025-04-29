@@ -9,6 +9,8 @@ namespace DataLayer.Implementations
 {
     /// <summary>
     /// Retrieves raw star data from the HYG.csv repository
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     internal class HygCsvStarRepository : IStarRepository
     {

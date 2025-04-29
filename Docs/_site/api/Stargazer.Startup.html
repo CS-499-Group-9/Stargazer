@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Startup | Stargazer Data API ">
       
-      <meta name="description" content="The top level controller for the program. Handles all communication between the GUI and the viewport.">
+      <meta name="description" content="The top level controller for the program. Handles all communication between the GUI and the viewport. Author: Josh Johner Created: SPR 2025 Refactored by Alex Lake (SPR 2025) to implement screenshot.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -98,7 +98,10 @@ Class Startup
   </div>
 
   <div class="markdown summary"><p>The top level controller for the program.
-Handles all communication between the GUI and the viewport.</p>
+Handles all communication between the GUI and the viewport.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by Alex Lake (SPR 2025) to implement screenshot.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -1561,9 +1564,9 @@ public class Startup : Control, IDisposable</code></pre>
 
 
 
-  <h3 id="Stargazer_Startup_View2D" data-uid="Stargazer.Startup.View2D">
-  View2D
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Stargazer_Startup_ModalBlocker" data-uid="Stargazer.Startup.ModalBlocker">
+  ModalBlocker
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1571,7 +1574,7 @@ public class Startup : Control, IDisposable</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
-private PackedScene View2D</code></pre>
+private ColorRect ModalBlocker</code></pre>
   </div>
 
 
@@ -1579,7 +1582,69 @@ private PackedScene View2D</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">PackedScene</span></dt>
+    <dt><span class="xref">ColorRect</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Startup_ScreenshotDialog" data-uid="Stargazer.Startup.ScreenshotDialog">
+  ScreenshotDialog
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private AcceptDialog ScreenshotDialog</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">AcceptDialog</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Stargazer_Startup_View2D" data-uid="Stargazer.Startup.View2D">
+  View2D
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Export(PropertyHint.None, &quot;&quot;)]
+private SubViewport View2D</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SubViewport</span></dt>
     <dd></dd>
   </dl>
 
@@ -1594,7 +1659,7 @@ private PackedScene View2D</code></pre>
 
   <h3 id="Stargazer_Startup_calculator" data-uid="Stargazer.Startup.calculator">
   calculator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1624,7 +1689,7 @@ private PackedScene View2D</code></pre>
 
   <h3 id="Stargazer_Startup_controlContainer" data-uid="Stargazer.Startup.controlContainer">
   controlContainer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1640,7 +1705,7 @@ private ControlContainer controlContainer</code></pre>
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ControlContainer.html">ControlContainer</a></dt>
+    <dt><a class="xref" href="Stargazer.ControlContainer.html">ControlContainer</a></dt>
     <dd></dd>
   </dl>
 
@@ -1655,7 +1720,7 @@ private ControlContainer controlContainer</code></pre>
 
   <h3 id="Stargazer_Startup_dataPackage" data-uid="Stargazer.Startup.dataPackage">
   dataPackage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1685,7 +1750,7 @@ private ControlContainer controlContainer</code></pre>
 
   <h3 id="Stargazer_Startup_playControl" data-uid="Stargazer.Startup.playControl">
   playControl
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1716,7 +1781,7 @@ private PlayControl playControl</code></pre>
 
   <h3 id="Stargazer_Startup_screenshotPath" data-uid="Stargazer.Startup.screenshotPath">
   screenshotPath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1746,7 +1811,7 @@ private PlayControl playControl</code></pre>
 
   <h3 id="Stargazer_Startup_skyView" data-uid="Stargazer.Startup.skyView">
   skyView
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1776,7 +1841,7 @@ private PlayControl playControl</code></pre>
 
   <h3 id="Stargazer_Startup_skyViewContainer" data-uid="Stargazer.Startup.skyViewContainer">
   skyViewContainer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1808,21 +1873,300 @@ private SkyViewContainer skyViewContainer</code></pre>
 </h2>
 
 
+  <a id="Stargazer_Startup_ExportScreenshot_" data-uid="Stargazer.Startup.ExportScreenshot*"></a>
+
+  <h3 id="Stargazer_Startup_ExportScreenshot_Godot_SubViewport_System_String_" data-uid="Stargazer.Startup.ExportScreenshot(Godot.SubViewport,System.String)">
+  ExportScreenshot(SubViewport, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exports a screenshot of the 2D viewport for the current date/time lat/long
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void ExportScreenshot(SubViewport view2D, string format)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>view2D</code> <span class="xref">SubViewport</span></dt>
+    <dd><p>A reference to the viewport</p>
+</dd>
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The user selected format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_ExportTimelapseGif_" data-uid="Stargazer.Startup.ExportTimelapseGif*"></a>
+
+  <h3 id="Stargazer_Startup_ExportTimelapseGif_System_Double_System_Double_System_DateTime_System_Boolean_" data-uid="Stargazer.Startup.ExportTimelapseGif(System.Double,System.Double,System.DateTime,System.Boolean)">
+  ExportTimelapseGif(double, double, DateTime, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Responds to notifications to initiate a GIF timelapse
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ExportTimelapseGif(double latitude, double longitude, DateTime startTime, bool reverse = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>latitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>User latitude</p>
+</dd>
+    <dt><code>longitude</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>User longitude</p>
+</dd>
+    <dt><code>startTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd><p>The starting date/time of the GIF</p>
+</dd>
+    <dt><code>reverse</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the user has selected reverse GIF</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>An awaitable task</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_OnScreenshotDialogClosed_" data-uid="Stargazer.Startup.OnScreenshotDialogClosed*"></a>
+
+  <h3 id="Stargazer_Startup_OnScreenshotDialogClosed" data-uid="Stargazer.Startup.OnScreenshotDialogClosed">
+  OnScreenshotDialogClosed()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L396"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the dialog
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void OnScreenshotDialogClosed()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_SaveAsGif_" data-uid="Stargazer.Startup.SaveAsGif*"></a>
+
+  <h3 id="Stargazer_Startup_SaveAsGif_Godot_Image_System_Int32_System_Int32_System_String_" data-uid="Stargazer.Startup.SaveAsGif(Godot.Image,System.Int32,System.Int32,System.String)">
+  SaveAsGif(Image, int, int, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Takes an image and creates a single frame gif
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveAsGif(Image godotImage, int width, int height, string gifPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>godotImage</code> <span class="xref">Image</span></dt>
+    <dd><p>The image to use</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Image width</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Image height</p>
+</dd>
+    <dt><code>gifPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path save the gif</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_SaveWithImageSharp_" data-uid="Stargazer.Startup.SaveWithImageSharp*"></a>
+
+  <h3 id="Stargazer_Startup_SaveWithImageSharp_Godot_Image_System_Int32_System_Int32_System_String_SixLabors_ImageSharp_Formats_IImageEncoder_" data-uid="Stargazer.Startup.SaveWithImageSharp(Godot.Image,System.Int32,System.Int32,System.String,SixLabors.ImageSharp.Formats.IImageEncoder)">
+  SaveWithImageSharp(Image, int, int, string, IImageEncoder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Encodes the images properly using <span class="xref">SixLabors.ImageSharp.Image</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void SaveWithImageSharp(Image godotImage, int width, int height, string path, IImageEncoder encoder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>godotImage</code> <span class="xref">Image</span></dt>
+    <dd><p>The image to encode</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Image width</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Image height</p>
+</dd>
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path to save the image</p>
+</dd>
+    <dt><code>encoder</code> <span class="xref">IImageEncoder</span></dt>
+    <dd><p>The encoder to use</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_ShowGifExportedNotification_" data-uid="Stargazer.Startup.ShowGifExportedNotification*"></a>
+
+  <h3 id="Stargazer_Startup_ShowGifExportedNotification_System_String_" data-uid="Stargazer.Startup.ShowGifExportedNotification(System.String)">
+  ShowGifExportedNotification(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Displays the path to the exported gif to the user.
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void ShowGifExportedNotification(string gifPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gifPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path to the saved GIF</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup_ShowScreenshotSavedNotification_" data-uid="Stargazer.Startup.ShowScreenshotSavedNotification*"></a>
+
+  <h3 id="Stargazer_Startup_ShowScreenshotSavedNotification" data-uid="Stargazer.Startup.ShowScreenshotSavedNotification">
+  ShowScreenshotSavedNotification()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L360"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Displays a notification to the user with the path to the saved file.
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void ShowScreenshotSavedNotification()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Stargazer_Startup_TakeScreenshot_" data-uid="Stargazer.Startup.TakeScreenshot*"></a>
 
   <h3 id="Stargazer_Startup_TakeScreenshot" data-uid="Stargazer.Startup.TakeScreenshot">
   TakeScreenshot()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L162"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Responds to notifications to initiate a screenshot.
+Author: Mutiple
+Created: SPR 2025</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">private void TakeScreenshot()</code></pre>
+    <pre><code class="lang-csharp hljs">public Task TakeScreenshot()</code></pre>
   </div>
 
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A running task that is exporting the screenshot</p>
+</dd>
+  </dl>
 
 
 
@@ -1838,7 +2182,7 @@ private SkyViewContainer skyViewContainer</code></pre>
 
   <h3 id="Stargazer_Startup_UpdateUserPosition_System_Double_System_Double_System_DateTime_" data-uid="Stargazer.Startup.UpdateUserPosition(System.Double,System.Double,System.DateTime)">
   UpdateUserPosition(double, double, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Passed to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.delegate">Delegate</a> of the user interface to notify the controller of a new user request to be processed.
@@ -1875,7 +2219,7 @@ Processes the request asynchronously and passes the result to the viewport</p>
 
   <h3 id="Stargazer_Startup__Ready" data-uid="Stargazer.Startup._Ready">
   _Ready()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Startup.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates the repository service and stores in memory
@@ -1885,6 +2229,62 @@ Gathers references to sender/receiver nodes and connects <a class="xref" href="h
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void _Ready()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup__on_screenshot_dialog_close_requested_" data-uid="Stargazer.Startup._on_screenshot_dialog_close_requested*"></a>
+
+  <h3 id="Stargazer_Startup__on_screenshot_dialog_close_requested" data-uid="Stargazer.Startup._on_screenshot_dialog_close_requested">
+  _on_screenshot_dialog_close_requested()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L378"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Closes the screenshot dialog
+Author: Alex Lake
+Created: SPR 2025</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void _on_screenshot_dialog_close_requested()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Stargazer_Startup__on_screenshot_dialog_confirmed_" data-uid="Stargazer.Startup._on_screenshot_dialog_confirmed*"></a>
+
+  <h3 id="Stargazer_Startup__on_screenshot_dialog_confirmed" data-uid="Stargazer.Startup._on_screenshot_dialog_confirmed">
+  _on_screenshot_dialog_confirmed()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Startup.cs/#L386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private void _on_screenshot_dialog_confirmed()</code></pre>
   </div>
 
 

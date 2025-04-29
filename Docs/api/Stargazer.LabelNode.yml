@@ -16,12 +16,17 @@ items:
   type: Class
   source:
     id: LabelNode
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.LabelNode_ScriptProperties.generated.cs
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.LabelNode_ScriptSerialization.generated.cs
     startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Contains the constellation label.
+  summary: >-
+    Contains the constellation label.
+
+    Author: Logan Parker
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -367,11 +372,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LabelText
     path: ../Stargazer-Godot/Code/LabelNode.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -412,11 +417,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/LabelNode.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/LabelNode.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer

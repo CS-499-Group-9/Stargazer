@@ -1,86 +1,231 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Stargazer.Spawner2D
-  commentId: T:Stargazer.Spawner2D
-  id: Spawner2D
+- uid: Stargazer.ControlContainer
+  commentId: T:Stargazer.ControlContainer
+  id: ControlContainer
   parent: Stargazer
   children:
-  - Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
-  - Stargazer.Spawner2D.DrawnStars
-  - Stargazer.Spawner2D.Label2DScene
-  - Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
-  - Stargazer.Spawner2D.Star2DScene
-  - Stargazer.Spawner2D.Star2dContainer
-  - Stargazer.Spawner2D._Ready
-  - Stargazer.Spawner2D.count
-  - Stargazer.Spawner2D.radians
+  - Stargazer.ControlContainer.AMorPMButton
+  - Stargazer.ControlContainer.AzimuthToggled
+  - Stargazer.ControlContainer.ConstellationLabelsToggled
+  - Stargazer.ControlContainer.ConstellationsToggled
+  - Stargazer.ControlContainer.EquatorialToggled
+  - Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  - Stargazer.ControlContainer.MessierObjectsToggled
+  - Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  - Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  - Stargazer.ControlContainer.RequestScreenshot
+  - Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  - Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  - Stargazer.ControlContainer.TimeLapseLabel
+  - Stargazer.ControlContainer.TimeLapseSlider
+  - Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  - Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  - Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  - Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  - Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  - Stargazer.ControlContainer.UpdateUserPosition
+  - Stargazer.ControlContainer.UserPositionUpdated
+  - Stargazer.ControlContainer._Process(System.Double)
+  - Stargazer.ControlContainer._exportGifReversed
+  - Stargazer.ControlContainer._lastLatitude
+  - Stargazer.ControlContainer._lastLongitude
+  - Stargazer.ControlContainer._mainControl
+  - Stargazer.ControlContainer._on_button_pressed
+  - Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  - Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  - Stargazer.ControlContainer.baseDateTime
+  - Stargazer.ControlContainer.calendarButton
+  - Stargazer.ControlContainer.formatSelector
+  - Stargazer.ControlContainer.frameCount
+  - Stargazer.ControlContainer.latDegField
+  - Stargazer.ControlContainer.latMinField
+  - Stargazer.ControlContainer.lonDegField
+  - Stargazer.ControlContainer.lonMinField
+  - Stargazer.ControlContainer.timeField
+  - Stargazer.ControlContainer.totalSpan
   langs:
   - csharp
   - vb
-  name: Spawner2D
-  nameWithType: Spawner2D
-  fullName: Stargazer.Spawner2D
+  name: ControlContainer
+  nameWithType: ControlContainer
+  fullName: Stargazer.ControlContainer
   type: Class
   source:
-    id: Spawner2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPathAttributeGenerator\Stargazer.Spawner2D_ScriptPath.generated.cs
-    startLine: 3
+    id: ControlContainer
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertiesGenerator\Stargazer.ControlContainer_ScriptProperties.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: >-
-    Draws all stars that are not a part of constellations
+    Contains all user controls for the program and notifies subscribers of user interaction. 
 
-    Author: William Arnett
+    Author: Josh Johner
 
     Created: SPR 2025
-
-    Refactored by Josh Johner (SPR 2025) to use IDictionary.
   example: []
   syntax:
     content: >-
-      [ScriptPath("res://Code/Spawner2D.cs")]
+      [ScriptPath("res://Code/ControlContainer.cs")]
 
-      public class Spawner2D : Node2D, IDisposable
+      public class ControlContainer : Control, IDisposable
     content.vb: >-
-      <ScriptPath("res://Code/Spawner2D.cs")>
+      <ScriptPath("res://Code/ControlContainer.cs")>
 
-      Public Class Spawner2D Inherits Node2D Implements IDisposable
+      Public Class ControlContainer Inherits Control Implements IDisposable
   inheritance:
   - System.Object
   - Godot.GodotObject
   - Godot.Node
   - Godot.CanvasItem
-  - Godot.Node2D
+  - Godot.Control
   implements:
   - System.IDisposable
   inheritedMembers:
-  - Godot.Node2D.Rotate(System.Single)
-  - Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
-  - Godot.Node2D.MoveLocalY(System.Single,System.Boolean)
-  - Godot.Node2D.Translate(Godot.Vector2)
-  - Godot.Node2D.GlobalTranslate(Godot.Vector2)
-  - Godot.Node2D.ApplyScale(Godot.Vector2)
-  - Godot.Node2D.LookAt(Godot.Vector2)
-  - Godot.Node2D.GetAngleTo(Godot.Vector2)
-  - Godot.Node2D.ToLocal(Godot.Vector2)
-  - Godot.Node2D.ToGlobal(Godot.Vector2)
-  - Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-  - Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  - Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  - Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  - Godot.Node2D.Position
-  - Godot.Node2D.Rotation
-  - Godot.Node2D.RotationDegrees
-  - Godot.Node2D.Scale
-  - Godot.Node2D.Skew
-  - Godot.Node2D.Transform
-  - Godot.Node2D.GlobalPosition
-  - Godot.Node2D.GlobalRotation
-  - Godot.Node2D.GlobalRotationDegrees
-  - Godot.Node2D.GlobalScale
-  - Godot.Node2D.GlobalSkew
-  - Godot.Node2D.GlobalTransform
+  - Godot.Control.NotificationResized
+  - Godot.Control.NotificationMouseEnter
+  - Godot.Control.NotificationMouseExit
+  - Godot.Control.NotificationMouseEnterSelf
+  - Godot.Control.NotificationMouseExitSelf
+  - Godot.Control.NotificationFocusEnter
+  - Godot.Control.NotificationFocusExit
+  - Godot.Control.NotificationThemeChanged
+  - Godot.Control.NotificationScrollBegin
+  - Godot.Control.NotificationScrollEnd
+  - Godot.Control.NotificationLayoutDirectionChanged
+  - Godot.Control._CanDropData(Godot.Vector2,Godot.Variant)
+  - Godot.Control._DropData(Godot.Vector2,Godot.Variant)
+  - Godot.Control._GetDragData(Godot.Vector2)
+  - Godot.Control._GetMinimumSize
+  - Godot.Control._GetTooltip(Godot.Vector2)
+  - Godot.Control._GuiInput(Godot.InputEvent)
+  - Godot.Control._HasPoint(Godot.Vector2)
+  - Godot.Control._MakeCustomTooltip(System.String)
+  - Godot.Control._StructuredTextParser(Godot.Collections.Array,System.String)
+  - Godot.Control.AcceptEvent
+  - Godot.Control.GetMinimumSize
+  - Godot.Control.GetCombinedMinimumSize
+  - Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset,System.Boolean)
+  - Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  - Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  - Godot.Control.SetAnchor(Godot.Side,System.Single,System.Boolean,System.Boolean)
+  - Godot.Control.SetAnchorAndOffset(Godot.Side,System.Single,System.Single,System.Boolean)
+  - Godot.Control.SetBegin(Godot.Vector2)
+  - Godot.Control.SetEnd(Godot.Vector2)
+  - Godot.Control.SetPosition(Godot.Vector2,System.Boolean)
+  - Godot.Control.SetSize(Godot.Vector2,System.Boolean)
+  - Godot.Control.ResetSize
+  - Godot.Control.SetGlobalPosition(Godot.Vector2,System.Boolean)
+  - Godot.Control.GetBegin
+  - Godot.Control.GetEnd
+  - Godot.Control.GetParentAreaSize
+  - Godot.Control.GetScreenPosition
+  - Godot.Control.GetRect
+  - Godot.Control.GetGlobalRect
+  - Godot.Control.HasFocus
+  - Godot.Control.GrabFocus
+  - Godot.Control.ReleaseFocus
+  - Godot.Control.FindPrevValidFocus
+  - Godot.Control.FindNextValidFocus
+  - Godot.Control.FindValidFocusNeighbor(Godot.Side)
+  - Godot.Control.BeginBulkThemeOverride
+  - Godot.Control.EndBulkThemeOverride
+  - Godot.Control.AddThemeIconOverride(Godot.StringName,Godot.Texture2D)
+  - Godot.Control.AddThemeStyleboxOverride(Godot.StringName,Godot.StyleBox)
+  - Godot.Control.AddThemeFontOverride(Godot.StringName,Godot.Font)
+  - Godot.Control.AddThemeFontSizeOverride(Godot.StringName,System.Int32)
+  - Godot.Control.AddThemeColorOverride(Godot.StringName,Godot.Color)
+  - Godot.Control.AddThemeConstantOverride(Godot.StringName,System.Int32)
+  - Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+  - Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+  - Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+  - Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+  - Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+  - Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+  - Godot.Control.GetThemeIcon(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeStylebox(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeFont(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeFontSize(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeColor(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeConstant(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeIconOverride(Godot.StringName)
+  - Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+  - Godot.Control.HasThemeFontOverride(Godot.StringName)
+  - Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+  - Godot.Control.HasThemeColorOverride(Godot.StringName)
+  - Godot.Control.HasThemeConstantOverride(Godot.StringName)
+  - Godot.Control.HasThemeIcon(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeStylebox(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeFont(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeFontSize(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeColor(Godot.StringName,Godot.StringName)
+  - Godot.Control.HasThemeConstant(Godot.StringName,Godot.StringName)
+  - Godot.Control.GetThemeDefaultBaseScale
+  - Godot.Control.GetThemeDefaultFont
+  - Godot.Control.GetThemeDefaultFontSize
+  - Godot.Control.GetParentControl
+  - Godot.Control.GetTooltip(System.Nullable{Godot.Vector2})
+  - Godot.Control.GetCursorShape(System.Nullable{Godot.Vector2})
+  - Godot.Control.ForceDrag(Godot.Variant,Godot.Control)
+  - Godot.Control.GrabClickFocus
+  - Godot.Control.SetDragForwarding(Godot.Callable,Godot.Callable,Godot.Callable)
+  - Godot.Control.SetDragPreview(Godot.Control)
+  - Godot.Control.IsDragSuccessful
+  - Godot.Control.WarpMouse(Godot.Vector2)
+  - Godot.Control.UpdateMinimumSize
+  - Godot.Control.IsLayoutRtl
+  - Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  - Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  - Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  - Godot.Control.ClipContents
+  - Godot.Control.CustomMinimumSize
+  - Godot.Control.LayoutDirection
+  - Godot.Control.AnchorLeft
+  - Godot.Control.AnchorTop
+  - Godot.Control.AnchorRight
+  - Godot.Control.AnchorBottom
+  - Godot.Control.OffsetLeft
+  - Godot.Control.OffsetTop
+  - Godot.Control.OffsetRight
+  - Godot.Control.OffsetBottom
+  - Godot.Control.GrowHorizontal
+  - Godot.Control.GrowVertical
+  - Godot.Control.Size
+  - Godot.Control.Position
+  - Godot.Control.GlobalPosition
+  - Godot.Control.Rotation
+  - Godot.Control.RotationDegrees
+  - Godot.Control.Scale
+  - Godot.Control.PivotOffset
+  - Godot.Control.SizeFlagsHorizontal
+  - Godot.Control.SizeFlagsVertical
+  - Godot.Control.SizeFlagsStretchRatio
+  - Godot.Control.LocalizeNumeralSystem
+  - Godot.Control.AutoTranslate
+  - Godot.Control.TooltipText
+  - Godot.Control.FocusNeighborLeft
+  - Godot.Control.FocusNeighborTop
+  - Godot.Control.FocusNeighborRight
+  - Godot.Control.FocusNeighborBottom
+  - Godot.Control.FocusNext
+  - Godot.Control.FocusPrevious
+  - Godot.Control.FocusMode
+  - Godot.Control.MouseFilter
+  - Godot.Control.MouseForcePassScrollEvents
+  - Godot.Control.MouseDefaultCursorShape
+  - Godot.Control.ShortcutContext
+  - Godot.Control.Theme
+  - Godot.Control.ThemeTypeVariation
+  - Godot.Control.Resized
+  - Godot.Control.GuiInput
+  - Godot.Control.MouseEntered
+  - Godot.Control.MouseExited
+  - Godot.Control.FocusEntered
+  - Godot.Control.FocusExited
+  - Godot.Control.SizeFlagsChanged
+  - Godot.Control.MinimumSizeChanged
+  - Godot.Control.ThemeChanged
   - Godot.CanvasItem.NotificationTransformChanged
   - Godot.CanvasItem.NotificationLocalTransformChanged
   - Godot.CanvasItem.NotificationDraw
@@ -221,7 +366,7 @@ items:
   - Godot.Node._GetConfigurationWarnings
   - Godot.Node._Input(Godot.InputEvent)
   - Godot.Node._PhysicsProcess(System.Double)
-  - Godot.Node._Process(System.Double)
+  - Godot.Node._Ready
   - Godot.Node._ShortcutInput(Godot.InputEvent)
   - Godot.Node._UnhandledInput(Godot.InputEvent)
   - Godot.Node._UnhandledKeyInput(Godot.InputEvent)
@@ -415,98 +560,204 @@ items:
     ctor: Godot.ScriptPathAttribute.#ctor(System.String)
     arguments:
     - type: System.String
-      value: res://Code/Spawner2D.cs
-- uid: Stargazer.Spawner2D.count
-  commentId: F:Stargazer.Spawner2D.count
-  id: count
-  parent: Stargazer.Spawner2D
+      value: res://Code/ControlContainer.cs
+- uid: Stargazer.ControlContainer.latDegField
+  commentId: F:Stargazer.ControlContainer.latDegField
+  id: latDegField
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: count
-  nameWithType: Spawner2D.count
-  fullName: Stargazer.Spawner2D.count
+  name: latDegField
+  nameWithType: ControlContainer.latDegField
+  fullName: Stargazer.ControlContainer.latDegField
   type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: count
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 17
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private int count
-    return:
-      type: System.Int32
-    content.vb: Private count As Integer
-- uid: Stargazer.Spawner2D.radians
-  commentId: F:Stargazer.Spawner2D.radians
-  id: radians
-  parent: Stargazer.Spawner2D
-  langs:
-  - csharp
-  - vb
-  name: radians
-  nameWithType: Spawner2D.radians
-  fullName: Stargazer.Spawner2D.radians
-  type: Field
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
-      branch: fix-messier-visibility
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: radians
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    id: latDegField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
     startLine: 18
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private const float radians = 0.017453292
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit latDegField
     return:
-      type: System.Single
-    content.vb: Private Const radians As Single = 0.017453292
-- uid: Stargazer.Spawner2D.Star2DScene
-  commentId: P:Stargazer.Spawner2D.Star2DScene
-  id: Star2DScene
-  parent: Stargazer.Spawner2D
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private latDegField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.latMinField
+  commentId: F:Stargazer.ControlContainer.latMinField
+  id: latMinField
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: Star2DScene
-  nameWithType: Spawner2D.Star2DScene
-  fullName: Stargazer.Spawner2D.Star2DScene
-  type: Property
+  name: latMinField
+  nameWithType: ControlContainer.latMinField
+  fullName: Stargazer.ControlContainer.latMinField
+  type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Star2DScene
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    id: latMinField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 19
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit latMinField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private latMinField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.lonDegField
+  commentId: F:Stargazer.ControlContainer.lonDegField
+  id: lonDegField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: lonDegField
+  nameWithType: ControlContainer.lonDegField
+  fullName: Stargazer.ControlContainer.lonDegField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: lonDegField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 20
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit lonDegField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private lonDegField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.lonMinField
+  commentId: F:Stargazer.ControlContainer.lonMinField
+  id: lonMinField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: lonMinField
+  nameWithType: ControlContainer.lonMinField
+  fullName: Stargazer.ControlContainer.lonMinField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: lonMinField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 21
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private LineEdit lonMinField
+    return:
+      type: Godot.LineEdit
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private lonMinField As LineEdit
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.timeField
+  commentId: F:Stargazer.ControlContainer.timeField
+  id: timeField
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: timeField
+  nameWithType: ControlContainer.timeField
+  fullName: Stargazer.ControlContainer.timeField
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: timeField
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
     startLine: 22
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The scene used to instantiate the star objects.
-  example: []
   syntax:
     content: >-
       [Export(PropertyHint.None, "")]
 
-      public PackedScene Star2DScene { get; set; }
-    parameters: []
+      private LineEdit timeField
     return:
-      type: Godot.PackedScene
+      type: Godot.LineEdit
     content.vb: >-
       <Export(PropertyHint.None, "")>
 
-      Public Property Star2DScene As PackedScene
-  overload: Stargazer.Spawner2D.Star2DScene*
+      Private timeField As LineEdit
   attributes:
   - type: Godot.ExportAttribute
     ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
@@ -515,43 +766,162 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: Stargazer.Spawner2D.Label2DScene
-  commentId: P:Stargazer.Spawner2D.Label2DScene
-  id: Label2DScene
-  parent: Stargazer.Spawner2D
+- uid: Stargazer.ControlContainer.AMorPMButton
+  commentId: F:Stargazer.ControlContainer.AMorPMButton
+  id: AMorPMButton
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: Label2DScene
-  nameWithType: Spawner2D.Label2DScene
-  fullName: Stargazer.Spawner2D.Label2DScene
-  type: Property
+  name: AMorPMButton
+  nameWithType: ControlContainer.AMorPMButton
+  fullName: Stargazer.ControlContainer.AMorPMButton
+  type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Label2DScene
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    id: AMorPMButton
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 23
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private OptionButton AMorPMButton
+    return:
+      type: Godot.OptionButton
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private AMorPMButton As OptionButton
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.calendarButton
+  commentId: F:Stargazer.ControlContainer.calendarButton
+  id: calendarButton
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: calendarButton
+  nameWithType: ControlContainer.calendarButton
+  fullName: Stargazer.ControlContainer.calendarButton
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: calendarButton
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 24
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private Button calendarButton
+    return:
+      type: Godot.Button
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private calendarButton As Button
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.formatSelector
+  commentId: F:Stargazer.ControlContainer.formatSelector
+  id: formatSelector
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: formatSelector
+  nameWithType: ControlContainer.formatSelector
+  fullName: Stargazer.ControlContainer.formatSelector
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: formatSelector
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 25
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private OptionButton formatSelector
+    return:
+      type: Godot.OptionButton
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private formatSelector As OptionButton
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer.TimeLapseSlider
+  commentId: F:Stargazer.ControlContainer.TimeLapseSlider
+  id: TimeLapseSlider
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: TimeLapseSlider
+  nameWithType: ControlContainer.TimeLapseSlider
+  fullName: Stargazer.ControlContainer.TimeLapseSlider
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: TimeLapseSlider
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
     startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The scene used to instantiate the labels for stars
-  example: []
   syntax:
     content: >-
       [Export(PropertyHint.None, "")]
 
-      public PackedScene Label2DScene { get; set; }
-    parameters: []
+      private HSlider TimeLapseSlider
     return:
-      type: Godot.PackedScene
+      type: Godot.HSlider
     content.vb: >-
       <Export(PropertyHint.None, "")>
 
-      Public Property Label2DScene As PackedScene
-  overload: Stargazer.Spawner2D.Label2DScene*
+      Private TimeLapseSlider As HSlider
   attributes:
   - type: Godot.ExportAttribute
     ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
@@ -560,164 +930,968 @@ items:
       value: "0"
     - type: System.String
       value: ''
-- uid: Stargazer.Spawner2D.Star2dContainer
-  commentId: F:Stargazer.Spawner2D.Star2dContainer
-  id: Star2dContainer
-  parent: Stargazer.Spawner2D
+- uid: Stargazer.ControlContainer.TimeLapseLabel
+  commentId: F:Stargazer.ControlContainer.TimeLapseLabel
+  id: TimeLapseLabel
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: Star2dContainer
-  nameWithType: Spawner2D.Star2dContainer
-  fullName: Stargazer.Spawner2D.Star2dContainer
+  name: TimeLapseLabel
+  nameWithType: ControlContainer.TimeLapseLabel
+  fullName: Stargazer.ControlContainer.TimeLapseLabel
   type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Star2dContainer
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 28
+    id: TimeLapseLabel
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private Node2D Star2dContainer
+    content: >-
+      [Export(PropertyHint.None, "")]
+
+      private Label TimeLapseLabel
     return:
-      type: Godot.Node2D
-    content.vb: Private Star2dContainer As Node2D
-- uid: Stargazer.Spawner2D.DrawnStars
-  commentId: F:Stargazer.Spawner2D.DrawnStars
-  id: DrawnStars
-  parent: Stargazer.Spawner2D
+      type: Godot.Label
+    content.vb: >-
+      <Export(PropertyHint.None, "")>
+
+      Private TimeLapseLabel As Label
+  attributes:
+  - type: Godot.ExportAttribute
+    ctor: Godot.ExportAttribute.#ctor(Godot.PropertyHint,System.String)
+    arguments:
+    - type: Godot.PropertyHint
+      value: "0"
+    - type: System.String
+      value: ''
+- uid: Stargazer.ControlContainer._mainControl
+  commentId: F:Stargazer.ControlContainer._mainControl
+  id: _mainControl
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: DrawnStars
-  nameWithType: Spawner2D.DrawnStars
-  fullName: Stargazer.Spawner2D.DrawnStars
+  name: _mainControl
+  nameWithType: ControlContainer._mainControl
+  fullName: Stargazer.ControlContainer._mainControl
   type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: DrawnStars
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 29
+    id: _mainControl
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
   syntax:
-    content: private IDictionary<int, Star2D> DrawnStars
+    content: private Startup _mainControl
     return:
-      type: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
-    content.vb: Private DrawnStars As IDictionary(Of Integer, Star2D)
-- uid: Stargazer.Spawner2D._Ready
-  commentId: M:Stargazer.Spawner2D._Ready
-  id: _Ready
-  parent: Stargazer.Spawner2D
+      type: Stargazer.Startup
+    content.vb: Private _mainControl As Startup
+- uid: Stargazer.ControlContainer.baseDateTime
+  commentId: F:Stargazer.ControlContainer.baseDateTime
+  id: baseDateTime
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: _Ready()
-  nameWithType: Spawner2D._Ready()
-  fullName: Stargazer.Spawner2D._Ready()
-  type: Method
+  name: baseDateTime
+  nameWithType: ControlContainer.baseDateTime
+  fullName: Stargazer.ControlContainer.baseDateTime
+  type: Field
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: _Ready
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
+    id: baseDateTime
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
     startLine: 31
   assemblies:
   - New Game Project
   namespace: Stargazer
+  syntax:
+    content: private DateTime baseDateTime
+    return:
+      type: System.DateTime
+    content.vb: Private baseDateTime As Date
+- uid: Stargazer.ControlContainer.totalSpan
+  commentId: F:Stargazer.ControlContainer.totalSpan
+  id: totalSpan
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: totalSpan
+  nameWithType: ControlContainer.totalSpan
+  fullName: Stargazer.ControlContainer.totalSpan
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: totalSpan
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 32
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private TimeSpan totalSpan
+    return:
+      type: System.TimeSpan
+    content.vb: Private totalSpan As TimeSpan
+- uid: Stargazer.ControlContainer.frameCount
+  commentId: F:Stargazer.ControlContainer.frameCount
+  id: frameCount
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: frameCount
+  nameWithType: ControlContainer.frameCount
+  fullName: Stargazer.ControlContainer.frameCount
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: frameCount
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 33
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private int frameCount
+    return:
+      type: System.Int32
+    content.vb: Private frameCount As Integer
+- uid: Stargazer.ControlContainer._lastLatitude
+  commentId: F:Stargazer.ControlContainer._lastLatitude
+  id: _lastLatitude
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _lastLatitude
+  nameWithType: ControlContainer._lastLatitude
+  fullName: Stargazer.ControlContainer._lastLatitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLatitude
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 34
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLatitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLatitude As Double
+- uid: Stargazer.ControlContainer._lastLongitude
+  commentId: F:Stargazer.ControlContainer._lastLongitude
+  id: _lastLongitude
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _lastLongitude
+  nameWithType: ControlContainer._lastLongitude
+  fullName: Stargazer.ControlContainer._lastLongitude
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _lastLongitude
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 35
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private double _lastLongitude
+    return:
+      type: System.Double
+    content.vb: Private _lastLongitude As Double
+- uid: Stargazer.ControlContainer._exportGifReversed
+  commentId: F:Stargazer.ControlContainer._exportGifReversed
+  id: _exportGifReversed
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _exportGifReversed
+  nameWithType: ControlContainer._exportGifReversed
+  fullName: Stargazer.ControlContainer._exportGifReversed
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _exportGifReversed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 36
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private bool _exportGifReversed
+    return:
+      type: System.Boolean
+    content.vb: Private _exportGifReversed As Boolean
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  id: AzimuthToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: AzimuthToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 41
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the azimuth grid
+  example: []
+  syntax:
+    content: public Action<bool> AzimuthToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public AzimuthToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.EquatorialToggled
+  commentId: F:Stargazer.ControlContainer.EquatorialToggled
+  id: EquatorialToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: EquatorialToggled
+  nameWithType: ControlContainer.EquatorialToggled
+  fullName: Stargazer.ControlContainer.EquatorialToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: EquatorialToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 45
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the equatorial grid
+  example: []
+  syntax:
+    content: public Action<bool> EquatorialToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public EquatorialToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  id: ConstellationsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ConstellationsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 49
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggle the visibility of constellations
+  example: []
+  syntax:
+    content: public Action<bool> ConstellationsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public ConstellationsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  id: ConstellationLabelsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ConstellationLabelsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 53
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the visibility of constellation labels
+  example: []
+  syntax:
+    content: public Action<bool> ConstellationLabelsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public ConstellationLabelsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.MessierObjectsToggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
+  id: MessierObjectsToggled
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: MessierObjectsToggled
+  nameWithType: ControlContainer.MessierObjectsToggled
+  fullName: Stargazer.ControlContainer.MessierObjectsToggled
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: MessierObjectsToggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 57
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscribers when the user has toggled the visibility of Messier objects
+  example: []
+  syntax:
+    content: public Action<bool> MessierObjectsToggled
+    return:
+      type: System.Action{System.Boolean}
+    content.vb: Public MessierObjectsToggled As Action(Of Boolean)
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  id: UserPositionUpdated
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UserPositionUpdated
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 61
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Notifies the subscriber (one only) of a request to update to the observers position/time.
+  example: []
+  syntax:
+    content: public Action<double, double, DateTime> UserPositionUpdated
+    return:
+      type: System.Action{System.Double,System.Double,System.DateTime}
+    content.vb: Public UserPositionUpdated As Action(Of Double, Double, Date)
+- uid: Stargazer.ControlContainer.RequestScreenshot
+  commentId: F:Stargazer.ControlContainer.RequestScreenshot
+  id: RequestScreenshot
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: RequestScreenshot
+  nameWithType: ControlContainer.RequestScreenshot
+  fullName: Stargazer.ControlContainer.RequestScreenshot
+  type: Field
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: RequestScreenshot
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 65
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Broadcasts a request to take a screenshot
+  example: []
+  syntax:
+    content: public Func<Task> RequestScreenshot
+    return:
+      type: System.Func{System.Threading.Tasks.Task}
+    content.vb: Public RequestScreenshot As Func(Of Task)
+- uid: Stargazer.ControlContainer._Process(System.Double)
+  commentId: M:Stargazer.ControlContainer._Process(System.Double)
+  id: _Process(System.Double)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _Process(double)
+  nameWithType: ControlContainer._Process(double)
+  fullName: Stargazer.ControlContainer._Process(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _Process
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 71
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Checks to see if the user has requested a screenshot
+  example: []
+  syntax:
+    content: public override void _Process(double delta)
+    parameters:
+    - id: delta
+      type: System.Double
+      description: Unused
+    content.vb: Public Overrides Sub _Process(delta As Double)
+  overridden: Godot.Node._Process(System.Double)
+  overload: Stargazer.ControlContainer._Process*
+  nameWithType.vb: ControlContainer._Process(Double)
+  fullName.vb: Stargazer.ControlContainer._Process(Double)
+  name.vb: _Process(Double)
+- uid: Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleAzimuth(System.Boolean)
+  id: ToggleAzimuth(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleAzimuth(bool)
+  nameWithType: ControlContainer.ToggleAzimuth(bool)
+  fullName: Stargazer.ControlContainer.ToggleAzimuth(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleAzimuth
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 83
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the AzimuthButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.AzimuthToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleAzimuth(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the toggle button is checked
+    content.vb: Public Sub ToggleAzimuth(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleAzimuth*
+  nameWithType.vb: ControlContainer.ToggleAzimuth(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleAzimuth(Boolean)
+  name.vb: ToggleAzimuth(Boolean)
+- uid: Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleEquatorial(System.Boolean)
+  id: ToggleEquatorial(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleEquatorial(bool)
+  nameWithType: ControlContainer.ToggleEquatorial(bool)
+  fullName: Stargazer.ControlContainer.ToggleEquatorial(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleEquatorial
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 89
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the <code>Toggle Equatorial</code>
+  example: []
+  syntax:
+    content: public void ToggleEquatorial(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the toggle button is checked.
+    content.vb: Public Sub ToggleEquatorial(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleEquatorial*
+  nameWithType.vb: ControlContainer.ToggleEquatorial(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleEquatorial(Boolean)
+  name.vb: ToggleEquatorial(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleConstellations(System.Boolean)
+  id: ToggleConstellations(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleConstellations(bool)
+  nameWithType: ControlContainer.ToggleConstellations(bool)
+  fullName: Stargazer.ControlContainer.ToggleConstellations(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleConstellations
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 95
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the ConstellationButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.ConstellationsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleConstellations(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the toggle button is checked
+    content.vb: Public Sub ToggleConstellations(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleConstellations*
+  nameWithType.vb: ControlContainer.ToggleConstellations(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellations(Boolean)
+  name.vb: ToggleConstellations(Boolean)
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleConstellationLabels(System.Boolean)
+  id: ToggleConstellationLabels(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleConstellationLabels(bool)
+  nameWithType: ControlContainer.ToggleConstellationLabels(bool)
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleConstellationLabels
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 101
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the LabelButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.ConstellationLabelsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleConstellationLabels(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the checkbox is checked
+    content.vb: Public Sub ToggleConstellationLabels(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleConstellationLabels*
+  nameWithType.vb: ControlContainer.ToggleConstellationLabels(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleConstellationLabels(Boolean)
+  name.vb: ToggleConstellationLabels(Boolean)
+- uid: Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  commentId: M:Stargazer.ControlContainer.ToggleMessierObjects(System.Boolean)
+  id: ToggleMessierObjects(System.Boolean)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: ToggleMessierObjects(bool)
+  nameWithType: ControlContainer.ToggleMessierObjects(bool)
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects(bool)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: ToggleMessierObjects
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 108
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Receives the <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref> from the "MessierButton's <xref href="Godot.CheckBox" data-throw-if-not-resolved="false"></xref> and broadcasts on the <xref href="Stargazer.ControlContainer.MessierObjectsToggled" data-throw-if-not-resolved="false"></xref> notification.
+  example: []
+  syntax:
+    content: public void ToggleMessierObjects(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: True if the checkbox is checked
+    content.vb: Public Sub ToggleMessierObjects(value As Boolean)
+  overload: Stargazer.ControlContainer.ToggleMessierObjects*
+  nameWithType.vb: ControlContainer.ToggleMessierObjects(Boolean)
+  fullName.vb: Stargazer.ControlContainer.ToggleMessierObjects(Boolean)
+  name.vb: ToggleMessierObjects(Boolean)
+- uid: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  commentId: M:Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  id: SetMainController(Stargazer.Startup)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: SetMainController(Startup)
+  nameWithType: ControlContainer.SetMainController(Startup)
+  fullName: Stargazer.ControlContainer.SetMainController(Stargazer.Startup)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetMainController
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 114
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: Sets a reference to the main controller in the control container.
+  example: []
+  syntax:
+    content: public void SetMainController(Startup controller)
+    parameters:
+    - id: controller
+      type: Stargazer.Startup
+      description: The main controller
+    content.vb: Public Sub SetMainController(controller As Startup)
+  overload: Stargazer.ControlContainer.SetMainController*
+- uid: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  commentId: M:Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  id: OnSliderGuiInput(Godot.InputEvent)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: OnSliderGuiInput(InputEvent)
+  nameWithType: ControlContainer.OnSliderGuiInput(InputEvent)
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput(Godot.InputEvent)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnSliderGuiInput
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 119
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: private void OnSliderGuiInput(InputEvent @event)
+    parameters:
+    - id: event
+      type: Godot.InputEvent
+    content.vb: Private Sub OnSliderGuiInput([event] As InputEvent)
+  overload: Stargazer.ControlContainer.OnSliderGuiInput*
+- uid: Stargazer.ControlContainer.UpdateUserPosition
+  commentId: M:Stargazer.ControlContainer.UpdateUserPosition
+  id: UpdateUserPosition
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserPosition()
+  nameWithType: ControlContainer.UpdateUserPosition()
+  fullName: Stargazer.ControlContainer.UpdateUserPosition()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdateUserPosition
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 140
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
   summary: >-
-    <p>Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> callbacks get triggered first, and the parent node will receive the ready notification afterwards.</p>
+    Receives the <code>Enter</code> button's <xref href="Godot.Signal" data-throw-if-not-resolved="false"></xref>, gathers user input and broadcasts <xref href="Stargazer.ControlContainer.UserPositionUpdated" data-throw-if-not-resolved="false"></xref>
 
-    <p>Corresponds to the <xref href="Godot.Node.NotificationReady" data-throw-if-not-resolved="false"></xref> notification in <xref href="Godot.GodotObject._Notification(System.Int32)" data-throw-if-not-resolved="false"></xref>. See also the <code>@onready</code> annotation for variables.</p>
+    Author: Logan Parker
 
-    <p>Usually used for initialization. For even earlier initialization, <xref href="Godot.GodotObject.%23ctor" data-throw-if-not-resolved="false"></xref> may be used. See also <xref href="Godot.Node._EnterTree" data-throw-if-not-resolved="false"></xref>.</p>
+    Created: SPR 2025
 
-    <p><b>Note:</b> This method may be called only once for each node. After removing a node from the scene tree and adding it again, <xref href="Godot.Node._Ready" data-throw-if-not-resolved="false"></xref> will <b>not</b> be called a second time. This can be bypassed by requesting another call with <xref href="Godot.Node.RequestReady" data-throw-if-not-resolved="false"></xref>, which may be called anywhere before adding the node again.</p>
+    Modified: Alex Lake SPR 2025 (added time lapse slider)
   example: []
   syntax:
-    content: public override void _Ready()
-    content.vb: Public Overrides Sub _Ready()
-  overridden: Godot.Node._Ready
-  overload: Stargazer.Spawner2D._Ready*
-- uid: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
-  commentId: M:Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
-  id: DrawStars(System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star})
-  parent: Stargazer.Spawner2D
+    content: public void UpdateUserPosition()
+    content.vb: Public Sub UpdateUserPosition()
+  overload: Stargazer.ControlContainer.UpdateUserPosition*
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  commentId: M:Stargazer.ControlContainer._on_reverse_gif_toggled(System.Boolean)
+  id: _on_reverse_gif_toggled(System.Boolean)
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: DrawStars(IDictionary<int, Star>)
-  nameWithType: Spawner2D.DrawStars(IDictionary<int, Star>)
-  fullName: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary<int, Stargazer.Star>)
+  name: _on_reverse_gif_toggled(bool)
+  nameWithType: ControlContainer._on_reverse_gif_toggled(bool)
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled(bool)
   type: Method
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: DrawStars
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 40
+    id: _on_reverse_gif_toggled
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 216
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Receives the notification to draw the new star scene.
+  summary: >-
+    Toggles a flag when the user selects/deselects the reverse gif checkbox.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
   example: []
   syntax:
-    content: public Task<IDictionary<int, Star2D>> DrawStars(IDictionary<int, Star> starDictionary)
+    content: public void _on_reverse_gif_toggled(bool toggled)
     parameters:
-    - id: starDictionary
-      type: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star}
-      description: The <xref href="System.Collections.Generic.IDictionary%602" data-throw-if-not-resolved="false"></xref> that contains the stars to draw.
-    return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
-    content.vb: Public Function DrawStars(starDictionary As IDictionary(Of Integer, Star)) As Task(Of IDictionary(Of Integer, Star2D))
-  overload: Stargazer.Spawner2D.DrawStars*
-  nameWithType.vb: Spawner2D.DrawStars(IDictionary(Of Integer, Star))
-  fullName.vb: Stargazer.Spawner2D.DrawStars(System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star))
-  name.vb: DrawStars(IDictionary(Of Integer, Star))
-- uid: Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
-  commentId: M:Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
-  id: SpawnStar(Stargazer.Star)
-  parent: Stargazer.Spawner2D
+    - id: toggled
+      type: System.Boolean
+      description: ''
+    content.vb: Public Sub _on_reverse_gif_toggled(toggled As Boolean)
+  overload: Stargazer.ControlContainer._on_reverse_gif_toggled*
+  nameWithType.vb: ControlContainer._on_reverse_gif_toggled(Boolean)
+  fullName.vb: Stargazer.ControlContainer._on_reverse_gif_toggled(Boolean)
+  name.vb: _on_reverse_gif_toggled(Boolean)
+- uid: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  commentId: M:Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
+  id: SetBaseDateTime(System.DateTime)
+  parent: Stargazer.ControlContainer
   langs:
   - csharp
   - vb
-  name: SpawnStar(Star)
-  nameWithType: Spawner2D.SpawnStar(Star)
-  fullName: Stargazer.Spawner2D.SpawnStar(Stargazer.Star)
+  name: SetBaseDateTime(DateTime)
+  nameWithType: ControlContainer.SetBaseDateTime(DateTime)
+  fullName: Stargazer.ControlContainer.SetBaseDateTime(System.DateTime)
   type: Method
   source:
     remote:
-      path: Stargazer-Godot/Code/Spawner2D.cs
+      path: Stargazer-Godot/Code/ControlContainer.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
-    id: SpawnStar
-    path: ../Stargazer-Godot/Code/Spawner2D.cs
-    startLine: 60
+    id: SetBaseDateTime
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 227
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Sets the base date time for the time lapse.
+
+    Author Alex Lake
+
+    Created: SPR 2025
+  example: []
   syntax:
-    content: private Star2D SpawnStar(Star godotStar)
+    content: public void SetBaseDateTime(DateTime dateTime)
     parameters:
-    - id: godotStar
-      type: Stargazer.Star
+    - id: dateTime
+      type: System.DateTime
+      description: The time to set.
+    content.vb: Public Sub SetBaseDateTime(dateTime As Date)
+  overload: Stargazer.ControlContainer.SetBaseDateTime*
+  nameWithType.vb: ControlContainer.SetBaseDateTime(Date)
+  fullName.vb: Stargazer.ControlContainer.SetBaseDateTime(Date)
+  name.vb: SetBaseDateTime(Date)
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  commentId: M:Stargazer.ControlContainer.OnTimeLapseFrameChanged(System.Double)
+  id: OnTimeLapseFrameChanged(System.Double)
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: OnTimeLapseFrameChanged(double)
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged(double)
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged(double)
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: OnTimeLapseFrameChanged
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 238
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Called each time the time lapse advances one frame.
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void OnTimeLapseFrameChanged(double frame)
+    parameters:
+    - id: frame
+      type: System.Double
+      description: The amount of time passed since the last frame
+    content.vb: Private Sub OnTimeLapseFrameChanged(frame As Double)
+  overload: Stargazer.ControlContainer.OnTimeLapseFrameChanged*
+  nameWithType.vb: ControlContainer.OnTimeLapseFrameChanged(Double)
+  fullName.vb: Stargazer.ControlContainer.OnTimeLapseFrameChanged(Double)
+  name.vb: OnTimeLapseFrameChanged(Double)
+- uid: Stargazer.ControlContainer._on_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_button_pressed
+  id: _on_button_pressed
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _on_button_pressed()
+  nameWithType: ControlContainer._on_button_pressed()
+  fullName: Stargazer.ControlContainer._on_button_pressed()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_button_pressed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 260
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Screenshot button
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void _on_button_pressed()
+    content.vb: Private Sub _on_button_pressed()
+  overload: Stargazer.ControlContainer._on_button_pressed*
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  commentId: M:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  id: _on_timelapse_gif_export_button_pressed
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: _on_timelapse_gif_export_button_pressed()
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed()
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: _on_timelapse_gif_export_button_pressed
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 278
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Notifies the main controller of a user request to export a time lapse
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: private void _on_timelapse_gif_export_button_pressed()
+    content.vb: Private Sub _on_timelapse_gif_export_button_pressed()
+  overload: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed*
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  commentId: M:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  id: GetSelectedScreenshotFormat
+  parent: Stargazer.ControlContainer
+  langs:
+  - csharp
+  - vb
+  name: GetSelectedScreenshotFormat()
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat()
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat()
+  type: Method
+  source:
+    remote:
+      path: Stargazer-Godot/Code/ControlContainer.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: GetSelectedScreenshotFormat
+    path: ../Stargazer-Godot/Code/ControlContainer.cs
+    startLine: 297
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  summary: >-
+    Returns the screenshot format that is currently selected
+
+    Author: Alex Lake
+
+    Created: SPR 2025
+  example: []
+  syntax:
+    content: public string GetSelectedScreenshotFormat()
     return:
-      type: Stargazer.Star2D
-    content.vb: Private Function SpawnStar(godotStar As Star) As Star2D
-  overload: Stargazer.Spawner2D.SpawnStar*
+      type: System.String
+      description: The currently selected format
+    content.vb: Public Function GetSelectedScreenshotFormat() As String
+  overload: Stargazer.ControlContainer.GetSelectedScreenshotFormat*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -757,13 +1931,13 @@ references:
   name: CanvasItem
   nameWithType: CanvasItem
   fullName: Godot.CanvasItem
-- uid: Godot.Node2D
-  commentId: T:Godot.Node2D
+- uid: Godot.Control
+  commentId: T:Godot.Control
   parent: Godot
   isExternal: true
-  name: Node2D
-  nameWithType: Node2D
-  fullName: Godot.Node2D
+  name: Control
+  nameWithType: Control
+  fullName: Godot.Control
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -772,53 +1946,636 @@ references:
   name: IDisposable
   nameWithType: IDisposable
   fullName: System.IDisposable
-- uid: Godot.Node2D.Rotate(System.Single)
-  commentId: M:Godot.Node2D.Rotate(System.Single)
-  parent: Godot.Node2D
+- uid: Godot.Control.NotificationResized
+  commentId: F:Godot.Control.NotificationResized
+  parent: Godot.Control
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: Rotate(float)
-  nameWithType: Node2D.Rotate(float)
-  fullName: Godot.Node2D.Rotate(float)
-  nameWithType.vb: Node2D.Rotate(Single)
-  fullName.vb: Godot.Node2D.Rotate(Single)
-  name.vb: Rotate(Single)
+  name: NotificationResized
+  nameWithType: Control.NotificationResized
+  fullName: Godot.Control.NotificationResized
+- uid: Godot.Control.NotificationMouseEnter
+  commentId: F:Godot.Control.NotificationMouseEnter
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationMouseEnter
+  nameWithType: Control.NotificationMouseEnter
+  fullName: Godot.Control.NotificationMouseEnter
+- uid: Godot.Control.NotificationMouseExit
+  commentId: F:Godot.Control.NotificationMouseExit
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationMouseExit
+  nameWithType: Control.NotificationMouseExit
+  fullName: Godot.Control.NotificationMouseExit
+- uid: Godot.Control.NotificationMouseEnterSelf
+  commentId: F:Godot.Control.NotificationMouseEnterSelf
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationMouseEnterSelf
+  nameWithType: Control.NotificationMouseEnterSelf
+  fullName: Godot.Control.NotificationMouseEnterSelf
+- uid: Godot.Control.NotificationMouseExitSelf
+  commentId: F:Godot.Control.NotificationMouseExitSelf
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationMouseExitSelf
+  nameWithType: Control.NotificationMouseExitSelf
+  fullName: Godot.Control.NotificationMouseExitSelf
+- uid: Godot.Control.NotificationFocusEnter
+  commentId: F:Godot.Control.NotificationFocusEnter
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationFocusEnter
+  nameWithType: Control.NotificationFocusEnter
+  fullName: Godot.Control.NotificationFocusEnter
+- uid: Godot.Control.NotificationFocusExit
+  commentId: F:Godot.Control.NotificationFocusExit
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationFocusExit
+  nameWithType: Control.NotificationFocusExit
+  fullName: Godot.Control.NotificationFocusExit
+- uid: Godot.Control.NotificationThemeChanged
+  commentId: F:Godot.Control.NotificationThemeChanged
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationThemeChanged
+  nameWithType: Control.NotificationThemeChanged
+  fullName: Godot.Control.NotificationThemeChanged
+- uid: Godot.Control.NotificationScrollBegin
+  commentId: F:Godot.Control.NotificationScrollBegin
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationScrollBegin
+  nameWithType: Control.NotificationScrollBegin
+  fullName: Godot.Control.NotificationScrollBegin
+- uid: Godot.Control.NotificationScrollEnd
+  commentId: F:Godot.Control.NotificationScrollEnd
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationScrollEnd
+  nameWithType: Control.NotificationScrollEnd
+  fullName: Godot.Control.NotificationScrollEnd
+- uid: Godot.Control.NotificationLayoutDirectionChanged
+  commentId: F:Godot.Control.NotificationLayoutDirectionChanged
+  parent: Godot.Control
+  isExternal: true
+  name: NotificationLayoutDirectionChanged
+  nameWithType: Control.NotificationLayoutDirectionChanged
+  fullName: Godot.Control.NotificationLayoutDirectionChanged
+- uid: Godot.Control._CanDropData(Godot.Vector2,Godot.Variant)
+  commentId: M:Godot.Control._CanDropData(Godot.Vector2,Godot.Variant)
+  parent: Godot.Control
+  isExternal: true
+  name: _CanDropData(Vector2, Variant)
+  nameWithType: Control._CanDropData(Vector2, Variant)
+  fullName: Godot.Control._CanDropData(Godot.Vector2, Godot.Variant)
   spec.csharp:
-  - uid: Godot.Node2D.Rotate(System.Single)
-    name: Rotate
+  - uid: Godot.Control._CanDropData(Godot.Vector2,Godot.Variant)
+    name: _CanDropData
     isExternal: true
   - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._CanDropData(Godot.Vector2,Godot.Variant)
+    name: _CanDropData
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: )
+- uid: Godot.Control._DropData(Godot.Vector2,Godot.Variant)
+  commentId: M:Godot.Control._DropData(Godot.Vector2,Godot.Variant)
+  parent: Godot.Control
+  isExternal: true
+  name: _DropData(Vector2, Variant)
+  nameWithType: Control._DropData(Vector2, Variant)
+  fullName: Godot.Control._DropData(Godot.Vector2, Godot.Variant)
+  spec.csharp:
+  - uid: Godot.Control._DropData(Godot.Vector2,Godot.Variant)
+    name: _DropData
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._DropData(Godot.Vector2,Godot.Variant)
+    name: _DropData
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: )
+- uid: Godot.Control._GetDragData(Godot.Vector2)
+  commentId: M:Godot.Control._GetDragData(Godot.Vector2)
+  parent: Godot.Control
+  isExternal: true
+  name: _GetDragData(Vector2)
+  nameWithType: Control._GetDragData(Vector2)
+  fullName: Godot.Control._GetDragData(Godot.Vector2)
+  spec.csharp:
+  - uid: Godot.Control._GetDragData(Godot.Vector2)
+    name: _GetDragData
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._GetDragData(Godot.Vector2)
+    name: _GetDragData
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: Godot.Control._GetMinimumSize
+  commentId: M:Godot.Control._GetMinimumSize
+  parent: Godot.Control
+  isExternal: true
+  name: _GetMinimumSize()
+  nameWithType: Control._GetMinimumSize()
+  fullName: Godot.Control._GetMinimumSize()
+  spec.csharp:
+  - uid: Godot.Control._GetMinimumSize
+    name: _GetMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._GetMinimumSize
+    name: _GetMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control._GetTooltip(Godot.Vector2)
+  commentId: M:Godot.Control._GetTooltip(Godot.Vector2)
+  parent: Godot.Control
+  isExternal: true
+  name: _GetTooltip(Vector2)
+  nameWithType: Control._GetTooltip(Vector2)
+  fullName: Godot.Control._GetTooltip(Godot.Vector2)
+  spec.csharp:
+  - uid: Godot.Control._GetTooltip(Godot.Vector2)
+    name: _GetTooltip
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._GetTooltip(Godot.Vector2)
+    name: _GetTooltip
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: Godot.Control._GuiInput(Godot.InputEvent)
+  commentId: M:Godot.Control._GuiInput(Godot.InputEvent)
+  parent: Godot.Control
+  isExternal: true
+  name: _GuiInput(InputEvent)
+  nameWithType: Control._GuiInput(InputEvent)
+  fullName: Godot.Control._GuiInput(Godot.InputEvent)
+  spec.csharp:
+  - uid: Godot.Control._GuiInput(Godot.InputEvent)
+    name: _GuiInput
+    isExternal: true
+  - name: (
+  - uid: Godot.InputEvent
+    name: InputEvent
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._GuiInput(Godot.InputEvent)
+    name: _GuiInput
+    isExternal: true
+  - name: (
+  - uid: Godot.InputEvent
+    name: InputEvent
+    isExternal: true
+  - name: )
+- uid: Godot.Control._HasPoint(Godot.Vector2)
+  commentId: M:Godot.Control._HasPoint(Godot.Vector2)
+  parent: Godot.Control
+  isExternal: true
+  name: _HasPoint(Vector2)
+  nameWithType: Control._HasPoint(Vector2)
+  fullName: Godot.Control._HasPoint(Godot.Vector2)
+  spec.csharp:
+  - uid: Godot.Control._HasPoint(Godot.Vector2)
+    name: _HasPoint
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._HasPoint(Godot.Vector2)
+    name: _HasPoint
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: Godot.Control._MakeCustomTooltip(System.String)
+  commentId: M:Godot.Control._MakeCustomTooltip(System.String)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: _MakeCustomTooltip(string)
+  nameWithType: Control._MakeCustomTooltip(string)
+  fullName: Godot.Control._MakeCustomTooltip(string)
+  nameWithType.vb: Control._MakeCustomTooltip(String)
+  fullName.vb: Godot.Control._MakeCustomTooltip(String)
+  name.vb: _MakeCustomTooltip(String)
+  spec.csharp:
+  - uid: Godot.Control._MakeCustomTooltip(System.String)
+    name: _MakeCustomTooltip
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._MakeCustomTooltip(System.String)
+    name: _MakeCustomTooltip
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Godot.Control._StructuredTextParser(Godot.Collections.Array,System.String)
+  commentId: M:Godot.Control._StructuredTextParser(Godot.Collections.Array,System.String)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: _StructuredTextParser(Array, string)
+  nameWithType: Control._StructuredTextParser(Array, string)
+  fullName: Godot.Control._StructuredTextParser(Godot.Collections.Array, string)
+  nameWithType.vb: Control._StructuredTextParser(Array, String)
+  fullName.vb: Godot.Control._StructuredTextParser(Godot.Collections.Array, String)
+  name.vb: _StructuredTextParser(Array, String)
+  spec.csharp:
+  - uid: Godot.Control._StructuredTextParser(Godot.Collections.Array,System.String)
+    name: _StructuredTextParser
+    isExternal: true
+  - name: (
+  - uid: Godot.Collections.Array
+    name: Array
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Godot.Control._StructuredTextParser(Godot.Collections.Array,System.String)
+    name: _StructuredTextParser
+    isExternal: true
+  - name: (
+  - uid: Godot.Collections.Array
+    name: Array
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Godot.Control.AcceptEvent
+  commentId: M:Godot.Control.AcceptEvent
+  parent: Godot.Control
+  isExternal: true
+  name: AcceptEvent()
+  nameWithType: Control.AcceptEvent()
+  fullName: Godot.Control.AcceptEvent()
+  spec.csharp:
+  - uid: Godot.Control.AcceptEvent
+    name: AcceptEvent
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AcceptEvent
+    name: AcceptEvent
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetMinimumSize
+  commentId: M:Godot.Control.GetMinimumSize
+  parent: Godot.Control
+  isExternal: true
+  name: GetMinimumSize()
+  nameWithType: Control.GetMinimumSize()
+  fullName: Godot.Control.GetMinimumSize()
+  spec.csharp:
+  - uid: Godot.Control.GetMinimumSize
+    name: GetMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetMinimumSize
+    name: GetMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetCombinedMinimumSize
+  commentId: M:Godot.Control.GetCombinedMinimumSize
+  parent: Godot.Control
+  isExternal: true
+  name: GetCombinedMinimumSize()
+  nameWithType: Control.GetCombinedMinimumSize()
+  fullName: Godot.Control.GetCombinedMinimumSize()
+  spec.csharp:
+  - uid: Godot.Control.GetCombinedMinimumSize
+    name: GetCombinedMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetCombinedMinimumSize
+    name: GetCombinedMinimumSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset,System.Boolean)
+  commentId: M:Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset,System.Boolean)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetAnchorsPreset(LayoutPreset, bool)
+  nameWithType: Control.SetAnchorsPreset(Control.LayoutPreset, bool)
+  fullName: Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset, bool)
+  nameWithType.vb: Control.SetAnchorsPreset(Control.LayoutPreset, Boolean)
+  fullName.vb: Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset, Boolean)
+  name.vb: SetAnchorsPreset(LayoutPreset, Boolean)
+  spec.csharp:
+  - uid: Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset,System.Boolean)
+    name: SetAnchorsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetAnchorsPreset(Godot.Control.LayoutPreset,System.Boolean)
+    name: SetAnchorsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  commentId: M:Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: SetOffsetsPreset(LayoutPreset, LayoutPresetMode, int)
+  nameWithType: Control.SetOffsetsPreset(Control.LayoutPreset, Control.LayoutPresetMode, int)
+  fullName: Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset, Godot.Control.LayoutPresetMode, int)
+  nameWithType.vb: Control.SetOffsetsPreset(Control.LayoutPreset, Control.LayoutPresetMode, Integer)
+  fullName.vb: Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset, Godot.Control.LayoutPresetMode, Integer)
+  name.vb: SetOffsetsPreset(LayoutPreset, LayoutPresetMode, Integer)
+  spec.csharp:
+  - uid: Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+    name: SetOffsetsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control.LayoutPresetMode
+    name: LayoutPresetMode
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+    name: SetOffsetsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control.LayoutPresetMode
+    name: LayoutPresetMode
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  commentId: M:Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: SetAnchorsAndOffsetsPreset(LayoutPreset, LayoutPresetMode, int)
+  nameWithType: Control.SetAnchorsAndOffsetsPreset(Control.LayoutPreset, Control.LayoutPresetMode, int)
+  fullName: Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset, Godot.Control.LayoutPresetMode, int)
+  nameWithType.vb: Control.SetAnchorsAndOffsetsPreset(Control.LayoutPreset, Control.LayoutPresetMode, Integer)
+  fullName.vb: Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset, Godot.Control.LayoutPresetMode, Integer)
+  name.vb: SetAnchorsAndOffsetsPreset(LayoutPreset, LayoutPresetMode, Integer)
+  spec.csharp:
+  - uid: Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+    name: SetAnchorsAndOffsetsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control.LayoutPresetMode
+    name: LayoutPresetMode
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetAnchorsAndOffsetsPreset(Godot.Control.LayoutPreset,Godot.Control.LayoutPresetMode,System.Int32)
+    name: SetAnchorsAndOffsetsPreset
+    isExternal: true
+  - name: (
+  - uid: Godot.Control.LayoutPreset
+    name: LayoutPreset
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control.LayoutPresetMode
+    name: LayoutPresetMode
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Godot.Control.SetAnchor(Godot.Side,System.Single,System.Boolean,System.Boolean)
+  commentId: M:Godot.Control.SetAnchor(Godot.Side,System.Single,System.Boolean,System.Boolean)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: SetAnchor(Side, float, bool, bool)
+  nameWithType: Control.SetAnchor(Side, float, bool, bool)
+  fullName: Godot.Control.SetAnchor(Godot.Side, float, bool, bool)
+  nameWithType.vb: Control.SetAnchor(Side, Single, Boolean, Boolean)
+  fullName.vb: Godot.Control.SetAnchor(Godot.Side, Single, Boolean, Boolean)
+  name.vb: SetAnchor(Side, Single, Boolean, Boolean)
+  spec.csharp:
+  - uid: Godot.Control.SetAnchor(Godot.Side,System.Single,System.Boolean,System.Boolean)
+    name: SetAnchor
+    isExternal: true
+  - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: ','
+  - name: " "
   - uid: System.Single
     name: float
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.Rotate(System.Single)
-    name: Rotate
+  - uid: Godot.Control.SetAnchor(Godot.Side,System.Single,System.Boolean,System.Boolean)
+    name: SetAnchor
     isExternal: true
   - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: ','
+  - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
-  commentId: M:Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
-  parent: Godot.Node2D
+- uid: Godot.Control.SetAnchorAndOffset(Godot.Side,System.Single,System.Single,System.Boolean)
+  commentId: M:Godot.Control.SetAnchorAndOffset(Godot.Side,System.Single,System.Single,System.Boolean)
+  parent: Godot.Control
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.single
-  name: MoveLocalX(float, bool)
-  nameWithType: Node2D.MoveLocalX(float, bool)
-  fullName: Godot.Node2D.MoveLocalX(float, bool)
-  nameWithType.vb: Node2D.MoveLocalX(Single, Boolean)
-  fullName.vb: Godot.Node2D.MoveLocalX(Single, Boolean)
-  name.vb: MoveLocalX(Single, Boolean)
+  name: SetAnchorAndOffset(Side, float, float, bool)
+  nameWithType: Control.SetAnchorAndOffset(Side, float, float, bool)
+  fullName: Godot.Control.SetAnchorAndOffset(Godot.Side, float, float, bool)
+  nameWithType.vb: Control.SetAnchorAndOffset(Side, Single, Single, Boolean)
+  fullName.vb: Godot.Control.SetAnchorAndOffset(Godot.Side, Single, Single, Boolean)
+  name.vb: SetAnchorAndOffset(Side, Single, Single, Boolean)
   spec.csharp:
-  - uid: Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
-    name: MoveLocalX
+  - uid: Godot.Control.SetAnchorAndOffset(Godot.Side,System.Single,System.Single,System.Boolean)
+    name: SetAnchorAndOffset
     isExternal: true
   - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
   - uid: System.Single
     name: float
     isExternal: true
@@ -831,10 +2588,21 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.MoveLocalX(System.Single,System.Boolean)
-    name: MoveLocalX
+  - uid: Godot.Control.SetAnchorAndOffset(Godot.Side,System.Single,System.Single,System.Boolean)
+    name: SetAnchorAndOffset
     isExternal: true
   - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
   - uid: System.Single
     name: Single
     isExternal: true
@@ -846,26 +2614,75 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Godot.Node2D.MoveLocalY(System.Single,System.Boolean)
-  commentId: M:Godot.Node2D.MoveLocalY(System.Single,System.Boolean)
-  parent: Godot.Node2D
+- uid: Godot.Control.SetBegin(Godot.Vector2)
+  commentId: M:Godot.Control.SetBegin(Godot.Vector2)
+  parent: Godot.Control
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: MoveLocalY(float, bool)
-  nameWithType: Node2D.MoveLocalY(float, bool)
-  fullName: Godot.Node2D.MoveLocalY(float, bool)
-  nameWithType.vb: Node2D.MoveLocalY(Single, Boolean)
-  fullName.vb: Godot.Node2D.MoveLocalY(Single, Boolean)
-  name.vb: MoveLocalY(Single, Boolean)
+  name: SetBegin(Vector2)
+  nameWithType: Control.SetBegin(Vector2)
+  fullName: Godot.Control.SetBegin(Godot.Vector2)
   spec.csharp:
-  - uid: Godot.Node2D.MoveLocalY(System.Single,System.Boolean)
-    name: MoveLocalY
+  - uid: Godot.Control.SetBegin(Godot.Vector2)
+    name: SetBegin
     isExternal: true
   - name: (
-  - uid: System.Single
-    name: float
+  - uid: Godot.Vector2
+    name: Vector2
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetBegin(Godot.Vector2)
+    name: SetBegin
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: Godot.Control.SetEnd(Godot.Vector2)
+  commentId: M:Godot.Control.SetEnd(Godot.Vector2)
+  parent: Godot.Control
+  isExternal: true
+  name: SetEnd(Vector2)
+  nameWithType: Control.SetEnd(Vector2)
+  fullName: Godot.Control.SetEnd(Godot.Vector2)
+  spec.csharp:
+  - uid: Godot.Control.SetEnd(Godot.Vector2)
+    name: SetEnd
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetEnd(Godot.Vector2)
+    name: SetEnd
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: )
+- uid: Godot.Control.SetPosition(Godot.Vector2,System.Boolean)
+  commentId: M:Godot.Control.SetPosition(Godot.Vector2,System.Boolean)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetPosition(Vector2, bool)
+  nameWithType: Control.SetPosition(Vector2, bool)
+  fullName: Godot.Control.SetPosition(Godot.Vector2, bool)
+  nameWithType.vb: Control.SetPosition(Vector2, Boolean)
+  fullName.vb: Godot.Control.SetPosition(Godot.Vector2, Boolean)
+  name.vb: SetPosition(Vector2, Boolean)
+  spec.csharp:
+  - uid: Godot.Control.SetPosition(Godot.Vector2,System.Boolean)
+    name: SetPosition
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -874,14 +2691,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.MoveLocalY(System.Single,System.Boolean)
-    name: MoveLocalY
+  - uid: Godot.Control.SetPosition(Godot.Vector2,System.Boolean)
+    name: SetPosition
     isExternal: true
   - name: (
-  - uid: System.Single
-    name: Single
+  - uid: Godot.Vector2
+    name: Vector2
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -889,16 +2705,1604 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: Godot.Node2D.Translate(Godot.Vector2)
-  commentId: M:Godot.Node2D.Translate(Godot.Vector2)
-  parent: Godot.Node2D
+- uid: Godot.Control.SetSize(Godot.Vector2,System.Boolean)
+  commentId: M:Godot.Control.SetSize(Godot.Vector2,System.Boolean)
+  parent: Godot.Control
   isExternal: true
-  name: Translate(Vector2)
-  nameWithType: Node2D.Translate(Vector2)
-  fullName: Godot.Node2D.Translate(Godot.Vector2)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetSize(Vector2, bool)
+  nameWithType: Control.SetSize(Vector2, bool)
+  fullName: Godot.Control.SetSize(Godot.Vector2, bool)
+  nameWithType.vb: Control.SetSize(Vector2, Boolean)
+  fullName.vb: Godot.Control.SetSize(Godot.Vector2, Boolean)
+  name.vb: SetSize(Vector2, Boolean)
   spec.csharp:
-  - uid: Godot.Node2D.Translate(Godot.Vector2)
-    name: Translate
+  - uid: Godot.Control.SetSize(Godot.Vector2,System.Boolean)
+    name: SetSize
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetSize(Godot.Vector2,System.Boolean)
+    name: SetSize
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Godot.Control.ResetSize
+  commentId: M:Godot.Control.ResetSize
+  parent: Godot.Control
+  isExternal: true
+  name: ResetSize()
+  nameWithType: Control.ResetSize()
+  fullName: Godot.Control.ResetSize()
+  spec.csharp:
+  - uid: Godot.Control.ResetSize
+    name: ResetSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.ResetSize
+    name: ResetSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.SetGlobalPosition(Godot.Vector2,System.Boolean)
+  commentId: M:Godot.Control.SetGlobalPosition(Godot.Vector2,System.Boolean)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: SetGlobalPosition(Vector2, bool)
+  nameWithType: Control.SetGlobalPosition(Vector2, bool)
+  fullName: Godot.Control.SetGlobalPosition(Godot.Vector2, bool)
+  nameWithType.vb: Control.SetGlobalPosition(Vector2, Boolean)
+  fullName.vb: Godot.Control.SetGlobalPosition(Godot.Vector2, Boolean)
+  name.vb: SetGlobalPosition(Vector2, Boolean)
+  spec.csharp:
+  - uid: Godot.Control.SetGlobalPosition(Godot.Vector2,System.Boolean)
+    name: SetGlobalPosition
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetGlobalPosition(Godot.Vector2,System.Boolean)
+    name: SetGlobalPosition
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Godot.Control.GetBegin
+  commentId: M:Godot.Control.GetBegin
+  parent: Godot.Control
+  isExternal: true
+  name: GetBegin()
+  nameWithType: Control.GetBegin()
+  fullName: Godot.Control.GetBegin()
+  spec.csharp:
+  - uid: Godot.Control.GetBegin
+    name: GetBegin
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetBegin
+    name: GetBegin
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetEnd
+  commentId: M:Godot.Control.GetEnd
+  parent: Godot.Control
+  isExternal: true
+  name: GetEnd()
+  nameWithType: Control.GetEnd()
+  fullName: Godot.Control.GetEnd()
+  spec.csharp:
+  - uid: Godot.Control.GetEnd
+    name: GetEnd
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetEnd
+    name: GetEnd
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetParentAreaSize
+  commentId: M:Godot.Control.GetParentAreaSize
+  parent: Godot.Control
+  isExternal: true
+  name: GetParentAreaSize()
+  nameWithType: Control.GetParentAreaSize()
+  fullName: Godot.Control.GetParentAreaSize()
+  spec.csharp:
+  - uid: Godot.Control.GetParentAreaSize
+    name: GetParentAreaSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetParentAreaSize
+    name: GetParentAreaSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetScreenPosition
+  commentId: M:Godot.Control.GetScreenPosition
+  parent: Godot.Control
+  isExternal: true
+  name: GetScreenPosition()
+  nameWithType: Control.GetScreenPosition()
+  fullName: Godot.Control.GetScreenPosition()
+  spec.csharp:
+  - uid: Godot.Control.GetScreenPosition
+    name: GetScreenPosition
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetScreenPosition
+    name: GetScreenPosition
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetRect
+  commentId: M:Godot.Control.GetRect
+  parent: Godot.Control
+  isExternal: true
+  name: GetRect()
+  nameWithType: Control.GetRect()
+  fullName: Godot.Control.GetRect()
+  spec.csharp:
+  - uid: Godot.Control.GetRect
+    name: GetRect
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetRect
+    name: GetRect
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetGlobalRect
+  commentId: M:Godot.Control.GetGlobalRect
+  parent: Godot.Control
+  isExternal: true
+  name: GetGlobalRect()
+  nameWithType: Control.GetGlobalRect()
+  fullName: Godot.Control.GetGlobalRect()
+  spec.csharp:
+  - uid: Godot.Control.GetGlobalRect
+    name: GetGlobalRect
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetGlobalRect
+    name: GetGlobalRect
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.HasFocus
+  commentId: M:Godot.Control.HasFocus
+  parent: Godot.Control
+  isExternal: true
+  name: HasFocus()
+  nameWithType: Control.HasFocus()
+  fullName: Godot.Control.HasFocus()
+  spec.csharp:
+  - uid: Godot.Control.HasFocus
+    name: HasFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasFocus
+    name: HasFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GrabFocus
+  commentId: M:Godot.Control.GrabFocus
+  parent: Godot.Control
+  isExternal: true
+  name: GrabFocus()
+  nameWithType: Control.GrabFocus()
+  fullName: Godot.Control.GrabFocus()
+  spec.csharp:
+  - uid: Godot.Control.GrabFocus
+    name: GrabFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GrabFocus
+    name: GrabFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.ReleaseFocus
+  commentId: M:Godot.Control.ReleaseFocus
+  parent: Godot.Control
+  isExternal: true
+  name: ReleaseFocus()
+  nameWithType: Control.ReleaseFocus()
+  fullName: Godot.Control.ReleaseFocus()
+  spec.csharp:
+  - uid: Godot.Control.ReleaseFocus
+    name: ReleaseFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.ReleaseFocus
+    name: ReleaseFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.FindPrevValidFocus
+  commentId: M:Godot.Control.FindPrevValidFocus
+  parent: Godot.Control
+  isExternal: true
+  name: FindPrevValidFocus()
+  nameWithType: Control.FindPrevValidFocus()
+  fullName: Godot.Control.FindPrevValidFocus()
+  spec.csharp:
+  - uid: Godot.Control.FindPrevValidFocus
+    name: FindPrevValidFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.FindPrevValidFocus
+    name: FindPrevValidFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.FindNextValidFocus
+  commentId: M:Godot.Control.FindNextValidFocus
+  parent: Godot.Control
+  isExternal: true
+  name: FindNextValidFocus()
+  nameWithType: Control.FindNextValidFocus()
+  fullName: Godot.Control.FindNextValidFocus()
+  spec.csharp:
+  - uid: Godot.Control.FindNextValidFocus
+    name: FindNextValidFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.FindNextValidFocus
+    name: FindNextValidFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.FindValidFocusNeighbor(Godot.Side)
+  commentId: M:Godot.Control.FindValidFocusNeighbor(Godot.Side)
+  parent: Godot.Control
+  isExternal: true
+  name: FindValidFocusNeighbor(Side)
+  nameWithType: Control.FindValidFocusNeighbor(Side)
+  fullName: Godot.Control.FindValidFocusNeighbor(Godot.Side)
+  spec.csharp:
+  - uid: Godot.Control.FindValidFocusNeighbor(Godot.Side)
+    name: FindValidFocusNeighbor
+    isExternal: true
+  - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.FindValidFocusNeighbor(Godot.Side)
+    name: FindValidFocusNeighbor
+    isExternal: true
+  - name: (
+  - uid: Godot.Side
+    name: Side
+    isExternal: true
+  - name: )
+- uid: Godot.Control.BeginBulkThemeOverride
+  commentId: M:Godot.Control.BeginBulkThemeOverride
+  parent: Godot.Control
+  isExternal: true
+  name: BeginBulkThemeOverride()
+  nameWithType: Control.BeginBulkThemeOverride()
+  fullName: Godot.Control.BeginBulkThemeOverride()
+  spec.csharp:
+  - uid: Godot.Control.BeginBulkThemeOverride
+    name: BeginBulkThemeOverride
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.BeginBulkThemeOverride
+    name: BeginBulkThemeOverride
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.EndBulkThemeOverride
+  commentId: M:Godot.Control.EndBulkThemeOverride
+  parent: Godot.Control
+  isExternal: true
+  name: EndBulkThemeOverride()
+  nameWithType: Control.EndBulkThemeOverride()
+  fullName: Godot.Control.EndBulkThemeOverride()
+  spec.csharp:
+  - uid: Godot.Control.EndBulkThemeOverride
+    name: EndBulkThemeOverride
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.EndBulkThemeOverride
+    name: EndBulkThemeOverride
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.AddThemeIconOverride(Godot.StringName,Godot.Texture2D)
+  commentId: M:Godot.Control.AddThemeIconOverride(Godot.StringName,Godot.Texture2D)
+  parent: Godot.Control
+  isExternal: true
+  name: AddThemeIconOverride(StringName, Texture2D)
+  nameWithType: Control.AddThemeIconOverride(StringName, Texture2D)
+  fullName: Godot.Control.AddThemeIconOverride(Godot.StringName, Godot.Texture2D)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeIconOverride(Godot.StringName,Godot.Texture2D)
+    name: AddThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeIconOverride(Godot.StringName,Godot.Texture2D)
+    name: AddThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Texture2D
+    name: Texture2D
+    isExternal: true
+  - name: )
+- uid: Godot.Control.AddThemeStyleboxOverride(Godot.StringName,Godot.StyleBox)
+  commentId: M:Godot.Control.AddThemeStyleboxOverride(Godot.StringName,Godot.StyleBox)
+  parent: Godot.Control
+  isExternal: true
+  name: AddThemeStyleboxOverride(StringName, StyleBox)
+  nameWithType: Control.AddThemeStyleboxOverride(StringName, StyleBox)
+  fullName: Godot.Control.AddThemeStyleboxOverride(Godot.StringName, Godot.StyleBox)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeStyleboxOverride(Godot.StringName,Godot.StyleBox)
+    name: AddThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StyleBox
+    name: StyleBox
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeStyleboxOverride(Godot.StringName,Godot.StyleBox)
+    name: AddThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StyleBox
+    name: StyleBox
+    isExternal: true
+  - name: )
+- uid: Godot.Control.AddThemeFontOverride(Godot.StringName,Godot.Font)
+  commentId: M:Godot.Control.AddThemeFontOverride(Godot.StringName,Godot.Font)
+  parent: Godot.Control
+  isExternal: true
+  name: AddThemeFontOverride(StringName, Font)
+  nameWithType: Control.AddThemeFontOverride(StringName, Font)
+  fullName: Godot.Control.AddThemeFontOverride(Godot.StringName, Godot.Font)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeFontOverride(Godot.StringName,Godot.Font)
+    name: AddThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Font
+    name: Font
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeFontOverride(Godot.StringName,Godot.Font)
+    name: AddThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Font
+    name: Font
+    isExternal: true
+  - name: )
+- uid: Godot.Control.AddThemeFontSizeOverride(Godot.StringName,System.Int32)
+  commentId: M:Godot.Control.AddThemeFontSizeOverride(Godot.StringName,System.Int32)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: AddThemeFontSizeOverride(StringName, int)
+  nameWithType: Control.AddThemeFontSizeOverride(StringName, int)
+  fullName: Godot.Control.AddThemeFontSizeOverride(Godot.StringName, int)
+  nameWithType.vb: Control.AddThemeFontSizeOverride(StringName, Integer)
+  fullName.vb: Godot.Control.AddThemeFontSizeOverride(Godot.StringName, Integer)
+  name.vb: AddThemeFontSizeOverride(StringName, Integer)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeFontSizeOverride(Godot.StringName,System.Int32)
+    name: AddThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeFontSizeOverride(Godot.StringName,System.Int32)
+    name: AddThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Godot.Control.AddThemeColorOverride(Godot.StringName,Godot.Color)
+  commentId: M:Godot.Control.AddThemeColorOverride(Godot.StringName,Godot.Color)
+  parent: Godot.Control
+  isExternal: true
+  name: AddThemeColorOverride(StringName, Color)
+  nameWithType: Control.AddThemeColorOverride(StringName, Color)
+  fullName: Godot.Control.AddThemeColorOverride(Godot.StringName, Godot.Color)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeColorOverride(Godot.StringName,Godot.Color)
+    name: AddThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Color
+    name: Color
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeColorOverride(Godot.StringName,Godot.Color)
+    name: AddThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Color
+    name: Color
+    isExternal: true
+  - name: )
+- uid: Godot.Control.AddThemeConstantOverride(Godot.StringName,System.Int32)
+  commentId: M:Godot.Control.AddThemeConstantOverride(Godot.StringName,System.Int32)
+  parent: Godot.Control
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: AddThemeConstantOverride(StringName, int)
+  nameWithType: Control.AddThemeConstantOverride(StringName, int)
+  fullName: Godot.Control.AddThemeConstantOverride(Godot.StringName, int)
+  nameWithType.vb: Control.AddThemeConstantOverride(StringName, Integer)
+  fullName.vb: Godot.Control.AddThemeConstantOverride(Godot.StringName, Integer)
+  name.vb: AddThemeConstantOverride(StringName, Integer)
+  spec.csharp:
+  - uid: Godot.Control.AddThemeConstantOverride(Godot.StringName,System.Int32)
+    name: AddThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.AddThemeConstantOverride(Godot.StringName,System.Int32)
+    name: AddThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeIconOverride(StringName)
+  nameWithType: Control.RemoveThemeIconOverride(StringName)
+  fullName: Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+    name: RemoveThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeIconOverride(Godot.StringName)
+    name: RemoveThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeStyleboxOverride(StringName)
+  nameWithType: Control.RemoveThemeStyleboxOverride(StringName)
+  fullName: Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+    name: RemoveThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeStyleboxOverride(Godot.StringName)
+    name: RemoveThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeFontOverride(StringName)
+  nameWithType: Control.RemoveThemeFontOverride(StringName)
+  fullName: Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+    name: RemoveThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeFontOverride(Godot.StringName)
+    name: RemoveThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeFontSizeOverride(StringName)
+  nameWithType: Control.RemoveThemeFontSizeOverride(StringName)
+  fullName: Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+    name: RemoveThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeFontSizeOverride(Godot.StringName)
+    name: RemoveThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeColorOverride(StringName)
+  nameWithType: Control.RemoveThemeColorOverride(StringName)
+  fullName: Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+    name: RemoveThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeColorOverride(Godot.StringName)
+    name: RemoveThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+  commentId: M:Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: RemoveThemeConstantOverride(StringName)
+  nameWithType: Control.RemoveThemeConstantOverride(StringName)
+  fullName: Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+    name: RemoveThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.RemoveThemeConstantOverride(Godot.StringName)
+    name: RemoveThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeIcon(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeIcon(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeIcon(StringName, StringName)
+  nameWithType: Control.GetThemeIcon(StringName, StringName)
+  fullName: Godot.Control.GetThemeIcon(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeIcon(Godot.StringName,Godot.StringName)
+    name: GetThemeIcon
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeIcon(Godot.StringName,Godot.StringName)
+    name: GetThemeIcon
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeStylebox(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeStylebox(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeStylebox(StringName, StringName)
+  nameWithType: Control.GetThemeStylebox(StringName, StringName)
+  fullName: Godot.Control.GetThemeStylebox(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeStylebox(Godot.StringName,Godot.StringName)
+    name: GetThemeStylebox
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeStylebox(Godot.StringName,Godot.StringName)
+    name: GetThemeStylebox
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeFont(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeFont(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeFont(StringName, StringName)
+  nameWithType: Control.GetThemeFont(StringName, StringName)
+  fullName: Godot.Control.GetThemeFont(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeFont(Godot.StringName,Godot.StringName)
+    name: GetThemeFont
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeFont(Godot.StringName,Godot.StringName)
+    name: GetThemeFont
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeFontSize(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeFontSize(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeFontSize(StringName, StringName)
+  nameWithType: Control.GetThemeFontSize(StringName, StringName)
+  fullName: Godot.Control.GetThemeFontSize(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeFontSize(Godot.StringName,Godot.StringName)
+    name: GetThemeFontSize
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeFontSize(Godot.StringName,Godot.StringName)
+    name: GetThemeFontSize
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeColor(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeColor(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeColor(StringName, StringName)
+  nameWithType: Control.GetThemeColor(StringName, StringName)
+  fullName: Godot.Control.GetThemeColor(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeColor(Godot.StringName,Godot.StringName)
+    name: GetThemeColor
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeColor(Godot.StringName,Godot.StringName)
+    name: GetThemeColor
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeConstant(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.GetThemeConstant(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeConstant(StringName, StringName)
+  nameWithType: Control.GetThemeConstant(StringName, StringName)
+  fullName: Godot.Control.GetThemeConstant(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.GetThemeConstant(Godot.StringName,Godot.StringName)
+    name: GetThemeConstant
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeConstant(Godot.StringName,Godot.StringName)
+    name: GetThemeConstant
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeIconOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeIconOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeIconOverride(StringName)
+  nameWithType: Control.HasThemeIconOverride(StringName)
+  fullName: Godot.Control.HasThemeIconOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeIconOverride(Godot.StringName)
+    name: HasThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeIconOverride(Godot.StringName)
+    name: HasThemeIconOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeStyleboxOverride(StringName)
+  nameWithType: Control.HasThemeStyleboxOverride(StringName)
+  fullName: Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+    name: HasThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeStyleboxOverride(Godot.StringName)
+    name: HasThemeStyleboxOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeFontOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeFontOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeFontOverride(StringName)
+  nameWithType: Control.HasThemeFontOverride(StringName)
+  fullName: Godot.Control.HasThemeFontOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeFontOverride(Godot.StringName)
+    name: HasThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeFontOverride(Godot.StringName)
+    name: HasThemeFontOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeFontSizeOverride(StringName)
+  nameWithType: Control.HasThemeFontSizeOverride(StringName)
+  fullName: Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+    name: HasThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeFontSizeOverride(Godot.StringName)
+    name: HasThemeFontSizeOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeColorOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeColorOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeColorOverride(StringName)
+  nameWithType: Control.HasThemeColorOverride(StringName)
+  fullName: Godot.Control.HasThemeColorOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeColorOverride(Godot.StringName)
+    name: HasThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeColorOverride(Godot.StringName)
+    name: HasThemeColorOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeConstantOverride(Godot.StringName)
+  commentId: M:Godot.Control.HasThemeConstantOverride(Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeConstantOverride(StringName)
+  nameWithType: Control.HasThemeConstantOverride(StringName)
+  fullName: Godot.Control.HasThemeConstantOverride(Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeConstantOverride(Godot.StringName)
+    name: HasThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeConstantOverride(Godot.StringName)
+    name: HasThemeConstantOverride
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeIcon(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeIcon(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeIcon(StringName, StringName)
+  nameWithType: Control.HasThemeIcon(StringName, StringName)
+  fullName: Godot.Control.HasThemeIcon(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeIcon(Godot.StringName,Godot.StringName)
+    name: HasThemeIcon
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeIcon(Godot.StringName,Godot.StringName)
+    name: HasThemeIcon
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeStylebox(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeStylebox(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeStylebox(StringName, StringName)
+  nameWithType: Control.HasThemeStylebox(StringName, StringName)
+  fullName: Godot.Control.HasThemeStylebox(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeStylebox(Godot.StringName,Godot.StringName)
+    name: HasThemeStylebox
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeStylebox(Godot.StringName,Godot.StringName)
+    name: HasThemeStylebox
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeFont(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeFont(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeFont(StringName, StringName)
+  nameWithType: Control.HasThemeFont(StringName, StringName)
+  fullName: Godot.Control.HasThemeFont(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeFont(Godot.StringName,Godot.StringName)
+    name: HasThemeFont
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeFont(Godot.StringName,Godot.StringName)
+    name: HasThemeFont
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeFontSize(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeFontSize(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeFontSize(StringName, StringName)
+  nameWithType: Control.HasThemeFontSize(StringName, StringName)
+  fullName: Godot.Control.HasThemeFontSize(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeFontSize(Godot.StringName,Godot.StringName)
+    name: HasThemeFontSize
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeFontSize(Godot.StringName,Godot.StringName)
+    name: HasThemeFontSize
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeColor(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeColor(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeColor(StringName, StringName)
+  nameWithType: Control.HasThemeColor(StringName, StringName)
+  fullName: Godot.Control.HasThemeColor(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeColor(Godot.StringName,Godot.StringName)
+    name: HasThemeColor
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeColor(Godot.StringName,Godot.StringName)
+    name: HasThemeColor
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.HasThemeConstant(Godot.StringName,Godot.StringName)
+  commentId: M:Godot.Control.HasThemeConstant(Godot.StringName,Godot.StringName)
+  parent: Godot.Control
+  isExternal: true
+  name: HasThemeConstant(StringName, StringName)
+  nameWithType: Control.HasThemeConstant(StringName, StringName)
+  fullName: Godot.Control.HasThemeConstant(Godot.StringName, Godot.StringName)
+  spec.csharp:
+  - uid: Godot.Control.HasThemeConstant(Godot.StringName,Godot.StringName)
+    name: HasThemeConstant
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.HasThemeConstant(Godot.StringName,Godot.StringName)
+    name: HasThemeConstant
+    isExternal: true
+  - name: (
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.StringName
+    name: StringName
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GetThemeDefaultBaseScale
+  commentId: M:Godot.Control.GetThemeDefaultBaseScale
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeDefaultBaseScale()
+  nameWithType: Control.GetThemeDefaultBaseScale()
+  fullName: Godot.Control.GetThemeDefaultBaseScale()
+  spec.csharp:
+  - uid: Godot.Control.GetThemeDefaultBaseScale
+    name: GetThemeDefaultBaseScale
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeDefaultBaseScale
+    name: GetThemeDefaultBaseScale
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetThemeDefaultFont
+  commentId: M:Godot.Control.GetThemeDefaultFont
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeDefaultFont()
+  nameWithType: Control.GetThemeDefaultFont()
+  fullName: Godot.Control.GetThemeDefaultFont()
+  spec.csharp:
+  - uid: Godot.Control.GetThemeDefaultFont
+    name: GetThemeDefaultFont
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeDefaultFont
+    name: GetThemeDefaultFont
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetThemeDefaultFontSize
+  commentId: M:Godot.Control.GetThemeDefaultFontSize
+  parent: Godot.Control
+  isExternal: true
+  name: GetThemeDefaultFontSize()
+  nameWithType: Control.GetThemeDefaultFontSize()
+  fullName: Godot.Control.GetThemeDefaultFontSize()
+  spec.csharp:
+  - uid: Godot.Control.GetThemeDefaultFontSize
+    name: GetThemeDefaultFontSize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetThemeDefaultFontSize
+    name: GetThemeDefaultFontSize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetParentControl
+  commentId: M:Godot.Control.GetParentControl
+  parent: Godot.Control
+  isExternal: true
+  name: GetParentControl()
+  nameWithType: Control.GetParentControl()
+  fullName: Godot.Control.GetParentControl()
+  spec.csharp:
+  - uid: Godot.Control.GetParentControl
+    name: GetParentControl
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetParentControl
+    name: GetParentControl
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.GetTooltip(System.Nullable{Godot.Vector2})
+  commentId: M:Godot.Control.GetTooltip(System.Nullable{Godot.Vector2})
+  parent: Godot.Control
+  isExternal: true
+  name: GetTooltip(Vector2?)
+  nameWithType: Control.GetTooltip(Vector2?)
+  fullName: Godot.Control.GetTooltip(Godot.Vector2?)
+  spec.csharp:
+  - uid: Godot.Control.GetTooltip(System.Nullable{Godot.Vector2})
+    name: GetTooltip
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetTooltip(System.Nullable{Godot.Vector2})
+    name: GetTooltip
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: )
+- uid: Godot.Control.GetCursorShape(System.Nullable{Godot.Vector2})
+  commentId: M:Godot.Control.GetCursorShape(System.Nullable{Godot.Vector2})
+  parent: Godot.Control
+  isExternal: true
+  name: GetCursorShape(Vector2?)
+  nameWithType: Control.GetCursorShape(Vector2?)
+  fullName: Godot.Control.GetCursorShape(Godot.Vector2?)
+  spec.csharp:
+  - uid: Godot.Control.GetCursorShape(System.Nullable{Godot.Vector2})
+    name: GetCursorShape
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GetCursorShape(System.Nullable{Godot.Vector2})
+    name: GetCursorShape
+    isExternal: true
+  - name: (
+  - uid: Godot.Vector2
+    name: Vector2
+    isExternal: true
+  - name: '?'
+  - name: )
+- uid: Godot.Control.ForceDrag(Godot.Variant,Godot.Control)
+  commentId: M:Godot.Control.ForceDrag(Godot.Variant,Godot.Control)
+  parent: Godot.Control
+  isExternal: true
+  name: ForceDrag(Variant, Control)
+  nameWithType: Control.ForceDrag(Variant, Control)
+  fullName: Godot.Control.ForceDrag(Godot.Variant, Godot.Control)
+  spec.csharp:
+  - uid: Godot.Control.ForceDrag(Godot.Variant,Godot.Control)
+    name: ForceDrag
+    isExternal: true
+  - name: (
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control
+    name: Control
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.ForceDrag(Godot.Variant,Godot.Control)
+    name: ForceDrag
+    isExternal: true
+  - name: (
+  - uid: Godot.Variant
+    name: Variant
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Control
+    name: Control
+    isExternal: true
+  - name: )
+- uid: Godot.Control.GrabClickFocus
+  commentId: M:Godot.Control.GrabClickFocus
+  parent: Godot.Control
+  isExternal: true
+  name: GrabClickFocus()
+  nameWithType: Control.GrabClickFocus()
+  fullName: Godot.Control.GrabClickFocus()
+  spec.csharp:
+  - uid: Godot.Control.GrabClickFocus
+    name: GrabClickFocus
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.GrabClickFocus
+    name: GrabClickFocus
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.SetDragForwarding(Godot.Callable,Godot.Callable,Godot.Callable)
+  commentId: M:Godot.Control.SetDragForwarding(Godot.Callable,Godot.Callable,Godot.Callable)
+  parent: Godot.Control
+  isExternal: true
+  name: SetDragForwarding(Callable, Callable, Callable)
+  nameWithType: Control.SetDragForwarding(Callable, Callable, Callable)
+  fullName: Godot.Control.SetDragForwarding(Godot.Callable, Godot.Callable, Godot.Callable)
+  spec.csharp:
+  - uid: Godot.Control.SetDragForwarding(Godot.Callable,Godot.Callable,Godot.Callable)
+    name: SetDragForwarding
+    isExternal: true
+  - name: (
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetDragForwarding(Godot.Callable,Godot.Callable,Godot.Callable)
+    name: SetDragForwarding
+    isExternal: true
+  - name: (
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Godot.Callable
+    name: Callable
+    isExternal: true
+  - name: )
+- uid: Godot.Control.SetDragPreview(Godot.Control)
+  commentId: M:Godot.Control.SetDragPreview(Godot.Control)
+  parent: Godot.Control
+  isExternal: true
+  name: SetDragPreview(Control)
+  nameWithType: Control.SetDragPreview(Control)
+  fullName: Godot.Control.SetDragPreview(Godot.Control)
+  spec.csharp:
+  - uid: Godot.Control.SetDragPreview(Godot.Control)
+    name: SetDragPreview
+    isExternal: true
+  - name: (
+  - uid: Godot.Control
+    name: Control
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.SetDragPreview(Godot.Control)
+    name: SetDragPreview
+    isExternal: true
+  - name: (
+  - uid: Godot.Control
+    name: Control
+    isExternal: true
+  - name: )
+- uid: Godot.Control.IsDragSuccessful
+  commentId: M:Godot.Control.IsDragSuccessful
+  parent: Godot.Control
+  isExternal: true
+  name: IsDragSuccessful()
+  nameWithType: Control.IsDragSuccessful()
+  fullName: Godot.Control.IsDragSuccessful()
+  spec.csharp:
+  - uid: Godot.Control.IsDragSuccessful
+    name: IsDragSuccessful
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Godot.Control.IsDragSuccessful
+    name: IsDragSuccessful
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Godot.Control.WarpMouse(Godot.Vector2)
+  commentId: M:Godot.Control.WarpMouse(Godot.Vector2)
+  parent: Godot.Control
+  isExternal: true
+  name: WarpMouse(Vector2)
+  nameWithType: Control.WarpMouse(Vector2)
+  fullName: Godot.Control.WarpMouse(Godot.Vector2)
+  spec.csharp:
+  - uid: Godot.Control.WarpMouse(Godot.Vector2)
+    name: WarpMouse
     isExternal: true
   - name: (
   - uid: Godot.Vector2
@@ -906,201 +4310,64 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.Translate(Godot.Vector2)
-    name: Translate
+  - uid: Godot.Control.WarpMouse(Godot.Vector2)
+    name: WarpMouse
     isExternal: true
   - name: (
   - uid: Godot.Vector2
     name: Vector2
     isExternal: true
   - name: )
-- uid: Godot.Node2D.GlobalTranslate(Godot.Vector2)
-  commentId: M:Godot.Node2D.GlobalTranslate(Godot.Vector2)
-  parent: Godot.Node2D
+- uid: Godot.Control.UpdateMinimumSize
+  commentId: M:Godot.Control.UpdateMinimumSize
+  parent: Godot.Control
   isExternal: true
-  name: GlobalTranslate(Vector2)
-  nameWithType: Node2D.GlobalTranslate(Vector2)
-  fullName: Godot.Node2D.GlobalTranslate(Godot.Vector2)
+  name: UpdateMinimumSize()
+  nameWithType: Control.UpdateMinimumSize()
+  fullName: Godot.Control.UpdateMinimumSize()
   spec.csharp:
-  - uid: Godot.Node2D.GlobalTranslate(Godot.Vector2)
-    name: GlobalTranslate
+  - uid: Godot.Control.UpdateMinimumSize
+    name: UpdateMinimumSize
     isExternal: true
   - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.GlobalTranslate(Godot.Vector2)
-    name: GlobalTranslate
+  - uid: Godot.Control.UpdateMinimumSize
+    name: UpdateMinimumSize
     isExternal: true
   - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
   - name: )
-- uid: Godot.Node2D.ApplyScale(Godot.Vector2)
-  commentId: M:Godot.Node2D.ApplyScale(Godot.Vector2)
-  parent: Godot.Node2D
+- uid: Godot.Control.IsLayoutRtl
+  commentId: M:Godot.Control.IsLayoutRtl
+  parent: Godot.Control
   isExternal: true
-  name: ApplyScale(Vector2)
-  nameWithType: Node2D.ApplyScale(Vector2)
-  fullName: Godot.Node2D.ApplyScale(Godot.Vector2)
+  name: IsLayoutRtl()
+  nameWithType: Control.IsLayoutRtl()
+  fullName: Godot.Control.IsLayoutRtl()
   spec.csharp:
-  - uid: Godot.Node2D.ApplyScale(Godot.Vector2)
-    name: ApplyScale
+  - uid: Godot.Control.IsLayoutRtl
+    name: IsLayoutRtl
     isExternal: true
   - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.ApplyScale(Godot.Vector2)
-    name: ApplyScale
+  - uid: Godot.Control.IsLayoutRtl
+    name: IsLayoutRtl
     isExternal: true
   - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
   - name: )
-- uid: Godot.Node2D.LookAt(Godot.Vector2)
-  commentId: M:Godot.Node2D.LookAt(Godot.Vector2)
-  parent: Godot.Node2D
-  isExternal: true
-  name: LookAt(Vector2)
-  nameWithType: Node2D.LookAt(Vector2)
-  fullName: Godot.Node2D.LookAt(Godot.Vector2)
-  spec.csharp:
-  - uid: Godot.Node2D.LookAt(Godot.Vector2)
-    name: LookAt
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node2D.LookAt(Godot.Vector2)
-    name: LookAt
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-- uid: Godot.Node2D.GetAngleTo(Godot.Vector2)
-  commentId: M:Godot.Node2D.GetAngleTo(Godot.Vector2)
-  parent: Godot.Node2D
-  isExternal: true
-  name: GetAngleTo(Vector2)
-  nameWithType: Node2D.GetAngleTo(Vector2)
-  fullName: Godot.Node2D.GetAngleTo(Godot.Vector2)
-  spec.csharp:
-  - uid: Godot.Node2D.GetAngleTo(Godot.Vector2)
-    name: GetAngleTo
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node2D.GetAngleTo(Godot.Vector2)
-    name: GetAngleTo
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-- uid: Godot.Node2D.ToLocal(Godot.Vector2)
-  commentId: M:Godot.Node2D.ToLocal(Godot.Vector2)
-  parent: Godot.Node2D
-  isExternal: true
-  name: ToLocal(Vector2)
-  nameWithType: Node2D.ToLocal(Vector2)
-  fullName: Godot.Node2D.ToLocal(Godot.Vector2)
-  spec.csharp:
-  - uid: Godot.Node2D.ToLocal(Godot.Vector2)
-    name: ToLocal
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node2D.ToLocal(Godot.Vector2)
-    name: ToLocal
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-- uid: Godot.Node2D.ToGlobal(Godot.Vector2)
-  commentId: M:Godot.Node2D.ToGlobal(Godot.Vector2)
-  parent: Godot.Node2D
-  isExternal: true
-  name: ToGlobal(Vector2)
-  nameWithType: Node2D.ToGlobal(Vector2)
-  fullName: Godot.Node2D.ToGlobal(Godot.Vector2)
-  spec.csharp:
-  - uid: Godot.Node2D.ToGlobal(Godot.Vector2)
-    name: ToGlobal
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node2D.ToGlobal(Godot.Vector2)
-    name: ToGlobal
-    isExternal: true
-  - name: (
-  - uid: Godot.Vector2
-    name: Vector2
-    isExternal: true
-  - name: )
-- uid: Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-  commentId: M:Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-  parent: Godot.Node2D
-  isExternal: true
-  name: GetRelativeTransformToParent(Node)
-  nameWithType: Node2D.GetRelativeTransformToParent(Node)
-  fullName: Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-  spec.csharp:
-  - uid: Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-    name: GetRelativeTransformToParent
-    isExternal: true
-  - name: (
-  - uid: Godot.Node
-    name: Node
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Godot.Node2D.GetRelativeTransformToParent(Godot.Node)
-    name: GetRelativeTransformToParent
-    isExternal: true
-  - name: (
-  - uid: Godot.Node
-    name: Node
-    isExternal: true
-  - name: )
-- uid: Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  commentId: M:Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
-  parent: Godot.Node2D
+- uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  commentId: M:Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  parent: Godot.Control
   isExternal: true
   name: InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  nameWithType: Node2D.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
-  fullName: Godot.Node2D.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
-  nameWithType.vb: Node2D.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
-  fullName.vb: Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
+  nameWithType: Control.InvokeGodotClassMethod(in godot_string_name, NativeVariantPtrArgs, out godot_variant)
+  fullName: Godot.Control.InvokeGodotClassMethod(in Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, out Godot.NativeInterop.godot_variant)
+  nameWithType.vb: Control.InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
+  fullName.vb: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant)
   name.vb: InvokeGodotClassMethod(godot_string_name, NativeVariantPtrArgs, godot_variant)
   spec.csharp:
-  - uid: Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  - uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
     name: InvokeGodotClassMethod
     isExternal: true
   - name: (
@@ -1123,7 +4390,7 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
+  - uid: Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name@,Godot.NativeInterop.NativeVariantPtrArgs,Godot.NativeInterop.godot_variant@)
     name: InvokeGodotClassMethod
     isExternal: true
   - name: (
@@ -1141,18 +4408,18 @@ references:
     name: godot_variant
     isExternal: true
   - name: )
-- uid: Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.Node2D
+- uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Control
   isExternal: true
   name: HasGodotClassMethod(in godot_string_name)
-  nameWithType: Node2D.HasGodotClassMethod(in godot_string_name)
-  fullName: Godot.Node2D.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: Node2D.HasGodotClassMethod(godot_string_name)
-  fullName.vb: Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
+  nameWithType: Control.HasGodotClassMethod(in godot_string_name)
+  fullName: Godot.Control.HasGodotClassMethod(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Control.HasGodotClassMethod(godot_string_name)
+  fullName.vb: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name)
   name.vb: HasGodotClassMethod(godot_string_name)
   spec.csharp:
-  - uid: Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  - uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
     name: HasGodotClassMethod
     isExternal: true
   - name: (
@@ -1163,7 +4430,7 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
+  - uid: Godot.Control.HasGodotClassMethod(Godot.NativeInterop.godot_string_name@)
     name: HasGodotClassMethod
     isExternal: true
   - name: (
@@ -1171,18 +4438,18 @@ references:
     name: godot_string_name
     isExternal: true
   - name: )
-- uid: Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  commentId: M:Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
-  parent: Godot.Node2D
+- uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  commentId: M:Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  parent: Godot.Control
   isExternal: true
   name: HasGodotClassSignal(in godot_string_name)
-  nameWithType: Node2D.HasGodotClassSignal(in godot_string_name)
-  fullName: Godot.Node2D.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
-  nameWithType.vb: Node2D.HasGodotClassSignal(godot_string_name)
-  fullName.vb: Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
+  nameWithType: Control.HasGodotClassSignal(in godot_string_name)
+  fullName: Godot.Control.HasGodotClassSignal(in Godot.NativeInterop.godot_string_name)
+  nameWithType.vb: Control.HasGodotClassSignal(godot_string_name)
+  fullName.vb: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name)
   name.vb: HasGodotClassSignal(godot_string_name)
   spec.csharp:
-  - uid: Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  - uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
     name: HasGodotClassSignal
     isExternal: true
   - name: (
@@ -1193,7 +4460,7 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: Godot.Node2D.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
+  - uid: Godot.Control.HasGodotClassSignal(Godot.NativeInterop.godot_string_name@)
     name: HasGodotClassSignal
     isExternal: true
   - name: (
@@ -1201,90 +4468,342 @@ references:
     name: godot_string_name
     isExternal: true
   - name: )
-- uid: Godot.Node2D.Position
-  commentId: P:Godot.Node2D.Position
-  parent: Godot.Node2D
+- uid: Godot.Control.ClipContents
+  commentId: P:Godot.Control.ClipContents
+  parent: Godot.Control
+  isExternal: true
+  name: ClipContents
+  nameWithType: Control.ClipContents
+  fullName: Godot.Control.ClipContents
+- uid: Godot.Control.CustomMinimumSize
+  commentId: P:Godot.Control.CustomMinimumSize
+  parent: Godot.Control
+  isExternal: true
+  name: CustomMinimumSize
+  nameWithType: Control.CustomMinimumSize
+  fullName: Godot.Control.CustomMinimumSize
+- uid: Godot.Control.LayoutDirection
+  commentId: P:Godot.Control.LayoutDirection
+  parent: Godot.Control
+  isExternal: true
+  name: LayoutDirection
+  nameWithType: Control.LayoutDirection
+  fullName: Godot.Control.LayoutDirection
+- uid: Godot.Control.AnchorLeft
+  commentId: P:Godot.Control.AnchorLeft
+  parent: Godot.Control
+  isExternal: true
+  name: AnchorLeft
+  nameWithType: Control.AnchorLeft
+  fullName: Godot.Control.AnchorLeft
+- uid: Godot.Control.AnchorTop
+  commentId: P:Godot.Control.AnchorTop
+  parent: Godot.Control
+  isExternal: true
+  name: AnchorTop
+  nameWithType: Control.AnchorTop
+  fullName: Godot.Control.AnchorTop
+- uid: Godot.Control.AnchorRight
+  commentId: P:Godot.Control.AnchorRight
+  parent: Godot.Control
+  isExternal: true
+  name: AnchorRight
+  nameWithType: Control.AnchorRight
+  fullName: Godot.Control.AnchorRight
+- uid: Godot.Control.AnchorBottom
+  commentId: P:Godot.Control.AnchorBottom
+  parent: Godot.Control
+  isExternal: true
+  name: AnchorBottom
+  nameWithType: Control.AnchorBottom
+  fullName: Godot.Control.AnchorBottom
+- uid: Godot.Control.OffsetLeft
+  commentId: P:Godot.Control.OffsetLeft
+  parent: Godot.Control
+  isExternal: true
+  name: OffsetLeft
+  nameWithType: Control.OffsetLeft
+  fullName: Godot.Control.OffsetLeft
+- uid: Godot.Control.OffsetTop
+  commentId: P:Godot.Control.OffsetTop
+  parent: Godot.Control
+  isExternal: true
+  name: OffsetTop
+  nameWithType: Control.OffsetTop
+  fullName: Godot.Control.OffsetTop
+- uid: Godot.Control.OffsetRight
+  commentId: P:Godot.Control.OffsetRight
+  parent: Godot.Control
+  isExternal: true
+  name: OffsetRight
+  nameWithType: Control.OffsetRight
+  fullName: Godot.Control.OffsetRight
+- uid: Godot.Control.OffsetBottom
+  commentId: P:Godot.Control.OffsetBottom
+  parent: Godot.Control
+  isExternal: true
+  name: OffsetBottom
+  nameWithType: Control.OffsetBottom
+  fullName: Godot.Control.OffsetBottom
+- uid: Godot.Control.GrowHorizontal
+  commentId: P:Godot.Control.GrowHorizontal
+  parent: Godot.Control
+  isExternal: true
+  name: GrowHorizontal
+  nameWithType: Control.GrowHorizontal
+  fullName: Godot.Control.GrowHorizontal
+- uid: Godot.Control.GrowVertical
+  commentId: P:Godot.Control.GrowVertical
+  parent: Godot.Control
+  isExternal: true
+  name: GrowVertical
+  nameWithType: Control.GrowVertical
+  fullName: Godot.Control.GrowVertical
+- uid: Godot.Control.Size
+  commentId: P:Godot.Control.Size
+  parent: Godot.Control
+  isExternal: true
+  name: Size
+  nameWithType: Control.Size
+  fullName: Godot.Control.Size
+- uid: Godot.Control.Position
+  commentId: P:Godot.Control.Position
+  parent: Godot.Control
   isExternal: true
   name: Position
-  nameWithType: Node2D.Position
-  fullName: Godot.Node2D.Position
-- uid: Godot.Node2D.Rotation
-  commentId: P:Godot.Node2D.Rotation
-  parent: Godot.Node2D
-  isExternal: true
-  name: Rotation
-  nameWithType: Node2D.Rotation
-  fullName: Godot.Node2D.Rotation
-- uid: Godot.Node2D.RotationDegrees
-  commentId: P:Godot.Node2D.RotationDegrees
-  parent: Godot.Node2D
-  isExternal: true
-  name: RotationDegrees
-  nameWithType: Node2D.RotationDegrees
-  fullName: Godot.Node2D.RotationDegrees
-- uid: Godot.Node2D.Scale
-  commentId: P:Godot.Node2D.Scale
-  parent: Godot.Node2D
-  isExternal: true
-  name: Scale
-  nameWithType: Node2D.Scale
-  fullName: Godot.Node2D.Scale
-- uid: Godot.Node2D.Skew
-  commentId: P:Godot.Node2D.Skew
-  parent: Godot.Node2D
-  isExternal: true
-  name: Skew
-  nameWithType: Node2D.Skew
-  fullName: Godot.Node2D.Skew
-- uid: Godot.Node2D.Transform
-  commentId: P:Godot.Node2D.Transform
-  parent: Godot.Node2D
-  isExternal: true
-  name: Transform
-  nameWithType: Node2D.Transform
-  fullName: Godot.Node2D.Transform
-- uid: Godot.Node2D.GlobalPosition
-  commentId: P:Godot.Node2D.GlobalPosition
-  parent: Godot.Node2D
+  nameWithType: Control.Position
+  fullName: Godot.Control.Position
+- uid: Godot.Control.GlobalPosition
+  commentId: P:Godot.Control.GlobalPosition
+  parent: Godot.Control
   isExternal: true
   name: GlobalPosition
-  nameWithType: Node2D.GlobalPosition
-  fullName: Godot.Node2D.GlobalPosition
-- uid: Godot.Node2D.GlobalRotation
-  commentId: P:Godot.Node2D.GlobalRotation
-  parent: Godot.Node2D
+  nameWithType: Control.GlobalPosition
+  fullName: Godot.Control.GlobalPosition
+- uid: Godot.Control.Rotation
+  commentId: P:Godot.Control.Rotation
+  parent: Godot.Control
   isExternal: true
-  name: GlobalRotation
-  nameWithType: Node2D.GlobalRotation
-  fullName: Godot.Node2D.GlobalRotation
-- uid: Godot.Node2D.GlobalRotationDegrees
-  commentId: P:Godot.Node2D.GlobalRotationDegrees
-  parent: Godot.Node2D
+  name: Rotation
+  nameWithType: Control.Rotation
+  fullName: Godot.Control.Rotation
+- uid: Godot.Control.RotationDegrees
+  commentId: P:Godot.Control.RotationDegrees
+  parent: Godot.Control
   isExternal: true
-  name: GlobalRotationDegrees
-  nameWithType: Node2D.GlobalRotationDegrees
-  fullName: Godot.Node2D.GlobalRotationDegrees
-- uid: Godot.Node2D.GlobalScale
-  commentId: P:Godot.Node2D.GlobalScale
-  parent: Godot.Node2D
+  name: RotationDegrees
+  nameWithType: Control.RotationDegrees
+  fullName: Godot.Control.RotationDegrees
+- uid: Godot.Control.Scale
+  commentId: P:Godot.Control.Scale
+  parent: Godot.Control
   isExternal: true
-  name: GlobalScale
-  nameWithType: Node2D.GlobalScale
-  fullName: Godot.Node2D.GlobalScale
-- uid: Godot.Node2D.GlobalSkew
-  commentId: P:Godot.Node2D.GlobalSkew
-  parent: Godot.Node2D
+  name: Scale
+  nameWithType: Control.Scale
+  fullName: Godot.Control.Scale
+- uid: Godot.Control.PivotOffset
+  commentId: P:Godot.Control.PivotOffset
+  parent: Godot.Control
   isExternal: true
-  name: GlobalSkew
-  nameWithType: Node2D.GlobalSkew
-  fullName: Godot.Node2D.GlobalSkew
-- uid: Godot.Node2D.GlobalTransform
-  commentId: P:Godot.Node2D.GlobalTransform
-  parent: Godot.Node2D
+  name: PivotOffset
+  nameWithType: Control.PivotOffset
+  fullName: Godot.Control.PivotOffset
+- uid: Godot.Control.SizeFlagsHorizontal
+  commentId: P:Godot.Control.SizeFlagsHorizontal
+  parent: Godot.Control
   isExternal: true
-  name: GlobalTransform
-  nameWithType: Node2D.GlobalTransform
-  fullName: Godot.Node2D.GlobalTransform
+  name: SizeFlagsHorizontal
+  nameWithType: Control.SizeFlagsHorizontal
+  fullName: Godot.Control.SizeFlagsHorizontal
+- uid: Godot.Control.SizeFlagsVertical
+  commentId: P:Godot.Control.SizeFlagsVertical
+  parent: Godot.Control
+  isExternal: true
+  name: SizeFlagsVertical
+  nameWithType: Control.SizeFlagsVertical
+  fullName: Godot.Control.SizeFlagsVertical
+- uid: Godot.Control.SizeFlagsStretchRatio
+  commentId: P:Godot.Control.SizeFlagsStretchRatio
+  parent: Godot.Control
+  isExternal: true
+  name: SizeFlagsStretchRatio
+  nameWithType: Control.SizeFlagsStretchRatio
+  fullName: Godot.Control.SizeFlagsStretchRatio
+- uid: Godot.Control.LocalizeNumeralSystem
+  commentId: P:Godot.Control.LocalizeNumeralSystem
+  parent: Godot.Control
+  isExternal: true
+  name: LocalizeNumeralSystem
+  nameWithType: Control.LocalizeNumeralSystem
+  fullName: Godot.Control.LocalizeNumeralSystem
+- uid: Godot.Control.AutoTranslate
+  commentId: P:Godot.Control.AutoTranslate
+  parent: Godot.Control
+  isExternal: true
+  name: AutoTranslate
+  nameWithType: Control.AutoTranslate
+  fullName: Godot.Control.AutoTranslate
+- uid: Godot.Control.TooltipText
+  commentId: P:Godot.Control.TooltipText
+  parent: Godot.Control
+  isExternal: true
+  name: TooltipText
+  nameWithType: Control.TooltipText
+  fullName: Godot.Control.TooltipText
+- uid: Godot.Control.FocusNeighborLeft
+  commentId: P:Godot.Control.FocusNeighborLeft
+  parent: Godot.Control
+  isExternal: true
+  name: FocusNeighborLeft
+  nameWithType: Control.FocusNeighborLeft
+  fullName: Godot.Control.FocusNeighborLeft
+- uid: Godot.Control.FocusNeighborTop
+  commentId: P:Godot.Control.FocusNeighborTop
+  parent: Godot.Control
+  isExternal: true
+  name: FocusNeighborTop
+  nameWithType: Control.FocusNeighborTop
+  fullName: Godot.Control.FocusNeighborTop
+- uid: Godot.Control.FocusNeighborRight
+  commentId: P:Godot.Control.FocusNeighborRight
+  parent: Godot.Control
+  isExternal: true
+  name: FocusNeighborRight
+  nameWithType: Control.FocusNeighborRight
+  fullName: Godot.Control.FocusNeighborRight
+- uid: Godot.Control.FocusNeighborBottom
+  commentId: P:Godot.Control.FocusNeighborBottom
+  parent: Godot.Control
+  isExternal: true
+  name: FocusNeighborBottom
+  nameWithType: Control.FocusNeighborBottom
+  fullName: Godot.Control.FocusNeighborBottom
+- uid: Godot.Control.FocusNext
+  commentId: P:Godot.Control.FocusNext
+  parent: Godot.Control
+  isExternal: true
+  name: FocusNext
+  nameWithType: Control.FocusNext
+  fullName: Godot.Control.FocusNext
+- uid: Godot.Control.FocusPrevious
+  commentId: P:Godot.Control.FocusPrevious
+  parent: Godot.Control
+  isExternal: true
+  name: FocusPrevious
+  nameWithType: Control.FocusPrevious
+  fullName: Godot.Control.FocusPrevious
+- uid: Godot.Control.FocusMode
+  commentId: P:Godot.Control.FocusMode
+  parent: Godot.Control
+  isExternal: true
+  name: FocusMode
+  nameWithType: Control.FocusMode
+  fullName: Godot.Control.FocusMode
+- uid: Godot.Control.MouseFilter
+  commentId: P:Godot.Control.MouseFilter
+  parent: Godot.Control
+  isExternal: true
+  name: MouseFilter
+  nameWithType: Control.MouseFilter
+  fullName: Godot.Control.MouseFilter
+- uid: Godot.Control.MouseForcePassScrollEvents
+  commentId: P:Godot.Control.MouseForcePassScrollEvents
+  parent: Godot.Control
+  isExternal: true
+  name: MouseForcePassScrollEvents
+  nameWithType: Control.MouseForcePassScrollEvents
+  fullName: Godot.Control.MouseForcePassScrollEvents
+- uid: Godot.Control.MouseDefaultCursorShape
+  commentId: P:Godot.Control.MouseDefaultCursorShape
+  parent: Godot.Control
+  isExternal: true
+  name: MouseDefaultCursorShape
+  nameWithType: Control.MouseDefaultCursorShape
+  fullName: Godot.Control.MouseDefaultCursorShape
+- uid: Godot.Control.ShortcutContext
+  commentId: P:Godot.Control.ShortcutContext
+  parent: Godot.Control
+  isExternal: true
+  name: ShortcutContext
+  nameWithType: Control.ShortcutContext
+  fullName: Godot.Control.ShortcutContext
+- uid: Godot.Control.Theme
+  commentId: P:Godot.Control.Theme
+  parent: Godot.Control
+  isExternal: true
+  name: Theme
+  nameWithType: Control.Theme
+  fullName: Godot.Control.Theme
+- uid: Godot.Control.ThemeTypeVariation
+  commentId: P:Godot.Control.ThemeTypeVariation
+  parent: Godot.Control
+  isExternal: true
+  name: ThemeTypeVariation
+  nameWithType: Control.ThemeTypeVariation
+  fullName: Godot.Control.ThemeTypeVariation
+- uid: Godot.Control.Resized
+  commentId: E:Godot.Control.Resized
+  parent: Godot.Control
+  isExternal: true
+  name: Resized
+  nameWithType: Control.Resized
+  fullName: Godot.Control.Resized
+- uid: Godot.Control.GuiInput
+  commentId: E:Godot.Control.GuiInput
+  parent: Godot.Control
+  isExternal: true
+  name: GuiInput
+  nameWithType: Control.GuiInput
+  fullName: Godot.Control.GuiInput
+- uid: Godot.Control.MouseEntered
+  commentId: E:Godot.Control.MouseEntered
+  parent: Godot.Control
+  isExternal: true
+  name: MouseEntered
+  nameWithType: Control.MouseEntered
+  fullName: Godot.Control.MouseEntered
+- uid: Godot.Control.MouseExited
+  commentId: E:Godot.Control.MouseExited
+  parent: Godot.Control
+  isExternal: true
+  name: MouseExited
+  nameWithType: Control.MouseExited
+  fullName: Godot.Control.MouseExited
+- uid: Godot.Control.FocusEntered
+  commentId: E:Godot.Control.FocusEntered
+  parent: Godot.Control
+  isExternal: true
+  name: FocusEntered
+  nameWithType: Control.FocusEntered
+  fullName: Godot.Control.FocusEntered
+- uid: Godot.Control.FocusExited
+  commentId: E:Godot.Control.FocusExited
+  parent: Godot.Control
+  isExternal: true
+  name: FocusExited
+  nameWithType: Control.FocusExited
+  fullName: Godot.Control.FocusExited
+- uid: Godot.Control.SizeFlagsChanged
+  commentId: E:Godot.Control.SizeFlagsChanged
+  parent: Godot.Control
+  isExternal: true
+  name: SizeFlagsChanged
+  nameWithType: Control.SizeFlagsChanged
+  fullName: Godot.Control.SizeFlagsChanged
+- uid: Godot.Control.MinimumSizeChanged
+  commentId: E:Godot.Control.MinimumSizeChanged
+  parent: Godot.Control
+  isExternal: true
+  name: MinimumSizeChanged
+  nameWithType: Control.MinimumSizeChanged
+  fullName: Godot.Control.MinimumSizeChanged
+- uid: Godot.Control.ThemeChanged
+  commentId: E:Godot.Control.ThemeChanged
+  parent: Godot.Control
+  isExternal: true
+  name: ThemeChanged
+  nameWithType: Control.ThemeChanged
+  fullName: Godot.Control.ThemeChanged
 - uid: Godot.CanvasItem.NotificationTransformChanged
   commentId: F:Godot.CanvasItem.NotificationTransformChanged
   parent: Godot.CanvasItem
@@ -5096,36 +8615,24 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
-- uid: Godot.Node._Process(System.Double)
-  commentId: M:Godot.Node._Process(System.Double)
+- uid: Godot.Node._Ready
+  commentId: M:Godot.Node._Ready
   parent: Godot.Node
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.double
-  name: _Process(double)
-  nameWithType: Node._Process(double)
-  fullName: Godot.Node._Process(double)
-  nameWithType.vb: Node._Process(Double)
-  fullName.vb: Godot.Node._Process(Double)
-  name.vb: _Process(Double)
+  name: _Ready()
+  nameWithType: Node._Ready()
+  fullName: Godot.Node._Ready()
   spec.csharp:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
+  - uid: Godot.Node._Ready
+    name: _Ready
     isExternal: true
   - name: (
-  - uid: System.Double
-    name: double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Process(System.Double)
-    name: _Process
+  - uid: Godot.Node._Ready
+    name: _Ready
     isExternal: true
   - name: (
-  - uid: System.Double
-    name: Double
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
 - uid: Godot.Node._ShortcutInput(Godot.InputEvent)
   commentId: M:Godot.Node._ShortcutInput(Godot.InputEvent)
@@ -9893,6 +13400,67 @@ references:
   name: Godot
   nameWithType: Godot
   fullName: Godot
+- uid: Godot.LineEdit
+  commentId: T:Godot.LineEdit
+  parent: Godot
+  isExternal: true
+  name: LineEdit
+  nameWithType: LineEdit
+  fullName: Godot.LineEdit
+- uid: Godot.OptionButton
+  commentId: T:Godot.OptionButton
+  parent: Godot
+  isExternal: true
+  name: OptionButton
+  nameWithType: OptionButton
+  fullName: Godot.OptionButton
+- uid: Godot.Button
+  commentId: T:Godot.Button
+  parent: Godot
+  isExternal: true
+  name: Button
+  nameWithType: Button
+  fullName: Godot.Button
+- uid: Godot.HSlider
+  commentId: T:Godot.HSlider
+  parent: Godot
+  isExternal: true
+  name: HSlider
+  nameWithType: HSlider
+  fullName: Godot.HSlider
+- uid: Godot.Label
+  commentId: T:Godot.Label
+  parent: Godot
+  isExternal: true
+  name: Label
+  nameWithType: Label
+  fullName: Godot.Label
+- uid: Stargazer.Startup
+  commentId: T:Stargazer.Startup
+  parent: Stargazer
+  href: Stargazer.Startup.html
+  name: Startup
+  nameWithType: Startup
+  fullName: Stargazer.Startup
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -9904,388 +13472,431 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: System.Single
-  commentId: T:System.Single
+- uid: System.Double
+  commentId: T:System.Double
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
-- uid: Stargazer.Spawner2D.Star2DScene*
-  commentId: Overload:Stargazer.Spawner2D.Star2DScene
-  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D_Star2DScene
-  name: Star2DScene
-  nameWithType: Spawner2D.Star2DScene
-  fullName: Stargazer.Spawner2D.Star2DScene
-- uid: Godot.PackedScene
-  commentId: T:Godot.PackedScene
-  parent: Godot
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
   isExternal: true
-  name: PackedScene
-  nameWithType: PackedScene
-  fullName: Godot.PackedScene
-- uid: Stargazer.Spawner2D.Label2DScene*
-  commentId: Overload:Stargazer.Spawner2D.Label2DScene
-  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D_Label2DScene
-  name: Label2DScene
-  nameWithType: Spawner2D.Label2DScene
-  fullName: Stargazer.Spawner2D.Label2DScene
-- uid: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
-  commentId: T:System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IDictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  name: IDictionary<int, Star2D>
-  nameWithType: IDictionary<int, Star2D>
-  fullName: System.Collections.Generic.IDictionary<int, Stargazer.Star2D>
-  nameWithType.vb: IDictionary(Of Integer, Star2D)
-  fullName.vb: System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D)
-  name.vb: IDictionary(Of Integer, Star2D)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Action{System.Boolean}
+  commentId: T:System.Action{System.Boolean}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<bool>
+  nameWithType: Action<bool>
+  fullName: System.Action<bool>
+  nameWithType.vb: Action(Of Boolean)
+  fullName.vb: System.Action(Of Boolean)
+  name.vb: Action(Of Boolean)
   spec.csharp:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
+  - uid: System.Action`1
+    name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - uid: System.Int32
-    name: int
+  - uid: System.Boolean
+    name: bool
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star2D
-    name: Star2D
-    href: Stargazer.Star2D.html
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
+  - uid: System.Action`1
+    name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Int32
-    name: Integer
+  - uid: System.Boolean
+    name: Boolean
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star2D
-    name: Star2D
-    href: Stargazer.Star2D.html
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-- uid: System.Collections.Generic.IDictionary`2
-  commentId: T:System.Collections.Generic.IDictionary`2
+- uid: System.Action`1
+  commentId: T:System.Action`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  name: IDictionary<TKey, TValue>
-  nameWithType: IDictionary<TKey, TValue>
-  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
-  nameWithType.vb: IDictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
-  name.vb: IDictionary(Of TKey, TValue)
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
+  - uid: System.Action`1
+    name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
+  - uid: System.Action`1
+    name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
   - name: (
   - name: Of
   - name: " "
-  - name: TKey
+  - name: T
+  - name: )
+- uid: System.Action{System.Double,System.Double,System.DateTime}
+  commentId: T:System.Action{System.Double,System.Double,System.DateTime}
+  parent: System
+  definition: System.Action`3
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<double, double, DateTime>
+  nameWithType: Action<double, double, DateTime>
+  fullName: System.Action<double, double, System.DateTime>
+  nameWithType.vb: Action(Of Double, Double, Date)
+  fullName.vb: System.Action(Of Double, Double, Date)
+  name.vb: Action(Of Double, Double, Date)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: ','
   - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
+  - uid: System.Double
+    name: double
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: DateTime
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '>'
   spec.vb:
-  - uid: System
-    name: System
+  - uid: System.Action`3
+    name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: Godot.Node._Ready
-  commentId: M:Godot.Node._Ready
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Godot.Node._Process(System.Double)
+  commentId: M:Godot.Node._Process(System.Double)
   parent: Godot.Node
   isExternal: true
-  name: _Ready()
-  nameWithType: Node._Ready()
-  fullName: Godot.Node._Ready()
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: _Process(double)
+  nameWithType: Node._Process(double)
+  fullName: Godot.Node._Process(double)
+  nameWithType.vb: Node._Process(Double)
+  fullName.vb: Godot.Node._Process(Double)
+  name.vb: _Process(Double)
   spec.csharp:
-  - uid: Godot.Node._Ready
-    name: _Ready
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
   spec.vb:
-  - uid: Godot.Node._Ready
-    name: _Ready
+  - uid: Godot.Node._Process(System.Double)
+    name: _Process
     isExternal: true
   - name: (
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
   - name: )
-- uid: Godot.GodotObject.#ctor
-  commentId: M:Godot.GodotObject.#ctor
+- uid: Stargazer.ControlContainer._Process*
+  commentId: Overload:Stargazer.ControlContainer._Process
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__Process_System_Double_
+  name: _Process
+  nameWithType: ControlContainer._Process
+  fullName: Stargazer.ControlContainer._Process
+- uid: Godot.Signal
+  commentId: T:Godot.Signal
   isExternal: true
-  name: GodotObject()
-  nameWithType: GodotObject.GodotObject()
-  fullName: Godot.GodotObject.GodotObject()
-  nameWithType.vb: GodotObject.New()
-  fullName.vb: Godot.GodotObject.New()
-  name.vb: New()
-  spec.csharp:
-  - uid: Godot.GodotObject.#ctor
-    name: GodotObject
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - name: New
-  - name: (
-  - name: )
-- uid: Stargazer.Spawner2D._Ready*
-  commentId: Overload:Stargazer.Spawner2D._Ready
-  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D__Ready
-  name: _Ready
-  nameWithType: Spawner2D._Ready
-  fullName: Stargazer.Spawner2D._Ready
-- uid: Stargazer.Spawner2D.DrawStars*
-  commentId: Overload:Stargazer.Spawner2D.DrawStars
-  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D_DrawStars_System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star__
-  name: DrawStars
-  nameWithType: Spawner2D.DrawStars
-  fullName: Stargazer.Spawner2D.DrawStars
-- uid: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star}
-  commentId: T:System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IDictionary`2
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  name: IDictionary<int, Star>
-  nameWithType: IDictionary<int, Star>
-  fullName: System.Collections.Generic.IDictionary<int, Stargazer.Star>
-  nameWithType.vb: IDictionary(Of Integer, Star)
-  fullName.vb: System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star)
-  name.vb: IDictionary(Of Integer, Star)
-  spec.csharp:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IDictionary<int, Star2D>>
-  nameWithType: Task<IDictionary<int, Star2D>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IDictionary<int, Stargazer.Star2D>>
-  nameWithType.vb: Task(Of IDictionary(Of Integer, Star2D))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D))
-  name.vb: Task(Of IDictionary(Of Integer, Star2D))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star2D
-    name: Star2D
-    href: Stargazer.Star2D.html
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IDictionary`2
-    name: IDictionary
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star2D
-    name: Star2D
-    href: Stargazer.Star2D.html
-  - name: )
-  - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
+  name: Signal
+  nameWithType: Signal
+  fullName: Godot.Signal
+- uid: Godot.CheckBox
+  commentId: T:Godot.CheckBox
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
+  name: CheckBox
+  nameWithType: CheckBox
+  fullName: Godot.CheckBox
+- uid: Stargazer.ControlContainer.AzimuthToggled
+  commentId: F:Stargazer.ControlContainer.AzimuthToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_AzimuthToggled
+  name: AzimuthToggled
+  nameWithType: ControlContainer.AzimuthToggled
+  fullName: Stargazer.ControlContainer.AzimuthToggled
+- uid: Stargazer.ControlContainer.ToggleAzimuth*
+  commentId: Overload:Stargazer.ControlContainer.ToggleAzimuth
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleAzimuth_System_Boolean_
+  name: ToggleAzimuth
+  nameWithType: ControlContainer.ToggleAzimuth
+  fullName: Stargazer.ControlContainer.ToggleAzimuth
+- uid: Stargazer.ControlContainer.ToggleEquatorial*
+  commentId: Overload:Stargazer.ControlContainer.ToggleEquatorial
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleEquatorial_System_Boolean_
+  name: ToggleEquatorial
+  nameWithType: ControlContainer.ToggleEquatorial
+  fullName: Stargazer.ControlContainer.ToggleEquatorial
+- uid: Stargazer.ControlContainer.ConstellationsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationsToggled
+  name: ConstellationsToggled
+  nameWithType: ControlContainer.ConstellationsToggled
+  fullName: Stargazer.ControlContainer.ConstellationsToggled
+- uid: Stargazer.ControlContainer.ToggleConstellations*
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellations
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellations_System_Boolean_
+  name: ToggleConstellations
+  nameWithType: ControlContainer.ToggleConstellations
+  fullName: Stargazer.ControlContainer.ToggleConstellations
+- uid: Stargazer.ControlContainer.ConstellationLabelsToggled
+  commentId: F:Stargazer.ControlContainer.ConstellationLabelsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ConstellationLabelsToggled
+  name: ConstellationLabelsToggled
+  nameWithType: ControlContainer.ConstellationLabelsToggled
+  fullName: Stargazer.ControlContainer.ConstellationLabelsToggled
+- uid: Stargazer.ControlContainer.ToggleConstellationLabels*
+  commentId: Overload:Stargazer.ControlContainer.ToggleConstellationLabels
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleConstellationLabels_System_Boolean_
+  name: ToggleConstellationLabels
+  nameWithType: ControlContainer.ToggleConstellationLabels
+  fullName: Stargazer.ControlContainer.ToggleConstellationLabels
+- uid: Stargazer.ControlContainer.MessierObjectsToggled
+  commentId: F:Stargazer.ControlContainer.MessierObjectsToggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_MessierObjectsToggled
+  name: MessierObjectsToggled
+  nameWithType: ControlContainer.MessierObjectsToggled
+  fullName: Stargazer.ControlContainer.MessierObjectsToggled
+- uid: Stargazer.ControlContainer.ToggleMessierObjects*
+  commentId: Overload:Stargazer.ControlContainer.ToggleMessierObjects
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_ToggleMessierObjects_System_Boolean_
+  name: ToggleMessierObjects
+  nameWithType: ControlContainer.ToggleMessierObjects
+  fullName: Stargazer.ControlContainer.ToggleMessierObjects
+- uid: Stargazer.ControlContainer.SetMainController*
+  commentId: Overload:Stargazer.ControlContainer.SetMainController
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetMainController_Stargazer_Startup_
+  name: SetMainController
+  nameWithType: ControlContainer.SetMainController
+  fullName: Stargazer.ControlContainer.SetMainController
+- uid: Stargazer.ControlContainer.OnSliderGuiInput*
+  commentId: Overload:Stargazer.ControlContainer.OnSliderGuiInput
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnSliderGuiInput_Godot_InputEvent_
+  name: OnSliderGuiInput
+  nameWithType: ControlContainer.OnSliderGuiInput
+  fullName: Stargazer.ControlContainer.OnSliderGuiInput
+- uid: Godot.InputEvent
+  commentId: T:Godot.InputEvent
+  parent: Godot
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Stargazer.Spawner2D.SpawnStar*
-  commentId: Overload:Stargazer.Spawner2D.SpawnStar
-  href: Stargazer.Spawner2D.html#Stargazer_Spawner2D_SpawnStar_Stargazer_Star_
-  name: SpawnStar
-  nameWithType: Spawner2D.SpawnStar
-  fullName: Stargazer.Spawner2D.SpawnStar
-- uid: Stargazer.Star
-  commentId: T:Stargazer.Star
-  parent: Stargazer
-  href: Stargazer.Star.html
-  name: Star
-  nameWithType: Star
-  fullName: Stargazer.Star
-- uid: Stargazer.Star2D
-  commentId: T:Stargazer.Star2D
-  parent: Stargazer
-  href: Stargazer.Star2D.html
-  name: Star2D
-  nameWithType: Star2D
-  fullName: Stargazer.Star2D
+  name: InputEvent
+  nameWithType: InputEvent
+  fullName: Godot.InputEvent
+- uid: Stargazer.ControlContainer.UserPositionUpdated
+  commentId: F:Stargazer.ControlContainer.UserPositionUpdated
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_UserPositionUpdated
+  name: UserPositionUpdated
+  nameWithType: ControlContainer.UserPositionUpdated
+  fullName: Stargazer.ControlContainer.UserPositionUpdated
+- uid: Stargazer.ControlContainer.UpdateUserPosition*
+  commentId: Overload:Stargazer.ControlContainer.UpdateUserPosition
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_UpdateUserPosition
+  name: UpdateUserPosition
+  nameWithType: ControlContainer.UpdateUserPosition
+  fullName: Stargazer.ControlContainer.UpdateUserPosition
+- uid: Stargazer.ControlContainer._on_reverse_gif_toggled*
+  commentId: Overload:Stargazer.ControlContainer._on_reverse_gif_toggled
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_reverse_gif_toggled_System_Boolean_
+  name: _on_reverse_gif_toggled
+  nameWithType: ControlContainer._on_reverse_gif_toggled
+  fullName: Stargazer.ControlContainer._on_reverse_gif_toggled
+- uid: Stargazer.ControlContainer.SetBaseDateTime*
+  commentId: Overload:Stargazer.ControlContainer.SetBaseDateTime
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_SetBaseDateTime_System_DateTime_
+  name: SetBaseDateTime
+  nameWithType: ControlContainer.SetBaseDateTime
+  fullName: Stargazer.ControlContainer.SetBaseDateTime
+- uid: Stargazer.ControlContainer.OnTimeLapseFrameChanged*
+  commentId: Overload:Stargazer.ControlContainer.OnTimeLapseFrameChanged
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_OnTimeLapseFrameChanged_System_Double_
+  name: OnTimeLapseFrameChanged
+  nameWithType: ControlContainer.OnTimeLapseFrameChanged
+  fullName: Stargazer.ControlContainer.OnTimeLapseFrameChanged
+- uid: Stargazer.ControlContainer._on_button_pressed*
+  commentId: Overload:Stargazer.ControlContainer._on_button_pressed
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_button_pressed
+  name: _on_button_pressed
+  nameWithType: ControlContainer._on_button_pressed
+  fullName: Stargazer.ControlContainer._on_button_pressed
+- uid: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed*
+  commentId: Overload:Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer__on_timelapse_gif_export_button_pressed
+  name: _on_timelapse_gif_export_button_pressed
+  nameWithType: ControlContainer._on_timelapse_gif_export_button_pressed
+  fullName: Stargazer.ControlContainer._on_timelapse_gif_export_button_pressed
+- uid: Stargazer.ControlContainer.GetSelectedScreenshotFormat*
+  commentId: Overload:Stargazer.ControlContainer.GetSelectedScreenshotFormat
+  href: Stargazer.ControlContainer.html#Stargazer_ControlContainer_GetSelectedScreenshotFormat
+  name: GetSelectedScreenshotFormat
+  nameWithType: ControlContainer.GetSelectedScreenshotFormat
+  fullName: Stargazer.ControlContainer.GetSelectedScreenshotFormat
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

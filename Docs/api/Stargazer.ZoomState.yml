@@ -18,15 +18,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ZoomState.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ZoomState
     path: ../Stargazer-Godot/Code/ZoomState.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Used to implement quantum logic in the view based on Fov thresholds.
+  summary: >-
+    Used to implement quantum logic in the view based on Fov thresholds.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public enum ZoomState
@@ -45,11 +50,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ZoomState.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FullOut
     path: ../Stargazer-Godot/Code/ZoomState.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -73,11 +78,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ZoomState.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Middle
     path: ../Stargazer-Godot/Code/ZoomState.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -101,11 +106,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/ZoomState.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FullIn
     path: ../Stargazer-Godot/Code/ZoomState.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer

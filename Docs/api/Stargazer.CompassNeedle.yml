@@ -22,7 +22,14 @@ items:
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Displays a compass needle to orient the user relative to North.
+  summary: >-
+    Displays a compass needle to orient the user relative to North.
+
+    Author: Logan Parker
+
+    Refactored By: Josh Johner (moved needle.RotationDegrees from _Process() to RotationHandler
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -434,11 +441,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: needle
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -477,11 +484,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 17
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -506,11 +513,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CompassNeedle.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: RotationHandler
     path: ../Stargazer-Godot/Code/CompassNeedle.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer

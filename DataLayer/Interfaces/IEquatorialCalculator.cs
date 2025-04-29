@@ -6,6 +6,8 @@ namespace DataLayer.Interfaces
 
     /// <summary>
     /// Converts a <see cref="HorizontalBody"/> to a {T} object
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     /// <typeparam name="T">The converted value of type {T} (defined by the front end)</typeparam>
     public interface IEquatorialCalculator

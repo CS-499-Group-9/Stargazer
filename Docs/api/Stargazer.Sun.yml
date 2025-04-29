@@ -19,12 +19,19 @@ items:
   type: Class
   source:
     id: Sun
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptSerializationGenerator\Stargazer.Sun_ScriptSerialization.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Sun_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The actual sun.
+  summary: >-
+    The actual sun.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+
+    Refactored by William Arnett (SPR 2025) to handle rotation, and hover text.
   example: []
   syntax:
     content: >-
@@ -52,6 +59,8 @@ items:
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody.GetLocation
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Godot.Node3D.NotificationTransformChanged
@@ -380,11 +389,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Sun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: sun
     path: ../Stargazer-Godot/Code/Sun.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -407,11 +416,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Sun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Sun.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -436,11 +445,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Sun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/Sun.cs
-    startLine: 27
+    startLine: 30
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -472,11 +481,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Sun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/Sun.cs
-    startLine: 36
+    startLine: 40
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -504,11 +513,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Sun.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/Sun.cs
-    startLine: 49
+    startLine: 53
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -635,6 +644,30 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  parent: Stargazer.CelestialBody
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  parent: Stargazer.CelestialBody
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
 - uid: Stargazer.CelestialBody.GetLocation
   commentId: M:Stargazer.CelestialBody.GetLocation
   parent: Stargazer.CelestialBody

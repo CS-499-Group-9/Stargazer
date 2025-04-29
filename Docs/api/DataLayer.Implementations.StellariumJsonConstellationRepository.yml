@@ -18,15 +18,20 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StellariumJsonConstellationRepository
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
-  summary: Used to retrieve constellation data from the Stellarium Json file.
+  summary: >-
+    Used to retrieve constellation data from the Stellarium Json file.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'internal class StellariumJsonConstellationRepository : IConstellationRepository'
@@ -57,11 +62,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: filePath
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -86,11 +91,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -121,11 +126,11 @@ items:
   source:
     remote:
       path: DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetConstellations
     path: ../DataLayer/Implementations/StellariumJsonConstellationRepository.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations

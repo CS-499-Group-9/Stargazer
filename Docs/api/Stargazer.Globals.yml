@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Instance
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isAzimuth
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -374,7 +374,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isConstellation
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -403,7 +403,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isLabel
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -432,7 +432,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: isHover
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -461,7 +461,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: hoverLabel
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -490,7 +490,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: requestTime
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -519,7 +519,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LocalSiderealTime
     path: ../Stargazer-Godot/Code/Globals.cs
@@ -548,7 +548,7 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Globals.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Globals.cs

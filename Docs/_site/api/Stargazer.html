@@ -96,31 +96,53 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.ASTRALPLANEAlbedo.html">ASTRALPLANEAlbedo</a></dt>
-      <dd><p>Handles the transparency of the floor.</p>
+      <dd><p>Handles the transparency of the floor.
+Author: Logan Parker
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.AzimuthGridlines.html">AzimuthGridlines</a></dt>
-      <dd><p>The graphic object used to draw the lines.</p>
+      <dd><p>The graphic object used to draw the lines.
+Author: William Arnett
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.CelestialBody.html">CelestialBody</a></dt>
-      <dd></dd>
+      <dd><p>Represents a body drawn in 3D space that can be viewed, hovered and targeted.
+Author: Josh Johner
+Created: SPR 2025</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.CompassNeedle.html">CompassNeedle</a></dt>
-      <dd><p>Displays a compass needle to orient the user relative to North.</p>
+      <dd><p>Displays a compass needle to orient the user relative to North.
+Author: Logan Parker
+Refactored By: Josh Johner (moved needle.RotationDegrees from _Process() to RotationHandler
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Constellations.html">Constellations</a></dt>
-      <dd><p>The <span class="xref">Godot.Node3D</span> used to contain the constellation stars and lines in the viewport.</p>
+      <dd><p>The <span class="xref">Godot.Node3D</span> used to contain the constellation stars and lines in the viewport.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) for concurrency and observer patterns.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Constellations2D.html">Constellations2D</a></dt>
-      <dd><p>The <span class="xref">Godot.Node2D</span> used to contain the constellation stars and lines in the viewport.</p>
+      <dd><p>The <span class="xref">Godot.Node2D</span> used to contain the constellation stars and lines in the viewport.
+Author: William Arnett
+Created: SPR 2025</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Stargazer.ControlContainer.html">ControlContainer</a></dt>
+      <dd><p>Contains all user controls for the program and notifies subscribers of user interaction.
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -130,105 +152,159 @@ Classes
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.GridLabel.html">GridLabel</a></dt>
-      <dd><p>Displays the latitude value on the grid.</p>
+      <dd><p>Displays the latitude value on the grid.
+Author: William Arnett
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use observer pattern.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.HoverLabel.html">HoverLabel</a></dt>
-      <dd><p>The label that is displayed when hovering over an <a class="xref" href="Stargazer.IHoverable.html">IHoverable</a> object.</p>
+      <dd><p>The label that is displayed when hovering over an <a class="xref" href="Stargazer.IHoverable.html">IHoverable</a> object.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use observer pattern.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.LabelNode.html">LabelNode</a></dt>
-      <dd><p>Contains the constellation label.</p>
+      <dd><p>Contains the constellation label.
+Author: Logan Parker
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.MainCamera.html">MainCamera</a></dt>
-      <dd><p>Contains the main camera used to create the user view.</p>
+      <dd><p>Contains the main camera used to create the user view.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use <a class="xref" href="Stargazer.ICameraStateNotifier.html">ICameraStateNotifier</a> to implement observer pattern.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.MessierObject.html">MessierObject</a></dt>
-      <dd><p>A Messier Deep Space Object drawn in the sky.</p>
+      <dd><p>A Messier Deep Space Object drawn in the sky.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to implement hover text.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Moon.html">Moon</a></dt>
-      <dd><p>A moon object to be drawn.</p>
+      <dd><p>A moon object to be drawn.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to handle rotation and get hover text.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Planet.html">Planet</a></dt>
-      <dd><p>Used to draw a planet in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
+      <dd><p>Used to draw a planet in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a>
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to use custom shader material.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Planets.html">Planets</a></dt>
-      <dd><p>A <span class="xref">Godot.Node3D</span> container for the planets.</p>
+      <dd><p>A <span class="xref">Godot.Node3D</span> container for the planets.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to use custom shader.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.PlayControl.html">PlayControl</a></dt>
-      <dd><p>Controls the play speed of the 3D simulation.</p>
+      <dd><p>Controls the play speed of the 3D simulation.
+Author: Josh Johner
+Created: SPR 2025
+Modified: SPR 2025 by Alex Lake to implement time lapse.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.PlaySpeed.html">PlaySpeed</a></dt>
-      <dd><p>A state object to control the play speed of the simulation</p>
+      <dd><p>A state object to control the play speed of the simulation
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.SkyView.html">SkyView</a></dt>
       <dd><p>The parent object for all items in the viewport.
-Responsible for relaying notifications from senders throughout the program into the view port.</p>
+Responsible for relaying notifications from senders throughout the program into the view port.
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.SkyView2D.html">SkyView2D</a></dt>
-      <dd><p>Used to create the 2D star scene (for screenshot export).</p>
+      <dd><p>Used to create the 2D star scene (for screenshot export).
+Author: William Arnett
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) for containerization improvement.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.SkyViewContainer.html">SkyViewContainer</a></dt>
-      <dd><p>The parent container of the <a class="xref" href="Stargazer.SkyView.html">SkyView</a> object (used for anchoring).</p>
+      <dd><p>The parent container of the <a class="xref" href="Stargazer.SkyView.html">SkyView</a> object (used for anchoring).
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Spawner.html">Spawner</a></dt>
-      <dd><p>Draws all stars that are not a part of constellations</p>
+      <dd><p>Draws all stars that are not a part of constellations
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) for concurrency and single responsibility.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Spawner2D.html">Spawner2D</a></dt>
-      <dd><p>Draws all stars that are not a part of constellations</p>
+      <dd><p>Draws all stars that are not a part of constellations
+Author: William Arnett
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to use IDictionary.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Star.html">Star</a></dt>
-      <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>
+      <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+Author: Logan Parker
+Created: SPR 2025
+Refactored by Josh Johner (SPR 2025) to implement CelestialBody</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Star2D.html">Star2D</a></dt>
-      <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>
+      <dd><p>A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.
+Author: William Arnett
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.StarMesh.html">StarMesh</a></dt>
       <dd><p>This was originally created to explore adding color to the stars.
-The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers.</p>
+The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers.
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Startup.html">Startup</a></dt>
       <dd><p>The top level controller for the program.
-Handles all communication between the GUI and the viewport.</p>
+Handles all communication between the GUI and the viewport.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by Alex Lake (SPR 2025) to implement screenshot.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.Sun.html">Sun</a></dt>
-      <dd><p>The actual sun.</p>
+      <dd><p>The actual sun.
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to handle rotation, and hover text.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
@@ -236,17 +312,23 @@ Interfaces
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.ICameraStateNotifier.html">ICameraStateNotifier</a></dt>
-      <dd><p>Notifies subscribers of events related to the <span class="xref">Godot.Camera3D</span></p>
+      <dd><p>Notifies subscribers of events related to the <span class="xref">Godot.Camera3D</span>
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.IHoverable.html">IHoverable</a></dt>
-      <dd><p>Provides the ability of an object to display a hover label.</p>
+      <dd><p>Provides the ability of an object to display a hover label.
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.ITrackable.html">ITrackable</a></dt>
-      <dd><p>Provides the ability of an object to be tracked by the camera</p>
+      <dd><p>Provides the ability of an object to be tracked by the camera
+Author: Josh Johenr
+Created: SPR 2025</p>
 </dd>
     </dl>
     <h3 id="enums">
@@ -254,7 +336,9 @@ Enums
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="Stargazer.ZoomState.html">ZoomState</a></dt>
-      <dd><p>Used to implement quantum logic in the view based on Fov thresholds.</p>
+      <dd><p>Used to implement quantum logic in the view based on Fov thresholds.
+Author: Josh Johner
+Created: SPR 2025</p>
 </dd>
     </dl>
 

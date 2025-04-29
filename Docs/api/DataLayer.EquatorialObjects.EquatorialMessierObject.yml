@@ -5,6 +5,7 @@ items:
   id: EquatorialMessierObject
   parent: DataLayer.EquatorialObjects
   children:
+  - DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
   - DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation
   - DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId
   - DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog
@@ -22,15 +23,20 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialMessierObject
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
-  summary: Represents a Messier Deep Space Object located in equatorial coordinates
+  summary: >-
+    Represents a Messier Deep Space Object located in equatorial coordinates
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class EquatorialMessierObject : EquatorialCelestialBody'
@@ -65,11 +71,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: MessierId
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -96,11 +102,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: NewGeneralCatalog
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -127,11 +133,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Type
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -158,11 +164,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -189,11 +195,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Size
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -220,11 +226,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingSeason
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -251,11 +257,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ViewingDifficulty
     path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -268,6 +274,37 @@ items:
       type: System.String
     content.vb: Public Property ViewingDifficulty As String
   overload: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty*
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  commentId: P:DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  id: CommonName
+  parent: DataLayer.EquatorialObjects.EquatorialMessierObject
+  langs:
+  - csharp
+  - vb
+  name: CommonName
+  nameWithType: EquatorialMessierObject.CommonName
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  type: Property
+  source:
+    remote:
+      path: DataLayer/EquatorialObjects/EquatorialMessierObject.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CommonName
+    path: ../DataLayer/EquatorialObjects/EquatorialMessierObject.cs
+    startLine: 42
+  assemblies:
+  - DataLayer
+  namespace: DataLayer.EquatorialObjects
+  summary: The commonly used main of the object
+  example: []
+  syntax:
+    content: public string? CommonName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CommonName As String
+  overload: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName*
 references:
 - uid: DataLayer.EquatorialObjects
   commentId: N:DataLayer.EquatorialObjects
@@ -623,3 +660,9 @@ references:
   name: ViewingDifficulty
   nameWithType: EquatorialMessierObject.ViewingDifficulty
   fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty
+- uid: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName*
+  commentId: Overload:DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName
+  href: DataLayer.EquatorialObjects.EquatorialMessierObject.html#DataLayer_EquatorialObjects_EquatorialMessierObject_CommonName
+  name: CommonName
+  nameWithType: EquatorialMessierObject.CommonName
+  fullName: DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName

@@ -21,15 +21,20 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
-  summary: Represents an object that can be located in the sky according to horizontal coordinates.
+  summary: >-
+    Represents an object that can be located in the sky according to horizontal coordinates.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public abstract class HorizontalBody
@@ -64,11 +69,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 14
+    startLine: 16
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -99,11 +104,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialBody
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -130,11 +135,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -161,11 +166,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -192,11 +197,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -223,11 +228,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../DataLayer/HorizontalObjects/HorizontalBody.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

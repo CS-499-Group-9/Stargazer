@@ -18,15 +18,20 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: HorizontalPlanet
     path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
-  summary: A planet in our solar system in horizontal coordinate form.
+  summary: >-
+    A planet in our solar system in horizontal coordinate form.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public class HorizontalPlanet : HorizontalBody'
@@ -61,11 +66,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Name
     path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -92,11 +97,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: PhaseAngle
     path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects
@@ -121,11 +126,11 @@ items:
   source:
     remote:
       path: DataLayer/HorizontalObjects/HorizontalPlanet.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/HorizontalObjects/HorizontalPlanet.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - DataLayer
   namespace: DataLayer.HorizontalObjects

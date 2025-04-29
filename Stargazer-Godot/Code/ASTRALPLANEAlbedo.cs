@@ -4,6 +4,8 @@ namespace Stargazer
 {
     /// <summary>
     /// Handles the transparency of the floor.
+    /// Author: Logan Parker
+    /// Created: SPR 2025
     /// </summary>
     public partial class ASTRALPLANEAlbedo : Node3D
     {
@@ -23,6 +25,8 @@ namespace Stargazer
 
         /// <summary>
         /// Subscribes to the camera OnRotation notification. 
+        /// Author: Josh Johner
+        /// Created: SPR 2025
         /// </summary>
         /// <param name="camera"></param>
         public void HandleCameraRotationChanged(Camera3D camera)

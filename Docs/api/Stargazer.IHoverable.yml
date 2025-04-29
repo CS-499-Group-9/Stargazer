@@ -6,6 +6,7 @@ items:
   parent: Stargazer
   children:
   - Stargazer.IHoverable.GetHoverText
+  - Stargazer.IHoverable.IsVisible
   langs:
   - csharp
   - vb
@@ -16,15 +17,20 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/IHoverable.CS
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IHoverable
     path: ../Stargazer-Godot/Code/IHoverable.CS
-    startLine: 7
+    startLine: 9
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: Provides the ability of an object to display a hover label.
+  summary: >-
+    Provides the ability of an object to display a hover label.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: 'public interface IHoverable : ITrackable'
@@ -45,11 +51,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/IHoverable.CS
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/IHoverable.CS
-    startLine: 13
+    startLine: 15
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -62,6 +68,35 @@ items:
       description: A formatted text string.
     content.vb: Function GetHoverText() As String
   overload: Stargazer.IHoverable.GetHoverText*
+- uid: Stargazer.IHoverable.IsVisible
+  commentId: P:Stargazer.IHoverable.IsVisible
+  id: IsVisible
+  parent: Stargazer.IHoverable
+  langs:
+  - csharp
+  - vb
+  name: IsVisible
+  nameWithType: IHoverable.IsVisible
+  fullName: Stargazer.IHoverable.IsVisible
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/IHoverable.CS
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IsVisible
+    path: ../Stargazer-Godot/Code/IHoverable.CS
+    startLine: 16
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: bool IsVisible { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsVisible As Boolean
+  overload: Stargazer.IHoverable.IsVisible*
 references:
 - uid: Stargazer
   commentId: N:Stargazer
@@ -107,3 +142,20 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Stargazer.IHoverable.IsVisible*
+  commentId: Overload:Stargazer.IHoverable.IsVisible
+  href: Stargazer.IHoverable.html#Stargazer_IHoverable_IsVisible
+  name: IsVisible
+  nameWithType: IHoverable.IsVisible
+  fullName: Stargazer.IHoverable.IsVisible
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Planet | Stargazer Data API ">
       
-      <meta name="description" content="Used to draw a planet in the">
+      <meta name="description" content="Used to draw a planet in the  Author: Josh Johner Created: SPR 2025 Refactored by William Arnett (SPR 2025) to use custom shader material.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class Planet
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Used to draw a planet in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a></p>
+  <div class="markdown summary"><p>Used to draw a planet in the <a class="xref" href="Stargazer.SkyView.html">SkyView</a>
+Author: Josh Johner
+Created: SPR 2025
+Refactored by William Arnett (SPR 2025) to use custom shader material.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -151,6 +154,12 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Distance">CelestialBody.Distance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance">CelestialBody.DrawnDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible">CelestialBody.IHoverable.IsVisible</a>
     </div>
     <div>
       <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody_GetLocation">CelestialBody.GetLocation()</a>
@@ -1093,7 +1102,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_horizontalPlanet" data-uid="Stargazer.Planet.horizontalPlanet">
   horizontalPlanet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1123,7 +1132,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_planetMaterial" data-uid="Stargazer.Planet.planetMaterial">
   planetMaterial
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1153,7 +1162,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_planetTexture" data-uid="Stargazer.Planet.planetTexture">
   planetTexture
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1180,6 +1189,36 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
 
 
+
+  <h3 id="Stargazer_Planet_theSun" data-uid="Stargazer.Planet.theSun">
+  theSun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">private Sun theSun</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Stargazer.Sun.html">Sun</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -1188,7 +1227,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_FromHorizontal_DataLayer_HorizontalObjects_HorizontalPlanet_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.Planet.FromHorizontal(DataLayer.HorizontalObjects.HorizontalPlanet,DataLayer.Interfaces.IEquatorialCalculator)">
   FromHorizontal(HorizontalPlanet, IEquatorialCalculator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Used to receive the data and methods to perform calculations</p>
@@ -1224,7 +1263,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_GetHoverText" data-uid="Stargazer.Planet.GetHoverText">
   GetHoverText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text to display.</p>
@@ -1257,7 +1296,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_LoadTexture_System_String_" data-uid="Stargazer.Planet.LoadTexture(System.String)">
   LoadTexture(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1293,7 +1332,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet_SetTexture_Godot_Resource_" data-uid="Stargazer.Planet.SetTexture(Godot.Resource)">
   SetTexture(Resource)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the texture of the planet</p>
@@ -1326,7 +1365,7 @@ public class Planet : CelestialBody, IDisposable, IHoverable, ITrackable</code><
 
   <h3 id="Stargazer_Planet__Process_System_Double_" data-uid="Stargazer.Planet._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/Planet.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/Planet.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Overrides the <a class="xref" href="Stargazer.CelestialBody.html#Stargazer_CelestialBody__Process_System_Double_">_Process(double)</a> method since calculations are planet specific.</p>

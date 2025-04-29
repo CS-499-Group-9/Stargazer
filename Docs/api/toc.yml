@@ -163,6 +163,9 @@ items:
   - uid: Stargazer.Constellations2D
     name: Constellations2D
     type: Class
+  - uid: Stargazer.ControlContainer
+    name: ControlContainer
+    type: Class
   - uid: Stargazer.Globals
     name: Globals
     type: Class

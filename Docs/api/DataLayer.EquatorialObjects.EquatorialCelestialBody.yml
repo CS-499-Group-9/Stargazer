@@ -20,15 +20,20 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: EquatorialCelestialBody
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
-  summary: Represents an object that can be located in the sky according to equatorial coordinates.
+  summary: >-
+    Represents an object that can be located in the sky according to equatorial coordinates.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public abstract class EquatorialCelestialBody
@@ -60,11 +65,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: distance
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -87,11 +92,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: RightAscension
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -118,11 +123,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Declination
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -149,11 +154,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Magnitude
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -180,11 +185,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../DataLayer/EquatorialObjects/EquatorialCelestialBody.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects

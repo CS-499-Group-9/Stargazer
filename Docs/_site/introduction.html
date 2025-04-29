@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Docs/introduction.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Docs/introduction.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -73,14 +73,18 @@
         <article data-uid="">
 <h1 id="introduction">Introduction</h1>
 
-<p>This API describes how to use the DataLayer of the Stargazer application.</p>
-<p>Initially, all methods required to use the service will be provided.</p>
-<p>Eventually, all internal logic will be documented as well.</p>
+<p>This API discribes how the internal logic of how Stargazer works.</p>
+<p>The project is separated into 2 layers</p>
+<ol>
+<li>Stargazer - This is the front end of the program</li>
+<li>DataLayer - This handles communicating with the repository and calculating the locations of the objects</li>
+</ol>
+<p>All data is loaded into the DataLayer asynchronously on startup. The front end requests incremental calculations of all objects each frame. By this method, the use is not required to wait when updating the position or time.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Docs/introduction.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Docs/introduction.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

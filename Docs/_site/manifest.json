@@ -22,7 +22,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.CelestialDataPackage<T>",
-      "Summary": "<p sourcefile=\"api/DataLayer.CelestialDataPackage-1.yml\" sourcestartlinenumber=\"1\">Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.CelestialDataPackage-1.yml\" sourcestartlinenumber=\"1\">Encapsulates all data returned in the Horizontal Coordinate system from the <code>DataLayer</code> needed by the front end to display astronomical objects\nAuthor: Josh Johner\nCreated: SPR 2025.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -36,7 +36,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.EquatorialObjects.Constellation",
-      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.Constellation.yml\" sourcestartlinenumber=\"1\">Represents a constellation in the sky</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.Constellation.yml\" sourcestartlinenumber=\"1\">Represents a constellation in the sky\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -50,7 +50,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.EquatorialObjects.EquatorialCelestialBody",
-      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialCelestialBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to equatorial coordinates.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialCelestialBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to equatorial coordinates.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -64,7 +64,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.EquatorialObjects.EquatorialMessierObject",
-      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialMessierObject.yml\" sourcestartlinenumber=\"1\">Represents a Messier Deep Space Object located in equatorial coordinates</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialMessierObject.yml\" sourcestartlinenumber=\"1\">Represents a Messier Deep Space Object located in equatorial coordinates\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +78,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.EquatorialObjects.EquatorialStar",
-      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialStar.yml\" sourcestartlinenumber=\"1\">Represents a visible star in equatorial coordinates</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.EquatorialObjects.EquatorialStar.yml\" sourcestartlinenumber=\"1\">Represents a visible star in equatorial coordinates\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -120,7 +120,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalBody",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to horizontal coordinates.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalBody.yml\" sourcestartlinenumber=\"1\">Represents an object that can be located in the sky according to horizontal coordinates.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -134,7 +134,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalMessierObject",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object located in Horizontal coordinates</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object located in Horizontal coordinates\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -148,7 +148,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalMoon",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMoon.yml\" sourcestartlinenumber=\"1\">Represents the moon in horizontal coordinate form.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalMoon.yml\" sourcestartlinenumber=\"1\">Represents the moon in horizontal coordinate form.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -162,7 +162,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalPlanet",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalPlanet.yml\" sourcestartlinenumber=\"1\">A planet in our solar system in horizontal coordinate form.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalPlanet.yml\" sourcestartlinenumber=\"1\">A planet in our solar system in horizontal coordinate form.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -176,7 +176,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalStar",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalStar.yml\" sourcestartlinenumber=\"1\">A star located by the Horizontal Coordinate method</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalStar.yml\" sourcestartlinenumber=\"1\">A star located by the Horizontal Coordinate method\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -190,7 +190,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.HorizontalObjects.HorizontalSun",
-      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalSun.yml\" sourcestartlinenumber=\"1\">Represents the Sun in horizontal coordinate form.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.HorizontalObjects.HorizontalSun.yml\" sourcestartlinenumber=\"1\">Represents the Sun in horizontal coordinate form.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -218,7 +218,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.CosineKittyEquatorialCalculator",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Uses the <xref href=\"CosineKitty.Astronomy\" data-throw-if-not-resolved=\"false\"></xref> library to perform calculations on celestial objects.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.CosineKittyEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Uses the <xref href=\"CosineKitty.Astronomy\" data-throw-if-not-resolved=\"false\"></xref> library to perform calculations on celestial objects.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -302,7 +302,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.HygCsvStarRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.yml\" sourcestartlinenumber=\"1\">Retrieves raw star data from the HYG.csv repository</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.HygCsvStarRepository.yml\" sourcestartlinenumber=\"1\">Retrieves raw star data from the HYG.csv repository\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -316,7 +316,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.NullableDoubleConverter",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableDoubleConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the csv file</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableDoubleConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the csv file\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -330,7 +330,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.NullableIntConverter",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableIntConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the repository</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.NullableIntConverter.yml\" sourcestartlinenumber=\"1\">A custom type converter to handle blank space in the repository\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -386,7 +386,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StarLustMessierCsvRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href=\"https://starlust.org/messier-catalog/\" sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Starlust.org</a>\nIf a new repository is used, a new converter that implements the <xref href=\"DataLayer.Interfaces.IMessierRepository\" data-throw-if-not-resolved=\"false\"></xref> needs to be created for it.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Handles retrieving data from the csv listing of Messier Deep Space Objects retrieved from <a href=\"https://starlust.org/messier-catalog/\" sourcefile=\"api/DataLayer.Implementations.StarLustMessierCsvRepository.yml\" sourcestartlinenumber=\"1\">Starlust.org</a>\nIf a new repository is used, a new converter that implements the <xref href=\"DataLayer.Interfaces.IMessierRepository\" data-throw-if-not-resolved=\"false\"></xref> needs to be created for it.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -428,7 +428,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Implementations.StellariumJsonConstellationRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve constellation data from the Stellarium Json file.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Implementations.StellariumJsonConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve constellation data from the Stellarium Json file.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -456,7 +456,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.InjectionService<T>",
-      "Summary": "<p sourcefile=\"api/DataLayer.InjectionService-1.yml\" sourcestartlinenumber=\"1\">Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.\nRegisters all classes to be injected into constructors to avoid hard coding into descendant classes.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.InjectionService-1.yml\" sourcestartlinenumber=\"1\">Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.\nRegisters all classes to be injected into constructors to avoid hard coding into descendant classes.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -470,7 +470,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IConstellationRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve a collection of <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> from a repository.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IConstellationRepository.yml\" sourcestartlinenumber=\"1\">Used to retrieve a collection of <xref href=\"DataLayer.EquatorialObjects.Constellation\" data-throw-if-not-resolved=\"false\"></xref> from a repository.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -498,7 +498,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IEquatorialCalculator",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Converts a <xref href=\"DataLayer.HorizontalObjects.HorizontalBody\" data-throw-if-not-resolved=\"false\"></xref> to a {T} object</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IEquatorialCalculator.yml\" sourcestartlinenumber=\"1\">Converts a <xref href=\"DataLayer.HorizontalObjects.HorizontalBody\" data-throw-if-not-resolved=\"false\"></xref> to a {T} object\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -526,7 +526,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IMessierRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IMessierRepository.yml\" sourcestartlinenumber=\"1\">Retrieves a list of Messier Deep Space Objects from a repository</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IMessierRepository.yml\" sourcestartlinenumber=\"1\">Retrieves a list of Messier Deep Space Objects from a repository\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -568,7 +568,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IRepositoryService<T>",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to retrieve the <xref href=\"DataLayer.CelestialDataPackage%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to retrieve the <xref href=\"DataLayer.CelestialDataPackage%601\" data-throw-if-not-resolved=\"false\"></xref>.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -582,7 +582,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.Interfaces.IStarRepository",
-      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IStarRepository.yml\" sourcestartlinenumber=\"1\">Communicates with a repository of Yale Stars (in the equatorial coordinate form).</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.Interfaces.IStarRepository.yml\" sourcestartlinenumber=\"1\">Communicates with a repository of Yale Stars (in the equatorial coordinate form).\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -610,7 +610,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DataLayer.StargazerRepositoryService<T>",
-      "Summary": "<p sourcefile=\"api/DataLayer.StargazerRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.</p>\n"
+      "Summary": "<p sourcefile=\"api/DataLayer.StargazerRepositoryService-1.yml\" sourcestartlinenumber=\"1\">Used to make requests to convert data from the equatorial coordinate system to the horizontal coordinate system and receive a data package containing all values.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -848,7 +848,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.ASTRALPLANEAlbedo",
-      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.yml\" sourcestartlinenumber=\"1\">Handles the transparency of the floor.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.ASTRALPLANEAlbedo.yml\" sourcestartlinenumber=\"1\">Handles the transparency of the floor.\nAuthor: Logan Parker\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -960,7 +960,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.AzimuthGridlines",
-      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.yml\" sourcestartlinenumber=\"1\">The graphic object used to draw the lines.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.AzimuthGridlines.yml\" sourcestartlinenumber=\"1\">The graphic object used to draw the lines.\nAuthor: William Arnett\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -974,7 +974,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.CelestialBody",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Stargazer.CelestialBody.yml\" sourcestartlinenumber=\"1\">Represents a body drawn in 3D space that can be viewed, hovered and targeted.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1030,7 +1030,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.CompassNeedle",
-      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.yml\" sourcestartlinenumber=\"1\">Displays a compass needle to orient the user relative to North.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.CompassNeedle.yml\" sourcestartlinenumber=\"1\">Displays a compass needle to orient the user relative to North.\nAuthor: Logan Parker\nRefactored By: Josh Johner (moved needle.RotationDegrees from _Process() to RotationHandler\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1198,7 +1198,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Constellations",
-      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.\nAuthor: Logan Parker\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) for concurrency and observer patterns.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1212,7 +1212,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Constellations2D",
-      "Summary": "<p sourcefile=\"api/Stargazer.Constellations2D.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node2D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Constellations2D.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Godot.Node2D\" data-throw-if-not-resolved=\"false\"></xref> used to contain the constellation stars and lines in the viewport.\nAuthor: William Arnett\nCreated: SPR 2025</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stargazer.ControlContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stargazer.ControlContainer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Stargazer.ControlContainer",
+      "Summary": "<p sourcefile=\"api/Stargazer.ControlContainer.yml\" sourcestartlinenumber=\"1\">Contains all user controls for the program and notifies subscribers of user interaction.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1282,7 +1296,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.GridLabel",
-      "Summary": "<p sourcefile=\"api/Stargazer.GridLabel.yml\" sourcestartlinenumber=\"1\">Displays the latitude value on the grid.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.GridLabel.yml\" sourcestartlinenumber=\"1\">Displays the latitude value on the grid.\nAuthor: William Arnett\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) to use observer pattern.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1296,7 +1310,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.HoverLabel",
-      "Summary": "<p sourcefile=\"api/Stargazer.HoverLabel.yml\" sourcestartlinenumber=\"1\">The label that is displayed when hovering over an <xref href=\"Stargazer.IHoverable\" data-throw-if-not-resolved=\"false\"></xref> object.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.HoverLabel.yml\" sourcestartlinenumber=\"1\">The label that is displayed when hovering over an <xref href=\"Stargazer.IHoverable\" data-throw-if-not-resolved=\"false\"></xref> object.\nAuthor: Logan Parker\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) to use observer pattern.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1310,7 +1324,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.ICameraStateNotifier",
-      "Summary": "<p sourcefile=\"api/Stargazer.ICameraStateNotifier.yml\" sourcestartlinenumber=\"1\">Notifies subscribers of events related to the <xref href=\"Godot.Camera3D\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.ICameraStateNotifier.yml\" sourcestartlinenumber=\"1\">Notifies subscribers of events related to the <xref href=\"Godot.Camera3D\" data-throw-if-not-resolved=\"false\"></xref>\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1324,7 +1338,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.IHoverable",
-      "Summary": "<p sourcefile=\"api/Stargazer.IHoverable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to display a hover label.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.IHoverable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to display a hover label.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1338,7 +1352,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.ITrackable",
-      "Summary": "<p sourcefile=\"api/Stargazer.ITrackable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to be tracked by the camera</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.ITrackable.yml\" sourcestartlinenumber=\"1\">Provides the ability of an object to be tracked by the camera\nAuthor: Josh Johenr\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1450,7 +1464,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.LabelNode",
-      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.yml\" sourcestartlinenumber=\"1\">Contains the constellation label.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.LabelNode.yml\" sourcestartlinenumber=\"1\">Contains the constellation label.\nAuthor: Logan Parker\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1520,7 +1534,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.MainCamera",
-      "Summary": "<p sourcefile=\"api/Stargazer.MainCamera.yml\" sourcestartlinenumber=\"1\">Contains the main camera used to create the user view.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.MainCamera.yml\" sourcestartlinenumber=\"1\">Contains the main camera used to create the user view.\nAuthor: Logan Parker\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) to use <xref href=\"Stargazer.ICameraStateNotifier\" data-throw-if-not-resolved=\"false\"></xref> to implement observer pattern.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1618,7 +1632,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.MessierObject",
-      "Summary": "<p sourcefile=\"api/Stargazer.MessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object drawn in the sky.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.MessierObject.yml\" sourcestartlinenumber=\"1\">A Messier Deep Space Object drawn in the sky.\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by William Arnett (SPR 2025) to implement hover text.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1632,7 +1646,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Moon",
-      "Summary": "<p sourcefile=\"api/Stargazer.Moon.yml\" sourcestartlinenumber=\"1\">A moon object to be drawn.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Moon.yml\" sourcestartlinenumber=\"1\">A moon object to be drawn.\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by William Arnett (SPR 2025) to handle rotation and get hover text.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1646,7 +1660,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Planet",
-      "Summary": "<p sourcefile=\"api/Stargazer.Planet.yml\" sourcestartlinenumber=\"1\">Used to draw a planet in the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Planet.yml\" sourcestartlinenumber=\"1\">Used to draw a planet in the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref>\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by William Arnett (SPR 2025) to use custom shader material.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1660,7 +1674,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Planets",
-      "Summary": "<p sourcefile=\"api/Stargazer.Planets.yml\" sourcestartlinenumber=\"1\">A <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> container for the planets.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Planets.yml\" sourcestartlinenumber=\"1\">A <xref href=\"Godot.Node3D\" data-throw-if-not-resolved=\"false\"></xref> container for the planets.\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by William Arnett (SPR 2025) to use custom shader.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1674,7 +1688,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.PlayControl",
-      "Summary": "<p sourcefile=\"api/Stargazer.PlayControl.yml\" sourcestartlinenumber=\"1\">Controls the play speed of the 3D simulation.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.PlayControl.yml\" sourcestartlinenumber=\"1\">Controls the play speed of the 3D simulation.\nAuthor: Josh Johner\nCreated: SPR 2025\nModified: SPR 2025 by Alex Lake to implement time lapse.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1688,7 +1702,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.PlaySpeed",
-      "Summary": "<p sourcefile=\"api/Stargazer.PlaySpeed.yml\" sourcestartlinenumber=\"1\">A state object to control the play speed of the simulation</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.PlaySpeed.yml\" sourcestartlinenumber=\"1\">A state object to control the play speed of the simulation\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1744,7 +1758,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.SkyView",
-      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.yml\" sourcestartlinenumber=\"1\">The parent object for all items in the viewport.\nResponsible for relaying notifications from senders throughout the program into the view port.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView.yml\" sourcestartlinenumber=\"1\">The parent object for all items in the viewport.\nResponsible for relaying notifications from senders throughout the program into the view port.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1758,7 +1772,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.SkyView2D",
-      "Summary": "<p sourcefile=\"api/Stargazer.SkyView2D.yml\" sourcestartlinenumber=\"1\">Used to create the 2D star scene (for screenshot export).</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyView2D.yml\" sourcestartlinenumber=\"1\">Used to create the 2D star scene (for screenshot export).\nAuthor: William Arnett\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) for containerization improvement.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1772,7 +1786,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.SkyViewContainer",
-      "Summary": "<p sourcefile=\"api/Stargazer.SkyViewContainer.yml\" sourcestartlinenumber=\"1\">The parent container of the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref> object (used for anchoring).</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.SkyViewContainer.yml\" sourcestartlinenumber=\"1\">The parent container of the <xref href=\"Stargazer.SkyView\" data-throw-if-not-resolved=\"false\"></xref> object (used for anchoring).\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1828,7 +1842,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Spawner",
-      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations\nAuthor: Logan Parker\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) for concurrency and single responsibility.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1842,7 +1856,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Spawner2D",
-      "Summary": "<p sourcefile=\"api/Stargazer.Spawner2D.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Spawner2D.yml\" sourcestartlinenumber=\"1\">Draws all stars that are not a part of constellations\nAuthor: William Arnett\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) to use IDictionary.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1898,7 +1912,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Star",
-      "Summary": "<p sourcefile=\"api/Stargazer.Star.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Star.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.\nAuthor: Logan Parker\nCreated: SPR 2025\nRefactored by Josh Johner (SPR 2025) to implement CelestialBody</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1912,7 +1926,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Star2D",
-      "Summary": "<p sourcefile=\"api/Stargazer.Star2D.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Star2D.yml\" sourcestartlinenumber=\"1\">A star that has been converted from Horizontal Coordinate form, into Godot coordinate form and drawn to the screen.\nAuthor: William Arnett\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1968,7 +1982,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.StarMesh",
-      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.yml\" sourcestartlinenumber=\"1\">This was originally created to explore adding color to the stars.\nThe current implementation is way too aggressive. We might be able to make this work by tweaking the numbers.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.StarMesh.yml\" sourcestartlinenumber=\"1\">This was originally created to explore adding color to the stars.\nThe current implementation is way too aggressive. We might be able to make this work by tweaking the numbers.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2024,7 +2038,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Startup",
-      "Summary": "<p sourcefile=\"api/Stargazer.Startup.yml\" sourcestartlinenumber=\"1\">The top level controller for the program.\nHandles all communication between the GUI and the viewport.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Startup.yml\" sourcestartlinenumber=\"1\">The top level controller for the program.\nHandles all communication between the GUI and the viewport.\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by Alex Lake (SPR 2025) to implement screenshot.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2038,7 +2052,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.Sun",
-      "Summary": "<p sourcefile=\"api/Stargazer.Sun.yml\" sourcestartlinenumber=\"1\">The actual sun.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.Sun.yml\" sourcestartlinenumber=\"1\">The actual sun.\nAuthor: Josh Johner\nCreated: SPR 2025\nRefactored by William Arnett (SPR 2025) to handle rotation, and hover text.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2066,7 +2080,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Stargazer.ZoomState",
-      "Summary": "<p sourcefile=\"api/Stargazer.ZoomState.yml\" sourcestartlinenumber=\"1\">Used to implement quantum logic in the view based on Fov thresholds.</p>\n"
+      "Summary": "<p sourcefile=\"api/Stargazer.ZoomState.yml\" sourcestartlinenumber=\"1\">Used to implement quantum logic in the view based on Fov thresholds.\nAuthor: Josh Johner\nCreated: SPR 2025</p>\n"
     },
     {
       "type": "ManagedReference",

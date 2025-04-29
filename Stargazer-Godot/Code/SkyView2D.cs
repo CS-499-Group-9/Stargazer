@@ -7,6 +7,9 @@ namespace Stargazer
 {
     /// <summary>
     /// Used to create the 2D star scene (for screenshot export). 
+    /// Author: William Arnett
+    /// Created: SPR 2025
+    /// Refactored by Josh Johner (SPR 2025) for containerization improvement.
     /// </summary>
     public partial class SkyView2D : Node2D
     {
@@ -30,7 +33,7 @@ namespace Stargazer
 
 
         /// <summary>
-        /// This will need to be changed for the new implementation of containerization.
+        /// Receives the current data package on screenshot request.
         /// </summary>
         /// <param name="dataPackage"></param>
         /// <returns></returns>

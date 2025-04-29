@@ -10,6 +10,8 @@ namespace Stargazer
 
     /// <summary>
     /// The <see cref="Node2D"/> used to contain the constellation stars and lines in the viewport.
+    /// Author: William Arnett
+    /// Created: SPR 2025
     /// </summary>
     public partial class Constellations2D : Node2D
     {
@@ -49,9 +51,10 @@ namespace Stargazer
 
         /// <summary>
         /// Initially draws the constellations
+        /// Refactored by Josh Johner (SPR 2025) to use the IDictionary.
         /// </summary>
         /// <param name="constellations">Contains the constellation graphs to draw.</param>
-        /// <param name="GetConstellationStar">A method to retrieve a star by Hipparcos Id from the dictionary of drawn stars.</param>
+        /// <param name="DrawnStars">The dictionary of drawn 2D stars.</param>
         /// <returns></returns>
         public void DrawConstellations(IEnumerable<Constellation> constellations, IDictionary<int, Star2D> DrawnStars)
         {

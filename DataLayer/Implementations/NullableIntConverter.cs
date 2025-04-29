@@ -6,6 +6,8 @@ namespace DataLayer.Implementations
 {
     /// <summary>
     /// A custom type converter to handle blank space in the repository
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     internal class NullableIntConverter : DefaultTypeConverter
     {

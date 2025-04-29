@@ -4,6 +4,8 @@ namespace Stargazer
 {
     /// <summary>
     /// Notifies subscribers of events related to the <see cref="Camera3D"/>
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public partial interface ICameraStateNotifier
     {

@@ -3,6 +3,8 @@ namespace DataLayer.EquatorialObjects
 {
     /// <summary>
     /// Represents a visible star in equatorial coordinates
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public class EquatorialStar : EquatorialCelestialBody
     {

@@ -8,9 +8,11 @@ items:
   - Stargazer.CelestialBody.Altitude
   - Stargazer.CelestialBody.Azimuth
   - Stargazer.CelestialBody.Distance
+  - Stargazer.CelestialBody.DrawnDistance
   - Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)
   - Stargazer.CelestialBody.GetHoverText
   - Stargazer.CelestialBody.GetLocation
+  - Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
   - Stargazer.CelestialBody._Process(System.Double)
   - Stargazer.CelestialBody.calculator
   - Stargazer.CelestialBody.horizontalBody
@@ -24,11 +26,18 @@ items:
   type: Class
   source:
     id: CelestialBody
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.CelestialBody_ScriptPropertyDefVal.generated.cs
-    startLine: 2
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.CelestialBody_ScriptMethods.generated.cs
+    startLine: 5
   assemblies:
   - New Game Project
   namespace: Stargazer
+  summary: >-
+    Represents a body drawn in 3D space that can be viewed, hovered and targeted.
+
+    Author: Josh Johner
+
+    Created: SPR 2025
+  example: []
   syntax:
     content: >-
       [ScriptPath("res://Code/CelestialBody.cs")]
@@ -381,11 +390,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: radians
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -408,11 +417,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: horizontalBody
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 15
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -435,11 +444,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: calculator
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 16
+    startLine: 21
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -462,11 +471,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetHoverText
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 18
+    startLine: 23
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -495,11 +504,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Azimuth
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 23
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -526,11 +535,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Altitude
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 28
+    startLine: 33
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -557,11 +566,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Distance
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 33
+    startLine: 38
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -574,6 +583,70 @@ items:
       type: System.Single
     content.vb: Public ReadOnly Property Distance As Single
   overload: Stargazer.CelestialBody.Distance*
+- uid: Stargazer.CelestialBody.DrawnDistance
+  commentId: P:Stargazer.CelestialBody.DrawnDistance
+  id: DrawnDistance
+  parent: Stargazer.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/CelestialBody.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: DrawnDistance
+    path: ../Stargazer-Godot/Code/CelestialBody.cs
+    startLine: 39
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  syntax:
+    content: public float DrawnDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property DrawnDistance As Single
+  overload: Stargazer.CelestialBody.DrawnDistance*
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  commentId: P:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  id: Stargazer#IHoverable#IsVisible
+  isEii: true
+  parent: Stargazer.CelestialBody
+  langs:
+  - csharp
+  - vb
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  type: Property
+  source:
+    remote:
+      path: Stargazer-Godot/Code/CelestialBody.cs
+      branch: fix-messier-visibility
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Stargazer.IHoverable.IsVisible
+    path: ../Stargazer-Godot/Code/CelestialBody.cs
+    startLine: 41
+  assemblies:
+  - New Game Project
+  namespace: Stargazer
+  example: []
+  syntax:
+    content: bool IHoverable.IsVisible { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property Stargazer.IHoverable.IsVisible As Boolean
+  overload: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible*
+  implements:
+  - Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
 - uid: Stargazer.CelestialBody._Process(System.Double)
   commentId: M:Stargazer.CelestialBody._Process(System.Double)
   id: _Process(System.Double)
@@ -588,11 +661,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Process
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 35
+    startLine: 43
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -630,11 +703,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: GetLocation
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 42
+    startLine: 50
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -658,11 +731,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/CelestialBody.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: FromHorizontal
     path: ../Stargazer-Godot/Code/CelestialBody.cs
-    startLine: 56
+    startLine: 64
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -7617,6 +7690,46 @@ references:
   name: Distance
   nameWithType: CelestialBody.Distance
   fullName: Stargazer.CelestialBody.Distance
+- uid: Stargazer.CelestialBody.DrawnDistance*
+  commentId: Overload:Stargazer.CelestialBody.DrawnDistance
+  href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_DrawnDistance
+  name: DrawnDistance
+  nameWithType: CelestialBody.DrawnDistance
+  fullName: Stargazer.CelestialBody.DrawnDistance
+- uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible*
+  commentId: Overload:Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible
+  href: Stargazer.IHoverable.html
+  name: IHoverable.IsVisible
+  nameWithType: CelestialBody.IHoverable.IsVisible
+  fullName: Stargazer.CelestialBody.Stargazer.IHoverable.IsVisible
+  nameWithType.vb: CelestialBody.Stargazer.IHoverable.IsVisible
+  name.vb: Stargazer.IHoverable.IsVisible
+  spec.csharp:
+  - uid: Stargazer.IHoverable*
+    name: IHoverable
+    href: Stargazer.IHoverable.html
+  - name: .
+  - uid: Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible*
+    name: IsVisible
+    href: Stargazer.CelestialBody.html#Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible
+- uid: Stargazer.IHoverable.IsVisible
+  commentId: P:Stargazer.IHoverable.IsVisible
+  parent: Stargazer.IHoverable
+  href: Stargazer.IHoverable.html#Stargazer_IHoverable_IsVisible
+  name: IsVisible
+  nameWithType: IHoverable.IsVisible
+  fullName: Stargazer.IHoverable.IsVisible
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Godot.Node._Process(System.Double)
   commentId: M:Godot.Node._Process(System.Double)
   parent: Godot.Node

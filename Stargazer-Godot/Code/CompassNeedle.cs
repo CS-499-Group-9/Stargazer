@@ -4,6 +4,9 @@ namespace Stargazer
 {
     /// <summary>
     /// Displays a compass needle to orient the user relative to North.
+    /// Author: Logan Parker
+    /// Refactored By: Josh Johner (moved needle.RotationDegrees from _Process() to RotationHandler
+    /// Created: SPR 2025
     /// </summary>
     public partial class CompassNeedle : Sprite2D
     {

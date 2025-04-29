@@ -7,7 +7,9 @@ namespace DataLayer
 {
 
     /// <summary>
-    /// Encapsulates all data returned in the Horizontal Coordinate system from the <c>DataLayer</c> needed by the front end to display astronomical objects.
+    /// Encapsulates all data returned in the Horizontal Coordinate system from the <c>DataLayer</c> needed by the front end to display astronomical objects
+    /// Author: Josh Johner
+    /// Created: SPR 2025.
     /// </summary>
     /// <typeparam name="T">The class type of star that is used in the database</typeparam>
     public class CelestialDataPackage<T>

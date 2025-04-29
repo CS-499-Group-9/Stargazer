@@ -2,6 +2,8 @@
 {
     /// <summary>
     /// Used to implement quantum logic in the view based on Fov thresholds.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public enum ZoomState
     {

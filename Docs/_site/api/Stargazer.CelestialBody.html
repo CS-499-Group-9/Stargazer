@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CelestialBody | Stargazer Data API ">
       
-      
+      <meta name="description" content="Represents a body drawn in 3D space that can be viewed, hovered and targeted. Author: Josh Johner Created: SPR 2025">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,10 @@ Class CelestialBody
   <dl><dt>Assembly</dt><dd>New Game Project.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents a body drawn in 3D space that can be viewed, hovered and targeted.
+Author: Josh Johner
+Created: SPR 2025</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -1077,7 +1080,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_calculator" data-uid="Stargazer.CelestialBody.calculator">
   calculator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1107,7 +1110,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_horizontalBody" data-uid="Stargazer.CelestialBody.horizontalBody">
   horizontalBody
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1137,7 +1140,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_radians" data-uid="Stargazer.CelestialBody.radians">
   radians
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1172,7 +1175,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_Altitude" data-uid="Stargazer.CelestialBody.Altitude">
   Altitude
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Rotation from Y=0, in degrees.</p>
@@ -1204,7 +1207,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_Azimuth" data-uid="Stargazer.CelestialBody.Azimuth">
   Azimuth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Rotation from North (X+), in degrees</p>
@@ -1236,7 +1239,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_Distance" data-uid="Stargazer.CelestialBody.Distance">
   Distance
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Distance from (0, 0, 0)</p>
@@ -1264,6 +1267,37 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
 
 
+  <a id="Stargazer_CelestialBody_DrawnDistance_" data-uid="Stargazer.CelestialBody.DrawnDistance*"></a>
+
+  <h3 id="Stargazer_CelestialBody_DrawnDistance" data-uid="Stargazer.CelestialBody.DrawnDistance">
+  DrawnDistance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float DrawnDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -1272,7 +1306,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_FromHorizontal_DataLayer_HorizontalObjects_HorizontalBody_DataLayer_Interfaces_IEquatorialCalculator_" data-uid="Stargazer.CelestialBody.FromHorizontal(DataLayer.HorizontalObjects.HorizontalBody,DataLayer.Interfaces.IEquatorialCalculator)">
   FromHorizontal(HorizontalBody, IEquatorialCalculator)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1305,7 +1339,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_GetHoverText" data-uid="Stargazer.CelestialBody.GetHoverText">
   GetHoverText()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the text to display.</p>
@@ -1338,7 +1372,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody_GetLocation" data-uid="Stargazer.CelestialBody.GetLocation">
   GetLocation()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1369,7 +1403,7 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
 
   <h3 id="Stargazer_CelestialBody__Process_System_Double_" data-uid="Stargazer.CelestialBody._Process(System.Double)">
   _Process(double)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/Stargazer-Godot/Code/CelestialBody.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the <code class="paramref">delta</code> time since the previous frame is not constant. <code class="paramref">delta</code> is in seconds.</p>
@@ -1389,6 +1423,41 @@ public abstract class CelestialBody : Node3D, IDisposable, IHoverable, ITrackabl
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible_" data-uid="Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible*"></a>
+
+  <h3 id="Stargazer_CelestialBody_Stargazer_IHoverable_IsVisible" data-uid="Stargazer.CelestialBody.Stargazer#IHoverable#IsVisible">
+  IHoverable.IsVisible
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/Stargazer-Godot/Code/CelestialBody.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IHoverable.IsVisible { get; }</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

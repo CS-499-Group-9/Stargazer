@@ -6,13 +6,10 @@ items:
   parent: Stargazer
   children:
   - Stargazer.Constellations2D.ConstellationLabels
-  - Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+  - Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
   - Stargazer.Constellations2D.Label2DScene
-  - Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
   - Stargazer.Constellations2D.Star2DScene
   - Stargazer.Constellations2D.StarContainer
-  - Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
-  - Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
   - Stargazer.Constellations2D._Ready
   - Stargazer.Constellations2D.constMesh
   - Stargazer.Constellations2D.mesh
@@ -25,12 +22,17 @@ items:
   type: Class
   source:
     id: Constellations2D
-    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Stargazer.Constellations2D_ScriptMethods.generated.cs
-    startLine: 5
+    path: Godot.SourceGenerators\Godot.SourceGenerators.ScriptPropertyDefValGenerator\Stargazer.Constellations2D_ScriptPropertyDefVal.generated.cs
+    startLine: 2
   assemblies:
   - New Game Project
   namespace: Stargazer
-  summary: The <xref href="Godot.Node2D" data-throw-if-not-resolved="false"></xref> used to contain the constellation stars and lines in the viewport.
+  summary: >-
+    The <xref href="Godot.Node2D" data-throw-if-not-resolved="false"></xref> used to contain the constellation stars and lines in the viewport.
+
+    Author: William Arnett
+
+    Created: SPR 2025
   example: []
   syntax:
     content: >-
@@ -425,11 +427,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Star2DScene
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 18
+    startLine: 20
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -470,11 +472,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Label2DScene
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -515,11 +517,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: StarContainer
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -542,11 +544,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: constMesh
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -569,11 +571,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: mesh
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -596,11 +598,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLabels
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -623,11 +625,11 @@ items:
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: _Ready
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - New Game Project
   namespace: Stargazer
@@ -638,151 +640,47 @@ items:
     content.vb: Public Overrides Sub _Ready()
   overridden: Godot.Node._Ready
   overload: Stargazer.Constellations2D._Ready*
-- uid: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  commentId: M:Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
-  id: DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star})
+- uid: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
+  commentId: M:Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
+  id: DrawConstellations(System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation},System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D})
   parent: Stargazer.Constellations2D
   langs:
   - csharp
   - vb
-  name: DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  nameWithType: Constellations2D.DrawConstellations(IEnumerable<Constellation>, Func<int, Func<HorizontalStar, Star>, Star>)
-  fullName: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>)
+  name: DrawConstellations(IEnumerable<Constellation>, IDictionary<int, Star2D>)
+  nameWithType: Constellations2D.DrawConstellations(IEnumerable<Constellation>, IDictionary<int, Star2D>)
+  fullName: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable<DataLayer.EquatorialObjects.Constellation>, System.Collections.Generic.IDictionary<int, Stargazer.Star2D>)
   type: Method
   source:
     remote:
       path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: DrawConstellations
     path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 55
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Initially draws the constellations
-  example: []
-  syntax:
-    content: public Task DrawConstellations(IEnumerable<Constellation> constellations, Func<int, Func<HorizontalStar, Star>, Star> GetConstellationStar)
-    parameters:
-    - id: constellations
-      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
-      description: Contains the constellation graphs to draw.
-    - id: GetConstellationStar
-      type: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
-      description: A method to retrieve a star by Hipparcos Id from the dictionary of drawn stars.
-    return:
-      type: System.Threading.Tasks.Task
-      description: ''
-    content.vb: Public Function DrawConstellations(constellations As IEnumerable(Of Constellation), GetConstellationStar As Func(Of Integer, Func(Of HorizontalStar, Star), Star)) As Task
-  overload: Stargazer.Constellations2D.DrawConstellations*
-  nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
-  fullName.vb: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star))
-  name.vb: DrawConstellations(IEnumerable(Of Constellation), Func(Of Integer, Func(Of HorizontalStar, Star), Star))
-- uid: Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
-  commentId: M:Stargazer.Constellations2D.ToggleConstellationLines(System.Boolean)
-  id: ToggleConstellationLines(System.Boolean)
-  parent: Stargazer.Constellations2D
-  langs:
-  - csharp
-  - vb
-  name: ToggleConstellationLines(bool)
-  nameWithType: Constellations2D.ToggleConstellationLines(bool)
-  fullName: Stargazer.Constellations2D.ToggleConstellationLines(bool)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: ToggleConstellationLines
-    path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 101
+    startLine: 58
   assemblies:
   - New Game Project
   namespace: Stargazer
   summary: >-
-    Receives the notification to toggle the visibility of the constellation lines.
+    Initially draws the constellations
 
-    Hiding the lines will also hide the labels.
+    Refactored by Josh Johner (SPR 2025) to use the IDictionary.
   example: []
   syntax:
-    content: public void ToggleConstellationLines(bool showlines)
+    content: public void DrawConstellations(IEnumerable<Constellation> constellations, IDictionary<int, Star2D> DrawnStars)
     parameters:
-    - id: showlines
-      type: System.Boolean
-      description: True if the user has requested to show the lines.
-    content.vb: Public Sub ToggleConstellationLines(showlines As Boolean)
-  overload: Stargazer.Constellations2D.ToggleConstellationLines*
-  nameWithType.vb: Constellations2D.ToggleConstellationLines(Boolean)
-  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLines(Boolean)
-  name.vb: ToggleConstellationLines(Boolean)
-- uid: Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
-  commentId: M:Stargazer.Constellations2D.ToggleConstellationLabels(System.Boolean)
-  id: ToggleConstellationLabels(System.Boolean)
-  parent: Stargazer.Constellations2D
-  langs:
-  - csharp
-  - vb
-  name: ToggleConstellationLabels(bool)
-  nameWithType: Constellations2D.ToggleConstellationLabels(bool)
-  fullName: Stargazer.Constellations2D.ToggleConstellationLabels(bool)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: ToggleConstellationLabels
-    path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 110
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  summary: Receives the notification to toggle the visibility of the constellation labels.
-  example: []
-  syntax:
-    content: public void ToggleConstellationLabels(bool showlabels)
-    parameters:
-    - id: showlabels
-      type: System.Boolean
-      description: True if the user has requested to show the labels.
-    content.vb: Public Sub ToggleConstellationLabels(showlabels As Boolean)
-  overload: Stargazer.Constellations2D.ToggleConstellationLabels*
-  nameWithType.vb: Constellations2D.ToggleConstellationLabels(Boolean)
-  fullName.vb: Stargazer.Constellations2D.ToggleConstellationLabels(Boolean)
-  name.vb: ToggleConstellationLabels(Boolean)
-- uid: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  commentId: M:Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  id: Spawn2DStar(Stargazer.Star)
-  parent: Stargazer.Constellations2D
-  langs:
-  - csharp
-  - vb
-  name: Spawn2DStar(Star)
-  nameWithType: Constellations2D.Spawn2DStar(Star)
-  fullName: Stargazer.Constellations2D.Spawn2DStar(Stargazer.Star)
-  type: Method
-  source:
-    remote:
-      path: Stargazer-Godot/Code/Constellations2D.cs
-      branch: state-machines
-      repo: https://github.com/CS-499-Group-9/Stargazer
-    id: Spawn2DStar
-    path: ../Stargazer-Godot/Code/Constellations2D.cs
-    startLine: 112
-  assemblies:
-  - New Game Project
-  namespace: Stargazer
-  syntax:
-    content: private Star2D Spawn2DStar(Star star3d)
-    parameters:
-    - id: star3d
-      type: Stargazer.Star
-    return:
-      type: Stargazer.Star2D
-    content.vb: Private Function Spawn2DStar(star3d As Star) As Star2D
-  overload: Stargazer.Constellations2D.Spawn2DStar*
+    - id: constellations
+      type: System.Collections.Generic.IEnumerable{DataLayer.EquatorialObjects.Constellation}
+      description: Contains the constellation graphs to draw.
+    - id: DrawnStars
+      type: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+      description: The dictionary of drawn 2D stars.
+    content.vb: Public Sub DrawConstellations(constellations As IEnumerable(Of Constellation), DrawnStars As IDictionary(Of Integer, Star2D))
+  overload: Stargazer.Constellations2D.DrawConstellations*
+  nameWithType.vb: Constellations2D.DrawConstellations(IEnumerable(Of Constellation), IDictionary(Of Integer, Star2D))
+  fullName.vb: Stargazer.Constellations2D.DrawConstellations(System.Collections.Generic.IEnumerable(Of DataLayer.EquatorialObjects.Constellation), System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D))
+  name.vb: DrawConstellations(IEnumerable(Of Constellation), IDictionary(Of Integer, Star2D))
 references:
 - uid: Godot.Node2D
   commentId: T:Godot.Node2D
@@ -10018,7 +9916,7 @@ references:
   fullName: Stargazer.Constellations2D._Ready
 - uid: Stargazer.Constellations2D.DrawConstellations*
   commentId: Overload:Stargazer.Constellations2D.DrawConstellations
-  href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Func_System_Int32_System_Func_DataLayer_HorizontalObjects_HorizontalStar_Stargazer_Star__Stargazer_Star__
+  href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_DrawConstellations_System_Collections_Generic_IEnumerable_DataLayer_EquatorialObjects_Constellation__System_Collections_Generic_IDictionary_System_Int32_Stargazer_Star2D__
   name: DrawConstellations
   nameWithType: Constellations2D.DrawConstellations
   fullName: Stargazer.Constellations2D.DrawConstellations
@@ -10055,22 +9953,22 @@ references:
     name: Constellation
     href: DataLayer.EquatorialObjects.Constellation.html
   - name: )
-- uid: System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
-  commentId: T:System.Func{System.Int32,System.Func{DataLayer.HorizontalObjects.HorizontalStar,Stargazer.Star},Stargazer.Star}
-  parent: System
-  definition: System.Func`3
-  href: https://learn.microsoft.com/dotnet/api/system.func-3
-  name: Func<int, Func<HorizontalStar, Star>, Star>
-  nameWithType: Func<int, Func<HorizontalStar, Star>, Star>
-  fullName: System.Func<int, System.Func<DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star>, Stargazer.Star>
-  nameWithType.vb: Func(Of Integer, Func(Of HorizontalStar, Star), Star)
-  fullName.vb: System.Func(Of Integer, System.Func(Of DataLayer.HorizontalObjects.HorizontalStar, Stargazer.Star), Stargazer.Star)
-  name.vb: Func(Of Integer, Func(Of HorizontalStar, Star), Star)
+- uid: System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+  commentId: T:System.Collections.Generic.IDictionary{System.Int32,Stargazer.Star2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<int, Star2D>
+  nameWithType: IDictionary<int, Star2D>
+  fullName: System.Collections.Generic.IDictionary<int, Stargazer.Star2D>
+  nameWithType.vb: IDictionary(Of Integer, Star2D)
+  fullName.vb: System.Collections.Generic.IDictionary(Of Integer, Stargazer.Star2D)
+  name.vb: IDictionary(Of Integer, Star2D)
   spec.csharp:
-  - uid: System.Func`3
-    name: Func
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-3
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: <
   - uid: System.Int32
     name: int
@@ -10078,31 +9976,15 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
   - name: '>'
   spec.vb:
-  - uid: System.Func`3
-    name: Func
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-3
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: (
   - name: Of
   - name: " "
@@ -10112,36 +9994,10 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: ','
   - name: " "
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: DataLayer.HorizontalObjects.HorizontalStar
-    name: HorizontalStar
-    href: DataLayer.HorizontalObjects.HorizontalStar.html
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
+  - uid: Stargazer.Star2D
+    name: Star2D
+    href: Stargazer.Star2D.html
   - name: )
-  - name: ','
-  - name: " "
-  - uid: Stargazer.Star
-    name: Star
-    href: Stargazer.Star.html
-  - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
@@ -10207,123 +10063,37 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: System.Func`3
-  commentId: T:System.Func`3
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.func-3
-  name: Func<T1, T2, TResult>
-  nameWithType: Func<T1, T2, TResult>
-  fullName: System.Func<T1, T2, TResult>
-  nameWithType.vb: Func(Of T1, T2, TResult)
-  fullName.vb: System.Func(Of T1, T2, TResult)
-  name.vb: Func(Of T1, T2, TResult)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
-  - uid: System.Func`3
-    name: Func
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-3
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: <
-  - name: T1
+  - name: TKey
   - name: ','
   - name: " "
-  - name: T2
-  - name: ','
-  - name: " "
-  - name: TResult
+  - name: TValue
   - name: '>'
   spec.vb:
-  - uid: System.Func`3
-    name: Func
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-3
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
   - name: (
   - name: Of
   - name: " "
-  - name: T1
+  - name: TKey
   - name: ','
   - name: " "
-  - name: T2
-  - name: ','
-  - name: " "
-  - name: TResult
+  - name: TValue
   - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Stargazer.Constellations2D.ToggleConstellationLines*
-  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLines
-  href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLines_System_Boolean_
-  name: ToggleConstellationLines
-  nameWithType: Constellations2D.ToggleConstellationLines
-  fullName: Stargazer.Constellations2D.ToggleConstellationLines
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: Stargazer.Constellations2D.ToggleConstellationLabels*
-  commentId: Overload:Stargazer.Constellations2D.ToggleConstellationLabels
-  href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_ToggleConstellationLabels_System_Boolean_
-  name: ToggleConstellationLabels
-  nameWithType: Constellations2D.ToggleConstellationLabels
-  fullName: Stargazer.Constellations2D.ToggleConstellationLabels
-- uid: Stargazer.Constellations2D.Spawn2DStar*
-  commentId: Overload:Stargazer.Constellations2D.Spawn2DStar
-  href: Stargazer.Constellations2D.html#Stargazer_Constellations2D_Spawn2DStar_Stargazer_Star_
-  name: Spawn2DStar
-  nameWithType: Constellations2D.Spawn2DStar
-  fullName: Stargazer.Constellations2D.Spawn2DStar
-- uid: Stargazer.Star
-  commentId: T:Stargazer.Star
-  parent: Stargazer
-  href: Stargazer.Star.html
-  name: Star
-  nameWithType: Star
-  fullName: Stargazer.Star
-- uid: Stargazer.Star2D
-  commentId: T:Stargazer.Star2D
-  parent: Stargazer
-  href: Stargazer.Star2D.html
-  name: Star2D
-  nameWithType: Star2D
-  fullName: Stargazer.Star2D

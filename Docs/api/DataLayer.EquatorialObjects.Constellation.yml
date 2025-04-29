@@ -19,15 +19,20 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Constellation
     path: ../DataLayer/EquatorialObjects/Constellation.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
-  summary: Represents a constellation in the sky
+  summary: >-
+    Represents a constellation in the sky
+
+    Author: Josh Johner
+
+    Created: SPR 2025
   example: []
   syntax:
     content: public class Constellation
@@ -56,11 +61,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationId
     path: ../DataLayer/EquatorialObjects/Constellation.cs
-    startLine: 11
+    startLine: 13
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -87,11 +92,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationLines
     path: ../DataLayer/EquatorialObjects/Constellation.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -118,11 +123,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: ConstellationName
     path: ../DataLayer/EquatorialObjects/Constellation.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects
@@ -149,11 +154,11 @@ items:
   source:
     remote:
       path: DataLayer/EquatorialObjects/Constellation.cs
-      branch: state-machines
+      branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/EquatorialObjects/Constellation.cs
-    startLine: 29
+    startLine: 31
   assemblies:
   - DataLayer
   namespace: DataLayer.EquatorialObjects

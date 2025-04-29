@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EquatorialMessierObject | Stargazer Data API ">
       
-      <meta name="description" content="Represents a Messier Deep Space Object located in equatorial coordinates">
+      <meta name="description" content="Represents a Messier Deep Space Object located in equatorial coordinates Author: Josh Johner Created: SPR 2025">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/state-machines/apiSpec/new?filename=DataLayer_EquatorialObjects_EquatorialMessierObject.md&amp;value=---%0Auid%3A%20DataLayer.EquatorialObjects.EquatorialMessierObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/CS-499-Group-9/Stargazer/new/fix-messier-visibility/apiSpec/new?filename=DataLayer_EquatorialObjects_EquatorialMessierObject.md&amp;value=---%0Auid%3A%20DataLayer.EquatorialObjects.EquatorialMessierObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DataLayer_EquatorialObjects_EquatorialMessierObject" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject" class="text-break">
-Class EquatorialMessierObject  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class EquatorialMessierObject  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
   <dl><dt>Assembly</dt><dd>DataLayer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents a Messier Deep Space Object located in equatorial coordinates</p>
+  <div class="markdown summary"><p>Represents a Messier Deep Space Object located in equatorial coordinates
+Author: Josh Johner
+Created: SPR 2025</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -169,11 +171,43 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 </h2>
 
 
+  <a id="DataLayer_EquatorialObjects_EquatorialMessierObject_CommonName_" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName*"></a>
+
+  <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_CommonName" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.CommonName">
+  CommonName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The commonly used main of the object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? CommonName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation_" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation*"></a>
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_Constellation" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.Constellation">
   Constellation
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The constellation containing the object</p>
@@ -205,7 +239,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_MessierId" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.MessierId">
   MessierId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The 'M' prefixed identification number of the object</p>
@@ -237,7 +271,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_NewGeneralCatalog" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.NewGeneralCatalog">
   NewGeneralCatalog
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The Messier Object identification in the New General Catalog</p>
@@ -269,7 +303,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_Size" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.Size">
   Size
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The size (in light years) of the object (a 2 dimensional value as viewed)</p>
@@ -301,7 +335,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_Type" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The Messier Object category</p>
@@ -333,7 +367,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingDifficulty" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingDifficulty">
   ViewingDifficulty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The difficulty level of viewing the object</p>
@@ -365,7 +399,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 
   <h3 id="DataLayer_EquatorialObjects_EquatorialMessierObject_ViewingSeason" data-uid="DataLayer.EquatorialObjects.EquatorialMessierObject.ViewingSeason">
   ViewingSeason
-  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The celestial season in which the object can be viewed</p>
@@ -397,7 +431,7 @@ Class EquatorialMessierObject  <a class="header-action link-secondary" title="Vi
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/state-machines/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/CS-499-Group-9/Stargazer/blob/fix-messier-visibility/DataLayer/EquatorialObjects/EquatorialMessierObject.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

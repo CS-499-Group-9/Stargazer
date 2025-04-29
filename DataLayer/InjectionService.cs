@@ -7,6 +7,8 @@ namespace DataLayer
     /// <summary>
     /// Used to provide dependency injection to instantiate interface and abstract objects and provide dependencies to constructors.
     /// Registers all classes to be injected into constructors to avoid hard coding into descendant classes.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     /// <typeparam name="T">The class that instantiates the star in the front end.</typeparam>
 

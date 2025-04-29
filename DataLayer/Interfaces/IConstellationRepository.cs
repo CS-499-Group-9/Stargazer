@@ -4,6 +4,8 @@ namespace DataLayer.Interfaces
 {
     /// <summary>
     /// Used to retrieve a collection of <see cref="Constellation"/> from a repository.
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public interface IConstellationRepository
     {

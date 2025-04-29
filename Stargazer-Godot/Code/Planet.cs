@@ -8,6 +8,9 @@ namespace Stargazer
 {
     /// <summary>
     /// Used to draw a planet in the <see cref="SkyView"/>
+    /// Author: Josh Johner
+    /// Created: SPR 2025
+    /// Refactored by William Arnett (SPR 2025) to use custom shader material.
     /// </summary>
     public partial class Planet : CelestialBody
     {

@@ -6,6 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Spawns Messier Deep Space Objects on startup.
+/// Author: Josh Johner
+/// Created: SPR 2025
+/// </summary>
 public partial class MessierSpawner : Node3D
 {
 	[Export] PackedScene MessierScene;
@@ -13,7 +18,8 @@ public partial class MessierSpawner : Node3D
 
 	public override void _Ready()
 	{
-		Visible = false;
+		messierContainer = new();
+		messierContainer.Visible = false;
 	}
 
 	/// <summary>
@@ -26,6 +32,7 @@ public partial class MessierSpawner : Node3D
 	{
 		var oldContainer = messierContainer;
 		messierContainer = new();
+		messierContainer.Visible = oldContainer?.Visible ?? false;
         await Task.Run(() =>
         {
             foreach (var messier in objects)
@@ -43,7 +50,7 @@ public partial class MessierSpawner : Node3D
 	/// <param name="showObjects">True if objects should be visible</param>
 	public void ToggleMessierObjects(bool showObjects)
 	{
-		Visible = showObjects;
+		messierContainer.Visible = showObjects;
 	}
 
     private void SpawnMessier(HorizontalMessierObject horizontalMessier, IEquatorialCalculator calculator)

@@ -6,10 +6,11 @@ namespace Stargazer
     /// <summary>
     /// This was originally created to explore adding color to the stars.
     /// The current implementation is way too aggressive. We might be able to make this work by tweaking the numbers. 
+    /// Author: Josh Johner
+    /// Created: SPR 2025
     /// </summary>
     public partial class StarMesh : MeshInstance3D
     {
-
 
         private void UpdateColorFromParent(double bvIndex)
         {
