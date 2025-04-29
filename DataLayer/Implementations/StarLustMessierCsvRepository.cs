@@ -73,6 +73,7 @@ namespace DataLayer.Implementations
                 Map(m => m.Distance).Name("DIST (ly)");
                 Map(m => m.ViewingSeason).Name("VIEWING SEASON");
                 Map(m => m.ViewingDifficulty).Name("VIEWING DIFFICULTY");
+                Map(m => m.CommonName).Name("COMMON NAME");
             }
 
             /// <summary>

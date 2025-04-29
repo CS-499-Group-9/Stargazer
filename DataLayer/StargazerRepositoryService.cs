@@ -93,6 +93,7 @@ namespace DataLayer
                 messier.Constellation = item.Constellation;
                 messier.NewGeneralCatalog = item.NewGeneralCatalog;
                 messier.ViewingSeason = item.ViewingSeason;
+                messier.CommonName = item.CommonName;
                 newMessier.Add(messier);
             }
             return newMessier;

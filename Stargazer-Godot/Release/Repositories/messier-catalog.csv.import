@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d24aeucelsgh0"
+
+[deps]
+
+files=["res://Release/Repositories/messier-catalog.NGC.translation", "res://Release/Repositories/messier-catalog.TYPE.translation", "res://Release/Repositories/messier-catalog.CONS.translation", "res://Release/Repositories/messier-catalog.RA.translation", "res://Release/Repositories/messier-catalog.DEC.translation", "res://Release/Repositories/messier-catalog.MAG.translation", "res://Release/Repositories/messier-catalog.SIZE.translation", "res://Release/Repositories/messier-catalog.DIST (ly).translation", "res://Release/Repositories/messier-catalog.VIEWING SEASON.translation", "res://Release/Repositories/messier-catalog.VIEWING DIFFICULTY.translation", "res://Release/Repositories/messier-catalog.COMMON NAME.translation"]
+
+source_file="res://Release/Repositories/messier-catalog.csv"
+dest_files=["res://Release/Repositories/messier-catalog.NGC.translation", "res://Release/Repositories/messier-catalog.TYPE.translation", "res://Release/Repositories/messier-catalog.CONS.translation", "res://Release/Repositories/messier-catalog.RA.translation", "res://Release/Repositories/messier-catalog.DEC.translation", "res://Release/Repositories/messier-catalog.MAG.translation", "res://Release/Repositories/messier-catalog.SIZE.translation", "res://Release/Repositories/messier-catalog.DIST (ly).translation", "res://Release/Repositories/messier-catalog.VIEWING SEASON.translation", "res://Release/Repositories/messier-catalog.VIEWING DIFFICULTY.translation", "res://Release/Repositories/messier-catalog.COMMON NAME.translation"]
+
+[params]
+
+compress=true
+delimiter=0

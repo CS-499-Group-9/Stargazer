@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr71brnwp5pdb"]
 
 [ext_resource type="Script" path="res://Code/PlayControl.cs" id="1_ehmol"]
-[ext_resource type="StyleBox" uid="uid://cu1ofgu8mp1ym" path="res://Scenes/toggle_light.tres" id="2_2nikd"]
+[ext_resource type="StyleBox" uid="uid://ymajvcvfo4jm" path="res://Scenes/toggle_light_play_control.tres" id="2_p228k"]
 [ext_resource type="Texture2D" uid="uid://dci1e5ehpbkk" path="res://Textures/rewind.svg" id="4_ln7p3"]
 [ext_resource type="Texture2D" uid="uid://d3nqehdkjnkvl" path="res://Textures/history.svg" id="5_kb2v8"]
 [ext_resource type="Texture2D" uid="uid://ceb0gpcj3o74f" path="res://Textures/play.svg" id="6_n1qcv"]
@@ -18,8 +18,8 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("1_ehmol")
-TimeLapseSlider = NodePath("MarginContainer/VBoxContainer/HSlider")
-TimeLapseLabel = NodePath("MarginContainer/VBoxContainer/HSlider/Label")
+TimeLapseSlider = NodePath("MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HSlider")
+TimeLapseLabel = NodePath("MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HSlider/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -45,143 +45,151 @@ layout_mode = 2
 text = "THIS IS A TEST"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="CurrentTimeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="CurrentTimeButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
 theme_override_colors/icon_normal_color = Color(0.87581, 0.752849, 0.81247, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("5_kb2v8")
 icon_alignment = 1
 expand_icon = true
 
-[node name="NormalButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NormalButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("6_n1qcv")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("7_dpn51")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Sec"
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("4_ln7p3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("7_dpn51")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Min"
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("4_ln7p3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("7_dpn51")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 text = "Hrs"
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("4_ln7p3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+[node name="ForwardButon" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("7_dpn51")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 text = "Days"
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0.948934, 0.896173, 0.920995, 0.996078)
-theme_override_styles/normal = ExtResource("2_2nikd")
+theme_override_styles/normal = ExtResource("2_p228k")
 icon = ExtResource("4_ln7p3")
 icon_alignment = 1
 expand_icon = true
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HSlider"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HSlider"]
 layout_mode = 0
 offset_left = -76.0
 offset_top = 10.0
@@ -191,13 +199,13 @@ text = "Timelapse Slider"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSyncronizeTime"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ForwardButon" to="." method="UpdateSeconds" binds= [1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="UpdateSeconds" binds= [-1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ForwardButon" to="." method="UpdateMinutes" binds= [1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BackButton" to="." method="UpdateMinutes" binds= [-1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/ForwardButon" to="." method="UpdateHours" binds= [1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BackButton" to="." method="UpdateHours" binds= [-1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/ForwardButon" to="." method="UpdateDays" binds= [1]]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/BackButton" to="." method="UpdateDays" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/CurrentTimeButton" to="." method="OnSynchronizeTime"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/NormalButton" to="." method="PlayNormal"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/ForwardButon" to="." method="UpdateSeconds" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="UpdateSeconds" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ForwardButon" to="." method="UpdateMinutes" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BackButton" to="." method="UpdateMinutes" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/ForwardButon" to="." method="UpdateHours" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BackButton" to="." method="UpdateHours" binds= [-1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/ForwardButon" to="." method="UpdateDays" binds= [1]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4/BackButton" to="." method="UpdateDays" binds= [-1]]

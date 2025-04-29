@@ -23,6 +23,8 @@ namespace DataLayer.HorizontalObjects
             Size = body.Size;
             ViewingDifficulty = body.ViewingDifficulty;
             ViewingSeason = body.ViewingSeason;
+            CommonName = body.CommonName;
+            Console.WriteLine($"Common name {CommonName}");
         }
 
         /// <summary>
@@ -53,5 +55,9 @@ namespace DataLayer.HorizontalObjects
         /// <see cref="EquatorialMessierObject.ViewingDifficulty"/>
         /// </summary>
         public string? ViewingDifficulty { get; internal set; }
+        /// <summary>
+        /// <see cref="EquatorialMessierObject.CommonName"/>
+        /// </summary>
+        public string? CommonName { get; internal set; }
     }
 }

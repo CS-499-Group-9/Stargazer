@@ -29,7 +29,7 @@ namespace Stargazer
         private SkyView skyView;
         private CelestialDataPackage<Star> dataPackage;
         private IEquatorialCalculator calculator;
-        private string screenshotPath;
+        private string screenshotPath = "user://screenshot.jpeg";
 
         [Export] private SubViewport View2D;
         [Export] private ControlContainer controlContainer;

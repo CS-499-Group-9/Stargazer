@@ -127,7 +127,8 @@ namespace Stargazer
 
         private void UpdateMultiplierLabel()
         {
-            multiplierLabel.Text = $"{multiplier.ToString()} per second";
+        multiplierLabel.Text = $"x{multiplier.TotalSeconds:0} Speed ({multiplier.ToString()} per second)";
+
         }
         public void SetBaseDateTime(DateTime dateTime)
         {

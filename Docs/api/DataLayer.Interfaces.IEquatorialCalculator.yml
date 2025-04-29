@@ -30,12 +30,21 @@ items:
   type: Interface
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IEquatorialCalculator
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 12
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IEquatorialCalculator
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 10
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -62,12 +71,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CurrentTime
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 17
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 15
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -93,12 +111,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LST
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 21
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: LST
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 19
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -124,12 +151,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Latitude
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 25
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Latitude
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 23
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -155,12 +191,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Longitude
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 29
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Longitude
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 27
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -186,12 +231,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateMoon
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 34
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateMoon
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 32
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -217,12 +271,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateSun
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 39
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateSun
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 37
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -248,12 +311,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreatePlanets
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 44
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 42
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -279,12 +351,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetTime
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 50
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetTime
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 48
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -314,12 +395,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetLocation
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 56
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetLocation
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 54
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -352,12 +442,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncrementTimeBy
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 61
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 59
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -387,12 +486,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 66
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 64
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -419,12 +527,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 71
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 69
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -451,12 +568,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 76
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 74
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces
@@ -483,12 +609,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Interfaces/IEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Interfaces/IEquitorialCalculator.cs
     startLine: 81
+=======
+      path: DataLayer/Interfaces/IEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Interfaces/IEquatorialCalculator.cs
+    startLine: 79
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Interfaces

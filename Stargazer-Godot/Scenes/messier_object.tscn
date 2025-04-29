@@ -1,23 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://755k8nw6wxfm"]
+[gd_scene load_steps=4 format=3 uid="uid://755k8nw6wxfm"]
 
 [ext_resource type="Script" path="res://Code/MessierObject.cs" id="1_s4hv4"]
+[ext_resource type="Texture2D" uid="uid://idq6ppbnqewc" path="res://Textures/Galaxy PNG Images Transparent Background.png" id="2_bqbvj"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_j2p66"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3e2k"]
-albedo_color = Color(0.0929934, 0.711753, 0.445459, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5gvf6"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_668wn"]
 
 [node name="MessierObject" type="Node3D"]
 transform = Transform3D(3.775, 0, 0, 0, 3.775, 0, 0, 0, 3.775, 0, 0, 0)
 script = ExtResource("1_s4hv4")
 
-[node name="O1" type="StaticBody3D" parent="."]
+[node name="MessierBody" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="O1"]
-mesh = SubResource("BoxMesh_j2p66")
-surface_material_override/0 = SubResource("StandardMaterial3D_d3e2k")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MessierBody"]
+shape = SubResource("SphereShape3D_668wn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="O1"]
-shape = SubResource("BoxShape3D_5gvf6")
+[node name="Sprite3D" type="Sprite3D" parent="MessierBody"]
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_bqbvj")

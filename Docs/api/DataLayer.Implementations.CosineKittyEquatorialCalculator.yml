@@ -35,12 +35,21 @@ items:
   type: Class
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CosineKittyEquatorialCalculator
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 14
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CosineKittyEquatorialCalculator
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 12
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -79,12 +88,21 @@ items:
   type: Field
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: currentTime
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 16
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: currentTime
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 14
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -106,12 +124,21 @@ items:
   type: Field
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: astroTime
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 17
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: astroTime
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 15
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -133,12 +160,21 @@ items:
   type: Field
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: observer
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 18
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: observer
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 16
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -160,12 +196,21 @@ items:
   type: Field
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: planets
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 19
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: planets
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 17
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -187,12 +232,21 @@ items:
   type: Field
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: AUConversion
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 20
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: AUConversion
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 18
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -214,12 +268,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CurrentTime
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 22
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CurrentTime
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 20
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -247,12 +310,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: LST
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 24
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: LST
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 22
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -280,12 +352,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Latitude
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 26
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Latitude
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 24
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -313,12 +394,21 @@ items:
   type: Property
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: Longitude
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 28
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: Longitude
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 26
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -346,12 +436,21 @@ items:
   type: Constructor
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 36
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 34
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -387,12 +486,21 @@ items:
   type: Constructor
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: .ctor
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 58
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: .ctor
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 56
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -418,12 +526,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateMoon
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 64
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateMoon
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 62
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -451,12 +568,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreateSun
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 74
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreateSun
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 72
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -484,12 +610,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: CreatePlanets
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 84
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: CreatePlanets
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 82
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -517,12 +652,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetTime
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 108
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetTime
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 106
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -554,12 +698,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: SetLocation
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 115
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: SetLocation
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 113
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -594,12 +747,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: IncrementTimeBy
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 121
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: IncrementTimeBy
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 119
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -631,12 +793,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 128
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 126
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -665,12 +836,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 140
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 139
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -699,12 +879,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 156
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 155
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
@@ -733,12 +922,21 @@ items:
   type: Method
   source:
     remote:
+<<<<<<< HEAD
       path: DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
       branch: fix-messier-visibility
       repo: https://github.com/CS-499-Group-9/Stargazer
     id: UpdatePositionOf
     path: ../DataLayer/Implementations/CosineKittyEquitorialCalculator.cs
     startLine: 168
+=======
+      path: DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+      branch: state-machines
+      repo: https://github.com/CS-499-Group-9/Stargazer
+    id: UpdatePositionOf
+    path: ../DataLayer/Implementations/CosineKittyEquatorialCalculator.cs
+    startLine: 167
+>>>>>>> main
   assemblies:
   - DataLayer
   namespace: DataLayer.Implementations
